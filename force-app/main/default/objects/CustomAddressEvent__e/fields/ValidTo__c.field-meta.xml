@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidTo__c</fullName>
+    <description>Expiration date for address in platform events. Blank indicates currently active address.</description>
+    <isFilteringDisabled>false</isFilteringDisabled>
+    <isNameField>false</isNameField>
+    <isSortingDisabled>false</isSortingDisabled>
+    <label>Valid To</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>

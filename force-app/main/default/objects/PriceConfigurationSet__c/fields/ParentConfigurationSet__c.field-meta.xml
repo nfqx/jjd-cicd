@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ParentConfigurationSet__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Parent Configuration Set</label>
+    <referenceTo>PriceConfigurationSet__c</referenceTo>
+    <relationshipLabel>Child Cofiguration Sets</relationshipLabel>
+    <relationshipName>PriceConfigurationSets</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

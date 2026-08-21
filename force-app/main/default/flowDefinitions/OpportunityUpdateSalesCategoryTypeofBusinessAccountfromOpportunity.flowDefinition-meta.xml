@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>2</activeVersionNumber>
+    <description>Automatically synchronizes changes to the SalesCategory and TypeOfBusiness fields on an Opportunity with the related Account.
+Jira Ticket: JJDSF-442</description>
+    <masterLabel>Opportunity - Update Sales Category/Type of Business Account from Opportunity</masterLabel>
+</FlowDefinition>

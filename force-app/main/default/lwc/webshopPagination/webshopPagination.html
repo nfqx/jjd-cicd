@@ -1,0 +1,87 @@
+<template>
+    <div class="col-12 w-100">
+        <div class="d-sm-none d-flex flex-row justify-content-center body-regular mt-3">
+            <!--Pagination mobile devices-->
+           
+            <button 
+                class="btn btn-link" 
+                data-label={label.previous}
+                onclick={handleClick}>
+                <i class="bi bi-chevron-left text-dark"></i>
+            </button>
+                <!-- Current Page Display -->
+            <div class="page-display border mx-1">
+                <span>{pageNo}</span> / <span>{totalPages}</span>
+            </div>
+            <button 
+                class="btn btn-link" 
+                data-label={label.next}
+                onclick={handleClick}>
+                <i class="bi bi-chevron-right text-dark"></i>
+            </button>
+                
+        </div>
+        <div class="d-sm-flex flex-row justify-content-center d-none pagination body-regular mt-5">
+            <!-- First Button -->
+            <button
+                class="page-link rounded-start text-dark"
+                data-label={label.first}
+                onclick={handleClick}
+            >
+                <!--{label.first}--><i class="bi bi-chevron-double-left"></i>
+            </button>
+
+            <!-- Previous Button -->
+            <button
+                class="page-link text-dark"
+                data-label={label.previous}
+                onclick={handleClick}
+            >
+                <!--{label.previous}--><i class="bi bi-chevron-left"></i>
+            </button>
+
+            <!-- Page Links -->
+            <template for:each={pagelinks} for:item="page">
+                <button
+                    key={page}
+                    data-label={page}
+                    class="page-link text-dark"
+                    onclick={handlePage}
+                >
+                    {page}
+                </button>
+            </template>
+
+            <!-- Next Button -->
+            <button
+                class="page-link text-dark"
+                data-label={label.next}
+                onclick={handleClick}
+            >
+                <!--{label.next}--><i class="bi bi-chevron-right"></i>
+            </button>
+
+            <!-- Last Button -->
+            <button
+                class="page-link rounded-end text-dark"
+                data-label={label.last}
+                onclick={handleClick}
+            >
+                <!--{label.last}--><i class="bi bi-chevron-double-right"></i>
+            </button>
+        </div>
+
+        <!-- Combobox for Number of Records -->
+        <lightning-combobox
+            class="slds-m-horizontal_x-small slds-col_bump-right"
+            dropdown-alignment="bottom-right"
+            style="margin: -1.125rem 0 0 1rem;"
+            if:true={showNumberRecords}
+            onchange={handleChangeNumberRecords}
+            placeholder={label.number}
+            value={recordsPerPage}
+            options={numberOptions}>
+        </lightning-combobox>
+    </div>
+    
+</template>

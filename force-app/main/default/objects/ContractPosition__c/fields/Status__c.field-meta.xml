@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>SAP agreement status of the position (code = value, plain text = label). &apos;Draft&apos; = captured in PuK, not yet in SAP. An agreement can end while the contract continues. [Sources: K-1 2026-08-11: SAP-Codes als Werte, Fiori-F4 „Status Vereinbarung&quot; (vollständig: 6 Werte); Widerspruch Echtbelege 150/leer offen]</description>
+    <inlineHelpText>SAP agreement status of the position (code = value, plain text = label). &apos;Draft&apos; = captured in PuK, not yet in SAP. An agreement can end while the contract continues.</inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Draft</fullName>
+                <default>false</default>
+                <label>Draft (not yet in SAP)</label>
+            </value>
+            <value>
+                <fullName>200</fullName>
+                <default>false</default>
+                <label>VB ist aktiv</label>
+            </value>
+            <value>
+                <fullName>300</fullName>
+                <default>false</default>
+                <label>VB ist ausgelaufen</label>
+            </value>
+            <value>
+                <fullName>400</fullName>
+                <default>false</default>
+                <label>VB ist gekündigt</label>
+            </value>
+            <value>
+                <fullName>500</fullName>
+                <default>false</default>
+                <label>Prospektive Vereinbarung</label>
+            </value>
+            <value>
+                <fullName>900</fullName>
+                <default>false</default>
+                <label>VB ist erledigt</label>
+            </value>
+            <value>
+                <fullName>999</fullName>
+                <default>false</default>
+                <label>VB ist storniert</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

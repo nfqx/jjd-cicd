@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Der mit dem Kunden vereinbarte Index-Prozentsatz: um so viel Prozent darf der Kaffeepreis angepasst werden, wenn der Rohkaffee-Markt (ICO + Dollarkurs) sich entsprechend bewegt hat.</help>
+    <label>Index-Prozentsatz</label>
+    <name>IndexPct__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract__c</fullName>
+    <description>The contract header this position belongs to. If the contract is deleted or superseded, its positions follow automatically. [Sources: C-09]</description>
+    <inlineHelpText>The contract header this position belongs to. If the contract is deleted or superseded, its positions follow automatically.</inlineHelpText>
+    <label>Contract</label>
+    <referenceTo>CustomerContract__c</referenceTo>
+    <relationshipLabel>Contract Positions</relationshipLabel>
+    <relationshipName>ContractPositions</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- End of the SAP agreement term this position belongs to. --></help>
+    <label><!-- Agreement Valid To --></label>
+    <name>AgreementValidTo__c</name>
+</CustomFieldTranslation>

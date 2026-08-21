@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This Permission Set Group controls the access for marketing users.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Profile: J.J. Darboven /NL Marketing</label>
+    <permissionSets>CPermission_J_J_Darboven_NL_Marketing</permissionSets>
+    <permissionSets>CPermission_Marketing</permissionSets>
+    <permissionSets>Field_Access_J_J_Darboven_NL_Marketing</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

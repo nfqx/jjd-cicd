@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Dieses Feld dient dazu, Bemerkungen zu erfassen und kann auch in Berichten genutzt werden, um relevante Informationen direkt zu erfassen. --></help>
+    <label>Bemerkungen</label>
+    <name>Comments__c</name>
+</CustomFieldTranslation>

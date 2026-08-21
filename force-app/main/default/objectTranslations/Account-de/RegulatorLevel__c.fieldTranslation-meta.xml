@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Only for central regulators: &quot;Under&quot; if the account itself includes a regulator reference. --></help>
+    <label><!-- Regulator Level --></label>
+    <name>RegulatorLevel__c</name>
+    <picklistValues>
+        <masterLabel>Main</masterLabel>
+        <translation><!-- Main --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sub</masterLabel>
+        <translation><!-- Sub --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

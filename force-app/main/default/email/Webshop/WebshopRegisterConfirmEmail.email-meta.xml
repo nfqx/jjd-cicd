@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>B2B Webshop: Register Confirm Email</name>
+    <relatedEntityType>Account</relatedEntityType>
+    <style>none</style>
+    <subject>Nur noch einen Klick bis zum Abschluss deiner Darboven-Registrierung</subject>
+    <textOnly>Liebe/r Geschäftspartner/in,
+
+du möchtest dich für unseren Außer-Haus Webshop von J.J.Darboven registrieren – vielen Dank für dein Interesse.
+
+Bitte klicke auf die folgende Schaltfläche, um deine Darboven-Registrierung abzuschließen:
+
+Ja, das ist meine E-Mail-Adresse.  &lt; placeholder &gt; 
+
+Wir schicken an deine E-Mail-Adresse einen Link für den Außer-Haus Webshop. Dies kann bis zu 24 Stunden dauern. Bitte überprüfe auch deinen Spam-Ordner.
+
+Bei Fragen stehen wir dir sehr gerne zur Verfügung unter ecommerce@darboven.com &lt; mailto:ecommerce@darboven.com &gt; .
+
+Mit freundlichen Grüßen,
+
+Ihre Ipek Göc
+
+und das Darboven Webshop-Team</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

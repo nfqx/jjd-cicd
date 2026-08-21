@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>true</sorted>
+    <standardValue>
+        <fullName>Appointment request</fullName>
+        <default>false</default>
+        <label>Appointment request</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Complex functionality</fullName>
+        <default>false</default>
+        <label>Complex functionality</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Existing problem</fullName>
+        <default>false</default>
+        <label>Existing problem</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Export inquiry</fullName>
+        <default>false</default>
+        <label>Export inquiry</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>General inquiry about the company</fullName>
+        <default>false</default>
+        <label>General inquiry about the company</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Instructions not clear</fullName>
+        <default>false</default>
+        <label>Instructions not clear</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Interest in the product range</fullName>
+        <default>false</default>
+        <label>Interest in the product range</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Machines</fullName>
+        <default>false</default>
+        <label>Machines</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>New problem</fullName>
+        <default>false</default>
+        <label>New problem</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Order</fullName>
+        <default>false</default>
+        <label>Order</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Press inquiry</fullName>
+        <default>false</default>
+        <label>Press inquiry</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Question about current order</fullName>
+        <default>false</default>
+        <label>Question about current order</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>User didn&apos;t attend training</fullName>
+        <default>false</default>
+        <label>User didn&apos;t attend training</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Vending</fullName>
+        <default>false</default>
+        <label>Vending</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+</StandardValueSet>

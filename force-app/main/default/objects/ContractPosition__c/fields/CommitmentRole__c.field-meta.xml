@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CommitmentRole__c</fullName>
+    <description>Direction of the commitment: Agreement = Darboven provides something (e.g. pays a refund/subsidy). Obligation = the customer commits (e.g. a purchase quantity). A position is always exactly one of the two. [Sources: MN-006 Z.2-20]</description>
+    <inlineHelpText>Direction of the commitment: Agreement = Darboven provides something (e.g. pays a refund/subsidy). Obligation = the customer commits (e.g. a purchase quantity). A position is always exactly one of the two.</inlineHelpText>
+    <label>Commitment Role</label>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Agreement</fullName>
+                <default>false</default>
+                <label>Agreement (Darboven provides)</label>
+            </value>
+            <value>
+                <fullName>Obligation</fullName>
+                <default>false</default>
+                <label>Obligation (customer commits)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

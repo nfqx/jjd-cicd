@@ -1,0 +1,71 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Redirecting",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"79ba9839-d8e6-4b15-99d0-387af4a952db\",\"columns\":[{\"UUID\":\"392c0ba7-2a28-4e1e-ad03-64cc3b38cb2d\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : { }
+              },
+              "definition" : "c:webshopRedirectingPage",
+              "id" : "c48021b5-b689-4a7b-8185-4aeaf3465dca",
+              "type" : "component"
+            } ],
+            "id" : "392c0ba7-2a28-4e1e-ad03-64cc3b38cb2d",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "79ba9839-d8e6-4b15-99d0-387af4a952db",
+          "type" : "component"
+        } ],
+        "id" : "0a155845-375d-4eb9-b157-1fd262fecaeb",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "dxpStyle" : { },
+            "pageTitle" : "Redirecting",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "4daf227b-be2e-49bd-b156-4bc9af1311ae",
+          "type" : "component"
+        } ],
+        "id" : "f159dee4-be1c-4092-b6a2-904c81942a1b",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "88a84efe-23a4-49d3-9462-626b5bc5085c",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-redirecting"
+  },
+  "urlName" : "redirecting"
+}

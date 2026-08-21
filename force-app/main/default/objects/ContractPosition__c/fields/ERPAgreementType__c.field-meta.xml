@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ERPAgreementType__c</fullName>
+    <description>The SAP agreement type under which ZKS creates the agreement in SAP — e.g. &apos;110, fixed debit-side&apos; for fixed-amount subsidies. [Sources: MN-003 Z.577, sap-research-notes.md]</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The SAP agreement type under which ZKS creates the agreement in SAP — e.g. &apos;110, fixed debit-side&apos; for fixed-amount subsidies.</inlineHelpText>
+    <label>ERP Agreement Type</label>
+    <length>4</length>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

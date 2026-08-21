@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DigitalExperienceConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>J.J. Darboven LWR Shop</label>
+    <site>
+        <urlPathPrefix>lwrshop</urlPathPrefix>
+    </site>
+    <space>site/J_J_Darboven_LWR_Shop1</space>
+</DigitalExperienceConfig>

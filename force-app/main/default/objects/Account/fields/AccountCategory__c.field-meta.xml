@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AccountCategory__c</fullName>
+    <inlineHelpText>Automatic mode target field. Set by the cascade or manually, never via the interface.</inlineHelpText>
+    <label>Account Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Central Regulator</fullName>
+                <default>false</default>
+                <label>Central Regulator</label>
+            </value>
+            <value>
+                <fullName>Direct Customer</fullName>
+                <default>false</default>
+                <label>Direct Customer</label>
+            </value>
+            <value>
+                <fullName>Association Member</fullName>
+                <default>false</default>
+                <label>Association Member</label>
+            </value>
+            <value>
+                <fullName>Department</fullName>
+                <default>false</default>
+                <label>Department</label>
+            </value>
+            <value>
+                <fullName>Unclassified</fullName>
+                <default>false</default>
+                <label>Unclassified</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

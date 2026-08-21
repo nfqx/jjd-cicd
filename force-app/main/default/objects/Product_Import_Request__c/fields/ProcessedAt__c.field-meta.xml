@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProcessedAt__c</fullName>
+    <description>When the record reached a terminal status (Done or Failed). Drives the retention sweep in ProductVariationBatch.finish (Done kept 7 days, Failed kept 30 days).</description>
+    <label>Processed At</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

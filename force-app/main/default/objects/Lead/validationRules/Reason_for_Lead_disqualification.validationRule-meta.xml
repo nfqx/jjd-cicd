@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Lead_disqualification</fullName>
+    <active>false</active>
+    <description>Requires reason selection or text description for disqualified leads.</description>
+    <errorConditionFormula>OR(AND(ISPICKVAL(Status, &quot;Disqualified&quot;), 
+							ISPICKVAL(DisqualificationReason__c,&quot;&quot;)), 
+			AND(ISPICKVAL(Status, &quot;Disqualified&quot;), 
+       ISPICKVAL(DisqualificationReason__c, &quot;Others&quot;), 
+       ISBLANK(DisqualificationReasonText__c)))</errorConditionFormula>
+    <errorDisplayField>DisqualificationReason__c</errorDisplayField>
+    <errorMessage>Please select or describe the reason why the Lead is disqualified.</errorMessage>
+</ValidationRule>

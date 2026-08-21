@@ -1,0 +1,36 @@
+<template>
+    <div if:true={isLoading}>
+        <lightning-spinner variant="base" size="medium"></lightning-spinner>
+    </div>
+    <div class="slds-m-top_medium slds-m-bottom_x-large">
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-layout>
+                <lightning-layout-item size="8" class="slds-text-align_right">
+                    <lightning-input type="toggle" variant="label-stacked" message-toggle-inactive={label.accountTreeActiveInactiveAccs} message-toggle-active={label.accountTreeOnlyActiveAccs} value={onlyActiveAccToggleVal} onchange={changeOnlyActiveAccToggle} checked></lightning-input>                
+                </lightning-layout-item>
+                <lightning-layout-item size="2">
+                    <!--lightning-input type="toggle" variant="label-stacked" message-toggle-inactive={label.accountTreeEverybodysAccs} message-toggle-active={label.accountTreeOnlyMyAccs} value={onlyMyAccToggleVal} onchange={changeOnlyMyAccToggle}></lightning-input-->
+                </lightning-layout-item>
+                <lightning-layout-item size="2" class="slds-text-align_right">
+                    <lightning-button label={_expandAll} onclick={handleExpandAll}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+            <template if:true={hasData}>
+                <c-custom-tree-grid
+                        columns={gridColumns}
+                        data={gridData}
+                        key-field="id"
+                        onrowselection={handleSelectRow}
+                        onrowaction={handleRowAction}
+                        expanded-rows={currentExpanded}
+                        min-column-width=100
+                        hide-checkbox-column
+                        onrightschange={handleRightsChange}
+                ></c-custom-tree-grid>
+            </template>
+            <template if:true={showSave}>
+                Cancel - <span onclick={handleSaveChanges}>Save</span>
+            </template>
+        </div>
+    </div>
+</template>

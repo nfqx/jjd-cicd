@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Regulator Reference. Incoming references designate the target as the central regulator (Switch 2). --></help>
+    <label><!-- Central Regulator --></label>
+    <name>CentralRegulator__c</name>
+    <relationshipLabel><!-- Accounts (Central Regulator) --></relationshipLabel>
+</CustomFieldTranslation>

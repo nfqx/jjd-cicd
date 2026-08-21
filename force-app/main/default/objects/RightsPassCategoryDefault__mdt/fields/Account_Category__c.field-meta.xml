@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Category__c</fullName>
+    <description>wie die Account-Picklist, mit Leerzeichen
+Central Regulator
+Direct Customer
+Association Member
+Department</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Category of the frame — must match the Account picklist character by character.</inlineHelpText>
+    <label>Account Category</label>
+    <length>40</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

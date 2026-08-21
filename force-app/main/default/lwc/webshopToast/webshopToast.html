@@ -1,0 +1,15 @@
+<template>
+    <template if:true={_show}>
+        <div class="slds-notify_container" style="position: fixed !important;">
+        <div class={toastStyle} role="status">
+          <span class="slds-icon_container slds-icon-utility-error slds-m-right_small slds-no-flex slds-align-top" >
+            <lightning-icon icon-name="utility:error"></lightning-icon>
+          </span>
+          <div class="slds-notify__content">
+            <h2 class="slds-text-heading_small">{_toast.title}</h2>
+            <p>{_toast.message}</p>
+          </div>
+        </div>
+      </div>
+    </template>
+</template>

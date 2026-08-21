@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>UN22</fullName>
+        <default>true</default>
+        <label>Gastronomie</label>
+    </customValue>
+    <customValue>
+        <fullName>01</fullName>
+        <default>false</default>
+        <label>Verkaufsbüro Süd</label>
+    </customValue>
+    <customValue>
+        <fullName>UN12</fullName>
+        <default>false</default>
+        <label>Handel Inland</label>
+    </customValue>
+    <customValue>
+        <fullName>UN37</fullName>
+        <default>false</default>
+        <label>Burkhof-Kunden</label>
+    </customValue>
+    <customValue>
+        <fullName>UN40</fullName>
+        <default>false</default>
+        <label>Konzern Inland</label>
+    </customValue>
+    <customValue>
+        <fullName>UN18</fullName>
+        <default>false</default>
+        <label>Bäckergeschäft</label>
+    </customValue>
+    <customValue>
+        <fullName>UN20</fullName>
+        <default>false</default>
+        <label>Vending</label>
+    </customValue>
+    <customValue>
+        <fullName>UN27</fullName>
+        <default>false</default>
+        <label>Gemeinschaftsverpfl.</label>
+    </customValue>
+    <customValue>
+        <fullName>UN29</fullName>
+        <default>false</default>
+        <label>Zentralkunden AHS</label>
+    </customValue>
+    <customValue>
+        <fullName>UN30</fullName>
+        <default>false</default>
+        <label>Servicebereiche AHS</label>
+    </customValue>
+    <customValue>
+        <fullName>UN13</fullName>
+        <default>false</default>
+        <label>Export</label>
+    </customValue>
+    <customValue>
+        <fullName>UN16</fullName>
+        <default>false</default>
+        <label>Handelsmarken</label>
+    </customValue>
+    <customValue>
+        <fullName>UN15</fullName>
+        <default>false</default>
+        <label>Konzern Ausland</label>
+    </customValue>
+    <customValue>
+        <fullName>UN62</fullName>
+        <default>false</default>
+        <label>Lohnproduktion Kaffee</label>
+    </customValue>
+    <customValue>
+        <fullName>UN50</fullName>
+        <default>false</default>
+        <label>Rohkaffee-Handel</label>
+    </customValue>
+    <customValue>
+        <fullName>UN66</fullName>
+        <default>false</default>
+        <label>Marketing JJD</label>
+    </customValue>
+    <customValue>
+        <fullName>UN77</fullName>
+        <default>false</default>
+        <label>Servicebereiche</label>
+    </customValue>
+    <customValue>
+        <fullName>UN14</fullName>
+        <default>false</default>
+        <label>Ärztedienst</label>
+    </customValue>
+    <customValue>
+        <fullName>1010</fullName>
+        <default>false</default>
+        <label>Dennis Schulz</label>
+    </customValue>
+    <customValue>
+        <fullName>1020</fullName>
+        <default>false</default>
+        <label>Christian Cron</label>
+    </customValue>
+    <customValue>
+        <fullName>1030</fullName>
+        <default>false</default>
+        <label>Lars Johansson</label>
+    </customValue>
+    <customValue>
+        <fullName>1040</fullName>
+        <default>false</default>
+        <label>Dennis Schulz 2</label>
+    </customValue>
+    <customValue>
+        <fullName>1050</fullName>
+        <default>false</default>
+        <label>Andreas Warmuth</label>
+    </customValue>
+    <customValue>
+        <fullName>2010</fullName>
+        <default>false</default>
+        <label>Karsten Schulze</label>
+    </customValue>
+    <customValue>
+        <fullName>2015</fullName>
+        <default>false</default>
+        <label>Karen Thestorff</label>
+    </customValue>
+    <customValue>
+        <fullName>2020</fullName>
+        <default>false</default>
+        <label>Thomas Schröder</label>
+    </customValue>
+    <customValue>
+        <fullName>2025</fullName>
+        <default>false</default>
+        <label>Christian Mitzler</label>
+    </customValue>
+    <customValue>
+        <fullName>2030</fullName>
+        <default>false</default>
+        <label>Andreas Weiß 2030</label>
+    </customValue>
+    <customValue>
+        <fullName>2035</fullName>
+        <default>false</default>
+        <label>Nils Stoevesand</label>
+    </customValue>
+    <customValue>
+        <fullName>2040</fullName>
+        <default>false</default>
+        <label>Andreas Weiß 2040</label>
+    </customValue>
+    <customValue>
+        <fullName>2045</fullName>
+        <default>false</default>
+        <label>Jan Schummann</label>
+    </customValue>
+    <customValue>
+        <fullName>2050</fullName>
+        <default>false</default>
+        <label>N.N. 2050</label>
+    </customValue>
+    <customValue>
+        <fullName>2055</fullName>
+        <default>false</default>
+        <label>N.N. 2055</label>
+    </customValue>
+    <customValue>
+        <fullName>3010</fullName>
+        <default>false</default>
+        <label>Wolfgang Gütt 3010</label>
+    </customValue>
+    <customValue>
+        <fullName>3020</fullName>
+        <default>false</default>
+        <label>Wolfgang Gütt 3020</label>
+    </customValue>
+    <customValue>
+        <fullName>3030</fullName>
+        <default>false</default>
+        <label>Wolfgang Gütt 3030</label>
+    </customValue>
+    <customValue>
+        <fullName>3040</fullName>
+        <default>false</default>
+        <label>Daniel Vogler</label>
+    </customValue>
+    <customValue>
+        <fullName>4010</fullName>
+        <default>false</default>
+        <label>VUN Polen</label>
+    </customValue>
+    <customValue>
+        <fullName>4020</fullName>
+        <default>false</default>
+        <label>VUN Tschechien</label>
+    </customValue>
+    <customValue>
+        <fullName>4030</fullName>
+        <default>false</default>
+        <label>VUN Österreich</label>
+    </customValue>
+    <customValue>
+        <fullName>4040</fullName>
+        <default>false</default>
+        <label>VUN Niederlande</label>
+    </customValue>
+    <customValue>
+        <fullName>4050</fullName>
+        <default>false</default>
+        <label>VUN Frankreich</label>
+    </customValue>
+    <customValue>
+        <fullName>4060</fullName>
+        <default>false</default>
+        <label>VUN UK</label>
+    </customValue>
+    <customValue>
+        <fullName>4070</fullName>
+        <default>false</default>
+        <label>VUN IOCS</label>
+    </customValue>
+    <customValue>
+        <fullName>4080</fullName>
+        <default>false</default>
+        <label>VUN Irland</label>
+    </customValue>
+    <customValue>
+        <fullName>4090</fullName>
+        <default>false</default>
+        <label>VUN Gourvita</label>
+    </customValue>
+    <customValue>
+        <fullName>7010</fullName>
+        <default>false</default>
+        <label>MK Veranstaltung all</label>
+    </customValue>
+    <customValue>
+        <fullName>7050</fullName>
+        <default>false</default>
+        <label>MK Veranstaltung AHS</label>
+    </customValue>
+    <customValue>
+        <fullName>8010</fullName>
+        <default>false</default>
+        <label>HR</label>
+    </customValue>
+    <customValue>
+        <fullName>3050</fullName>
+        <default>false</default>
+        <label>3050</label>
+    </customValue>
+    <customValue>
+        <fullName>7020</fullName>
+        <default>false</default>
+        <label>7020</label>
+    </customValue>
+    <masterLabel>Sales Office</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

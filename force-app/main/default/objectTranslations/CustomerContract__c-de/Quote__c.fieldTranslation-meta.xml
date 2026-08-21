@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Verweis auf das PuK-Angebot, aus dem dieser Vertrag entstanden ist — damit nachvollziehbar bleibt, was verhandelt wurde und welche Simulation zugrunde lag.</help>
+    <label>Ursprungs-Angebot (PuK)</label>
+    <name>Quote__c</name>
+    <relationshipLabel><!-- Customer Contracts --></relationshipLabel>
+</CustomFieldTranslation>

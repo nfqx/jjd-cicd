@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FeaturedAd__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The related Featured Ad. CRM-1091, recommended for second level mega menu items.</description>
+    <label>Featured Ad</label>
+    <referenceTo>WebshopFeaturedAd__c</referenceTo>
+    <relationshipLabel>Mega Menu Items (Featured Ad)</relationshipLabel>
+    <relationshipName>MegaMenuItems</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

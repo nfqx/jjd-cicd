@@ -1,0 +1,110 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <div class="d-flex justify-content-center align-items-center">
+        <div if:true={isLoading}  class="spinner-border text-black-50" role="status"></div>
+    </div>
+    <template if:false={isLoading}>
+        <template if:true={hasCartData}>
+            <template if:false={hideProducts}>
+                <template for:each={cartData} for:item="cartItem">
+                    <template if:false={cartItem.isRemoved}>
+                        <div class="row d-flex justify-content-between border-bottom py-3" key={cartItem.cartItem.Id}>
+                            <!--lightning-spinner if:true={isLoadingInner} alternative-text="Loading" size="small"></lightning-spinner-->
+                            <div class="col-4 col-md-2">
+                                <div if:true={cartItem.hasImage}><img src={cartItem.imageUrl} class="cart-product-image cursor-pointer" alt={cartItem.cartItem.Product2.Name} data-productid={cartItem.cartItem.Product2Id} onclick={handleNavigateToProduct}></div>
+                            </div>
+                            <div class="col-8 col-md-4">
+                                <p class="body-medium mb-1 cursor-pointer hover-underline" data-productid={cartItem.cartItem.Product2Id} onclick={handleNavigateToProduct}>{cartItem.cartItem.Product2.Name}</p>
+                                <p class="body-small gray-700">{cartItem.cartItem.Product2.PackageUnit__c}</p>
+                            </div>
+                            <div if:false={isLoadingInner} class="col-8 col-md-4">
+                                <div class="d-flex justify-content-md-center justify-content-between align-items-center p-0" if:false={hideInputs}>
+                                    <div class="d-inline-flex input-group-sm"> 
+                                        <div class="input-group-prepend align-items-center justify-content-center">
+                                            <template if:false={cartItem.freeItem}>
+                                                <lightning-combobox options={cartItem.quantityOptions} data-productid={cartItem.cartItem.Product2Id} value={cartItem.cartItem.Quantity} onchange={handleChangeQuantity}></lightning-combobox>
+                                            </template>
+                                            <template if:true={cartItem.freeItem}>
+                                                {cartItem.cartItem.Quantity}
+                                            </template>
+                                                <!--button data-productid={cartItem.cartItem.Product2Id} class="btn border border-secondary btn-light rounded-start input-btn" onclick={handleDecrement}>-</button>
+                                            </div>
+                                            <input type="number" data-productid={cartItem.cartItem.Product2Id} class="form-control text-center quantity-input rounded-0" value={cartItem.cartItem.Quantity} onchange={handleChangeQuantity}>
+                                            <div class="input-group-append align-items-center">
+                                            <button data-productid={cartItem.cartItem.Product2Id} class="btn border border-secondary btn-light rounded-end input-btn" onclick={handleIncrement}>+</button-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Loading Inner Spinner-->
+                            <div if:true={isLoadingInner}  class="spinner-border text-black-50" role="status"></div>
+                            <div if:false={isLoadingInner} class="col-4 col-md-2 d-flex flex-column justify-content-between align-items-end">
+                                <p class="components-badge-h3" if:true={showPrices}>
+                                    <template if:true={cartItem.cartItem.hasPromotion}>
+                                        <template if:false={cartItem.freeItem}>
+                                            <span style="text-decoration: line-through; font-size: 0.8rem;">{cartItem.cartItem.TotalLineAmount}&nbsp;{cartItem.cartItem.CurrencyIsoCode}</span>&nbsp;{cartItem.cartItem.TotalAmount}&nbsp;{cartItem.cartItem.CurrencyIsoCode}
+                                            <br /><span style="text-align: right; font-size: 0.8rem;">({cartItem.cartItem.TotalPromoAdjustmentAmount}&nbsp;{cartItem.cartItem.CurrencyIsoCode})</span>
+                                        </template>
+                                        <template if:true={cartItem.freeItem}>
+                                            <span>{label.free}</span>
+                                        </template>
+                                    </template>
+                                    <template if:false={cartItem.cartItem.hasPromotion}>
+                                        <template if:false={cartItem.freeItem}>
+                                            {cartItem.cartItem.TotalAmount}&nbsp;{cartItem.cartItem.CurrencyIsoCode}
+                                        </template>
+                                        <template if:true={cartItem.freeItem}>
+                                            <span>{label.free}</span>
+                                        </template>
+                                    </template>
+                                </p>
+                                <div class="d-flex mt-auto gap-1">
+                                    <template if:false={hideInputs}>
+                                        <template if:false={cartItem.freeItem}> 
+                                            <!-- Not in Wishlist -->
+                                            <button class="cart-wishlist btn btn-link p-0 text-decoration-none text-dark" data-productid={cartItem.cartItem.Product2Id} if:false={cartItem.inWishlist} onclick={addProductToWishlist}>
+                                                <i class="bi bi-heart"></i>
+                                                <i class="bi bi-heart-fill"></i>
+                                            </button>
+                                            <!-- In Wishlist -->
+                                            <button class="cart-wishlist-added btn btn-link p-0 text-decoration-none text-dark" if:true={cartItem.inWishlist}  data-productid={cartItem.cartItem.Product2Id} onclick={removeFromWishlist}>
+                                                <!--i class="bi bi-heart"></i-->
+                                                <i class="bi bi-heart-fill"></i>
+                                            </button>
+                                        </template>
+                                        <template if:false={cartItem.hideDeleteIcon}> 
+                                            <button class="btn btn-link p-0 text-decoration-none text-dark" data-productid={cartItem.cartItem.Product2Id} onclick={removeItemFromCart}>
+                                                <i class="bi bi-trash3"></i>
+                                            </button>
+                                        </template>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+            </template>
+            <template if:true={showPrices}>
+                <p class="d-flex justify-content-between body-regular mt-2" if:true={showSubtotal}><span>{label.subtotal}</span><span>{subtotalLine}</span></p>
+                <p class="d-flex justify-content-between body-regular mt-2" if:true={showPromotions}><span>{label.promotions}</span><span>{subtotalPromo}</span></p>
+                <!--p class="d-flex justify-content-between body-regular" if:true={showShipping}><span>{label.shipping}</span><span>{shipping}</span></p-->
+                <div class="border-top">
+                    <p class="d-flex justify-content-between components-badge-h2 pt-3" if:true={showTotal}><span>{label.total}</span><span>{total}</span></p>
+                </div>
+            </template>
+            <template if:true={showShippingText}>
+                <template if:true={hasCartData}>
+                    <button class="btn btn-lg btn-primary mt-3" onclick={handleGoToCheckout}>{label.checkout}</button>
+                </template>
+
+            </template>
+        </template>
+        <template if:false={hideProducts}>
+            <template if:true={showEmptyCartMessage}>
+                <template if:false={hasCartData}>
+                    <p class="body-regular">{label.emptyCart}</p>
+                </template>
+            </template>
+        </template>
+    </template>
+</template>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <quickActions>
+        <label><!-- Continue Configuration --></label>
+        <name>ContinueConfiguration</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Generate Quote Document --></label>
+        <name>GenerateQuoteDocument</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Quote accepted overwrite --></label>
+        <name>Quote_accepted_overwrite</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Quote rejected overwrite --></label>
+        <name>Quote_rejected_overwrite</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Ratenkaufvertrag Erstellen --></label>
+        <name>Ratenkaufvertrag_Erstellen</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- SendEmail --></label>
+        <name>SendEmail</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Submit for Approval --></label>
+        <name>SubmitForApproval</name>
+    </quickActions>
+    <validationRules>
+        <errorMessage><!-- An accepted quote cannot be reverted! --></errorMessage>
+        <name>StatusAccepted_ChangeBack</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A rejected quote cannot be reverted! --></errorMessage>
+        <name>StatusRejected_ChangeBack</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Base discount for hot chocolate must be between 0% and 100%. --></errorMessage>
+        <name>V2_Base_Discount_Cocoa_Range</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Base discount for coffee must be between 0% and 100%. --></errorMessage>
+        <name>V2_Base_Discount_Coffee_Range</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Base discount for miscellaneous items must be between 0% and 100%. --></errorMessage>
+        <name>V2_Base_Discount_Other_Range</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Base discount for tea must be between 0% and 100%. --></errorMessage>
+        <name>V2_Base_Discount_Tea_Range</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cash discount must be between 0% and 10%. --></errorMessage>
+        <name>V2_CashDiscount_Range</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Index discount must be between 0% and 100%. --></errorMessage>
+        <name>V2_Index_Discount_Range</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Hot chocolate target volume in kg cannot be negative. --></errorMessage>
+        <name>V2_Volume_Cocoa_NonNegative</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Coffee target volume in kg cannot be negative. --></errorMessage>
+        <name>V2_Volume_Coffee_NonNegative</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Target volume for miscellaneous items cannot be negative. --></errorMessage>
+        <name>V2_Volume_Other_NonNegative</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Tea target volume cannot be negative. --></errorMessage>
+        <name>V2_Volume_Tea_NonNegative</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- BacktotheSalesOpportunity --></label>
+        <name>BacktotheSalesOpportunity</name>
+    </webLinks>
+</CustomObjectTranslation>

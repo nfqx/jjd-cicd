@@ -1,0 +1,20 @@
+<template>
+    <div class="container">
+        <div class="breadcrumbs">
+            <a class="link" onclick={handleClickHome}>{label.home}</a> / {label.myBrands} 
+        </div>
+        <p class="heading-1 my-3">{label.myBrands}</p>
+        <div class="row">
+            <template for:each={myBrands} for:item="brand">
+                <div key={brand.Id} class="col-12 col-sm-3 col-lg-4">
+                    <div key={brand.Id} class="my-brand">
+                        <lightning-formatted-rich-text value={brand.BrandLogo__c}></lightning-formatted-rich-text>
+                        <div if:false={brand.BrandLogo__c} class="no-brand-image"></div>
+                        <p class="heading-3 my-2">{brand.Name}</p>
+                        <p class="link" data-id={brand.Id} onclick={handleClickViewAll}>{label.viewAllProducts}&nbsp;<i class="bi bi-chevron-right link"></i></p>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

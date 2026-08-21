@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Unter welchem Etikett der WKZ vereinbart wurde — Frühzeichner-Bonus, Marketingzuschuss oder regulär. Fachlich ist alles dasselbe: ein Fixbetrag an den Kunden, damit er Darboven-Produkte bewirbt.</help>
+    <label>WKZ-Art</label>
+    <name>SubsidyType__c</name>
+    <picklistValues>
+        <masterLabel>Early Bird</masterLabel>
+        <translation>Frühzeichner</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Marketing Subsidy</masterLabel>
+        <translation>Marketingzuschuss</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Regular</masterLabel>
+        <translation>Regulär</translation>
+    </picklistValues>
+</CustomFieldTranslation>

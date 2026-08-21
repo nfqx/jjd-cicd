@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CaseStatus__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+OR(
+ISPICKVAL(Status, &apos;New&apos;),
+ISPICKVAL(Status, &apos;Open&apos;),
+ISPICKVAL(Status, &apos;Waiting on internal&apos;),
+ISPICKVAL(Status, &apos;In Progress&apos;),
+ISPICKVAL(Status, &apos;Closed&apos;),
+ISPICKVAL(Status, &apos;Waiting on Customer&apos;)
+),
+IMAGE(
+CASE(Status,
+&apos;New&apos;, &apos;https://iconssfdc.s3.eu-central-1.amazonaws.com/status-new.png&apos;,
+&apos;Open&apos;, &apos;https://iconssfdc.s3.eu-central-1.amazonaws.com/status-open.png&apos;,
+&apos;Waiting on Customer&apos;, &apos;https://iconssfdc.s3.eu-central-1.amazonaws.com/status-pending.png&apos;,
+&apos;Waiting on internal&apos;, &apos;https://iconssfdc.s3.eu-central-1.amazonaws.com/status-escalated.png&apos;,
+&apos;In Progress&apos;, &apos;https://iconssfdc.s3.eu-central-1.amazonaws.com/status-pending.png&apos;,
+&apos;Closed&apos;, &apos;https://iconssfdc.s3.eu-central-1.amazonaws.com/status-closed.png&apos;,
+&apos;&apos;
+),
+&apos;&apos;, 22, 22
+)
++ &apos; &apos; +
+CASE(
+$User.LanguageLocaleKey,
+&apos;fr&apos;,
+CASE(Status,
+&apos;New&apos;, &apos;Nouveau&apos;,
+&apos;Open&apos;, &apos;Ouvert&apos;,
+&apos;Waiting on internal&apos;, &apos;En attente interne&apos;,
+&apos;On Hold&apos;, &apos;En attente&apos;,
+&apos;In Progress&apos;, &apos;En cours&apos;,
+&apos;Closed&apos;, &apos;Fermé&apos;,
+&apos;Waiting on Customer&apos;, &apos;En attente du client&apos;,
+Text(Status)
+),
+&apos;de&apos;,
+CASE(Status,
+&apos;New&apos;, &apos;Neu&apos;,
+&apos;Open&apos;, &apos;Offen&apos;,
+&apos;Waiting on internal&apos;, &apos;Warten auf Intern&apos;,
+&apos;On Hold&apos;, &apos;In Wartestellung&apos;,
+&apos;In Progress&apos;, &apos;in Bearbeitung&apos;,
+&apos;Closed&apos;, &apos;Abgeschlossen&apos;,
+&apos;Waiting on Customer&apos;, &apos;Warten auf Kunden&apos;,
+Text(Status)
+),
+Text(Status)
+),
+Text(Status)
+)
+
+/*
+IF(
+OR(
+ISPICKVAL(Status, &apos;New&apos;)
+,ISPICKVAL(Status, &apos;Open&apos;)
+,ISPICKVAL(Status, &apos;On Hold&apos;)
+,ISPICKVAL(Status, &apos;In Progress&apos;)
+,ISPICKVAL(Status, &apos;Closed&apos;)
+,ISPICKVAL(Status, &apos;Waiting on Customer&apos;)
+),
+IMAGE(
+CASE(Status ,
+&apos;New&apos;,&apos;https://iconssfdc.s3.eu-central-1.amazonaws.com/status-new.png&apos;,
+&apos;Open&apos;,&apos;https://iconssfdc.s3.eu-central-1.amazonaws.com/status-open.png&apos;,
+&apos;Waiting on Customer&apos;,&apos;https://iconssfdc.s3.eu-central-1.amazonaws.com/status-pending.png&apos;,
+&apos;On Hold&apos;,&apos;https://iconssfdc.s3.eu-central-1.amazonaws.com/status-escalated.png&apos;,
+&apos;In Progress&apos;,&apos;https://iconssfdc.s3.eu-central-1.amazonaws.com/status-pending.png&apos;,
+&apos;Closed&apos;,&apos;https://iconssfdc.s3.eu-central-1.amazonaws.com/status-closed.png&apos;,
+&apos;&apos;)
+,&apos;&apos;,22,22)
++ &apos; &apos; + Text(Status)
+, Text(Status))
+*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Case Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

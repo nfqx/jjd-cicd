@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Brands Detail",
+  "contentBody" : {
+    "activeViewId" : "Brands_Detail",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "detail-WebshopBrand__c",
+    "urlPrefix" : "webshopbrand"
+  },
+  "urlName" : "brands-detail"
+}

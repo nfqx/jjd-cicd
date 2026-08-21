@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "My Settings",
+  "contentBody" : {
+    "activeViewId" : "My_Account_Settings",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-my-account-settings",
+    "urlPrefix" : "my-account-settings"
+  },
+  "urlName" : "my-settings"
+}

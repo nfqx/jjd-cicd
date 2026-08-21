@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Richtung der Zusage: Vereinbarung = Darboven leistet etwas (z. B. zahlt RV/WKZ). Verpflichtung = der Kunde sagt etwas zu (z. B. Abnahmemenge). Eine Position ist immer genau eines von beidem.</help>
+    <label>Vereinbarung / Verpflichtung</label>
+    <name>CommitmentRole__c</name>
+    <picklistValues>
+        <masterLabel>Agreement (Darboven provides)</masterLabel>
+        <translation>Vereinbarung (Darboven leistet)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Obligation (customer commits)</masterLabel>
+        <translation>Verpflichtung (Kunde committet)</translation>
+    </picklistValues>
+</CustomFieldTranslation>

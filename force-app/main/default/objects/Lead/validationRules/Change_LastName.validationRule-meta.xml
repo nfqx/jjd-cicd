@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Change_LastName</fullName>
+    <active>false</active>
+    <description>Enforces replacing dummy last name before converting lead.</description>
+    <errorConditionFormula>AND(ISCHANGED(Status), 
+				ISPICKVAL(PRIORVALUE(Status), &quot;in Sales Qualification&quot;), 
+				ISPICKVAL(Status, &quot;Converted&quot;), 
+				UPPER(TRIM(LastName)) = &quot;Please keep your contact details up to date.&quot;)</errorConditionFormula>
+    <errorMessage>Please edit the contact information and enter a valid First and Last Name!</errorMessage>
+</ValidationRule>

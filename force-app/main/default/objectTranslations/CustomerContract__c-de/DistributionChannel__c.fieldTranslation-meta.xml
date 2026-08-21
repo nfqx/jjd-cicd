@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- SAP distribution channel of the contract. 20 = out-of-home service (AHS). The full value meanings are being clarified with SAP. --></help>
+    <label>Vertriebsweg</label>
+    <name>DistributionChannel__c</name>
+</CustomFieldTranslation>

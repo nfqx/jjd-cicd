@@ -1,0 +1,46 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Cart",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "id" : "27fc9a7d-6e32-41b3-8d5f-d80f934ecab8",
+        "attributes" : {
+          "dxpStyle" : {
+            "padding" : {
+              "bottom" : "0px",
+              "left" : "0px",
+              "right" : "0px",
+              "top" : "0px"
+            },
+            "margin" : {
+              "top" : "0px",
+              "right" : "15px",
+              "bottom" : "0px",
+              "left" : "15px"
+            }
+          }
+        }
+      }, {
+        "id" : "fd33d666-5a9d-4ed7-a658-6e88a65eff8d",
+        "attributes" : {
+          "dxpStyle" : {
+            "padding" : {
+              "bottom" : "0px",
+              "left" : "0px",
+              "right" : "0px",
+              "top" : "0px"
+            },
+            "margin" : {
+              "top" : "0px",
+              "right" : "15px",
+              "bottom" : "0px",
+              "left" : "15px"
+            }
+          }
+        }
+      } ]
+    }
+  },
+  "urlName" : "cart"
+}

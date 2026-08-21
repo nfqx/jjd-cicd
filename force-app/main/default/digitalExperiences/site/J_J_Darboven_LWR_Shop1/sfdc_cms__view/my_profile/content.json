@@ -1,0 +1,132 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "My Profile",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"dddcb991-7cc4-4289-9f7d-8337cadc322f\",\"columns\":[{\"UUID\":\"1bf09106-fa68-49f9-a703-00ce527706d8\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "backgroundColor" : "",
+                "dxpStyle" : { },
+                "isLinkable" : false,
+                "linkAssistiveText" : "",
+                "paddingHorizontal" : "none",
+                "paddingVertical" : "none",
+                "text" : "My Profile",
+                "textAlign" : "left",
+                "textDecoration" : "{\"bold\": false}",
+                "textDisplayInfo" : "{\"textStyle\": \"heading-large\", \"headingTag\": \"h2\"}"
+              },
+              "definition" : "dxp_base:textBlock",
+              "id" : "68aa4827-eb41-48be-a51a-652c0424cd52",
+              "type" : "component"
+            } ],
+            "id" : "1bf09106-fa68-49f9-a703-00ce527706d8",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "dddcb991-7cc4-4289-9f7d-8337cadc322f",
+          "type" : "component"
+        }, {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"014f68d1-729c-4362-9809-be2d97397332\",\"columns\":[{\"UUID\":\"8f463262-600a-45f8-a8ae-591b11865868\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"09034b88-4b3b-4995-b850-634486f6b554\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":null}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : { },
+                "emailLabel" : "Email",
+                "firstNameLabel" : "First Name",
+                "lastNameLabel" : "Last Name",
+                "phoneNumberLabel" : "Phone Number",
+                "requiredPhoneNumber" : true,
+                "showPhoneNumber" : true
+              },
+              "definition" : "commerce_builder:myAccountProfile",
+              "id" : "342ed6af-871f-493b-a150-5acea3c3554a",
+              "type" : "component"
+            } ],
+            "id" : "8f463262-600a-45f8-a8ae-591b11865868",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          }, {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : { }
+              },
+              "definition" : "commerce_builder:myAccountPassword",
+              "id" : "b180c588-4b75-4aac-a142-a7c2ff1fe34f",
+              "type" : "component"
+            } ],
+            "id" : "09034b88-4b3b-4995-b850-634486f6b554",
+            "name" : "col2",
+            "title" : "Column 2",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "014f68d1-729c-4362-9809-be2d97397332",
+          "type" : "component"
+        } ],
+        "id" : "40320bb4-e2dd-4eca-8589-bfc4eca1b67f",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "dxpStyle" : { },
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "79c692a4-885d-483a-bafb-6186f335fb56",
+          "type" : "component"
+        } ],
+        "id" : "85417219-4a77-4132-8f35-13fcbebdb6d0",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "c31b9e29-c214-4ee6-9820-ee9f0c66c88c",
+      "type" : "component"
+    },
+    "dataProviders" : [ {
+      "definition" : "sfdc_cms__commerceMyProfileDataProvider",
+      "sfdcExpressionKey" : "MyProfile",
+      "attributes" : { }
+    } ],
+    "themeLayoutType" : "MyAccount",
+    "viewType" : "my-profile"
+  },
+  "urlName" : "my-profile"
+}

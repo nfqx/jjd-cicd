@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ReturnReason__c</fullName>
+    <label>Return Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>R01</fullName>
+                <default>false</default>
+                <label>RE Annahmeverweigerung</label>
+            </value>
+            <value>
+                <fullName>R02</fullName>
+                <default>false</default>
+                <label>RE Annahmeverweigerung Nachlieferung</label>
+            </value>
+            <value>
+                <fullName>R03</fullName>
+                <default>false</default>
+                <label>RE Annahmeverweigerung Ladungsträger</label>
+            </value>
+            <value>
+                <fullName>R04</fullName>
+                <default>false</default>
+                <label>RE Beschädigung</label>
+            </value>
+            <value>
+                <fullName>R05</fullName>
+                <default>false</default>
+                <label>RE Verladefehler Paketdienst</label>
+            </value>
+            <value>
+                <fullName>R06</fullName>
+                <default>false</default>
+                <label>RE Empfänger unbekannt</label>
+            </value>
+            <value>
+                <fullName>R07</fullName>
+                <default>false</default>
+                <label>RE Falschanlieferung</label>
+            </value>
+            <value>
+                <fullName>R08</fullName>
+                <default>false</default>
+                <label>RE Falsche Bestellung Kunde</label>
+            </value>
+            <value>
+                <fullName>R09</fullName>
+                <default>false</default>
+                <label>RE Falsche Eingabe JJD</label>
+            </value>
+            <value>
+                <fullName>R10</fullName>
+                <default>false</default>
+                <label>RE Falsche Verladung JJD</label>
+            </value>
+            <value>
+                <fullName>R11</fullName>
+                <default>false</default>
+                <label>RE Bestellfehler GL</label>
+            </value>
+            <value>
+                <fullName>R12</fullName>
+                <default>false</default>
+                <label>RE Kunde nicht angetroffen</label>
+            </value>
+            <value>
+                <fullName>R13</fullName>
+                <default>false</default>
+                <label>RE Luftzieher</label>
+            </value>
+            <value>
+                <fullName>R14</fullName>
+                <default>false</default>
+                <label>RE MHD</label>
+            </value>
+            <value>
+                <fullName>R15</fullName>
+                <default>false</default>
+                <label>RE Nicht aus Filiale abgeholt</label>
+            </value>
+            <value>
+                <fullName>R16</fullName>
+                <default>false</default>
+                <label>RE Packfehler</label>
+            </value>
+            <value>
+                <fullName>R17</fullName>
+                <default>false</default>
+                <label>RE Etikettierfehler</label>
+            </value>
+            <value>
+                <fullName>R18</fullName>
+                <default>false</default>
+                <label>RE Qualitätsmängel</label>
+            </value>
+            <value>
+                <fullName>R19</fullName>
+                <default>false</default>
+                <label>RE Retoure intern</label>
+            </value>
+            <value>
+                <fullName>R20</fullName>
+                <default>false</default>
+                <label>RE Rückgabe Kundenwunsch</label>
+            </value>
+            <value>
+                <fullName>R21</fullName>
+                <default>false</default>
+                <label>RE Sortenwechsel Kunde</label>
+            </value>
+            <value>
+                <fullName>R22</fullName>
+                <default>false</default>
+                <label>RE Veranstaltung</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

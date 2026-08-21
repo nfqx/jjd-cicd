@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>not_discountable__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>if checked, the product is excluded from all discounts and therefore discount/calculations</inlineHelpText>
+    <label>not discountable</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

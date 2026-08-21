@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Rebate Right Capped By --></label>
+    <name>RebateRightCappedBy__c</name>
+    <relationshipLabel><!-- Account Conditions (Rebate Right Capped By) --></relationshipLabel>
+</CustomFieldTranslation>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PartyType__c</fullName>
+    <description>Which kind of party this causation row carries: customer (whole hierarchy counts), object (only this single business partner), publisher (available in SAP, not maintained per docs) or supplier (not relevant per docs). [Sources: K-6 2026-08-11]</description>
+    <inlineHelpText>Which kind of party this causation row carries: customer (whole hierarchy counts), object (only this single business partner), publisher (available in SAP, not maintained per docs) or supplier (not relevant per docs).</inlineHelpText>
+    <label>Party Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer</fullName>
+                <default>false</default>
+                <label>Customer (Kunde)</label>
+            </value>
+            <value>
+                <fullName>Object</fullName>
+                <default>false</default>
+                <label>Object (Objekt)</label>
+            </value>
+            <value>
+                <fullName>Publisher</fullName>
+                <default>false</default>
+                <label>Publisher (Verleger)</label>
+            </value>
+            <value>
+                <fullName>Supplier</fullName>
+                <default>false</default>
+                <label>Supplier (Lieferant)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

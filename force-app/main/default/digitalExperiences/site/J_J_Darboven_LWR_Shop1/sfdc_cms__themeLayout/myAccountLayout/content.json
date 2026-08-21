@@ -1,0 +1,113 @@
+{
+  "type" : "sfdc_cms__themeLayout",
+  "title" : "My Account Layout",
+  "contentBody" : {
+    "component" : {
+      "attributes" : { },
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "dxpStyle" : { },
+            "iconType" : "heart"
+          },
+          "customCssClasses" : "favBadge",
+          "definition" : "commerce_builder:wishlistShortcut",
+          "id" : "b54797d3-6ac9-46ac-8658-d9fa63301d08",
+          "type" : "component"
+        }, {
+          "attributes" : {
+            "dxpStyle" : { }
+          },
+          "definition" : "c:webshopCustomHeader",
+          "id" : "015c31ec-0dea-454b-ba4a-4fe4b0b2dc8e",
+          "type" : "component"
+        } ],
+        "id" : "30b4bf18-637c-4c01-8b51-dfe7c2a007d3",
+        "name" : "header",
+        "title" : "header",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "backgroundColor" : "rgb(28, 28, 28)",
+            "dxpStyle" : { }
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "backgroundImageConfig" : "",
+                "backgroundImageOverlay" : "rgba(0,0,0,0)",
+                "componentSpacerSize" : "",
+                "dxpStyle" : { },
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "maxContentWidth" : "",
+                "sectionColumnGutterWidth" : "",
+                "sectionConfig" : "{\"UUID\":\"b6bce45c-5bbd-43f9-aa10-0b993e8f8a62\",\"columns\":[{\"UUID\":\"5e43cbda-04dd-4aad-af40-38ded8a72329\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                "sectionMinHeight" : "",
+                "sectionVerticalAlign" : "flex-start"
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "dxpStyle" : { }
+                  },
+                  "definition" : "c:webshopFooter",
+                  "id" : "6837c5a0-c79c-4aa6-bfdc-400b48353da4",
+                  "type" : "component"
+                } ],
+                "id" : "5e43cbda-04dd-4aad-af40-38ded8a72329",
+                "name" : "col1",
+                "title" : "Column 1",
+                "type" : "region"
+              } ],
+              "definition" : "community_layout:section",
+              "id" : "b6bce45c-5bbd-43f9-aa10-0b993e8f8a62",
+              "type" : "component"
+            } ],
+            "id" : "85d90af0-66a0-497d-8bdd-2f3701ce0e08",
+            "name" : "content",
+            "title" : "Content",
+            "type" : "region"
+          } ],
+          "definition" : "commerce_builder:layoutFooter",
+          "id" : "22b35317-14e5-4bf6-9932-9d7866c08a74",
+          "type" : "component"
+        } ],
+        "id" : "0600211e-6e43-4313-9619-ee60fb3f4104",
+        "name" : "footer",
+        "title" : "footer",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "dxpStyle" : { }
+          },
+          "children" : [ {
+            "id" : "692b8e1e-c8b7-4955-bb9b-7f3a094da551",
+            "name" : "welcomeMessage",
+            "title" : "welcomeMessage",
+            "type" : "region"
+          }, {
+            "id" : "f2e5adc3-33f7-4019-b16e-0e73a7abe6f4",
+            "name" : "navigationMenuItemList",
+            "title" : "navigationMenuItemList",
+            "type" : "region"
+          } ],
+          "definition" : "commerce_my_account:navigationMenuContainer",
+          "id" : "3ba31fa6-0210-4d7d-8749-ec5c7b4a1834",
+          "type" : "component"
+        } ],
+        "id" : "f6102294-00d7-4714-ab21-c27372811d26",
+        "name" : "navigation",
+        "title" : "navigation",
+        "type" : "region"
+      } ],
+      "definition" : "commerce_my_account:myAccountLayout",
+      "id" : "5f91edf7-d077-455f-9799-68f2dce69a5f",
+      "type" : "component"
+    }
+  },
+  "urlName" : "my-account-layout"
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Vending</fullName>
+        <default>false</default>
+        <label>Vending</label>
+    </customValue>
+    <customValue>
+        <fullName>Communal feeding</fullName>
+        <default>false</default>
+        <label>Communal feeding</label>
+    </customValue>
+    <customValue>
+        <fullName>Gastronomy &amp; Other</fullName>
+        <default>false</default>
+        <label>Gastronomy &amp; Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Procurement Association</fullName>
+        <default>false</default>
+        <label>Procurement Association</label>
+    </customValue>
+    <masterLabel>Sales Category</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

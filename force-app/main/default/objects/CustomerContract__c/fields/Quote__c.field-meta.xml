@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Reference to the PuK quote this contract originated from — keeps the negotiation and underlying simulation traceable. [Sources: MN-002 Z.35, Org: Quote = PuK-Strecke]</description>
+    <inlineHelpText>Reference to the PuK quote this contract originated from — keeps the negotiation and underlying simulation traceable.</inlineHelpText>
+    <label>Source Quote</label>
+    <referenceTo>Quote</referenceTo>
+    <relationshipLabel>Customer Contracts</relationshipLabel>
+    <relationshipName>CustomerContracts</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

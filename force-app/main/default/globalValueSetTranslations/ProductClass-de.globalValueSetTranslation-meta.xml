@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Alcoholic beverages</masterLabel>
+        <translation>Alkoholische Getränke</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Biscuits and chocolate squares</masterLabel>
+        <translation>Kekse und Naps</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Coffee extract</masterLabel>
+        <translation>Extrakt-Kaffee</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Coffee machines</masterLabel>
+        <translation>Kaffeemaschinen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Consumables</masterLabel>
+        <translation>Verbrauchsmaterial</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Contract coffee manufacturing</masterLabel>
+        <translation>Lohnproduktion Kaffee</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cream and condensed milk</masterLabel>
+        <translation>Sahne und Kondensmilch</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Drinking chocolate</masterLabel>
+        <translation>Trinkschokolade</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Green coffee</masterLabel>
+        <translation>Rohkaffee</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Operating supplies</masterLabel>
+        <translation>Betriebsstoffe</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other goods</masterLabel>
+        <translation>Sonstige Waren</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other instant products</masterLabel>
+        <translation>Sonstige Instantprodukte</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Packaging materials</masterLabel>
+        <translation>Verpackungsmaterial</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Promotional materials</masterLabel>
+        <translation>Werbematerial</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Roasted coffee</masterLabel>
+        <translation>Röstkaffee</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Services</masterLabel>
+        <translation>Dienstleistungen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sugar and sweeteners</masterLabel>
+        <translation>Zucker und Süßstoff</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Tea</masterLabel>
+        <translation>Tee</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

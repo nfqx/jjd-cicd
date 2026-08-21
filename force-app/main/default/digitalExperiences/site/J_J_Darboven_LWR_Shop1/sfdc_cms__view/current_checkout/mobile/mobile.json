@@ -1,0 +1,22 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Checkout",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "attributes" : {
+          "dxpStyle" : {
+            "margin" : {
+              "bottom" : "0%",
+              "left" : "0%",
+              "right" : "0%",
+              "top" : "0%"
+            }
+          }
+        },
+        "id" : "c57738a1-24e9-410f-8213-bd81765b14b6"
+      } ]
+    }
+  },
+  "urlName" : "checkout"
+}

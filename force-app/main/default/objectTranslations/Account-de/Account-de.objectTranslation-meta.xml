@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Account Layout</layout>
+        <sections>
+            <label><!-- Account Summary --></label>
+            <section>Account Summary</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Child Account --></label>
+        <name>Child_Account</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Create Order --></label>
+        <name>Create_Order</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Opportunity --></label>
+        <name>New_Opportunity</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Opening Hours --></label>
+        <name>OpeningHours</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Order --></label>
+        <name>Order</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Sales Classification --></label>
+        <name>SalesClassification</name>
+    </quickActions>
+    <validationRules>
+        <errorMessage><!-- Please answer the legal-entity question: accounts in a chain structure require a legal form (or the explicit value ‚No legal entity status‘) or their own VAT ID. --></errorMessage>
+        <name>AccountCategoryChainLegalFormRequired</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select the reason why the prospect is archived. --></errorMessage>
+        <name>ArchivingReasonRequiredForStatusArchived</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- AdvRouteVisitWindows --></label>
+        <name>maps__AdvRouteVisitWindows</name>
+    </webLinks>
+</CustomObjectTranslation>

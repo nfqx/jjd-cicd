@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Refund_Positions</fullName>
+    <columns>NAME</columns>
+    <columns>Contract__c</columns>
+    <columns>RefundBasis__c</columns>
+    <columns>RefundValueType__c</columns>
+    <columns>RefundPct__c</columns>
+    <columns>SettlementFrequency__c</columns>
+    <columns>ERPAgreementNumber__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PositionType__c</field>
+        <operation>equals</operation>
+        <value>Refund</value>
+    </filters>
+    <label>Refund Positions</label>
+</ListView>

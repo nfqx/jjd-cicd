@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Beverage__c</fullName>
+    <label>Beverage</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Espresso</fullName>
+                <default>false</default>
+                <label>Espresso</label>
+            </value>
+            <value>
+                <fullName>Cappuccino</fullName>
+                <default>false</default>
+                <label>Cappuccino</label>
+            </value>
+            <value>
+                <fullName>Latte Macchiato</fullName>
+                <default>false</default>
+                <label>Latte Macchiato</label>
+            </value>
+            <value>
+                <fullName>Cafe Creme</fullName>
+                <default>false</default>
+                <label>Cafe Creme</label>
+            </value>
+            <value>
+                <fullName>Milchkaffee</fullName>
+                <default>false</default>
+                <label>Milchkaffee</label>
+            </value>
+            <value>
+                <fullName>Filter coffee</fullName>
+                <default>false</default>
+                <label>Filter coffee</label>
+            </value>
+            <value>
+                <fullName>Cocaya</fullName>
+                <default>false</default>
+                <label>Cocaya</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

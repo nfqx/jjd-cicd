@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Manage Contacts",
+  "contentBody" : {
+    "activeViewId" : "Manage_Contacts",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-manage-contacts",
+    "urlPrefix" : "manage-contacts"
+  },
+  "urlName" : "manage-contacts"
+}

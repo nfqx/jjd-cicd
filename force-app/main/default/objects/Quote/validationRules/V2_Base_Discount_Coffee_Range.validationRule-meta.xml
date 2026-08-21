@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V2_Base_Discount_Coffee_Range</fullName>
+    <active>false</active>
+    <description>Restricts base coffee discount to a range of 0-100%.</description>
+    <errorConditionFormula>NOT(ISBLANK(DiscountBaseDiscountCoffee__c)) &amp;&amp; 
+(DiscountBaseDiscountCoffee__c &lt; 0 ||
+ DiscountBaseDiscountCoffee__c &gt; 100)</errorConditionFormula>
+    <errorMessage>Base discount for coffee must be between 0% and 100%.</errorMessage>
+</ValidationRule>

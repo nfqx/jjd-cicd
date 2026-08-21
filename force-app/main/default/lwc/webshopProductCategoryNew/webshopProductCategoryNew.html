@@ -1,0 +1,24 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <div class="container mb-5" if:true={showData}>
+        <c-webshop-breadcrumbs path={path} last-element={record.Name}></c-webshop-breadcrumbs>
+        <!-- Category Name -->
+        <h1 class="heading-1" if:true={showSliderHeading}>{label.newProducts} {label.category}: {record.Name}</h1>
+        <!-- Category Subtext -->
+        <p class="body-regular" if:true={showSliderHeading}>{record.Subheader__c}</p>
+        <!-- Category Slider with filters -->
+        <c-webshop-slider 
+            onhasdata={showHeading}
+            category-id={recordId} 
+            category-type="new"
+            show-multiple-rows
+            show-product-pagination
+            show-image
+            show-price
+            show-filters
+            show-wishlist
+            show-sorting
+            show-cta>
+        </c-webshop-slider>
+    </div>
+</template>

@@ -1,0 +1,25 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <template if:true={brandLoaded}>
+        <div class="container">
+            <div class="breadcrumbs">
+                <a class="link" onclick={handleClickHome}>{label.home}</a> / {label.myBrands} / {brandData.Name} / {label.allProducts}
+            </div>
+            <!-- Category Name -->
+            <p if:true={showSliderHeading} class="heading-1">{brandData.Name}</p>
+            <!-- Category Slider with filters -->
+            <c-webshop-slider 
+                brand-id={recordId}
+                onhasdata={showHeading}
+                show-multiple-rows
+                show-product-pagination
+                show-image
+                show-price
+                show-filters
+                show-wishlist
+                show-sorting
+                show-cta>
+            </c-webshop-slider>
+        </div>
+    </template>
+</template>

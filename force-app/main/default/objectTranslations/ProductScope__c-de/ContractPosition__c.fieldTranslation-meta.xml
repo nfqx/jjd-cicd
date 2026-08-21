@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Die RV-Position, deren Produktbezug hier verfeinert wird.</help>
+    <label>Vertragsposition</label>
+    <name>ContractPosition__c</name>
+    <relationshipLabel><!-- Product Scopes --></relationshipLabel>
+</CustomFieldTranslation>

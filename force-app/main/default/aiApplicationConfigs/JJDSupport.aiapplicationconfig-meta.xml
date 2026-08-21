@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AIApplicationConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aiApplicationDeveloperName>JJDSupport</aiApplicationDeveloperName>
+    <applicationId>0Pp9O000000ToSr</applicationId>
+    <developerName>JJDSupport</developerName>
+    <insightReasonEnabled>false</insightReasonEnabled>
+    <masterLabel>JJDSupport</masterLabel>
+    <rank>1</rank>
+    <scoringMode>OnDemand</scoringMode>
+</AIApplicationConfig>

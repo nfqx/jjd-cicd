@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LossReason__c</fullName>
+    <label>Loss Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Lost to Competitor</fullName>
+                <default>false</default>
+                <label>Lost to Competitor</label>
+            </value>
+            <value>
+                <fullName>No Budget / Lost Funding</fullName>
+                <default>false</default>
+                <label>No Budget / Lost Funding</label>
+            </value>
+            <value>
+                <fullName>No Decision / Non-Responsive</fullName>
+                <default>false</default>
+                <label>No Decision / Non-Responsive</label>
+            </value>
+            <value>
+                <fullName>Long Sales Cycle</fullName>
+                <default>false</default>
+                <label>Long Sales Cycle</label>
+            </value>
+            <value>
+                <fullName>Length of Sales Cycle</fullName>
+                <default>false</default>
+                <label>Length of Sales Cycle</label>
+            </value>
+            <value>
+                <fullName>Change of Management</fullName>
+                <default>false</default>
+                <label>Change of Management</label>
+            </value>
+            <value>
+                <fullName>Business Closed</fullName>
+                <default>false</default>
+                <label>Business Closed</label>
+            </value>
+            <value>
+                <fullName>Quality/Taste (Coffee)</fullName>
+                <default>false</default>
+                <label>Quality/Taste (Coffee)</label>
+            </value>
+            <value>
+                <fullName>Product/Solution not satisfying</fullName>
+                <default>false</default>
+                <label>Product/Solution not satisfying</label>
+            </value>
+            <value>
+                <fullName>Failed Credit Check</fullName>
+                <default>false</default>
+                <label>Failed Credit Check</label>
+            </value>
+            <value>
+                <fullName>Failed Sanction List</fullName>
+                <default>false</default>
+                <label>Failed Sanction List</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Rejected by Masterdata</fullName>
+                <default>false</default>
+                <label>Rejected by Masterdata</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

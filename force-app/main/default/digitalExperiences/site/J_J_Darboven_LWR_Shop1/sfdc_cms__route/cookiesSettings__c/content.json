@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Cookies Settings",
+  "contentBody" : {
+    "activeViewId" : "Cookies_Settings",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-cookies-settings",
+    "urlPrefix" : "cookies-settings"
+  },
+  "urlName" : "cookies-settings"
+}

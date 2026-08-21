@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CustomerGroup2__c</fullName>
+    <label>Customer Group 2</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>MLI</fullName>
+                <default>false</default>
+                <label>Condition Authority KAM</label>
+            </value>
+            <value>
+                <fullName>KLI</fullName>
+                <default>false</default>
+                <label>Condition Authority KAM &amp; Sales Area Manager</label>
+            </value>
+            <value>
+                <fullName>EKU</fullName>
+                <default>false</default>
+                <label>Condition Authority Sales Area Manager</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>CFR</fullName>
+        <default>false</default>
+        <label>Costs and Freight</label>
+    </customValue>
+    <customValue>
+        <fullName>CIF</fullName>
+        <default>false</default>
+        <label>Costs, Insurance, and Freight</label>
+    </customValue>
+    <customValue>
+        <fullName>CIP</fullName>
+        <default>false</default>
+        <label>Carriage and Insurance Paid to</label>
+    </customValue>
+    <customValue>
+        <fullName>CPT</fullName>
+        <default>false</default>
+        <label>Carriage Paid To</label>
+    </customValue>
+    <customValue>
+        <fullName>DAF</fullName>
+        <default>false</default>
+        <label>Delivered to the Border</label>
+    </customValue>
+    <customValue>
+        <fullName>DAP</fullName>
+        <default>false</default>
+        <label>Delivered at Place</label>
+    </customValue>
+    <customValue>
+        <fullName>DAT</fullName>
+        <default>false</default>
+        <label>Delivered to Terminal</label>
+    </customValue>
+    <customValue>
+        <fullName>DDP</fullName>
+        <default>false</default>
+        <label>Delivered Duty Paid</label>
+    </customValue>
+    <customValue>
+        <fullName>DDU</fullName>
+        <default>false</default>
+        <label>Delivered Duty Unpaid</label>
+    </customValue>
+    <customValue>
+        <fullName>DEQ</fullName>
+        <default>false</default>
+        <label>Delivered Ex Quay</label>
+    </customValue>
+    <customValue>
+        <fullName>DES</fullName>
+        <default>false</default>
+        <label>Delivered Ex Ship</label>
+    </customValue>
+    <customValue>
+        <fullName>DPU</fullName>
+        <default>false</default>
+        <label>Delivered at Place Unloaded</label>
+    </customValue>
+    <customValue>
+        <fullName>EXW</fullName>
+        <default>false</default>
+        <label>Ex Works</label>
+    </customValue>
+    <customValue>
+        <fullName>FAS</fullName>
+        <default>false</default>
+        <label>Free Alongside Ship</label>
+    </customValue>
+    <customValue>
+        <fullName>FCA</fullName>
+        <default>false</default>
+        <label>Free Carrier</label>
+    </customValue>
+    <customValue>
+        <fullName>FH</fullName>
+        <default>false</default>
+        <label>Free House</label>
+    </customValue>
+    <customValue>
+        <fullName>FOB</fullName>
+        <default>false</default>
+        <label>Free on Board</label>
+    </customValue>
+    <customValue>
+        <fullName>UN</fullName>
+        <default>false</default>
+        <label>Freight Collect</label>
+    </customValue>
+    <masterLabel>Incoterms</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

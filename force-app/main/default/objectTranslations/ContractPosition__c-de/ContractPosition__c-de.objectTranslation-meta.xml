@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Contract Position</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Contract Positions</value>
+    </caseValues>
+    <gender>Neuter</gender>
+    <layouts>
+        <layout>Contract Position Layout</layout>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Position Number</nameFieldLabel>
+</CustomObjectTranslation>

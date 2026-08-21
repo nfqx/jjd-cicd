@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V2_CashDiscount_Range</fullName>
+    <active>false</active>
+    <description>Restricts cash discount to a range of 0-10%.</description>
+    <errorConditionFormula>NOT(ISBLANK(DiscountSimulatedDiscount__c)) &amp;&amp; 
+(DiscountSimulatedDiscount__c &lt; 0 || DiscountSimulatedDiscount__c &gt; 10)</errorConditionFormula>
+    <errorMessage>Cash discount must be between 0% and 10%.</errorMessage>
+</ValidationRule>

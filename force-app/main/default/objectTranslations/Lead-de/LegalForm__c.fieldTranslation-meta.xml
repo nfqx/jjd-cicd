@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Rechtsform</label>
+    <name>LegalForm__c</name>
+    <picklistValues>
+        <masterLabel>AG</masterLabel>
+        <translation><!-- AG --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Co., Ltd.</masterLabel>
+        <translation><!-- Co., Ltd. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GbR</masterLabel>
+        <translation><!-- GbR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GmbH</masterLabel>
+        <translation><!-- GmbH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GmbH &amp; Co KG</masterLabel>
+        <translation><!-- GmbH &amp; Co KG --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KG</masterLabel>
+        <translation><!-- KG --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KGaA</masterLabel>
+        <translation><!-- KGaA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OHG</masterLabel>
+        <translation><!-- OHG --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

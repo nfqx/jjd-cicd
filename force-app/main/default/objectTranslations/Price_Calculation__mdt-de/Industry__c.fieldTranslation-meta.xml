@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Industry --></label>
+    <name>Industry__c</name>
+    <picklistValues>
+        <masterLabel>Einkaufsgesellschaft</masterLabel>
+        <translation><!-- Einkaufsgesellschaft --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gastro &amp; Sonstige</masterLabel>
+        <translation><!-- Gastro &amp; Sonstige --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gemeinschaftsverpflegung</masterLabel>
+        <translation><!-- Gemeinschaftsverpflegung --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vending</masterLabel>
+        <translation><!-- Vending --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

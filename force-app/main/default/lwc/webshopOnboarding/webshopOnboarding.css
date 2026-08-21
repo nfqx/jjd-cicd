@@ -1,0 +1,102 @@
+body {
+    padding: 20px;
+}
+
+form {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+label {
+    /* color: #5e636e; */
+    padding-top: 10px;
+    font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    /* font-style: italic; */
+    display: block; /* Ensure labels are displayed */
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+
+
+input[type="text"],
+input[type="email"] {
+    font-family: trebuchet ms, arial, sans-serif;
+    font-size: 14px;
+    width: calc(100% - 2px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 2px solid #ccc; /* Underline effect */
+    border-radius: 0; /* Remove border-radius */
+    box-sizing: border-box;
+    outline: none; /* Remove default focus outline */
+    transition: border-color 0.3s linear;
+}
+
+input[type="submit"] {
+    font-family: trebuchet ms, arial, sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    background-color: #c65327;
+    color: white;
+    padding: 15px; /* Adjust padding */
+    border: none;
+    border-radius: 0; /* Remove border-radius */
+    cursor: pointer;
+    width: 100%; /* Make button full width */
+    text-transform: uppercase; /* Capitalize button text */
+    margin-top: 20px; /* Add margin on top */
+}
+
+input[type="submit"]:hover {
+    background-color: #e28d6d;
+}
+
+input::placeholder {
+    color: #5e636e;
+    padding-top: 10px;
+    font-family: source sans pro, helvetica, arial, sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input:focus {
+    animation: fadeInOutColor .8s forwards; /* Uses keyframes to define the animation */
+}
+
+input:focus::placeholder {
+    color: transparent; /* Hides the placeholder on focus */
+}
+
+.border-ltr{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.sal{
+    font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+.sal1{
+    font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
+    font-weight: 600;
+}
+
+input[type="checkbox"] {
+    accent-color: #c65327;
+    /* Changes checkbox color when checked */
+    color: white;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    box-shadow: 0 0 0px 1000px white inset;
+    -webkit-text-fill-color: #000;
+}

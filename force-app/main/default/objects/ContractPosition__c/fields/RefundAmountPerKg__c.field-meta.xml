@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RefundAmountPerKg__c</fullName>
+    <description>Entry aid for legacy contracts still agreed as &apos;cents per kilo&apos; — stored, but internally converted into the leading percentage. [Sources: C-01, K-5 2026-08-11: 4 Nachkommastellen (SAP führt 0,5000 EUR/KG)]</description>
+    <inlineHelpText>Entry aid for legacy contracts still agreed as &apos;cents per kilo&apos; — stored, but internally converted into the leading percentage.</inlineHelpText>
+    <label>Refund Amount (€/kg)</label>
+    <precision>12</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

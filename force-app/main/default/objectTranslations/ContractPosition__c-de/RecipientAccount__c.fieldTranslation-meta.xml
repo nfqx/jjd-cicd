@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Wer das Geld bekommt — bei Ketten oft die Zentrale, während die Umsätze in den Filialen entstehen. Diskretion: Töchter sollen die RV der Mutter nicht sehen.</help>
+    <label>Empfänger / Gesellschaft</label>
+    <name>RecipientAccount__c</name>
+    <relationshipLabel><!-- Contract Positions --></relationshipLabel>
+</CustomFieldTranslation>

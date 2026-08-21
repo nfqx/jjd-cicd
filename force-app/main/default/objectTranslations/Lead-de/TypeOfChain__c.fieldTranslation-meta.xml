@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Verkettungstyp</label>
+    <name>TypeOfChain__c</name>
+    <picklistValues>
+        <masterLabel>Conditions mandatory</masterLabel>
+        <translation>MUSS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Conditions optional</masterLabel>
+        <translation>KANN</translation>
+    </picklistValues>
+</CustomFieldTranslation>

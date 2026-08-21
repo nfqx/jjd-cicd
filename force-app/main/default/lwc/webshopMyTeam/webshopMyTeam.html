@@ -1,0 +1,310 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <div class="background"></div>
+    <div class="sidebar d-none d-lg-block">
+        <c-webshop-my-area-sidebar active-element="Team_Members__c"></c-webshop-my-area-sidebar>
+    </div>
+    <div class="container-fluid content-zone">
+        <div class="row"> 
+            <div class="col-12 col-lg-11 p-0 px-md-4">
+                <div class="content-area">
+                    <div class="d-flex flex-row flex-wrap justify-content-between align-items-start mb-3">
+                        <div class="col-12 col-lg-9"> 
+                            <p class="heading-2">{label.teamMembersCap}</p>
+                            <p class="body-regular">{label.teamMembersSubtitle}</p>
+                        </div>
+                        <button class="col-12 col-lg-3 btn btn-link link d-flex justify-content-start justify-content-lg-end align-items-center" 
+                                type="button" onclick={handleClickBackToShop}>
+                            <i class="bi bi-arrow-left"></i>&nbsp;{label.backToShop}
+                        </button> 
+                    </div>
+                    <div class="d-flex flex-row flex-wrap justify-content-between align-items-start mb-3">
+                        <div class="col-12 col-lg-4"> 
+                            <p class="body-regular">
+                                {label.youAreRegisteredAs}:<br />
+                                <strong>{currentUserName}</strong>
+                            </p>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <template if:true={hasFunction}>
+                                <p class="body-regular">
+                                    {label.functionLabel}:<br />
+                                    <strong>{currentUserFunction}</strong>
+                                </p>
+                            </template>
+                        </div>
+                        <div class="col-12 col-lg-4"> 
+                            <p class="body-regular">
+                                {label.userRole}:<br />
+                                <strong>{currentUserStatus}</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row flex-wrap justify-content-between align-items-start mb-3">
+                        <div class="col-12"> 
+                            <p class="body-regular">{label.teamMembersSubtitle}</p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div if:true={isLoading} class="spinner-border text-black-50" role="status"></div>
+                    </div>
+                    <template if:false={isLoading}>
+                        <div class="row">
+                            <div class="d-flex flex-row flex-wrap justify-content-between align-items-center mb-3">
+                                <input if:false={isManager} type="text" class="col-12 form-control" placeholder={label.searchPeople} onchange={changeSearchTerm} />
+                                <div class="col-12 col-md-9 pe-0 pe-md-2 mb-2 mb-md-0">
+                                    <input if:true={isManager} type="text" class="form-control" placeholder={label.searchPeople} onchange={changeSearchTerm} />
+                                </div>
+                                <button if:true={isManager} class="col-12 col-md-3 btn btn-primary" onclick={handleAddMembers}>{label.addTeamMembers}</button>
+                            </div>
+                        </div>
+                        <p class="body-medium gray-700">
+                            {teamMemberCount} {teamMemberString}
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered rounded">
+                                <thead>
+                                    <tr>
+                                        <th class="body-bold bg-light px-3" scope="col">{label.teamMemberCap}</th>
+                                        <th class="body-bold bg-light px-3" scope="col">{label.functionLabel}</th>
+                                        <th class="body-bold bg-light px-3" scope="col">{label.userRole}</th>
+                                        <th class="body-bold bg-light px-3" scope="col" if:true={isManager}>{label.teamMemberCap}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each={teamMembersDisplayed} for:item="teamMember"> 
+                                        <tr key={teamMember.contactId}>
+                                            <td class="px-3" scope="row">
+                                                <div class="d-flex flex-row align-items-center">
+                                                    <img class="rounded-circle me-2" style="width: 32px; height: 32px; object-fit: cover;" if:true={teamMember.hasImage} src={teamMember.SmallPhotoUrl} />
+                                                    <p class="d-flex flex-column m-0">
+                                                        <span class="body-medium d-flex align-items-center gap-3 m-0">
+                                                            {teamMember.firstName} {teamMember.lastName}&nbsp;
+                                                            <template if:false={teamMember.delegated}>
+                                                                <button class="btn btn-link p-0 text-decoration-none text-dark" data-hasuserid={teamMember.hasUserId} data-email={teamMember.email} data-function={teamMember.function} data-contactid={teamMember.contactId} data-recordname={teamMember.recordName} data-recordid={teamMember.userId} onclick={handleOpenEditModal} if:true={isManager}>
+                                                                    <i class="bi bi-pencil-fill"></i>
+                                                                </button>
+                                                            </template>
+                                                            <template if:true={isManager}>
+                                                                <template if:true={teamMember.deleteable}>
+                                                                    <button class="btn btn-link p-0 text-decoration-none text-dark" onclick={handleOpenDeleteModal} data-userid={teamMember.userId}>
+                                                                        <i class="bi bi-trash3"></i>
+                                                                    </button>
+                                                                </template>
+                                                            </template>                                                           
+                                                        </span>
+                                                        <span class="body-small gray-700">
+                                                            {teamMember.email}                                                            
+                                                        </span>
+                                                        <span if:true={teamMember.priceVisible} class="bg-primary-subtle border border-primary rounded text-dark components-badge-h6 p-1 mt-1">{label.priceVisibleWarning}</span>
+                                                    </p>
+                                                </div>
+                                            </td>
+                                            <td class="px-3" scope="row">
+                                                <p class="body-regular m-0">{teamMember.function}</p>
+                                            </td>
+                                            <td class="px-3" scope="row">
+                                                <template if:true={teamMember.webshopActivated}>
+                                                    <template if:false={teamMember.delegated}>
+                                                        <p class="body-regular m-0" if:true={teamMember.manager}>{label.manager}</p>
+                                                        <p class="body-regular m-0" if:false={teamMember.manager}>{label.regularUser}</p>
+                                                    </template>
+                                                    <template if:true={teamMember.isDelegated}>
+                                                        <p class="body-regular m-0">{label.delegated}</p>
+                                                    </template>
+                                                </template>
+                                                <template if:false={teamMember.webshopActivated}>
+                                                    <p class="body-regular m-0">{label.notWebshopActivated}</p>
+                                                </template>
+                                            </td>
+                                            <td class="px-3" scope="row" if:true={isManager}>
+                                                <template if:false={teamMember.delegated}>
+                                                    <template if:true={teamMember.hasUserId}>
+                                                        <p class="d-flex flex-row body-regular m-0"><lightning-input type="toggle" data-contactid={teamMember.contactId} onchange={handleChangeWebshopCustomer} checked={teamMember.webshopActivated}></lightning-input> &nbsp; {label.webshopCustomer}</p>
+                                                    </template>
+                                                    <template if:true={teamMember.webshopActivated}>
+                                                        <p class="d-flex flex-row body-regular m-0"><lightning-input type="toggle" data-contactid={teamMember.contactId} onchange={handleChangeManager} checked={teamMember.manager}></lightning-input> &nbsp; {label.manager}</p>
+                                                        <p class="d-flex flex-row body-regular m-0">
+                                                            <lightning-input type="toggle" data-contactid={teamMember.contactId} onchange={handleChangePriceVisible} checked={teamMember.priceVisible}></lightning-input> &nbsp; {label.priceVisible}&nbsp;<lightning-helptext if:true={priceInvisible} content={label.priceInvisibleInfo}></lightning-helptext>
+                                                        </p>
+                                                        <p class="d-flex flex-row body-regular m-0" if:true={assortmentExtended}>
+                                                            <lightning-input type="toggle" data-contactid={teamMember.contactId} onchange={handleChangeAssortmentExtensionExclusion} checked={teamMember.assortmentExtensionExcluded}></lightning-input> &nbsp; {label.assortmentExtensionExclusion}
+                                                        </p>
+                                                    </template>
+                                                </template>
+                                                <template if:true={teamMember.hasSwitchOptions}>
+                                                    <select >
+                                                        <option value="">{label.selectOption}</option>
+                                                        <template for:each={teamMember.switchOptions} for:item="switchOption">
+                                                            <option key={switchOption.value} onclick={openDelegateModal} value={switchOption.value data-accountid={switchOption.value} data-userid={teamMember.userId} data-accountname={switchOption.label} data-username={teamMember.fuilName}>{switchOption.label}</option> <!-- TODO: ONSELECT here? -->
+                                                        </template>
+                                                    </select>
+                                                </template>
+                                            </td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <c-modal
+        show={showCreateDelegateModal}
+        onclose={closeDelegateModal}
+    >
+        <span class="body-large" slot="header">{label.grantAccess}</span>
+        <div class="body-regular" slot="body">
+            <p align="center">{delegateModalUserName}&nbsp;{label.accessGrantedTo}&nbsp;{delegateModalAccountName}</p>
+            <p class="d-flex flex-row body-regular m-0"><lightning-input type="toggle" onchange={changeDelegateModalManager} checked={modalManagerSet}></lightning-input> &nbsp; {label.manager}</p>
+            <p class="d-flex flex-row body-regular m-0"><lightning-input type="toggle" onchange={changeDelegateModalPriceVisible} checked={modalPriceVisibleSet}></lightning-input> &nbsp; {label.priceVisible}</p>
+            <p class="d-flex flex-row body-regular m-0" if:true={assortmentExtended}><lightning-input type="toggle" onchange={changeDelegateModalAssortmentExtensionExclusion} checked={modalAssortmentExtensionExclusionSet}></lightning-input> &nbsp; {label.assortmentExtensionExclusion}</p>
+            
+            <p if:true={modalPriceVisibleSet}>
+                <template if:false={priceInvisible}>
+                    <span class="bg-primary-subtle border border-primary rounded text-dark components-badge-h6 p-1 mt-1">{label.priceVisibleWarning}</span>
+                </template>
+                <template if:true={priceInvisible}>
+                    <span class="bg-primary-subtle border border-primary rounded text-dark components-badge-h6 p-1 ms-2">{label.priceInvisibleInfo}</span>
+                </template>
+            </p>
+        </div>
+
+        <div class="d-flex justify-content-start align-items-end" slot="footer">
+            <button 
+                type="submit"  
+                class="btn btn-primary contact-btn"  
+                label={label.grantAccess} 
+                title={label.grantAccess} 
+                onclick={submitDelegateModal}
+                >{label.grantAccess} 
+            </button>
+            <button 
+                class="btn btn-link link contact-btn" 
+                label={label.cancel} 
+                title={label.cancel} 
+                onclick={closeDelegateModal}
+                >{label.cancel}
+            </button>
+        </div>
+    </c-modal>
+
+    <c-modal
+        show={showEmailModal}
+        onclose={handleClose}
+    >
+        <div slot="header" class="modal-header-center">
+            <span class="body-large">{label.addTeamMembers}</span>
+        </div>
+        <div class="body-regular" slot="body">
+            <p align="center">{label.addTeamMembersModalBody}</p>
+            <p>
+                <input class="form-control" required value={firstNameModal} placeholder={label.firstName} onchange={handleChangeFirstName} />
+            </p>
+            <p>
+                <input class="form-control" required value={lastNameModal} placeholder={label.lastName} onchange={handleChangeLastName} />
+            </p>
+            <p>
+                <input class="form-control" required value={emailaddressModal} placeholder={label.email} onchange={handleChangeEmailAddress} />
+            </p>
+            <p>
+                <input class="form-control" required value={phoneNumberModal} placeholder={label.phoneNumber} onchange={handleChangePhoneNumber} />
+            </p>
+            <p>
+                <input class="form-control" required value={roleNameModal} placeholder={label.roleName} onchange={handleChangeRoleName} />
+            </p>
+        </div>
+
+        <div class="d-flex justify-content-start align-items-end" slot="footer">
+            <button 
+                type="submit"  
+                class="btn btn-primary contact-btn"
+                style="min-width: fit-content;"
+                label={label.addTeamMembersAlt} 
+                title={label.addTeamMembersAlt} 
+                onclick={handleAddMembersNonGL}
+                disabled={addMembersNonGLDisabled}
+                >{label.addTeamMembers} 
+            </button>
+            <button 
+                class="btn btn-link link contact-btn" 
+                label={label.cancel} 
+                title={label.cancel} 
+                onclick={handleClose}
+                >{label.cancel}
+            </button>
+        </div>
+    </c-modal>
+    <c-modal
+        show={showEditModal}
+        onclose={handleCloseEditModal}
+    >
+        <div slot="header" class="modal-header-center">
+            <span class="body-large">{label.editUser}</span>
+        </div>
+        <div class="body-regular" slot="body">
+            <p align="center">{label.editUserBody} {selectedUserName}</p>
+                <div class="d-flex flex-column">
+                    <lightning-record-edit-form density="comfy" object-api-name="User">
+                        <lightning-input-field class="form-fields w-100" value={selectedUserEmail} field-name="Email" onchange={handleChangeSelectedUserEmail} if:true={selectedUserHasUserId}></lightning-input-field>
+                    </lightning-record-edit-form>
+                    <lightning-input label={label.functionLabel} variant="label-stacked" class="form-fields w-100" value={selectedUserFunction} onchange={handleChangeSelectedUserFunction}></lightning-input>
+                </div> 
+        </div>
+
+        <div class="d-flex justify-content-start align-items-end" slot="footer">
+            <button 
+                type="submit"  
+                class="btn btn-primary contact-btn"
+                style="min-width: fit-content;"  
+                label={label.editUser} 
+                title={label.editUser} 
+                onclick={handleEditUser}
+                disabled={editUserDisabled}
+                >{label.editUser} 
+            </button>
+            <button 
+                class="btn btn-link link contact-btn" 
+                label={label.cancel} 
+                title={label.cancel} 
+                onclick={handleCloseEditModal}
+                >{label.cancel}
+            </button>
+        </div>
+    </c-modal>
+    <c-modal
+        show={showDeleteModal}
+        onclose={handleCloseDeleteModal}
+    >
+        <div slot="header" class="modal-header-center">
+            <span class="body-large">{label.deleteUser}</span>
+        </div>
+        <div class="body-regular mt-2" slot="body">
+        <p align="center">
+            {label.deleteUserMessage}
+        </p>
+        </div>
+        
+        <div class="d-flex justify-content-start align-items-end" slot="footer">
+            <button 
+                type="submit"  
+                class="btn btn-primary contact-btn"  
+                label={label.generalDelete}
+                title={label.generalDelete}
+                onclick={handleConfirmDelete}
+                > {label.generalDelete}
+            </button>
+            <button 
+                class="btn btn-link link contact-btn" 
+                label={label.cancel} 
+                title={label.cancel} 
+                onclick={handleCloseDeleteModal}
+                >{label.cancel}
+            </button>
+        </div>
+    </c-modal>
+
+</template>

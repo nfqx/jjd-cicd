@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V2_Volume_Tea_NonNegative</fullName>
+    <active>false</active>
+    <description>Enforces non-negative target volume for tea.</description>
+    <errorConditionFormula>NOT(ISBLANK(	PurchaseQuantityTea__c)) &amp;&amp;	PurchaseQuantityTea__c &lt; 0</errorConditionFormula>
+    <errorMessage>Tea target volume cannot be negative.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Mit welchem Satz SAP unterjährig Geld zurücklegt (Rückstellung, VR-Belege), bevor am Periodenende tatsächlich abgerechnet wird (VE-Belege). Kann vom Abrechnungssatz abweichen.</help>
+    <label>Rückstellungssatz (%)</label>
+    <name>AccrualRatePct__c</name>
+</CustomFieldTranslation>

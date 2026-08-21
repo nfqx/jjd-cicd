@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Used to notify QS-Team</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Used to notify QS-Team</name>
+    <style>none</style>
+    <subject>[Wichtig] Neue Qualitätsreklamation für {!Case.Account}</subject>
+    <textOnly>Neue Qualitätsreklamation
+
+Neue Qualitätsreklamation für {!Case.Account} abschließen!
+
+Qualitätsreklamation
+
+Für den Kunden {!Case.Account} wurde eine neue Qualitätsreklamation erfasst und im System mit der Vorgangsnummer {!Case.CaseNumber} hinterlegt.
+
+Um den Vorgang zu Bearbeiten und/oder abzuschließen, folgen Sie dem unterem Button.
+
+
+Hier Vorgang abschließen
+
+
+Für weitere Fragen stehen wir gerne zur Verfügung.
+*Dies ist eine automatisch generierte und versendete E-Mail. Bitte antworten Sie nicht direkt auf diese E-Mail.
+
+Copyright © 2024 J.J. Darboven , All rights reserved.
+Datenschutz | Darboven Professional</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

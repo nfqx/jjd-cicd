@@ -1,0 +1,6 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <template if:true={show}>
+        <p align="center"><lightning-input type="checkbox" onchange={handleCheckbox}></lightning-input> {label.modalBody}</p>
+    </template>
+</template>

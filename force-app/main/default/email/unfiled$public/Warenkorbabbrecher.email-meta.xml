@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Reminder an Warenkorbabbrecher, ihren Warenkorb abzuschließen oder zu leeren</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Shop_Header</letterhead>
+    <name>Warenkorbabbrecher</name>
+    <style>freeForm</style>
+    <subject>IHR WARENKORB IST OFFEN</subject>
+    <textOnly>Hallo {{{Recipient.Name}}},
+
+Vielen Dank für Ihren Einkauf in unserem J.J. Darboven Ausser-Haus Webshop.
+
+Bei Ihrem Besuch haben Sie zunächst Waren in den Warenkorb abgelegt, aber nicht den Einkauf final abgeschlossen. Als Serviceleistung möchten wir Sie hiermit daran erinnern, dass wir diese Ware nicht reservieren können und bitten Sie, im Falle eines Bestellwunsches die Bestellung zeitnah abzusenden.
+
+Mit einem Klick sind Sie in Ihrem Shop. Wenn es nur „zum Stöbern“ war, dann müssen Sie nichts weiter tun und wir löschen den Warenkorbinhalt innerhalb der nächsten 36 Stunden.
+
+Haben Sie sonst noch Fragen oder benötigen Sie Rat und Tat von unserem Kundenservice? Wir sind immer für Sie da unter ecommerce@darboven.com oder 0170 913 80 40.
+
+Danke, dass Sie J.J.Darboven vertrauen. Wir geben alles für Ihre Zufriedenheit und freuen uns auch über Lob und Tadel.
+
+Haben Sie einen genussvollen Tag!
+
+Mit freundlichen Grüßen
+Best regards
+i.A.
+
+Ipek Göc
+E-Commerce Managerin
+
+Mobil: 0170 913 80 40
+igoec@darboven.com
+www.darboven.com
+
+ 
+J.J. Darboven GmbH &amp; Co. KG, Pinkertweg 13, 22113 Hamburg, Deutschland
+Amtsgericht Hamburg, Handelsregister HRA: 12 900
+
+Komplementärin:
+J.J. Darboven Verwaltungs-GmbH, Pinkertweg 13, 22113 Hamburg, Deutschland
+Amtsgericht Hamburg, Handelsregister HRB: 60 516
+Geschäftsführer: Albert Darboven, Jens Brockmann
+
+Ressourcen schonen … Think before you print.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

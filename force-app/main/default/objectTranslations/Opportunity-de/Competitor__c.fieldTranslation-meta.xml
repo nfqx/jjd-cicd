@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Displays the competitor account, when an opportunity is lost due to current contracts with competitor. --></help>
+    <label>Aktueller Wettbewerber</label>
+    <name>Competitor__c</name>
+    <relationshipLabel><!-- Opportunities (Lost to) --></relationshipLabel>
+</CustomFieldTranslation>

@@ -1,0 +1,16 @@
+<template>
+    <ul class="p-0" if:true={loaded}>
+        <template for:each={navItems} for:item="navItem">
+            <template if:true={navItem.isActive}>
+                <div key={navItem.pageName} class="p-2 item-active active">
+                {navItem.icon} <li class="cursor-pointer" key={navItem.pageName} data-pagename={navItem.pageName} onclick={handleNavItemClick}>{navItem.label}</li>
+                </div>
+            </template>
+            <template if:false={navItem.isActive}>
+                <div key={navItem.pageName} class="p-2 item">
+                {navItem.icon} <li class="cursor-pointer" key={navItem.pageName} data-pagename={navItem.pageName} onclick={handleNavItemClick}>{navItem.label}</li>
+                </div>
+            </template>
+        </template>
+    </ul>
+</template>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Beverage --></label>
+    <name>Beverage__c</name>
+    <picklistValues>
+        <masterLabel>Cafe Creme</masterLabel>
+        <translation><!-- Cafe Creme --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cappuccino</masterLabel>
+        <translation><!-- Cappuccino --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cocaya</masterLabel>
+        <translation><!-- Cocaya --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Espresso</masterLabel>
+        <translation><!-- Espresso --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Filter coffee</masterLabel>
+        <translation><!-- Filter coffee --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Latte Macchiato</masterLabel>
+        <translation><!-- Latte Macchiato --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Milchkaffee</masterLabel>
+        <translation><!-- Milchkaffee --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

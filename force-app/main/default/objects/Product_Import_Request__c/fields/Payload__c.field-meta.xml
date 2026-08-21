@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payload__c</fullName>
+    <description>JSON of a single product group ({parent, variations}) exactly as received from Mule. Per-group granularity keeps the payload far below the 131k long-text cap and limits a failure&apos;s blast radius to one product.</description>
+    <label>Payload</label>
+    <length>131072</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Lebenszyklus der einzelnen Position — eine RV kann enden, während der Vertrag mit anderen Positionen weiterläuft.</help>
+    <label>Status</label>
+    <name>Status__c</name>
+    <picklistValues>
+        <masterLabel>Draft (not yet in SAP)</masterLabel>
+        <translation><!-- Draft (not yet in SAP) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Prospektive Vereinbarung</masterLabel>
+        <translation><!-- Prospektive Vereinbarung --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VB ist aktiv</masterLabel>
+        <translation><!-- VB ist aktiv --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VB ist ausgelaufen</masterLabel>
+        <translation><!-- VB ist ausgelaufen --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VB ist erledigt</masterLabel>
+        <translation><!-- VB ist erledigt --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VB ist gekündigt</masterLabel>
+        <translation><!-- VB ist gekündigt --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VB ist storniert</masterLabel>
+        <translation><!-- VB ist storniert --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

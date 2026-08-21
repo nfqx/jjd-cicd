@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GrowthPercent__c</fullName>
+    <label>Growth (Percent)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0-5%</fullName>
+                <default>false</default>
+                <label>0-5%</label>
+            </value>
+            <value>
+                <fullName>5-10%</fullName>
+                <default>false</default>
+                <label>5-10%</label>
+            </value>
+            <value>
+                <fullName>10-15%</fullName>
+                <default>false</default>
+                <label>10-15%</label>
+            </value>
+            <value>
+                <fullName>&gt;15%</fullName>
+                <default>false</default>
+                <label>&gt;15%</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

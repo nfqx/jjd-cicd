@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Der SAP-Schlüssel der Hierarchie-Ebene, auf die sich die RV bezieht. Damit lässt sich maschinell prüfen, ob sich zwei RV überlappen (z. B. Klasse Röstkaffee UND ein einzelner Artikel daraus) — das Doppel-RV-Risiko.</help>
+    <label>SAP-Produkthierarchie-Schlüssel</label>
+    <name>ERPProductHierarchy__c</name>
+</CustomFieldTranslation>

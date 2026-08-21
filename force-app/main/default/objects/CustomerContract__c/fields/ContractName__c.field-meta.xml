@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ContractName__c</fullName>
+    <description>The contract name from SAP — usually the customer name in short form (match code). [Sources: Confluence 31 Vertrag abschließen, Org-Drift 2026-06-29]</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The contract name from SAP — usually the customer name in short form (match code).</inlineHelpText>
+    <label>Contract Name</label>
+    <length>80</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Upload Order",
+  "contentBody" : {
+    "activeViewId" : "Upload_Order",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-upload-order",
+    "urlPrefix" : "upload-order"
+  },
+  "urlName" : "upload-order"
+}

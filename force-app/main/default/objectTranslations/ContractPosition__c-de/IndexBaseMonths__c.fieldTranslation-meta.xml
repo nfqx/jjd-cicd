@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Über wie viele zurückliegende Monate der ICO-Durchschnitt gebildet wird, mit dem die Marktveränderung gemessen wird. Standard sind 3 Monate, einzelne Altverträge nutzen 6.</help>
+    <label>Index-Basis (Monate)</label>
+    <name>IndexBaseMonths__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Open_Quality_Checks</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Assigned_Employee__c</columns>
+    <columns>Status__c</columns>
+    <columns>Planned_Check_Date__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>Check_Started_At__c</columns>
+    <columns>Check_Completed_At__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Open,In Progress,Incomplete,Planned</value>
+    </filters>
+    <filters>
+        <field>Assigned_To_Me__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>My Open Quality Checks</label>
+</ListView>

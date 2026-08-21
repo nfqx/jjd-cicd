@@ -1,0 +1,173 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <div class="background"></div>
+    <div class="sidebar d-none d-lg-block">
+        <c-webshop-my-area-sidebar active-element="My_Account_Settings__c"></c-webshop-my-area-sidebar>
+    </div>
+    <div class="container-fluid content-zone">
+        <div class="row"> 
+            <div class="col-auto d-none d-lg-block">
+                <!--c-webshop-my-area-sidebar active-element="My_Account_Settings__c"></c-webshop-my-area-sidebar-->
+            </div>
+            <div class="col-12 col-lg-11 p-0 px-md-4">
+                <div class="content-area">
+                    <div class="d-flex flex-row flex-wrap justify-content-between align-items-start mb-3">
+                        <div class="col-12 col-lg-9"> 
+                            <p class="heading-2">{label.settingsHeader}</p>
+                            <p class="body-regular">{label.settingsSubHeader}</p>
+                        </div>
+                        <button class="col-12 col-lg-3 btn btn-link link d-flex justify-content-start justify-content-lg-end align-items-center" 
+                                type="button" onclick={handleClickBackToShop}>
+                            <i class="bi bi-arrow-left"></i>&nbsp;{label.backToShop}
+                        </button> 
+                    </div>
+                    <div class="menu">
+                        <ul class="d-flex flex-row body-regular p-0 overflow-auto flex-nowrap text-nowrap w-auto">
+                            <li class={getPersonalClass} onclick={handleShowPersonalSection}>{label.personal}</li>
+                            <li class={getSecurityClass} onclick={handleShowSecuritySection}>{label.accountSecurity}</li>
+                            <li class={getSettingsClass} onclick={handleShowSettingsSection}>{label.settings}</li>
+                            <li class={getConsentsClass} onclick={handleShowConsentsSection}>{label.consents}</li>
+                        </ul>
+                    </div>
+                    <template if:true={showPersonalSection}>
+                        <div class="row p-3">
+                            <div class="bg-white rounded p-4">
+                                <div class="col-12 d-flex align-items-center justify-content-between border-bottom pb-2 mb-2">
+                                    <div>
+                                        <span class="large-medium">{label.personal}</span>
+                                    </div>
+                                    <!--button if:true={editModePersonal} class="btn btn-outline-dark" onclick={handleSavePersonal}>{label.save}</button>
+                                    <button if:false={editModePersonal} class="btn btn-outline-dark" onclick={handleEditPersonal}>{label.edit}</button-->
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div if:true={isLoading} class="spinner-border text-black-50" role="status"></div>
+                                </div>
+                                <!--lightning-spinner if:true={isLoading} alternative-text="Loading" size="small"></lightning-spinner-->
+                                <template if:false={isLoading}>
+                                    <div class="row">
+                                        <template if:true={editModePersonal}>
+                                            <lightning-record-edit-form density="comfy" object-api-name="User" record-id={userId}>
+                                                <div class="d-flex flex-row flex-wrap">
+                                                    <lightning-input-field class="form-fields" value={firstName} field-name="FirstName" onchange={handleChangeFirstName}></lightning-input-field>
+                                                    <lightning-input-field class="form-fields" value={lastName} field-name="LastName" onchange={handleChangeLastName}></lightning-input-field>
+                                                    <lightning-input-field class="form-fields" value={email} field-name="Email" onchange={handleChangeEmail}></lightning-input-field>
+                                                    <lightning-input-field class="form-fields" value={mobile} field-name="MobilePhone" onchange={handleChangeMobile}></lightning-input-field>
+                                                    <lightning-input-field class="form-fields" value={phone} field-name="Phone" onchange={handleChangePhone}></lightning-input-field>
+                                                </div>
+                                            </lightning-record-edit-form>
+                                            <lightning-record-view-form density="comfy" object-api-name="User" record-id={userId}>
+                                                <lightning-output-field class="form-fields" value={username} field-name="Username"></lightning-output-field>
+                                            </lightning-record-view-form>
+                                        </template>
+                                        <template if:false={editModePersonal}>
+                                            <lightning-record-view-form density="comfy" class="w-100" object-api-name="User" record-id={userId}>
+                                                <div class="d-flex flex-row flex-wrap">
+                                                    <lightning-output-field class="form-fields" value={firstName} field-name="FirstName"></lightning-output-field>
+                                                    <lightning-output-field class="form-fields" value={lastName} field-name="LastName"></lightning-output-field>
+                                                    <lightning-output-field class="form-fields" value={email} field-name="Email"></lightning-output-field>
+                                                    <lightning-output-field class="form-fields" value={mobile} field-name="MobilePhone"></lightning-output-field>
+                                                    <lightning-output-field class="form-fields" value={username} field-name="Username"></lightning-output-field>
+                                                    <lightning-output-field class="form-fields" value={phone} field-name="Phone"></lightning-output-field>
+                                                </div>
+                                            </lightning-record-view-form>
+                                        </template>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>                        
+                    <template if:true={showSecuritySection}>
+                        <div class="row p-3">
+                            <div class="bg-white rounded p-4">
+                                <div class="col-12 d-flex align-items-center justify-content-between border-bottom pb-2 mb-2">
+                                    <span class="large-medium">{label.accountSecurity}</span>
+                                    <button if:true={editModeSecurity} class="btn btn-outline-dark" onclick={handleSavePassword} disabled={passwordDisabled}>{label.save}</button>
+                                    <button if:false={editModeSecurity} class="btn btn-outline-dark" onclick={handleEditSecurity}>{label.edit}</button>
+                                </div>
+                                <div class="col-12 d-flex justify-content-between align-items-start">
+                                    <p class="d-flex flex-column">
+                                        <span class="body-medium">{label.passwordWarning}</span>
+                                    </p>
+                                </div>
+                                <lightning-spinner if:true={isLoading} alternative-text="Loading" size="small"></lightning-spinner>
+                                <template if:false={isLoading}>
+                                    <template if:true={editModeSecurity}>
+                                        <c-webshop-password onchangepassword={handleChangePassword}></c-webshop-password>
+                                    </template>
+                                    <template if:false={editModeSecurity}>
+                                        <div class="col-12 d-flex justify-content-between align-items-start">
+                                            <p class="d-flex flex-column">
+                                                <span class="body-medium">{label.password}</span>
+                                                <span class="body-regular">{label.passwordPlaceholder}</span>
+                                            </p>
+                                        </div>
+                                    </template>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                    <template if:true={showSettingsSection}>
+                        <div class="row p-3">
+                            <div class="bg-white rounded p-4 z-index-2">
+                                <div class="col-12 d-flex align-items-center justify-content-between border-bottom pb-2 mb-2">
+                                    <span class="large-medium">{label.settings}</span>
+                                    <button if:true={editModeSettings} class="btn btn-outline-dark" onclick={handleSaveSettings}>{label.save}</button>
+                                    <button if:false={editModeSettings} class="btn btn-outline-dark" onclick={handleEditSettings}>{label.edit}</button>
+                                </div>
+                                <lightning-spinner if:true={isLoading} alternative-text="Loading" size="small"></lightning-spinner>
+                                <template if:false={isLoading}>
+                                    <template if:true={editModeSettings}>
+                                        <lightning-record-edit-form density="compact" object-api-name="User" record-id={userId}>
+                                            <div class="d-flex flex-row flex-wrap">
+                                                <lightning-input-field dropdown-alignment="bottom" class="form-fields" value={timezone} field-name="TimeZoneSidKey" onchange={handleChangeTimezone}></lightning-input-field>
+                                                <lightning-input-field dropdown-alignment="bottom" class="form-fields" value={language} field-name="LanguageLocaleKey" onchange={handleChangeLanguage}></lightning-input-field>
+                                            </div>
+                                        </lightning-record-edit-form>
+                                    </template>
+                                    <template if:false={editModeSettings}>
+                                        <lightning-record-view-form density="comfy" object-api-name="User" record-id={userId}>
+                                            <div class="d-flex flex-row flex-wrap">
+                                                <lightning-output-field class="form-fields" value={timezone} field-name="TimeZoneSidKey"></lightning-output-field>
+                                                <lightning-output-field class="form-fields" value={language} field-name="LanguageLocaleKey"></lightning-output-field>
+                                            </div>
+                                        </lightning-record-view-form>
+                                    </template>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                    <template if:true={showConsentsSection}>
+                        <div class="row p-3">
+                            <div class="bg-white rounded p-4">
+                                <div class="col-12 d-flex align-items-center justify-content-between border-bottom pb-2 mb-2">
+                                    <span class="large-medium">{label.consents}</span>
+                                    <button if:true={editModeConsents} class="btn btn-outline-dark" onclick={handleSaveConsents}>{label.save}</button>
+                                    <button if:false={editModeConsents} class="btn btn-outline-dark" onclick={handleEditConsents}>{label.edit}</button>
+                                </div>
+                                <lightning-spinner if:true={isLoading} alternative-text="Loading" size="small"></lightning-spinner>
+                                <template if:false={isLoading}>
+                                    <template if:true={editModeConsents}>
+                                        <lightning-record-edit-form density="comfy" object-api-name="Contact" record-id={contactId}>
+                                            <div class="d-flex flex-row flex-wrap">
+                                                <lightning-input-field class="form-fields" value={optOut} field-name="DoubleOptInRequested__c" onchange={handleChangeNewsletter}></lightning-input-field>
+                                                <lightning-input-field class="form-fields" value={abandonedCart} field-name="DoubleOptInAbandonedCart__c" onchange={handleChangeAbandonedCart}></lightning-input-field>
+                                            </div>
+                                        </lightning-record-edit-form>
+                                    </template>
+                                    <template if:false={editModeConsents}>
+                                        <lightning-record-view-form density="comfy" object-api-name="Contact" record-id={contactId}>
+                                            <div class="d-flex flex-row flex-wrap">
+                                                <lightning-output-field class="form-fields" value={optOut} field-name="DoubleOptInRequested__c"></lightning-output-field>
+                                                <lightning-output-field class="form-fields" value={abandonedCart} field-name="DoubleOptInAbandonedCart__c"></lightning-output-field>
+                                            </div>
+                                        </lightning-record-view-form>
+                                    </template>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

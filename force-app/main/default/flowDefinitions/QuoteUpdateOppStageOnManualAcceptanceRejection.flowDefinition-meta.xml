@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>1</activeVersionNumber>
+    <description>Automates the synchronization between a Quote and its related Opportunity.
+Jira Ticket: JJDSF-427</description>
+    <masterLabel>Quote - Update Opp Stage on Manual Acceptance/Rejection</masterLabel>
+</FlowDefinition>

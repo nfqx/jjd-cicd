@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Category Featured Products",
+  "contentBody" : {
+    "activeViewId" : "Category_Featured_Products",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-category-featured-products",
+    "urlPrefix" : "category-featured-products"
+  },
+  "urlName" : "category-featured-products"
+}

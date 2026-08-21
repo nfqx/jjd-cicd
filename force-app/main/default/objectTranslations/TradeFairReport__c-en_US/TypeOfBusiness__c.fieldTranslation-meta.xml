@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type Of Business --></label>
+    <name>TypeOfBusiness__c</name>
+    <picklistValues>
+        <masterLabel>Bakery</masterLabel>
+        <translation><!-- Bakery --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Café</masterLabel>
+        <translation><!-- Café --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hotel</masterLabel>
+        <translation><!-- Hotel --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Restaurant</masterLabel>
+        <translation><!-- Restaurant --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

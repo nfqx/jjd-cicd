@@ -1,0 +1,47 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <template if:false={noData}>
+        <template if:true={showSlider}>
+            <div class="container">
+            <!-- Category Name -->
+                <h1 class="heading-1 my-3">{searchTerm}</h1>
+            <!-- Search Result Slider with filters -->
+                <c-webshop-slider 
+                    search-term={searchTerm} 
+                    show-multiple-rows
+                    show-product-pagination
+                    show-image
+                    show-price
+                    show-filters
+                    show-wishlist
+                    show-sorting
+                    show-cta
+                    onnodata={handleNoData}
+                    onhasdata={handleHasData}>
+                </c-webshop-slider>
+            </div>
+        </template>
+    </template>
+    <template if:true={noData}> 
+        <div class="container">
+            <p class="components-badge-h3">{label.noMatches}</p>
+            <p class="heading-3">"{searchTerm}"</p>
+            <p class="body-regular"><lightning-formatted-rich-text value={label.tips}></lightning-formatted-rich-text></p>
+            <p class="body-regular my-0">{label.needMoreHelp}</p>
+            <ul class="contact-list body-regular my">
+                <li>{label.email} <span class="link"><a href={contactEmailMailto}>{label.contactEmail}</a></span></li>
+                <li>{label.callUs} <span class="link">{label.contactPhone}</span></li>
+            </ul>
+         
+            <p class="heading-3" style="margin-top: 1rem;" if:true={showSliderHeading}>{label.topPicksTranslateable}</p>
+            <c-webshop-slider 
+                onhasdata={showHeading}
+                slider-name={label.topPicks} 
+                show-image
+                show-price
+                show-wishlist
+                show-cta>
+            </c-webshop-slider>
+        </div>
+    </template>
+</template>

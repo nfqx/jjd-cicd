@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Advance Payments</masterLabel>
+        <translation>Anzahlungen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Alberto Brand</masterLabel>
+        <translation>Marke Alberto</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Alcoholic Beverage Products</masterLabel>
+        <translation>Alkoholische Getränke-Artikel</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Alfredo Brand</masterLabel>
+        <translation>Marke Alfredo</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>App Coffee</masterLabel>
+        <translation>App-Coffee</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Biscuits and Chocolate Squares</masterLabel>
+        <translation>Kekse und Naps</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Burkhof Brand</masterLabel>
+        <translation>Marke Burkhof</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Coffee Extract</masterLabel>
+        <translation>Extrakt-Kaffee</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Coffee Machines</masterLabel>
+        <translation>Kaffeemaschinen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Consumables</masterLabel>
+        <translation>Verbrauchsmaterial</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Contract-Manufactured Roasted Coffee</masterLabel>
+        <translation>Röstkaffee Lohnproduktion</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cream and Condensed Milk</masterLabel>
+        <translation>Sahne und Kondensmilch</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Drinking Chocolate Products</masterLabel>
+        <translation>Trinkschokolade-Artikel</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Eilles Brand</masterLabel>
+        <translation>Marke Eilles</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Ferne Welten Brand</masterLabel>
+        <translation>Marke Ferne Welten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Food Service</masterLabel>
+        <translation>Gastronomie</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>General Promotional Materials</masterLabel>
+        <translation>Werbematerial allgemein</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Green Coffee</masterLabel>
+        <translation>Rohkaffee</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Green Coffee Procurement Costs</masterLabel>
+        <translation>Rohkaffee-Beschaffungskosten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Hornig</masterLabel>
+        <translation>Hornig</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Idee Brand</masterLabel>
+        <translation>Marke Idee</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Intención Brand</masterLabel>
+        <translation>Marke Intención</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Joh. Joach. Darb. Bakery Business</masterLabel>
+        <translation>Joh. Joach. Darb. Bäckergeschäft</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kränzchen Brand</masterLabel>
+        <translation>Marke Kränzchen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Licences and Costs</masterLabel>
+        <translation>Lizensen und Kosten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Machine Rentals</masterLabel>
+        <translation>Maschinenmieten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mozart</masterLabel>
+        <translation>Mozart</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mövenpick Brand</masterLabel>
+        <translation>Marke Mövenpick</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Operating Supplies</masterLabel>
+        <translation>Betriebsstoffe</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other Instant Products</masterLabel>
+        <translation>Sonstige Instantprodukte</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other Products at Reduced VAT Rate</masterLabel>
+        <translation>sonstige Artikel verm. MwSt-Satz</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other Products at Standard VAT Rate</masterLabel>
+        <translation>sonstige Artikel voller MwSt-Satz</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other Roasted Coffees</masterLabel>
+        <translation>Sonstige Röstkaffees</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other Services</masterLabel>
+        <translation>Sonstige Dienstleistung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Packaging Materials</masterLabel>
+        <translation>Verpackungsmaterial</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Private Labels</masterLabel>
+        <translation>Eigenmarken</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Promotional Materials</masterLabel>
+        <translation>Werbematerial</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Promotional Materials - Beverage Menus</masterLabel>
+        <translation>Werbematerial Getränkekarten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Promotional Materials - Calendars and Brochures</masterLabel>
+        <translation>Werbematerial Kalender,Prospekte</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Promotional Materials - Cup Doilies</masterLabel>
+        <translation>Werbematerial Tassendeckchen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Promotional Materials - Displays</masterLabel>
+        <translation>Werbematerial Displays</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Promotional Materials - Notepads</masterLabel>
+        <translation>Werbematerial Notablocks</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Promotional Materials - Table Displays</masterLabel>
+        <translation>Werbematerial Tischaufsteller</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Rainforest Alliance</masterLabel>
+        <translation>Rainforest Alliance</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Rebates</masterLabel>
+        <translation>Rückvergütungen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Rebilling</masterLabel>
+        <translation>Weiterberechnung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sale of Fixed Assets</masterLabel>
+        <translation>Verkauf aus dem Anlagevermögen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sales Deductions</masterLabel>
+        <translation>Erlösschmälerungen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sansibar Brand</masterLabel>
+        <translation>Marke Sansibar</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Services</masterLabel>
+        <translation>Dienstleistungen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sugar and Sweeteners</masterLabel>
+        <translation>Zucker und Süßstoff</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Tea Products</masterLabel>
+        <translation>Tee-Artikel</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Verde Brand</masterLabel>
+        <translation>Marke Verde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Warca</masterLabel>
+        <translation>Warca</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

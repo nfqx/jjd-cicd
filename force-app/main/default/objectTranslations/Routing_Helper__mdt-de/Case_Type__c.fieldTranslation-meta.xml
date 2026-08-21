@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Case Type --></label>
+    <name>Case_Type__c</name>
+    <picklistValues>
+        <masterLabel>Answering machine</masterLabel>
+        <translation><!-- Answering machine --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Complaint General</masterLabel>
+        <translation><!-- Complaint General --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>End customer inquiry</masterLabel>
+        <translation><!-- End customer inquiry --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>General inquiries</masterLabel>
+        <translation><!-- General inquiries --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Image database</masterLabel>
+        <translation><!-- Image database --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lead</masterLabel>
+        <translation><!-- Lead --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Logistics</masterLabel>
+        <translation><!-- Logistics --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Machine</masterLabel>
+        <translation><!-- Machine --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Master data</masterLabel>
+        <translation><!-- Master data --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Master data change</masterLabel>
+        <translation><!-- Master data change --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New customer creation</masterLabel>
+        <translation><!-- New customer creation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Offers</masterLabel>
+        <translation><!-- Offers --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Order</masterLabel>
+        <translation><!-- Order --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>QS Reklamation</masterLabel>
+        <translation><!-- QS Reklamation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>QS complaint</masterLabel>
+        <translation><!-- QS complaint --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Spam</masterLabel>
+        <translation><!-- Spam --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Training issue</masterLabel>
+        <translation><!-- Training issue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Trainings Issue</masterLabel>
+        <translation><!-- Trainings Issue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unrated</masterLabel>
+        <translation><!-- Unrated --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VIP Kunden</masterLabel>
+        <translation><!-- VIP Kunden --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VIP customers</masterLabel>
+        <translation><!-- VIP customers --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Webshop</masterLabel>
+        <translation><!-- Webshop --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

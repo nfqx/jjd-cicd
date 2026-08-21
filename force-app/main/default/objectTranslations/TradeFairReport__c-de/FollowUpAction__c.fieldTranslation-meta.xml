@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Massnahmen</label>
+    <name>FollowUpAction__c</name>
+    <picklistValues>
+        <masterLabel>Appointment Scheduled</masterLabel>
+        <translation>TERMIN VEREINBART</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation>SONSTIGES(WAS)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Quote/Offer</masterLabel>
+        <translation>ANGEBOT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sampling</masterLabel>
+        <translation>BEMUSTERUNG</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Visit</masterLabel>
+        <translation>BESUCH</translation>
+    </picklistValues>
+</CustomFieldTranslation>

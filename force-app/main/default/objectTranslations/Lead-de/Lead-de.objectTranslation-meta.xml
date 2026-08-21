@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Lead Layout</layout>
+        <sections>
+            <label><!-- Chain Information --></label>
+            <section>Chain Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Assign to TeleSales --></label>
+        <name>AssignToTeleSales</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Convert --></label>
+        <name>CustomConvert</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Disqualify --></label>
+        <name>Disqualify</name>
+    </quickActions>
+    <validationRules>
+        <errorMessage><!-- Please edit the contact information and enter a valid First and Last Name! --></errorMessage>
+        <name>Change_LastName</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please confirm whether a buying group / chain membership has been checked. --></errorMessage>
+        <name>EKG_asked_RequiredForConversion</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please complete all mandatory fields (Company, Salutation, First Name, Last Name, Email, and at least one phone number) before moving the lead to “In Prequalification”. --></errorMessage>
+        <name>Prequal_Mandatory_Check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A reason for disqualification must always be specified. --></errorMessage>
+        <name>Prevent_DisqualificationWithout_Reason</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- When created manually, the Lead Source is restricted to Employee/Partner Referral, Cold Acquisition, or Trade Fair. --></errorMessage>
+        <name>Prevent_Incorrect_LeadSource_for_Sales</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select or describe the reason why the Lead is disqualified. --></errorMessage>
+        <name>Reason_for_Lead_disqualification</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Mandatory information is missing for the status change. Please check fields:
+
+-Company
+-Salutation
+-First &amp; Last Name
+-Email
+-Phone or Mobile -->
+        </errorMessage>
+        <name>ValidateInPrequalificationInfos</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Please check fields:
+-Est. Revenue: Coffee, Tea, Hot Chocolate
+-Address (Postal Code)
+-Timeframe -->
+        </errorMessage>
+        <name>ValidateSalesQualificationInfos</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+</CustomObjectTranslation>

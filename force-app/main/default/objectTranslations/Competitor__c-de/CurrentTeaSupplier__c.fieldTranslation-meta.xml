@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- CurrentTeaSupplier --></label>
+    <name>CurrentTeaSupplier__c</name>
+    <picklistValues>
+        <masterLabel>Althaus</masterLabel>
+        <translation><!-- Althaus --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Amazon</masterLabel>
+        <translation><!-- Amazon --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GOURVITA</masterLabel>
+        <translation><!-- GOURVITA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Heimbs / Azul / Dallmayr</masterLabel>
+        <translation><!-- Heimbs / Azul / Dallmayr --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Jacobs Douwe Egberts</masterLabel>
+        <translation><!-- Jacobs Douwe Egberts --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LEH</masterLabel>
+        <translation><!-- LEH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lipton</masterLabel>
+        <translation><!-- Lipton --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Meßmer</masterLabel>
+        <translation><!-- Meßmer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Milford</masterLabel>
+        <translation><!-- Milford --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pure (Tchibo)</masterLabel>
+        <translation><!-- Pure (Tchibo) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ronnefeldt</masterLabel>
+        <translation><!-- Ronnefeldt --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sonstige</masterLabel>
+        <translation><!-- Sonstige --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Teegeschwender</masterLabel>
+        <translation><!-- Teegeschwender --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Teekanne</masterLabel>
+        <translation><!-- Teekanne --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Twinings</masterLabel>
+        <translation><!-- Twinings --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>justt</masterLabel>
+        <translation><!-- justt --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

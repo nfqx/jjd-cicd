@@ -1,0 +1,6 @@
+{
+  "apiName" : "My_Orders__c",
+  "type" : "sfdc_cms__route",
+  "parentId" : "sfdc_cms__route/Self_Service__c",
+  "path" : "routes"
+}

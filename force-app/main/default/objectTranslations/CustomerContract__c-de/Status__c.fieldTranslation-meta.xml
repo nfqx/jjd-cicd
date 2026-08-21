@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Lebenszyklus des Vertrags. Es darf je Kunde nur EINEN aktiven Vertrag geben — das sichert eine Validierungsregel ab.</help>
+    <label>Status</label>
+    <name>Status__c</name>
+    <picklistValues>
+        <masterLabel>Draft (not yet in SAP)</masterLabel>
+        <translation>Entwurf</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Storno</masterLabel>
+        <translation><!-- Storno --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VT Beendet</masterLabel>
+        <translation><!-- VT Beendet --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VT freigegeben (aktiv)</masterLabel>
+        <translation><!-- VT freigegeben (aktiv) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VT unvollständig</masterLabel>
+        <translation><!-- VT unvollständig --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VT verklagt</masterLabel>
+        <translation><!-- VT verklagt --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vertragsende registriert</masterLabel>
+        <translation><!-- Vertragsende registriert --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

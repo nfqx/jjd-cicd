@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Billing block from SAP — the contract is currently not settled. --></help>
+    <label>Abrechnungssperre</label>
+    <name>BillingBlocked__c</name>
+</CustomFieldTranslation>

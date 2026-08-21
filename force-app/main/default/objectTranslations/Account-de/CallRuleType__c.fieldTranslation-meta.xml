@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Art der Anrufregel</label>
+    <name>CallRuleType__c</name>
+    <picklistValues>
+        <masterLabel>Call by ZKS</masterLabel>
+        <translation><!-- Call by ZKS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Observe by ZKS</masterLabel>
+        <translation><!-- Observe by ZKS --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

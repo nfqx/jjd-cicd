@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V2_Base_Discount_Cocoa_Range</fullName>
+    <active>false</active>
+    <description>Restricts base cocoa discount to a range of 0-100%.</description>
+    <errorConditionFormula>NOT(ISBLANK(	DiscountBaseDiscountHotChocolate__c)) &amp;&amp; 
+(	DiscountBaseDiscountHotChocolate__c &lt; 0 || 
+	DiscountBaseDiscountHotChocolate__c &gt; 100)</errorConditionFormula>
+    <errorMessage>Base discount for hot chocolate must be between 0% and 100%.</errorMessage>
+</ValidationRule>

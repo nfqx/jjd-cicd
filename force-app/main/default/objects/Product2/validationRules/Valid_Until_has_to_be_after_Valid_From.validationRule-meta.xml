@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Valid_Until_has_to_be_after_Valid_From</fullName>
+    <active>false</active>
+    <description>Enforces that the end date is after the start date.</description>
+    <errorConditionFormula>AND ( NOT ISNULL(ValidUntil__c), 
+					NOT ISNULL(ValidFrom__c), ValidUntil__c &lt; ValidFrom__c )</errorConditionFormula>
+    <errorDisplayField>ValidUntil__c</errorDisplayField>
+    <errorMessage>Valid until has to be after valid from</errorMessage>
+</ValidationRule>

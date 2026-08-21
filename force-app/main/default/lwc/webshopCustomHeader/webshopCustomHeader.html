@@ -1,0 +1,120 @@
+<template>
+  <c-webshop-toast></c-webshop-toast>
+  <div class="bg-white w-100 border-bottom shadow-sm d-none d-sm-flex justify-content-end align-items-center body-small fixed-top py-1 z-0" onmouseover={closeDropdown}> 
+    <template if:true={showExtendedHeader}>
+      <span class="me-2 cursor-pointer w-auto" onclick={handleContactUs}>{label.helpText}</span>
+      <span class="d-flex cursor-pointer w-auto account-left me-2" onclick={handleOpenMyAccount}><i class="bi bi-person px-2"></i>{label.myAccount}</span><!--removed me-4-->
+      <span class="d-none d-md-flex cursor-pointer w-auto account-left me-4" onclick={handleLogout}><i class="bi bi-box-arrow-right px-2"></i>{label.logout}</span>
+    </template>
+  </div>
+  <div class="main-container" >
+    <div class="header-container row align-items-center justify-content-between">
+      <!-- Logo -->
+      <div class="col-4 col-md-3 d-flex justify-content-start ps-3 ps-md-5"> <!--removed col-4 col-md-3 col-lg-2 onmouseover={closeDropdown}-->
+        <div class="header-logo" onclick={handleClickLogo}> <!--removed ms-1 ms-lg-3-->
+          <img src={jjdLogo} alt="J.J. Darboven Logo" class="img-fluid" />
+        </div>
+      </div>
+      <!-- Mega Menu for Desktop -->
+      <div class="col-5 col-lg-3 d-none d-md-flex justify-content-center body-medium"> <!--changed col-lg-4 to col-lg-3-->
+        <template if:true={isLoggedIn}>
+          <c-webshop-mega-menu mega-menu-name="MainMenu" if:true={showMegaMenu}></c-webshop-mega-menu>
+        </template>
+        <template if:false={isLoggedIn}>
+          &nbsp;
+        </template>
+      </div>
+      <!-- Search Input -->
+      <div class="col-4 col-xxl-3 d-none d-lg-flex justify-content-end align-items-center" onmouseover={closeDropdown}>
+        <template if:true={isLoggedIn}>
+          <c-webshop-search-mask></c-webshop-search-mask> 
+        </template>
+        <template if:false={isLoggedIn}>
+          &nbsp;
+        </template>
+      </div>
+      <!-- Icons -->
+      <div class="col-2 col-xxl-3 d-none d-md-flex align-items-center justify-content-end pe-5" onmouseover={closeDropdown}> <!--removed col-6 col-md-2 -->
+        <template if:true={isLoggedIn}>
+          <i class="bi bi-search text-dark mx-2 d-sm-none d-md-block d-lg-none" style="font-size:23px; line-height:23px;" onclick={toggleSearch}></i>
+          <div class="wishlist-icon-outer-container d-none d-sm-flex mx-2" if:true={showIcons}>
+            <i class="bi bi-heart cursor-pointer" style="font-size:23px;line-height:23px;" onclick={handleOpenWishlist}></i>
+            <div class="wishlist-count-outer-container d-none d-md-flex">
+              <c-webshop-wishlist-count data-type="Wishlist" type="Wishlist" account-id={accountId} onclick={handleOpenWishlist}></c-webshop-wishlist-count>
+            </div>
+          </div>
+          <span if:true={showIcons} onclick={handleOpenWishlist} class="body-medium cursor-pointer d-none d-xxl-flex">{label.favourites}</span>
+          <div class="cart-icon-outer-container d-none d-sm-flex mx-2" if:true={showIcons}>
+            <i onclick={handleOpenCart} class="bi bi-bag cursor-pointer" style="font-size:23px;line-height:23px;"></i> 
+            <div class="cart-count-outer-container d-none d-md-flex">
+              <c-webshop-wishlist-count data-type="Cart" type="Cart" account-id={accountId}></c-webshop-wishlist-count>
+            </div>
+          </div>
+          <span if:true={showIcons} onclick={handleOpenCart} class="body-medium cursor-pointer d-none d-xxl-flex">{label.cart}</span>
+        </template>
+        <template if:false={isLoggedIn}>
+          &nbsp;
+        </template>
+      </div>
+      <div class="col-8 d-flex d-md-none justify-content-evenly">
+        <template if:true={isLoggedIn}>
+          <template if:true={showIcons}>
+            <i class="bi bi-search text-dark mx-2" style="font-size:23px; line-height:23px;" onclick={toggleSearch}></i>
+            <i class="bi bi-person-workspace text-dark mx-2" style="font-size:23px; line-height:23px;" onclick={handleOpenMyAccount}></i>
+            <i class="bi bi-bag text-dark mx-2" style="font-size:23px; line-height:23px;" onclick={handleOpenCart}></i>
+            <i class="bi bi-list text-dark mx-2" style="font-size:26px; line-height:26px;" onclick={toggleMobileMenu}></i>
+          </template>
+        </template>
+        <template if:false={isLoggedIn}>
+          &nbsp;
+        </template>
+      </div>
+    </div>
+    <template if:true={isLoggedIn}>
+      <template if:true={showDoubleOptInModal}>
+        <c-webshop-double-optin-modal></c-webshop-double-optin-modal>
+      </template>
+      <c-webshop-cart-modal></c-webshop-cart-modal>
+    </template>
+    <c-webshop-contact-modal anonymous={notLoggedIn}></c-webshop-contact-modal>
+  </div>
+  <!--Mobile Menu-->
+  <template if:true={isLoggedIn}>
+    <div class="menu-modal" if:true={isMobileMenuOpen}> 
+      <div class="row d-flex justify-content-end mb-3 py-2 px-3">
+        <button class="btn btn-light" style="width:50px;" onclick={toggleMobileMenu}><i class="bi bi-x-lg"></i></button>
+      </div>
+      <p class="px-3 m-0"><span class="large-medium" onclick={handleOpenMyAccount}><i class="bi bi-person me-2"></i>{label.myAccount}</span></p>
+      <p class="px-3 m-0"><span class="large-medium"><i class="bi bi-box-arrow-right me-2" onclick={handleLogout}></i>{label.logout}</span></p>
+      <div class="mega-menu-mobile d-block justify-content-center"> 
+        <c-webshop-mega-menu mega-menu-name="MainMenu"></c-webshop-mega-menu>
+      </div>
+      <!--favorites-->
+      <div class="body-regular d-flex px-3 mb-1">
+        <div class="wishlist-icon-outer-container" if:true={showIcons}>
+          <i class="bi bi-heart cursor-pointer me-2" onclick={handleOpenWishlist} style="font-size:20px"></i>
+          <div class="wishlist-count-outer-container">
+            <c-webshop-wishlist-count data-type="Wishlist" type="Wishlist" account-id={accountId} onclick={handleOpenWishlist}></c-webshop-wishlist-count>
+          </div>
+        </div>
+        <span if:true={showIcons} onclick={handleOpenWishlist} class="cursor-pointer">{label.favourites}</span>
+      </div>
+      <!--cart-->
+      <div class="body-regular d-flex px-3 mb-1">
+        <div class="cart-icon-outer-container" if:true={showIcons}>
+          <i onclick={handleOpenCart} class="bi bi-bag cursor-pointer me-2" style="font-size:20px"></i> 
+          <div class="cart-count-outer-container">
+            <c-webshop-wishlist-count data-type="Cart" type="Cart" account-id={accountId}></c-webshop-wishlist-count>
+          </div>
+        </div>
+        <span if:true={showIcons} onclick={handleOpenCart} class="cursor-pointer">{label.cart}</span>
+      </div>
+      <!--help-->
+      <p class="body-regular d-flex px-3 mb-1" onclick={handleContactUs}><i class="bi bi-question-circle me-2" style="font-size:20px"></i> {label.helpText}</p> 
+    </div>
+    <!--Mobile search bar-->
+    <div if:true={isSearchOpen} class="mobile-search-bar bg-white p-2 border col-12 align-items-center d-flex d-lg-none " tabindex="0">
+      <c-webshop-search-mask></c-webshop-search-mask> 
+    </div>
+  </template>
+</template>

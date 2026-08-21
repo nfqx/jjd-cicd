@@ -1,0 +1,5 @@
+{
+  "apiName" : "My_Outlet",
+  "type" : "sfdc_cms__view",
+  "path" : "views"
+}

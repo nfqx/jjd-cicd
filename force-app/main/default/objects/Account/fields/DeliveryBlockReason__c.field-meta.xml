@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DeliveryBlockReason__c</fullName>
+    <description>Delivery is Blocked for Customer</description>
+    <inlineHelpText>Delivery is Blocked for Customer</inlineHelpText>
+    <label>Delivery Block Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>01</fullName>
+                <default>false</default>
+                <label>Credit Limit</label>
+            </value>
+            <value>
+                <fullName>02</fullName>
+                <default>false</default>
+                <label>Political Reasons</label>
+            </value>
+            <value>
+                <fullName>03</fullName>
+                <default>false</default>
+                <label>Material Shortage</label>
+            </value>
+            <value>
+                <fullName>04</fullName>
+                <default>false</default>
+                <label>Missing Export Documents</label>
+            </value>
+            <value>
+                <fullName>05</fullName>
+                <default>false</default>
+                <label>Delivery Cost Check</label>
+            </value>
+            <value>
+                <fullName>06</fullName>
+                <default>false</default>
+                <label>No Print</label>
+            </value>
+            <value>
+                <fullName>07</fullName>
+                <default>false</default>
+                <label>Quantity Change</label>
+            </value>
+            <value>
+                <fullName>08</fullName>
+                <default>false</default>
+                <label>Kanban Delivery</label>
+            </value>
+            <value>
+                <fullName>09</fullName>
+                <default>false</default>
+                <label>JIT Delivery (PAB)</label>
+            </value>
+            <value>
+                <fullName>10</fullName>
+                <default>false</default>
+                <label>Delivery Block – Sales</label>
+            </value>
+            <value>
+                <fullName>11</fullName>
+                <default>false</default>
+                <label>Delivery Block – Logistics</label>
+            </value>
+            <value>
+                <fullName>12</fullName>
+                <default>false</default>
+                <label>Navision Block</label>
+            </value>
+            <value>
+                <fullName>15</fullName>
+                <default>false</default>
+                <label>Delivery Block</label>
+            </value>
+            <value>
+                <fullName>30</fullName>
+                <default>false</default>
+                <label>Price Change Approval</label>
+            </value>
+            <value>
+                <fullName>90</fullName>
+                <default>false</default>
+                <label>Prepayment</label>
+            </value>
+            <value>
+                <fullName>91</fullName>
+                <default>false</default>
+                <label>Cash Sale</label>
+            </value>
+            <value>
+                <fullName>SA</fullName>
+                <default>false</default>
+                <label>Suspected Cerberus Fraud</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TerminationReason__c</fullName>
+    <description>Termination reason from SAP. Real values still pending — waiting for the SAP value list; placeholder until then. [Sources: Confluence 31 Vertrag abschließen, CI-304]</description>
+    <inlineHelpText>Termination reason from SAP. Real values still pending — waiting for the SAP value list; placeholder until then.</inlineHelpText>
+    <label>Termination Reason</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Placeholder</fullName>
+                <default>false</default>
+                <label>Placeholder</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

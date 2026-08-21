@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IndexationRightCappedBy__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Causer of the indexation lock — within a chain below the head always the chain head; blank while the own state applies.</description>
+    <label>Indexation Right Capped By</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Account Conditions (Indexation Right Capped By)</relationshipLabel>
+    <relationshipName>IndexationRightCappedBy</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

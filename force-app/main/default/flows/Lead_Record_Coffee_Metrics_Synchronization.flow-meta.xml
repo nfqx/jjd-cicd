@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Ass_AssignCoffeeSales</name>
+        <label>Assign Coffee Sales</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.EstimatedSalesCoffee__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frm_calculateCoffeeSalesInKg</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Lead</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Ass_AssignCupsOfCoffee</name>
+        <label>Assign Cups of Coffee</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.DailyNumberOfCups__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frm_CalculateDailyCupsOfCoffee</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Lead</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>dec_What_has_changed</name>
+        <label>What has changed</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Update_Lead</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Coffee_sales</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.EstimatedSalesCoffee__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Ass_AssignCupsOfCoffee</targetReference>
+            </connector>
+            <label>Coffee sales</label>
+        </rules>
+        <rules>
+            <name>Daily_Cups_of_Coffee</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.DailyNumberOfCups__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Ass_AssignCoffeeSales</targetReference>
+            </connector>
+            <label>Daily Cups of Coffee</label>
+        </rules>
+    </decisions>
+    <description>On Lead create and update, this flow keeps the coffee consumption metrics consistent. It detects changes to either “Daily Number Of Cups” or “Estimated sales of coffee in KG” and calculates the corresponding other value using a fixed conversion logic (8g per cup, annualized over 365 days). The flow then writes the calculated value back to the same Lead record so that both metrics remain aligned.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>frm_calculateCoffeeSalesInKg</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.DailyNumberOfCups__c}*8/1000*365</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>frm_CalculateDailyCupsOfCoffee</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.EstimatedSalesCoffee__c}/(8/1000*365)</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Lead Record Coffee Metrics Synchronization {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead Record Coffee Metrics Synchronization</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Lead</name>
+        <label>Update Lead</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>dec_What_has_changed</targetReference>
+        </connector>
+        <filterFormula>OR(
+ISNEW(),
+ISCHANGED({!$Record.EstimatedVolumeCoffee__c}),
+    AND(
+         ISCHANGED({!$Record.DailyNumberOfCups__c}), 
+         {!$Record.DailyNumberOfCups__c} &lt;&gt; ({!$Record.EstimatedVolumeCoffee__c}/8/1000*365)
+            )
+)</filterFormula>
+        <object>Lead</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

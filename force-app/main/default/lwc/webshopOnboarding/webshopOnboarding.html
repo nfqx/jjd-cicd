@@ -1,0 +1,41 @@
+<template>
+        
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <FORM> element to your page.             -->
+    <!--  ----------------------------------------------------------------------  -->
+
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00D0O000000ZPHv" method="POST">
+
+        <input type="hidden" name="orgid" value="00D0O000000ZPHv">
+        <input type="hidden" name="00NVi000001wCMn" value={accountValue}>
+        <input type="hidden" name="00NVi000001wCMo" value={hashValue}>
+        <input type="hidden" name="retURL" value="https://shop.darboven.com/onboarding-landing">
+
+        <!--  ----------------------------------------------------------------------  -->
+        <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+        <!--  these lines if you wish to test in debug mode.                          -->
+        <!--  <input type="hidden" name="debug" value=1>                              -->
+        <!--  <input type="hidden" name="debugEmail" value="darboven@nfq-x.com">      -->
+        <!--  ----------------------------------------------------------------------  -->
+        <div style="display: flex; gap: 10px; align-items: center; ">
+            <label for="anrede" style="margin-top: 0px;">Anrede</label>
+            <select  id="00NVi000005iikJ" name="00NVi000005iikJ" title="Anrede">
+                <option value="">– Keine –</option>
+                <option value="Mr.">Herr</option>
+                <option value="Ms.">Frau</option>
+                <option value="Divers">Divers</option>
+            </select>
+        </div>
+        <br>
+
+        <label for="FirstName" style="margin-top: 20px;">Vorname</label><input  id="FirstName" maxlength="80" name="FirstName" size="20" type="text" required/><br>
+        <label for="LastName" style="margin-top: 20px;">Nachname</label><input  id="LastName" maxlength="80" name="LastName" size="20" type="text" required/><br>
+        <label for="email">E-Mail Adresse</label><input  id="email" maxlength="80" name="email" size="20" type="text" required/><br>
+        <input  id="00NVi000009sAV3" maxlength="255" name="00NVi000009sAV3" size="20" type="text" value="https://shop.darboven.com/onboarding-2026" hidden/><br>
+        <label for="phone">Telefon</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+
+        <input type="hidden"  id="external" name="external" value="1" /><br>
+        <input type="submit" name="submit">
+
+    </form>
+</template>

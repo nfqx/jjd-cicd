@@ -1,0 +1,192 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Order Summary Details",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "dxpStyle" : { }
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "backgroundImageConfig" : "",
+                "backgroundImageOverlay" : "rgba(0,0,0,0)",
+                "componentSpacerSize" : "",
+                "dxpStyle" : { },
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "maxContentWidth" : "",
+                "sectionColumnGutterWidth" : "",
+                "sectionConfig" : "{\"UUID\":\"377f33d7-a1fa-4af8-b560-88500a4d9101\",\"columns\":[{\"UUID\":\"9eac016b-ea3b-43f1-bcbd-4520da1620d3\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":null},{\"UUID\":\"7a383ad8-ecc4-4157-b239-40f190b43c9d\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":null}]}",
+                "sectionMinHeight" : "",
+                "sectionVerticalAlign" : "flex-start"
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "backgroundColor" : "",
+                    "dxpStyle" : { },
+                    "isLinkable" : false,
+                    "linkAssistiveText" : "",
+                    "paddingHorizontal" : "none",
+                    "paddingVertical" : "none",
+                    "text" : "Order: {!Order.Details.orderNumber}",
+                    "textAlign" : "left",
+                    "textDecoration" : "{\"bold\": true}",
+                    "textDisplayInfo" : "{\"textStyle\": \"heading-large\", \"headingTag\": \"h1\"}"
+                  },
+                  "definition" : "dxp_base:textBlock",
+                  "id" : "6e1fb262-c753-45bc-89e8-9d92f03b64bb",
+                  "type" : "component"
+                } ],
+                "id" : "9eac016b-ea3b-43f1-bcbd-4520da1620d3",
+                "name" : "col1",
+                "title" : "Column 1",
+                "type" : "region"
+              }, {
+                "children" : [ {
+                  "attributes" : {
+                    "alignment" : "right",
+                    "buttonText" : "Start Reorder",
+                    "dxpStyle" : { },
+                    "orderSummaryId" : "{!Route.recordId}",
+                    "size" : "standard",
+                    "variant" : "primary",
+                    "width" : "standard"
+                  },
+                  "definition" : "commerce_builder:reorderButton",
+                  "id" : "23cc19e0-9247-4df8-a9c1-d814b3279d7e",
+                  "type" : "component"
+                } ],
+                "id" : "7a383ad8-ecc4-4157-b239-40f190b43c9d",
+                "name" : "col2",
+                "title" : "Column 2",
+                "type" : "region"
+              } ],
+              "definition" : "community_layout:section",
+              "id" : "377f33d7-a1fa-4af8-b560-88500a4d9101",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "backgroundImageConfig" : "",
+                "backgroundImageOverlay" : "rgba(0,0,0,0)",
+                "componentSpacerSize" : "",
+                "dxpStyle" : { },
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "maxContentWidth" : "",
+                "sectionColumnGutterWidth" : "",
+                "sectionConfig" : "{\"UUID\":\"ad48a060-06b1-4003-b23c-abed87826a3c\",\"columns\":[{\"UUID\":\"93e519d1-4d98-411e-be79-582f611b4186\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"4\",\"seedComponents\":null},{\"UUID\":\"b4b4db92-803b-4b07-9bf3-e9f9a24012f3\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"8\",\"seedComponents\":null}]}",
+                "sectionMinHeight" : "",
+                "sectionVerticalAlign" : "flex-start"
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "dxpStyle" : { },
+                    "highlightsCardBorderRadius" : 0,
+                    "highlightsTitle" : "Details",
+                    "orderSummaryDetails" : "{!Order.Details}",
+                    "orderSummaryHighlightsFieldMapping" : "[{\"entity\": \"OrderSummary\",\"name\": \"OrderedDate\",\"label\": \"Ordered Date\",\"type\": \"Date/Time\",\"expression\": \"{!Order.OrderSummary.OrderedDate}\"},{\"entity\": \"OrderSummary\",\"name\": \"AccountId\",\"label\": \"Account\",\"type\": \"Lookup(Account)\",\"expression\": \"{!Order.OrderSummary.AccountId}\"},{\"entity\": \"OrderSummary\",\"name\": \"OwnerId\",\"label\": \"Placed By\",\"type\": \"Lookup(User,Group)\",\"expression\": \"{!Order.OrderSummary.OwnerId}\"},{\"entity\": \"OrderSummary\",\"name\": \"Status\",\"label\": \"Status\",\"type\": \"Picklist\",\"expression\": \"{!Order.OrderSummary.Status}\"}]"
+                  },
+                  "definition" : "commerce_builder:orderDetails",
+                  "id" : "203480bd-1eb8-45fb-b8a6-756da3db563b",
+                  "type" : "component"
+                }, {
+                  "attributes" : {
+                    "dxpStyle" : { },
+                    "grossTaxOrdersFieldMapping" : "[\n{\"entity\": \"OrderSummary\",\"name\": \"TotalProductAmountWithTax\",\"label\": \"Subtotal\",\"type\": \"Formula (Currency)\",\"expression\": \"{!Order.OrderSummary.TotalProductAmountWithTax}\"\n},\n{\"entity\": \"OrderAdjustmentAggregateSummary\",\"name\": \"TotalProductPromotionDiscount\",\"label\": \"Promotions\",\"type\": \"Currency\",\"expression\": \"{!Order.OrderAdjustmentAggregateSummary.TotalProductPromotionDiscount}\"\n},\n{\"entity\": \"OrderSummary\",\"name\": \"TotalAdjDeliveryAmtWithTax\",\"label\": \"Shipping\",\"type\": \"Formula (Currency)\",\"expression\": \"{!Order.OrderSummary.TotalAdjDeliveryAmtWithTax}\"\n},\n{\"entity\": \"OrderSummary\",\"name\": \"TotalTaxAmount\",\"label\": \"Tax\",\"type\": \"Roll-Up Summary (SUM Order Product Summary)\",\"expression\": \"{!Order.OrderSummary.TotalTaxAmount}\"\n},\n{\"entity\": \"OrderSummary\",\"name\": \"GrandTotalAmount\",\"label\": \"Total\",\"type\": \"Formula (Currency)\",\"expression\": \"{!Order.OrderSummary.GrandTotalAmount}\"\n}\n]",
+                    "hideFieldValueSeparator" : true,
+                    "hideTitle" : true,
+                    "netTaxOrdersFieldMapping" : "[{\"entity\": \"OrderSummary\",\"name\": \"TotalProductAmount\",\"label\": \"Subtotal\",\"type\": \"Roll-Up Summary ( Order Product Summary)\",\"expression\": \"{!Order.OrderSummary.TotalProductAmount}\"},{\"entity\": \"OrderAdjustmentAggregateSummary\",\"name\": \"TotalProductPromotionDiscount\",\"label\": \"Promotions\",\"type\": \"Currency\",\"expression\": \"{!Order.OrderAdjustmentAggregateSummary.TotalProductPromotionDiscount}\"},{\"entity\": \"OrderSummary\",\"name\": \"TotalAdjustedDeliveryAmount\",\"label\": \"Shipping\",\"type\": \"Roll-Up Summary ( Order Product Summary)\",\"expression\": \"{!Order.OrderSummary.TotalAdjustedDeliveryAmount}\"},{\"entity\": \"OrderSummary\",\"name\": \"TotalTaxAmount\",\"label\": \"Tax\",\"type\": \"Roll-Up Summary (SUM Order Product Summary)\",\"expression\": \"{!Order.OrderSummary.TotalTaxAmount}\"},{\"entity\": \"OrderSummary\",\"name\": \"GrandTotalAmount\",\"label\": \"Total\",\"type\": \"Formula (Currency)\",\"expression\": \"{!Order.OrderSummary.GrandTotalAmount}\"}]",
+                    "orderDiscounts" : "{!Order.Adjustments}",
+                    "orderSummaryDetails" : "{!Order.Details}",
+                    "showHorizontalLineAboveLastField" : false,
+                    "showLastFieldAsBold" : true,
+                    "totalsCardBorderRadius" : 0,
+                    "totalsCardTitle" : "Totals"
+                  },
+                  "definition" : "commerce_builder:orderAmount",
+                  "id" : "faba0d55-cf73-4ce7-a0b6-4e1be0d4d838",
+                  "type" : "component"
+                } ],
+                "id" : "93e519d1-4d98-411e-be79-582f611b4186",
+                "name" : "col1",
+                "title" : "Column 1",
+                "type" : "region"
+              }, {
+                "children" : [ {
+                  "attributes" : {
+                    "dxpStyle" : { },
+                    "orderDeliveryGroups" : "{!Order.DeliveryGroups}",
+                    "otherAdjustmentsLabel" : "Other Adjustments",
+                    "prefixToShippingGroup" : "Ship To:",
+                    "productFieldMapping" : "[{\"entity\": \"OrderItemSummary\",\"name\": \"StockKeepingUnit\",\"label\": \"Product SKU\",\"type\": \"Text(255)\",\"expression\": \"{!Order.OrderItemSummary.StockKeepingUnit}\"},{\"entity\": \"OrderItemSummary\",\"name\": \"Quantity\",\"label\": \"Quantity\",\"type\": \"Number(18, 0)\",\"expression\": \"{!Order.OrderItemSummary.Quantity}\"},{\"entity\": \"OrderItemSummary\",\"name\": \"TotalLineAdjustmentAmount\",\"label\": \"Line Adjustments\",\"type\": \"Roll-Up Summary ( Order Product Adjustment Line Item Summary)\",\"expression\": \"{!Order.OrderItemSummary.TotalLineAdjustmentAmount}\"},{\"entity\": \"OrderItemSummary\",\"name\": \"AdjustedLineAmount\",\"label\": \"Subtotal\",\"type\": \"Formula (Currency)\",\"expression\": \"{!Order.OrderItemSummary.AdjustedLineAmount}\"}]",
+                    "productUnavailableMessage" : "(No More Available)",
+                    "shippingGroupFieldMapping" : "[{\"entity\": \"OrderDeliveryMethod\",\"name\": \"Name\",\"label\": \"Name\",\"type\": \"Text(255)\",\"expression\": \"{!Order.OrderDeliveryMethod.Name}\"},{\"entity\": \"OrderDeliveryGroupSummary\",\"name\": \"TotalLineAmount\",\"label\": \"Shipping Subtotal\",\"type\": \"Currency(16, 2)\",\"expression\": \"{!Order.OrderDeliveryGroupSummary.TotalLineAmount}\"}]",
+                    "showMoreProductLabel" : "Show More",
+                    "showProductImage" : true,
+                    "showTotal" : true,
+                    "textDisplayInfo" : "{\"headingTag\": \"p\",\"textStyle\": \"body-regular\"}"
+                  },
+                  "definition" : "commerce_builder:orderProducts",
+                  "id" : "c1c90e16-2be8-447c-8235-204cc768123e",
+                  "type" : "component"
+                } ],
+                "id" : "b4b4db92-803b-4b07-9bf3-e9f9a24012f3",
+                "name" : "col2",
+                "title" : "Column 2",
+                "type" : "region"
+              } ],
+              "definition" : "community_layout:section",
+              "id" : "ad48a060-06b1-4003-b23c-abed87826a3c",
+              "type" : "component"
+            } ],
+            "id" : "34ac6080-7add-4a64-a6f3-172eaf8df37f",
+            "name" : "content",
+            "title" : "content",
+            "type" : "region"
+          } ],
+          "definition" : "commerce_builder:orderSummaryContentLayout",
+          "id" : "7c0a260a-6e1e-42a4-bd3c-4a42bfaf089e",
+          "type" : "component"
+        } ],
+        "id" : "4a82b91f-eae6-456f-a9e8-4c7bd66aa723",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "dxpStyle" : { },
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "fed5c932-051d-41b5-96bc-2a1d3a8c8768",
+          "type" : "component"
+        } ],
+        "id" : "8b858087-bdb5-47d8-966c-3a8539318346",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "6efefd98-c621-47d4-8bea-c1a2060f1fd1",
+      "type" : "component"
+    },
+    "dataProviders" : [ {
+      "definition" : "sfdc_cms__commerceOrderDetailDataProvider",
+      "sfdcExpressionKey" : "Order",
+      "attributes" : {
+        "recordId" : "{!Route.recordId}"
+      }
+    } ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "detail-1Os"
+  },
+  "urlName" : "order-summary-details"
+}

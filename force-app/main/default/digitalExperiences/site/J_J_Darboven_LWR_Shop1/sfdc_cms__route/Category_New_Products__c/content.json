@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Category New Products",
+  "contentBody" : {
+    "activeViewId" : "Category_New_Products",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-category-new-products",
+    "urlPrefix" : "category-new-products"
+  },
+  "urlName" : "category-new-products"
+}

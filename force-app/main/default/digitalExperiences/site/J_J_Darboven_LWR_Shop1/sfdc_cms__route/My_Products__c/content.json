@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "My Products",
+  "contentBody" : {
+    "activeViewId" : "My_Products",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-my-products",
+    "urlPrefix" : "my-products"
+  },
+  "urlName" : "my-products"
+}

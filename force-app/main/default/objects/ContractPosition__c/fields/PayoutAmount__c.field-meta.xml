@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PayoutAmount__c</fullName>
+    <description>The agreed subsidy amount paid out to the customer. It is not repaid and is not a price surcharge. [Sources: MN-003 Z.782]</description>
+    <inlineHelpText>The agreed subsidy amount paid out to the customer. It is not repaid and is not a price surcharge.</inlineHelpText>
+    <label>Payout Amount</label>
+    <precision>10</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Salutation --></label>
+    <name>Salutation__c</name>
+    <picklistValues>
+        <masterLabel>Firma</masterLabel>
+        <translation><!-- Firma --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Frau</masterLabel>
+        <translation><!-- Frau --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Herr</masterLabel>
+        <translation><!-- Herr --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Herr und Frau</masterLabel>
+        <translation><!-- Herr und Frau --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

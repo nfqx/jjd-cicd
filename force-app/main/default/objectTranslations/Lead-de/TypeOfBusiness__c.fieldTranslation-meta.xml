@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Betriebsform</label>
+    <name>TypeOfBusiness__c</name>
+    <picklistValues>
+        <masterLabel>Bakery</masterLabel>
+        <translation>Bäcker</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cafe</masterLabel>
+        <translation>Cafe</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hospital</masterLabel>
+        <translation>Krankenhaus</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hotel</masterLabel>
+        <translation>Hotelgewerbe</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation>Sonstiges</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Restaurant</masterLabel>
+        <translation>Restaurant</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Retail</masterLabel>
+        <translation>Einzelhandel</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Retirement home</masterLabel>
+        <translation>Seniorenheim</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vending Business</masterLabel>
+        <translation>Warenautomat Betreiber</translation>
+    </picklistValues>
+</CustomFieldTranslation>

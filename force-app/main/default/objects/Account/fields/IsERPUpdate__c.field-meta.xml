@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsERPUpdate__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates whether the record has been updated and requires synchronization with the ERP system. If checked, the integration process will include this record in the next data transfer.</description>
+    <label>Is ERP Update</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

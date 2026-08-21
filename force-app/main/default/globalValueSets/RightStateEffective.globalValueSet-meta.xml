@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Agreed</fullName>
+        <default>false</default>
+        <label>Agreed</label>
+    </customValue>
+    <customValue>
+        <fullName>AgreedAccountOnly</fullName>
+        <default>false</default>
+        <label>AgreedAccountOnly</label>
+    </customValue>
+    <customValue>
+        <fullName>Locked</fullName>
+        <default>false</default>
+        <label>Locked</label>
+    </customValue>
+    <customValue>
+        <fullName>CappedByChain</fullName>
+        <default>false</default>
+        <label>CappedByChain</label>
+    </customValue>
+    <customValue>
+        <fullName>NotPermitted</fullName>
+        <default>false</default>
+        <label>NotPermitted</label>
+    </customValue>
+    <description>Effective (materialized) state of a right — written only by the controller on save. Used by the six Inh…RightState__c fields.</description>
+    <masterLabel>Right State (Effective)</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

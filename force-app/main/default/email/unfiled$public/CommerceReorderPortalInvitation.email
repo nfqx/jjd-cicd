@@ -1,0 +1,12 @@
+<html>
+            Hallo {!Receiving_User.FirstName},
+            <p>
+            sehen Sie sich dieses Nachbestellungsportal an, mit dem Sie ganz einfach Nachbestellungen bei {!Organization.Name} aufgeben können. Sie können Ihre vergangenen Aufträge einsehen, Mengen ändern, neue Aufträge erteilen und den Status Ihrer Aufträge einsehen.
+            </p>
+            <p>
+            Klicken Sie auf diesen Link, um darauf zuzugreifen: <a href={!Community_URL}>{!Community_Name}</a>
+            Benutzername: {!Receiving_User.Username}
+            </p>
+            Mit freundlichen Grüßen<br>
+            {!User.Name}
+            </html>

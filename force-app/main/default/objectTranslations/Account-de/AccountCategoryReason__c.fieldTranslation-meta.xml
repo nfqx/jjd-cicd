@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Technical reason why the system was unable to determine a category. This field is automatically populated by the system and cleared once a category has been determined. Do not edit this field manually. --></help>
+    <label><!-- Category Reason --></label>
+    <name>AccountCategoryReason__c</name>
+</CustomFieldTranslation>

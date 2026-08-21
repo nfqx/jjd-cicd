@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DistributionChannel__c</fullName>
+    <description>SAP distribution channel of the contract. 20 = out-of-home service (AHS). The full value meanings are being clarified with SAP. [Sources: Confluence 31 Vertrag abschließen, Org-Drift 2026-06-29: globales Werteset DistributionChannel (8 Werte)]</description>
+    <inlineHelpText>SAP distribution channel of the contract. 20 = out-of-home service (AHS). The full value meanings are being clarified with SAP.</inlineHelpText>
+    <label>Distribution Channel</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>DistributionChannel</valueSetName>
+    </valueSet>
+</CustomField>

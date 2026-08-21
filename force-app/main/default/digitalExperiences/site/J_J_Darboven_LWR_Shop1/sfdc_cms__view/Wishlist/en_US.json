@@ -1,0 +1,15 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Wishlist",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "attributes" : {
+          "text" : "Continue Shopping"
+        },
+        "id" : "7e4b464e-9e41-4286-b77e-7abd6090abbe"
+      } ]
+    }
+  },
+  "urlName" : "wishlist"
+}

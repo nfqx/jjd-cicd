@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The contract date from SAP. Business meaning still being clarified per the mapping documentation. --></help>
+    <label>Vertragsdatum</label>
+    <name>ContractSignedDate__c</name>
+</CustomFieldTranslation>

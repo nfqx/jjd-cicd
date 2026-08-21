@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Qualifi_Quote_Stage_AccountFi</fullName>
+    <active>false</active>
+    <description>Opportunity Validation</description>
+    <errorConditionFormula>AND(NOT(CONTAINS($Label.Validation_exempted_Users, $User.Username)),
+				NOT(ISCHANGED(SkipValidations__c)), 
+				ISCHANGED(StageName),
+				OR(ISPICKVAL(StageName, &apos;Qualification&apos;), 
+							ISPICKVAL(StageName, &apos;Quotation Phase&apos;)),
+				OR(ISPICKVAL(Account.TypeOfBusiness__c, &quot;&quot;),
+							ISPICKVAL(Account.SalesCategory__c, &quot;&quot;)))</errorConditionFormula>
+    <errorDisplayField>TypeOfBusiness__c</errorDisplayField>
+    <errorMessage>Please enter the information for &quot;Business Type&quot; and &quot;Sales Category&quot;. This data can be entered under &quot;Account Information&quot; in the &quot;Details&quot; tab.</errorMessage>
+</ValidationRule>

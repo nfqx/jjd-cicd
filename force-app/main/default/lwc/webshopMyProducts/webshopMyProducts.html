@@ -1,0 +1,24 @@
+<template>
+    <div class="container">
+        <div class="breadcrumbs">
+            <a class="link" onclick={handleClickHome}>{label.home}</a> / {label.myProducts}
+        </div>
+        <!-- Category Name -->
+        <p class="heading-1 my-3" if:true={showSliderHeading}>{label.myProducts}</p>
+        <!-- Category Slider with filters -->
+        <c-webshop-slider 
+            onhasdata={showHeading}
+            mine-only
+            with-preselection
+            show-multiple-rows
+            show-product-pagination
+            show-image
+            show-price
+            show-filters
+            show-wishlist
+            show-sorting
+            show-cta
+            my-products-style>
+        </c-webshop-slider>
+    </div>
+</template>

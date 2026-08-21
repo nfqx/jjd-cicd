@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Termination reason from SAP. Real values still pending — waiting for the SAP value list; placeholder until then. --></help>
+    <label>Kündigungsgrund</label>
+    <name>TerminationReason__c</name>
+    <picklistValues>
+        <masterLabel>Placeholder</masterLabel>
+        <translation><!-- Placeholder --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

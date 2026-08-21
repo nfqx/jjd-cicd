@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LegalForm__c</fullName>
+    <description>The legal form of the business entity (e.g., GmbH, AG, KG). This determines the company&apos;s structure, liability rules, and governance requirements under commercial law.</description>
+    <label>Legal Form</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AG</fullName>
+                <default>false</default>
+                <label>AG</label>
+            </value>
+            <value>
+                <fullName>GmbH</fullName>
+                <default>false</default>
+                <label>GmbH</label>
+            </value>
+            <value>
+                <fullName>KGaA</fullName>
+                <default>false</default>
+                <label>KGaA</label>
+            </value>
+            <value>
+                <fullName>KG</fullName>
+                <default>false</default>
+                <label>KG</label>
+            </value>
+            <value>
+                <fullName>GmbH &amp; Co KG</fullName>
+                <default>false</default>
+                <label>GmbH &amp; Co KG</label>
+            </value>
+            <value>
+                <fullName>OHG</fullName>
+                <default>false</default>
+                <label>OHG</label>
+            </value>
+            <value>
+                <fullName>GbR</fullName>
+                <default>false</default>
+                <label>GbR</label>
+            </value>
+            <value>
+                <fullName>Co., Ltd.</fullName>
+                <default>false</default>
+                <label>Co., Ltd.</label>
+            </value>
+            <value>
+                <fullName>e.K.</fullName>
+                <default>false</default>
+                <label>e.K.</label>
+            </value>
+            <value>
+                <fullName>eG</fullName>
+                <default>false</default>
+                <label>eG</label>
+            </value>
+            <value>
+                <fullName>e.V.</fullName>
+                <default>false</default>
+                <label>e.V.</label>
+            </value>
+            <value>
+                <fullName>UG (limited liability)</fullName>
+                <default>false</default>
+                <label>UG (limited liability)</label>
+            </value>
+            <value>
+                <fullName>Sole proprietorship</fullName>
+                <default>false</default>
+                <label>Sole proprietorship</label>
+            </value>
+            <value>
+                <fullName>No legal entity status</fullName>
+                <default>false</default>
+                <label>No legal entity status</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

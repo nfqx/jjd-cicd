@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsMachine1Discount__c</fullName>
+    <formula>(  SpecialDiscount__c = 0 || SpecialDiscount__c = null ) &amp;&amp; ( ISPICKVAL ( MachineType__c , &quot;Machine&quot; ) || ISPICKVAL ( MachineType__c , &quot;Accessoire&quot; ) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Machine 1 Discount</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

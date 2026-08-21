@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>SAP contract status (code = value, plain text = label). &apos;Draft&apos; is the only SF-own value: captured in PuK, not yet in SAP. Only ONE contract with status 150 is allowed per customer — to be enforced by a validation rule. [Sources: K-1 2026-08-11: SAP-Codes als Werte (Parität), Bild (9).png (Werteliste, Vollständigkeit unbestätigt)]</description>
+    <inlineHelpText>SAP contract status (code = value, plain text = label). &apos;Draft&apos; is the only SF-own value: captured in PuK, not yet in SAP. Only ONE contract with status 150 is allowed per customer — to be enforced by a validation rule.</inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Draft</fullName>
+                <default>false</default>
+                <label>Draft (not yet in SAP)</label>
+            </value>
+            <value>
+                <fullName>110</fullName>
+                <default>false</default>
+                <label>VT unvollständig</label>
+            </value>
+            <value>
+                <fullName>130</fullName>
+                <default>false</default>
+                <label>Storno</label>
+            </value>
+            <value>
+                <fullName>150</fullName>
+                <default>false</default>
+                <label>VT freigegeben (aktiv)</label>
+            </value>
+            <value>
+                <fullName>160</fullName>
+                <default>false</default>
+                <label>Vertragsende registriert</label>
+            </value>
+            <value>
+                <fullName>170</fullName>
+                <default>false</default>
+                <label>VT Beendet</label>
+            </value>
+            <value>
+                <fullName>180</fullName>
+                <default>false</default>
+                <label>VT verklagt</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

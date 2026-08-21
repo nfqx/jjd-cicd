@@ -1,0 +1,968 @@
+<template>
+    <lightning-quick-action-panel header={label.priceConfiguratorHeader}>  
+        <template if:true={isLoaded}>
+            <lightning-spinner alternative-text="Loading" size="small" if:true={isLoading}></lightning-spinner>
+            <template if:false={isChain}>
+                <!-- Body -->    
+                <!-- New Customer Banner -->
+                <c-lwc-messaging-utility
+                    if:true={newCustomerWithInherited}
+                    message-body={label.newCustomerWithInheritedWarning}
+                    message-type="inline"
+                    message-variant="warning"
+                    icon-name="utility:report_issue"
+                    show-message=true
+                    show-icon=true
+                    >
+                </c-lwc-messaging-utility>
+                <!-- End New Customer Banner -->
+        
+                <!-- Closed Banner -->
+                <c-lwc-messaging-utility
+                    if:true={oppClosed}
+                    message-body={label.closedOpp}
+                    message-type="inline"
+                    message-variant="warning"
+                    icon-name="utility:report_issue"
+                    show-message=true
+                    show-icon=true
+                    >
+                </c-lwc-messaging-utility>
+                <!-- End Closed Banner -->
+                <template if:false={isChainKannMuss}>
+                    <template if:true={showIndexConditionSecondWarning}>
+                        <lightning-layout class="slds-m-bottom_xx-small">
+                            <lightning-layout-item size="12" padding="horizontal-small"> 
+                                <c-lwc-messaging-utility
+                                    message-body={label.indexConditionSecondWarning}
+                                    message-type="inline"
+                                    message-variant="warning"
+                                    icon-name="utility:report_issue"
+                                    show-message=true
+                                    show-icon=true
+                                    >
+                                </c-lwc-messaging-utility>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </template>
+                </template>
+                <div class="section slds-p-vertical_small">
+                    <lightning-layout>
+                        <lightning-layout-item if:false={indexConditionMissing} size="12" padding="horizontal-small">
+                            <p class="title-bold">{label.basicInformation}</p>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <lightning-layout>
+                        <lightning-layout-item if:false={indexConditionMissing} size="6" padding="horizontal-small">
+                            <lightning-input 
+                            type="text" 
+                            label={label.industry} 
+                            value={industry} 
+                            disabled>
+                        </lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item if:false={isDependentChainMember} size="6" padding="horizontal-small">
+                            <lightning-combobox style={indexConditionPicklistStyle} readonly={hasNoOwnConfiguration} options={yesNoOptions} value={indexConditionPreset} onchange={handleChangeIndexConditionPre} label={label.indexConditionPre}></lightning-combobox>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="6" padding="horizontal-small" if:true={isDependentChainMember}>
+                            <lightning-input if:false={hasIndexConditionFromParamsAndNoChain} type="number" field-level-help={dynamicIndexConditionLabel} step="0.01" value={params.indexCondition} onchange={handleChangeIndexCondition} label={label.indexCondition} required disabled></lightning-input>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <lightning-layout>
+                        <lightning-layout-item if:false={indexConditionMissing} size="6" padding="horizontal-small">
+                            <lightning-combobox value={params.discount} options={discountOptions} onchange={handleDiscount} label={label.discountLabel}></lightning-combobox>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="6" padding="horizontal-small" if:false={isDependentChainMember}>
+                            <lightning-input if:false={hasIndexConditionFromParamsAndNoChain} type="number" field-level-help={dynamicIndexConditionLabel} step="0.01" value={params.indexCondition} readonly={isDependentChainMember} onchange={handleChangeIndexCondition} label={label.indexCondition} required></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item if:true={isDependentChainMember} size="6" padding="horizontal-small">
+                            <lightning-input type="date" value={params.validFrom} onchange={handleChangeValidFrom} label={label.validFrom} required></lightning-input>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <lightning-layout>
+                        <lightning-layout-item if:true={hasIndexConditionFromParamsAndNoChain} size="6" padding="horizontal-small">
+                            <lightning-input if:false={isDependentChainMember} type="date" value={params.validFrom} onchange={handleChangeValidFrom} label={label.validFrom} required></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="6" padding="horizontal-small">
+                            <lightning-combobox if:false={indexConditionMissing} value={params.hasDigitalRequired} options={yesNoOptions} onchange={handleDigitalRequired} label={label.digitalRequired}></lightning-combobox>
+                        </lightning-layout-item>
+                        <lightning-layout-item if:false={hasIndexConditionFromParamsAndNoChain} size="6" padding="horizontal-small">
+                            <lightning-input if:false={isDependentChainMember} type="date" value={params.validFrom} onchange={handleChangeValidFrom} label={label.validFrom} required></lightning-input>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <template if:true={hasIndexConditionFromParamsAndNoChain}> <!--if:true={hasIndexConditionFromParamsAndNoChain}-->
+                        <lightning-layout class="slds-m-bottom_xx-small">
+                            <lightning-layout-item size="2" padding="horizontal-small">
+                                &nbsp;
+                            </lightning-layout-item>
+                            <lightning-layout-item size="8" padding="horizontal-small" class="slds-m-top-small"> 
+                                <c-lwc-messaging-utility
+                                    message-body={indexConditionFirstWarningLabel}
+                                    message-type="inline"
+                                    message-variant="warning"
+                                    icon-name="utility:report_issue"
+                                    show-message=true
+                                    show-icon=true
+                                    >
+                                </c-lwc-messaging-utility>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="2" padding="horizontal-small">
+                                &nbsp;
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-bottom_xx-small">
+                            <lightning-layout-item size="5" padding="horizontal-small">
+                                &nbsp;
+                            </lightning-layout-item>
+                            <lightning-layout-item size="1" padding="horizontal-small">
+                                <lightning-button label={label.yes} onclick={handleRejectIndexConditionFromParams}></lightning-button>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="1" padding="horizontal-small">
+                                <lightning-button label={label.no} onclick={handleAcceptIndexConditionFromParams}></lightning-button>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="5" padding="horizontal-small">
+                                &nbsp;
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </template>
+                    <!--lightning-layout>
+                        <lightning-layout-item if:false={isDependentChainMember} size="6" padding="horizontal-small">
+                            <lightning-input type="date" value={params.validFrom} onchange={handleChangeValidFrom} label={label.validFrom} required></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="6" padding="horizontal-small">
+                            &nbsp;
+                        </lightning-layout-item>
+                    </lightning-layout-->
+                </div>
+                <template if:true={isDependentChainMember}>
+                    <!-- Data Entry Form Basic -->
+                    <div class="section slds-p-vertical_small">
+                        <lightning-layout>
+                            <lightning-layout-item size="12" padding="horizontal-small">
+                                <p class="title-bold">{label.productPurchaseInherit}
+                                    <lightning-helptext content={label.productPurchaseHelpText}></lightning-helptext>
+                                </p>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-bottom_xx-small">
+                            <lightning-layout-item size="6" padding="horizontal-small"> 
+                                <lightning-input type="number" step="1" value={numTypes.coffeeInherit.quantitiesDisplay} label={label.amtCoffee} disabled></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6" padding="horizontal-small">
+                                <lightning-input type="number" formatter="percent-fixed" step="1" value={params.coffeeQuantityDiscountTotal} label={label.coffeeVolumeDiscountLabel} disabled></lightning-input>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-bottom_medium">
+                            <lightning-layout-item size="6" padding="horizontal-small">
+                                <lightning-input type="number" step="1" value={numTypes.teaInherit.quantitiesDisplay} label={label.amtTea} disabled></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6" padding="horizontal-small">
+                                <lightning-input type="number" formatter="percent-fixed" step="1" value={params.teaQuantityDiscountTotal} label={label.teaVolumeDiscountLabel} disabled></lightning-input>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout class="slds-m-bottom_xx-small">
+                            <lightning-layout-item size="6" padding="horizontal-small">
+                                <lightning-input type="number" step="1" value={numTypes.cocoaInherit.quantitiesDisplay} label={label.amtCocoa} disabled></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6" padding="horizontal-small">
+                                <lightning-input type="number" formatter="percent-fixed" step="1" value={params.cocoaQuantityDiscountTotal} label={label.teaVolumeDiscountLabel} disabled></lightning-input>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout>
+                            <lightning-layout-item size="6" padding="horizontal-small"> 
+                                <lightning-input type="number" step="1" value={numTypes.otherInherit.quantitiesDisplay} label={label.amtOther} disabled></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6" padding="horizontal-small">
+                                <lightning-input type="number" formatter="percent-fixed" step="1" value={params.otherQuantityDiscountTotal} label={label.otherGoodsVolumeDiscountLabel} disabled></lightning-input>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+                </template>
+                <template if:false={indexConditionMissing}>
+                    <!-- Data Entry Form Basic -->
+                    <div class="section slds-p-vertical_small">
+                        <lightning-layout>
+                            <lightning-layout-item size="12" padding="horizontal-small">
+                                <p class="title-bold">{label.productPurchase}</p>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <template if:true={isDependentChainMember}>
+                           <lightning-layout class="slds-m-bottom_xx-small">
+                                <lightning-layout-item size="6" padding="horizontal-small"> 
+                                    <lightning-input type="number" step="1" data-datatype="coffee" value={numTypes.coffee.quantities} onchange={handleQuantityChange} label={label.amtCoffee}></lightning-input>
+                                    <template if:true={displayErrors.coffeeQuantityZero}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorNotZeroOrEmpty}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.noCoffeeQuantity}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorMissingCoffee}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.coffeeSelectionNoQuantity}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorEnterCoffee}</div>
+                                        </div>
+                                    </template>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="6" padding="horizontal-small">
+                                    <lightning-input type="number" step="1" max-length="3" max="999" data-datatype="coffee" value={numTypes.coffee.selection} onchange={handleNumTypesChange} label={label.numCoffeeTypes}></lightning-input>
+                                    <template if:true={displayErrors.coffeeAmountZero}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorNotZeroOrEmpty}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.noCoffeeSelected}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorMissingCoffee}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.coffeeQuantityNoSelection}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorEnterCoffee}</div>
+                                        </div>
+                                    </template>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                            <lightning-layout class="slds-m-bottom_medium">
+                                <lightning-layout-item size="6" padding="horizontal-small">
+                                    <lightning-input type="number" step="1" data-datatype="tea" value={numTypes.tea.quantities} onchange={handleQuantityChange} label={label.amtTea}></lightning-input>
+                                    <template if:true={displayErrors.teaQuantityZero}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorNotZeroOrEmpty}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.noTeaQuantity}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorMissingTea}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.teaSelectionNoQuantity}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorEnterTea}</div>
+                                        </div>
+                                    </template>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="6" padding="horizontal-small">
+                                    <lightning-input type="number" step="1" max-length="3" max="999" data-datatype="tea" value={numTypes.tea.selection} onchange={handleNumTypesChange} label={label.numTeaTypes}></lightning-input>
+                                    <template if:true={displayErrors.teaAmountZero}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorNotZeroOrEmpty}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.noTeaSelected}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorMissingTea}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.teaQuantityNoSelection}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorEnterTea}</div>
+                                        </div>
+                                    </template>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                            <lightning-layout class="slds-m-bottom_xx-small">
+                                <lightning-layout-item size="6" padding="horizontal-small">
+                                    <lightning-input type="number" step="1" data-datatype="cocoa" value={numTypes.cocoa.quantities} onchange={handleQuantityChange} label={label.amtCocoa}></lightning-input>
+                                    <template if:true={displayErrors.cocoaQuantityZero}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorNotZeroOrEmpty}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.noCocoaQuantity}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorMissingCocoa}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.cocoaSelectionNoQuantity}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorEnterCocoa}</div>
+                                        </div>
+                                    </template>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="6" padding="horizontal-small">
+                                    <lightning-input type="number" step="1" max-length="3" max="999" data-datatype="cocoa" value={numTypes.cocoa.selection} onchange={handleNumTypesChange} label={label.numCocoaTypes}></lightning-input>
+                                    <template if:true={displayErrors.cocoaAmountZero}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorNotZeroOrEmpty}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.noCocoaSelected}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorMissingCocoa}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.cocoaQuantityNoSelection}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorEnterCocoa}</div>
+                                        </div>
+                                    </template>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                            <lightning-layout>
+                                <lightning-layout-item size="6" padding="horizontal-small"> 
+                                    <lightning-input type="number" step="1" data-datatype="other" value={numTypes.other.quantities} onchange={handleQuantityChange} label={label.amtOther}></lightning-input>
+                                    <template if:true={displayErrors.otherQuantityZero}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorNotZeroOrEmpty}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.noOtherQuantity}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorMissingOther}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.otherSelectionNoQuantity}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorEnterOther}</div>
+                                        </div>
+                                    </template>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="6" padding="horizontal-small">
+                                    <lightning-input type="number" step="1" max-length="3" max="999" data-datatype="other" value={numTypes.other.selection} onchange={handleNumTypesChange} label={label.numOtherTypes}></lightning-input>
+                                    <template if:true={displayErrors.otherAmountZero}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorNotZeroOrEmpty}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.noOtherSelected}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorMissingOther}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.otherQuantityNoSelection}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorEnterOther}</div>
+                                        </div>
+                                    </template>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </template>
+                        <template if:false={isDependentChainMember}>
+                            <lightning-layout class="slds-m-bottom_xx-small">
+                                <lightning-layout-item size="6" padding="horizontal-small"> 
+                                    <lightning-input type="number" step="1" data-datatype="coffee" value={numTypes.coffee.quantities} onchange={handleQuantityChange} label={label.amtCoffee}></lightning-input>
+                                    <template if:true={displayErrors.coffeeQuantityZero}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorNotZeroOrEmpty}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.noCoffeeQuantity}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorMissingCoffee}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.coffeeSelectionNoQuantity}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorEnterCoffee}</div>
+                                        </div>
+                                    </template>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="6" padding="horizontal-small">
+                                    <lightning-input type="number" step="1" max-length="3" max="999" data-datatype="coffee" value={numTypes.coffee.selection} onchange={handleNumTypesChange} label={label.numCoffeeTypes}></lightning-input>
+                                    <template if:true={displayErrors.coffeeAmountZero}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorNotZeroOrEmpty}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.noCoffeeSelected}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorMissingCoffee}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.coffeeQuantityNoSelection}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorEnterCoffee}</div>
+                                        </div>
+                                    </template>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                            <lightning-layout class="slds-m-bottom_medium">
+                                <lightning-layout-item size="6" padding="horizontal-small">
+                                    <lightning-input type="number" step="1" data-datatype="tea" value={numTypes.tea.quantities} onchange={handleQuantityChange} label={label.amtTea}></lightning-input>
+                                    <template if:true={displayErrors.teaQuantityZero}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorNotZeroOrEmpty}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.noTeaQuantity}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorMissingTea}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.teaSelectionNoQuantity}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorEnterTea}</div>
+                                        </div>
+                                    </template>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="6" padding="horizontal-small">
+                                    <lightning-input type="number" step="1" max-length="3" max="999" data-datatype="tea" value={numTypes.tea.selection} onchange={handleNumTypesChange} label={label.numTeaTypes}></lightning-input>
+                                    <template if:true={displayErrors.teaAmountZero}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorNotZeroOrEmpty}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.noTeaSelected}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorMissingTea}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.teaQuantityNoSelection}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorEnterTea}</div>
+                                        </div>
+                                    </template>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                            <lightning-layout class="slds-m-bottom_xx-small">
+                                <lightning-layout-item size="6" padding="horizontal-small">
+                                    <lightning-input type="number" step="1" data-datatype="cocoa" value={numTypes.cocoa.quantities} onchange={handleQuantityChange} label={label.amtCocoa}></lightning-input>
+                                    <template if:true={displayErrors.cocoaQuantityZero}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorNotZeroOrEmpty}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.noCocoaQuantity}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorMissingCocoa}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.cocoaSelectionNoQuantity}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorEnterCocoa}</div>
+                                        </div>
+                                    </template>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="6" padding="horizontal-small">
+                                    <lightning-input type="number" step="1" max-length="3" max="999" data-datatype="cocoa" value={numTypes.cocoa.selection} onchange={handleNumTypesChange} label={label.numCocoaTypes}></lightning-input>
+                                    <template if:true={displayErrors.cocoaAmountZero}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorNotZeroOrEmpty}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.noCocoaSelected}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorMissingCocoa}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.cocoaQuantityNoSelection}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorEnterCocoa}</div>
+                                        </div>
+                                    </template>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                            <lightning-layout>
+                                <lightning-layout-item size="6" padding="horizontal-small"> 
+                                    <lightning-input type="number" step="1" data-datatype="other" value={numTypes.other.quantities} onchange={handleQuantityChange} label={label.amtOther}></lightning-input>
+                                    <template if:true={displayErrors.otherQuantityZero}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorNotZeroOrEmpty}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.noOtherQuantity}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorMissingOther}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.otherSelectionNoQuantity}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorEnterOther}</div>
+                                        </div>
+                                    </template>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="6" padding="horizontal-small">
+                                    <lightning-input type="number" step="1" max-length="3" max="999" data-datatype="other" value={numTypes.other.selection} onchange={handleNumTypesChange} label={label.numOtherTypes}></lightning-input>
+                                    <template if:true={displayErrors.otherAmountZero}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorNotZeroOrEmpty}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.noOtherSelected}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorMissingOther}</div>
+                                        </div>
+                                    </template>
+                                    <template if:true={displayErrors.otherQuantityNoSelection}>
+                                        <div class="section-warning slds-p-vertical_small">
+                                            <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorEnterOther}</div>
+                                        </div>
+                                    </template>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </template>
+                    </div>
+                    <!-- End Data Entry Form Basic -->
+            
+                    <!-- Additional Questions -->
+                    <div class="section slds-p-vertical_small">
+                        <lightning-layout>
+                            <lightning-layout-item size="12" padding="horizontal-small">
+                                <p class="title-bold">{label.brandVisibility}</p>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout>
+                            <lightning-layout-item size="4" padding="horizontal-small">
+                                <lightning-combobox value={params.hasOfferOnTable} options={yesNoOptions} onchange={handleOfferOnTable} label={label.offerOnTable}></lightning-combobox>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="4" padding="horizontal-small">
+                                <lightning-combobox value={params.hasMenuLogo} options={yesNoOptions} onchange={handleMenuLogo} label={label.menuLogo}></lightning-combobox>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="4" padding="horizontal-small">
+                                <lightning-combobox value={params.hasOfferInProperty} options={yesNoOptions} onchange={handleOfferInProperty} label={label.offerInProperty}></lightning-combobox>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+                    <!-- End Additional Questions -->
+            
+                    <!-- Conditional Products -->
+                    <div class="section slds-p-vertical_small">
+                        <lightning-layout>
+                            <lightning-layout-item size="12" padding="around-small">
+                                <span class="title-bold slds-m-right_small">{label.conditionProducts}</span>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <div class="tabs-container"> <!--removed slds-m-bottom_medium-->
+                            <lightning-button class="tab-button" data-active={isFirstTab} label={label.individualConditions} onclick={handleSwitchToFirstTab} disabled={isFirstTab}></lightning-button>
+                            
+                            <template if:true={isDependentChainMember}>
+                                <template if:true={hasStandardProducts}>
+                                    <lightning-button class="tab-button" data-active={isSecondTab} label={label.inheritedConditions} onclick={handleSwitchToSecondTab} disabled={isSecondTab}></lightning-button>
+                                </template>
+                            </template>
+                        </div>
+                        <template if:true={typeLoaded}>
+                            <div style={firstTabStyle}>
+                                <lightning-layout class="table-row">
+                                    <lightning-layout-item size="1" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.productType}</lightning-layout-item>
+                                    <lightning-layout-item size={productColumnSizeConfig} class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.product}</lightning-layout-item>
+                                    <lightning-layout-item size="1" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.basePrice}</lightning-layout-item>
+                                    <lightning-layout-item size="1" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.rebate}</lightning-layout-item>
+                                    <lightning-layout-item size="1" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.offerPrice}</lightning-layout-item>
+                                    <template if:true={showSimulation}>
+                                        <lightning-layout-item size="1" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.simulatedPrice}</lightning-layout-item>
+                                    </template>
+                                    <lightning-layout-item size="1" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.specialDiscount}</lightning-layout-item>
+                                    <lightning-layout-item size="1" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small" style="background-color: #F3F2F2;">{label.totalAddition} <lightning-helptext icon-name="utility:warning" content={label.totalAdditionHelp}></lightning-helptext></lightning-layout-item>
+                                    <template if:true={showRefund}>
+                                        <template if:true={showRefundColumn}>
+                                            <lightning-layout-item size="1" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.refund}</lightning-layout-item>
+                                            <lightning-layout-item size="1" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.refundPercent}</lightning-layout-item>
+                                        </template>
+                                    </template>
+                                    <lightning-layout-item size="1" if:false={isMuss} class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.deleteLabel}</lightning-layout-item>
+                                    <lightning-layout-item size="1" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">&nbsp;</lightning-layout-item>
+                                </lightning-layout>
+                                <template for:each={individualConditionProducts} for:item="conditionProduct"> 
+                                    <c-price-configurator-condition-product-row 
+                                        params={params} 
+                                        num-types={numTypes} 
+                                        industry={industry}
+                                        auxiliary-tables={auxiliaryTables} 
+                                        standard-pricebook-entries={standardPricebookEntries} 
+                                        onvaluechange={handleConditionProductChange} 
+                                        onrowdelete={handleConditionProductDelete} 
+                                        rowdata={conditionProduct} 
+                                        key={conditionProduct.rownumber}>
+                                    </c-price-configurator-condition-product-row>
+                                </template>
+                                <lightning-layout>
+                                    <lightning-layout-item size="12" padding="around-small">
+                                        <lightning-button class="slds-button slds-button_icon" label={label.addRow} onclick={addConditionProductRow}></lightning-button>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                            </div>
+                            <template if:true={isDependentChainMember}>
+                                <div style={secondTabStyle}>
+                                    <lightning-layout class="table-row">
+                                        <lightning-layout-item size="1" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.productType}</lightning-layout-item>
+                                        <lightning-layout-item size="5" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.product}</lightning-layout-item>
+                                        <lightning-layout-item size="1" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.basePrice}</lightning-layout-item>
+                                        <lightning-layout-item size="1" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.rebate}</lightning-layout-item>
+                                        <lightning-layout-item size="1" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.offerPrice}</lightning-layout-item>
+                                        <template if:true={showSimulation}>
+                                            <lightning-layout-item size="1" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.simulatedPrice}</lightning-layout-item>
+                                        </template>
+                                        <lightning-layout-item size="1" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.specialDiscount}</lightning-layout-item>
+                                        <lightning-layout-item size="1" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small" style="background-color: #F3F2F2;">{label.totalAddition} <lightning-helptext icon-name="utility:warning" content={label.totalAdditionHelp}></lightning-helptext></lightning-layout-item>
+                                        <template if:true={showRefund}>
+                                            <template if:true={showRefundColumn}>
+                                                <lightning-layout-item size="1" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.refund}</lightning-layout-item>
+                                                <lightning-layout-item size="1" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.refundPercent}</lightning-layout-item>
+                                            </template>
+                                        </template>
+                                        <lightning-layout-item size="1" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">&nbsp;</lightning-layout-item>
+                                    </lightning-layout>
+                                    <template for:each={standardConditionProducts} for:item="conditionProduct"> 
+                                        <c-price-configurator-condition-product-row 
+                                            is-inherited
+                                            params={params} 
+                                            num-types={numTypes} 
+                                            industry={industry}
+                                            auxiliary-tables={auxiliaryTables} 
+                                            standard-pricebook-entries={standardPricebookEntries} 
+                                            onvaluechange={handleConditionProductChange} 
+                                            onrowdelete={handleConditionProductDelete} 
+                                            onpromote={handlePromoteToIndividual}
+                                            rowdata={conditionProduct} 
+                                            key={conditionProduct.rownumber}>
+                                        </c-price-configurator-condition-product-row>
+                                    </template>
+                                    <template if:false={hasStandardProducts}>
+                                        <lightning-layout>
+                                            <lightning-layout-item size="12" padding="around-medium" class="slds-align_absolute-center">
+                                                <p class="slds-text-color_weak slds-text-align_center slds-p-vertical_medium">{label.noInheritedConditions}</p>
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                    </template>
+                                </div>
+                            </template>
+                        </template>
+                    </div>
+                    <!-- End Conditional Products -->
+                    <!-- Machine Configurator -->
+                    <lightning-accordion allow-multiple-sections-open
+                         onsectiontoggle={handleSectionToggle}
+                         active-section-name={activeSections}>
+                        <!--lightning-accordion-section name="MachineConfigurator" label={label.machineConfigurator}>
+                            <div style={showMachineConfiguratorStyle}>
+                                <div class="section section-initial-equipment-params slds-p-vertical_small">
+                                    <div style={showMachineConfiguratorWarningStyleReverse}>
+                                        <lightning-layout>
+                                            <lightning-layout-item size="6" padding="around-small">
+                                                <lightning-input type="number" step="1" value={params.coffeeWkzRuntime} data-fieldname="coffeeWkzRuntime" onchange={handleParamChange} label={label.runtimeInMonths}></lightning-input>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="6" padding="around-small">
+                                                <lightning-input type="number" value={params.coffeeSurchargeMachine} label={label.coffeeSurchargeMachine} readonly></lightning-input>
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                        <div style={showMachineConfiguratorActualStyle}>
+                                            <lightning-layout>
+                                                <lightning-layout-item size="12" padding="around-small">
+                                                    <c-machine-configurator-inner 
+                                                        if:true={oppLoaded}
+                                                        from-configurator
+                                                        coffee-annual={numTypes.coffee.quantities}
+                                                        runtime-months={params.coffeeWkzRuntime}
+                                                        record-id={opportunityId} 
+                                                        onconfirm={handleConfirmMachines}
+                                                        onclosemodal={closeMachineConfigurator}>
+                                                    </c-machine-configurator-inner>
+                                                </lightning-layout-item>
+                                            </lightning-layout>
+                                        </div>
+                                    </div>
+                                    <div style={showMachineConfiguratorWarningStyle}>
+                                        <lightning-layout-item size="12" padding="around-small">
+                                            <p><span class="title-bold slds-m-right_small">{label.machineLeasingWarning}</span></p>
+                                        </lightning-layout-item>
+                                    </div>
+                                </div>
+                            </div>
+                        </lightning-accordion-section-->
+                        <!-- End Machine Configurator -->
+                        <!-- Initial Equipment -->
+                         <lightning-accordion-section name="InitialEquipment" label={label.initialEquipment}>
+                            <template if:true={showInitialEquipment}>
+                                <div class="section slds-p-vertical_small">
+                                    <template if:true={showInitialEquipmentError}>
+                                        <p class="slds-notify slds-notify_alert slds-alert_warning" role="alert">{label.initialEquipmentError}</p>
+                                    </template>
+                                    <template if:false={showInitialEquipmentError}>
+                                        <template if:true={showInitialEquipmentTable}>
+                                            <lightning-layout class="table-row">
+                                                <lightning-layout-item size="2" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.totalValueInEuro}</lightning-layout-item>
+                                                <lightning-layout-item size="2" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.roastedCoffeeInKg}</lightning-layout-item>
+                                                <lightning-layout-item size="2" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.runtimeInMonths}</lightning-layout-item>
+                                                <lightning-layout-item size="3" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.purchaseDuringRuntime}</lightning-layout-item>
+                                                <lightning-layout-item size="3" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.kgChargeCalculated}</lightning-layout-item>
+                                            </lightning-layout>
+                                            <lightning-layout>
+                                                <lightning-layout-item size="2" class="slds-align_absolute-center" padding="around-small">
+                                                    {totalValueInEuro}
+                                                </lightning-layout-item>
+                                                <lightning-layout-item size="2" class="slds-align_absolute-center" padding="around-small">
+                                                    {numTypes.coffee.quantities}
+                                                </lightning-layout-item>
+                                                <lightning-layout-item size="2" class="slds-align_absolute-center" padding="around-small">
+                                                    <lightning-input type="number" step="1" value={params.runtimeMonths} variant="label-hidden" onchange={handleChangeRuntimeMonths} label={label.runtimeInMonths}></lightning-input>
+                                                </lightning-layout-item>
+                                                <lightning-layout-item size="3" class="slds-align_absolute-center" padding="around-small">
+                                                    {params.purchaseDuringRuntimeDisplay}
+                                                </lightning-layout-item>
+                                                <lightning-layout-item size="3" class="slds-align_absolute-center" padding="around-small">
+                                                    {params.kgChargeCalculatedDisplay}
+                                                </lightning-layout-item>
+                                            </lightning-layout>
+                                        </template>
+                                        <lightning-layout>
+                                            <lightning-layout-item size="12" padding="around-small">
+                                                <p><span class="title-bold slds-m-right_small">{label.initialEquipment}</span> <lightning-button onclick={addInitialEquipmentRow} label={label.addRow}></lightning-button></p>
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                        <lightning-layout class="table-row">
+                                            <lightning-layout-item size={productColumnSize} class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.product}</lightning-layout-item>
+                                            <lightning-layout-item size="2" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.previewPrice}</lightning-layout-item>
+                                            <lightning-layout-item size="2" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.quantity}</lightning-layout-item>
+                                            <lightning-layout-item size="2" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.sum}</lightning-layout-item>
+                                            <lightning-layout-item size="2" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.markForInitialOrder}</lightning-layout-item>
+                                            <template if:true={showTeaColumn}>
+                                                <lightning-layout-item size="1" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.teaDiscount}</lightning-layout-item>
+                                            </template>
+                                            <lightning-layout-item size="1" class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small">{label.delete}</lightning-layout-item>
+                                        </lightning-layout>
+                                        <template for:each={initialEquipmentData} for:item="initialEquipment">
+                                            <c-price-configurator-initial-equipment-row 
+                                                onvaluechange={handleInitialEquipmentChange} 
+                                                rowdata={initialEquipment} 
+                                                industry={industry}
+                                                standard-pricebook-entries={standardPricebookEntries} 
+                                                onrowdelete={handleInitialEquipmentDelete} 
+                                                onrowadd={handleInitialEquipmentAdd}    
+                                                key={initialEquipment.rownumber}>
+                                            </c-price-configurator-initial-equipment-row>
+                                        </template>
+                                    </template>
+                                </div>
+                            </template>
+                        </lightning-accordion-section>
+                        <!-- End Initial Equipment -->
+                        
+                        <!-- Refund -->
+                        <lightning-accordion-section name="Refund" label={label.refundSection} if:true={hasAnyType}>
+                            <template if:true={showRefund}>
+                                <!-- Row 1 -->
+                                <lightning-layout>
+                                    <lightning-layout-item size="12" padding="horizontal-small" style="margin-top: 5px;">
+                                        <!-- RV kaffee Titel -->
+                                        <p if:true={hasNoCocoaCoffeeButTeaQuantities} class="title-bold slds-m-right_small">{label.refundTea}</p>
+                                        <p if:true={hasCocoaOrCoffeeQuantities} class="title-bold slds-m-right_small">{label.refundCoffee}</p>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <!-- Row 2 -->
+                                <lightning-layout>
+                                    <lightning-layout-item size="6" padding="horizontal-small">
+                                        <lightning-combobox if:true={hasNoCocoaCoffeeButTeaQuantities} value={params.teaRefundType} options={teaTypeOptions} onchange={handleChangeTeaType} label={label.refundTeaType}></lightning-combobox>
+                                        <lightning-combobox if:true={hasCocoaOrCoffeeQuantities} value={params.coffeeRefundType} options={coffeeTypeOptions} onchange={handleChangeCoffeeType} label={label.refundCoffeeType}></lightning-combobox>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" padding="horizontal-small">
+                                        <lightning-input if:true={hasNoCocoaCoffeeButTeaQuantities} type="number" step="1" value={params.teaRefundLevel} data-fieldname="teaRefundLevel" onchange={handleParamChange} label={label.refundTeaLevel}></lightning-input>
+                                        <lightning-input if:true={hasCocoaOrCoffeeQuantities} type="number" step="1" value={params.coffeeRefundLevel} data-fieldname="coffeeRefundLevel" onchange={handleParamChange} label={label.refundCoffeeLevel}></lightning-input>
+                                    </lightning-layout-item>
+                                </lightning-layout>                        
+                                <!-- Row 3 -->
+                                <lightning-layout>
+                                    <lightning-layout-item size="12" padding="horizontal-small" class="slds-p-top_medium" style="margin-top: 20px;">
+                                        <!-- Einmalige WKZ Titel -->
+                                        <p if:true={hasCoffeeType} class="title-bold slds-m-right_small">{label.refundWkzOneTimeCoffee}</p>
+                                        <!-- Tee WKZ Einmalig Titel -->
+                                        <p if:true={hasTeaNoCoffeeType} class="title-bold slds-m-right_small" >{label.refundWkzOneTimeTea}</p>    
+                                    </lightning-layout-item>
+                                </lightning-layout>                     
+                                <!-- Row 4 -->
+                                <lightning-layout>
+                                    <lightning-layout-item size="6" padding="horizontal-small">
+                                        <!-- Kaffee Laufzeit -->
+                                        <lightning-input if:true={hasCoffeeType} type="number" step="1" value={params.coffeeWkzRuntime} data-fieldname="coffeeWkzRuntime" onchange={handleParamChange} label={label.runtimeInMonths}></lightning-input>
+                                        <!-- Tee WKZ Laufzeit --> 
+                                        <lightning-input if:true={hasTeaNoCoffeeType} type="number" step="1" value={params.teaWkzRuntime} data-fieldname="teaWkzRuntime" onchange={handleParamChange} label={label.runtimeInMonths}></lightning-input>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" padding="horizontal-small">
+                                        <!-- Coffee Amount -->
+                                        <lightning-input if:true={hasCoffeeType} type="number" step="1" value={params.coffeeWkzOneTimeAmount} data-fieldname="coffeeWkzOneTimeAmount" onchange={handleParamChange} label={label.refundVolumeKg}></lightning-input>
+                                        <!-- Tee WKZ Menge -->  
+                                        <lightning-input if:true={hasTeaNoCoffeeType} type="number" step="1" value={params.teaWkzOneTimeAmount} data-fieldname="teaWkzOneTimeAmount" onchange={handleParamChange} label={label.refundVolumeEuro}></lightning-input>
+                                    </lightning-layout-item>
+                                </lightning-layout>    
+                                <!-- Row 5 -->
+                                <lightning-layout>
+                                    <lightning-layout-item size="6" padding="horizontal-small">
+                                        <!-- Coffee One-Time Refund -->
+                                        <lightning-input if:true={hasCoffeeType} type="number" step="1" value={params.coffeeWkzOneTimeRefund} data-fieldname="coffeeWkzOneTimeRefund" onchange={handleParamChange} label={label.oneTimeRefund}></lightning-input>
+                                        <!-- Tee WKZ Vergütung -->  
+                                        <lightning-input if:true={hasTeaNoCoffeeType} type="number" step="1" value={params.teaWkzOneTimeRefund} data-fieldname="teaWkzOneTimeRefund" onchange={handleParamChange} label={label.oneTimeRefund}></lightning-input>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" padding="horizontal-small">
+                                        &nbsp;
+                                    </lightning-layout-item>
+                                </lightning-layout> 
+                                <!-- Row 6 -->
+                                <lightning-layout>
+                                    <lightning-layout-item size="12" padding="horizontal-small" class="slds-p-top_medium" style="margin-top: 5px;">
+                                        <!-- Annual WKZ Titel -->
+                                        <p if:true={hasCoffeeType} class="title-bold slds-m-right_small">{label.refundWkzAnnualCoffee}</p>
+                                        <!-- Tee WKZ Jährlich Titel -->
+                                        <p if:true={hasTeaNoCoffeeType} class="title-bold slds-m-right_small">{label.refundWkzAnnualTea}</p>  
+                                    </lightning-layout-item>
+                                </lightning-layout> 
+                                <!-- Row 7  -->
+                                <lightning-layout>
+                                    <lightning-layout-item size="6" padding="horizontal-small">
+                                        <!-- Coffee Annual Refund -->   
+                                        <lightning-input if:true={hasCoffeeType} type="number" step="1" value={params.coffeeWkzAnnualRefund} data-fieldname="coffeeWkzAnnualRefund" onchange={handleParamChange} label={label.annualRefund}></lightning-input>
+                                        <!-- Tee WKZ Jährlich Vergütung -->  
+                                        <lightning-input if:true={hasTeaNoCoffeeType} type="number" step="1" value={params.teaWkzAnnualRefund} data-fieldname="teaWkzAnnualRefund" onchange={handleParamChange} label={label.annualRefund}></lightning-input>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" padding="horizontal-small">
+                                        &nbsp;
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                
+                                <!-- divider between sections  -->
+                                    <lightning-layout>
+                                        <lightning-layout-item size="12" class="slds-m-top_large">
+                                            <hr class="slds-m-vertical_small"/>
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+
+                                <!-- Row 8  -->
+                                <lightning-layout>
+                                    <lightning-layout-item size="12" padding="horizontal-small" class="slds-p-top_medium">
+                                        <!-- RV kaffee Titel -->
+                                        <p if:true={hasCocoaCoffeeTeaQuantities} class="title-bold slds-m-right_small">{label.refundTea}</p>
+                                    </lightning-layout-item>
+                                </lightning-layout> 
+                                <template if:true={hasCoffeeAndTeaType}>
+                                    <!-- Row 9 -->
+                                    <lightning-layout>
+                                        <lightning-layout-item size="6" padding="horizontal-small">
+                                            <!-- Tea Refund Type -->
+                                            <lightning-combobox if:true={hasCocoaCoffeeTeaQuantities} value={params.teaRefundType} options={teaTypeOptions} onchange={handleChangeTeaType} label={label.refundTeaType}></lightning-combobox>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" padding="horizontal-small">
+                                            <!-- Tea Refund Step -->
+                                            <lightning-input if:true={hasCocoaCoffeeTeaQuantities} type="number" step="1" value={params.teaRefundLevel} data-fieldname="teaRefundLevel" onchange={handleParamChange} label={label.refundTeaLevel}></lightning-input>
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                    <!-- Row 10 -->
+                                    <lightning-layout>
+                                        <lightning-layout-item size="12" padding="horizontal-small" class="slds-p-top_medium" style="margin-top: 20px;">
+                                        <!-- Tee WKZ Einmalig Titel -->
+                                            <p if:true={hasTeaType} class="title-bold slds-m-right_small">{label.refundWkzOneTimeTea}</p> 
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                    <!-- Row 11 -->
+                                    <lightning-layout>
+                                        <lightning-layout-item size="6" padding="horizontal-small">
+                                        <!-- Tee WKZ Laufzeit --> 
+                                            <lightning-input if:true={hasTeaType} type="number" step="1" value={params.teaWkzRuntime} data-fieldname="teaWkzRuntime" onchange={handleParamChange} label={label.runtimeInMonths}></lightning-input>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" padding="horizontal-small">
+                                        <!-- Tee WKZ Menge -->  
+                                            <lightning-input if:true={hasTeaType} type="number" step="1" value={params.teaWkzOneTimeAmount} data-fieldname="teaWkzOneTimeAmount" onchange={handleParamChange} label={label.refundVolumeEuro}></lightning-input>
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                    <!-- Row 12 -->
+                                        <lightning-layout>
+                                        <lightning-layout-item size="6" padding="horizontal-small">
+                                            <lightning-input if:true={hasTeaType} type="number" step="1" value={params.teaWkzOneTimeRefund} data-fieldname="teaWkzOneTimeRefund" onchange={handleParamChange} label={label.oneTimeRefund}></lightning-input>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" padding="horizontal-small">
+                                            &nbsp;
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                    <!-- Row 13 -->
+                                    <lightning-layout>
+                                        <lightning-layout-item size="12" padding="horizontal-small" class="slds-p-top_medium" style="margin-top: 5px;">
+                                            <!-- Tee WKZ Jährlich Titel -->
+                                            <p if:true={hasTeaType} class="title-bold slds-m-right_small">{label.refundWkzAnnualTea}</p>    
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                    <!-- Row 14 -->
+                                    <lightning-layout>
+                                        <!-- Tee WKZ Jährlich Vergütung --> 
+                                            <lightning-layout-item size="6" padding="horizontal-small">
+                                            <lightning-input if:true={hasTeaType} type="number" step="1" value={params.teaWkzAnnualRefund} data-fieldname="teaWkzAnnualRefund" onchange={handleParamChange} label={label.annualRefund}></lightning-input>
+                                            </lightning-layout-item> 
+                                            <lightning-layout-item size="6" padding="horizontal-small">
+                                            &nbsp;
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                </template>
+                            </template>
+                        </lightning-accordion-section>
+                        <!-- End Refund -->
+
+                        <!-- Additional Agreements -->
+                        <lightning-accordion-section name="AdditionalAgreements" label={label.additionalAgreementsSection}>
+                            <!--template if:true={params.showAdditionalAgreements}-->
+                                    <lightning-input type="checkbox" checked={params.additionalQualityVisit} onchange={handleChangeAdditionalQualityVisit} label={label.additionalAgreementsQualityVisit}></lightning-input>
+                                    <template if:true={params.additionalQualityVisit}>
+                                        <lightning-combobox  class="slds-p-vertical_small" type="toggle" options={intervalOptions} value={params.additionalQualityVisitInterval} onchange={handleChangeAdditionalQualityVisitInterval} label={label.interval}></lightning-combobox><!--br /-->
+                                        <lightning-input type="date" value={params.additionalQualityVisitInitial} onchange={handleChangeAdditionalQualityVisitInitial} label={label.firstCheck}></lightning-input><br />
+                                        <lightning-input type="toggle" checked={params.additionalQualityVisitSettingRequested} onchange={handleChangeAdditionalQualityVisitSettingRequested} label={label.settingRequested}></lightning-input>
+                                    </template>
+                                    <lightning-input type="checkbox" checked={params.additionalFrameLease} onchange={handleChangeFrameLease} label={label.additionalAgreementsFrame}></lightning-input>
+                                    <lightning-input-rich-text  class="slds-p-vertical_small" if:true={params.additionalFrameLease} value={params.additionalFrameLeaseText} onchange={handleChangeFrameLeaseText} label={label.additionalAgreementsFrameRich}></lightning-input-rich-text>
+                                    <lightning-input type="checkbox" checked={params.additionalOther} onchange={handleChangeAdditionalOther} label={label.additionalAgreementsOther}></lightning-input>
+                                    <lightning-input-rich-text  class="slds-p-vertical_small" if:true={params.additionalOther} value={params.additionalOtherText} onchange={handleChangeAdditionalOtherText} label={label.additionalAgreementsOtherRich}></lightning-input-rich-text>
+                                    <lightning-input type="checkbox" checked={params.additionalOfferTasting} onchange={handleChangeOfferTasting} label={label.additionalAgreementsOfferTasting}></lightning-input>
+                                    <lightning-input type="checkbox" checked={params.additionalOfferFinancing} onchange={handleChangeOfferFinancing} label={label.additionalAgreementsOfferFinancing}></lightning-input>
+                                    <lightning-input type="checkbox" checked={params.additionalOfferTraining} onchange={handleChangeOfferTraining} label={label.additionalAgreementsOfferTraining}></lightning-input>
+                               
+                            <!--/template-->
+                        </lightning-accordion-section>
+                        <!-- End Additional Agreements -->
+                        <!--Simulation-->
+                        <lightning-accordion-section name="Simulation" label={label.simulationSection}> 
+                            <template if:true={showSimulation}>
+                                <lightning-layout>
+                                    <lightning-layout-item size="12" padding="horizontal-small">
+                                        <p class="title-bold slds-m-right_small">{label.simulateGrowth}</p>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <lightning-layout>
+                                    <lightning-layout-item size="6" padding="horizontal-small">
+                                        <lightning-combobox value={params.simulatedRevenue} options={simRevOptions} onchange={handleChangeSimulatedRevenue} label={label.simulatedRevenue}></lightning-combobox>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" padding="horizontal-small">
+                                        <lightning-combobox value={params.growthPercent} options={growthOptions} onchange={handleChangeGrowthPercent} label={label.growthInPercent}></lightning-combobox>               
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                            </template>
+                        </lightning-accordion-section>
+                    </lightning-accordion>
+                    <!-- End Simulation-->
+                </template>
+                <!-- End Body -->
+                <div slot="footer">
+                    <lightning-layout>
+                        <lightning-layout-item size="6">
+                            <!--template if:true={displayErrors.quantityMismatch}>
+                                <div class="section-warning slds-p-vertical_small">
+                                    <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.quantityMismatchWarning}</div>
+                                </div>
+                            </template-->
+                            <template if:true={displayErrors.noProductsSelected}>
+                                <div class="section-warning slds-p-vertical_small">
+                                    <div padding="around-small" class="slds-notify slds-notify_alert slds-alert_error" role="alert">{label.errorNoProducts}</div>
+                                </div>
+                            </template>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="6">
+                            <lightning-button variant="neutral" label={label.cancel} onclick={handleCancel}></lightning-button>
+                            <lightning-button if:false={isQuoteContext} variant="brand-outline" label={label.createAndContinue} class="slds-m-left_x-small" onclick={handleCreate} disabled={createDisabled}></lightning-button>
+                            <lightning-button variant="brand" label={createAndCloseLabel} class="slds-m-left_x-small" onclick={handleCreateAndClose} disabled={createDisabled}></lightning-button>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </div>
+            </template>
+            <template if:true={isChain}>
+                <!-- Body -->    
+                <!-- New Customer Banner -->
+                <c-lwc-messaging-utility
+                    message-body={label.chainWarning}
+                    message-type="inline"
+                    message-variant="warning"
+                    icon-name="utility:report_issue"
+                    show-message=true
+                    show-icon=true
+                    >
+                </c-lwc-messaging-utility>
+            </template>
+        </template>
+    </lightning-quick-action-panel>
+</template>

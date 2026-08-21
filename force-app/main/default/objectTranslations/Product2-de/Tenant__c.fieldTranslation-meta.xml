@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Tenant --></label>
+    <name>Tenant__c</name>
+    <picklistValues>
+        <masterLabel>Andaco Import-u.Handelsges.mbH</masterLabel>
+        <translation><!-- Andaco Import-u.Handelsges.mbH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Burkhof Kaffee GmbH</masterLabel>
+        <translation><!-- Burkhof Kaffee GmbH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Burkhof Kava spol. s.r.o.</masterLabel>
+        <translation><!-- Burkhof Kava spol. s.r.o. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Burkhof-Kava Slovakia s.r.o.</masterLabel>
+        <translation><!-- Burkhof-Kava Slovakia s.r.o. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>C.A. Wille Hdl.- u. Verw. gmbH</masterLabel>
+        <translation><!-- C.A. Wille Hdl.- u. Verw. gmbH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>C.A.Wille Handelsges.mbH &amp; Co.</masterLabel>
+        <translation><!-- C.A.Wille Handelsges.mbH &amp; Co. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gourvita GmbH</masterLabel>
+        <translation><!-- Gourvita GmbH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hochstrasser AG</masterLabel>
+        <translation><!-- Hochstrasser AG --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IDEE KAFFEE Ges.m.b.H.</masterLabel>
+        <translation><!-- IDEE KAFFEE Ges.m.b.H. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IDEE Office Coffee Service GmbH</masterLabel>
+        <translation><!-- IDEE Office Coffee Service GmbH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>J. Eilles GmbH &amp; Co. KG</masterLabel>
+        <translation><!-- J. Eilles GmbH &amp; Co. KG --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>J. Hornig GmbH</masterLabel>
+        <translation><!-- J. Hornig GmbH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>J. J. Darboven GmbH &amp; Co. KG</masterLabel>
+        <translation><!-- J. J. Darboven GmbH &amp; Co. KG --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>J.J. Darboven (Americas), Inc.</masterLabel>
+        <translation><!-- J.J. Darboven (Americas), Inc. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>J.J. Darboven /NL</masterLabel>
+        <translation><!-- J.J. Darboven /NL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>J.J. Darboven France</masterLabel>
+        <translation><!-- J.J. Darboven France --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>J.J. Darboven Hungaria Kft.</masterLabel>
+        <translation><!-- J.J. Darboven Hungaria Kft. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>J.J. Darboven Internat. GmbH</masterLabel>
+        <translation><!-- J.J. Darboven Internat. GmbH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>J.J. Darboven Ireland Ltd.</masterLabel>
+        <translation><!-- J.J. Darboven Ireland Ltd. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>J.J. Darboven Poland sp.z o.o.</masterLabel>
+        <translation><!-- J.J. Darboven Poland sp.z o.o. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Praxmarer Kaffeevertrieb</masterLabel>
+        <translation><!-- Praxmarer Kaffeevertrieb --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Change_to_invalid_stages</fullName>
+    <active>false</active>
+    <description>Restricts invalid stage transitions in the sales pipeline for standard accounts with no accepted quotes, ensuring users strictly follow the defined quote process.</description>
+    <errorConditionFormula>AND(NOT(ISCHANGED(SkipValidations__c)),
+				ISCHANGED(StageName),
+  		NOT(ISPICKVAL(Account.TypeOfChain__c, &quot;Chain&quot;)),
+				AcceptedQuotes__c = 0, 
+				OR(ISPICKVAL(PRIORVALUE(StageName),	&quot;Discovery&quot;),
+							ISPICKVAL(PRIORVALUE(StageName), &quot;Qualification&quot;), 
+							ISPICKVAL(PRIORVALUE(StageName), &quot;Quote Sent&quot;), 
+							ISPICKVAL(PRIORVALUE(StageName), &quot;Quotation Phase&quot;)), 
+				OR(ISPICKVAL(StageName, &quot;Renegotiation&quot;), 
+							ISPICKVAL(StageName, &quot;Quote Signed&quot;), 
+							ISPICKVAL(StageName, &quot;Quote Sent&quot;),
+							ISPICKVAL(StageName, &quot;Closed Won&quot;)))</errorConditionFormula>
+    <errorDisplayField>StageName</errorDisplayField>
+    <errorMessage>Cannot change from the current stage to the selected stage! Please follow the quote process!</errorMessage>
+</ValidationRule>

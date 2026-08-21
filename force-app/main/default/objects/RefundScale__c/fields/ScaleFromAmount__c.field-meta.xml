@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ScaleFromAmount__c</fullName>
+    <description>From which annual revenue this step applies (for revenue-based refunds). [Sources: XLSX-003]</description>
+    <inlineHelpText>From which annual revenue this step applies (for revenue-based refunds).</inlineHelpText>
+    <label>Scale From (€)</label>
+    <precision>12</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

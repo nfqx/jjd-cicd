@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Communal feeding</masterLabel>
+        <translation>Gemeinschaftsverpflegung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gastronomy &amp; Other</masterLabel>
+        <translation>Gastro &amp; Sonstige</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Procurement Association</masterLabel>
+        <translation>Einkaufsgesellschaft</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Vending</masterLabel>
+        <translation>Vending</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

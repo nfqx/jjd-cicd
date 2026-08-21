@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProductScopeLevel__c</fullName>
+    <description>At which level of the product world the refund applies: a single article, a subgroup, a whole product class or a brand. SAP calculates on hierarchy levels, PuK today per article — this gap (C-03) is clarified in the KAM workshop. [Sources: MN-003 Z.196-212]</description>
+    <inlineHelpText>At which level of the product world the refund applies: a single article, a subgroup, a whole product class or a brand. SAP calculates on hierarchy levels, PuK today per article — this gap (C-03) is clarified in the KAM workshop.</inlineHelpText>
+    <label>Product Scope Level</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Product</fullName>
+                <default>false</default>
+                <label>Single Product</label>
+            </value>
+            <value>
+                <fullName>Subgroup</fullName>
+                <default>false</default>
+                <label>Product Subgroup</label>
+            </value>
+            <value>
+                <fullName>Group</fullName>
+                <default>false</default>
+                <label>Product Group</label>
+            </value>
+            <value>
+                <fullName>Class</fullName>
+                <default>false</default>
+                <label>Product Class</label>
+            </value>
+            <value>
+                <fullName>Brand</fullName>
+                <default>false</default>
+                <label>Brand</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

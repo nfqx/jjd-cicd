@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Self Service",
+  "contentBody" : {
+    "activeViewId" : "Self_Service",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-self-service",
+    "urlPrefix" : "self-service"
+  },
+  "urlName" : "self-service"
+}

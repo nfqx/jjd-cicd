@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "My Invoice",
+  "contentBody" : {
+    "activeViewId" : "My_Invoice",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-my-invoice",
+    "urlPrefix" : "my-invoice"
+  },
+  "urlName" : "my-invoice"
+}

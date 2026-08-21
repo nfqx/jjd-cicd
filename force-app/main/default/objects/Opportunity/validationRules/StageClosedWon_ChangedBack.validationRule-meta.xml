@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>StageClosedWon_ChangedBack</fullName>
+    <active>false</active>
+    <description>Locks the Opportunity Stage once it is set to &apos;Closed Won&apos;, preventing users from reverting a closed-won deal back into an open pipeline stage.</description>
+    <errorConditionFormula>ISCHANGED(StageName) &amp;&amp; 
+ISPICKVAL(PRIORVALUE(StageName), &apos;Closed Won&apos;) &amp;&amp;
+NOT(ISPICKVAL(StageName, &apos;Closed Won&apos;)) &amp;&amp; 
+NOT(ISCHANGED(SkipValidations__c))</errorConditionFormula>
+    <errorMessage>This Opportunity is already closed; the stage can no longer be changed.</errorMessage>
+</ValidationRule>

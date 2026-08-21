@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Unternehmensgröße</label>
+    <name>CompanySize__c</name>
+    <picklistValues>
+        <masterLabel>Bakery chain</masterLabel>
+        <translation><!-- Bakery chain --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cafe / Bar</masterLabel>
+        <translation><!-- Cafe / Bar --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Communal feeding</masterLabel>
+        <translation><!-- Communal feeding --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Family owned</masterLabel>
+        <translation><!-- Family owned --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Food stand</masterLabel>
+        <translation><!-- Food stand --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Food truck / Street food</masterLabel>
+        <translation><!-- Food truck / Street food --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Franchise</masterLabel>
+        <translation><!-- Franchise --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Large hotel / Hotel chain</masterLabel>
+        <translation><!-- Large hotel / Hotel chain --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Medium size hotel (20-50 rooms)</masterLabel>
+        <translation><!-- Medium size hotel (20-50 rooms) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Multiple branches</masterLabel>
+        <translation><!-- Multiple branches --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Restaurant</masterLabel>
+        <translation><!-- Restaurant --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Small hotel / Boutique hotel</masterLabel>
+        <translation><!-- Small hotel / Boutique hotel --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>System catering</masterLabel>
+        <translation><!-- System catering --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Travel catering</masterLabel>
+        <translation><!-- Travel catering --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wellness hotel</masterLabel>
+        <translation><!-- Wellness hotel --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

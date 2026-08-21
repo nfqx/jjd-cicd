@@ -1,0 +1,164 @@
+<template>
+
+    <lightning-card title={label.availableProducts}>
+        <lightning-layout>
+            <lightning-layout-item size="6">
+                <div class="slds-col">
+                    <lightning-input
+                        type="search"
+                        label={label.search}
+                        onchange={handleSearch}>
+                    </lightning-input>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="3">
+                &nbsp;
+            </lightning-layout-item>
+            <lightning-layout-item size="3">
+                <template if:true={canManageEntitlement}>
+                    <lightning-button
+                        label="Add Product"
+                        onclick={handleOpenModal}>
+                    </lightning-button>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+        <template if:true={hasSearchResults}>
+
+        </template>
+        <lightning-tabset active-tab-value={activeTab}>
+            <lightning-spinner if:false={stoppedLoading} alternative-text="Loading" size="small"></lightning-spinner>      
+            <lightning-tab label={label.ownProducts} value="1" onactive={handleActive}>       
+                <template if:true={hasOwnProducts}>    
+                    <template if:true={showPaginationOwnProducts}>
+                        <c-pagination records-count={ownTotal} page-number=1 records-per-page={pageLength} onpagechange={handleOwnPageChange}></c-pagination>
+                    </template>
+                    <div style="max-height: 400px; margin-top: 1rem;overflow:auto;">
+                        <lightning-datatable
+                            if:true={stoppedLoading}
+                            key-field="productId"
+                            data={ownRowsCurrentPage}
+                            columns={columnsOwn}
+                            onrowaction={handleRowAction}
+                            hide-checkbox-column>
+                        </lightning-datatable>
+                    </div>
+                </template>
+                <template if:false={hasOwnProducts}>
+                    {label.noProductsInThisView}
+                </template>
+            </lightning-tab>
+            <template if:true={assortmentExtended}>
+                <lightning-tab label={label.extensionProducts} value="2" onactive={handleActive}> 
+                    <template if:true={hasExtensionProducts}>      
+                        <template if:true={showPaginationExtensionProducts}>
+                            <c-pagination records-count={extensionTotal} page-number=1 records-per-page={pageLength} onpagechange={handleExtensionPageChange}></c-pagination>
+                        </template>                       
+                        <div style="max-height: 400px; margin-top: 1rem;overflow:auto;">
+                            <lightning-datatable
+                                if:true={stoppedLoading}
+                                key-field="productId"
+                                data={extensionRowsCurrentPage}
+                                columns={columnsExtension}
+                                onrowaction={handleRowAction}
+                                hide-checkbox-column>
+                            </lightning-datatable>
+                        </div>
+                    </template>
+                    <template if:false={hasExtensionProducts}>
+                        {label.noProductsInThisView}
+                    </template>
+                </lightning-tab>
+            </template>
+            <lightning-tab label={label.otherProducts} value="3" onactive={handleActive}>   
+                <template if:true={hasOtherProducts}>       
+                    <template if:true={showPaginationOtherProducts}>
+                        <c-pagination records-count={otherTotal} page-number=1 records-per-page={pageLength} onpagechange={handleOtherPageChange}></c-pagination>
+                    </template>
+                    <div style="max-height: 400px; margin-top: 1rem;overflow:auto;">
+                        <lightning-datatable
+                            if:true={stoppedLoading}
+                            key-field="productId"
+                            data={otherRowsCurrentPage}
+                            columns={columnsOther}
+                            onrowaction={handleRowAction}
+                            hide-checkbox-column>
+                        </lightning-datatable>
+                    </div>
+                </template>
+                <template if:false={hasOtherProducts}>
+                    {label.noProductsInThisView}
+                </template>
+            </lightning-tab>
+            <lightning-tab label={label.allProducts} value="4" onactive={handleActive}>   
+                <template if:true={hasAllProducts}>   
+                    <template if:true={showPaginationAllProducts}>
+                        <c-pagination records-count={allTotal} page-number=1 records-per-page={pageLength} onpagechange={handleAllPageChange}></c-pagination>
+                    </template>
+                    <div style="max-height: 400px; margin-top: 1rem;overflow:auto;">
+                        <lightning-datatable
+                            if:true={stoppedLoading}
+                            key-field="productId"
+                            data={allRowsCurrentPage}
+                            columns={columnsAll}
+                            onrowaction={handleRowAction}
+                            hide-checkbox-column>
+                        </lightning-datatable>
+                    </div>
+                </template>
+                <template if:false={hasAllProducts}>
+                    {label.noProductsInThisView}
+                </template>
+            </lightning-tab>
+            <lightning-tab label={label.searchResults} value="5" if:true={showSearchResults} onactive={handleActive}>   
+                <template if:true={hasSearchResults}>   
+                    <template if:true={showPaginationSearchResults}>
+                        <c-pagination records-count={searchResultsTotal} page-number=1 records-per-page={pageLength} onpagechange={handleSearchResultsPageChange}></c-pagination>
+                    </template>
+                    <div style="max-height: 400px; margin-top: 1rem;overflow:auto;">
+                        <lightning-datatable
+                            if:true={stoppedLoading}
+                            key-field="productId"
+                            data={resultsRowsCurrentPage}
+                            columns={columnsAll}
+                            onrowaction={handleRowAction}
+                            hide-checkbox-column>
+                        </lightning-datatable>
+                    </div>
+                </template>
+                <template if:false={hasAllProducts}>
+                    {label.noProductsInThisView}
+                </template>
+            </lightning-tab>
+        </lightning-tabset>
+    </lightning-card>
+    
+    <c-modal
+        show={showModal}
+        onclose={handleCloseModal}
+    >
+        <div class="body-regular" slot="body">
+            <lightning-record-picker
+                label="Product"
+                object-api-name="Product2"
+                filter={productFilter}
+                onchange={handleProductSelect}>
+            </lightning-record-picker>
+        </div>
+
+        <div class="d-flex justify-content-start align-items-end" slot="footer">
+            <lightning-button 
+                label={label.cancel} 
+                onclick={handleCloseModal}
+                >
+            </lightning-button>
+            <lightning-button 
+                label={label.save} 
+                disabled={saveDisabled}
+                onclick={handleSave}
+                >
+            </lightning-button>
+        </div>
+    </c-modal>
+
+</template>

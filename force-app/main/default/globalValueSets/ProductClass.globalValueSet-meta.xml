@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>01</fullName>
+        <default>false</default>
+        <label>Green coffee</label>
+    </customValue>
+    <customValue>
+        <fullName>02</fullName>
+        <default>false</default>
+        <label>Roasted coffee</label>
+    </customValue>
+    <customValue>
+        <fullName>03</fullName>
+        <default>false</default>
+        <label>Packaging materials</label>
+    </customValue>
+    <customValue>
+        <fullName>04</fullName>
+        <default>false</default>
+        <label>Contract coffee manufacturing</label>
+    </customValue>
+    <customValue>
+        <fullName>05</fullName>
+        <default>false</default>
+        <label>Coffee extract</label>
+    </customValue>
+    <customValue>
+        <fullName>06</fullName>
+        <default>false</default>
+        <label>Tea</label>
+    </customValue>
+    <customValue>
+        <fullName>07</fullName>
+        <default>false</default>
+        <label>Other instant products</label>
+    </customValue>
+    <customValue>
+        <fullName>08</fullName>
+        <default>false</default>
+        <label>Drinking chocolate</label>
+    </customValue>
+    <customValue>
+        <fullName>09</fullName>
+        <default>false</default>
+        <label>Biscuits and chocolate squares</label>
+    </customValue>
+    <customValue>
+        <fullName>10</fullName>
+        <default>false</default>
+        <label>Cream and condensed milk</label>
+    </customValue>
+    <customValue>
+        <fullName>11</fullName>
+        <default>false</default>
+        <label>Sugar and sweeteners</label>
+    </customValue>
+    <customValue>
+        <fullName>12</fullName>
+        <default>false</default>
+        <label>Alcoholic beverages</label>
+    </customValue>
+    <customValue>
+        <fullName>13</fullName>
+        <default>false</default>
+        <label>Operating supplies</label>
+    </customValue>
+    <customValue>
+        <fullName>14</fullName>
+        <default>false</default>
+        <label>Other goods</label>
+    </customValue>
+    <customValue>
+        <fullName>15</fullName>
+        <default>false</default>
+        <label>Promotional materials</label>
+    </customValue>
+    <customValue>
+        <fullName>16</fullName>
+        <default>false</default>
+        <label>Coffee machines</label>
+    </customValue>
+    <customValue>
+        <fullName>17</fullName>
+        <default>false</default>
+        <label>Consumables</label>
+    </customValue>
+    <customValue>
+        <fullName>18</fullName>
+        <default>false</default>
+        <label>Services</label>
+    </customValue>
+    <masterLabel>Product Class</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

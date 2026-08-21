@@ -1,0 +1,39 @@
+.back-arrow {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 30px;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+.back-arrow:hover {
+    color: #0056b3;
+}
+h2 {
+    margin: 10px;
+}
+.btn {
+    margin: 0 auto;
+    width: fit-content;
+    align-items: center !important;
+    text-align: center !important;
+    margin-top:  5px;
+    color: white;
+    background-color: #000;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+}
+.container-fluid {
+    padding-top: 2rem;
+}
+
+.left-section {
+    padding: 2rem;
+}
+
+.right-section {
+    background-color: #f1f1f1;
+    padding: 2rem;
+}

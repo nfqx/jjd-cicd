@@ -1,0 +1,5 @@
+{
+  "apiName" : "Self_Service",
+  "type" : "sfdc_cms__view",
+  "path" : "views"
+}

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitor__c</fullName>
+    <label>Competitor</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Tchibo Coffee Service</fullName>
+                <default>false</default>
+                <label>Tchibo Coffee Service</label>
+            </value>
+            <value>
+                <fullName>Jacobs / JDE Professional</fullName>
+                <default>false</default>
+                <label>Jacobs / JDE Professional</label>
+            </value>
+            <value>
+                <fullName>Dallmayr Professional / Vending &amp; Office</fullName>
+                <default>false</default>
+                <label>Dallmayr Professional / Vending &amp; Office</label>
+            </value>
+            <value>
+                <fullName>Lavazza</fullName>
+                <default>false</default>
+                <label>Lavazza</label>
+            </value>
+            <value>
+                <fullName>Kaffee Partner</fullName>
+                <default>false</default>
+                <label>Kaffee Partner</label>
+            </value>
+            <value>
+                <fullName>Amazon</fullName>
+                <default>false</default>
+                <label>Amazon</label>
+            </value>
+            <value>
+                <fullName>Chaqwa (Coca-Cola)</fullName>
+                <default>false</default>
+                <label>Chaqwa (Coca-Cola)</label>
+            </value>
+            <value>
+                <fullName>Dinzler</fullName>
+                <default>false</default>
+                <label>Dinzler</label>
+            </value>
+            <value>
+                <fullName>GOURVITA</fullName>
+                <default>false</default>
+                <label>GOURVITA</label>
+            </value>
+            <value>
+                <fullName>Heimbs / Azul / Dallmayr</fullName>
+                <default>false</default>
+                <label>Heimbs / Azul / Dallmayr</label>
+            </value>
+            <value>
+                <fullName>Illy Kaffee</fullName>
+                <default>false</default>
+                <label>Illy Kaffee</label>
+            </value>
+            <value>
+                <fullName>IOCS / Darboven</fullName>
+                <default>false</default>
+                <label>IOCS / Darboven</label>
+            </value>
+            <value>
+                <fullName>Jacobs Douwe Egberts</fullName>
+                <default>false</default>
+                <label>Jacobs Douwe Egberts</label>
+            </value>
+            <value>
+                <fullName>Julius Meinl</fullName>
+                <default>false</default>
+                <label>Julius Meinl</label>
+            </value>
+            <value>
+                <fullName>LEH</fullName>
+                <default>false</default>
+                <label>LEH</label>
+            </value>
+            <value>
+                <fullName>LOGO</fullName>
+                <default>false</default>
+                <label>LOGO</label>
+            </value>
+            <value>
+                <fullName>Melitta</fullName>
+                <default>false</default>
+                <label>Melitta</label>
+            </value>
+            <value>
+                <fullName>Metro</fullName>
+                <default>false</default>
+                <label>Metro</label>
+            </value>
+            <value>
+                <fullName>Nespresso</fullName>
+                <default>false</default>
+                <label>Nespresso</label>
+            </value>
+            <value>
+                <fullName>Regionaler Röster</fullName>
+                <default>false</default>
+                <label>Regionaler Röster</label>
+            </value>
+            <value>
+                <fullName>Schirmer</fullName>
+                <default>false</default>
+                <label>Schirmer</label>
+            </value>
+            <value>
+                <fullName>Seeberger</fullName>
+                <default>false</default>
+                <label>Seeberger</label>
+            </value>
+            <value>
+                <fullName>Segafredo</fullName>
+                <default>false</default>
+                <label>Segafredo</label>
+            </value>
+            <value>
+                <fullName>Westhoff</fullName>
+                <default>false</default>
+                <label>Westhoff</label>
+            </value>
+            <value>
+                <fullName>Sonstige</fullName>
+                <default>false</default>
+                <label>Sonstige</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OwnOrderingRightState__c</fullName>
+    <description>Ordering — structural base right; not shown in the component and excluded from the cascade. The only right without an effective and a causer field.</description>
+    <label>Ordering Right (Own)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>RightState</valueSetName>
+    </valueSet>
+</CustomField>

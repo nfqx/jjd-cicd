@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>SAP-Vertragsart des Kopfes — unterscheidet z. B. normale AHS-Gastro-Verträge (20) von Maschinenverträgen (91), die in einer separaten Spur behandelt werden.</help>
+    <label>Vertragsart</label>
+    <name>ContractType__c</name>
+    <picklistValues>
+        <masterLabel>Sonstige Verträge</masterLabel>
+        <translation><!-- Sonstige Verträge --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Verträge AHS/Gastro</masterLabel>
+        <translation>AHS-Gastro</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Verträge Export</masterLabel>
+        <translation><!-- Verträge Export --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Verträge Konzern/Intern</masterLabel>
+        <translation><!-- Verträge Konzern/Intern --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Verträge LEH/Handel</masterLabel>
+        <translation><!-- Verträge LEH/Handel --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Verträge Lieferanten</masterLabel>
+        <translation><!-- Verträge Lieferanten --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Verträge Maschinen</masterLabel>
+        <translation>Maschinen</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_CW_Without_Muss_or_AcceptedQuote</fullName>
+    <active>false</active>
+    <description>Requires either &quot;Muss&quot; linkage on the Account or at least one accepted quote before an Opportunity can be set to Closed Won</description>
+    <errorConditionFormula>AND(ISCHANGED(StageName),
+				ISPICKVAL(StageName, &quot;Closed Won&quot;), 
+				NOT(ISPICKVAL(Account.TypeOfChain__c, &quot;Chain&quot;)),  
+				AcceptedQuotes__c &lt; 1)</errorConditionFormula>
+    <errorMessage>You cannot set this Opportunity to Closed Won. Please ensure at least one quote is accepted.</errorMessage>
+</ValidationRule>

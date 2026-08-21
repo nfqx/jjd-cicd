@@ -1,0 +1,87 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <template if:false={brandLoaded}> <!--try with gettingData-->
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="spinner-border text-black-50" role="status"></div>
+        </div>
+    </template>
+    <template if:true={showData}>
+        <div class="container mt-2">
+            <!-- Basic info -->
+             <c-webshop-breadcrumbs path={path} last-element={brandData.Name}></c-webshop-breadcrumbs>
+            <template if:true={brandLoaded}>
+                <div class="d-flex d-sm-none justify-content-center brand-image">
+                    <lightning-formatted-rich-text value={brandImage}></lightning-formatted-rich-text>
+                </div>
+                <div class="container mb-5">
+                    <div class="row d-flex justify-content-between align-items-start">
+                        <div class="col-12 col-md-6">
+                            <p class="heading-1">{brandData.Name}</p>
+                            <lightning-formatted-rich-text class="body-large" value={brandText}></lightning-formatted-rich-text>
+                            <template if:true={hasProducts}>
+                                <button class="btn btn-primary d-md-block mt-4" type="button" onclick={handleClickViewAll}>{label.viewAllProducts}</button>
+                            </template>
+                        </div> 
+                        <div class="col-12 col-md-6 d-none d-sm-flex justify-content-center brand-image">
+                            <lightning-formatted-rich-text value={brandImage}></lightning-formatted-rich-text>
+                        </div>
+                    </div>
+                </div>
+                <!-- Static Slider -->
+                <template if:true={hasStaticSlider}>
+                    <c-webshop-static-slider slider-id={brandData.WebshopStaticSlider__c}></c-webshop-static-slider>
+                </template>
+                <div class="container my-5">
+                    <template if:false={hasProducts}>
+                        {label.hasNoProducts}
+                    </template>
+                    <template if:true={hasProducts}>
+                        <div class="row d-flex justify-content-between align-items-center mb-3">
+                            <div class="col-12 col-md-6">
+                                <h2 class="body-regular">{label.topProductsSubheader}</h2>
+                                <h1 class="heading-2 mb-2">{label.topProducts}</h1>
+                            </div>
+                            <div class="col-12 col-md-6 d-flex justify-content-start justify-content-md-end">
+                                <button class="btn btn-secondary" type="button" onclick={handleClickViewAll}>{label.viewAllProducts}</button> 
+                            </div>
+                        </div>
+                    </template>
+                    <c-webshop-slider 
+                        brand-id={recordId}
+                        show-image
+                        show-price
+                        show-wishlist
+                        show-cta
+                        onnodata={handleNoProducts}
+                        onhasdata={handleHasProducts}>
+                    </c-webshop-slider>
+                </div>
+                <!-- Featured Ad -->
+                <template if:true={hasFeaturedAd}>
+                    <c-webshop-featured-ad featured-ad-name={brandData.WebshopFeaturedAd__r.Name} style-name="full" from-brand-page></c-webshop-featured-ad>
+                </template>
+
+                <!-- TODO MATCHING ACCESSORIES -->
+                <template if:true={hasAccessories}>
+                    <div class="row d-flex justify-content-between align-items-center mb-3">
+                        <div class="col-12 col-md-6">
+                            <h2 class="body-regular">{label.accessoriesSubheader}</h2>
+                            <h1 class="heading-2 mb-2">{label.accessoriesHeader}</h1>
+                        </div>
+                    </div>
+                </template>
+                <c-webshop-slider 
+                    brand-id={recordId}
+                    show-image
+                    show-price
+                    show-wishlist
+                    show-cta
+                    brand-accessories
+                    onnodata={handleNoAccessories}
+                    onhasdata={handleHasAccessories}>
+                </c-webshop-slider>
+                <!-- END TODO -->
+            </template>
+        </div>
+    </template>
+</template>

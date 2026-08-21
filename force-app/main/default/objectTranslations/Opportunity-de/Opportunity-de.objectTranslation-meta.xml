@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Verloren</label>
+        <name>ClosedLost</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Create Order --></label>
+        <name>Create_Order</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Machine Configurator --></label>
+        <name>MachineConfigurator</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Price Configurator --></label>
+        <name>PriceConfiguratorNew</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Retoure erstellen --></label>
+        <name>Retoure_erstellen</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Primärkontakt auswählen</label>
+        <name>SelectPrimaryContact</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Transfer to Sales Area Manager --></label>
+        <name>TransferToSalesAreaManager</name>
+    </quickActions>
+    <validationRules>
+        <errorMessage>
+            <!-- Missing Info:
+• Loss Reason cannot be empty.
+• Loss Reason = &quot;Other&quot; - Please ensure additional info is entered in the text field. -->
+        </errorMessage>
+        <name>Loss_Reason_No_Loss_Reason</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Missing Info:
+• Loss Reason cannot be empty.
+• Loss Reason = &quot;Other&quot; - Please ensure additional info is entered in the text field. -->
+        </errorMessage>
+        <name>Loss_Reason_Other</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot set this Opportunity to Closed Won. Please ensure at least one quote is accepted. --></errorMessage>
+        <name>Prevent_CW_Without_Muss_or_AcceptedQuote</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot change from the current stage to the selected stage! Please follow the quote process! --></errorMessage>
+        <name>Prevent_Change_to_invalid_stages</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the information for &quot;Business Type&quot; and &quot;Sales Category&quot;. This data can be entered under &quot;Account Information&quot; in the &quot;Details&quot; tab. --></errorMessage>
+        <name>Prevent_Qualifi_Quote_Stage_AccountFi</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please assign the primary contact in the Opportunity Contact Roles! --></errorMessage>
+        <name>Prevent_Quotation_Phase_Primary_Contact</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This Opportunity is already closed; the stage can no longer be changed. --></errorMessage>
+        <name>StageClosedWon_ChangedBack</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A quote has already been signed; this Opportunity can only be Closed! --></errorMessage>
+        <name>StageQuoteSigned_ChangedBack</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Mandatory fields are required to close this Opportunity.
+ Please check the &quot;New Customer Notification&quot; tab. -->
+        </errorMessage>
+        <name>ValidateClosedWon</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Generate_Contract --></label>
+        <name>Generate_Contract</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Generate_Order --></label>
+        <name>Generate_Order</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Generate_Order_Contract --></label>
+        <name>Generate_Order_Contract</name>
+    </webLinks>
+</CustomObjectTranslation>

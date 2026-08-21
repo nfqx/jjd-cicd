@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InvoiceShippingMethod__c</fullName>
+    <label>Invoice Shipping Method</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Mail</fullName>
+                <default>false</default>
+                <label>Mail</label>
+            </value>
+            <value>
+                <fullName>E-Mail</fullName>
+                <default>false</default>
+                <label>E-Mail</label>
+            </value>
+            <value>
+                <fullName>X-Rechnung</fullName>
+                <default>false</default>
+                <label>X-Rechnung</label>
+            </value>
+            <value>
+                <fullName>Zugpferd</fullName>
+                <default>false</default>
+                <label>Zugpferd</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

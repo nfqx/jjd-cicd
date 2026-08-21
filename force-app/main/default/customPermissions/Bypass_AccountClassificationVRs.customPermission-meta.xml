@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Removes the validation rules for account classification for the entity. Intended for the production integration user and the user under whom the initial data load runs—not for regular users.</description>
+    <isLicensed>false</isLicensed>
+    <label>Bypass Account Classification Validations</label>
+</CustomPermission>

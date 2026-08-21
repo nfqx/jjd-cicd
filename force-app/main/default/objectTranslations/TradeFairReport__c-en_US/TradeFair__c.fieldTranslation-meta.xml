@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Trade Fair --></label>
+    <name>TradeFair__c</name>
+    <picklistValues>
+        <masterLabel>Intergastra</masterLabel>
+        <translation><!-- Intergastra --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Internorga</masterLabel>
+        <translation><!-- Internorga --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Südback</masterLabel>
+        <translation><!-- Südback --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

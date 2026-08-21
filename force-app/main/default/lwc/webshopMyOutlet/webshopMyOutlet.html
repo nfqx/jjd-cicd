@@ -1,0 +1,56 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <div class="background"></div>
+    <!--lightning-spinner if:true={isLoading} alternative-text="Loading" size="small"></lightning-spinner-->
+    <div class="d-flex justify-content-center align-items-center">
+        <div if:true={isLoading} class="spinner-border text-black-50" role="status"></div>
+    </div>
+    <div class="sidebar d-none d-lg-block">
+        <c-webshop-my-area-sidebar active-element="My_Outlets__c"></c-webshop-my-area-sidebar>
+    </div>
+    <div class="container-fluid content-zone">
+        <div class="row">
+            <div class="col-auto d-none d-lg-block" if:false={isLoading}>
+                <!--c-webshop-my-area-sidebar active-element="My_Outlets__c"></c-webshop-my-area-sidebar-->
+            </div>
+            <div class="col-12 col-lg-11 p-0 px-md-4">
+                <div class="content-area">
+                    <template if:false={isLoading}>
+                        <p class="link text-decoration-none cursor-pointer" onclick={handleBackToList}><i class="bi bi-arrow-left"></i> {label.backToList}</p>
+                        <p class="heading-2 d-flex align-items-center">
+                            {outletData.Name}
+                            <span if:false={isActive} class="bg-primary-subtle border border-primary rounded text-dark components-badge-h6 p-1 ms-2" onclick={handleSwitchAccount}>{label.switchAccount}</span>
+                            <span if:true={isActive} class="bg-primary-subtle border border-primary rounded text-dark components-badge-h6 p-1 ms-2">{label.active}</span>
+                        </p>
+                    </template>
+                    <div class="row">
+                        <template if:false={isLoading}>
+                            <div class="col-12 col-md-7 pe-md-3 mb-4">
+                                <div class="bg-white rounded p-4">
+                                <p class="components-badge-h3">{label.contactDetails}</p>
+                                <p class="body-medium">{label.accountName}<br /><span class="body-regular">{outletData.Name}</span></p>
+                                <hr>
+                                <p class="body-medium">{label.customerNumber}<br /><span class="body-regular">{outletData.AccountNumber}</span></p>
+                                <p class="body-medium">{label.mainDeliveryAddress}<br /><span class="body-regular">{outletData.Street}, {outletData.PostalCode} {outletData.City}</span></p>
+                                <template if:true={hasAdditionalDeliveryAddresses}>
+                                    <p class="body-medium">{label.additionalDeliveryAddresses}</p>
+                                    <ul>
+                                        <template for:each={additionalDeliveryAddresses} for:item="additionalAddress">
+                                            <li class="body-regular" key={additionalAddress}>{additionalAddress}</li>
+                                        </template>
+                                    </ul>
+                                </template>
+                                </div>
+                            </div>
+                        </template>
+                        <div class="col-12 col-md-5" data-id="mapholder" >
+                            <div class="bg-white rounded p-3">
+                                <div data-id="maproot" class="map_position" lwc:dom="manual"></div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

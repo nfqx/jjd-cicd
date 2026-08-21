@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>DAS Steuerfeld der Position: legt fest, ob es sich um Indexkonditionierung, Rückvergütung, WKZ oder Maschine handelt — und blendet die jeweils passenden Felder ein (Dynamic Forms).</help>
+    <label>Positionstyp</label>
+    <name>PositionType__c</name>
+    <picklistValues>
+        <masterLabel>Index</masterLabel>
+        <translation>Indexkonditionierung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Machine</masterLabel>
+        <translation>Maschine</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Marketing Subsidy (WKZ)</masterLabel>
+        <translation>Werbekostenzuschuss (WKZ)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation>Sonstige</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Refund</masterLabel>
+        <translation>Rückvergütung (RV)</translation>
+    </picklistValues>
+</CustomFieldTranslation>

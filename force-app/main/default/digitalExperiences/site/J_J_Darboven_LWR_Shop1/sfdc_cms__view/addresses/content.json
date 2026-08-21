@@ -1,0 +1,144 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Address List",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"7bf1b54e-fc28-40c8-bfa8-b624ac35dacb\",\"columns\":[{\"UUID\":\"5cb4896c-13cf-47ac-a44b-8b2eaf7d9aeb\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"10\",\"seedComponents\":null},{\"UUID\":\"7596fb4e-c7c8-486d-8e59-25889b33311e\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"2\",\"seedComponents\":null}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "backgroundColor" : "",
+                "dxpStyle" : { },
+                "isLinkable" : false,
+                "linkAssistiveText" : "",
+                "paddingHorizontal" : "small",
+                "paddingVertical" : "xx-small",
+                "text" : "Address Management",
+                "textAlign" : "left",
+                "textDecoration" : "{\"bold\": true}",
+                "textDisplayInfo" : "{\"textStyle\": \"heading-medium\", \"headingTag\": \"h2\"}"
+              },
+              "definition" : "dxp_base:textBlock",
+              "id" : "7828536e-36a6-4451-8be0-113b53749885",
+              "type" : "component"
+            } ],
+            "id" : "5cb4896c-13cf-47ac-a44b-8b2eaf7d9aeb",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          }, {
+            "children" : [ {
+              "attributes" : {
+                "alignment" : "right",
+                "dxpStyle" : { },
+                "size" : "standard",
+                "text" : "Add Address",
+                "variant" : "primary",
+                "width" : "standard"
+              },
+              "definition" : "commerce_my_account:myAccountAddAddressButton",
+              "id" : "4a1ecc45-255b-426c-9eb0-aeecdd218e3b",
+              "type" : "component"
+            } ],
+            "id" : "7596fb4e-c7c8-486d-8e59-25889b33311e",
+            "name" : "col2",
+            "title" : "Column 2",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "7bf1b54e-fc28-40c8-bfa8-b624ac35dacb",
+          "type" : "component"
+        }, {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"ab43751f-45d9-428e-ba4f-63c8037db030\",\"columns\":[{\"UUID\":\"7fa11eb0-127e-414f-953f-eb82e4bfe58f\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "billingTabLabel" : "Billing",
+                "cardDefaultBadgeColor" : "rgb(201,201, 201)",
+                "cardDefaultBorderRadius" : "50",
+                "cardDefaultLabel" : "Default",
+                "dxpStyle" : { },
+                "footerDeleteLabel" : "Delete",
+                "footerEditLabel" : "Edit",
+                "itemSpacing" : "small",
+                "noAddressMessageText" : "You don't have any address yet",
+                "noAddressMessageTitle" : "No Address Yet",
+                "pageSize" : "10",
+                "shippingTabLabel" : "Shipping",
+                "showAddressType" : "Shipping and billing",
+                "showMoreButtonAlign" : "center",
+                "showMoreButtonLabel" : "Show More",
+                "showMoreButtonSize" : "standard",
+                "showMoreButtonStyle" : "secondary",
+                "showMoreButtonWidth" : "standard"
+              },
+              "definition" : "commerce_my_account:myAccountAddressGridContainer",
+              "id" : "773f23e4-e211-4f7a-9806-26cfd2d16a00",
+              "type" : "component"
+            } ],
+            "id" : "7fa11eb0-127e-414f-953f-eb82e4bfe58f",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "ab43751f-45d9-428e-ba4f-63c8037db030",
+          "type" : "component"
+        } ],
+        "id" : "88df6bef-a65b-434c-9b63-ed905487e95c",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "dxpStyle" : { },
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "45d33425-7a23-45cf-be8a-7554225e6a35",
+          "type" : "component"
+        } ],
+        "id" : "9b0f647b-05bb-4f83-9f15-a115d7e1fd18",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "62716d7b-8d7a-49d7-be4c-7a99323f6886",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "MyAccount",
+    "viewType" : "addresses"
+  },
+  "urlName" : "address-list"
+}

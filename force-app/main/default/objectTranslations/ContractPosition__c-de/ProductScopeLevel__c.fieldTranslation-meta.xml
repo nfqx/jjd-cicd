@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Auf welcher Ebene der Produktwelt die RV gilt: ein einzelner Artikel, eine Untergruppe, eine ganze Produktklasse oder eine Marke. SAP rechnet auf Ebenen, der PuK heute pro Artikel — diese Lücke (C-03) klärt der KAM-Workshop.</help>
+    <label>Produktbezugs-Ebene</label>
+    <name>ProductScopeLevel__c</name>
+    <picklistValues>
+        <masterLabel>Brand</masterLabel>
+        <translation>Marke</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product Class</masterLabel>
+        <translation>Produktklasse</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product Group</masterLabel>
+        <translation>Produktgruppe</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product Subgroup</masterLabel>
+        <translation>Produktuntergruppe</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Single Product</masterLabel>
+        <translation>Einzelartikel</translation>
+    </picklistValues>
+</CustomFieldTranslation>

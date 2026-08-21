@@ -1,0 +1,1141 @@
+<template>
+    <lightning-quick-action-panel>
+            
+        <div class="slds-media slds-media_center slds-p-around_medium" style="background-color: #ffffff; border-bottom: 1px solid black;">
+            <div class="slds-media__figure">
+                <lightning-icon icon-name="custom:custom57" size="small"></lightning-icon>
+            </div>
+            <div class="slds-media__body">
+                <h1 class="slds-text-heading_medium">
+                    {customerData.name} · Neue Bestellung
+                    <lightning-badge label="Entwurf" class="slds-m-left_small"></lightning-badge>
+                </h1>
+            </div> 
+        </div>
+        <!--toast-->
+        <template if:true={customNotification}>
+            <div class="custom-toast-wrapper">
+                <div class={toastClasses}>
+                    <div class="slds-media__figure">
+                        <lightning-icon icon-name={customNotification.icon} size="x-small" variant={customNotification.variant}></lightning-icon>
+                    </div>
+                    <div class="slds-media__body slds-p-left_small slds-p-right_large">
+                        <p class="slds-text-heading_small" style="color: #181818;">{customNotification.message}</p>
+                        
+                        <template if:true={customNotification.linkText}>
+                            <a href="#" onclick={handleNotificationClick} class="slds-m-top_x-small slds-show slds-text-link slds-font-weight_bold">
+                                {customNotification.linkText} &rarr;
+                            </a>
+                        </template>
+                    </div>
+                    <div class="slds-media__figure slds-media__figure_reverse slds-m-top_xxx-small">
+                        <lightning-button-icon icon-name="utility:close" variant="bare" size="small" onclick={closeNotification}></lightning-button-icon>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <div class="slds-p-around_medium" style="background-color: #f3f3f3; min-height: 100vh;">
+            <template if:false={orderSent}>
+                <lightning-layout multiple-rows="true" gutter="medium" horizontal-align={layoutHorizontalAlign} vertical-align="start">
+                    
+                    <lightning-layout-item size="12" large-device-size="9" medium-device-size="10">
+                        <div class="progress-container slds-m-bottom_large">
+                            <div class="custom-progress-track">
+                                <div class="custom-progress-fill" style={progressWidthStyle}></div>
+                            </div>
+
+                            <div class="custom-step-row">
+                                <template for:each={wizardSteps} for:item="step">
+                                    <div key={step.id} class="custom-step-item">
+                                        <div class={step.circleClass}>{step.text}</div>
+                                        <span class={step.labelClass}>{step.label}</span>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                        <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+                            <template if:true={isStepOne}>
+                                <article class="slds-card slds-card_boundary custom-card-border">
+                                    <div class="slds-card__header slds-grid slds-p-bottom_small slds-m-bottom_none" style="border-bottom: 1px solid black;">
+                                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                            <div class="slds-media__body">
+                                                <h2 class="slds-text-heading_small slds-font-weight_bold" style="color: #032d60;">Kunde & Auftrag</h2>
+                                            </div>
+                                        </header>
+                                    </div>
+                                    <div class="slds-card__body slds-p-around_medium">
+                                        <lightning-layout multiple-rows="true">
+                                            <lightning-layout-item size="12" class="slds-m-bottom_medium slds-p-horizontal_small">
+                                                <lightning-record-picker 
+                                                    label="Kunde" 
+                                                    object-api-name="Account" 
+                                                    placeholder=""
+                                                    value={currentAccount}
+                                                    display-fields={accountDisplayFields}
+                                                    matching-fields={accountMatchingFields}
+                                                    onchange={handleAccountChange}
+                                                    required>
+                                                </lightning-record-picker>
+                                                <div class="slds-form-element__help slds-text-color_weak slds-p-top_xxx-small">Kundenstamm-Lookup (Tipp: Name oder Kundennr.)</div>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="12" large-device-size="6" class="slds-m-bottom_medium slds-p-horizontal_small">
+                                                <lightning-combobox 
+                                                    label="Auftragsart" 
+                                                    options={orderTypeOptions} 
+                                                    value={orderData.type} 
+                                                    placeholder="Bitte wählen"
+                                                    onchange={handleTypeChange}
+                                                    required>
+                                                </lightning-combobox>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="12" large-device-size="6" class="slds-m-bottom_medium slds-p-horizontal_small">
+                                                <lightning-combobox 
+                                                    label="Auftragsquelle" 
+                                                    options={orderSourceOptions} 
+                                                    value={orderData.source} 
+                                                    placeholder="Bitte wählen"
+                                                    onchange={handleSourceChange}
+                                                    required>
+                                                </lightning-combobox>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="12" large-device-size="6" class="slds-m-bottom_medium slds-p-horizontal_small">
+                                                <lightning-input 
+                                                    type="text" 
+                                                    label="Kunden-Bestellnummer" 
+                                                    value={orderNumber}
+                                                    read-only>
+                                                </lightning-input>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="12" large-device-size="6" class="slds-m-bottom_medium slds-p-horizontal_small">
+                                                <lightning-input 
+                                                    type="date" 
+                                                    label="Auftragsdatum"
+                                                    value={orderData.orderStartDate}
+                                                    onchange={handleOrderStartDateChange}
+                                                    required>
+                                                </lightning-input>
+                                                <div class="slds-form-element__help slds-text-color_weak slds-p-top_xxx-small">Datum der Auftragserfassung</div>
+                                            </lightning-layout-item>
+                                            <template if:true={freeShipping}>
+                                                <lightning-layout-item size="12" class="slds-p-horizontal_small slds-m-top_large slds-m-bottom_small">
+                                                    <div style="border-top: 1px solid black;" class="slds-p-top_medium slds-m-bottom_small">
+                                                        <span class="slds-text-heading_small slds-font-weight_bold" style="color: #032d60;">
+                                                            Kostenlose Lieferung / Musterbestellung: Pflichtfelder
+                                                        </span>
+                                                    </div>
+                                                </lightning-layout-item>
+                                                <lightning-layout-item size="12" large-device-size="6" class="slds-m-bottom_small slds-p-horizontal_small">
+                                                    <lightning-combobox 
+                                                        label="Grund (kostenlose Lieferung)" 
+                                                        placeholder="Bitte wählen" 
+                                                        value={orderData.reason}
+                                                        onchange={handleReasonChange}
+                                                        options={reasonOptions}
+                                                        required>
+                                                    </lightning-combobox>
+                                                </lightning-layout-item>
+                                                <lightning-layout-item size="12" large-device-size="6" class="slds-m-bottom_small slds-p-horizontal_small">
+                                                    <lightning-input 
+                                                        type="text" 
+                                                        label="Bemerkung (kostenlose Lieferung)" 
+                                                        value={orderData.description}
+                                                        onchange={handleDescriptionChange}
+                                                        placeholder="Begründung nennen" 
+                                                        >
+                                                    </lightning-input>
+                                                    <div class="slds-form-element__help slds-text-color_weak slds-p-top_xxx-small">Pflichtfeld - VL muss Begründung kennen</div>
+                                                </lightning-layout-item>
+                                            </template>
+                                        </lightning-layout>
+                                    </div>
+                                </article>
+                            </template>
+                            <template if:true={isStepTwo}>
+                                <article class="slds-card slds-card_boundary custom-card-border"> 
+                                    <div class="slds-card__header slds-grid slds-p-bottom_small slds-m-bottom_none" style="border-bottom: 1px solid black;">
+                                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                            <div class="slds-media__body">
+                                                <h2 class="slds-text-heading_small slds-font-weight_bold" style="color: #032d60;">Produkte</h2>
+                                            </div>
+                                        </header>
+                                    </div>
+                                    <div class="slds-card__body slds-p-around_medium">
+                                        <lightning-layout multiple-rows="true" gutter="small">
+                                            
+                                            <lightning-layout-item size="12" class="slds-m-bottom_medium">
+                                                <lightning-input 
+                                                    type="search" 
+                                                    variant="label-hidden"
+                                                    placeholder="Artikelnr. oder Bezeichnung eingeben..."
+                                                    onchange={handleSearch}>
+                                                </lightning-input>
+                                                <div class="slds-form-element__help slds-text-color_weak slds-p-top_xxx-small">
+                                                    Klicken oder tippen um zu suchen. Enter im Mengenfeld fügt den Artikel hinzu
+                                                </div>
+                                            </lightning-layout-item>
+
+                                            <lightning-layout-item size="12" class="slds-m-bottom_medium">
+                                                <div class="slds-grid" style="gap: 0.5rem;">
+                                                    <template for:each={productTabs} for:item="tab">
+                                                        <lightning-button 
+                                                            key={tab.type}
+                                                            label={tab.label} 
+                                                            variant={tab.variant} 
+                                                            class={tab.cssClass}
+                                                            data-type={tab.type}
+                                                            onclick={handleTabChange}>
+                                                        </lightning-button>
+                                                    </template>
+                                                </div>
+                                            </lightning-layout-item>
+
+                                            <lightning-layout-item size="12" class="slds-grid slds-grid_align-spread slds-grid_vertical-align-end slds-m-bottom_small">
+                                                <div>
+                                                    <span class="slds-text-heading_small slds-font-weight_bold">{activeTabLabel}</span>
+                                                    <span class="slds-text-color_weak slds-m-left_small">({foundProductsCount} Artikel)</span>
+                                                </div>
+                                            </lightning-layout-item>
+
+                                            <lightning-layout-item size="12">
+                                                <div>
+                                                    <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_fixed-layout">
+                                                        
+                                                        <thead>
+                                                            <tr class="slds-line-height_reset">
+                                                                <th scope="col" style="width: 8%;"><div class="slds-truncate" title="Availability"></div></th>
+                                                                <th scope="col" style="width: 35%;"><div class="slds-truncate" title="Artikel">Artikel</div></th>
+                                                                <th scope="col" style="width: 12%;"><div class="slds-truncate" title="Menge">Menge</div></th>
+                                                                <th scope="col" style="width: 12%;"><div class="slds-truncate" title="Einheit">Einheit</div></th>
+                                                                <th scope="col" style="width: 10%;"><div class="slds-truncate" title="Preis">Preis</div></th>
+                                                                <th scope="col" style="width: 10%;"><div class="slds-truncate" title="Betrag">Betrag</div></th>
+                                                                <th scope="col" style="width: 13%;"><div class="slds-truncate" title="Aktion">Aktion</div></th>
+                                                            </tr>
+                                                        </thead>
+                                                        
+                                                        <tbody>
+                                                            <template for:each={foundProducts} for:item="prod">
+                                                                <tr key={prod.key} class="slds-hint-parent">
+                                                                    <td data-label="Availability">
+                                                                        <span class="slds-m-right_small slds-p-top_xxx-small">{prod.available}</span>
+                                                                    </td>
+                                                                    <td data-label="Artikel">
+                                                                        <div>{prod.name}</div>
+                                                                        <div class="slds-text-color_weak slds-text-body_small">{prod.code}</div>
+                                                                    </td>
+
+                                                                    <td data-label="Menge">
+                                                                        <lightning-input step="1" type="number" min="1" value={prod.quantity} variant="label-hidden" data-key={prod.key} onchange={handleQuantityChange}></lightning-input>
+                                                                    </td>
+
+                                                                    <td data-label="Einheit">
+                                                                        <template if:true={prod.hasUnitChoice}>
+                                                                            <lightning-combobox 
+                                                                                variant="label-hidden"
+                                                                                options={prod.unitOptions}
+                                                                                value={prod.selectedId}
+                                                                                data-key={prod.key}
+                                                                                dropdown-alignment="auto"
+                                                                                onchange={handleUnitChange}>
+                                                                            </lightning-combobox>
+                                                                        </template>
+                                                                        <template if:false={prod.hasUnitChoice}>
+                                                                            <div class="slds-p-top_x-small slds-p-left_xx-small">{prod.unitLabel}</div>
+                                                                        </template>
+                                                                    </td>
+
+                                                                    <td data-label="Preis">
+                                                                        <span style="border-bottom: 1px dotted #747474; white-space: nowrap;">
+                                                                            <lightning-formatted-number value={prod.price} format-style="currency" currency-code="EUR"></lightning-formatted-number>
+                                                                        </span>
+                                                                    </td>
+
+                                                                    <td data-label="Betrag">
+                                                                        <span class="slds-font-weight_bold" style="white-space: nowrap;">
+                                                                            <lightning-formatted-number value={prod.total} format-style="currency" currency-code="EUR"></lightning-formatted-number>
+                                                                        </span>
+                                                                    </td>
+
+                                                                    <td data-label="Aktion">
+                                                                        <lightning-button label="Hinzufügen" icon-name="utility:add" variant="neutral" class="pill-btn" data-key={prod.key} disabled={prod.addDisabled} onclick={handleAddItem}></lightning-button>
+                                                                    </td>
+                                                                </tr>
+                                                            </template>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </lightning-layout-item>
+
+                                        </lightning-layout>
+                                    </div>
+                                </article>
+                            </template>
+                            <template if:true={isStepThree}>
+                                <article class="slds-card slds-card_boundary custom-card-border">
+                                    <div class="slds-card__header slds-grid slds-p-bottom_small slds-m-bottom_none" style="border-bottom: 1px solid black;">
+                                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                            <div class="slds-media__body">
+                                                <h2 class="slds-text-heading_small slds-font-weight_bold" style="color: #032d60;">Lieferung</h2>
+                                            </div>
+                                        </header>
+                                    </div>
+                                    <div class="slds-card__body slds-p-around_medium">
+                                        <lightning-layout multiple-rows="true">
+                                            <template if:false={isDirectShipmentOrder}>
+                                                <lightning-layout-item size="12" class="slds-m-bottom_medium slds-p-horizontal_small">
+                                                    <lightning-record-picker 
+                                                        label="Warenempfaenger" 
+                                                        object-api-name="Account" 
+                                                        placeholder=""
+                                                        value={recipientAccountId}
+                                                        display-fields={accountDisplayFields}
+                                                        matching-fields={accountMatchingFields}
+                                                        onchange={handleRecipientAccountChange}
+                                                        required>
+                                                    </lightning-record-picker>
+                                                    <div class="slds-form-element__help slds-text-color_weak slds-p-top_xxx-small">{recipientShippingAddressText}</div>
+                                                </lightning-layout-item>
+                                                <lightning-layout-item size="12" class="slds-m-bottom_small slds-p-horizontal_small">
+                                                    <div class="slds-grid slds-grid_vertical-align-center">
+                                                        <lightning-input 
+                                                            type="toggle" 
+                                                            name="altAddress" 
+                                                            variant="label-hidden"
+                                                            message-toggle-active="" 
+                                                            message-toggle-inactive=""
+                                                            onchange={handleDifferentAddressToggle}>
+                                                        </lightning-input>
+                                                        <span class="slds-text-body_medium slds-m-left_small slds-font-weight_medium" style="color: #032d60;">
+                                                            Abweichende Lieferadresse
+                                                        </span>
+                                                    </div>
+                                                </lightning-layout-item>
+                                                <lightning-layout-item if:true={isDifferentShippingAddress}  size="12" class="slds-m-bottom_medium slds-p-left_xx-large slds-p-horizontal_small">
+                                                    <div class="slds-grid slds-grid_vertical-align-center">
+                                                        <div class="slds-grow slds-m-left_medium">
+                                                            <lightning-combobox 
+                                                                label="Lieferadresse auswählen" 
+                                                                variant="label-stacked"
+                                                                placeholder="Adresse auswählen..." 
+                                                                options={shippingAddressOptions}
+                                                                value={selectedShippingAddressId}
+                                                                onchange={handleShippingAddressChange}
+                                                                required>
+                                                            </lightning-combobox>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slds-p-left_medium slds-form-element__help slds-text-color_weak slds-p-top_xxx-small">Hinterlegte Adressen des Kunden</div>
+                                                </lightning-layout-item>
+                                            </template>
+                                            <template if:true={isDirectShipmentOrder}>
+                                                <lightning-layout-item size="12" class="slds-m-bottom_small slds-p-horizontal_small">
+                                                    <div class="slds-box slds-p-around_small" style="background-color: #f1f8ff; border: 1px solid #cce4f7; border-radius: 4px;">
+                                                        <div class="slds-media">
+                                                            <div class="slds-media__figure">
+                                                                <lightning-icon 
+                                                                    icon-name="utility:info_alt" 
+                                                                    size="x-small" 
+                                                                    class="info-icon custom-info-icon">
+                                                                </lightning-icon>
+                                                            </div>
+                                                            <div class="slds-media__body">
+                                                                <h3 class="slds-text-heading_small slds-font-weight_bold slds-m-bottom_xxx-small" style="color: #0176d3;">Streckenauftrag</h3>
+                                                                <p class="slds-text-body_regular" style="color: #5c5c5c;">Lieferung direkt vom Lieferanten an den Endkunden &ndash; bitte Adresse des Endkunden angeben.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </lightning-layout-item>
+
+                                                <lightning-layout-item size="12" class="slds-m-bottom_x-small slds-p-horizontal_small">
+                                                    <h2 class="slds-text-heading_small slds-font-weight_bold" style="color: #032d60;">Streckenadresse (Endkunde)</h2>
+                                                </lightning-layout-item>
+
+                                                <lightning-layout-item size="12" large-device-size="6" class="slds-p-horizontal_small slds-m-bottom_x-small">
+                                                    <lightning-input 
+                                                        type="text" 
+                                                        label="Endkunde / Empfaenger" 
+                                                        placeholder="Name des Endkunden..."
+                                                        value={orderData.shippingName}
+                                                        onchange={handleDirectShipmentNameChange}
+                                                        required>
+                                                    </lightning-input>
+                                                </lightning-layout-item>
+
+                                                <lightning-layout-item size="12" large-device-size="6" class="slds-p-horizontal_small slds-m-bottom_x-small">
+                                                    <lightning-input 
+                                                        type="text" 
+                                                        label="Strasse und Hausnummer" 
+                                                        placeholder="z. B. Musterstrasse 12..."
+                                                        value={orderData.shippingStreet}
+                                                        onchange={handleDirectShipmentStreetChange}
+                                                        required>
+                                                    </lightning-input>
+                                                </lightning-layout-item>
+
+                                                <lightning-layout-item size="12" large-device-size="6" class="slds-p-horizontal_small slds-m-bottom_x-small">
+                                                    <lightning-input 
+                                                        type="text" 
+                                                        label="PLZ" 
+                                                        placeholder="z. B. 20459..."
+                                                        value={orderData.shippingPostalCode}
+                                                        onchange={handleDirectShipmentPostalCodeChange}
+                                                        required>
+                                                    </lightning-input>
+                                                </lightning-layout-item>
+
+                                                <lightning-layout-item size="12" large-device-size="6" class="slds-p-horizontal_small slds-m-bottom_x-small">
+                                                    <lightning-input 
+                                                        type="text" 
+                                                        label="Ort" 
+                                                        placeholder="z. B. Hamburg..."
+                                                        value={orderData.shippingCity}
+                                                        onchange={handleDirectShipmentCityChange}
+                                                        required>
+                                                    </lightning-input>
+                                                </lightning-layout-item>
+
+                                                <lightning-layout-item size="12" large-device-size="6" class="slds-p-horizontal_small slds-m-bottom_small">
+                                                    <lightning-combobox 
+                                                        label="Land" 
+                                                        placeholder="Bitte wählen"
+                                                        value={orderData.shippingCountry}
+                                                        options={countryOptions}
+                                                        onchange={handleDirectShipmentCountryChange}
+                                                        required>
+                                                    </lightning-combobox>
+                                                </lightning-layout-item>
+
+                                                <lightning-layout-item size="12" class="slds-p-horizontal_small slds-m-bottom_medium">
+                                                    <div style="border-top: 1px solid black;"></div>
+                                                </lightning-layout-item>
+                                            </template>
+                                            <lightning-layout-item size="12" large-device-size="6" class="slds-m-bottom_x-small slds-p-horizontal_small">
+                                                <lightning-combobox 
+                                                    label="Versandart" 
+                                                    value={orderData.shippingCondition}
+                                                    options={preferredShippingConditionOptions} 
+                                                    onchange={handleShippingConditionChange}
+                                                    required>
+                                                </lightning-combobox>
+                                                <div class="slds-form-element__help slds-text-color_weak slds-p-top_xxx-small">Empfehlung gemäß Bestellgewicht</div>
+                                            </lightning-layout-item>
+
+                                            <lightning-layout-item size="12" large-device-size="6" class="slds-m-bottom_x-small slds-p-horizontal_small">
+                                                <lightning-input 
+                                                    type="date" 
+                                                    label="Wunschtermin" 
+                                                    placeholder="nächstmöglich"
+                                                    value={orderData.requestedDeliveryDate} 
+                                                    onchange={handleDeliveryDateChange} 
+                                                    >
+                                                </lightning-input>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item if:true={isCustomerPickup} size="12" large-device-size="6" class="slds-m-bottom_x-small slds-p-horizontal_small">
+                                                <lightning-combobox 
+                                                    label="Abholort" 
+                                                    placeholder="Bitte wählen"
+                                                    value={orderData.pickupLocation}
+                                                    options={pickupLocationOptions} 
+                                                    onchange={handlePickupLocationChange}
+                                                    required>
+                                                </lightning-combobox>
+                                                <div class="slds-form-element__help slds-text-color_weak slds-p-top_xxx-small">Nur bei Selbstabholung relevant</div>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="12" class="slds-p-horizontal_small m-top_medium">
+                                                <lightning-accordion allow-multiple-sections-open variant="base">
+                                                    <lightning-accordion-section name="deliveryNotes" label="Lieferhinweise (optional)">
+                                                        
+                                                        <div class="slds-grid slds-wrap slds-m-top_small">
+                                                            <div class="slds-col slds-size_1-of-1 slds-m-bottom_medium">
+                                                                <lightning-textarea 
+                                                                    label="Liefertext" 
+                                                                    placeholder="Text für Lieferschein..."
+                                                                    value={orderData.deliveryText}
+                                                                    onchange={handleDeliveryTextChange}
+                                                                    class="custom-textarea">
+                                                                </lightning-textarea>
+                                                                <div class="slds-form-element__help slds-text-color_weak slds-p-top_xxx-small">Wird auf Lieferschein gedruckt</div>
+                                                            </div>
+
+                                                            <div class="slds-col slds-size_1-of-1">
+                                                                <lightning-textarea 
+                                                                    label="Hinweis für Spediteur" 
+                                                                    placeholder="Hinweis für Spediteur..."
+                                                                    value={orderData.carrierNote}
+                                                                    onchange={handleCarrierNoteChange}
+                                                                    class="custom-textarea">
+                                                                </lightning-textarea>
+                                                                <div class="slds-form-element__help slds-text-color_weak slds-p-top_xxx-small">Nur bei Speditionsversand relevant</div>
+                                                            </div>
+                                                        </div>
+
+                                                    </lightning-accordion-section>
+                                                </lightning-accordion>
+                                            </lightning-layout-item>
+
+                                        </lightning-layout>
+                                    </div>
+                                </article>
+                            </template>
+                            <template if:true={isStepFour}>
+                                <lightning-layout multiple-rows="true" gutter="small">
+
+                                    <lightning-layout-item size="12" class="slds-m-bottom_small">
+                                        <article class="slds-card slds-card_boundary custom-card-border">
+                                            
+                                            <div class="slds-card__header slds-grid slds-border_bottom slds-p-bottom_small slds-m-bottom_none">
+                                                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                                    <div class="slds-media__body">
+                                                        <h2 class="slds-text-heading_small slds-font-weight_bold" style="color: #032d60;">Kundeninfo</h2>
+                                                    </div>
+                                                </header>
+                                            </div>
+                                            <div class="slds-card__body slds-p-around_medium">
+                                                <div class="slds-grid slds-wrap slds-grid_vertical-align-start">
+                                                    <div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12">
+                                                        <p class="slds-text-color_weak slds-text-body_small slds-m-bottom_xxx-small">Kunde</p>
+                                                        <p class="slds-font-weight_bold slds-text-heading_small slds-m-bottom_xxx-small" style="color: #032d60;">{customerData.name}</p>
+                                                        <p class="slds-text-color_weak slds-m-bottom_xxx-small">Kd.-Nr. {customerData.customerNumber}</p>
+                                                        <!--p style="color: #2e844a; font-weight: bold;">
+                                                            Kreditrahmen: <lightning-formatted-number value={customerData.creditLimit} format-style="currency" currency-code="EUR"></lightning-formatted-number>
+                                                        </p-->
+                                                    </div>
+                                                    <div class="slds-col slds-size_1-of-1 slds-medium-size_8-of-12">
+                                                        <div class="slds-grid slds-grid_align-spread slds-wrap">
+                                                            <div>
+                                                                <p class="slds-text-color_weak slds-text-body_small slds-m-bottom_xxx-small">Auftragsart</p>
+                                                                <p class="slds-font-weight_medium" style="color: #032d60;">{orderData.type}</p>
+                                                            </div>
+                                                            <div>
+                                                                <p class="slds-text-color_weak slds-text-body_small slds-m-bottom_xxx-small">Quelle</p>
+                                                                <p class="slds-font-weight_medium" style="color: #032d60;">{orderData.source}</p>
+                                                            </div>
+                                                            <div>
+                                                                <p class="slds-text-color_weak slds-text-body_small slds-m-bottom_xxx-small">Datum</p>
+                                                                <p class="slds-font-weight_medium" style="color: #032d60;">
+                                                                    <lightning-formatted-date-time value={effectiveRequestedDeliveryDate} day="2-digit" month="2-digit" year="numeric"></lightning-formatted-date-time>
+                                                                </p>
+                                                            </div>
+                                                            <div>
+                                                                <p class="slds-text-color_weak slds-text-body_small slds-m-bottom_xxx-small">Kunden-Bestellnr.</p>
+                                                                <p class="slds-font-weight_medium" style="color: #032d60;">{summaryData.orderReference}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </lightning-layout-item>
+
+                                    <lightning-layout-item size="12" class="slds-m-bottom_small">
+                                        <article class="slds-card slds-card_boundary slds-card">
+                                            <template if:true={isSimulating}>
+                                                <lightning-spinner alternative-text="Wird neu berechnet..." size="medium" variant="brand"></lightning-spinner>
+                                            </template>
+                                            <div class="slds-card__header slds-grid slds-border_bottom slds-p-bottom_small slds-m-bottom_none">
+                                                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                                    <div class="slds-media__body">
+                                                        <h2 class="slds-text-heading_small slds-font-weight_bold" style="color: #032d60;">Positionen</h2>
+                                                    </div>
+                                                </header>
+                                                <div class="slds-no-flex">
+                                                    <span class="slds-text-color_weak slds-text-body_small">{cartItems.length} Positionen</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="slds-card__body slds-m-vertical_none">
+                                                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                                    <thead>
+                                                        <tr class="slds-line-height_reset" style="background-color: #f3f3f3;">
+                                                            <th scope="col" style="width: 40%;">Artikel</th>
+                                                            <th scope="col" style="width: 10%; text-align: center;">Menge</th>
+                                                            <th scope="col" style="width: 15%;">Einheit</th>
+                                                            <th scope="col" style="width: 15%; text-align: right;">Preis/Einh.</th>
+                                                            <th scope="col" style="width: 15%; text-align: right;">Betrag</th>
+                                                            <th scope="col" style="width: 5%;"></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody> 
+                                                        
+                                                        <!--TO DO-->
+                                                        <template for:each={displayCartItems} for:item="item">
+                                                            <tr key={item.id} class="slds-hint-parent">
+                                                                <td>
+                                                                    <div class="slds-grid slds-grid_vertical-align-start">
+                                                                        <!--span class="slds-m-right_small" style={item.dotStyle}>●</span-->
+                                                                        <div>
+                                                                            <div class="slds-font-weight_bold" style="color: #0176d3;">
+                                                                                {item.name}
+                                                                                <lightning-icon if:true={item.hasInfo} icon-name="utility:info" size="xx-small" class="slds-m-left_xx-small"></lightning-icon>
+                                                                            </div>
+                                                                            <div class="slds-text-color_weak slds-text-body_small">
+                                                                                {item.sku}
+                                                                                <template if:true={item.discountBadge}>
+                                                                                    <lightning-badge label={item.discountBadge} class="slds-m-left_xx-small discount-badge"></lightning-badge>
+                                                                                </template>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td><lightning-input type="number" min="1" step="1" variant="label-hidden" value={item.quantity} data-id={item.id} disabled={isSimulating} onchange={handleSummaryQuantityChange}></lightning-input></td>
+                                                                <td><div class="slds-p-top_x-small">{item.unit}</div></td>
+                                                                <td class="slds-text-align_right">
+                                                                    <lightning-formatted-number value={item.unitPrice} format-style="currency" currency-code="EUR"></lightning-formatted-number>
+                                                                    <template if:true={item.hasDiscount}>
+                                                                        <div class="slds-text-color_weak slds-text-body_small strikethrough-price">
+                                                                            <lightning-formatted-number value={item.originalUnitPrice} format-style="currency" currency-code="EUR"></lightning-formatted-number>
+                                                                        </div>
+                                                                    </template>
+                                                                </td>
+                                                                <td class="slds-text-align_right slds-font-weight_bold">
+                                                                    <lightning-formatted-number value={item.totalPrice} format-style="currency" currency-code="EUR"></lightning-formatted-number>
+                                                                </td>
+                                                                <td class="slds-text-align_right">
+                                                                    <lightning-button-menu 
+                                                                        icon-name="utility:threedots" 
+                                                                        variant="bare" 
+                                                                        menu-alignment="auto"
+                                                                        alternative-text="Aktionen"
+                                                                        data-id={item.id} 
+                                                                        onselect={handleLineAction}
+                                                                        class="slds-m-right_xx-small">
+                                                                        <lightning-menu-item value="discount" label="Rabatt gewähren" prefix-icon-name="utility:percent"></lightning-menu-item>
+                                                                        <lightning-menu-item value="free" label="Kostenlos / Ohne Berechnung" prefix-icon-name="utility:money"></lightning-menu-item>
+                                                                        <template if:true={item.hasDiscount}>
+                                                                            <lightning-menu-item value="remove" label="Rabatt entfernen" prefix-icon-name="utility:close"></lightning-menu-item>
+                                                                        </template>
+                                                                    </lightning-button-menu>
+                                                                    <lightning-button-icon icon-name="utility:delete" variant="bare" data-id={item.id} onclick={handleDeleteCartItemAndResimulate}></lightning-button-icon>
+                                                                </td>
+                                                            </tr>
+                                                        </template>
+
+                                                        <template if:true={shippingData}>
+                                                            <tr style="background-color: #e5e5e5;">
+                                                                <td colspan="6" class="slds-p-around_x-small slds-text-color_weak slds-font-weight_bold">Versand</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="3">
+                                                                    <!--div class="slds-grid slds-grid_vertical-align-center">
+                                                                        <span class="slds-font-weight_bold slds-m-right_small">{shippingData.providerName}</span>
+                                                                        <span if:true={shippingData.expressTime} style="color: #d49f05;" class="slds-m-right_small">Express bis {shippingData.expressTime} Uhr</span>
+                                                                        <lightning-badge if:true={shippingData.needsApproval} label="⚠ Freigabe VL" style="background-color: #fceded; color: #ba0517;"></lightning-badge>
+                                                                    </div>
+                                                                    <div class="slds-text-color_weak slds-text-body_small">{shippingData.address}</div>
+                                                                    <div class="slds-text-color_weak slds-text-body_small">Wunschtermin: {shippingData.requestedDate}</div-->
+                                                                    <div class="slds-grid slds-grid_vertical-align-center">
+                                                                        <span class="slds-font-weight_bold slds-m-right_small">Bedingung: {shippingData.shippingCondition}</span>
+                                                                    </div>
+                                                                    <div class="slds-text-color_weak slds-text-body_small">Bestätigter Termin: 
+                                                                        <lightning-formatted-date-time value={shippingData.confirmedDeliveryDate} day="2-digit" month="2-digit" year="numeric"></lightning-formatted-date-time>
+                                                                    </div>
+                                                                </td>
+                                                                <td colspan="2" class="slds-text-align_right">
+                                                                    <template if:true={freeShipping}>
+                                                                        <div class="slds-text-color_weak slds-text-body_small strikethrough-price">
+                                                                            <lightning-formatted-number value={shippingData.shippingCosts} format-style="currency" currency-code="EUR"></lightning-formatted-number>
+                                                                        </div>
+                                                                        <div class="free-label slds-font-weight_bold">kostenlos</div>
+                                                                    </template>
+                                                                    <template if:false={freeShipping}>
+                                                                        <div class="slds-font-weight_bold">
+                                                                            <lightning-formatted-number value={shippingData.shippingCosts} format-style="currency" currency-code="EUR"></lightning-formatted-number>
+                                                                        </div>
+                                                                    </template>
+                                                                    <!--div if:true={shippingData.expressCost} style="color: #d49f05;" class="slds-text-body_small">
+                                                                        + <lightning-formatted-number value={shippingData.expressCost} format-style="currency" currency-code="EUR"></lightning-formatted-number> Express
+                                                                    </div-->
+                                                                </td>
+                                                                <td class="slds-text-align_right">
+                                                                    <lightning-button-icon icon-name="utility:threedots" variant="bare"></lightning-button-icon>
+                                                                </td>
+                                                            </tr>
+                                                        </template>
+                                                    </tbody>
+                                                </table>
+                                                
+                                                <div class="slds-grid slds-grid_align-end slds-p-around_medium slds-border_top" style="background-color: #fafaf9;">
+                                                    <div class="slds-size_1-of-1 slds-medium-size_4-of-12">
+                                                        <template if:true={freeShipping}>
+                                                            <div class="slds-grid slds-grid_align-spread slds-m-bottom_xx-small">
+                                                                <span class="slds-text-color_weak">Warenwert (Netto)</span>
+                                                                <div class="slds-text-align_right">
+                                                                    <div class="slds-text-color_weak slds-text-body_small strikethrough-price">
+                                                                        <lightning-formatted-number value={originalNetTotal} format-style="currency" currency-code="EUR"></lightning-formatted-number>
+                                                                    </div>
+                                                                    <div class="free-label slds-font-weight_bold">kostenlos</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="slds-grid slds-grid_align-spread slds-m-bottom_xx-small">
+                                                                <span class="slds-text-color_weak">Versand</span>
+                                                                <div class="slds-text-align_right">
+                                                                    <div class="slds-text-color_weak slds-text-body_small strikethrough-price">
+                                                                        <lightning-formatted-number value={originalShippingCosts} format-style="currency" currency-code="EUR"></lightning-formatted-number>
+                                                                    </div>
+                                                                    <div class="free-label slds-font-weight_bold">kostenlos</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="slds-grid slds-grid_align-spread slds-m-bottom_small slds-border_bottom slds-p-bottom_small">
+                                                                <span class="slds-text-color_weak">MwSt. ({summaryData.taxRate}%)</span>
+                                                                <div class="slds-text-align_right">
+                                                                    <div class="slds-text-color_weak slds-text-body_small strikethrough-price">
+                                                                        <lightning-formatted-number value={originalTaxTotal} format-style="currency" currency-code="EUR"></lightning-formatted-number>
+                                                                    </div>
+                                                                    <div class="free-label slds-font-weight_bold">kostenlos</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="slds-grid slds-grid_align-spread slds-text-heading_small slds-font-weight_bold" style="color: #0176d3; margin-top: 8px;">
+                                                                <span>Gesamt (Brutto)</span>
+                                                                <div class="slds-text-align_right">
+                                                                    <div class="slds-text-color_weak slds-text-body_small strikethrough-price">
+                                                                        <lightning-formatted-number value={originalGrandTotal} format-style="currency" currency-code="EUR"></lightning-formatted-number>
+                                                                    </div>
+                                                                    <div class="free-label slds-font-weight_bold">kostenlos</div>
+                                                                </div>
+                                                            </div>
+                                                        </template>
+
+                                                        <template if:false={freeShipping}>
+                                                            <div class="slds-grid slds-grid_align-spread slds-m-bottom_xx-small">
+                                                                <span class="slds-text-color_weak">Warenwert (Netto)</span>
+                                                                <span><lightning-formatted-number value={discountedNetTotal} format-style="currency" currency-code="EUR"></lightning-formatted-number></span>
+                                                            </div>
+                                                            <div class="slds-grid slds-grid_align-spread slds-m-bottom_xx-small">
+                                                                <span class="slds-text-color_weak">Versand</span>
+                                                                <span><lightning-formatted-number value={shippingData.shippingCosts} format-style="currency" currency-code="EUR"></lightning-formatted-number></span>
+                                                            </div>
+                                                            <div class="slds-grid slds-grid_align-spread slds-m-bottom_small slds-border_bottom slds-p-bottom_small">
+                                                                <span class="slds-text-color_weak">MwSt. ({summaryData.taxRate}%)</span>
+                                                                <span><lightning-formatted-number value={discountedTaxTotal} format-style="currency" currency-code={summaryData.currencyIsoCode}></lightning-formatted-number></span>
+                                                            </div>
+                                                            <div class="slds-grid slds-grid_align-spread slds-text-heading_small slds-font-weight_bold" style="color: #0176d3; margin-top: 8px;">
+                                                                <span>Gesamt (Brutto)</span>
+                                                                <span><lightning-formatted-number value={discountedGrandTotal} format-style="currency" currency-code="EUR"></lightning-formatted-number></span>
+                                                            </div>
+                                                        </template>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </lightning-layout-item>
+
+                                    <lightning-layout-item size="12">
+                                        <article class="slds-card slds-card_boundary custom-card-border">
+                                            
+                                            <div class="slds-card__header slds-grid slds-border_bottom slds-p-bottom_small slds-m-bottom_none">
+                                                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                                    <div class="slds-media__body">
+                                                        <h2 class="slds-text-heading_small slds-font-weight_bold" style="color: #032d60;">Interne Bemerkung</h2>
+                                                    </div>
+                                                </header>
+                                            </div>
+                                            
+                                            <div class="slds-card__body slds-p-around_medium">
+                                                <template if:true={requiresApproval}>
+                                                    <div class="slds-scoped-notification slds-media slds-media_center slds-m-bottom_small" style="background-color: #fdf5e6; border: 1px solid #f3d49e; border-radius: 0.25rem;">
+                                                        <div class="slds-media__figure"><lightning-icon icon-name="utility:warning" size="small" variant="warning"></lightning-icon></div>
+                                                        <div class="slds-media__body"><p style="color: #b27a03;">Freigabe durch VL erforderlich</p></div>
+                                                    </div>
+                                                </template>
+                                                <lightning-textarea value={orderData.internalNotes} onchange={handleNotesChange} placeholder="Hinweise für VL oder Kollegen..." variant="label-hidden"></lightning-textarea>
+                                                <div class="slds-form-element__help slds-text-color_weak slds-m-top_xxx-small">Wird nicht an Kunden übermittelt</div>
+                                            </div>
+                                        </article>
+                                    </lightning-layout-item>
+ 
+                                </lightning-layout>
+                            </template>
+                        </div>
+                    </lightning-layout-item>
+                    <template if:false={isStepFour}>
+                        <lightning-layout-item size="12" large-device-size="2"  medium-device-size="2" alignment-bump="left">
+                            <article class="slds-card slds-card_boundary custom-card-border" style="border: 1px solid black; border-radius: 12px; overflow: hidden;">
+                                <div class="slds-card__header slds-grid slds-p-bottom_none slds-m-bottom_none">
+                                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                        <div class="slds-media__body">
+                                            <h2 class="slds-text-heading_small slds-font-weight_bold" style="color: #032d60;">{customerData.name} </h2>
+                                        </div>
+                                    </header>
+                                </div>
+                                <div class="slds-card__body slds-p-horizontal_medium slds-p-bottom_medium slds-p-top_xxx-small">
+                                    <p class="slds-text-color_weak slds-m-bottom_small">Kd.-Nr. {customerData.customerNumber}</p>
+                                    <!--p style="color: #027e46; font-weight: bold;"> Kreditrahmen: 
+                                        <lightning-formatted-number value="15000" format-style="currency" currency-code="EUR"></lightning-formatted-number>
+                                    </p-->
+                                </div>
+                                <template if:true={requiresApproval}>
+                                    <div class="approval-hint slds-m-horizontal_medium slds-m-bottom_medium slds-p-around_x-small slds-grid slds-grid_vertical-align-center">
+                                        <lightning-icon icon-name="utility:clock" size="xx-small" class="approval-hint-icon"></lightning-icon>
+                                        <span class="slds-m-left_x-small slds-text-body_small">Freigabe erforderlich</span>
+                                    </div>
+                                </template>
+                            </article>
+                            <div class="slds-m-top_medium">
+                                <article class="slds-card slds-card_boundary custom-card-border" style="border: 1px solid black; border-radius: 12px; overflow: hidden;">
+                                    <div class="slds-card__header slds-grid slds-border_bottom slds-p-bottom_small slds-m-bottom_none">
+                                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                            <div class="slds-media__body">
+                                                <h2 class="slds-text-heading_small slds-font-weight_bold" style="color: #032d60;">Zusammenfassung</h2>
+                                            </div>
+                                        </header>
+                                    </div>
+                                    <div class="slds-card__body slds-p-around_medium">
+                                        <template if:false={hasCartItems}>
+                                            <div class="slds-border_bottom slds-p-bottom_small slds-m-bottom_small">
+                                                <p class="slds-text-color_weak">Noch keine Positionen</p>
+                                            </div>
+                                        </template>
+                                        <template if:true={hasCartItems}>
+                                            <div class="slds-m-bottom_small">
+                                                <template for:each={sidebarCartItems} for:item="item">
+                                                    <div key={item.id} class="slds-grid slds-grid_align-spread slds-border_bottom slds-p-vertical_small slds-grid_vertical-align-center">
+                                                        <div class="slds-col slds-truncate slds-p-right_small">
+                                                            <div class="slds-truncate" style="color: #0176d3;">{item.name}</div>
+                                                            <div class={item.priceClass}>
+                                                                <lightning-formatted-number value={item.lineTotal} format-style="currency" currency-code="EUR"></lightning-formatted-number>
+                                                            </div>
+                                                            <template if:true={item.isFree}>
+                                                                <div class="free-label slds-text-body_small">kostenlos</div>
+                                                            </template>
+                                                        </div>
+                                                        <div class="slds-col slds-grid slds-grid_vertical-align-center slds-no-flex">
+                                                            <lightning-input type="number" variant="label-hidden" value={item.quantity} min="1" data-id={item.id} class="cart-qty" onchange={handleCartItemQuantityChange}></lightning-input>
+                                                            <lightning-button-icon icon-name="utility:delete" variant="bare" size="small" data-id={item.id} class="cart-delete" onclick={handleDeleteCartItem}></lightning-button-icon>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </template>
+                                        <div class="slds-grid slds-grid_align-spread slds-m-top_small">
+                                            <p class="slds-text-heading_small slds-font-weight_bold" style="color: #032d60;">Warenwert (Netto)</p>
+                                            <div class="slds-text-align_right">
+                                                <p class={cartTotalClass}>
+                                                    <lightning-formatted-number value={cartTotal.min} format-style="currency" currency-code="EUR"></lightning-formatted-number>
+                                                    &nbsp;-&nbsp;
+                                                    <lightning-formatted-number value={cartTotal.max} format-style="currency" currency-code="EUR"></lightning-formatted-number>
+                                                </p>
+                                                <template if:true={freeShipping}>
+                                                    <p class="free-label slds-font-weight_bold">kostenlos</p>
+                                                </template>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+            </template>
+            <template if:true={orderSent}>
+                <div class="slds-p-around_medium" style="max-width: 500px; margin: 0 auto;">
+                    
+                    <div class="slds-grid slds-grid_vertical slds-align_absolute-center slds-m-bottom_large slds-text-align_center">
+                        <template if:true={requiresApproval}>
+                            <div style="background-color: #FCF6ED; border-radius: 50%; width: 64px; height: 64px; display: flex; justify-content: center; align-items: center;">
+                                <lightning-icon icon-name="utility:clock" size="medium" class="custom-approval-icon"></lightning-icon>
+                            </div>
+
+                            <h2 class="slds-text-heading_medium slds-font-weight_bold slds-m-top_medium" style="color: #181818;">
+                                Auftrag gesendet &ndash; wartet auf Freigabe durch VL
+                            </h2>
+
+                            <div class="slds-m-top_xx-small slds-text-color_weak slds-text-body_medium slds-grid slds-grid_vertical-align-center">
+                                <span style="background-color: #FCF6ED; color: #B67923; padding: 0.15rem 0.6rem; border-radius: 50rem; font-size: 0.75rem; font-weight: bold;">
+                                    Wartet auf Freigabe
+                                </span>
+                            </div>
+
+                            <p class="slds-text-color_weak slds-text-body_small slds-m-top_small">Angebot liegt bei der Vertriebsleitung zur Freigabe</p>
+                            <p class="slds-text-color_weak slds-text-body_small">Nach Freigabe: Automatische Übermittlung an SAP</p>
+                        </template>
+
+                        <template if:false={requiresApproval}>
+                            <div style="background-color: #dcedd9; border-radius: 50%; width: 64px; height: 64px; display: flex; justify-content: center; align-items: center;">
+                                <lightning-icon icon-name="utility:success" size="medium" class="custom-success-icon"></lightning-icon>
+                            </div>
+
+                            <h2 class="slds-text-heading_medium slds-font-weight_bold slds-m-top_medium" style="color: #181818;">
+                                Auftrag erfolgreich übermittelt
+                            </h2>
+
+                            <div class="slds-m-top_xx-small slds-text-color_weak slds-text-body_medium slds-grid slds-grid_vertical-align-center">
+                                <span style="background-color: #dcedd9; color: #2e844a; padding: 0.15rem 0.6rem; border-radius: 50rem; font-size: 0.75rem; font-weight: bold;">
+                                    An SAP übermittelt
+                                </span>
+                            </div>
+                        </template>
+                    </div>
+                    <!--Zusammenfassung Cart Items von Order simulation-->
+                    <article class="slds-card slds-card_boundary custom-card-border slds-p-around_medium slds-m-bottom_large" style="border-radius: 12px; box-shadow: none;">
+                        
+                        <div class="slds-p-bottom_small" style="border-bottom: 1px solid #e5e5e5;">
+                            <div class="slds-text-heading_small slds-font-weight_bold" style="color: #032d60;">{customerData.name} </div>
+                            <div class="slds-text-color_weak slds-text-body_small">{customerData.name}  · {customerData.customerNumber}</div>
+                        </div>
+                        <template for:each={displayCartItems} for:item="item">
+                            <div key={item.id} class="slds-p-vertical_small" style="border-bottom: 1px solid #e5e5e5;">
+                            
+                                <div class="slds-m-bottom_small">
+                                    <!--div class="slds-grid slds-grid_align-spread">
+                                        <span class="slds-font-weight_bold" style="color: #032d60;">{item.name}</span>
+                                        <span class="slds-font-weight_bold" style="color: #032d60;">{item.totalPrice} {item.currency}</span>
+                                    </div-->
+                                    <div class="slds-grid slds-grid_align-spread">
+                                        <span class="slds-font-weight_bold" style="color: #032d60;">{item.name}</span>
+                                        <div class="slds-text-align_right">
+                                            <template if:true={item.isFree}>
+                                                <div class="slds-text-color_weak slds-text-body_small strikethrough-price">
+                                                    <lightning-formatted-number value={item.originalUnitPrice} format-style="currency" currency-code="EUR"></lightning-formatted-number>
+                                                </div>
+                                                <div class="free-label slds-font-weight_bold">kostenlos</div>
+                                            </template>
+                                            <template if:false={item.isFree}>
+                                                <span class="slds-font-weight_bold" style="color: #032d60;">
+                                                    <lightning-formatted-number value={item.totalPrice} format-style="currency" currency-code="EUR"></lightning-formatted-number>
+                                                </span>
+                                            </template>
+                                        </div>
+                                    </div>
+                                    <div class="slds-text-color_weak slds-text-body_small">{item.unit}</div>
+                                </div>
+                                
+                            </div>
+                        </template>
+                        
+
+                        <!--div class="slds-p-top_small slds-grid slds-grid_align-spread">
+                            <span class="slds-font-weight_bold" style="color: #032d60;">Gesamt (Netto)</span>
+                            <span class="slds-font-weight_bold" style="color: #032d60;">{summaryData.netTotal} {summaryData.currencyIsoCode}</span>
+                        </div-->
+                        <div class="slds-p-top_small slds-grid slds-grid_align-spread">
+                            <span class="slds-font-weight_bold" style="color: #032d60;">Gesamt (Netto)</span>
+                            <div class="slds-text-align_right">
+                                <template if:true={freeShipping}>
+                                    <div class="slds-text-color_weak slds-text-body_small strikethrough-price">
+                                        <lightning-formatted-number value={originalNetTotal} format-style="currency" currency-code="EUR"></lightning-formatted-number>
+                                    </div>
+                                    <div class="free-label slds-font-weight_bold">kostenlos</div>
+                                </template>
+                                <template if:false={freeShipping}>
+                                    <span class="slds-font-weight_bold" style="color: #032d60;">
+                                        <lightning-formatted-number value={discountedNetTotal} format-style="currency" currency-code="EUR"></lightning-formatted-number>
+                                    </span>
+                                </template>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="slds-grid slds-grid_vertical slds-align_absolute-center action-buttons-wrapper">
+                        
+                        <lightning-button 
+                            label="Bestellbestaetigung senden" 
+                            icon-name="utility:send" 
+                            variant="brand" 
+                            class="pill-btn-active full-width-btn slds-m-bottom_small"
+                            stretch>
+                        </lightning-button>
+                        
+                        <lightning-button 
+                            label="Zurück zum Kunden" 
+                            variant="neutral" 
+                            class="pill-btn-inactive full-width-btn slds-m-bottom_medium"
+                            onclick={handleBackToCustomer}
+                            stretch>
+                        </lightning-button>
+
+                        <button class="slds-button slds-button_bare slds-text-color_weak slds-grid slds-grid_vertical-align-center print-btn" style="font-weight: bold;">
+                            <lightning-icon icon-name="utility:page" size="x-small" class="slds-m-right_xx-small print-icon"></lightning-icon>
+                            Auftragsbestaetigung drucken
+                        </button>
+                        
+                    </div>
+                </div>
+            </template>
+        </div>
+        <template if:true={isDiscountModalOpen}>
+            <section
+                role="dialog"
+                tabindex="-1"
+                aria-modal="true"
+                aria-labelledby="discount-heading"
+                class="slds-modal slds-fade-in-open discount-modal">
+
+                <div class="slds-modal__container discount-modal__container">
+
+                    <header class="slds-modal__header discount-modal__header">
+                        <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+                            <h2
+                                id="discount-heading"
+                                class="slds-text-heading_medium slds-font-weight_bold">
+                                Rabatt gewähren
+                            </h2>
+
+                            <lightning-button-icon
+                                icon-name="utility:close"
+                                variant="bare"
+                                size="small"
+                                alternative-text="Schließen"
+                                onclick={handleCloseDiscountModal}>
+                            </lightning-button-icon>
+                        </div>
+                    </header>
+
+                    <div class="slds-modal__content discount-modal__body">
+                        <template if:true={discountModalItem}>
+                            <div class="slds-m-bottom_medium">
+                                <p class="slds-text-heading_small slds-font-weight_bold">
+                                    {discountModalItem.name}
+                                </p>
+
+                                <p class="slds-text-color_weak slds-text-body_small slds-m-top_xxx-small">
+                                    Listenpreis:
+                                    <lightning-formatted-number
+                                        value={discountModalItem.originalUnitPrice}
+                                        format-style="currency"
+                                        currency-code="EUR">
+                                    </lightning-formatted-number>
+
+                                    &nbsp;&middot;&nbsp;
+
+                                    Menge: {discountModalItem.quantity}
+                                </p>
+                            </div>
+
+                            <div class="slds-m-bottom_medium">
+                                <lightning-radio-group
+                                    name="discountType"
+                                    label="Rabattart"
+                                    options={discountTypeOptions}
+                                    value={discountType}
+                                    onchange={handleDiscountTypeChange}
+                                    type="radio">
+                                </lightning-radio-group>
+                            </div>
+
+                            <div class="slds-m-bottom_medium">
+                                <lightning-input
+                                    type="number"
+                                    step="0.01"
+                                    min="0"
+                                    label={discountInputLabel}
+                                    value={discountValue}
+                                    onchange={handleDiscountValueChange}
+                                    required>
+                                </lightning-input>
+                            </div>
+
+                            <template if:true={discountPreview}>
+                                <div class="discount-preview">
+                                    <div class="slds-grid slds-grid_align-spread slds-m-bottom_xx-small">
+                                        <span class="slds-text-color_weak">
+                                            Neuer Preis / Einheit
+                                        </span>
+
+                                        <span class="slds-font-weight_bold">
+                                            <lightning-formatted-number
+                                                value={discountPreview.newUnitPrice}
+                                                format-style="currency"
+                                                currency-code="EUR">
+                                            </lightning-formatted-number>
+                                        </span>
+                                    </div>
+
+                                    <div class="slds-grid slds-grid_align-spread slds-m-bottom_xx-small">
+                                        <span class="slds-text-color_weak">
+                                            Ersparnis
+                                        </span>
+
+                                        <span class="discount-saving">
+                                            <lightning-formatted-number
+                                                value={discountPreview.saving}
+                                                format-style="currency"
+                                                currency-code="EUR">
+                                            </lightning-formatted-number>
+
+                                            &nbsp;({discountPreview.percentEquivalent}%)
+                                        </span>
+                                    </div>
+
+                                    <div class="slds-grid slds-grid_align-spread">
+                                        <span class="slds-text-color_weak">
+                                            Neuer Betrag
+                                        </span>
+
+                                        <span class="slds-font-weight_bold">
+                                            <lightning-formatted-number
+                                                value={discountPreview.newLineTotal}
+                                                format-style="currency"
+                                                currency-code="EUR">
+                                            </lightning-formatted-number>
+                                        </span>
+                                    </div>
+                                </div>
+                            </template>
+                        </template>
+                    </div>
+
+                    <footer class="slds-modal__footer discount-modal__footer">
+                        <lightning-button
+                            label="Abbrechen"
+                            onclick={handleCloseDiscountModal}
+                            class="slds-m-right_x-small">
+                        </lightning-button>
+
+                        <lightning-button
+                            label="Rabatt anwenden"
+                            variant="brand"
+                            onclick={handleApplyDiscount}
+                            disabled={isApplyDiscountDisabled}>
+                        </lightning-button>
+                    </footer>
+
+                </div>
+            </section>
+
+            <div class="slds-backdrop slds-backdrop_open discount-modal-backdrop"></div>
+        </template>
+        <template if:false={orderSent}>
+            <div slot="footer" class="slds-grid slds-grid_align-spread">
+                <lightning-button 
+                    if:true={isStepOne}
+                    label="Abbrechen" 
+                    variant="base" 
+                    icon-name="utility:close" 
+                    onclick={handleCancel}>
+                </lightning-button>
+                <lightning-button 
+                    if:false={isStepOne}
+                    label="Zurück" 
+                    variant="base" 
+                    icon-name="utility:close" 
+                    onclick={handleBack}>
+                </lightning-button>
+                <div>
+                    <lightning-button 
+                        if:false={isStepFour}
+                        label="Entwurf speichern" 
+                        onclick={handleSaveDraft}
+                        variant="neutral" 
+                        class="slds-m-right_small">
+                    </lightning-button>
+                    <lightning-button 
+                        if:false={isStepFour}
+                        label="Weiter" 
+                        variant="brand" 
+                        icon-name="utility:chevronright" 
+                        icon-position="right"
+                        disabled={isNextDisabled}
+                        onclick={handleNext}>
+                    </lightning-button>
+                    <lightning-button 
+                        if:true={isStepFour}
+                        label="Auftrag senden" 
+                        variant="brand" 
+                        icon-name="utility:send" 
+                        icon-position="right"
+                        onclick={createOrderApex}>
+                    </lightning-button>
+                </div>
+            </div>
+        </template>
+    </lightning-quick-action-panel>
+</template>

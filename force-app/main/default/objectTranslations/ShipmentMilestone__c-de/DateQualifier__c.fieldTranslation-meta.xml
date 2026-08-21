@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Date Qualifier --></label>
+    <name>DateQualifier__c</name>
+    <picklistValues>
+        <masterLabel>Document Date</masterLabel>
+        <translation><!-- Document Date --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Goods Issue</masterLabel>
+        <translation><!-- Goods Issue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Loading</masterLabel>
+        <translation><!-- Loading --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Outbound Delivery</masterLabel>
+        <translation><!-- Outbound Delivery --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Picking</masterLabel>
+        <translation><!-- Picking --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Transportation Planning</masterLabel>
+        <translation><!-- Transportation Planning --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

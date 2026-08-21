@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quality_Check_Machine__c</fullName>
+    <label>Quality Check Machine</label>
+    <referenceTo>Quality_Check_Machine__c</referenceTo>
+    <relationshipLabel>Quality Check Entrie</relationshipLabel>
+    <relationshipName>Quality_Check_Entrie</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

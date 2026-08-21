@@ -1,0 +1,85 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Forgot Password",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"fc5003eb-7b73-493f-a394-17a5e61da977\",\"columns\":[{\"UUID\":\"f97efc01-5c1b-4656-b2bd-2e0ad6c35588\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : {
+                  "margin" : {
+                    "bottom" : "",
+                    "left" : "",
+                    "right" : "",
+                    "top" : ""
+                  }
+                }
+              },
+              "definition" : "c:webshopCustomHeader",
+              "id" : "716737d3-789f-485a-a96b-ede6105c54e5",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "dxpStyle" : { }
+              },
+              "definition" : "c:webshopForgotPassword",
+              "id" : "8d942181-88e8-4ac3-a2f5-712ccf88a340",
+              "type" : "component"
+            } ],
+            "id" : "f97efc01-5c1b-4656-b2bd-2e0ad6c35588",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "fc5003eb-7b73-493f-a394-17a5e61da977",
+          "type" : "component"
+        } ],
+        "id" : "506f9822-16c6-48fd-b93c-f5901dc61ef7",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "dxpStyle" : { },
+            "pageTitle" : "Forgot Password",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "107e9c0f-78d3-428b-90ff-8e3810d1ae1a",
+          "type" : "component"
+        } ],
+        "id" : "127acb8c-045c-4cad-bc2a-f8a4305a5492",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "6e0f1349-4147-45ba-b97c-3740c330e6ee",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "External",
+    "viewType" : "forgot-password"
+  },
+  "urlName" : "forgot-password"
+}

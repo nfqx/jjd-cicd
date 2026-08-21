@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V2_Volume_Cocoa_NonNegative</fullName>
+    <active>true</active>
+    <description>Enforces non-negative target volume for hot chocolate.</description>
+    <errorConditionFormula>NOT(ISBLANK(	PurchaseQuantityHotChoc__c)) &amp;&amp; 
+	PurchaseQuantityHotChoc__c &lt; 0</errorConditionFormula>
+    <errorMessage>Hot chocolate target volume in kg cannot be negative.</errorMessage>
+</ValidationRule>

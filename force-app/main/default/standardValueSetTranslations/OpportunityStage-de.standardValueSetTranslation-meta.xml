@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Closed Lost</masterLabel>
+        <translation>Verloren</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Closed Won</masterLabel>
+        <translation>Gewonnen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Discovery</masterLabel>
+        <translation>Entdeckung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Qualification</masterLabel>
+        <translation>Qualifizierung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Quotation Phase</masterLabel>
+        <translation>Angebotsphase</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Quote Sent</masterLabel>
+        <translation>Angebot verschickt</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Quote Signed</masterLabel>
+        <translation>Angebot unterzeichnet</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Renegotiation</masterLabel>
+        <translation>Nachverhandlung</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

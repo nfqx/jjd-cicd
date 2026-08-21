@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Best Time to Reach --></label>
+    <name>BestTimeToReach__c</name>
+    <picklistValues>
+        <masterLabel>Afternoon (3PM - 6PM)</masterLabel>
+        <translation><!-- Afternoon (3PM - 6PM) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Morning (9AM-12AM)</masterLabel>
+        <translation><!-- Morning (9AM-12AM) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Noon (12PM-3PM)</masterLabel>
+        <translation><!-- Noon (12PM-3PM) --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

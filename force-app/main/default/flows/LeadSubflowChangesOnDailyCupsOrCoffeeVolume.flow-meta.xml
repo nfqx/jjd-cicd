@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>67.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>AssignCupsOfCoffee</name>
+        <label>Assign Cups of Coffee</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.DailyNumberOfCups__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CalculateDailyCupsOfCoffee</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateLead</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>AssignVolumeOfCoffee</name>
+        <label>Assign Volume of Coffee</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.EstimatedVolumeCoffee__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CalculateVolumeOfCoffee</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateLead</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>WhatHasChanged</name>
+        <label>What Has Changed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>VolumeOfCoffee</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.EstimatedVolumeCoffee__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignCupsOfCoffee</targetReference>
+            </connector>
+            <label>Volume of Coffee</label>
+        </rules>
+        <rules>
+            <name>CupsOfCoffee</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.DailyNumberOfCups__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignVolumeOfCoffee</targetReference>
+            </connector>
+            <label>Cups of Coffee</label>
+        </rules>
+    </decisions>
+    <description>Synchronizes the values of DailyNumberOfCups__c and EstimatedVolumeCoffee__c by automatically recalculating the corresponding field when one is updated.  
+Jira Ticket: JJDSF-251</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>CalculateDailyCupsOfCoffee</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.EstimatedVolumeCoffee__c}/(8/1000*365)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>CalculateVolumeOfCoffee</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.DailyNumberOfCups__c}*8/1000*365</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Lead - Subflow Changes on Daily Cups or Coffee Volume {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead - Subflow Changes on Daily Cups or Coffee Volume</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>UpdateLead</name>
+        <label>Update Lead</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>WhatHasChanged</targetReference>
+        </connector>
+        <filterFormula>OR(
+ISNEW(),
+ISCHANGED({!$Record.EstimatedVolumeCoffee__c}),
+    AND(
+         ISCHANGED({!$Record.DailyNumberOfCups__c}), 
+         {!$Record.DailyNumberOfCups__c} &lt;&gt; ({!$Record.EstimatedVolumeCoffee__c}/8/1000*365)
+            )
+)</filterFormula>
+        <object>Lead</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

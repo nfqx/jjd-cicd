@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Terms of Service",
+  "contentBody" : {
+    "activeViewId" : "Terms_of_Service",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-terms-of-service",
+    "urlPrefix" : "terms-of-service"
+  },
+  "urlName" : "terms-of-service"
+}

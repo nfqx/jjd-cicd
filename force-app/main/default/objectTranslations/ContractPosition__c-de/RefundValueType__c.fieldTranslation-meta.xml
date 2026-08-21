@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Wie der RV-Wert eingegeben wurde: als Prozentsatz (Zielbild) oder als Euro pro Kilogramm (Altform). Euro-Eingaben werden automatisch in Prozent umgerechnet — Prozent ist der führende Wert.</help>
+    <label>RV-Wert-Typ</label>
+    <name>RefundValueType__c</name>
+    <picklistValues>
+        <masterLabel>Amount per kg (€)</masterLabel>
+        <translation>Euro pro kg</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Percent</masterLabel>
+        <translation>Prozent</translation>
+    </picklistValues>
+</CustomFieldTranslation>

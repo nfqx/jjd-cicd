@@ -1,0 +1,104 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Brands Detail",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "0rem",
+            "dxpStyle" : {
+              "margin" : {
+                "bottom" : "",
+                "left" : "",
+                "right" : "",
+                "top" : ""
+              },
+              "padding" : {
+                "bottom" : "0px",
+                "left" : "0px",
+                "right" : "0px",
+                "top" : "0px"
+              }
+            },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"bec565b7-cb10-4ecc-a5a7-5c65c72f3684\",\"columns\":[{\"UUID\":\"98a8b2e0-29da-426b-b9cc-1aa95c18b54d\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : {
+                  "margin" : {
+                    "bottom" : "0px",
+                    "left" : "0px",
+                    "right" : "0px",
+                    "top" : "0px"
+                  },
+                  "padding" : {
+                    "bottom" : "0px",
+                    "left" : "0px",
+                    "right" : "0px",
+                    "top" : "0px"
+                  }
+                }
+              },
+              "definition" : "c:webshopBrandPage",
+              "id" : "2c5c03e7-de1c-4d7f-a42f-984514736f73",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "dxpStyle" : { }
+              },
+              "definition" : "c:webshopContactUsSection",
+              "id" : "bd5c35f2-bd8c-49c6-8ce7-f7702caaf555",
+              "type" : "component"
+            } ],
+            "id" : "98a8b2e0-29da-426b-b9cc-1aa95c18b54d",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "bec565b7-cb10-4ecc-a5a7-5c65c72f3684",
+          "type" : "component"
+        } ],
+        "id" : "589d45c8-7cdd-48e5-ba0a-9b4f7dd69deb",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "dxpStyle" : { },
+            "pageTitle" : "{!Record._Object}: {!Record._Title}",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "d1872525-1af5-4ffc-b336-76903deffac6",
+          "type" : "component"
+        } ],
+        "id" : "8f17dcdd-4a3c-4518-8a40-b92ca757aaed",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "158c6ade-150a-4661-8478-c2edd1c1e6c5",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "detail-WebshopBrand__c"
+  },
+  "urlName" : "brands-detail"
+}

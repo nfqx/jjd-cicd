@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RunningOpportunities__c</fullName>
+    <description>Counts the number of running opportunities in the context of winning new customer (see F153)
+Count all opportunities of an account, which are not in stage &apos;closed lost&apos; or &apos;closed won&apos;</description>
+    <label>Running Opportunities</label>
+    <summaryFilterItems>
+        <field>Opportunity.StageName</field>
+        <operation>notEqual</operation>
+        <value>Closed Won, Closed Lost</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

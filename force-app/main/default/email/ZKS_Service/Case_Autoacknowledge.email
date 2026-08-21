@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<!-- Auhtor: Rene Laerm for NFQ-X GmbH May 2024 -->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ 
+        
+        <title>Ihre Anfrage an J.J. Darboven</title>
+		
+	</head>
+    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="-webkit-text-size-adjust: none;margin: 0;padding: 0;background-color: #FAFAFA;width: 100%;">
+<style type="text/css">#outlook a {
+              padding: 0;
+          }
+          .body{
+              width: 100% !important;
+              -webkit-text-size-adjust: 100%;
+              -ms-text-size-adjust: 100%;
+              margin: 0;
+              padding: 0;
+          }
+          .ExternalClass {
+              width:100%;
+          }
+          .ExternalClass,
+          .ExternalClass p,
+          .ExternalClass span,
+          .ExternalClass font,
+          .ExternalClass td,
+          .ExternalClass div {
+              line-height: 100%;
+          }
+          img {
+              outline: none;
+              text-decoration: none;
+              -ms-interpolation-mode: bicubic;
+          }
+          a img {
+              border: none;
+          }
+          p {
+              margin: 1em 0;
+          }
+          table td {
+              border-collapse: collapse;
+          }
+          /* hide unsubscribe from forwards*/
+          blockquote .original-only, .WordSection1 .original-only {
+            display: none !important;
+          }
+</style>
+<center>
+<table border="0" cellpadding="0" cellspacing="0" height="100%" id="backgroundTable" style="margin: 0;padding: 0;background-color: #FAFAFA;height: 100%;width: 100%;" width="100%">
+	<tbody>
+		<tr>
+			<td align="center" style="border-collapse: collapse;" valign="top"><!-- // Begin Template Preheader \ -->
+			<table border="0" cellpadding="10" cellspacing="0" id="templatePreheader" style="background-color: #FAFAFA;" width="600">
+				<tbody>
+					<tr>
+						<td class="preheaderContent" style="border-collapse: collapse;" valign="top"><!-- // Begin Module: Standard Preheader  -->
+						<table border="0" cellpadding="10" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td style="border-collapse: collapse;" valign="top">
+									<div pardot-region="std_preheader_content" style="color: #505050;font-family: Arial;font-size: 10px;line-height: 10px;text-align: left;">Ihre Anfrage an J.J. Darboven -{!Case.Subject}</div>
+									</td>
+									<td style="border-collapse: collapse;" valign="top" width="190">
+									<div pardot-region="std_preheader_links" style="color: #505050;font-family: Arial;font-size: 10px;line-height: 10px;text-align: left;">&nbsp;</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // End Module: Standard Preheader  --></td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- // End Template Preheader \ -->
+
+			<table border="0" cellpadding="0" cellspacing="0" id="templateContainer" style="border: 1px solid #DDDDDD;background-color: #FFFFFF;" width="600">
+				<tbody>
+					<tr>
+						<td align="center" style="border-collapse: collapse;" valign="top"><!-- // Begin Template Header Hero Image \ -->
+						<table border="0" cellpadding="0" cellspacing="0" id="templateHeader" style="background-color: #FFFFFF;border-bottom: 0;" width="600">
+							<tbody>
+								<tr>
+									<td class="headerContent" pardot-region="header_image" style="border-collapse: collapse;color: #202020;font-family: Arial;font-size: 34px;font-weight: bold;line-height: 34px;padding: 0;text-align: center;vertical-align: middle;"><img border="0" src="https://darboven--full--c.sandbox.vf.force.com/resource/1715012165000/Email_Header_logo?" > <!-- // End Module: Standard Header Image \ --></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // End Template Header \ --></td>
+					</tr>
+					<tr>
+						<td align="center" style="border-collapse: collapse;" valign="top"><!-- // Begin Template Body \ -->
+						<table border="0" cellpadding="0" cellspacing="0" id="templateBody" width="700">
+							<tbody>
+								<tr>
+									<td class="bodyContent" style="border-collapse: collapse;background-color: #FFFFFF;" valign="top"><!-- // Begin Module: Standard Content \ -->
+									<table border="0" cellpadding="20" cellspacing="0" width="100%">
+										<tbody>
+											<tr>
+												<td style="border-collapse: collapse;" valign="top">
+												<div pardot-data="" pardot-region="std_content00" style="color: rgb(80, 80, 80); font-family: Arial; line-height: 21px; text-align: left;"><strong><font color="#1c809f">Sehr geehrte Damen und Herren,</font></strong><br><br>
+												
+												vielen Dank f&uuml;r Ihre Nachricht. Wir haben Ihre Anfrage zu <i>{!Case.Subject}</i> erhalten und mit der Vorgangsnummer <i>{!Case.CaseNumber}</i> versehen.<br>
+          Bitte antworten Sie nicht auf diese E-Mail. Ein Kollege wird sich bei R&uuml;ckfragen ggf. pers&ouml;nlich bei Ihnen melden.<br>
+          <br>
+													
+													<br>
+													*Dies ist eine automatisch generierte und versendete E-Mail. Bitte antworten Sie nicht direkt auf diese E-Mail.
+
+											
+														
+												</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- // End Module: Standard Content \ --></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // End Template Body \ --></td>
+					</tr>
+					<tr>
+						<td align="center" style="border-collapse: collapse;" valign="top" bgcolor="#4E4E50"><!-- // Begin Template Footer \ -->
+						<table border="0" cellpadding="10" cellspacing="0" id="templateFooter" style="background-color: #4E4E50;border-top: 0;" width="600">
+							<tbody>
+								<tr>
+									<td class="footerContent" style="border-collapse: collapse;" valign="top"><!-- // Begin Module: Standard Footer \ -->
+									<table border="0" cellpadding="10" cellspacing="0" width="100%" bgcolor="#4E4E50">
+										<tbody>
+											<tr pardot-removable="">
+												<td colspan="2" id="social" style="border-collapse: collapse;background-color: #4E4E50;border: 0;" valign="middle">
+												<div pardot-region="std_social" style="color: #707070;font-family: Arial;font-size: 12px;line-height: 15px;text-align: center;">&nbsp;</div>
+												</td>
+											</tr>
+											<tr>
+												<td style="border-collapse: collapse;" valign="top" width="350" bgcolor="#4E4E50">
+												<div pardot-region="std_footer" style="color: #4E4E50;font-family: Arial;font-size: 12px;line-height: 15px;text-align: left;">
+												<div style="text-align: center;color: #FFFFFF;">Copyright © 2024 J.J. Darboven , All rights reserved.</div>
+												</div>
+												</td>
+											</tr>
+											<tr>
+												<td colspan="2" id="utility" style="border-collapse: collapse;background-color: #4E4E50;border: 0;" valign="middle">
+												<div class="original-only" pardot-region="std_utility" style="color: #4E4E50;font-family: Arial;font-size: 12px;line-height: 15px;text-align: center;"><a href="https://www.darboven.com/de-de/datenschutz" style="font-weight: normal;color: #FFFFFF;" target="_blank">Datenschutz</a> | <a href="https://professional.darboven.com/" style="font-weight: normal;color: #FFFFFF;" target="_blank">Darboven Professional</a>  <p style="color: #4E4E50;">{!Case.Thread_Id} 
+ AutoResponse</p></div>
+												</td>
+											</tr>
+											
+										</tbody>
+									</table>
+									<!-- // End Module: Standard Footer \ --></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // End Template Footer \ --></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</center>
+<!--
+          This email was originally designed by the wonderful folks at MailChimp and remixed by Pardot.
+          It is licensed under CC BY-SA 3.0
+        -->
+</body>
+</html>

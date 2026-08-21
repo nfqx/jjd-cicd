@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CurrentTeaSupplier__c</fullName>
+    <label>CurrentTeaSupplier</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Althaus</fullName>
+                <default>false</default>
+                <label>Althaus</label>
+            </value>
+            <value>
+                <fullName>Amazon</fullName>
+                <default>false</default>
+                <label>Amazon</label>
+            </value>
+            <value>
+                <fullName>GOURVITA</fullName>
+                <default>false</default>
+                <label>GOURVITA</label>
+            </value>
+            <value>
+                <fullName>Heimbs / Azul / Dallmayr</fullName>
+                <default>false</default>
+                <label>Heimbs / Azul / Dallmayr</label>
+            </value>
+            <value>
+                <fullName>Jacobs Douwe Egberts</fullName>
+                <default>false</default>
+                <label>Jacobs Douwe Egberts</label>
+            </value>
+            <value>
+                <fullName>justt</fullName>
+                <default>false</default>
+                <label>justt</label>
+            </value>
+            <value>
+                <fullName>LEH</fullName>
+                <default>false</default>
+                <label>LEH</label>
+            </value>
+            <value>
+                <fullName>Lipton</fullName>
+                <default>false</default>
+                <label>Lipton</label>
+            </value>
+            <value>
+                <fullName>Meßmer</fullName>
+                <default>false</default>
+                <label>Meßmer</label>
+            </value>
+            <value>
+                <fullName>Milford</fullName>
+                <default>false</default>
+                <label>Milford</label>
+            </value>
+            <value>
+                <fullName>Pure (Tchibo)</fullName>
+                <default>false</default>
+                <label>Pure (Tchibo)</label>
+            </value>
+            <value>
+                <fullName>Ronnefeldt</fullName>
+                <default>false</default>
+                <label>Ronnefeldt</label>
+            </value>
+            <value>
+                <fullName>Sonstige</fullName>
+                <default>false</default>
+                <label>Sonstige</label>
+            </value>
+            <value>
+                <fullName>Teegeschwender</fullName>
+                <default>false</default>
+                <label>Teegeschwender</label>
+            </value>
+            <value>
+                <fullName>Teekanne</fullName>
+                <default>false</default>
+                <label>Teekanne</label>
+            </value>
+            <value>
+                <fullName>Twinings</fullName>
+                <default>false</default>
+                <label>Twinings</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

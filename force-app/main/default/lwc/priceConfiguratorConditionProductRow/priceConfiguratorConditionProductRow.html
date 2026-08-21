@@ -1,0 +1,102 @@
+<template> 
+    <template if:true={displayRow}>  
+        <lightning-layout class={rowClass}>
+            <lightning-layout-item class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small" size="1">
+                <template if:false={isMuss}>
+                    <lightning-combobox style="width:100%" readonly={isInherited} value={_rowdata.producttype} options={productTypeOptions} onchange={changeField} data-field="producttype" variant="label-hidden"></lightning-combobox>
+                </template>
+                <template if:true={isMuss}>
+                    {_rowdata.producttype}
+                </template>
+            </lightning-layout-item>
+            <lightning-layout-item class="slds-align_absolute-center slds-p-horizontal_small slds-p-vertical_xx-small" size={productColumnSize}>
+                <template if:false={isMuss}>
+                    <template if:true={isProduct}>
+                        <c-lookup
+                            object-api-name="Product2"
+                            data-field="product"
+                            onsearch={handleProductSearch}
+                            onselectionchange={handleProductChange}
+                            placeholder={label.product}
+                            hide-remove={isInherited}
+                            style="width:100%"
+                            height-restricted
+                            >
+                        </c-lookup>
+                    </template>
+                    <template if:true={isSubgroup}>
+                        <c-lookup
+                            object-api-name="ProductCategory"
+                            data-field="productSubgroup"
+                            onsearch={handleProductSubgroupSearch}
+                            onselectionchange={handleProductSubgroupChange}
+                            placeholder={label.subgroup}
+                            hide-remove={isInherited}
+                            style="width:100%"
+                            height-restricted
+                            >
+                        </c-lookup>
+                    </template>
+                </template>
+                <template if:true={isMuss}>
+                    {_rowdata.productName}
+                </template>
+            </lightning-layout-item>
+            <lightning-layout-item class="slds-align_absolute-center" size="1" padding="around-small">
+                <template if:false={isSubgroupAndHasNoPrice}>{_rowdata.basePriceDisplay} €</template>
+            </lightning-layout-item>
+            <lightning-layout-item class="slds-align_absolute-center" size="1" padding="around-small">
+                {_rowdata.rebateDisplay} %
+            </lightning-layout-item>
+            <lightning-layout-item class="slds-align_absolute-center" size="1" padding="around-small">
+                <template if:false={isSubgroupAndHasNoPrice}><span style={colorStyle}>{_rowdata.offerPriceDisplay} €</span></template>
+            </lightning-layout-item>
+            <lightning-layout-item class="slds-grid slds-grid_align-spread slds-align-middle" size="1" padding="around-small"> <!--slds-align_absolute-center class removed-->
+                <lightning-input if:false={isSubgroupAndHasNoPrice} type="number" step="0.01" value={_rowdata.specialRebate} onchange={changeField} data-field="specialRebate" variant="label-hidden"></lightning-input>
+                <label if:false={isSubgroupAndHasNoPrice} class="slds-form-element__label special-discount-euro">€</label>
+                <lightning-input if:true={isSubgroupAndHasNoPrice} type="number" step="0.1" value={_rowdata.specialRebatePercent} onchange={changeField} data-field="specialRebatePercent" variant="label-hidden" placeholder="%"></lightning-input>
+                <label if:true={isSubgroupAndHasNoPrice} class="slds-form-element__label special-discount-percent">%</label>
+            </lightning-layout-item>
+            <lightning-layout-item size="1" padding="around-small"  style="background-color: #F3F2F2;">
+                <template if:true={hasTotalAddition}>
+                    {_rowdata.totalAddition} €
+                </template>
+            </lightning-layout-item>
+            <template if:true={_showRefund}>
+                <template if:true={_showRefundColumn}>
+                    <lightning-layout-item class="slds-align_absolute-center" size="1" padding="around-small">
+                        <lightning-input if:false={isSubgroupAndHasNoPrice} type="number" step="0.01" value={_rowdata.refundAmount} disabled={isMussOrNotCoffeeTea} onchange={changeField} data-field="refundAmount" variant="label-hidden"></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item class="slds-align_absolute-center" size="1" padding="around-small">
+                        <lightning-input if:false={isSubgroupAndHasNoPrice} type="number" step="0.01" value={_rowdata.refundPercent} disabled={isMussOrNotCoffeeTea} onchange={changeField} data-field="refundPercent" variant="label-hidden"></lightning-input>
+                    </lightning-layout-item>
+                </template>
+            </template>
+            <lightning-layout-item class="slds-align_absolute-center" size="1" padding="around-small" if:false={isInherited}>
+                <lightning-icon class="cursor-pointer" size="small"  icon-name="utility:delete" onclick={handleRemoveRow}></lightning-icon>
+            </lightning-layout-item>
+            <lightning-layout-item class="slds-align_absolute-center" size="1" padding="around-small">
+                &nbsp;
+                <template if:true={showWarning}> 
+                    <template if:false={isSubgroupAndHasNoPrice}>
+                        <lightning-helptext  class="slds-icon-text-error" icon-name="utility:warning" content={warningMessage}></lightning-helptext>
+                    </template>
+                </template>
+                &nbsp;
+                <template if:true={_rowdata.freeFromSurcharge}> 
+                    <lightning-helptext  class="slds-icon-text-error" icon-name="utility:warning" content={label.freeFromSurcharge}></lightning-helptext>
+                </template>
+                <template if:true={isInherited}>
+                    <lightning-button-icon
+                        icon-name="utility:edit"
+                        alternative-text="Verhandeln"
+                        title="Diese Kondition individuell verhandeln (auf Individual-Tab uebernehmen)"
+                        variant="border-filled"
+                        size="small"
+                        onclick={handlePromoteToIndividual}>
+                    </lightning-button-icon>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+    </template> 
+</template>

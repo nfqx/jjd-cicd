@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Recommended Actions --></label>
+    <name>Recommended_Actions__c</name>
+    <picklistValues>
+        <masterLabel>Adjust machine</masterLabel>
+        <translation><!-- Adjust machine --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Create a cleaning plan</masterLabel>
+        <translation><!-- Create a cleaning plan --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Replace grinder</masterLabel>
+        <translation><!-- Replace grinder --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Schedule technician</masterLabel>
+        <translation><!-- Schedule technician --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

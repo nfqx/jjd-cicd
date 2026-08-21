@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adtional_Email_cant_be_filled</fullName>
+    <active>false</active>
+    <description>Blocks &apos;Additional Email&apos; if standard &apos;Email&apos; field is empty.</description>
+    <errorConditionFormula>AND(ISBLANK(Email), 
+				NOT(ISBLANK(AdditionalEmail__c)))</errorConditionFormula>
+    <errorDisplayField>Email</errorDisplayField>
+    <errorMessage>Please fill in the standard Email field first.</errorMessage>
+</ValidationRule>

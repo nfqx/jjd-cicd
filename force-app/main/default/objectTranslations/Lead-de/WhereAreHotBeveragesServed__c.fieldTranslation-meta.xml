@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Bereich für Heißgetränk-Angebot</label>
+    <name>WhereAreHotBeveragesServed__c</name>
+    <picklistValues>
+        <masterLabel>Breakfast area</masterLabel>
+        <translation>Frühstücksbereich</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Conference Rooms</masterLabel>
+        <translation>Tagungs- und Konferenzräume</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Counter/Bar</masterLabel>
+        <translation>Theke / Bar</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer area</masterLabel>
+        <translation>Im Gastbereich</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Employee area/Backoffice</masterLabel>
+        <translation>Mitarbeiterversorgung / Backoffice</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reception/Lobby</masterLabel>
+        <translation>Rezeption / Lobby</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Restaurant/Bar</masterLabel>
+        <translation>Restaurant / Bar</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Room/Mini Bar</masterLabel>
+        <translation>Zimmer / Minibar</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Self service station</masterLabel>
+        <translation>Selbstbedienungsstation</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>To go offer</masterLabel>
+        <translation>To-Go-Angebot</translation>
+    </picklistValues>
+</CustomFieldTranslation>

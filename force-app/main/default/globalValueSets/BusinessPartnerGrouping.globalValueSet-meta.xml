@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>ZSF1</fullName>
+        <default>true</default>
+        <label>Customer</label>
+    </customValue>
+    <customValue>
+        <fullName>ZSF2</fullName>
+        <default>false</default>
+        <label>Ship-to party</label>
+    </customValue>
+    <customValue>
+        <fullName>ZSF3</fullName>
+        <default>false</default>
+        <label>Payer</label>
+    </customValue>
+    <customValue>
+        <fullName>ZSF4</fullName>
+        <default>false</default>
+        <label>Bill-To party</label>
+    </customValue>
+    <customValue>
+        <fullName>Z001</fullName>
+        <default>false</default>
+        <label>Auftraggeber</label>
+    </customValue>
+    <customValue>
+        <fullName>ZAP</fullName>
+        <default>false</default>
+        <label>Ansprechpartner</label>
+    </customValue>
+    <customValue>
+        <fullName>Y001</fullName>
+        <default>false</default>
+        <label>Lieferant</label>
+    </customValue>
+    <customValue>
+        <fullName>Z012</fullName>
+        <default>false</default>
+        <label>Hierarchieknoten</label>
+    </customValue>
+    <customValue>
+        <fullName>Z003</fullName>
+        <default>false</default>
+        <label>Regulierer</label>
+    </customValue>
+    <customValue>
+        <fullName>ZVUB</fullName>
+        <default>false</default>
+        <label>ZVUB</label>
+    </customValue>
+    <customValue>
+        <fullName>ZVUD</fullName>
+        <default>false</default>
+        <label>ZVUD</label>
+    </customValue>
+    <customValue>
+        <fullName>Z2</fullName>
+        <default>false</default>
+        <label>Mitarbeiter</label>
+    </customValue>
+    <masterLabel>Business Partner Grouping</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

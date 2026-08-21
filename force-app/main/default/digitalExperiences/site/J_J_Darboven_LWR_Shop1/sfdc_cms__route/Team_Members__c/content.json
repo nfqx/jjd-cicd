@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "My Team Members",
+  "contentBody" : {
+    "activeViewId" : "Team_Members",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-team-members",
+    "urlPrefix" : "my-team-members"
+  },
+  "urlName" : "my-team-members"
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Lagerhaus</fullName>
+        <default>false</default>
+        <label>Lagerhaus</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Einzelhandelsgeschäft</fullName>
+        <default>false</default>
+        <label>Einzelhandelsgeschäft</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Abholung im Geschäft</fullName>
+        <default>false</default>
+        <label>Abholung im Geschäft</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Lieferant</fullName>
+        <default>false</default>
+        <label>Lieferant</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Download</fullName>
+        <default>false</default>
+        <label>Download</label>
+    </standardValue>
+    <standardValue>
+        <fullName>E-Mail</fullName>
+        <default>false</default>
+        <label>E-Mail</label>
+    </standardValue>
+</StandardValueSet>

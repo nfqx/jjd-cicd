@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Address__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Type__c=&quot;Existing Customer&quot;, 
+    Contact__r.Account.ShippingStreet &amp; BR() &amp; Contact__r.Account.ShippingPostalCode &amp; &quot; &quot; &amp; Contact__r.Account.ShippingCity, 
+    Lead__r.Street &amp; BR() &amp; Lead__r.PostalCode &amp; &quot; &quot; &amp; Lead__r.City 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Address</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Complaint General</masterLabel>
+        <translation>Reklamation Allgemein</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>End customer inquiry</masterLabel>
+        <translation>Endkundenanfrage</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>General inquiries</masterLabel>
+        <translation>Allg. Anfragen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Logistics</masterLabel>
+        <translation>Logistik</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Master data</masterLabel>
+        <translation>Stammdaten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Offers</masterLabel>
+        <translation>Angebote</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Order</masterLabel>
+        <translation>Bestellung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>QS complaint</masterLabel>
+        <translation>QS Reklamation</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Spam</masterLabel>
+        <translation><!-- Spam --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Unrated</masterLabel>
+        <translation>Unbewertet</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

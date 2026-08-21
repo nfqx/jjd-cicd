@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ParentTaxId__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(AND(NOT(ISBLANK(InvoiceRecipient__c)), InvoiceRecipient__c &lt;&gt; Id, NOT(ISBLANK(InvoiceRecipient__r.TaxID__c))), InvoiceRecipient__r.TaxID__c,
+IF(NOT(ISBLANK(ConditionChainParent__r.TaxID__c)), ConditionChainParent__r.TaxID__c,
+IF(NOT(ISBLANK(ConditionChainParent__r.ConditionChainParent__r.TaxID__c)), ConditionChainParent__r.ConditionChainParent__r.TaxID__c,
+IF(NOT(ISBLANK(ConditionChainParent__r.ConditionChainParent__r.ConditionChainParent__r.TaxID__c)), ConditionChainParent__r.ConditionChainParent__r.ConditionChainParent__r.TaxID__c,
+ConditionChainHead__r.TaxID__c))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Parent&apos;s Tax ID — Reference value of the second legal entity signal.</inlineHelpText>
+    <label>Parent Tax ID</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

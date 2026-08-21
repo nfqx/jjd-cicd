@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ConditionDiscount__c</fullName>
+    <externalId>false</externalId>
+    <formula>/*IF(
+UnitPrice != 0.00,
+SUBSTITUTE(TEXT(ROUND(UnitPrice, 2)), &quot;.&quot;, &quot;,&quot;) &amp; IF(MOD(UnitPrice, 1) = 0, &quot;,00&quot;, IF(LEN(TEXT(ROUND(UnitPrice, 2))) - FIND(&quot;.&quot;, TEXT(ROUND(UnitPrice, 2))) = 1, &quot;0&quot;, &quot;&quot;)) &amp; &quot; €&quot;,
+SUBSTITUTE(TEXT(ROUND(Discount * 100, 2)), &quot;.&quot;, &quot;,&quot;) &amp; IF(MOD(Discount * 100, 1) = 0, &quot;,00&quot;, IF(LEN(TEXT(ROUND(Discount * 100, 2))) - FIND(&quot;.&quot;, TEXT(ROUND(Discount * 100, 2))) = 1, &quot;0&quot;, &quot;&quot;)) &amp; &quot; %&quot;
+)*/
+
+IF(
+BLANKVALUE(UnitPrice, 0) &lt;&gt; 0,
+/* Preis-Zweig: 12,34 € */
+IF(
+NOT(ISBLANK(TEXT(ApprovalLevel__c))),
+&quot;🔖 &quot;,
+&quot;🏷️ &quot;
+)
+&amp;
+SUBSTITUTE(
+TEXT(FLOOR(ROUND(UnitPrice, 2))) &amp; &quot;,&quot; &amp;
+RIGHT(&quot;00&quot; &amp; TEXT( MOD( ROUND(UnitPrice * 100, 0), 100) ), 2),
+&quot;.&quot;,
+&quot;,&quot;
+) &amp; &quot; €&quot;,
+/* Rabatt-Zweig: 12,34 % (Discount z. B. 0,1234 = 12,34 %) */
+IF(
+NOT(ISBLANK(TEXT(ApprovalLevel__c))),
+&quot;🔖 &quot;,
+&quot;🏷️ &quot;
+)&amp;
+SUBSTITUTE(
+TEXT(FLOOR(ROUND(Discount * 100, 2))) &amp; &quot;,&quot; &amp;
+RIGHT(&quot;00&quot; &amp; TEXT( MOD( ROUND(Discount * 100 * 100, 0), 100) ), 2),
+&quot;.&quot;,
+&quot;,&quot;
+) &amp; &quot; %&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Condition / Discount</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

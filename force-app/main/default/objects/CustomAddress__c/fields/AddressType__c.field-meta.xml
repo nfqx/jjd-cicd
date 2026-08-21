@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AddressType__c</fullName>
+    <description>Defines the purpose of this address record. &apos;Billing&apos; for invoices, &apos;Shipping&apos; for deliveries, &apos;Mailing&apos; for correspondence, and &apos;Misc&apos; for other uses. Billing is set as default.</description>
+    <label>Address Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Billing</fullName>
+                <default>true</default>
+                <label>Billing</label>
+            </value>
+            <value>
+                <fullName>Shipping</fullName>
+                <default>false</default>
+                <label>Shipping</label>
+            </value>
+            <value>
+                <fullName>Mailing</fullName>
+                <default>false</default>
+                <label>Mailing</label>
+            </value>
+            <value>
+                <fullName>Misc</fullName>
+                <default>false</default>
+                <label>Misc</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

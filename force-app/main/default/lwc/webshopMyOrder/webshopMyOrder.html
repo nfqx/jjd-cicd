@@ -1,0 +1,135 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <div class="background"></div>
+    <!--lightning-spinner if:true={isLoading} alternative-text="Loading" size="small"></lightning-spinner-->
+    <div class="d-flex justify-content-center align-items-center">
+        <div if:true={isLoading} class="spinner-border text-black-50" role="status"></div>
+    </div>
+    <template if:false={isLoading}>
+        <div class="sidebar d-none d-lg-block">
+            <c-webshop-my-area-sidebar active-element="My_Orders__c"></c-webshop-my-area-sidebar>
+        </div>
+        <div class="container-fluid content-zone">
+            <div class="row"> 
+                <div class="col-auto d-none d-lg-block">
+                    <!--c-webshop-my-area-sidebar active-element="My_Orders__c"></c-webshop-my-area-sidebar-->
+                </div>
+                <div class="col-12 col-lg-11 p-0 px-md-4">
+                    <div class="content-area">
+                        <template if:true={showOrderInfo}>
+                            <!-- HEADER -->
+                            <div class="row d-flex justify-content-start mb-3">
+                                <p class="link text-decoration-none cursor-pointer" onclick={handleBackToList}><i class="bi bi-arrow-left"></i> {label.backToList}</p>
+                            </div>
+                            <div class="row d-flex justify-content-between align-items-center mb-3">
+                                <div class="col-12">
+                                    <c-webshop-reorder-badge if:true={showBadge}></c-webshop-reorder-badge>
+                                    <c-webshop-reorder-error-badge if:true={showErrorBadge} products={errorRecords}></c-webshop-reorder-error-badge>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <p class="heading-3">{label.orderNo}: {orderInfo.OrderNumber}</p>
+                                    <span if:true={orderInfo.isCancelled} class="bg-primary-subtle border border-primary rounded text-dark components-badge-h6 p-1 ms-2">{label.cancelled}</span>
+                                </div>
+                                <div class="col-12 col-md-2 d-flex justify-content-end">
+                                    <button onclick={handleReorder} class="btn btn-primary w-100">{label.orderAgain}</button>
+                                </div>
+                            </div>
+                            <!-- LEFT SIDE -->
+                            <div class="row d-flex justify-content-between">
+                                <div class="col-12 col-md-7 pe-3">
+                                    <div class="bg-white rounded p-4">
+                                        <template if:true={hasProducts}>
+                                            <h3 class="body-medium gray-700 border-bottom pb-3">{label.totalItems}: {orderProductsCount}</h3>
+                                            <template for:each={orderProducts} for:item="orderItem">
+                                                <div class="border-bottom container mb-3 p-0" key={orderItem.orderProduct.Id}>
+                                                    <div class="row justify-content-between py-1 px-0">
+                                                        <div if:true={orderItem.hasImage} class="col-3 no-print">
+                                                            <img src={orderItem.imageUrl} class="cart-product-image cursor-pointer" alt={orderItem.orderProduct.Product2.Name} data-productid={orderItem.orderProduct.Product2Id} onclick={handleNavigateToProduct} >
+                                                        </div>
+                                                        <div if:false={orderItem.hasImage} class="col-3 no-print">
+                                                            <div class="cart-product-image"></div>
+                                                        </div>
+                                                        <div class="col-6 d-flex flex-column justify-content-between">
+                                                            <p class="body-medium d-flex flex-column text-wrap">
+                                                                <span class="cursor-pointer hover-underline" data-productid={orderItem.orderProduct.Product2Id} onclick={handleNavigateToProduct}>{orderItem.orderProduct.Product2.Name}</span>
+                                                                <span class="components-badge-h3" if:true={showPrices}>{orderItem.price}&nbsp;{orderInfo.CurrencyIsoCode}</span>
+                                                            </p>
+                                                            <p class="body-small gray-700 text-wrap">{orderItem.orderProduct.Product2.PackageUnit__c}</p>
+                                                            <p class="body-small gray-700">{orderItem.orderProduct.Quantity}</p>
+                                                        </div>
+                                                        <div class="col" style="position:relative">
+                                                            <button class="wishlist-icon btn btn-link p-0 text-decoration-none text-dark cursor-pointer" data-productid={orderItem.orderProduct.Product2Id} if:false={orderItem.inWishlist} onclick={addProductToWishlist}>
+                                                                <i class="bi bi-heart"></i>
+                                                                <i class="bi bi-heart-fill"></i>
+                                                            </button>
+                                                            <button class="wishlist-icon-added btn btn-link p-0 text-decoration-none text-dark cursor-pointer" data-productid={orderItem.orderProduct.Product2Id} if:true={orderItem.inWishlist} onclick={removeFromWishlist}>
+                                                                <!--i class="bi bi-heart"></i-->
+                                                                <i class="bi bi-heart-fill"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </template> 
+                                        </template>
+                                        <template if:false={hasProducts}>
+                                            <div class="border-bottom container mb-3 p-0" key={orderItem.orderProduct.Id}>
+                                                <div class="row gx-1 py-1 px-0">
+                                                    <p class="body-medium text-wrap">{label.noProducts}</p>
+                                                </div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                                
+                                <!-- RIGHT SIDE -->
+                                <div class="col-12 col-md-5 pb-3">
+                                    <div class="bg-white rounded p-4">
+                                        <div class="w-100 mb-3">
+                                            <p class="body-medium m-0">{label.orderDate}</p>
+                                            <p class="body-regular gray-700">{orderInfo.OrderDate}</p>
+                                        </div>                                        
+                                        <template if:true={orderInfo.HasReference}>
+                                            <div class="w-100 mb-3">
+                                                <p class="body-medium m-0">{label.orderReference}</p>
+                                                <p class="body-regular gray-700">{orderInfo.CustomerReference__c}</p>
+                                            </div>
+                                        </template>
+                                        <hr>
+                                        <div class="w-100 mb-3">
+                                            <p class="body-medium m-0">{label.outlet}</p>
+                                            <p class="body-regular gray-700">{orderInfo.Account.Name}</p>
+                                        </div>
+                                        <hr>
+                                        <div class="w-100 mb-3">
+                                            <p class="body-medium m-0">{label.shippingAddress}</p>
+                                            <p class="body-regular gray-700">{orderInfo.Street}, {orderInfo.PostalCode} {orderInfo.City}</p>
+                                        </div>
+                                        <hr>
+                                        <div class="w-100 mb-3">
+                                            <p class="body-medium m-0">{label.purchaser}</p>
+                                            <p class="body-regular gray-700">{orderInfo.CreatedBy.FirstName} {orderInfo.CreatedBy.LastName}</p>
+                                        </div>
+                                        <hr>
+                                        <!-- SUMMARY -->
+                                        <template  if:true={showPrices}>
+                                            <p class="body-medium">{label.summary}</p>
+                                            <p class="d-flex justify-content-between body-regular gray-700"><span>{label.subtotal}</span><span>{orderInfo.ProductCosts__c}&nbsp;{orderInfo.CurrencyIsoCode}</span></p>
+                                            <p class="d-flex justify-content-between body-regular gray-700"><span>{label.shipping}</span><span>{_shipping}</span></p>
+                                            <div class="border-top">
+                                                <p class="d-flex justify-content-between large-medium pt-3"><span>{label.total}</span><span>{orderInfo.TotalAmount}&nbsp;{orderInfo.CurrencyIsoCode}</span></p>
+                                            </div>
+                                            <hr>
+                                        </template>
+                                        <p class="large-medium">{label.needHelp}</p>
+                                        <p class="body-regular cursor-pointer" onclick={handleContactUs}><i class="bi bi-envelope"></i> {label.contactUs}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </template>
+    <c-webshop-contact-modal></c-webshop-contact-modal>
+</template>

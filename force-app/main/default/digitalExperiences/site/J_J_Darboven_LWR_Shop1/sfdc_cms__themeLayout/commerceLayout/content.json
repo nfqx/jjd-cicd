@@ -1,0 +1,63 @@
+{
+  "type" : "sfdc_cms__themeLayout",
+  "title" : "Commerce Layout",
+  "contentBody" : {
+    "component" : {
+      "attributes" : { },
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "dxpStyle" : {
+              "margin" : {
+                "bottom" : "100px",
+                "left" : "0px",
+                "right" : "0px",
+                "top" : "0px"
+              }
+            }
+          },
+          "definition" : "c:webshopCustomHeader",
+          "id" : "b2697733-5353-4d11-b7c2-43e83b185191",
+          "type" : "component"
+        } ],
+        "id" : "d95bbce4-6820-4646-840e-9e276b822713",
+        "name" : "header",
+        "title" : "Header",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "backgroundColor" : "rgb(88, 88, 90)",
+            "dxpStyle" : { }
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : { }
+              },
+              "definition" : "c:webshopFooter",
+              "id" : "d83e3c86-e4b2-4992-9615-0cf68b0cf24a",
+              "type" : "component"
+            } ],
+            "id" : "3e841b7c-bcc9-4d9b-b253-7656abe7263f",
+            "name" : "content",
+            "title" : "Content",
+            "type" : "region"
+          } ],
+          "customCssClasses" : "custom-footer",
+          "definition" : "commerce_builder:layoutFooter",
+          "id" : "9ef175b7-039c-4614-a2a7-4e5eb6fa8682",
+          "type" : "component"
+        } ],
+        "id" : "762dd541-5a40-40b1-a81f-0c06b293de5e",
+        "name" : "footer",
+        "title" : "Footer",
+        "type" : "region"
+      } ],
+      "definition" : "commerce:layoutSite",
+      "id" : "e5c7f297-ebad-497c-9592-32cc4a957c94",
+      "type" : "component"
+    }
+  },
+  "urlName" : "commerce-layout"
+}

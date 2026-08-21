@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RecipientAccount__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Who receives the money — for chains often the head office while the revenues arise in the branches. Discretion: subsidiaries should not see the parent&apos;s refund. [Sources: MN-001 Z.167, MN-003 Z.464, sap-research-notes.md]</description>
+    <inlineHelpText>Who receives the money — for chains often the head office while the revenues arise in the branches. Discretion: subsidiaries should not see the parent&apos;s refund.</inlineHelpText>
+    <label>Recipient Account</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Contract Positions</relationshipLabel>
+    <relationshipName>RefundRecipientPositions</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

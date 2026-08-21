@@ -1,0 +1,34 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Quote Summary List",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "attributes" : {
+          "dxpStyle" : {
+            "padding" : {
+              "bottom" : "0.5rem",
+              "left" : "0.75rem",
+              "right" : "0.75rem",
+              "top" : "0.5rem"
+            }
+          }
+        },
+        "id" : "d9e06034-d516-4fea-9deb-1e1364e3a570"
+      }, {
+        "attributes" : {
+          "dxpStyle" : {
+            "padding" : {
+              "bottom" : "0.5rem",
+              "left" : "0.75rem",
+              "right" : "0.75rem",
+              "top" : "0.5rem"
+            }
+          }
+        },
+        "id" : "eded8459-8ffb-4b90-bfc2-e0cc44748ddb"
+      } ]
+    }
+  },
+  "urlName" : "quote-summary-list"
+}

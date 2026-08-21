@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RefundTea__c</fullName>
+    <formula>ProductGroup__c = &quot;Tee&quot;
+
+&amp;&amp;
+
+( RefundDiscountInEuro__c&gt; 0 ||
+RefundDiscountInPercent__c&gt; 0 )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Refund - Tea</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

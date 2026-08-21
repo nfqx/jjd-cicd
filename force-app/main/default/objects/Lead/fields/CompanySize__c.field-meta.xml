@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CompanySize__c</fullName>
+    <label>Company Size</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Small hotel / Boutique hotel</fullName>
+                <default>false</default>
+                <label>Small hotel / Boutique hotel</label>
+            </value>
+            <value>
+                <fullName>Medium size hotel (20-50 rooms)</fullName>
+                <default>false</default>
+                <label>Medium size hotel (20-50 rooms)</label>
+            </value>
+            <value>
+                <fullName>Large hotel / Hotel chain</fullName>
+                <default>false</default>
+                <label>Large hotel / Hotel chain</label>
+            </value>
+            <value>
+                <fullName>Wellness hotel</fullName>
+                <default>false</default>
+                <label>Wellness hotel</label>
+            </value>
+            <value>
+                <fullName>Restaurant</fullName>
+                <default>false</default>
+                <label>Restaurant</label>
+            </value>
+            <value>
+                <fullName>Cafe / Bar</fullName>
+                <default>false</default>
+                <label>Cafe / Bar</label>
+            </value>
+            <value>
+                <fullName>Food stand</fullName>
+                <default>false</default>
+                <label>Food stand</label>
+            </value>
+            <value>
+                <fullName>Food truck / Street food</fullName>
+                <default>false</default>
+                <label>Food truck / Street food</label>
+            </value>
+            <value>
+                <fullName>Communal feeding</fullName>
+                <default>false</default>
+                <label>Communal feeding</label>
+            </value>
+            <value>
+                <fullName>System catering</fullName>
+                <default>false</default>
+                <label>System catering</label>
+            </value>
+            <value>
+                <fullName>Travel catering</fullName>
+                <default>false</default>
+                <label>Travel catering</label>
+            </value>
+            <value>
+                <fullName>Family owned</fullName>
+                <default>false</default>
+                <label>Family owned</label>
+            </value>
+            <value>
+                <fullName>Multiple branches</fullName>
+                <default>false</default>
+                <label>Multiple branches</label>
+            </value>
+            <value>
+                <fullName>Franchise</fullName>
+                <default>false</default>
+                <label>Franchise</label>
+            </value>
+            <value>
+                <fullName>Bakery chain</fullName>
+                <default>false</default>
+                <label>Bakery chain</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

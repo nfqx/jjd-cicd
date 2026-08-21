@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Interval --></label>
+    <name>Interval__c</name>
+    <picklistValues>
+        <masterLabel>1x</masterLabel>
+        <translation><!-- 1x --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>2x</masterLabel>
+        <translation><!-- 2x --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>3x</masterLabel>
+        <translation><!-- 3x --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>4x</masterLabel>
+        <translation><!-- 4x --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>5x</masterLabel>
+        <translation><!-- 5x --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>6x</masterLabel>
+        <translation><!-- 6x --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Type__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Case Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Answering machine</fullName>
+                <default>false</default>
+                <label>Answering machine</label>
+            </value>
+            <value>
+                <fullName>Complaint General</fullName>
+                <default>false</default>
+                <label>Complaint General</label>
+            </value>
+            <value>
+                <fullName>End customer inquiry</fullName>
+                <default>false</default>
+                <label>End customer inquiry</label>
+            </value>
+            <value>
+                <fullName>General inquiries</fullName>
+                <default>false</default>
+                <label>General inquiries</label>
+            </value>
+            <value>
+                <fullName>Image database</fullName>
+                <default>false</default>
+                <label>Image database</label>
+            </value>
+            <value>
+                <fullName>Lead</fullName>
+                <default>false</default>
+                <label>Lead</label>
+            </value>
+            <value>
+                <fullName>Logistics</fullName>
+                <default>false</default>
+                <label>Logistics</label>
+            </value>
+            <value>
+                <fullName>Machine</fullName>
+                <default>false</default>
+                <label>Machine</label>
+            </value>
+            <value>
+                <fullName>Master data</fullName>
+                <default>false</default>
+                <label>Master data</label>
+            </value>
+            <value>
+                <fullName>Master data change</fullName>
+                <default>false</default>
+                <label>Master data change</label>
+            </value>
+            <value>
+                <fullName>New customer creation</fullName>
+                <default>false</default>
+                <label>New customer creation</label>
+            </value>
+            <value>
+                <fullName>Offers</fullName>
+                <default>false</default>
+                <label>Offers</label>
+            </value>
+            <value>
+                <fullName>Order</fullName>
+                <default>false</default>
+                <label>Order</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>QS complaint</fullName>
+                <default>false</default>
+                <label>QS complaint</label>
+            </value>
+            <value>
+                <fullName>QS Reklamation</fullName>
+                <default>false</default>
+                <label>QS Reklamation</label>
+            </value>
+            <value>
+                <fullName>Spam</fullName>
+                <default>false</default>
+                <label>Spam</label>
+            </value>
+            <value>
+                <fullName>Training issue</fullName>
+                <default>false</default>
+                <label>Training issue</label>
+            </value>
+            <value>
+                <fullName>Trainings Issue</fullName>
+                <default>false</default>
+                <label>Trainings Issue</label>
+            </value>
+            <value>
+                <fullName>Unrated</fullName>
+                <default>false</default>
+                <label>Unrated</label>
+            </value>
+            <value>
+                <fullName>VIP customers</fullName>
+                <default>false</default>
+                <label>VIP customers</label>
+            </value>
+            <value>
+                <fullName>VIP Kunden</fullName>
+                <default>false</default>
+                <label>VIP Kunden</label>
+            </value>
+            <value>
+                <fullName>Webshop</fullName>
+                <default>false</default>
+                <label>Webshop</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

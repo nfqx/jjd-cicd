@@ -1,0 +1,22 @@
+<template>
+    <div class="container">
+        <div class="row">
+            <h3 class="heading-3">{label.contactUsTitle}</h3>
+            <p class="body-large gray-700">{label.contactUsSubtitle}</p>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md p-4 border rounded m-0 mb-3 me-md-3 mb-md-0" style="height:200px">
+                <i class="bi bi-envelope-fill mb-3" style="font-size:24px"></i>
+                <p class="components-badge-h2">{label.emailUs}</p>
+                <p class="body-regular">{label.emailUsSubtitle}</p>
+                <div class="link"><a class="link" href={contactEmailMailto}>{label.contactEmail}</a></div>
+            </div>
+            <div class="col-12 col-md p-4 border rounded m-0 mb-md-3" style="height:200px">
+                <i class="bi bi-telephone-fill mb-3" style="font-size:24px"></i>
+                <p class="components-badge-h2">{label.phoneUs}</p>
+                <p class="body-regular">{label.phoneUsSubtitle}</p>
+                <div class="link">{label.contactPhone}</div>
+            </div>
+        </div>
+    </div>
+</template>

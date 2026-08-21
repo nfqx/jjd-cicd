@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V2_Base_Discount_Tea_Range</fullName>
+    <active>false</active>
+    <description>Restricts base tea discount to a range of 0-100%.</description>
+    <errorConditionFormula>NOT(ISBLANK(	DiscountBaseDiscountTea__c)) &amp;&amp; 
+(	DiscountBaseDiscountTea__c &lt; 0 || 	DiscountBaseDiscountTea__c &gt; 100)</errorConditionFormula>
+    <errorMessage>Base discount for tea must be between 0% and 100%.</errorMessage>
+</ValidationRule>

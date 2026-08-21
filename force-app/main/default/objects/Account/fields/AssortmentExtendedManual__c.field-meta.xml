@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AssortmentExtendedManual__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>triggers Assortment Extended without being reset by trigger. CRM-1712</description>
+    <label>Assortment Extended Manual</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

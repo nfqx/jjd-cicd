@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V2_Base_Discount_Other_Range</fullName>
+    <active>false</active>
+    <description>Restricts base discount for miscellaneous to a range of 0-100%.</description>
+    <errorConditionFormula>NOT(ISBLANK(	DiscountBaseDiscountOther__c)) &amp;&amp; 
+(	DiscountBaseDiscountOther__c &lt; 0 ||
+		DiscountBaseDiscountOther__c &gt; 100)</errorConditionFormula>
+    <errorMessage>Base discount for miscellaneous items must be between 0% and 100%.</errorMessage>
+</ValidationRule>

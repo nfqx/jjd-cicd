@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidateInPrequalificationInfos</fullName>
+    <active>false</active>
+    <description>Validates basic contact fields before entering Prequalification.</description>
+    <errorConditionFormula>AND(ISCHANGED(Status), 
+				ISPICKVAL(Status, &apos;In Prequalification&apos;), 
+				OR(ISBLANK(Company), 
+							ISPICKVAL(Salutation, &apos;&apos;), 
+   	   ISBLANK(FirstName), 
+			   	ISBLANK(LastName), 
+				   ISBLANK(Email), 
+	AND(ISBLANK(Phone), ISBLANK(MobilePhone))))</errorConditionFormula>
+    <errorMessage>Mandatory information is missing for the status change. Please check fields:
+
+-Company
+-Salutation
+-First &amp; Last Name
+-Email
+-Phone or Mobile</errorMessage>
+</ValidationRule>

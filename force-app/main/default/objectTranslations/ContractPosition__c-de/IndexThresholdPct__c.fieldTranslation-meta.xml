@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Erst wenn sich der Markt um mindestens diesen Wert bewegt hat, wird der Preis überhaupt angefasst — kleine Schwankungen werden ausgesessen.</help>
+    <label>Anpassungsschwelle (%)</label>
+    <name>IndexThresholdPct__c</name>
+</CustomFieldTranslation>

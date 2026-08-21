@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Where Are Hot Beverages Served? --></label>
+    <name>WhereAreHotBeveragesServed__c</name>
+    <picklistValues>
+        <masterLabel>Breakfast area</masterLabel>
+        <translation><!-- Breakfast area --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Conference Rooms</masterLabel>
+        <translation><!-- Conference Rooms --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Counter/Bar</masterLabel>
+        <translation><!-- Counter/Bar --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer area</masterLabel>
+        <translation><!-- Customer area --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Employee area/Backoffice</masterLabel>
+        <translation><!-- Employee area/Backoffice --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reception/Lobby</masterLabel>
+        <translation><!-- Reception/Lobby --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Restaurant/Bar</masterLabel>
+        <translation><!-- Restaurant/Bar --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Room/Mini Bar</masterLabel>
+        <translation><!-- Room/Mini Bar --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Self service station</masterLabel>
+        <translation><!-- Self service station --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>To go offer</masterLabel>
+        <translation><!-- To go offer --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

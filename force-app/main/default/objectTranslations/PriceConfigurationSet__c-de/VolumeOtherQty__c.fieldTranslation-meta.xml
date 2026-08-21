@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Bei Top-Account: konditionsrelevante Eigen-Volumenmenge Sonstiges. Bei Chain-Member: nur statistischer Eigenwert (kein eigener Rabatt). --></help>
+    <label><!-- Volume Other Qty (Self) --></label>
+    <name>VolumeOtherQty__c</name>
+</CustomFieldTranslation>

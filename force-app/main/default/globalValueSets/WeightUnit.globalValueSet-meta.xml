@@ -1,0 +1,1995 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>KG</fullName>
+        <default>true</default>
+        <label>Kilogram</label>
+    </customValue>
+    <customValue>
+        <fullName>PAL</fullName>
+        <default>false</default>
+        <label>Pallet</label>
+    </customValue>
+    <customValue>
+        <fullName>KAR</fullName>
+        <default>false</default>
+        <label>Karton</label>
+    </customValue>
+    <customValue>
+        <fullName>G</fullName>
+        <default>false</default>
+        <label>Gramm</label>
+    </customValue>
+    <customValue>
+        <fullName>ST</fullName>
+        <default>false</default>
+        <label>Stück</label>
+    </customValue>
+    <customValue>
+        <fullName>%</fullName>
+        <default>false</default>
+        <label>Percent</label>
+    </customValue>
+    <customValue>
+        <fullName>%O</fullName>
+        <default>false</default>
+        <label>Per mille (Parts per thousand)</label>
+    </customValue>
+    <customValue>
+        <fullName>ONE</fullName>
+        <default>false</default>
+        <label>One</label>
+    </customValue>
+    <customValue>
+        <fullName>T</fullName>
+        <default>false</default>
+        <label>Days T</label>
+    </customValue>
+    <customValue>
+        <fullName>22S</fullName>
+        <default>false</default>
+        <label>Square millimeter per second</label>
+    </customValue>
+    <customValue>
+        <fullName>CMS</fullName>
+        <default>false</default>
+        <label>Centimeter per second</label>
+    </customValue>
+    <customValue>
+        <fullName>000</fullName>
+        <default>false</default>
+        <label>Meter per minute</label>
+    </customValue>
+    <customValue>
+        <fullName>µL</fullName>
+        <default>false</default>
+        <label>Microliter</label>
+    </customValue>
+    <customValue>
+        <fullName>µF</fullName>
+        <default>false</default>
+        <label>Microfarad</label>
+    </customValue>
+    <customValue>
+        <fullName>PF</fullName>
+        <default>false</default>
+        <label>Picofarad</label>
+    </customValue>
+    <customValue>
+        <fullName>A</fullName>
+        <default>false</default>
+        <label>Ampere</label>
+    </customValue>
+    <customValue>
+        <fullName>GOH</fullName>
+        <default>false</default>
+        <label>Gigaohm</label>
+    </customValue>
+    <customValue>
+        <fullName>GM3</fullName>
+        <default>false</default>
+        <label>Gram per cubic meter</label>
+    </customValue>
+    <customValue>
+        <fullName>ACR</fullName>
+        <default>false</default>
+        <label>Acre</label>
+    </customValue>
+    <customValue>
+        <fullName>KD3</fullName>
+        <default>false</default>
+        <label>Kilogram per cubic decimeter</label>
+    </customValue>
+    <customValue>
+        <fullName>KML</fullName>
+        <default>false</default>
+        <label>Kilomole</label>
+    </customValue>
+    <customValue>
+        <fullName>KN</fullName>
+        <default>false</default>
+        <label>Kilonewton</label>
+    </customValue>
+    <customValue>
+        <fullName>MN</fullName>
+        <default>false</default>
+        <label>Meganewton</label>
+    </customValue>
+    <customValue>
+        <fullName>MGO</fullName>
+        <default>false</default>
+        <label>Megaohm</label>
+    </customValue>
+    <customValue>
+        <fullName>MAV</fullName>
+        <default>false</default>
+        <label>Megavolt</label>
+    </customValue>
+    <customValue>
+        <fullName>µA</fullName>
+        <default>false</default>
+        <label>Microampere</label>
+    </customValue>
+    <customValue>
+        <fullName>TTE</fullName>
+        <default>false</default>
+        <label>Bag</label>
+    </customValue>
+    <customValue>
+        <fullName>BAR</fullName>
+        <default>false</default>
+        <label>Bar</label>
+    </customValue>
+    <customValue>
+        <fullName>BM2</fullName>
+        <default>false</default>
+        <label>Becquerel per square meter</label>
+    </customValue>
+    <customValue>
+        <fullName>BOE</fullName>
+        <default>false</default>
+        <label>Barrel of oil equivalent</label>
+    </customValue>
+    <customValue>
+        <fullName>FL</fullName>
+        <default>false</default>
+        <label>Bottle</label>
+    </customValue>
+    <customValue>
+        <fullName>BQ</fullName>
+        <default>false</default>
+        <label>Becquerel (1/second)</label>
+    </customValue>
+    <customValue>
+        <fullName>BQ2</fullName>
+        <default>false</default>
+        <label>Becquerel per square centimeter</label>
+    </customValue>
+    <customValue>
+        <fullName>BQG</fullName>
+        <default>false</default>
+        <label>Becquerel per gram</label>
+    </customValue>
+    <customValue>
+        <fullName>BQK</fullName>
+        <default>false</default>
+        <label>Becquerel per kilogram</label>
+    </customValue>
+    <customValue>
+        <fullName>BTU</fullName>
+        <default>false</default>
+        <label>British Thermal Unit</label>
+    </customValue>
+    <customValue>
+        <fullName>Bqm</fullName>
+        <default>false</default>
+        <label>Becquerel per cubic meter</label>
+    </customValue>
+    <customValue>
+        <fullName>MF</fullName>
+        <default>false</default>
+        <label>Millifarad</label>
+    </customValue>
+    <customValue>
+        <fullName>M/M</fullName>
+        <default>false</default>
+        <label>Mole per cubic meter</label>
+    </customValue>
+    <customValue>
+        <fullName>M/L</fullName>
+        <default>false</default>
+        <label>Mole per liter</label>
+    </customValue>
+    <customValue>
+        <fullName>NA</fullName>
+        <default>false</default>
+        <label>Nanoampere</label>
+    </customValue>
+    <customValue>
+        <fullName>C3S</fullName>
+        <default>false</default>
+        <label>Cubic centimeter per second</label>
+    </customValue>
+    <customValue>
+        <fullName>NF</fullName>
+        <default>false</default>
+        <label>Nanofarad</label>
+    </customValue>
+    <customValue>
+        <fullName>NMM</fullName>
+        <default>false</default>
+        <label>Newton per square millimeter</label>
+    </customValue>
+    <customValue>
+        <fullName>CCK</fullName>
+        <default>false</default>
+        <label>Cubic centimeter per kilogram</label>
+    </customValue>
+    <customValue>
+        <fullName>CM3</fullName>
+        <default>false</default>
+        <label>Cubic centimeter</label>
+    </customValue>
+    <customValue>
+        <fullName>CD</fullName>
+        <default>false</default>
+        <label>Candela</label>
+    </customValue>
+    <customValue>
+        <fullName>CD3</fullName>
+        <default>false</default>
+        <label>Cubic decimeter</label>
+    </customValue>
+    <customValue>
+        <fullName>CM</fullName>
+        <default>false</default>
+        <label>Centimeter</label>
+    </customValue>
+    <customValue>
+        <fullName>CM2</fullName>
+        <default>false</default>
+        <label>Square centimeter</label>
+    </customValue>
+    <customValue>
+        <fullName>CMH</fullName>
+        <default>false</default>
+        <label>Centimeter per hour</label>
+    </customValue>
+    <customValue>
+        <fullName>COP</fullName>
+        <default>false</default>
+        <label>Copies</label>
+    </customValue>
+    <customValue>
+        <fullName>KS</fullName>
+        <default>false</default>
+        <label>Box / Crate</label>
+    </customValue>
+    <customValue>
+        <fullName>CL</fullName>
+        <default>false</default>
+        <label>Centiliter</label>
+    </customValue>
+    <customValue>
+        <fullName>S/M</fullName>
+        <default>false</default>
+        <label>Siemens per meter</label>
+    </customValue>
+    <customValue>
+        <fullName>TOM</fullName>
+        <default>false</default>
+        <label>Metric ton per cubic meter</label>
+    </customValue>
+    <customValue>
+        <fullName>VA</fullName>
+        <default>false</default>
+        <label>Volt-ampere</label>
+    </customValue>
+    <customValue>
+        <fullName>JG</fullName>
+        <default>false</default>
+        <label>Joule per gram</label>
+    </customValue>
+    <customValue>
+        <fullName>dBA</fullName>
+        <default>false</default>
+        <label>Decibel (A-weighted)</label>
+    </customValue>
+    <customValue>
+        <fullName>dBC</fullName>
+        <default>false</default>
+        <label>Decibel (C-weighted)</label>
+    </customValue>
+    <customValue>
+        <fullName>DEG</fullName>
+        <default>false</default>
+        <label>Degree</label>
+    </customValue>
+    <customValue>
+        <fullName>DGP</fullName>
+        <default>false</default>
+        <label>ADR dangerous goods exemption points</label>
+    </customValue>
+    <customValue>
+        <fullName>DM</fullName>
+        <default>false</default>
+        <label>Decimeter</label>
+    </customValue>
+    <customValue>
+        <fullName>TR</fullName>
+        <default>false</default>
+        <label>Drum</label>
+    </customValue>
+    <customValue>
+        <fullName>DZ</fullName>
+        <default>false</default>
+        <label>Dozen</label>
+    </customValue>
+    <customValue>
+        <fullName>EE</fullName>
+        <default>false</default>
+        <label>Enzyme units</label>
+    </customValue>
+    <customValue>
+        <fullName>EML</fullName>
+        <default>false</default>
+        <label>Enzyme units per milliliter</label>
+    </customValue>
+    <customValue>
+        <fullName>F</fullName>
+        <default>false</default>
+        <label>Farad</label>
+    </customValue>
+    <customValue>
+        <fullName>°F</fullName>
+        <default>false</default>
+        <label>Fahrenheit</label>
+    </customValue>
+    <customValue>
+        <fullName>FT</fullName>
+        <default>false</default>
+        <label>Foot</label>
+    </customValue>
+    <customValue>
+        <fullName>FT2</fullName>
+        <default>false</default>
+        <label>Square foot</label>
+    </customValue>
+    <customValue>
+        <fullName>FT3</fullName>
+        <default>false</default>
+        <label>Cubic foot</label>
+    </customValue>
+    <customValue>
+        <fullName>G/L</fullName>
+        <default>false</default>
+        <label>Gram active ingredient per liter</label>
+    </customValue>
+    <customValue>
+        <fullName>GAU</fullName>
+        <default>false</default>
+        <label>Gram of gold</label>
+    </customValue>
+    <customValue>
+        <fullName>GBQ</fullName>
+        <default>false</default>
+        <label>Gigabecquerel</label>
+    </customValue>
+    <customValue>
+        <fullName>°C</fullName>
+        <default>false</default>
+        <label>Degree Celsius</label>
+    </customValue>
+    <customValue>
+        <fullName>GGL</fullName>
+        <default>false</default>
+        <label>Gram per US gallon</label>
+    </customValue>
+    <customValue>
+        <fullName>GHG</fullName>
+        <default>false</default>
+        <label>Gram per hectogram</label>
+    </customValue>
+    <customValue>
+        <fullName>GJ</fullName>
+        <default>false</default>
+        <label>Gigajoule</label>
+    </customValue>
+    <customValue>
+        <fullName>GJC</fullName>
+        <default>false</default>
+        <label>Gigajoule per kiloliter</label>
+    </customValue>
+    <customValue>
+        <fullName>GJT</fullName>
+        <default>false</default>
+        <label>Gigajoule per metric ton</label>
+    </customValue>
+    <customValue>
+        <fullName>GKG</fullName>
+        <default>false</default>
+        <label>Gram per kilogram</label>
+    </customValue>
+    <customValue>
+        <fullName>GKH</fullName>
+        <default>false</default>
+        <label>Gram per kilowatt-hour</label>
+    </customValue>
+    <customValue>
+        <fullName>GKM</fullName>
+        <default>false</default>
+        <label>Gram per kilometer</label>
+    </customValue>
+    <customValue>
+        <fullName>GLI</fullName>
+        <default>false</default>
+        <label>Gram per liter</label>
+    </customValue>
+    <customValue>
+        <fullName>GAL</fullName>
+        <default>false</default>
+        <label>US gallon</label>
+    </customValue>
+    <customValue>
+        <fullName>GPM</fullName>
+        <default>false</default>
+        <label>Gallons per mile (US)</label>
+    </customValue>
+    <customValue>
+        <fullName>GM</fullName>
+        <default>false</default>
+        <label>Gram per mole</label>
+    </customValue>
+    <customValue>
+        <fullName>GM2</fullName>
+        <default>false</default>
+        <label>Gram per square meter</label>
+    </customValue>
+    <customValue>
+        <fullName>GMB</fullName>
+        <default>false</default>
+        <label>Gram per million BTU</label>
+    </customValue>
+    <customValue>
+        <fullName>GPH</fullName>
+        <default>false</default>
+        <label>Gallons per hour (US)</label>
+    </customValue>
+    <customValue>
+        <fullName>µGQ</fullName>
+        <default>false</default>
+        <label>Microgram per cubic meter</label>
+    </customValue>
+    <customValue>
+        <fullName>GRO</fullName>
+        <default>false</default>
+        <label>Gross</label>
+    </customValue>
+    <customValue>
+        <fullName>GT</fullName>
+        <default>false</default>
+        <label>Gram per metric ton</label>
+    </customValue>
+    <customValue>
+        <fullName>GUT</fullName>
+        <default>false</default>
+        <label>Gram per US ton</label>
+    </customValue>
+    <customValue>
+        <fullName>GW</fullName>
+        <default>false</default>
+        <label>Gram active ingredient</label>
+    </customValue>
+    <customValue>
+        <fullName>H</fullName>
+        <default>false</default>
+        <label>Hours H</label>
+    </customValue>
+    <customValue>
+        <fullName>HA</fullName>
+        <default>false</default>
+        <label>Hectare</label>
+    </customValue>
+    <customValue>
+        <fullName>HL</fullName>
+        <default>false</default>
+        <label>Hectoliter</label>
+    </customValue>
+    <customValue>
+        <fullName>HPA</fullName>
+        <default>false</default>
+        <label>Hectopascal</label>
+    </customValue>
+    <customValue>
+        <fullName>HZ</fullName>
+        <default>false</default>
+        <label>Hertz (1/second)</label>
+    </customValue>
+    <customValue>
+        <fullName>&quot;</fullName>
+        <default>false</default>
+        <label>Inch</label>
+    </customValue>
+    <customValue>
+        <fullName>&quot;2</fullName>
+        <default>false</default>
+        <label>Square inch</label>
+    </customValue>
+    <customValue>
+        <fullName>&quot;3</fullName>
+        <default>false</default>
+        <label>Cubic inch</label>
+    </customValue>
+    <customValue>
+        <fullName>J</fullName>
+        <default>false</default>
+        <label>Joule</label>
+    </customValue>
+    <customValue>
+        <fullName>JHR</fullName>
+        <default>false</default>
+        <label>Years (annum)</label>
+    </customValue>
+    <customValue>
+        <fullName>JKG</fullName>
+        <default>false</default>
+        <label>Joule per kilogram</label>
+    </customValue>
+    <customValue>
+        <fullName>JKK</fullName>
+        <default>false</default>
+        <label>Specific heat capacity</label>
+    </customValue>
+    <customValue>
+        <fullName>JMO</fullName>
+        <default>false</default>
+        <label>Joule per mole</label>
+    </customValue>
+    <customValue>
+        <fullName>K</fullName>
+        <default>false</default>
+        <label>Kelvin</label>
+    </customValue>
+    <customValue>
+        <fullName>KA</fullName>
+        <default>false</default>
+        <label>Kiloampere</label>
+    </customValue>
+    <customValue>
+        <fullName>KAN</fullName>
+        <default>false</default>
+        <label>Canister / Jug</label>
+    </customValue>
+    <customValue>
+        <fullName>KB2</fullName>
+        <default>false</default>
+        <label>Kilobecquerel per square centimeter</label>
+    </customValue>
+    <customValue>
+        <fullName>KBG</fullName>
+        <default>false</default>
+        <label>Kilobecquerel per gram</label>
+    </customValue>
+    <customValue>
+        <fullName>KBK</fullName>
+        <default>false</default>
+        <label>Kilobecquerel per kilogram</label>
+    </customValue>
+    <customValue>
+        <fullName>KBQ</fullName>
+        <default>false</default>
+        <label>Kilobecquerel</label>
+    </customValue>
+    <customValue>
+        <fullName>KEL</fullName>
+        <default>false</default>
+        <label>Kilogram per kilowatt-hour</label>
+    </customValue>
+    <customValue>
+        <fullName>KGF</fullName>
+        <default>false</default>
+        <label>Kilogram per square meter</label>
+    </customValue>
+    <customValue>
+        <fullName>KGH</fullName>
+        <default>false</default>
+        <label>Kilogram per hour</label>
+    </customValue>
+    <customValue>
+        <fullName>KGJ</fullName>
+        <default>false</default>
+        <label>Kilogram per gigajoule</label>
+    </customValue>
+    <customValue>
+        <fullName>KGK</fullName>
+        <default>false</default>
+        <label>Kilogram per kilogram</label>
+    </customValue>
+    <customValue>
+        <fullName>KGM</fullName>
+        <default>false</default>
+        <label>Kilogram per mole</label>
+    </customValue>
+    <customValue>
+        <fullName>KGS</fullName>
+        <default>false</default>
+        <label>Kilogram per second</label>
+    </customValue>
+    <customValue>
+        <fullName>KGT</fullName>
+        <default>false</default>
+        <label>Kilogram per metric ton</label>
+    </customValue>
+    <customValue>
+        <fullName>KGV</fullName>
+        <default>false</default>
+        <label>Kilogram per cubic meter</label>
+    </customValue>
+    <customValue>
+        <fullName>KGW</fullName>
+        <default>false</default>
+        <label>Kilogram active ingredient</label>
+    </customValue>
+    <customValue>
+        <fullName>KHZ</fullName>
+        <default>false</default>
+        <label>Kilohertz</label>
+    </customValue>
+    <customValue>
+        <fullName>KI</fullName>
+        <default>false</default>
+        <label>Crate / Box</label>
+    </customValue>
+    <customValue>
+        <fullName>KJ</fullName>
+        <default>false</default>
+        <label>Kilojoule</label>
+    </customValue>
+    <customValue>
+        <fullName>KJG</fullName>
+        <default>false</default>
+        <label>Kilojoule per gram</label>
+    </customValue>
+    <customValue>
+        <fullName>KJK</fullName>
+        <default>false</default>
+        <label>Kilojoule per kilogram</label>
+    </customValue>
+    <customValue>
+        <fullName>KJM</fullName>
+        <default>false</default>
+        <label>Kilojoule per mole</label>
+    </customValue>
+    <customValue>
+        <fullName>KKW</fullName>
+        <default>false</default>
+        <label>Kilogram per megawatt-hour</label>
+    </customValue>
+    <customValue>
+        <fullName>KM</fullName>
+        <default>false</default>
+        <label>Kilometer</label>
+    </customValue>
+    <customValue>
+        <fullName>KM2</fullName>
+        <default>false</default>
+        <label>Square kilometer</label>
+    </customValue>
+    <customValue>
+        <fullName>KMH</fullName>
+        <default>false</default>
+        <label>Kilometer per hour</label>
+    </customValue>
+    <customValue>
+        <fullName>KMI</fullName>
+        <default>false</default>
+        <label>Kilogram per minute</label>
+    </customValue>
+    <customValue>
+        <fullName>KMK</fullName>
+        <default>false</default>
+        <label>Cubic meter per cubic meter</label>
+    </customValue>
+    <customValue>
+        <fullName>KMN</fullName>
+        <default>false</default>
+        <label>Kelvin per minute</label>
+    </customValue>
+    <customValue>
+        <fullName>KMS</fullName>
+        <default>false</default>
+        <label>Kelvin per second</label>
+    </customValue>
+    <customValue>
+        <fullName>KOH</fullName>
+        <default>false</default>
+        <label>Kiloohm</label>
+    </customValue>
+    <customValue>
+        <fullName>KPA</fullName>
+        <default>false</default>
+        <label>Kilopascal</label>
+    </customValue>
+    <customValue>
+        <fullName>KT</fullName>
+        <default>false</default>
+        <label>Kiloton</label>
+    </customValue>
+    <customValue>
+        <fullName>KV</fullName>
+        <default>false</default>
+        <label>Kilovolt</label>
+    </customValue>
+    <customValue>
+        <fullName>KVA</fullName>
+        <default>false</default>
+        <label>Kilovolt-ampere</label>
+    </customValue>
+    <customValue>
+        <fullName>KW</fullName>
+        <default>false</default>
+        <label>Kilowatt</label>
+    </customValue>
+    <customValue>
+        <fullName>KWH</fullName>
+        <default>false</default>
+        <label>Kilowatt-hour</label>
+    </customValue>
+    <customValue>
+        <fullName>KWK</fullName>
+        <default>false</default>
+        <label>kg active ingredient per kg</label>
+    </customValue>
+    <customValue>
+        <fullName>KWM</fullName>
+        <default>false</default>
+        <label>Kilowatt-hours per cubic meter</label>
+    </customValue>
+    <customValue>
+        <fullName>L</fullName>
+        <default>false</default>
+        <label>Liter</label>
+    </customValue>
+    <customValue>
+        <fullName>LMI</fullName>
+        <default>false</default>
+        <label>Liter per minute</label>
+    </customValue>
+    <customValue>
+        <fullName>LA</fullName>
+        <default>false</default>
+        <label>Liter of alcohol</label>
+    </customValue>
+    <customValue>
+        <fullName>LAG</fullName>
+        <default>false</default>
+        <label>Layers per pallet</label>
+    </customValue>
+    <customValue>
+        <fullName>LB</fullName>
+        <default>false</default>
+        <label>Pound</label>
+    </customValue>
+    <customValue>
+        <fullName>LBJ</fullName>
+        <default>false</default>
+        <label>Pound per year</label>
+    </customValue>
+    <customValue>
+        <fullName>LBm</fullName>
+        <default>false</default>
+        <label>Pound per month</label>
+    </customValue>
+    <customValue>
+        <fullName>LE</fullName>
+        <default>false</default>
+        <label>Power unit / Service unit</label>
+    </customValue>
+    <customValue>
+        <fullName>LHK</fullName>
+        <default>false</default>
+        <label>Liters per 100 km</label>
+    </customValue>
+    <customValue>
+        <fullName>002</fullName>
+        <default>false</default>
+        <label>Length in meters per unit</label>
+    </customValue>
+    <customValue>
+        <fullName>LMH</fullName>
+        <default>false</default>
+        <label>Pound per megawatt-hour</label>
+    </customValue>
+    <customValue>
+        <fullName>LMS</fullName>
+        <default>false</default>
+        <label>Liter per mole-second</label>
+    </customValue>
+    <customValue>
+        <fullName>LOL</fullName>
+        <default>false</default>
+        <label>Lot London</label>
+    </customValue>
+    <customValue>
+        <fullName>LPH</fullName>
+        <default>false</default>
+        <label>Liter per hour</label>
+    </customValue>
+    <customValue>
+        <fullName>M</fullName>
+        <default>false</default>
+        <label>Meter</label>
+    </customValue>
+    <customValue>
+        <fullName>M%</fullName>
+        <default>false</default>
+        <label>Mass percent</label>
+    </customValue>
+    <customValue>
+        <fullName>M%O</fullName>
+        <default>false</default>
+        <label>Mass per mille</label>
+    </customValue>
+    <customValue>
+        <fullName>M/S</fullName>
+        <default>false</default>
+        <label>Meter per second</label>
+    </customValue>
+    <customValue>
+        <fullName>M2</fullName>
+        <default>false</default>
+        <label>Square meter</label>
+    </customValue>
+    <customValue>
+        <fullName>M2C</fullName>
+        <default>false</default>
+        <label>Square meter per cubic centimeter</label>
+    </customValue>
+    <customValue>
+        <fullName>M2G</fullName>
+        <default>false</default>
+        <label>Square meter per gram</label>
+    </customValue>
+    <customValue>
+        <fullName>M-2</fullName>
+        <default>false</default>
+        <label>1 per square meter</label>
+    </customValue>
+    <customValue>
+        <fullName>M2K</fullName>
+        <default>false</default>
+        <label>Square meter per kilogram</label>
+    </customValue>
+    <customValue>
+        <fullName>M2M</fullName>
+        <default>false</default>
+        <label>Square meter per cubic meter</label>
+    </customValue>
+    <customValue>
+        <fullName>M2S</fullName>
+        <default>false</default>
+        <label>Square meter per second</label>
+    </customValue>
+    <customValue>
+        <fullName>M3</fullName>
+        <default>false</default>
+        <label>Cubic meter</label>
+    </customValue>
+    <customValue>
+        <fullName>M3D</fullName>
+        <default>false</default>
+        <label>Cubic meter per day</label>
+    </customValue>
+    <customValue>
+        <fullName>M3S</fullName>
+        <default>false</default>
+        <label>Cubic meter per second</label>
+    </customValue>
+    <customValue>
+        <fullName>MA</fullName>
+        <default>false</default>
+        <label>Milliampere</label>
+    </customValue>
+    <customValue>
+        <fullName>MB2</fullName>
+        <default>false</default>
+        <label>Megabecquerel per square centimeter</label>
+    </customValue>
+    <customValue>
+        <fullName>MBA</fullName>
+        <default>false</default>
+        <label>Millibar</label>
+    </customValue>
+    <customValue>
+        <fullName>MBG</fullName>
+        <default>false</default>
+        <label>Megabecquerel per gram</label>
+    </customValue>
+    <customValue>
+        <fullName>MBQ</fullName>
+        <default>false</default>
+        <label>Megabecquerel</label>
+    </customValue>
+    <customValue>
+        <fullName>MBZ</fullName>
+        <default>false</default>
+        <label>Meter-bar per second</label>
+    </customValue>
+    <customValue>
+        <fullName>MEJ</fullName>
+        <default>false</default>
+        <label>Megajoule</label>
+    </customValue>
+    <customValue>
+        <fullName>MG</fullName>
+        <default>false</default>
+        <label>Milligram</label>
+    </customValue>
+    <customValue>
+        <fullName>MGF</fullName>
+        <default>false</default>
+        <label>Milligram per square centimeter</label>
+    </customValue>
+    <customValue>
+        <fullName>MGG</fullName>
+        <default>false</default>
+        <label>Milligram per gram</label>
+    </customValue>
+    <customValue>
+        <fullName>MGJ</fullName>
+        <default>false</default>
+        <label>Gram per cubic meter per kilopascal</label>
+    </customValue>
+    <customValue>
+        <fullName>MGK</fullName>
+        <default>false</default>
+        <label>Milligram per kilogram</label>
+    </customValue>
+    <customValue>
+        <fullName>MGL</fullName>
+        <default>false</default>
+        <label>Milligram per liter</label>
+    </customValue>
+    <customValue>
+        <fullName>MGQ</fullName>
+        <default>false</default>
+        <label>Milligram per cubic meter</label>
+    </customValue>
+    <customValue>
+        <fullName>MGT</fullName>
+        <default>false</default>
+        <label>Milligram per metric ton</label>
+    </customValue>
+    <customValue>
+        <fullName>MGW</fullName>
+        <default>false</default>
+        <label>Megawatt</label>
+    </customValue>
+    <customValue>
+        <fullName>MGq_</fullName>
+        <default>false</default>
+        <label>Milligram per 10 cubic meters</label>
+    </customValue>
+    <customValue>
+        <fullName>MHZ</fullName>
+        <default>false</default>
+        <label>Megahertz</label>
+    </customValue>
+    <customValue>
+        <fullName>MI</fullName>
+        <default>false</default>
+        <label>Mile</label>
+    </customValue>
+    <customValue>
+        <fullName>MI2</fullName>
+        <default>false</default>
+        <label>Square mile</label>
+    </customValue>
+    <customValue>
+        <fullName>ml_</fullName>
+        <default>false</default>
+        <label>Milli-inch (Mil)</label>
+    </customValue>
+    <customValue>
+        <fullName>µM</fullName>
+        <default>false</default>
+        <label>Micrometer</label>
+    </customValue>
+    <customValue>
+        <fullName>MIN</fullName>
+        <default>false</default>
+        <label>Minutes</label>
+    </customValue>
+    <customValue>
+        <fullName>MIS</fullName>
+        <default>false</default>
+        <label>Microsecond</label>
+    </customValue>
+    <customValue>
+        <fullName>MIJ</fullName>
+        <default>false</default>
+        <label>Millijoule</label>
+    </customValue>
+    <customValue>
+        <fullName>MJK</fullName>
+        <default>false</default>
+        <label>Megajoule per kilogram</label>
+    </customValue>
+    <customValue>
+        <fullName>ML</fullName>
+        <default>false</default>
+        <label>Milliliter</label>
+    </customValue>
+    <customValue>
+        <fullName>MLK</fullName>
+        <default>false</default>
+        <label>Milliliter per cubic meter</label>
+    </customValue>
+    <customValue>
+        <fullName>MLW</fullName>
+        <default>false</default>
+        <label>Milliliter active ingredient</label>
+    </customValue>
+    <customValue>
+        <fullName>MM</fullName>
+        <default>false</default>
+        <label>Millimeter</label>
+    </customValue>
+    <customValue>
+        <fullName>MM2</fullName>
+        <default>false</default>
+        <label>Square millimeter</label>
+    </customValue>
+    <customValue>
+        <fullName>MMA</fullName>
+        <default>false</default>
+        <label>Millimeter per year</label>
+    </customValue>
+    <customValue>
+        <fullName>MMG</fullName>
+        <default>false</default>
+        <label>Millimole per gram</label>
+    </customValue>
+    <customValue>
+        <fullName>MMH</fullName>
+        <default>false</default>
+        <label>Millimeter per hour</label>
+    </customValue>
+    <customValue>
+        <fullName>MMK</fullName>
+        <default>false</default>
+        <label>Millimole per kilogram</label>
+    </customValue>
+    <customValue>
+        <fullName>MMO</fullName>
+        <default>false</default>
+        <label>Millimole</label>
+    </customValue>
+    <customValue>
+        <fullName>MM3</fullName>
+        <default>false</default>
+        <label>Cubic millimeter</label>
+    </customValue>
+    <customValue>
+        <fullName>MMS</fullName>
+        <default>false</default>
+        <label>Millimeter per second</label>
+    </customValue>
+    <customValue>
+        <fullName>MNM</fullName>
+        <default>false</default>
+        <label>Millinewton per meter</label>
+    </customValue>
+    <customValue>
+        <fullName>MOK</fullName>
+        <default>false</default>
+        <label>Mole per kilogram</label>
+    </customValue>
+    <customValue>
+        <fullName>MOL</fullName>
+        <default>false</default>
+        <label>Mole</label>
+    </customValue>
+    <customValue>
+        <fullName>MON</fullName>
+        <default>false</default>
+        <label>Months</label>
+    </customValue>
+    <customValue>
+        <fullName>MPA</fullName>
+        <default>false</default>
+        <label>Megapascal</label>
+    </customValue>
+    <customValue>
+        <fullName>MPB</fullName>
+        <default>false</default>
+        <label>Mass parts per billion</label>
+    </customValue>
+    <customValue>
+        <fullName>MPG</fullName>
+        <default>false</default>
+        <label>Miles per gallon (US)</label>
+    </customValue>
+    <customValue>
+        <fullName>MPM</fullName>
+        <default>false</default>
+        <label>Mass parts per million</label>
+    </customValue>
+    <customValue>
+        <fullName>MPS</fullName>
+        <default>false</default>
+        <label>Millipascal-second</label>
+    </customValue>
+    <customValue>
+        <fullName>MPT</fullName>
+        <default>false</default>
+        <label>Mass parts per trillion</label>
+    </customValue>
+    <customValue>
+        <fullName>MPZ</fullName>
+        <default>false</default>
+        <label>Meter-pascal per second</label>
+    </customValue>
+    <customValue>
+        <fullName>M3H</fullName>
+        <default>false</default>
+        <label>Cubic meter per hour</label>
+    </customValue>
+    <customValue>
+        <fullName>MS</fullName>
+        <default>false</default>
+        <label>Millisecond</label>
+    </customValue>
+    <customValue>
+        <fullName>MS2</fullName>
+        <default>false</default>
+        <label>Meter per second squared</label>
+    </customValue>
+    <customValue>
+        <fullName>MSH</fullName>
+        <default>false</default>
+        <label>Millisievert per hour</label>
+    </customValue>
+    <customValue>
+        <fullName>MTE</fullName>
+        <default>false</default>
+        <label>Millitesla</label>
+    </customValue>
+    <customValue>
+        <fullName>MTM</fullName>
+        <default>false</default>
+        <label>Million particles per cubic meter</label>
+    </customValue>
+    <customValue>
+        <fullName>M/H</fullName>
+        <default>false</default>
+        <label>Meter per hour</label>
+    </customValue>
+    <customValue>
+        <fullName>MTf</fullName>
+        <default>false</default>
+        <label>Million particles per cubic foot</label>
+    </customValue>
+    <customValue>
+        <fullName>MV</fullName>
+        <default>false</default>
+        <label>Millivolt</label>
+    </customValue>
+    <customValue>
+        <fullName>MVA</fullName>
+        <default>false</default>
+        <label>Megavolt-ampere</label>
+    </customValue>
+    <customValue>
+        <fullName>MW</fullName>
+        <default>false</default>
+        <label>Milliwatt</label>
+    </customValue>
+    <customValue>
+        <fullName>MWH</fullName>
+        <default>false</default>
+        <label>Megawatt-hour</label>
+    </customValue>
+    <customValue>
+        <fullName>N</fullName>
+        <default>false</default>
+        <label>Newton</label>
+    </customValue>
+    <customValue>
+        <fullName>NAM</fullName>
+        <default>false</default>
+        <label>Nanometer</label>
+    </customValue>
+    <customValue>
+        <fullName>NCH</fullName>
+        <default>false</default>
+        <label>Nanogram per square centimeter-hour</label>
+    </customValue>
+    <customValue>
+        <fullName>NGT</fullName>
+        <default>false</default>
+        <label>Nanogram per metric ton</label>
+    </customValue>
+    <customValue>
+        <fullName>NM</fullName>
+        <default>false</default>
+        <label>Newton per meter</label>
+    </customValue>
+    <customValue>
+        <fullName>NS</fullName>
+        <default>false</default>
+        <label>Nanosecond</label>
+    </customValue>
+    <customValue>
+        <fullName>NYL</fullName>
+        <default>false</default>
+        <label>Lot New York</label>
+    </customValue>
+    <customValue>
+        <fullName>OCM</fullName>
+        <default>false</default>
+        <label>Specific electrical resistance (Resistivity) OCM</label>
+    </customValue>
+    <customValue>
+        <fullName>OHM</fullName>
+        <default>false</default>
+        <label>Ohm</label>
+    </customValue>
+    <customValue>
+        <fullName>OM</fullName>
+        <default>false</default>
+        <label>Specific electrical resistance (Resistivity)</label>
+    </customValue>
+    <customValue>
+        <fullName>OZ</fullName>
+        <default>false</default>
+        <label>Ounce</label>
+    </customValue>
+    <customValue>
+        <fullName>FOZ</fullName>
+        <default>false</default>
+        <label>Fluid Ounce (US)</label>
+    </customValue>
+    <customValue>
+        <fullName>P</fullName>
+        <default>false</default>
+        <label>Points</label>
+    </customValue>
+    <customValue>
+        <fullName>PA</fullName>
+        <default>false</default>
+        <label>Pascal</label>
+    </customValue>
+    <customValue>
+        <fullName>PAA</fullName>
+        <default>false</default>
+        <label>Pair</label>
+    </customValue>
+    <customValue>
+        <fullName>PAK</fullName>
+        <default>false</default>
+        <label>Pack</label>
+    </customValue>
+    <customValue>
+        <fullName>PAS</fullName>
+        <default>false</default>
+        <label>Pascal-second</label>
+    </customValue>
+    <customValue>
+        <fullName>PCT</fullName>
+        <default>false</default>
+        <label>Group share / Corporate share</label>
+    </customValue>
+    <customValue>
+        <fullName>PDA</fullName>
+        <default>false</default>
+        <label>Consulting days</label>
+    </customValue>
+    <customValue>
+        <fullName>PMI</fullName>
+        <default>false</default>
+        <label>1 per minute (Per minute)</label>
+    </customValue>
+    <customValue>
+        <fullName>PMR</fullName>
+        <default>false</default>
+        <label>Permeation rate SI</label>
+    </customValue>
+    <customValue>
+        <fullName>PPB</fullName>
+        <default>false</default>
+        <label>Parts per billion</label>
+    </customValue>
+    <customValue>
+        <fullName>PPM</fullName>
+        <default>false</default>
+        <label>Parts per million</label>
+    </customValue>
+    <customValue>
+        <fullName>PPT</fullName>
+        <default>false</default>
+        <label>Parts per trillion</label>
+    </customValue>
+    <customValue>
+        <fullName>PRM</fullName>
+        <default>false</default>
+        <label>Permeation rate</label>
+    </customValue>
+    <customValue>
+        <fullName>PRS</fullName>
+        <default>false</default>
+        <label>Number of persons</label>
+    </customValue>
+    <customValue>
+        <fullName>PS</fullName>
+        <default>false</default>
+        <label>Picosecond</label>
+    </customValue>
+    <customValue>
+        <fullName>PSI</fullName>
+        <default>false</default>
+        <label>Pound per square inch (PSI)</label>
+    </customValue>
+    <customValue>
+        <fullName>PT</fullName>
+        <default>false</default>
+        <label>Pint (US liquid)</label>
+    </customValue>
+    <customValue>
+        <fullName>QT</fullName>
+        <default>false</default>
+        <label>Quart (US liquid)</label>
+    </customValue>
+    <customValue>
+        <fullName>RHO</fullName>
+        <default>false</default>
+        <label>Gram per cubic centimeter</label>
+    </customValue>
+    <customValue>
+        <fullName>RKG</fullName>
+        <default>false</default>
+        <label>Reciprocal kilogram</label>
+    </customValue>
+    <customValue>
+        <fullName>RMG</fullName>
+        <default>false</default>
+        <label>Reciprocal milligram</label>
+    </customValue>
+    <customValue>
+        <fullName>ROL</fullName>
+        <default>false</default>
+        <label>Roll</label>
+    </customValue>
+    <customValue>
+        <fullName>S</fullName>
+        <default>false</default>
+        <label>Seconds</label>
+    </customValue>
+    <customValue>
+        <fullName>S60</fullName>
+        <default>false</default>
+        <label>60 kg per bag</label>
+    </customValue>
+    <customValue>
+        <fullName>S69</fullName>
+        <default>false</default>
+        <label>69 kg per bag</label>
+    </customValue>
+    <customValue>
+        <fullName>S70</fullName>
+        <default>false</default>
+        <label>70 kg per bag</label>
+    </customValue>
+    <customValue>
+        <fullName>SP</fullName>
+        <default>false</default>
+        <label>Parking space / Storage space</label>
+    </customValue>
+    <customValue>
+        <fullName>STD</fullName>
+        <default>false</default>
+        <label>Hours</label>
+    </customValue>
+    <customValue>
+        <fullName>STP</fullName>
+        <default>false</default>
+        <label>Pieces per storage space</label>
+    </customValue>
+    <customValue>
+        <fullName>SVH</fullName>
+        <default>false</default>
+        <label>Sievert per hour</label>
+    </customValue>
+    <customValue>
+        <fullName>SVS</fullName>
+        <default>false</default>
+        <label>Sievert per second</label>
+    </customValue>
+    <customValue>
+        <fullName>TAG</fullName>
+        <default>false</default>
+        <label>Days</label>
+    </customValue>
+    <customValue>
+        <fullName>TBQ</fullName>
+        <default>false</default>
+        <label>Terabecquerel</label>
+    </customValue>
+    <customValue>
+        <fullName>TC3</fullName>
+        <default>false</default>
+        <label>1 per cubic centimeter</label>
+    </customValue>
+    <customValue>
+        <fullName>TCM</fullName>
+        <default>false</default>
+        <label>Particles per cubic centimeter</label>
+    </customValue>
+    <customValue>
+        <fullName>TES</fullName>
+        <default>false</default>
+        <label>Tesla</label>
+    </customValue>
+    <customValue>
+        <fullName>TEU</fullName>
+        <default>false</default>
+        <label>20-foot standard container unit (TEU)</label>
+    </customValue>
+    <customValue>
+        <fullName>TS</fullName>
+        <default>false</default>
+        <label>Thousand</label>
+    </customValue>
+    <customValue>
+        <fullName>tha</fullName>
+        <default>false</default>
+        <label>Metric ton per hectare</label>
+    </customValue>
+    <customValue>
+        <fullName>TJH</fullName>
+        <default>false</default>
+        <label>Metric ton per year</label>
+    </customValue>
+    <customValue>
+        <fullName>tkl</fullName>
+        <default>false</default>
+        <label>Metric ton per 1000 liters</label>
+    </customValue>
+    <customValue>
+        <fullName>TKT</fullName>
+        <default>false</default>
+        <label>Metric ton per kiloton</label>
+    </customValue>
+    <customValue>
+        <fullName>TM3</fullName>
+        <default>false</default>
+        <label>1 per cubic meter</label>
+    </customValue>
+    <customValue>
+        <fullName>TO</fullName>
+        <default>false</default>
+        <label>Metric ton</label>
+    </customValue>
+    <customValue>
+        <fullName>TON</fullName>
+        <default>false</default>
+        <label>US ton (Short ton)</label>
+    </customValue>
+    <customValue>
+        <fullName>TMO</fullName>
+        <default>false</default>
+        <label>Metric ton per month</label>
+    </customValue>
+    <customValue>
+        <fullName>ToS</fullName>
+        <default>false</default>
+        <label>Metric ton per hour</label>
+    </customValue>
+    <customValue>
+        <fullName>Tot</fullName>
+        <default>false</default>
+        <label>Metric ton per US ton</label>
+    </customValue>
+    <customValue>
+        <fullName>µGL</fullName>
+        <default>false</default>
+        <label>Microgram per liter</label>
+    </customValue>
+    <customValue>
+        <fullName>USH</fullName>
+        <default>false</default>
+        <label>Microsievert per hour</label>
+    </customValue>
+    <customValue>
+        <fullName>V</fullName>
+        <default>false</default>
+        <label>Volt</label>
+    </customValue>
+    <customValue>
+        <fullName>V%</fullName>
+        <default>false</default>
+        <label>Volume percent</label>
+    </customValue>
+    <customValue>
+        <fullName>V%O</fullName>
+        <default>false</default>
+        <label>Volume per mille</label>
+    </customValue>
+    <customValue>
+        <fullName>MSC</fullName>
+        <default>false</default>
+        <label>Microsiemens per centimeter</label>
+    </customValue>
+    <customValue>
+        <fullName>MPL</fullName>
+        <default>false</default>
+        <label>Millimole per liter</label>
+    </customValue>
+    <customValue>
+        <fullName>VAL</fullName>
+        <default>false</default>
+        <label>Recyclable material / Valuable material</label>
+    </customValue>
+    <customValue>
+        <fullName>VPB</fullName>
+        <default>false</default>
+        <label>Volume parts per billion</label>
+    </customValue>
+    <customValue>
+        <fullName>VPM</fullName>
+        <default>false</default>
+        <label>Volume parts per million</label>
+    </customValue>
+    <customValue>
+        <fullName>VPT</fullName>
+        <default>false</default>
+        <label>Volume parts per trillion</label>
+    </customValue>
+    <customValue>
+        <fullName>W</fullName>
+        <default>false</default>
+        <label>Watt</label>
+    </customValue>
+    <customValue>
+        <fullName>WCH</fullName>
+        <default>false</default>
+        <label>Weeks</label>
+    </customValue>
+    <customValue>
+        <fullName>WMK</fullName>
+        <default>false</default>
+        <label>Thermal conductivity</label>
+    </customValue>
+    <customValue>
+        <fullName>WMP</fullName>
+        <default>false</default>
+        <label>Watt per square meter per parts per billion</label>
+    </customValue>
+    <customValue>
+        <fullName>WTL</fullName>
+        <default>false</default>
+        <label>Evaporation rate</label>
+    </customValue>
+    <customValue>
+        <fullName>YD</fullName>
+        <default>false</default>
+        <label>Yard</label>
+    </customValue>
+    <customValue>
+        <fullName>YD2</fullName>
+        <default>false</default>
+        <label>Square yard</label>
+    </customValue>
+    <customValue>
+        <fullName>YD3</fullName>
+        <default>false</default>
+        <label>Cubic yard</label>
+    </customValue>
+    <customValue>
+        <fullName>Z60</fullName>
+        <default>false</default>
+        <label>Bag 60 kg</label>
+    </customValue>
+    <customValue>
+        <fullName>Z69</fullName>
+        <default>false</default>
+        <label>Bag 69 kg</label>
+    </customValue>
+    <customValue>
+        <fullName>Z70</fullName>
+        <default>false</default>
+        <label>Bag 70 kg</label>
+    </customValue>
+    <customValue>
+        <fullName>ZLL</fullName>
+        <default>false</default>
+        <label>Lot London ZLL</label>
+    </customValue>
+    <customValue>
+        <fullName>ZLN</fullName>
+        <default>false</default>
+        <label>Lot New York ZLN</label>
+    </customValue>
+    <customValue>
+        <fullName>bJH</fullName>
+        <default>false</default>
+        <label>British Thermal Unit per year</label>
+    </customValue>
+    <customValue>
+        <fullName>bMO</fullName>
+        <default>false</default>
+        <label>British Thermal Unit per month</label>
+    </customValue>
+    <customValue>
+        <fullName>bbl</fullName>
+        <default>false</default>
+        <label>British Thermal Unit per US barrel</label>
+    </customValue>
+    <customValue>
+        <fullName>bft</fullName>
+        <default>false</default>
+        <label>British Thermal Unit per cubic foot</label>
+    </customValue>
+    <customValue>
+        <fullName>bgl</fullName>
+        <default>false</default>
+        <label>British Thermal Unit per US gallon</label>
+    </customValue>
+    <customValue>
+        <fullName>bsc</fullName>
+        <default>false</default>
+        <label>BTU per standard cubic foot</label>
+    </customValue>
+    <customValue>
+        <fullName>btl</fullName>
+        <default>false</default>
+        <label>British Thermal Unit per US pound</label>
+    </customValue>
+    <customValue>
+        <fullName>fcm</fullName>
+        <default>false</default>
+        <label>Fibers per cubic centimeter</label>
+    </customValue>
+    <customValue>
+        <fullName>fm3</fullName>
+        <default>false</default>
+        <label>Fibers per cubic meter</label>
+    </customValue>
+    <customValue>
+        <fullName>fml</fullName>
+        <default>false</default>
+        <label>Fibers per milliliter</label>
+    </customValue>
+    <customValue>
+        <fullName>gGJ</fullName>
+        <default>false</default>
+        <label>Gram per gigajoule</label>
+    </customValue>
+    <customValue>
+        <fullName>gj3</fullName>
+        <default>false</default>
+        <label>Gigajoule per 1000 cubic meters</label>
+    </customValue>
+    <customValue>
+        <fullName>gjm</fullName>
+        <default>false</default>
+        <label>Gigajoule per cubic meter</label>
+    </customValue>
+    <customValue>
+        <fullName>gjt_</fullName>
+        <default>false</default>
+        <label>Gigajoule per US ton</label>
+    </customValue>
+    <customValue>
+        <fullName>GML</fullName>
+        <default>false</default>
+        <label>Gram per mile</label>
+    </customValue>
+    <customValue>
+        <fullName>jm3</fullName>
+        <default>false</default>
+        <label>Joule per cubic meter</label>
+    </customValue>
+    <customValue>
+        <fullName>kgb</fullName>
+        <default>false</default>
+        <label>Kilogram per US barrel</label>
+    </customValue>
+    <customValue>
+        <fullName>kgg</fullName>
+        <default>false</default>
+        <label>Kilogram per US gallon</label>
+    </customValue>
+    <customValue>
+        <fullName>kgj_</fullName>
+        <default>false</default>
+        <label>Kilogram per joule</label>
+    </customValue>
+    <customValue>
+        <fullName>KGL</fullName>
+        <default>false</default>
+        <label>Kilogram per mile</label>
+    </customValue>
+    <customValue>
+        <fullName>kgm_</fullName>
+        <default>false</default>
+        <label>Kilogram per million BTU</label>
+    </customValue>
+    <customValue>
+        <fullName>kgs_</fullName>
+        <default>false</default>
+        <label>Kilogram per standard cubic foot</label>
+    </customValue>
+    <customValue>
+        <fullName>kgt_</fullName>
+        <default>false</default>
+        <label>Kilogram per US ton</label>
+    </customValue>
+    <customValue>
+        <fullName>kml_</fullName>
+        <default>false</default>
+        <label>Kilogram per kilogram mole</label>
+    </customValue>
+    <customValue>
+        <fullName>KMT</fullName>
+        <default>false</default>
+        <label>Kilogram per meter</label>
+    </customValue>
+    <customValue>
+        <fullName>kwk_</fullName>
+        <default>false</default>
+        <label>Kilowatt-hour per kilogram</label>
+    </customValue>
+    <customValue>
+        <fullName>lbb</fullName>
+        <default>false</default>
+        <label>US pound per British Thermal Unit</label>
+    </customValue>
+    <customValue>
+        <fullName>lbg</fullName>
+        <default>false</default>
+        <label>US pound per US gallon</label>
+    </customValue>
+    <customValue>
+        <fullName>lbl</fullName>
+        <default>false</default>
+        <label>US pound per US pound mole</label>
+    </customValue>
+    <customValue>
+        <fullName>lbm_</fullName>
+        <default>false</default>
+        <label>US pound per million BTU</label>
+    </customValue>
+    <customValue>
+        <fullName>lbs</fullName>
+        <default>false</default>
+        <label>US pound per standard cubic foot</label>
+    </customValue>
+    <customValue>
+        <fullName>lbt</fullName>
+        <default>false</default>
+        <label>US pound per US ton</label>
+    </customValue>
+    <customValue>
+        <fullName>lcm</fullName>
+        <default>false</default>
+        <label>Liter per cubic centimeter</label>
+    </customValue>
+    <customValue>
+        <fullName>lhh</fullName>
+        <default>false</default>
+        <label>US pound per horsepower-hour</label>
+    </customValue>
+    <customValue>
+        <fullName>lht</fullName>
+        <default>false</default>
+        <label>US pound per 100,000 hp-hours</label>
+    </customValue>
+    <customValue>
+        <fullName>lmf</fullName>
+        <default>false</default>
+        <label>US pound per million cubic feet</label>
+    </customValue>
+    <customValue>
+        <fullName>lmg</fullName>
+        <default>false</default>
+        <label>US pound per million US gallons</label>
+    </customValue>
+    <customValue>
+        <fullName>ltb</fullName>
+        <default>false</default>
+        <label>US pound per 1000 US barrels</label>
+    </customValue>
+    <customValue>
+        <fullName>ltf</fullName>
+        <default>false</default>
+        <label>US pound per 1000 cubic feet</label>
+    </customValue>
+    <customValue>
+        <fullName>ltg</fullName>
+        <default>false</default>
+        <label>US pound per thousand US gallons</label>
+    </customValue>
+    <customValue>
+        <fullName>lth</fullName>
+        <default>false</default>
+        <label>US pound per 1000 horsepower-hours</label>
+    </customValue>
+    <customValue>
+        <fullName>mGJ_</fullName>
+        <default>false</default>
+        <label>Milligram per gigajoule</label>
+    </customValue>
+    <customValue>
+        <fullName>mHg</fullName>
+        <default>false</default>
+        <label>Millimeter of mercury (mmHg)</label>
+    </customValue>
+    <customValue>
+        <fullName>mbb</fullName>
+        <default>false</default>
+        <label>Million BTU per US barrel</label>
+    </customValue>
+    <customValue>
+        <fullName>mbg_</fullName>
+        <default>false</default>
+        <label>Million BTU per US gallon</label>
+    </customValue>
+    <customValue>
+        <fullName>mbk</fullName>
+        <default>false</default>
+        <label>Million BTU per kilogram</label>
+    </customValue>
+    <customValue>
+        <fullName>mbl</fullName>
+        <default>false</default>
+        <label>Million BTU per pound</label>
+    </customValue>
+    <customValue>
+        <fullName>mbm</fullName>
+        <default>false</default>
+        <label>MMBtu per million standard cubic feet</label>
+    </customValue>
+    <customValue>
+        <fullName>mbs</fullName>
+        <default>false</default>
+        <label>Million BTU per standard cubic foot</label>
+    </customValue>
+    <customValue>
+        <fullName>mbt</fullName>
+        <default>false</default>
+        <label>Million BTU per US ton</label>
+    </customValue>
+    <customValue>
+        <fullName>mjm</fullName>
+        <default>false</default>
+        <label>Megajoule per cubic meter</label>
+    </customValue>
+    <customValue>
+        <fullName>µGJ</fullName>
+        <default>false</default>
+        <label>Microgram per gigajoule</label>
+    </customValue>
+    <customValue>
+        <fullName>mmB</fullName>
+        <default>false</default>
+        <label>Million British Thermal Units</label>
+    </customValue>
+    <customValue>
+        <fullName>nGJ</fullName>
+        <default>false</default>
+        <label>Nanogram per gigajoule</label>
+    </customValue>
+    <customValue>
+        <fullName>nGQ</fullName>
+        <default>false</default>
+        <label>Nanogram per cubic meter</label>
+    </customValue>
+    <customValue>
+        <fullName>pGQ</fullName>
+        <default>false</default>
+        <label>Picogram per cubic meter</label>
+    </customValue>
+    <customValue>
+        <fullName>Sm3</fullName>
+        <default>false</default>
+        <label>Spores per cubic meter</label>
+    </customValue>
+    <customValue>
+        <fullName>sMb</fullName>
+        <default>false</default>
+        <label>Standard cubic feet per million US barrels</label>
+    </customValue>
+    <customValue>
+        <fullName>scf</fullName>
+        <default>false</default>
+        <label>Standard cubic foot</label>
+    </customValue>
+    <customValue>
+        <fullName>sch</fullName>
+        <default>false</default>
+        <label>Standard cubic foot per hour</label>
+    </customValue>
+    <customValue>
+        <fullName>scy</fullName>
+        <default>false</default>
+        <label>Standard cubic foot per year</label>
+    </customValue>
+    <customValue>
+        <fullName>tJH_</fullName>
+        <default>false</default>
+        <label>US ton per year</label>
+    </customValue>
+    <customValue>
+        <fullName>tMb</fullName>
+        <default>false</default>
+        <label>Metric ton per million US barrels</label>
+    </customValue>
+    <customValue>
+        <fullName>tMs</fullName>
+        <default>false</default>
+        <label>Metric ton per million standard cubic feet</label>
+    </customValue>
+    <customValue>
+        <fullName>tbl</fullName>
+        <default>false</default>
+        <label>Metric ton per US barrel</label>
+    </customValue>
+    <customValue>
+        <fullName>tbt</fullName>
+        <default>false</default>
+        <label>Metric ton per British Thermal Unit</label>
+    </customValue>
+    <customValue>
+        <fullName>tgl</fullName>
+        <default>false</default>
+        <label>US ton per US gallon</label>
+    </customValue>
+    <customValue>
+        <fullName>thm</fullName>
+        <default>false</default>
+        <label>Therm (EC)</label>
+    </customValue>
+    <customValue>
+        <fullName>tjl</fullName>
+        <default>false</default>
+        <label>Metric ton per joule</label>
+    </customValue>
+    <customValue>
+        <fullName>tm3_</fullName>
+        <default>false</default>
+        <label>Metric ton per 1000 cubic meters</label>
+    </customValue>
+    <customValue>
+        <fullName>tMO_</fullName>
+        <default>false</default>
+        <label>US ton per month</label>
+    </customValue>
+    <customValue>
+        <fullName>toS_</fullName>
+        <default>false</default>
+        <label>US ton per hour</label>
+    </customValue>
+    <customValue>
+        <fullName>tot_</fullName>
+        <default>false</default>
+        <label>US ton per US ton</label>
+    </customValue>
+    <customValue>
+        <fullName>tt</fullName>
+        <default>false</default>
+        <label>Metric ton per metric ton</label>
+    </customValue>
+    <customValue>
+        <fullName>ttj</fullName>
+        <default>false</default>
+        <label>Metric ton per terajoule</label>
+    </customValue>
+    <customValue>
+        <fullName>GRM</fullName>
+        <default>false</default>
+        <label>GRM</label>
+    </customValue>
+    <masterLabel>Weight Unit</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

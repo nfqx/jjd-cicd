@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>AF</fullName>
+        <default>true</default>
+        <label>Standard Outbound Freight</label>
+    </customValue>
+    <customValue>
+        <fullName>E1</fullName>
+        <default>false</default>
+        <label>Express Delivery 10 AM</label>
+    </customValue>
+    <customValue>
+        <fullName>E2</fullName>
+        <default>false</default>
+        <label>Express Delivery 12 PM</label>
+    </customValue>
+    <customValue>
+        <fullName>E3</fullName>
+        <default>false</default>
+        <label>Express Saturday 10 AM</label>
+    </customValue>
+    <customValue>
+        <fullName>E4</fullName>
+        <default>false</default>
+        <label>Express Saturday 12 PM</label>
+    </customValue>
+    <customValue>
+        <fullName>E5</fullName>
+        <default>false</default>
+        <label>International Express</label>
+    </customValue>
+    <customValue>
+        <fullName>EX</fullName>
+        <default>false</default>
+        <label>Export</label>
+    </customValue>
+    <customValue>
+        <fullName>KP</fullName>
+        <default>false</default>
+        <label>Standard Parcel (DHL)</label>
+    </customValue>
+    <customValue>
+        <fullName>LK</fullName>
+        <default>false</default>
+        <label>LB Machines</label>
+    </customValue>
+    <customValue>
+        <fullName>MA</fullName>
+        <default>false</default>
+        <label>Machines</label>
+    </customValue>
+    <customValue>
+        <fullName>KT</fullName>
+        <default>false</default>
+        <label>Customer Pickup (No TM)</label>
+    </customValue>
+    <customValue>
+        <fullName>SA</fullName>
+        <default>false</default>
+        <label>Customer Pickup</label>
+    </customValue>
+    <customValue>
+        <fullName>SP</fullName>
+        <default>false</default>
+        <label>Freight Forwarder Only</label>
+    </customValue>
+    <customValue>
+        <fullName>UF</fullName>
+        <default>false</default>
+        <label>Internal Transfer / Re-delivery</label>
+    </customValue>
+    <customValue>
+        <fullName>KS</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Standard Parcel (TNT)</label>
+    </customValue>
+    <masterLabel>Shipping Condition</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

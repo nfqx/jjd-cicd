@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>20</fullName>
+        <default>true</default>
+        <label>AHS</label>
+    </customValue>
+    <customValue>
+        <fullName>10</fullName>
+        <default>false</default>
+        <label>Handel</label>
+    </customValue>
+    <customValue>
+        <fullName>30</fullName>
+        <default>false</default>
+        <label>Export</label>
+    </customValue>
+    <customValue>
+        <fullName>40</fullName>
+        <default>false</default>
+        <label>40</label>
+    </customValue>
+    <customValue>
+        <fullName>80</fullName>
+        <default>false</default>
+        <label>80</label>
+    </customValue>
+    <customValue>
+        <fullName>70</fullName>
+        <default>false</default>
+        <label>70</label>
+    </customValue>
+    <customValue>
+        <fullName>50</fullName>
+        <default>false</default>
+        <label>50</label>
+    </customValue>
+    <customValue>
+        <fullName>60</fullName>
+        <default>false</default>
+        <label>60</label>
+    </customValue>
+    <masterLabel>Distribution Channel</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

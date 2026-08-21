@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Material Type --></label>
+    <name>MaterialType__c</name>
+    <picklistValues>
+        <masterLabel>ZDIN</masterLabel>
+        <translation><!-- ZDIN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZERM</masterLabel>
+        <translation><!-- ZERM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZESA</masterLabel>
+        <translation><!-- ZESA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZFER</masterLabel>
+        <translation><!-- ZFER --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZFET</masterLabel>
+        <translation><!-- ZFET --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZHAL</masterLabel>
+        <translation><!-- ZHAL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZHAT</masterLabel>
+        <translation><!-- ZHAT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZHAW</masterLabel>
+        <translation><!-- ZHAW --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZHAX</masterLabel>
+        <translation><!-- ZHAX --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZHIB</masterLabel>
+        <translation><!-- ZHIB --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZHWT</masterLabel>
+        <translation><!-- ZHWT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZKAF</masterLabel>
+        <translation><!-- ZKAF --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZKON</masterLabel>
+        <translation><!-- ZKON --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZLEI</masterLabel>
+        <translation><!-- ZLEI --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZNLG</masterLabel>
+        <translation><!-- ZNLG --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZROK</masterLabel>
+        <translation><!-- ZROK --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZROT</masterLabel>
+        <translation><!-- ZROT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZSRV</masterLabel>
+        <translation><!-- ZSRV --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZUBW</masterLabel>
+        <translation><!-- ZUBW --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZVP</masterLabel>
+        <translation><!-- ZVP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZWRB</masterLabel>
+        <translation><!-- ZWRB --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

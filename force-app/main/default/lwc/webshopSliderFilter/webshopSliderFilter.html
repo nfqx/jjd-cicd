@@ -1,0 +1,185 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <!--Filter & Sort on mobile-->
+    <div class="d-block d-lg-none my-1">
+        <hr class="filter">
+        <a class="body-regular text-decoration-none text-dark d-flex" onclick={handleOpenFilterModal}>
+            <i class="bi bi-filter"></i> {label.filterAndSort}
+        </a>
+        <hr class="filter">
+    </div>
+    <div class="filter-container d-none d-lg-block">
+        <div class="fixed-filter-header d-flex justify-content-between align-items-center py-2"> 
+            <p class="components-badge-h4 m-0">{label.filterAndSort}</p>
+            <p class="d-block d-lg-none p-0 m-0" onclick={handleCloseFilterModal}>
+                <i class="bi bi-x-lg"></i>
+            </p>
+            <p class="d-none d-lg-block body-small link text-decoration-none clear-all" if:true={hasData} onclick={handleClearAllFilters}>{label.clearAll}</p> 
+        </div>
+        <div class="filter-items">
+            <!--Loading placeholder slider-->
+            <template if:false={hasData}>
+                <template if:true={loaded}>
+                    {label.productsNoPrices}
+                </template>
+                <template if:false={loaded}>
+                    <div if:false={hasFilters}>
+                        <div class="filter-single-container">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="body-medium m-0 blurred-text">Blurred label</p>
+                                <p class="m-0">
+                                    <button 
+                                            class="btn btn-link text-dark" 
+                                        >
+                                    <i 
+                                        class="bi bi-chevron-up cursor-pointer pagination-icon" 
+                                        style="display:inline-block"
+                                    ></i>
+                                    </button>
+                                </p>
+                            </div>
+                            <div class="d-flex align-items-center" style="height:24px">
+                                <input type="checkbox" disabled/>&nbsp;<div class="gradient element"></div>
+                            </div>
+                            <div class="d-flex align-items-center" style="height:24px">
+                                <input type="checkbox" disabled/>&nbsp;<div class="gradient element"></div>
+                            </div>
+                            <div class="d-flex align-items-center" style="height:24px">
+                                <input type="checkbox" disabled/>&nbsp;<div class="gradient element"></div>
+                            </div>
+                            <hr class="filter">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="body-medium m-0 blurred-text">Label</p>
+                                <p class="m-0">
+                                    <button 
+                                            class="btn btn-link text-dark" 
+                                        >
+                                    <i 
+                                        class="bi bi-chevron-up cursor-pointer pagination-icon" 
+                                        style="display:inline-block"
+                                    ></i>
+                                    </button>
+                                </p>
+                            </div>
+                            <div class="d-flex align-items-center" style="height:24px">
+                                <input type="checkbox" disabled/>&nbsp;<div class="gradient element"></div>
+                            </div>
+                            <div class="d-flex align-items-center" style="height:24px">
+                                <input type="checkbox" disabled/>&nbsp;<div class="gradient element"></div>
+                            </div>
+                            <div class="d-flex align-items-center" style="height:24px">
+                                <input type="checkbox" disabled/>&nbsp;<div class="gradient element"></div>
+                            </div>
+                            <hr class="filter">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="body-medium m-0 blurred-text">Another blurred label</p>
+                                <p class="m-0">
+                                    <button 
+                                            class="btn btn-link text-dark" 
+                                        >
+                                    <i 
+                                        class="bi bi-chevron-up cursor-pointer pagination-icon" 
+                                        style="display:inline-block"
+                                    ></i>
+                                    </button>
+                                </p>
+                            </div>
+                            <div class="d-flex align-items-center" style="height:24px">
+                                <input type="checkbox" disabled/>&nbsp;<div class="gradient element"></div>
+                            </div>
+                            <div class="d-flex align-items-center" style="height:24px">
+                                <input type="checkbox" disabled/>&nbsp;<div class="gradient element"></div>
+                            </div>
+                            <div class="d-flex align-items-center" style="height:24px">
+                                <input type="checkbox" disabled/>&nbsp;<div class="gradient element"></div>
+                            </div>
+                            <hr class="filter">
+                        </div>
+                    </div>
+                </template>
+            </template>
+            <template for:each={filters} for:item="filter">
+                <template if:true={filter.show}>
+                    <div class="filter-single-container" key={filter.fieldApiName}>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <p class="body-medium m-0">{filter.label}</p>
+                            <p class="m-0">
+                                <button 
+                                    class="btn btn-link text-dark" 
+                                    data-key={filter.fieldApiName} 
+                                    onclick={handleToggleFilter}
+                                >
+                                    <i 
+                                        class="bi bi-chevron-down cursor-pointer pagination-icon" 
+                                        style="display:none; transition: transform 0.3s ease;"
+                                    ></i>
+                                    <i 
+                                        class="bi bi-chevron-up cursor-pointer pagination-icon" 
+                                        style="display:inline-block; transition: transform 0.3s ease;"
+                                    ></i>
+                                </button>
+                            </p>
+                        </div>
+                        <div class="body-regular" data-key={filter.fieldApiName}>
+                            <template if:true={filter.isMultiselectType}>
+                                <template for:each={filter.availableOptions} for:item="option">
+                                    <div key={option} class="d-block">
+                                        <input type="checkbox" data-value={option} data-fieldname={filter.fieldApiName} onchange={changeMultiselectFilter} />&nbsp;{option}
+                                    </div>
+                                </template>
+                            </template>
+                            <template if:true={filter.isCategoryType}>
+                                <template for:each={filter.availableCategoryOptions} for:item="option">
+                                    <div key={option.name} class="d-block">
+                                        <input type="checkbox" data-value={option.name} data-fieldname={filter.fieldApiName} onchange={changeCategoryFilter} />&nbsp;{option.name} ({option.count})
+                                    </div>
+                                    <template for:each={option.children} for:item="childOption">
+                                        <div key={childOption.name} class="d-block d-block-child">
+                                            <input type="checkbox" data-value={childOption.name} data-fieldname={filter.fieldApiName} onchange={changeCategoryFilter} />&nbsp;{childOption.name} ({childOption.count})
+                                        </div>
+                                        <template for:each={childOption.children} for:item="grandchildOption">
+                                            <div key={grandchildOption.name} class="d-block d-block-child d-block-grandchild" style="margin-left: 2rem;">
+                                                <input type="checkbox" data-value={grandchildOption.name} data-fieldname={filter.fieldApiName} onchange={changeCategoryFilter} />&nbsp;{grandchildOption.name} ({grandchildOption.count})
+                                            </div>
+                                            <template for:each={grandchildOption.children} for:item="greatGrandchildOption">
+                                                <div key={greatGrandchildOption.name} class="d-block d-block-child d-block-grandchild d-block-great-grandchild" style="margin-left: 4rem;">
+                                                    <input type="checkbox" data-value={greatGrandchildOption.name} data-fieldname={filter.fieldApiName} onchange={changeCategoryFilter} />&nbsp;{greatGrandchildOption.name} ({greatGrandchildOption.count})
+                                                </div>
+                                            </template>
+                                        </template>
+                                    </template>
+                                </template>
+                            </template>
+                            <template if:true={filter.isBooleanType}>
+                                <template for:each={filter.availableOptions} for:item="option">
+                                    <div key={option} class="d-block">
+                                        <input type="checkbox" data-value={option} data-fieldname={filter.fieldApiName} onchange={changeBoolFilter} />&nbsp;{option}
+                                    </div>
+                                </template>
+                            </template>
+                            
+                            <!--template if:true={showPrices}>
+                                <template if:true={filter.isPriceType}>
+                                    <template if:false={priceReset}>                            
+                                        <c-multi-slider class="form-range" min={filter.minVal} max={filter.maxVal} step="1" start={filter.minVal} end={filter.maxVal} data-fieldname={filter.fieldApiName} onchange={changePriceFilter}></c-multi-slider>
+                                    </template>
+                                </template>
+                            </template-->
+                            <template if:true={filter.isRangeType}>
+                                <template if:false={priceReset}>     
+                                    <c-multi-slider min={filter.minVal} max={filter.maxVal} step="1" start={filter.minVal} end={filter.maxVal} data-fieldname={filter.fieldApiName} onchange={changeRangeFilter}></c-multi-slider>
+                                </template>
+                            </template>
+                            <hr class="filter" key={filter.fieldApiName}>
+                        </div>
+                    </div>
+                </template>
+            </template>
+        </div>
+        <div class="d-block d-md-none d-flex justify-content-between gap-2">
+        <!--Filter buttons on mobile-->
+            <button class="btn btn-secondary w-50 clear-all" onclick={handleClearAllFilters}>{label.clearAll}</button>
+            <button class="btn btn-primary w-50" onclick={handleCloseFilterModal}>{label.showResults}</button>
+        </div>
+    </div>
+</template>

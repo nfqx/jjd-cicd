@@ -1,0 +1,29 @@
+.cursor-pointer {
+    cursor: pointer!important;
+}
+
+.special-discount-euro {
+    margin-left: .25rem; 
+    font-weight: bold; 
+    font-size: 1rem;
+    color: black;
+    padding:0!important; 
+    width: 10px; 
+    display:flex; 
+    align-items:center;
+}
+
+.special-discount-percent {
+    margin-left: .25rem; 
+    font-weight: bold; 
+    font-size: 1rem;
+    color: darkred;
+    padding:0!important; 
+    width: 10px; 
+    display:flex; 
+    align-items:center;
+}
+
+.highlighted-row {
+    background-color: #e6f0ff !important;
+}

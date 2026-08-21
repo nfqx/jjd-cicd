@@ -1,0 +1,17 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <div class="container mb-3">
+        <!--<div class="row d-flex justify-content-between align-items-start py-3">-->
+            <div class="static-slider-holder row d-flex align-items-start gx-3 gy-4" if:true={showSlider}>
+                <template for:each={sliderData} for:item="sliderItem">
+                    <div key={sliderItem.Id} class="col-6 col-md-3 d-flex flex-column">
+                        <div class="static-slider-image mb-3">
+                            <lightning-formatted-rich-text value={sliderItem.Image__c}></lightning-formatted-rich-text>
+                        </div>
+                        <p class="components-badge-h3">{sliderItem.Text__c}</p>
+                    </div>
+                </template>
+            </div>
+        <!--</div>-->         
+    </div>
+</template>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Excluded__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This causation party is excluded from the calculation (e.g. removing individual chain members). [Sources: D-02, MN-003 Z.452-464]</description>
+    <inlineHelpText>This causation party is excluded from the calculation (e.g. removing individual chain members).</inlineHelpText>
+    <label>Excluded</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

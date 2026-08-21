@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TargetAccountName__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;/&quot;&amp; Target.Id , Target.Name &amp;&quot; (#&quot;&amp; Target.AccountNumber &amp;&quot;)&quot; ,&quot;_blank&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Target Account Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

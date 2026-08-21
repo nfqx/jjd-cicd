@@ -1,0 +1,129 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <div class="background"></div>
+    <div class="d-flex justify-content-center align-items-center">
+        <div if:true={isLoading} class="spinner-border text-black-50" role="status"></div>
+    </div>
+    <!--lightning-spinner if:true={isLoading} alternative-text="Loading" size="small"></lightning-spinner-->
+        <template if:false={isLoading}>
+        <div class="sidebar d-none d-lg-block">
+            <c-webshop-my-area-sidebar active-element="My_Account__c"></c-webshop-my-area-sidebar>
+        </div>
+        <div class="container-fluid content-zone"> 
+            <div class="row">
+                <!--div class="col-auto d-none d-lg-block">
+                
+                </div-->
+                <div class="col-12 col-lg-11 p-0 px-md-4"> 
+                    <div class="content-area">
+                        <c-webshop-reorder-badge if:true={showBadge}></c-webshop-reorder-badge>
+                        <c-webshop-reorder-error-badge if:true={showErrorBadge} products={errorRecords}></c-webshop-reorder-error-badge>
+                        <p class="heading-2">{greeting}, {firstName}!</p>
+                        <!-- Order stats -->
+                        <template if:true={hasOrders}>
+                            <div class="col-12 w-100 d-flex flex-row flex-wrap justify-content-between gap-3 mb-4">
+                                <div class="col-12 col-md bg-white rounded py-2 px-3">
+                                    <p class="body-medium gray-700">{label.orders}</p>
+                                    <p class="components-badge-h1">{stats.orderCount}</p>
+                                </div>
+                                <div class="col-12 col-md bg-white rounded py-2 px-3">
+                                    <p class="body-medium gray-700">{label.totalItemsOrdered}</p>
+                                    <p class="components-badge-h1">{stats.individualItemCount}</p>
+                                </div>
+                                <!--div class="col-12 col-md bg-white rounded py-2 px-3">
+                                    <p class="body-medium gray-700">{label.ordersInProgress}</p>
+                                    <p class="components-badge-h1">{stats.ordersInProgress}</p>
+                                </div-->
+                            </div>
+                        </template>
+                        <template if:false={hasOrders}>
+                            <div class="col-12 w-100">
+                                <div class="bg-white rounded p-4">
+                                    <div class="col">
+                                        <p class="heading-4">{label.noOrderTitle}</p>
+                                        <p class="body-regular gray-700">{label.noOrderSubTitle}</p>
+                                        <button class="btn btn-primary" onclick={handleClickHome}>{label.shopNow}</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                        <!-- Outlets -->
+                        <div class="col-12 w-100 mb-4">
+                            <div class="bg-white rounded p-4 d-flex flex-wrap justify-content-between">
+                                <p class="col-12 components-badge-h4"><span class="border rounded p-1 d-inline-block"><i class="bi bi-buildings"></i></span>  {label.myOutlets}</p>
+                                <template for:each={outlets} for:item="outlet">
+                                    <div key={outlet.Id} class="col-12 col-md-6 p-1">
+                                        <div data-outlet={outlet.Id} onclick={handleClickOutlet} class="component h-100 p-3 d-flex justify-content-between align-items-start cursor-pointer">
+                                            <div class="d-flex flex-column">
+                                                <p class="large-medium m-0">
+                                                    {outlet.AccountNumber} {outlet.Name} 
+                                                    <span if:false={outlet.isActive} class="bg-primary-subtle border border-primary rounded text-dark components-badge-h6 p-1 ms-2" data-recordid={outlet.Id} data-recordname={outlet.Name} onclick={handleSwitchAccount}>{label.switchAccount}</span>
+                                                    <span if:true={outlet.isActive} class="bg-primary-subtle border border-primary rounded text-dark components-badge-h6 p-1 ms-2">{label.active}</span>
+                                                </p>
+                                                <p class="body-regular gray-700 m-0">{outlet.Street}, {outlet.PostalCode} {outlet.City}</p>
+                                            </div>
+                                            <i class="bi bi-arrow-right"></i>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                        <!-- Orders -->
+                        <div class="col-12 w-100 mb-4">
+                            <div class="bg-white rounded p-4">
+                            <div class="col-12 d-flex flex-row justify-content-between align-items-center p-0 mb-3">
+                                <p class="components-badge-h4">
+                                    <span class="border rounded p-1 d-inline-block"><i class="bi bi-arrow-counterclockwise"></i></span>  {label.recentOrders}
+                                </p>
+                                <template if:true={hasOrders}>
+                                    <button class="btn btn-outline-dark body-small" onclick={handleViewAllOrders}>{label.viewAllOrders}</button>
+                                </template>
+                            </div>
+                            <template if:true={hasOrders}>
+                                    <template for:each={orders} for:item="order">
+                                        <div key={order.Id} class="col-12 d-flex flex-row flex-wrap justify-content-between component p-3 mb-3">
+                                            <div class="col-12 col-md-2">
+                                                <p class="d-flex flex-column m-0"><span class="body-small gray-700">{label.orderNumber}:</span> <span class="body-medium">{order.OrderNumber}</span></p>
+                                                <span if:true={order.isCancelled} class="bg-primary-subtle border border-primary rounded text-dark components-badge-h6 p-1 ms-2">{label.cancelled}</span>
+                                            </div>
+                                            <div class="col-12 col-md-2">
+                                                <p class="d-flex flex-column m-0">
+                                                    <span class="body-small gray-700">{label.orderDate}:</span><span class="body-medium">{order.OrderDate}</span>
+                                                </p>
+                                            </div>
+                                            <div class="col-12 col-md-2">
+                                                <p class="d-flex flex-column m-0">
+                                                    <span class="body-small gray-700">{label.outlet}</span><span class="body-medium">{order.Account.Name}</span>
+                                                </p>
+                                            </div>
+                                            <div class="col-12 col-md-2">
+                                                <p class="d-flex flex-column m-0" if:true={showPrices}>
+                                                    <span class="body-small gray-700">{label.totalAmount}:</span><span class="body-medium">{order.TotalAmount}&nbsp;{order.CurrencyIsoCode}</span>
+                                                </p>
+                                            </div>
+                                            <div class="col-12 col-md-4 d-flex flex-wrap m-0">
+                                                <div class="col-12 col-md-6 p-0 p-md-1 mt-2 mt-md-0">
+                                                    <button class="btn btn-secondary w-100 m-0 mx-md-1" onclick={handleClickOrder} data-orderid={order.Id}>{label.viewDetails}</button>
+                                                </div>
+                                                <div class="col-12 col-md-6 p-0 p-md-1 mt-2 mt-md-0">
+                                                    <button class="btn btn-primary w-100 m-0 mx-md-1" onclick={handleReorder} data-orderid={order.Id}>{label.orderAgain}</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </template>
+                            </template>
+                            <template if:false={hasOrders}>
+                                <div class="row">
+                                    <div class="col bg-white rounded p-4">
+                                        <p>{label.noOrders}</p>
+                                    </div>
+                                </div>
+                            </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

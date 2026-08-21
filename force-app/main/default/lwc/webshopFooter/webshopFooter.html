@@ -1,0 +1,55 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <div class="container footer pt-3 pb-3 pt-md-5 pb-md-5">
+        <div class="row g-3">
+            <div class="col-12 col-md-3 d-flex justify-content-start mb-3 mb-md-0">
+                <div class="footer-logo">
+                  <img style="max-height: 72px;" src={jjdLogo} alt="J.J. Darboven Logo" />
+                </div>
+            </div>
+            <!-- Contact Column -->
+            <div class="col-12 col-md-3">
+                <h3 class="mb-3 label-medium-uppercase gray-500">{label.contact}</h3>
+                <p class="mb-1 body-regular text-light">{label.contactPhone}</p>
+                <p class="body-regular text-light"><a class="text-light" href={contactEmailMailto}>{label.contactEmail}</a></p>
+            
+            </div>
+            <!-- Credentials Icons Column -->
+            <div class="col-12 col-md-3"> 
+                <template if:true={hasCertifiedIcons}>
+                    <h3 class="mb-3 label-medium-uppercase gray-500">{label.weAreCertified}</h3>
+                    <div class="row">
+                        <template for:each={certifiedIcons} for:item="certifiedIcon">
+                            <div class="footer-certified-icon" key={certifiedIcon.Id}>
+                                <a href={certifiedIcon.Target__c} target="_blank"><lightning-formatted-rich-text value={certifiedIcon.Image__c}></lightning-formatted-rich-text></a>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+            </div>
+            <!-- Social Icons Column -->
+            <div class="col-12 col-md-3">
+                <template if:true={hasSocialIcons}>
+                    <h3 class="mb-3 label-medium-uppercase gray-500">{label.socialMedia}</h3>
+                    <div class="d-flex flex-wrap gap-3 align-items-center">
+                        <template for:each={socialIcons} for:item="socialIcon">
+                            <div class="footer-social-icon" key={socialIcon.Id}>
+                                <a href={socialIcon.Target__c} target="_blank"><lightning-formatted-rich-text value={socialIcon.Image__c}></lightning-formatted-rich-text></a>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+            </div>
+        </div>
+        <hr>
+        <!-- Footer Links Row -->
+        <div class="row g-4 align-items-center justify-content-center justify-content-md-start text-start text-md-start">
+            <span class="col-12 col-md-auto body-regular text-light">© {year} Darboven. {label.allRightsReserved}</span>
+            <a href="#" class="col-6 col-md-auto body-regular text-light" onclick={handleRedirectPage} data-pagename="privacyPolicy__c"><u>{label.privacyPolicy}</u></a>
+            <a href="#" class="col-6 col-md-auto body-regular text-light" onclick={handleRedirectPage} data-pagename="termsOfService__c"><u>{label.termsOfService}</u></a>
+            <a href="#" class="col-6 col-md-auto body-regular text-light" onclick={handleRedirectPage} data-pagename="cookiesSettings__c"><u>{label.cookieSettings}</u></a>
+            <a href="#" class="col-6 col-md-auto body-regular text-light" onclick={handleRedirectPage} data-pagename="legal__c"><u>{label.legalInformation}</u></a>
+        </div>
+    </div>
+    <c-webshop-contact-modal></c-webshop-contact-modal>
+</template>

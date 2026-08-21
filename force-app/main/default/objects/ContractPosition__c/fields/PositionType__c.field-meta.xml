@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PositionType__c</fullName>
+    <description>THE controlling field of the position: defines whether this is index conditioning, a refund, a marketing subsidy (WKZ) or a machine agreement — and shows the matching field sections (Dynamic Forms). [Sources: MN-005 Z.146, C-09]</description>
+    <inlineHelpText>THE controlling field of the position: defines whether this is index conditioning, a refund, a marketing subsidy (WKZ) or a machine agreement — and shows the matching field sections (Dynamic Forms).</inlineHelpText>
+    <label>Position Type</label>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Index</fullName>
+                <default>false</default>
+                <label>Index</label>
+            </value>
+            <value>
+                <fullName>Refund</fullName>
+                <default>false</default>
+                <label>Refund</label>
+            </value>
+            <value>
+                <fullName>MarketingSubsidy</fullName>
+                <default>false</default>
+                <label>Marketing Subsidy (WKZ)</label>
+            </value>
+            <value>
+                <fullName>Machine</fullName>
+                <default>false</default>
+                <label>Machine</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

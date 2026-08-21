@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Worauf sich die Rückvergütung bezieht: auf den Umsatz in Euro oder auf die abgenommene Menge in Kilogramm. Tee ist immer umsatzbezogen.</help>
+    <label>RV-Bezug</label>
+    <name>RefundBasis__c</name>
+    <picklistValues>
+        <masterLabel>Absatz (mengenbezogen, kg)</masterLabel>
+        <translation><!-- Absatz (mengenbezogen, kg) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Umsatz (umsatzbezogen)</masterLabel>
+        <translation><!-- Umsatz (umsatzbezogen) --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

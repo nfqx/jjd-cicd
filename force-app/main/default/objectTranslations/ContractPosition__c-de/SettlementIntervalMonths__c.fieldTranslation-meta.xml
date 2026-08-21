@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The settlement rhythm as a final number of months — our smallest unit. The middleware translates the SAP rhythm (count + unit, e.g. 01Q) into months: 01M → 1, 01Q/01V → 3, 01H → 6, 01J → 12, 02M → 2 etc. --></help>
+    <label><!-- Settlement Interval (months) --></label>
+    <name>SettlementIntervalMonths__c</name>
+</CustomFieldTranslation>

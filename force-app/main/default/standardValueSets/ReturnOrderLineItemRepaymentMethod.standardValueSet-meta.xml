@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Ersetzen</fullName>
+        <default>true</default>
+        <label>Ersetzen</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Rückerstattung</fullName>
+        <default>false</default>
+        <label>Rückerstattung</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Gutschrift</fullName>
+        <default>false</default>
+        <label>Gutschrift</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Rückgabe</fullName>
+        <default>false</default>
+        <label>Rückgabe</label>
+    </standardValue>
+</StandardValueSet>

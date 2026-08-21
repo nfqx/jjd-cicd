@@ -1,0 +1,70 @@
+<template>
+    <div class="slds-m-aroung_small slds-align_absolute-center">
+        <lightning-spinner if:true={isLoading} alternative-text="Loading" size="small"></lightning-spinner>
+        <div slot="actions">
+            <lightning-button
+                variant="neutral"
+                title={label.first}
+                label={label.first}
+                class="slds-float_left"
+                icon-name="utility:chevronleft"
+                icon-position="left"
+                onclick={handleClick}
+                >
+            </lightning-button>
+            &nbsp;
+            <lightning-button
+                variant="neutral"
+                title={label.previous}
+                class="slds-float_left"
+                label={label.previous}
+                icon-name="utility:chevronleft"
+                icon-position="left"
+                onclick={handleClick}
+                >
+            </lightning-button>
+            <template if:true={pagelinks}>
+                <lightning-button-group>
+                    <template for:each={pagelinks} for:item="page">
+                    <lightning-button
+                        key={page}
+                        label={page}
+                        onclick={handlePage}
+                    ></lightning-button>
+                    </template>
+                </lightning-button-group>
+            </template>
+            <lightning-combobox
+                class="slds-float_right"
+                dropdown-alignment="bottom-right"
+                style="margin: -1.125rem 0 0 1rem;"
+                if:true={showNumberRecords}
+                onchange={handleChangeNumberRecords}
+                placeholder={label.number}
+                value={recordsPerPage}
+                options={numberOptions}>
+            </lightning-combobox>
+            <lightning-button
+                variant="neutral"
+                title={label.last}
+                class="slds-float_right"
+                label={label.last}
+                icon-name="utility:chevronright"
+                icon-position="right"
+                onclick={handleClick}
+                >
+            </lightning-button>
+            &nbsp;
+            <lightning-button
+                variant="neutral"
+                title={label.next}
+                class="slds-float_right"
+                label={label.next}
+                icon-name="utility:chevronright"
+                icon-position="right"
+                onclick={handleClick}
+                >
+            </lightning-button>
+        </div>
+    </div>
+</template>

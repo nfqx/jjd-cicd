@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Billing Block Reason (AHS) --></label>
+    <name>BillingBlockReasonAHS__c</name>
+    <picklistValues>
+        <masterLabel>Check Credit Note</masterLabel>
+        <translation>Gutschrift prüfen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Check Delivery Terms</masterLabel>
+        <translation>Lieferbeding. prüfen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Check Direct Debit</masterLabel>
+        <translation>Lastschrift prüfen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Check Exchange Rate</masterLabel>
+        <translation>Tageskurs prüfen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Check Payment Terms</masterLabel>
+        <translation>Zahlungsbed. prüfen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coverage Quantity Below Order Quantity</masterLabel>
+        <translation>Eindck.Menge&lt;Belgm.</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coverage Without End Date</masterLabel>
+        <translation>Eindeck. o. Stichtag</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coverage Without Fixed Rate</masterLabel>
+        <translation>Eindeck. o. Festkurs</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Exchange Rate Conversion Error</masterLabel>
+        <translation>Fehler Kursumrechn.</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Incomplete Pricing</masterLabel>
+        <translation>Preise unvollständig</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Missing Base Key</masterLabel>
+        <translation>Basisschlüssel fehlt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Missing Calculation</masterLabel>
+        <translation>Kalkulation fehlt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Missing Feedback</masterLabel>
+        <translation>Rückmeldung fehlt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Missing Purchase Exchange Rate</masterLabel>
+        <translation>Bestellkurs fehlt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NE Note Determination Error</masterLabel>
+        <translation>NE Notizfind. Fehler</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Navision Block</masterLabel>
+        <translation>Sperre Navision</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Goods Issue/Goods Receipt Posting</masterLabel>
+        <translation>keine WA/WE-Buchung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Order Quantity Below Ordered Quantity</masterLabel>
+        <translation>Bestellmenge &lt; BelM.</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Price Change Approval</masterLabel>
+        <translation>Genehmigung Preisänd</translation>
+    </picklistValues>
+</CustomFieldTranslation>

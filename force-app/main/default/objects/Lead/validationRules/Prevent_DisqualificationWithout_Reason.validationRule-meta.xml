@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_DisqualificationWithout_Reason</fullName>
+    <active>false</active>
+    <description>Requires &apos;Disqualification Reason&apos; and details if &apos;Other reason&apos;.</description>
+    <errorConditionFormula>ISPICKVAL(Status, &quot;Disqualified&quot;) &amp;&amp; 
+ISPICKVAL(DisqualificationReason__c, &quot;&quot;) || 
+(ISPICKVAL(DisqualificationReason__c,&quot;Other reason&quot;) &amp;&amp; 
+ISBLANK(DisqualificationReasonText__c))</errorConditionFormula>
+    <errorMessage>A reason for disqualification must always be specified.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>67.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>SetTextBillingUnknown</name>
+        <label>Set Text Billing Unknown</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>ReasonText</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Der Account hängt in einer Kette, aber die Abrechnungs-Frage ist unbeantwortet — kein fremder Rechnungsempfänger und kein Selbst-Häkchen.</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ReasonHint</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Den fremden Rechnungsempfänger eintragen — oder, wenn die Einheit selbst abrechnet, das Häkchen ‚Rechnet selbst ab‘ setzen; danach leitet Salesforce die Kategorie automatisch neu ab.</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CreateClarificationCase</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SetTextFallback</name>
+        <label>Set Text Fallback</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>ReasonText</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Die Kategorie steht auf Unclassified, ohne dass das Regelwerk dafür einen Grund liefert — in aller Regel, weil die Kategorie von Hand gesetzt wurde.</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ReasonHint</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Den unten aufgeführten Stand der Felder prüfen und die Kategorie fachlich entscheiden.</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CreateClarificationCase</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SetTextFlagNoEvidence</name>
+        <label>Set Text Flag No Evidence</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>ReasonText</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Das Häkchen ist gesetzt, aber es gibt keinen einzigen Ketten-Beleg.</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ReasonHint</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Einen Ketten-Beleg nachtragen — Konditions-Parent, Kettenkopf oder Regulierer. Gehört der Account zu keiner Kette, den Account einmal speichern: die Automatik gleicht das Häkchen dann selbst ab.</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CreateClarificationCase</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SetTextLegalformMissing</name>
+        <label>Set Text Legalform Missing</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>ReasonText</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Der Account hängt in einer Kette, aber weder Rechtsform noch eigene USt-IdNr. beantworten die Rechtsperson-Frage.</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ReasonHint</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Rechtsform am Account pflegen — oder die USt-IdNr. eintragen; danach leitet Salesforce die Kategorie automatisch neu ab.</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CreateClarificationCase</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SetTextNoChainForeignBilled</name>
+        <label>Set Text No Chain Foreign Billed</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>ReasonText</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Der Account hat keinerlei Kettenbezug, aber die Rechnung geht an einen fremden Account.</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ReasonHint</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Den Ketten-Verweis nachtragen, der zu diesem Rechnungsempfänger gehört — oder den Rechnungsempfänger korrigieren; danach leitet Salesforce die Kategorie automatisch neu ab.</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CreateClarificationCase</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>NoOpenCase</name>
+        <label>No Open Case</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Open Case</defaultConnectorLabel>
+        <rules>
+            <name>NoOpenCaseFound</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GetOpenClarificationCase</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GetIncomingChainRefs</targetReference>
+            </connector>
+            <label>No Open Case Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>PickReasonText</name>
+        <label>Pick Reason Text</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>SetTextFallback</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Kein Automatik-Grund</defaultConnectorLabel>
+        <rules>
+            <name>IsFlagNoEvidence</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AccountCategoryReason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FLAG_NO_EVIDENCE</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SetTextFlagNoEvidence</targetReference>
+            </connector>
+            <label>Is Flag No Evidence</label>
+        </rules>
+        <rules>
+            <name>IsNoChainForeignBilled</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AccountCategoryReason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>NO_CHAIN_FOREIGN_BILLED</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SetTextNoChainForeignBilled</targetReference>
+            </connector>
+            <label>Is No Chain Foreign Billed</label>
+        </rules>
+        <rules>
+            <name>IsLegalformMissing</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AccountCategoryReason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>LEGALFORM_MISSING</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SetTextLegalformMissing</targetReference>
+            </connector>
+            <label>Is Legalform Missing</label>
+        </rules>
+        <rules>
+            <name>IsBillingUnknown</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AccountCategoryReason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>BILLING_UNKNOWN</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SetTextBillingUnknown</targetReference>
+            </connector>
+            <label>Is Billing Unknown</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>CaseSubject</name>
+        <dataType>String</dataType>
+        <expression>&quot;Account-Kategorie klären: &quot; &amp; {!$Record.Name}</expression>
+    </formulas>
+    <formulas>
+        <name>FldChainFlag</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.IsChainMember__c}, &quot;gesetzt&quot;, &quot;leer&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>FldChainHead</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.ConditionChainHead__c}), &quot;leer&quot;, &quot;gefüllt&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>FldConditionParent</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.ConditionChainParent__c}), &quot;leer&quot;, &quot;gefüllt&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>FldIncomingChainRefs</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!GetIncomingChainRefs.Id}), &quot;keine&quot;, &quot;vorhanden&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>FldInvoiceRecipient</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.InvoiceRecipient__c}), &quot;leer&quot;, &quot;gefüllt&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>FldLegalForm</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK(TEXT({!$Record.LegalForm__c})), &quot;leer&quot;, TEXT({!$Record.LegalForm__c}))</expression>
+    </formulas>
+    <formulas>
+        <name>FldRegulator</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.CentralRegulator__c}), &quot;leer&quot;, &quot;gefüllt&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>FldSelfBilled</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.SelfBilled__c}, &quot;gesetzt&quot;, &quot;leer&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>FldTaxId</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!$Record.TaxID__c}), &quot;leer&quot;, &quot;gefüllt&quot;)</expression>
+    </formulas>
+    <interviewLabel>Account Category: Create Clarification Case {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account Category: Create Clarification Case</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>CreateClarificationCase</name>
+        <label>Create Clarification Case</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>CaseDescriptionTemplate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Origin</field>
+            <value>
+                <stringValue>Automation</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <stringValue>0129O00000CEVUrQAP</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Open</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SubType__c</field>
+            <value>
+                <stringValue>Master data changes</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>CaseSubject</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Master data</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>GetIncomingChainRefs</name>
+        <label>Get Incoming Chain Refs</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>PickReasonText</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>ConditionChainParent__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>ConditionChainHead__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>GetOpenClarificationCase</name>
+        <label>Get Open Clarification Case</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>NoOpenCase</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsClosed</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Master data</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>SubType__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Master data changes</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>0129O00000CEVUrQAP</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountCategory__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Unclassified</stringValue>
+            </value>
+        </filters>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <connector>
+                <targetReference>GetOpenClarificationCase</targetReference>
+            </connector>
+            <pathType>AsyncAfterCommit</pathType>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+    <textTemplates>
+        <name>CaseDescriptionTemplate</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Warum dieser Case entstand: {!ReasonText}
+
+Aktueller Stand der geprüften Felder:
+Kettenmitglied-Häkchen: {!FldChainFlag}
+Konditions-Parent: {!FldConditionParent}
+Konditionskettenkopf: {!FldChainHead}
+Wird reguliert von: {!FldRegulator}
+Eingehende Ketten-Verweise (Konto ist Kettenkopf): {!FldIncomingChainRefs}
+Rechnungsempfänger: {!FldInvoiceRecipient}
+Rechnet selbst ab: {!FldSelfBilled}
+Rechtsform: {!FldLegalForm}
+USt-IdNr.: {!FldTaxId}
+
+Bitte prüfen: {!ReasonHint}</text>
+    </textTemplates>
+    <variables>
+        <name>ReasonHint</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ReasonText</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

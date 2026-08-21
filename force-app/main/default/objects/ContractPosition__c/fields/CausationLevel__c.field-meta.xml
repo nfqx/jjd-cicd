@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CausationLevel__c</fullName>
+    <description>Whose purchases trigger the refund: only the contract customer&apos;s, an object&apos;s (e.g. a single location) or country-wide across the chain. [Sources: MN-003 Z.451-497]</description>
+    <inlineHelpText>Whose purchases trigger the refund: only the contract customer&apos;s, an object&apos;s (e.g. a single location) or country-wide across the chain.</inlineHelpText>
+    <label>Causation Level</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer</fullName>
+                <default>false</default>
+                <label>Customer</label>
+            </value>
+            <value>
+                <fullName>Object</fullName>
+                <default>false</default>
+                <label>Object</label>
+            </value>
+            <value>
+                <fullName>Country</fullName>
+                <default>false</default>
+                <label>Country</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

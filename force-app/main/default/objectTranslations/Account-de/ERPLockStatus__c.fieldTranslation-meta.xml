@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- ERP Lock Status --></label>
+    <name>ERPLockStatus__c</name>
+    <picklistValues>
+        <masterLabel>Credit Rating</masterLabel>
+        <translation><!-- Credit Rating --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Sanctioned</masterLabel>
+        <translation><!-- Not Sanctioned --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other Lock</masterLabel>
+        <translation><!-- Other Lock --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sanction List</masterLabel>
+        <translation><!-- Sanction List --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

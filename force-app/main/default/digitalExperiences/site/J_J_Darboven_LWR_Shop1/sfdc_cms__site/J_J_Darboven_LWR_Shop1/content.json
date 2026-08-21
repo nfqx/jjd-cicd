@@ -1,0 +1,9 @@
+{
+  "type" : "sfdc_cms__site",
+  "title" : "J.J. Darboven LWR Shop",
+  "contentBody" : {
+    "authenticationType" : "AUTHENTICATED",
+    "geoBotsAllowed" : false
+  },
+  "urlName" : "darboven-lwr-test-shop"
+}

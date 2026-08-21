@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Return Reason --></label>
+    <name>ReturnReason__c</name>
+    <picklistValues>
+        <masterLabel>RE Annahmeverweigerung</masterLabel>
+        <translation><!-- RE Annahmeverweigerung --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE Annahmeverweigerung Ladungsträger</masterLabel>
+        <translation><!-- RE Annahmeverweigerung Ladungsträger --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE Annahmeverweigerung Nachlieferung</masterLabel>
+        <translation><!-- RE Annahmeverweigerung Nachlieferung --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE Beschädigung</masterLabel>
+        <translation><!-- RE Beschädigung --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE Bestellfehler GL</masterLabel>
+        <translation><!-- RE Bestellfehler GL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE Empfänger unbekannt</masterLabel>
+        <translation><!-- RE Empfänger unbekannt --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE Etikettierfehler</masterLabel>
+        <translation><!-- RE Etikettierfehler --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE Falschanlieferung</masterLabel>
+        <translation><!-- RE Falschanlieferung --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE Falsche Bestellung Kunde</masterLabel>
+        <translation><!-- RE Falsche Bestellung Kunde --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE Falsche Eingabe JJD</masterLabel>
+        <translation><!-- RE Falsche Eingabe JJD --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE Falsche Verladung JJD</masterLabel>
+        <translation><!-- RE Falsche Verladung JJD --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE Kunde nicht angetroffen</masterLabel>
+        <translation><!-- RE Kunde nicht angetroffen --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE Luftzieher</masterLabel>
+        <translation><!-- RE Luftzieher --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE MHD</masterLabel>
+        <translation><!-- RE MHD --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE Nicht aus Filiale abgeholt</masterLabel>
+        <translation><!-- RE Nicht aus Filiale abgeholt --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE Packfehler</masterLabel>
+        <translation><!-- RE Packfehler --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE Qualitätsmängel</masterLabel>
+        <translation><!-- RE Qualitätsmängel --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE Retoure intern</masterLabel>
+        <translation><!-- RE Retoure intern --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE Rückgabe Kundenwunsch</masterLabel>
+        <translation><!-- RE Rückgabe Kundenwunsch --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE Sortenwechsel Kunde</masterLabel>
+        <translation><!-- RE Sortenwechsel Kunde --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE Veranstaltung</masterLabel>
+        <translation><!-- RE Veranstaltung --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE Verladefehler Paketdienst</masterLabel>
+        <translation><!-- RE Verladefehler Paketdienst --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

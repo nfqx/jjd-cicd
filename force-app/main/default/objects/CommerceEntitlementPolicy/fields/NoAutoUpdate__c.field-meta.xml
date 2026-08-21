@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NoAutoUpdate__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If checked, no automated price update in B2BProductPriceCalculatorQueue happens. CRM-549</description>
+    <label>No Auto Update</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

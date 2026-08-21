@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ApprovalLevel__c</fullName>
+    <label>Approval Level</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sales Lead</fullName>
+                <default>false</default>
+                <label>Sales Lead</label>
+            </value>
+            <value>
+                <fullName>National Sales Lead</fullName>
+                <default>false</default>
+                <label>National Sales Lead</label>
+            </value>
+            <value>
+                <fullName>Board</fullName>
+                <default>false</default>
+                <label>Board</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

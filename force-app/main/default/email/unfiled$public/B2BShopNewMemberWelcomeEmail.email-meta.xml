@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notification that user has been added to a site.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Shop_Header</letterhead>
+    <name>B2B Shop: New Member Welcome Email</name>
+    <style>freeForm</style>
+    <subject>Herzlich willkommen im Außer-Haus Webshop von J.J.Darboven</subject>
+    <textOnly>Hallo {!Receiving_User.Name},
+
+
+herzlich Willkommen im Außer-Haus Webshop von J.J.Darboven.
+
+Bitte schließe die Shop Registrierung ab, indem du auf folgenden Link klickst:
+
+{!Community_url}
+
+Du wirst aufgefordert, ein neues Kennwort für deinen Benutzernamen {!Receiving_User.Email} festzulegen.
+
+Nutze für deine Bestellungen unsere mobile Anwendung und speichere dir shop.darboven.com unter deinen Favoriten ab. Dein Außer-Haus Webshop von J.J.Darboven ist für dich immer und überall erreichbar!
+
+Für Fragen stehen wir sehr gerne zur Verfügung unter ecommerce@darboven.com.
+
+
+Mit besten Grüßen
+
+
+Ihre Ipek Göc
+und das J.J.Darboven Professional E-Commerce Team</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

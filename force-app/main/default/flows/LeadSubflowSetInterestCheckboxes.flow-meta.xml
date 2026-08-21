@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <environments>Default</environments>
+    <formulas>
+        <name>FormulaCocoa</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+OR(
+ISBLANK({!SalesCocoa}), 
+{!SalesCocoa} =0),
+FALSE, TRUE)</expression>
+    </formulas>
+    <formulas>
+        <name>FormulaCoffee</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+  AND(
+    NOT(ISBLANK({!DailyNumberCups})),
+    {!DailyNumberCups} &lt;&gt; 0
+  ),
+  AND(
+    NOT(ISBLANK({!EstimatedVolumeCoffee})),
+    {!EstimatedVolumeCoffee} &gt; 0
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>FormulaTea</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+OR(
+ISBLANK({!SalesTea}),
+{!SalesTea} = 0),
+ FALSE, TRUE)</expression>
+    </formulas>
+    <interviewLabel>Lead - Subflow Set interest checkboxes {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead - Subflow Set interest checkboxes</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>UpdateInterestFields</name>
+        <label>Update Interest Fields</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>{!LeadID}</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>InterestedInCoffee__c</field>
+            <value>
+                <elementReference>FormulaCoffee</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>InterestedInHotChocolate__c</field>
+            <value>
+                <elementReference>FormulaCocoa</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>InterestedInTea__c</field>
+            <value>
+                <elementReference>FormulaTea</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>UpdateInterestFields</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>DailyNumberCups</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>EstimatedVolumeCoffee</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <scale>2</scale>
+    </variables>
+    <variables>
+        <name>LeadID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>SalesCocoa</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>SalesTea</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <scale>0</scale>
+    </variables>
+</Flow>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- CurrentCoffeeMachine --></label>
+    <name>CurrentCoffeeMachine__c</name>
+    <picklistValues>
+        <masterLabel>Astoria</masterLabel>
+        <translation><!-- Astoria --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bonamat</masterLabel>
+        <translation><!-- Bonamat --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coffema</masterLabel>
+        <translation><!-- Coffema --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Della Corte</masterLabel>
+        <translation><!-- Della Corte --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Eversys</masterLabel>
+        <translation><!-- Eversys --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Faema</masterLabel>
+        <translation><!-- Faema --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Franke</masterLabel>
+        <translation><!-- Franke --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Jura</masterLabel>
+        <translation><!-- Jura --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>La Chimbali</masterLabel>
+        <translation><!-- La Chimbali --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>La San Marco</masterLabel>
+        <translation><!-- La San Marco --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Melitta</masterLabel>
+        <translation><!-- Melitta --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>N &amp; W</masterLabel>
+        <translation><!-- N &amp; W --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nuova Simonelli</masterLabel>
+        <translation><!-- Nuova Simonelli --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rex Royal</masterLabel>
+        <translation><!-- Rex Royal --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Schaerer</masterLabel>
+        <translation><!-- Schaerer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Servomat Steigler</masterLabel>
+        <translation><!-- Servomat Steigler --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sielaff</masterLabel>
+        <translation><!-- Sielaff --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sonstige</masterLabel>
+        <translation><!-- Sonstige --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Thermoplan</masterLabel>
+        <translation><!-- Thermoplan --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WMF</masterLabel>
+        <translation><!-- WMF --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wittenburg</masterLabel>
+        <translation><!-- Wittenburg --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Parent&apos;s Tax ID — Reference value of the second legal entity signal. --></help>
+    <label><!-- Parent Tax ID --></label>
+    <name>ParentTaxId__c</name>
+</CustomFieldTranslation>

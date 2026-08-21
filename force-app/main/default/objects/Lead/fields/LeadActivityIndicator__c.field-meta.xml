@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LeadActivityIndicator__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    ISBLANK(LastActivityDate),
+    &quot;⚪ No activity yet&quot;,
+    IF(
+        TODAY() - LastActivityDate &lt;= 7,
+        &quot;🟢 Active&quot;,
+        IF(
+            TODAY() - LastActivityDate &lt;= 14,
+            &quot;🟡 Follow-up required&quot;,
+            &quot;🔴 Inactive&quot;
+        )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Lead Activity Indicator</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

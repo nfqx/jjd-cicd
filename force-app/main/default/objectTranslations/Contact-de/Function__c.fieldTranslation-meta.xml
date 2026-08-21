@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Function --></label>
+    <name>Function__c</name>
+    <picklistValues>
+        <masterLabel>Accounting</masterLabel>
+        <translation><!-- Accounting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Administrative Director</masterLabel>
+        <translation><!-- Administrative Director --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Assistant Branch Manager</masterLabel>
+        <translation><!-- Assistant Branch Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Assistant Chef</masterLabel>
+        <translation><!-- Assistant Chef --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Assistant Director</masterLabel>
+        <translation><!-- Assistant Director --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Assistant F&amp;B Manager</masterLabel>
+        <translation><!-- Assistant F&amp;B Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bar Manager</masterLabel>
+        <translation><!-- Bar Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Branch Manager</masterLabel>
+        <translation><!-- Branch Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CEO</masterLabel>
+        <translation><!-- CEO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Care Home Manager</masterLabel>
+        <translation><!-- Care Home Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Category Management</masterLabel>
+        <translation><!-- Category Management --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chef</masterLabel>
+        <translation><!-- Chef --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Director</masterLabel>
+        <translation><!-- Director --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Employee</masterLabel>
+        <translation><!-- Employee --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>F&amp;B Manager</masterLabel>
+        <translation><!-- F&amp;B Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nursing Service Manager</masterLabel>
+        <translation><!-- Nursing Service Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Owner</masterLabel>
+        <translation><!-- Owner --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Purchasing Manager</masterLabel>
+        <translation><!-- Purchasing Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Restaurant Manager</masterLabel>
+        <translation><!-- Restaurant Manager --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

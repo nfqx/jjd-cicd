@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DeliveryType__c</fullName>
+    <label>Delivery Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BV</fullName>
+                <default>false</default>
+                <label>Cash Sale</label>
+            </value>
+            <value>
+                <fullName>CEM</fullName>
+                <default>false</default>
+                <label>CEM</label>
+            </value>
+            <value>
+                <fullName>DOG</fullName>
+                <default>false</default>
+                <label>Outbound Goods Movement</label>
+            </value>
+            <value>
+                <fullName>DTR</fullName>
+                <default>false</default>
+                <label>Transfer Posting (Central)</label>
+            </value>
+            <value>
+                <fullName>GPLF</fullName>
+                <default>false</default>
+                <label>Delivery for Software Maintenance</label>
+            </value>
+            <value>
+                <fullName>HOD</fullName>
+                <default>false</default>
+                <label>Outbound GI Movement</label>
+            </value>
+            <value>
+                <fullName>HTP</fullName>
+                <default>false</default>
+                <label>Delivery for Transfer Posting</label>
+            </value>
+            <value>
+                <fullName>JF</fullName>
+                <default>false</default>
+                <label>JF</label>
+            </value>
+            <value>
+                <fullName>JIT2</fullName>
+                <default>false</default>
+                <label>JIT2</label>
+            </value>
+            <value>
+                <fullName>JITD</fullName>
+                <default>false</default>
+                <label>JIT Outbound Delivery</label>
+            </value>
+            <value>
+                <fullName>LB</fullName>
+                <default>false</default>
+                <label>Delivery for Subcontracting</label>
+            </value>
+            <value>
+                <fullName>LB2</fullName>
+                <default>false</default>
+                <label>DFPS Transport Relocation</label>
+            </value>
+            <value>
+                <fullName>LD</fullName>
+                <default>false</default>
+                <label>Decentralized Outbound Delivery</label>
+            </value>
+            <value>
+                <fullName>LF</fullName>
+                <default>false</default>
+                <label>Outbound Delivery (LF)</label>
+            </value>
+            <value>
+                <fullName>LK</fullName>
+                <default>false</default>
+                <label>LK</label>
+            </value>
+            <value>
+                <fullName>LLR</fullName>
+                <default>false</default>
+                <label>Extended Returns Delivery (LLR)</label>
+            </value>
+            <value>
+                <fullName>LO</fullName>
+                <default>false</default>
+                <label>Delivery without Reference (LO)</label>
+            </value>
+            <value>
+                <fullName>LO2</fullName>
+                <default>false</default>
+                <label>Delivery without Reference (LO2)</label>
+            </value>
+            <value>
+                <fullName>LO3</fullName>
+                <default>false</default>
+                <label>Delivery GR External</label>
+            </value>
+            <value>
+                <fullName>LP</fullName>
+                <default>false</default>
+                <label>Delivery from Projects</label>
+            </value>
+            <value>
+                <fullName>LPP</fullName>
+                <default>false</default>
+                <label>PP Delivery</label>
+            </value>
+            <value>
+                <fullName>LR</fullName>
+                <default>false</default>
+                <label>Returns Delivery</label>
+            </value>
+            <value>
+                <fullName>LR2</fullName>
+                <default>false</default>
+                <label>Extended Returns Delivery (LR2)</label>
+            </value>
+            <value>
+                <fullName>LRX</fullName>
+                <default>false</default>
+                <label>Cross-System Stock Transfer Returns Delivery</label>
+            </value>
+            <value>
+                <fullName>NCC2</fullName>
+                <default>false</default>
+                <label>Intercompany Issue - Receiving Plant</label>
+            </value>
+            <value>
+                <fullName>NCC3</fullName>
+                <default>false</default>
+                <label>Intercompany Issue - Receiving Intercompany</label>
+            </value>
+            <value>
+                <fullName>NCCR</fullName>
+                <default>false</default>
+                <label>Receiving Intercompany</label>
+            </value>
+            <value>
+                <fullName>NCCU</fullName>
+                <default>false</default>
+                <label>Transfer Issue - Outbound Delivery</label>
+            </value>
+            <value>
+                <fullName>NCR</fullName>
+                <default>false</default>
+                <label>Returns Stock Transfer (Cross-Company)</label>
+            </value>
+            <value>
+                <fullName>NCR2</fullName>
+                <default>false</default>
+                <label>Returns Intercompany Issue - Receiving Plant</label>
+            </value>
+            <value>
+                <fullName>NCR3</fullName>
+                <default>false</default>
+                <label>Returns Intercompany Issue - Receiving Intercompany</label>
+            </value>
+            <value>
+                <fullName>NCR7</fullName>
+                <default>false</default>
+                <label>Cross-Company Stock Transfer Extended Returns</label>
+            </value>
+            <value>
+                <fullName>NCRR</fullName>
+                <default>false</default>
+                <label>Returns Receiving Intercompany</label>
+            </value>
+            <value>
+                <fullName>NK</fullName>
+                <default>false</default>
+                <label>Replenishment Delivery Consignment</label>
+            </value>
+            <value>
+                <fullName>NKR</fullName>
+                <default>false</default>
+                <label>Replenishment Returns Consignment</label>
+            </value>
+            <value>
+                <fullName>NL</fullName>
+                <default>false</default>
+                <label>Replenishment Delivery (NL)</label>
+            </value>
+            <value>
+                <fullName>NLCC</fullName>
+                <default>false</default>
+                <label>Cross-Company Replenishment</label>
+            </value>
+            <value>
+                <fullName>NLI2</fullName>
+                <default>false</default>
+                <label>Intracompany Issue - Receiving Plant</label>
+            </value>
+            <value>
+                <fullName>NLI3</fullName>
+                <default>false</default>
+                <label>Intracompany Issue - Receiving Intracompany</label>
+            </value>
+            <value>
+                <fullName>NLIR</fullName>
+                <default>false</default>
+                <label>Receiving Intracompany</label>
+            </value>
+            <value>
+                <fullName>NLR</fullName>
+                <default>false</default>
+                <label>Returns Stock Transfer</label>
+            </value>
+            <value>
+                <fullName>NLR2</fullName>
+                <default>false</default>
+                <label>Returns Intracompany Issue - Receiving Plant</label>
+            </value>
+            <value>
+                <fullName>NLR3</fullName>
+                <default>false</default>
+                <label>Returns Intracompany Issue - Receiving Intracompany</label>
+            </value>
+            <value>
+                <fullName>NLR8</fullName>
+                <default>false</default>
+                <label>Intra-Company Stock Transfer Extended Returns</label>
+            </value>
+            <value>
+                <fullName>NLRR</fullName>
+                <default>false</default>
+                <label>Returns Receiving Intracompany</label>
+            </value>
+            <value>
+                <fullName>RL</fullName>
+                <default>false</default>
+                <label>Return to Vendor</label>
+            </value>
+            <value>
+                <fullName>RLL</fullName>
+                <default>false</default>
+                <label>Return Delivery to Vendor</label>
+            </value>
+            <value>
+                <fullName>SRCL</fullName>
+                <default>false</default>
+                <label>Claims + Returns</label>
+            </value>
+            <value>
+                <fullName>SRNP</fullName>
+                <default>false</default>
+                <label>Returns of New Parts</label>
+            </value>
+            <value>
+                <fullName>SRTC</fullName>
+                <default>false</default>
+                <label>SPE Outbound Delivery (SRTC)</label>
+            </value>
+            <value>
+                <fullName>SRTR</fullName>
+                <default>false</default>
+                <label>SPE Outbound Delivery (SRTR)</label>
+            </value>
+            <value>
+                <fullName>SRUP</fullName>
+                <default>false</default>
+                <label>Returns of Used Parts</label>
+            </value>
+            <value>
+                <fullName>UL</fullName>
+                <default>false</default>
+                <label>Stock Transfer Delivery</label>
+            </value>
+            <value>
+                <fullName>VLRL</fullName>
+                <default>false</default>
+                <label>VMS - Return Delivery</label>
+            </value>
+            <value>
+                <fullName>WMPP</fullName>
+                <default>false</default>
+                <label>Delivery WM-PP</label>
+            </value>
+            <value>
+                <fullName>WNL</fullName>
+                <default>false</default>
+                <label>Replenishment Delivery WMS</label>
+            </value>
+            <value>
+                <fullName>WOD</fullName>
+                <default>false</default>
+                <label>Outbound Delivery WMS</label>
+            </value>
+            <value>
+                <fullName>WOG</fullName>
+                <default>false</default>
+                <label>Outbound Delivery WMS Other</label>
+            </value>
+            <value>
+                <fullName>WRD</fullName>
+                <default>false</default>
+                <label>Customer Returns WMS</label>
+            </value>
+            <value>
+                <fullName>WTR</fullName>
+                <default>false</default>
+                <label>Decentralized Transfer Posting</label>
+            </value>
+            <value>
+                <fullName>ZLF</fullName>
+                <default>false</default>
+                <label>Outbound Delivery (ZLF)</label>
+            </value>
+            <value>
+                <fullName>ZLR</fullName>
+                <default>false</default>
+                <label>Returns without Billing</label>
+            </value>
+            <value>
+                <fullName>ZLRF</fullName>
+                <default>false</default>
+                <label>Returns with Billing</label>
+            </value>
+            <value>
+                <fullName>ZNL1</fullName>
+                <default>false</default>
+                <label>Replenishment Delivery (ZNL1)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

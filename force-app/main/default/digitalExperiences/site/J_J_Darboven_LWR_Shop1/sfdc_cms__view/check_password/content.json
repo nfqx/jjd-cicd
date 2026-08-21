@@ -1,0 +1,103 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Check Password",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"b43ac851-5f7b-4a55-9465-ba58873f7e97\",\"columns\":[{\"UUID\":\"dc5418b9-e981-4f7b-af5b-943b80c483f7\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : { }
+              },
+              "definition" : "c:webshopCustomHeader",
+              "id" : "08bd296b-3951-4f37-96d3-cdfa25d1624a",
+              "type" : "component"
+            } ],
+            "id" : "dc5418b9-e981-4f7b-af5b-943b80c483f7",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "b43ac851-5f7b-4a55-9465-ba58873f7e97",
+          "type" : "component"
+        }, {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"4b86548f-bd95-4e45-a69c-38b5f399f924\",\"columns\":[{\"UUID\":\"7eaa328d-a9f0-4a7b-8fd9-98ffdd38a0ed\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : { }
+              },
+              "definition" : "c:webshopResetPassword",
+              "id" : "0b1dbace-e8cb-45ed-b820-818a69cebdde",
+              "type" : "component"
+            } ],
+            "id" : "7eaa328d-a9f0-4a7b-8fd9-98ffdd38a0ed",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "4b86548f-bd95-4e45-a69c-38b5f399f924",
+          "type" : "component"
+        } ],
+        "id" : "b7850c3b-9833-4190-9d0f-551a18d5bc11",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "dxpStyle" : { },
+            "pageTitle" : "Check Password",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "549ad453-0320-4338-ac67-d5e8b7da0bfd",
+          "type" : "component"
+        } ],
+        "id" : "bcffa410-7071-418a-95ba-0b74e480f2f8",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "f8c77ca6-7185-4aae-accc-c6867769f817",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "External",
+    "viewType" : "check-password"
+  },
+  "urlName" : "check-password"
+}

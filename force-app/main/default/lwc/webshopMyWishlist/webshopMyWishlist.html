@@ -1,0 +1,34 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <!--div class="wishlist-background"></div-->
+    <div class="wishlist-sidebar d-none d-lg-block">
+        <c-webshop-my-area-sidebar active-element="My_Wishlist__c"></c-webshop-my-area-sidebar>
+    </div>
+    <div class="container-fluid content-zone">
+        <div class="row">
+            <div class="col-12 col-lg-11 p-0 px-md-4">
+                <div class="content-area">
+                    <div class="d-flex flex-row flex-wrap justify-content-between align-items-start mb-3">
+                        <p class="col-12 col-lg-9 heading-2"> 
+                            {label.myWishlist} 
+                        </p>
+                        <button class="col-12 col-lg-3 btn btn-link link d-flex justify-content-start justify-content-lg-end align-items-center" 
+                                type="button" onclick={handleClickBackToShop}>
+                            <i class="bi bi-arrow-left"></i>&nbsp;{label.backToShop}
+                        </button> 
+                    </div>
+                    <c-webshop-slider 
+                        slider-name={label.myWishlistSlider} 
+                        show-multiple-rows
+                        show-image
+                        show-price
+                        show-wishlist
+                        show-product-pagination
+                        no-filter
+                        show-cta>
+                    </c-webshop-slider>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

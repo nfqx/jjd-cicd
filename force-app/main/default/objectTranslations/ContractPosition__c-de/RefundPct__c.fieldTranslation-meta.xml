@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Der führende RV-Satz: so viel Prozent des Umsatzes bzw. Gegenwerts fließen an den Kunden zurück. Basis für Rückstellungen, Abrechnungen und das RV-Reporting.</help>
+    <label>RV-Prozentsatz</label>
+    <name>RefundPct__c</name>
+</CustomFieldTranslation>

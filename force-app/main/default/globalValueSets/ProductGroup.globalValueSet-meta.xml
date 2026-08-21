@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>0101001</fullName>
+        <default>false</default>
+        <label>Green Coffee Qualities</label>
+    </customValue>
+    <customValue>
+        <fullName>0101002</fullName>
+        <default>false</default>
+        <label>Green Coffee Blends</label>
+    </customValue>
+    <customValue>
+        <fullName>0210010</fullName>
+        <default>false</default>
+        <label>IDEE COFFEE CLASSIC</label>
+    </customValue>
+    <customValue>
+        <fullName>0210011</fullName>
+        <default>false</default>
+        <label>IDEE DECAFFEINATED COFFEE</label>
+    </customValue>
+    <customValue>
+        <fullName>0210012</fullName>
+        <default>false</default>
+        <label>IDEE NATURALLY MILD COFFEE</label>
+    </customValue>
+    <customValue>
+        <fullName>0210013</fullName>
+        <default>false</default>
+        <label>IDEE Roasted Coffee Varieties</label>
+    </customValue>
+    <customValue>
+        <fullName>0210014</fullName>
+        <default>false</default>
+        <label>IDEE Ground Coffee Varieties</label>
+    </customValue>
+    <customValue>
+        <fullName>0211030</fullName>
+        <default>false</default>
+        <label>MÖVENPICK CAFÉ DER HIMMLISCHE</label>
+    </customValue>
+    <customValue>
+        <fullName>0211031</fullName>
+        <default>false</default>
+        <label>MÖVENPICK KOLBEN COFFEE</label>
+    </customValue>
+    <customValue>
+        <fullName>0211032</fullName>
+        <default>false</default>
+        <label>MÖVENPICK ESPRESSO</label>
+    </customValue>
+    <customValue>
+        <fullName>0211033</fullName>
+        <default>false</default>
+        <label>Mövenpick Fine Composition</label>
+    </customValue>
+    <customValue>
+        <fullName>0211034</fullName>
+        <default>false</default>
+        <label>Mövenpick EL AUTENTICO</label>
+    </customValue>
+    <customValue>
+        <fullName>0211035</fullName>
+        <default>false</default>
+        <label>Mövenpick Corazon</label>
+    </customValue>
+    <customValue>
+        <fullName>0211036</fullName>
+        <default>false</default>
+        <label>Mövenpick Capsules</label>
+    </customValue>
+    <customValue>
+        <fullName>0211037</fullName>
+        <default>false</default>
+        <label>Mövenpick Roasted Coffee Varieties</label>
+    </customValue>
+    <customValue>
+        <fullName>0211038</fullName>
+        <default>false</default>
+        <label>Mövenpick Ground Coffee Varieties</label>
+    </customValue>
+    <customValue>
+        <fullName>0211039</fullName>
+        <default>false</default>
+        <label>Mövenpick Vending</label>
+    </customValue>
+    <customValue>
+        <fullName>0212060</fullName>
+        <default>false</default>
+        <label>Eilles Coffee</label>
+    </customValue>
+    <customValue>
+        <fullName>0212061</fullName>
+        <default>false</default>
+        <label>EILLES Roasted Coffee Varieties</label>
+    </customValue>
+    <customValue>
+        <fullName>0213070</fullName>
+        <default>false</default>
+        <label>Intención Coffee</label>
+    </customValue>
+    <customValue>
+        <fullName>0213071</fullName>
+        <default>false</default>
+        <label>Intención Roasted Coffee Varieties</label>
+    </customValue>
+    <customValue>
+        <fullName>0213072</fullName>
+        <default>false</default>
+        <label>Intención Ground Coffee Varieties</label>
+    </customValue>
+    <customValue>
+        <fullName>0214080</fullName>
+        <default>false</default>
+        <label>Verde</label>
+    </customValue>
+    <customValue>
+        <fullName>0215085</fullName>
+        <default>false</default>
+        <label>Ferne Welten</label>
+    </customValue>
+    <customValue>
+        <fullName>0216090</fullName>
+        <default>false</default>
+        <label>Alberto Espresso</label>
+    </customValue>
+    <customValue>
+        <fullName>0216091</fullName>
+        <default>false</default>
+        <label>Alberto Crema</label>
+    </customValue>
+    <customValue>
+        <fullName>0217100</fullName>
+        <default>false</default>
+        <label>Kränzchen Coffee</label>
+    </customValue>
+    <customValue>
+        <fullName>0217101</fullName>
+        <default>false</default>
+        <label>Kränzchen Roasted Coffee Varieties</label>
+    </customValue>
+    <customValue>
+        <fullName>0217102</fullName>
+        <default>false</default>
+        <label>Kränzchen Ground Coffee Varieties</label>
+    </customValue>
+    <customValue>
+        <fullName>0218110</fullName>
+        <default>false</default>
+        <label>Burkhof Coffee</label>
+    </customValue>
+    <customValue>
+        <fullName>0218111</fullName>
+        <default>false</default>
+        <label>Burkhof Roasted Coffee Varieties</label>
+    </customValue>
+    <customValue>
+        <fullName>0218112</fullName>
+        <default>false</default>
+        <label>Burkhof Ground Coffee Varieties</label>
+    </customValue>
+    <customValue>
+        <fullName>0219120</fullName>
+        <default>false</default>
+        <label>ALFREDO ESPRESSO SUPER BAR</label>
+    </customValue>
+    <customValue>
+        <fullName>0219121</fullName>
+        <default>false</default>
+        <label>ALFREDO ESPRESSO TIPO BAR</label>
+    </customValue>
+    <customValue>
+        <fullName>0219122</fullName>
+        <default>false</default>
+        <label>ALFREDO ESPRESSO CREMAZZURRO</label>
+    </customValue>
+    <customValue>
+        <fullName>0219123</fullName>
+        <default>false</default>
+        <label>Alfredo Roasted Coffee Varieties</label>
+    </customValue>
+    <customValue>
+        <fullName>0219124</fullName>
+        <default>false</default>
+        <label>Alfredo Ground Coffee Varieties</label>
+    </customValue>
+    <customValue>
+        <fullName>0219125</fullName>
+        <default>false</default>
+        <label>ALFREDO ESPRESSO Primus-Omnium</label>
+    </customValue>
+    <customValue>
+        <fullName>0219126</fullName>
+        <default>false</default>
+        <label>Alfredo Espresso Futuro</label>
+    </customValue>
+    <customValue>
+        <fullName>0219127</fullName>
+        <default>false</default>
+        <label>Alfredo Espresso Decaffeinato</label>
+    </customValue>
+    <customValue>
+        <fullName>0219128</fullName>
+        <default>false</default>
+        <label>Alfredo Espresso Caffè</label>
+    </customValue>
+    <customValue>
+        <fullName>0219129</fullName>
+        <default>false</default>
+        <label>Alfredo Capsule</label>
+    </customValue>
+    <customValue>
+        <fullName>0220140</fullName>
+        <default>false</default>
+        <label>Mozart</label>
+    </customValue>
+    <customValue>
+        <fullName>0221150</fullName>
+        <default>false</default>
+        <label>Joh. Joach. Darb. Bakery Business</label>
+    </customValue>
+    <customValue>
+        <fullName>0222170</fullName>
+        <default>false</default>
+        <label>Rainforest Alliance</label>
+    </customValue>
+    <customValue>
+        <fullName>0223190</fullName>
+        <default>false</default>
+        <label>Sansibar</label>
+    </customValue>
+    <customValue>
+        <fullName>0224200</fullName>
+        <default>false</default>
+        <label>GRAND GOURMET</label>
+    </customValue>
+    <customValue>
+        <fullName>0224201</fullName>
+        <default>false</default>
+        <label>WIENER MOCCA</label>
+    </customValue>
+    <customValue>
+        <fullName>0224202</fullName>
+        <default>false</default>
+        <label>MELANGE FINESSE</label>
+    </customValue>
+    <customValue>
+        <fullName>0224203</fullName>
+        <default>false</default>
+        <label>BISTRO MONTANA</label>
+    </customValue>
+    <customValue>
+        <fullName>0224204</fullName>
+        <default>false</default>
+        <label>FAVORIT EXTRA</label>
+    </customValue>
+    <customValue>
+        <fullName>0224205</fullName>
+        <default>false</default>
+        <label>EXCELSIOR</label>
+    </customValue>
+    <customValue>
+        <fullName>0224206</fullName>
+        <default>false</default>
+        <label>CASINO</label>
+    </customValue>
+    <customValue>
+        <fullName>0224207</fullName>
+        <default>false</default>
+        <label>BALANCE EXTRA</label>
+    </customValue>
+    <customValue>
+        <fullName>0224208</fullName>
+        <default>false</default>
+        <label>Ratio Roasted Coffee</label>
+    </customValue>
+    <customValue>
+        <fullName>0224209</fullName>
+        <default>false</default>
+        <label>Top Extra</label>
+    </customValue>
+    <customValue>
+        <fullName>0224210</fullName>
+        <default>false</default>
+        <label>Brosio</label>
+    </customValue>
+    <customValue>
+        <fullName>0224211</fullName>
+        <default>false</default>
+        <label>Arko</label>
+    </customValue>
+    <customValue>
+        <fullName>0224212</fullName>
+        <default>false</default>
+        <label>ID ORIGINS</label>
+    </customValue>
+    <customValue>
+        <fullName>0224213</fullName>
+        <default>false</default>
+        <label>SPECIAL BLEND</label>
+    </customValue>
+    <customValue>
+        <fullName>0224214</fullName>
+        <default>false</default>
+        <label>COFFEE POUCHES</label>
+    </customValue>
+    <customValue>
+        <fullName>0224215</fullName>
+        <default>false</default>
+        <label>Other Food-Service Roasted Coffee</label>
+    </customValue>
+    <customValue>
+        <fullName>0224216</fullName>
+        <default>false</default>
+        <label>Food-Service Roasted Coffee Varieties</label>
+    </customValue>
+    <customValue>
+        <fullName>0224217</fullName>
+        <default>false</default>
+        <label>Food-Service Ground Coffee Varieties</label>
+    </customValue>
+    <customValue>
+        <fullName>0225300</fullName>
+        <default>false</default>
+        <label>Warca</label>
+    </customValue>
+    <customValue>
+        <fullName>0226320</fullName>
+        <default>false</default>
+        <label>Hornig</label>
+    </customValue>
+    <customValue>
+        <fullName>0227330</fullName>
+        <default>false</default>
+        <label>Other Roasted Coffee</label>
+    </customValue>
+    <customValue>
+        <fullName>0228350</fullName>
+        <default>false</default>
+        <label>Mövenpick</label>
+    </customValue>
+    <customValue>
+        <fullName>0230360</fullName>
+        <default>false</default>
+        <label>Private Labels Export</label>
+    </customValue>
+    <customValue>
+        <fullName>0230370</fullName>
+        <default>false</default>
+        <label>Private Labels Retail</label>
+    </customValue>
+    <customValue>
+        <fullName>0230380</fullName>
+        <default>false</default>
+        <label>Private Labels Food Service</label>
+    </customValue>
+    <customValue>
+        <fullName>0230390</fullName>
+        <default>false</default>
+        <label>Globus</label>
+    </customValue>
+    <customValue>
+        <fullName>0230391</fullName>
+        <default>false</default>
+        <label>Bela</label>
+    </customValue>
+    <customValue>
+        <fullName>0230392</fullName>
+        <default>false</default>
+        <label>Food-Service Partner</label>
+    </customValue>
+    <customValue>
+        <fullName>0360420</fullName>
+        <default>false</default>
+        <label>Packaging Materials</label>
+    </customValue>
+    <customValue>
+        <fullName>0462430</fullName>
+        <default>false</default>
+        <label>Pass-Through Third-Party Products</label>
+    </customValue>
+    <customValue>
+        <fullName>0462431</fullName>
+        <default>false</default>
+        <label>Contract-Manufactured Roasted Coffee Variety</label>
+    </customValue>
+    <customValue>
+        <fullName>0462432</fullName>
+        <default>false</default>
+        <label>Contract-Manufactured Ground Coffee Varieties</label>
+    </customValue>
+    <customValue>
+        <fullName>0564440</fullName>
+        <default>false</default>
+        <label>Coffee Extract</label>
+    </customValue>
+    <customValue>
+        <fullName>0564441</fullName>
+        <default>false</default>
+        <label>Coffee Extract Varieties</label>
+    </customValue>
+    <customValue>
+        <fullName>0666450</fullName>
+        <default>false</default>
+        <label>EILLES TEA Brand</label>
+    </customValue>
+    <customValue>
+        <fullName>0666455</fullName>
+        <default>false</default>
+        <label>Private-Label Tea</label>
+    </customValue>
+    <customValue>
+        <fullName>0666456</fullName>
+        <default>false</default>
+        <label>Other Tea</label>
+    </customValue>
+    <customValue>
+        <fullName>0770460</fullName>
+        <default>false</default>
+        <label>J.J. Darboven Cappuccino</label>
+    </customValue>
+    <customValue>
+        <fullName>0770462</fullName>
+        <default>false</default>
+        <label>Topping Powder</label>
+    </customValue>
+    <customValue>
+        <fullName>0871470</fullName>
+        <default>false</default>
+        <label>Drinking Chocolate</label>
+    </customValue>
+    <customValue>
+        <fullName>0973480</fullName>
+        <default>false</default>
+        <label>Biscuits and Chocolate Squares</label>
+    </customValue>
+    <customValue>
+        <fullName>0973482</fullName>
+        <default>false</default>
+        <label>HFF</label>
+    </customValue>
+    <customValue>
+        <fullName>1074498</fullName>
+        <default>false</default>
+        <label>Cream and Condensed Milk</label>
+    </customValue>
+    <customValue>
+        <fullName>1175499</fullName>
+        <default>false</default>
+        <label>Sugar and Sweeteners</label>
+    </customValue>
+    <customValue>
+        <fullName>1276500</fullName>
+        <default>false</default>
+        <label>Alcoholic Beverages</label>
+    </customValue>
+    <customValue>
+        <fullName>1377510</fullName>
+        <default>false</default>
+        <label>Operating Supplies</label>
+    </customValue>
+    <customValue>
+        <fullName>1478519</fullName>
+        <default>false</default>
+        <label>Syrup</label>
+    </customValue>
+    <customValue>
+        <fullName>1479520</fullName>
+        <default>false</default>
+        <label>Serving Items</label>
+    </customValue>
+    <customValue>
+        <fullName>1479521</fullName>
+        <default>false</default>
+        <label>J. J. Darb. Bakery Business - Other</label>
+    </customValue>
+    <customValue>
+        <fullName>1479522</fullName>
+        <default>false</default>
+        <label>Spare Parts</label>
+    </customValue>
+    <customValue>
+        <fullName>1479523</fullName>
+        <default>false</default>
+        <label>Other Goods</label>
+    </customValue>
+    <customValue>
+        <fullName>1580600</fullName>
+        <default>false</default>
+        <label>Promotional Materials</label>
+    </customValue>
+    <customValue>
+        <fullName>1581610</fullName>
+        <default>false</default>
+        <label>Promotional Materials - Cup Doilies</label>
+    </customValue>
+    <customValue>
+        <fullName>1582620</fullName>
+        <default>false</default>
+        <label>Promotional Materials - Beverage Menus</label>
+    </customValue>
+    <customValue>
+        <fullName>1583630</fullName>
+        <default>false</default>
+        <label>Promotional Materials - Table Displays</label>
+    </customValue>
+    <customValue>
+        <fullName>1584640</fullName>
+        <default>false</default>
+        <label>Promotional Materials - Calendars and Brochures</label>
+    </customValue>
+    <customValue>
+        <fullName>1585660</fullName>
+        <default>false</default>
+        <label>Promotional Materials - Notepads</label>
+    </customValue>
+    <customValue>
+        <fullName>1586670</fullName>
+        <default>false</default>
+        <label>Promotional Materials - Displays</label>
+    </customValue>
+    <customValue>
+        <fullName>1587680</fullName>
+        <default>false</default>
+        <label>General Promotional Materials</label>
+    </customValue>
+    <customValue>
+        <fullName>1587690</fullName>
+        <default>false</default>
+        <label>Packaging Materials (1587690)</label>
+    </customValue>
+    <customValue>
+        <fullName>1688700</fullName>
+        <default>false</default>
+        <label>Machines</label>
+    </customValue>
+    <customValue>
+        <fullName>1688740</fullName>
+        <default>false</default>
+        <label>Other Food-Service Equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>1688770</fullName>
+        <default>false</default>
+        <label>Spare Parts (1688770)</label>
+    </customValue>
+    <customValue>
+        <fullName>1789800</fullName>
+        <default>false</default>
+        <label>Consumables</label>
+    </customValue>
+    <customValue>
+        <fullName>1890900</fullName>
+        <default>false</default>
+        <label>JJD Maintenance Service</label>
+    </customValue>
+    <customValue>
+        <fullName>1891910</fullName>
+        <default>false</default>
+        <label>JJD Rental Service</label>
+    </customValue>
+    <customValue>
+        <fullName>1892920</fullName>
+        <default>false</default>
+        <label>Sale of Fixed Assets</label>
+    </customValue>
+    <customValue>
+        <fullName>1893930</fullName>
+        <default>false</default>
+        <label>Rebilling</label>
+    </customValue>
+    <customValue>
+        <fullName>1894940</fullName>
+        <default>false</default>
+        <label>Sales Deductions</label>
+    </customValue>
+    <customValue>
+        <fullName>1895950</fullName>
+        <default>false</default>
+        <label>Rebates</label>
+    </customValue>
+    <customValue>
+        <fullName>1896960</fullName>
+        <default>false</default>
+        <label>Green Coffee Procurement Costs</label>
+    </customValue>
+    <customValue>
+        <fullName>1897970</fullName>
+        <default>false</default>
+        <label>Licences and Costs</label>
+    </customValue>
+    <customValue>
+        <fullName>1898980</fullName>
+        <default>false</default>
+        <label>Other Services</label>
+    </customValue>
+    <customValue>
+        <fullName>1899990</fullName>
+        <default>false</default>
+        <label>Advance Payments</label>
+    </customValue>
+    <masterLabel>Product Group</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

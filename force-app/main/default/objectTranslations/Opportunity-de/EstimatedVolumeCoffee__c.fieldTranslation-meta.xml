@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- In KG/Jahr; Wenn kein Bedarf besteht, bitte 0 eintragen --></help>
+    <label>Geschätzter Absatz: Kaffee</label>
+    <name>EstimatedVolumeCoffee__c</name>
+</CustomFieldTranslation>

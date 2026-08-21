@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AccrualRatePct__c</fullName>
+    <description>The rate at which SAP sets money aside during the year (accrual, VR documents) before the actual settlement at period end (VE documents). May differ from the settlement rate. [Sources: sap-research-notes.md, MN-003 Z.620]</description>
+    <inlineHelpText>The rate at which SAP sets money aside during the year (accrual, VR documents) before the actual settlement at period end (VE documents). May differ from the settlement rate.</inlineHelpText>
+    <label>Accrual Rate (%)</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

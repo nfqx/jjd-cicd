@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recommended_Actions__c</fullName>
+    <label>Recommended Actions</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Replace grinder</fullName>
+                <default>false</default>
+                <label>Replace grinder</label>
+            </value>
+            <value>
+                <fullName>Adjust machine</fullName>
+                <default>false</default>
+                <label>Adjust machine</label>
+            </value>
+            <value>
+                <fullName>Create a cleaning plan</fullName>
+                <default>false</default>
+                <label>Create a cleaning plan</label>
+            </value>
+            <value>
+                <fullName>Schedule technician</fullName>
+                <default>false</default>
+                <label>Schedule technician</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

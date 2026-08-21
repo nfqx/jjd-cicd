@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Whether the fixed amount is paid in advance (start of period) or in arrears (end of period) — SAP flag of the fixed-amount payout. --></help>
+    <label><!-- Payment Timing --></label>
+    <name>PaymentTiming__c</name>
+    <picklistValues>
+        <masterLabel>nachschüssig</masterLabel>
+        <translation><!-- nachschüssig --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>vorschüssig</masterLabel>
+        <translation><!-- vorschüssig --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

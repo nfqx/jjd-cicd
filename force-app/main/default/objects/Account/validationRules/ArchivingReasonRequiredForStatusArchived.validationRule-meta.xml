@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ArchivingReasonRequiredForStatusArchived</fullName>
+    <active>false</active>
+    <description>In case the Processing Status (Rating) is changed to Archived Prospect the Archiving Reason is required.</description>
+    <errorConditionFormula>ISPICKVAL(Rating, &quot;Archived Prospect&quot;) &amp;&amp; 
+ISPICKVAL(ArchivingReason__c, &quot;&quot;)</errorConditionFormula>
+    <errorDisplayField>ArchivingReason__c</errorDisplayField>
+    <errorMessage>Please select the reason why the prospect is archived.</errorMessage>
+</ValidationRule>

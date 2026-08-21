@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidFrom__c</fullName>
+    <description>Start of the contract term at header level. [Sources: MN-001 Z.17]</description>
+    <inlineHelpText>Start of the contract term at header level.</inlineHelpText>
+    <label>Valid From</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

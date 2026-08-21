@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SalesArea__c</fullName>
+    <label>Sales Area</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Baden-Württemberg (H. Mangold)</fullName>
+                <default>false</default>
+                <label>Baden-Württemberg (H. Mangold)</label>
+            </value>
+            <value>
+                <fullName>Bavaria North (C. Mitzler)</fullName>
+                <default>false</default>
+                <label>Bavaria North (C. Mitzler)</label>
+            </value>
+            <value>
+                <fullName>Bavaria South (W. Thaller)</fullName>
+                <default>false</default>
+                <label>Bavaria South (W. Thaller)</label>
+            </value>
+            <value>
+                <fullName>Berlin / Brandenburg (K. Schulze)</fullName>
+                <default>false</default>
+                <label>Berlin / Brandenburg (K. Schulze)</label>
+            </value>
+            <value>
+                <fullName>Export (J. Tesch)</fullName>
+                <default>false</default>
+                <label>Export (J. Tesch)</label>
+            </value>
+            <value>
+                <fullName>Hamburg / Schleswig-Holstein (K. Thestorff)</fullName>
+                <default>false</default>
+                <label>Hamburg / Schleswig-Holstein (K. Thestorff)</label>
+            </value>
+            <value>
+                <fullName>Hesse / Rhineland-Palatinate, Saarland (T. Schröder)</fullName>
+                <default>false</default>
+                <label>Hesse / Rhineland-Palatinate, Saarland (T. Schröder)</label>
+            </value>
+            <value>
+                <fullName>KAM (N. Stoevesand)</fullName>
+                <default>false</default>
+                <label>KAM (N. Stoevesand)</label>
+            </value>
+            <value>
+                <fullName>Marketing (J. Tesch)</fullName>
+                <default>false</default>
+                <label>Marketing (J. Tesch)</label>
+            </value>
+            <value>
+                <fullName>Mecklenburg-Western Pomerania (K. Schulze)</fullName>
+                <default>false</default>
+                <label>Mecklenburg-Western Pomerania (K. Schulze)</label>
+            </value>
+            <value>
+                <fullName>Lower Saxony, Kassel (R. Kämmerling)</fullName>
+                <default>false</default>
+                <label>Lower Saxony, Kassel (R. Kämmerling)</label>
+            </value>
+            <value>
+                <fullName>North Rhine-Westphalia (D. Budde)</fullName>
+                <default>false</default>
+                <label>North Rhine-Westphalia (D. Budde)</label>
+            </value>
+            <value>
+                <fullName>Saxony, Saxony-Anhalt / Thuringia (D. Henke)</fullName>
+                <default>false</default>
+                <label>Saxony, Saxony-Anhalt / Thuringia (D. Henke)</label>
+            </value>
+            <value>
+                <fullName>Vending (A. Weiß)</fullName>
+                <default>false</default>
+                <label>Vending (A. Weiß)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

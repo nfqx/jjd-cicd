@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type --></label>
+    <name>Type__c</name>
+    <picklistValues>
+        <masterLabel>Boolean</masterLabel>
+        <translation><!-- Boolean --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Category</masterLabel>
+        <translation><!-- Category --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Price</masterLabel>
+        <translation><!-- Price --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Range</masterLabel>
+        <translation><!-- Range --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Values</masterLabel>
+        <translation><!-- Values --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

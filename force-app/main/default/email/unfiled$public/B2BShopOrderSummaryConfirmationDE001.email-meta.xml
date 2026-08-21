@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Used for order summary confirmations to the customer</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Shop_Header</letterhead>
+    <name>B2B Shop Order Summary Confirmation [DE-001]</name>
+    <style>freeForm</style>
+    <subject>Deine Bestellung wurde entgegengenommen</subject>
+    <textOnly>Hallo {!OrderSummary.OwnerFullName},
+
+vielen Dank für deine Bestellung bei J.J. Darboven.
+
+Weitere Details zum Auftrag findest du direkt im Shop zu deiner Auftragsnummer {!OrderSummary.OrderNumber__c}.
+
+
+https://shop.darboven.com/s/OrderSummary/{!OrderSummary.Id}
+
+Diese E-Mail bestätigt den Eingang deiner Bestellung. Die endgültige Annahmebestätigung erfolgt mit dem Versand der Bestellung.
+
+Für Rückfragen stehen wir dir sehr gerne zur Verfügung unter ecommerce@darboven.com.
+
+Mit freundlichen Grüßen
+
+
+Deine Ipek Göc
+und das J.J. Darboven Webshop-Team</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

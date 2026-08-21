@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ERPLockStatus__c</fullName>
+    <description>Indicates whether the record is locked in the ERP system due to compliance checks (e.g., sanction list screening, credit rating validation). Possible values: &apos;Credit Rating&apos;, &apos;Sanction List&apos;, &apos;Not Sanctioned&apos;.</description>
+    <label>ERP Lock Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Credit Rating</fullName>
+                <default>false</default>
+                <label>Credit Rating</label>
+            </value>
+            <value>
+                <fullName>Sanction List</fullName>
+                <default>false</default>
+                <label>Sanction List</label>
+            </value>
+            <value>
+                <fullName>Not Sanctioned</fullName>
+                <default>false</default>
+                <label>Not Sanctioned</label>
+            </value>
+            <value>
+                <fullName>Other Lock</fullName>
+                <default>false</default>
+                <label>Other Lock</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

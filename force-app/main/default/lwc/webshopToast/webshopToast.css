@@ -1,0 +1,6 @@
+.toastmsg{
+    z-index: 10001;
+    position: absolute;
+    width: 50%;
+    padding: 6rem 25%;
+}

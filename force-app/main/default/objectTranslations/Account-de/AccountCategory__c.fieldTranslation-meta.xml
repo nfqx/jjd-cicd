@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Automatic mode target field. Set by the cascade or manually, never via the interface. --></help>
+    <label><!-- Account Category --></label>
+    <name>AccountCategory__c</name>
+    <picklistValues>
+        <masterLabel>Association Member</masterLabel>
+        <translation><!-- Association Member --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Central Regulator</masterLabel>
+        <translation><!-- Central Regulator --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Department</masterLabel>
+        <translation><!-- Department --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Direct Customer</masterLabel>
+        <translation><!-- Direct Customer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unclassified</masterLabel>
+        <translation><!-- Unclassified --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

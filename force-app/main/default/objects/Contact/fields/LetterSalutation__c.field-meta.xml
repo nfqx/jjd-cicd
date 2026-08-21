@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LetterSalutation__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+ISBLANK(TEXT(Salutation)),
+&quot;Sehr geehrte Damen und Herren&quot;,
+IF(
+TEXT(Salutation) = &quot;Mr.&quot;,
+&quot;Sehr geehrter Herr &quot; &amp; LastName,
+IF(
+TEXT(Salutation) = &quot;Ms.&quot;,
+&quot;Sehr geehrte Frau &quot; &amp; LastName,
+IF(
+TEXT(Salutation) = &quot;Divers&quot;,
+&quot;Sehr geehrte*r &quot; &amp; LastName,
+TEXT(Salutation) &amp; &quot; &quot; &amp; LastName
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Letter Salutation</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

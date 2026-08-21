@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ScaleFromQty__c</fullName>
+    <description>From which annual purchase quantity this step applies (for quantity-based refunds). [Sources: XLSX-003]</description>
+    <externalId>false</externalId>
+    <inlineHelpText>From which annual purchase quantity this step applies (for quantity-based refunds).</inlineHelpText>
+    <label>Scale From (kg)</label>
+    <precision>10</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

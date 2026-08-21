@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tenant__c</fullName>
+    <label>Tenant</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>J. J. Darboven GmbH &amp; Co. KG</fullName>
+                <default>false</default>
+                <label>J. J. Darboven GmbH &amp; Co. KG</label>
+            </value>
+            <value>
+                <fullName>Burkhof Kaffee GmbH</fullName>
+                <default>false</default>
+                <label>Burkhof Kaffee GmbH</label>
+            </value>
+            <value>
+                <fullName>J. Eilles GmbH &amp; Co. KG</fullName>
+                <default>false</default>
+                <label>J. Eilles GmbH &amp; Co. KG</label>
+            </value>
+            <value>
+                <fullName>J.J. Darboven Internat. GmbH</fullName>
+                <default>false</default>
+                <label>J.J. Darboven Internat. GmbH</label>
+            </value>
+            <value>
+                <fullName>C.A.Wille Handelsges.mbH &amp; Co.</fullName>
+                <default>false</default>
+                <label>C.A.Wille Handelsges.mbH &amp; Co.</label>
+            </value>
+            <value>
+                <fullName>C.A. Wille Hdl.- u. Verw. gmbH</fullName>
+                <default>false</default>
+                <label>C.A. Wille Hdl.- u. Verw. gmbH</label>
+            </value>
+            <value>
+                <fullName>Andaco Import-u.Handelsges.mbH</fullName>
+                <default>false</default>
+                <label>Andaco Import-u.Handelsges.mbH</label>
+            </value>
+            <value>
+                <fullName>J.J. Darboven /NL</fullName>
+                <default>false</default>
+                <label>J.J. Darboven /NL</label>
+            </value>
+            <value>
+                <fullName>J.J. Darboven France</fullName>
+                <default>false</default>
+                <label>J.J. Darboven France</label>
+            </value>
+            <value>
+                <fullName>Burkhof Kava spol. s.r.o.</fullName>
+                <default>false</default>
+                <label>Burkhof Kava spol. s.r.o.</label>
+            </value>
+            <value>
+                <fullName>IDEE KAFFEE Ges.m.b.H.</fullName>
+                <default>false</default>
+                <label>IDEE KAFFEE Ges.m.b.H.</label>
+            </value>
+            <value>
+                <fullName>J.J. Darboven Poland sp.z o.o.</fullName>
+                <default>false</default>
+                <label>J.J. Darboven Poland sp.z o.o.</label>
+            </value>
+            <value>
+                <fullName>Burkhof-Kava Slovakia s.r.o.</fullName>
+                <default>false</default>
+                <label>Burkhof-Kava Slovakia s.r.o.</label>
+            </value>
+            <value>
+                <fullName>J.J. Darboven Hungaria Kft.</fullName>
+                <default>false</default>
+                <label>J.J. Darboven Hungaria Kft.</label>
+            </value>
+            <value>
+                <fullName>Praxmarer Kaffeevertrieb</fullName>
+                <default>false</default>
+                <label>Praxmarer Kaffeevertrieb</label>
+            </value>
+            <value>
+                <fullName>J.J. Darboven (Americas), Inc.</fullName>
+                <default>false</default>
+                <label>J.J. Darboven (Americas), Inc.</label>
+            </value>
+            <value>
+                <fullName>Hochstrasser AG</fullName>
+                <default>false</default>
+                <label>Hochstrasser AG</label>
+            </value>
+            <value>
+                <fullName>J. Hornig GmbH</fullName>
+                <default>false</default>
+                <label>J. Hornig GmbH</label>
+            </value>
+            <value>
+                <fullName>J.J. Darboven Ireland Ltd.</fullName>
+                <default>false</default>
+                <label>J.J. Darboven Ireland Ltd.</label>
+            </value>
+            <value>
+                <fullName>IDEE Office Coffee Service GmbH</fullName>
+                <default>false</default>
+                <label>IDEE Office Coffee Service GmbH</label>
+            </value>
+            <value>
+                <fullName>Gourvita GmbH</fullName>
+                <default>false</default>
+                <label>Gourvita GmbH</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

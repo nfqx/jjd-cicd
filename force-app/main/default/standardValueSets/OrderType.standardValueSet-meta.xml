@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>ZTAA</fullName>
+        <default>true</default>
+        <label>Terminauftrag (ZTAA)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZBV</fullName>
+        <default>false</default>
+        <label>Barverkauf (ZBV)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZG2</fullName>
+        <default>false</default>
+        <label>Gutschriftsanford. (ZG2)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZG2E</fullName>
+        <default>false</default>
+        <label>Erw. Gutschriftsanf. (ZG2E)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZG2I</fullName>
+        <default>false</default>
+        <label>Gutschriftsan.intern (ZG2I)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZKL</fullName>
+        <default>false</default>
+        <label>Kostenlose Lieferung (ZKL)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZKLA</fullName>
+        <default>false</default>
+        <label>Kostenlose Lieferung (ZKLA)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZL2</fullName>
+        <default>false</default>
+        <label>Lastschriftsanford. (ZL2)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZL2I</fullName>
+        <default>false</default>
+        <label>Lastschriftsan.int. (ZL2I)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZL2M</fullName>
+        <default>false</default>
+        <label>Lastschr. Leihgebühr (ZL2M)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZLA</fullName>
+        <default>false</default>
+        <label>Leihgutabholung (ZLA)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZLB</fullName>
+        <default>false</default>
+        <label>Leihgut Beschickung (ZLB)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZLN</fullName>
+        <default>false</default>
+        <label>Leihgutnachbelastung (ZLN)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZR2</fullName>
+        <default>false</default>
+        <label>Erw. Retoure (ZR2)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZRE</fullName>
+        <default>false</default>
+        <label>Retoure (ZRE)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZREI</fullName>
+        <default>false</default>
+        <label>Retoure intern (AB) (ZREI)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZREL</fullName>
+        <default>false</default>
+        <label>Retoure intern (LF) (ZREL)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZSGS</fullName>
+        <default>false</default>
+        <label>Schadensgutschrift (ZSGS)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZSRE</fullName>
+        <default>false</default>
+        <label>Schadensrechnung (ZSRE)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZTAS</fullName>
+        <default>false</default>
+        <label>Streckenauftrag 3rd (ZTAS)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZVOR</fullName>
+        <default>false</default>
+        <label>TA Vorkasse (ZVOR)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZAG1</fullName>
+        <default>false</default>
+        <label>Wert Gutschrift AHS (ZAG1)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZAKL</fullName>
+        <default>false</default>
+        <label>Kostenl. Lieferg.AHS (ZAKL)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZG1</fullName>
+        <default>false</default>
+        <label>Wert-Gutschriftsanf. (ZG1)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZGA2</fullName>
+        <default>false</default>
+        <label>Gutschriftsanf. AHS (ZGA2)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZL1</fullName>
+        <default>false</default>
+        <label>Wert-Lastschriftsan (ZL1)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZLA1</fullName>
+        <default>false</default>
+        <label>Wert-Lastschrift AHS (ZLA1)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZLA2</fullName>
+        <default>false</default>
+        <label>Lastschriftsanf. AHS (ZLA2)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZREA</fullName>
+        <default>false</default>
+        <label>Retoure AHS (ZREA)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZREM</fullName>
+        <default>false</default>
+        <label>Retoure Maschine (ZREM)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZRES</fullName>
+        <default>false</default>
+        <label>Retoure RKV (ZRES)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZTA</fullName>
+        <default>false</default>
+        <label>Terminauftrag (nicht AHS)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZTST</fullName>
+        <default>false</default>
+        <label>Streckenauftrag AHS (ZTST)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZGA1</fullName>
+        <default>false</default>
+        <label>Wert Gutschrift AHS (ZGA1)</label>
+    </standardValue>
+</StandardValueSet>

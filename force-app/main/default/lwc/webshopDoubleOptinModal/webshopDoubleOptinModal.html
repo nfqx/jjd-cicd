@@ -1,0 +1,29 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <c-modal
+        show={show}
+        onclose={handleClose}
+    >
+        <span slot="header">{label.modalTitle}</span>
+        <div slot="body">
+            <p align="center">{label.modalBody}</p>
+        </div>
+
+        <div slot="footer">
+            <lightning-button 
+                class="slds-p-right_small" 
+                label={label.no} 
+                title={label.no} 
+                onclick={handleClose}>
+            </lightning-button>
+            <lightning-button 
+                variant="brand" 
+                type="submit" 
+                class="slds-p-right_small" 
+                label={label.yes} 
+                title={label.yes} 
+                onclick={handleConfirm}>
+            </lightning-button>
+        </div>
+    </c-modal>
+</template>

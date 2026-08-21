@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ArchivingReason__c</fullName>
+    <description>Reason why an account (Record Type &quot;Procspect&quot;) is archived.</description>
+    <label>Archiving Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No more interest</fullName>
+                <default>false</default>
+                <label>No more interest</label>
+            </value>
+            <value>
+                <fullName>Too expensive</fullName>
+                <default>false</default>
+                <label>Too expensive</label>
+            </value>
+            <value>
+                <fullName>Buys from competition</fullName>
+                <default>false</default>
+                <label>Buys from competition</label>
+            </value>
+            <value>
+                <fullName>Other reason</fullName>
+                <default>false</default>
+                <label>Other reason</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

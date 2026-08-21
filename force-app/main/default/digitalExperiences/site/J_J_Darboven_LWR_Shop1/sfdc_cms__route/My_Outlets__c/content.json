@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "My Outlets",
+  "contentBody" : {
+    "activeViewId" : "My_Outlets",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-my-outlets",
+    "urlPrefix" : "my-outlets"
+  },
+  "urlName" : "my-outlets"
+}

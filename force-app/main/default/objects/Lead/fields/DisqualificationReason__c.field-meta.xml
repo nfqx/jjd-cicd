@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DisqualificationReason__c</fullName>
+    <label>Disqualification Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Private customer</fullName>
+                <default>false</default>
+                <label>Private customer</label>
+            </value>
+            <value>
+                <fullName>Concerns export</fullName>
+                <default>false</default>
+                <label>Concerns export</label>
+            </value>
+            <value>
+                <fullName>Bad data</fullName>
+                <default>false</default>
+                <label>Bad data</label>
+            </value>
+            <value>
+                <fullName>Training request</fullName>
+                <default>false</default>
+                <label>Training request</label>
+            </value>
+            <value>
+                <fullName>Other reason</fullName>
+                <default>false</default>
+                <label>Other reason</label>
+            </value>
+            <value>
+                <fullName>No Decision / Non-Responsive</fullName>
+                <default>false</default>
+                <label>No Decision / Non-Responsive</label>
+            </value>
+            <value>
+                <fullName>Lost to Competitor</fullName>
+                <default>false</default>
+                <label>Lost to Competitor</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

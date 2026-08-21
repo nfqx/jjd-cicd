@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ContractPosition__c</fullName>
+    <description>The refund position whose product scope is refined here.</description>
+    <inlineHelpText>The refund position whose product scope is refined here.</inlineHelpText>
+    <label>Contract Position</label>
+    <referenceTo>ContractPosition__c</referenceTo>
+    <relationshipLabel>Product Scopes</relationshipLabel>
+    <relationshipName>ProductScopes</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

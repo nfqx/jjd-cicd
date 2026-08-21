@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Die Nummer der SAP-Vereinbarung (Bonusabsprache), die das ZKS nach der manuellen Anlage zurückmeldet. Über diese Nummer finden die gebuchten Belege aus der Post-Tabelle ihre Position. Index läuft außerhalb von SAP und hat keine solche Nummer.</help>
+    <label>SAP-Vereinbarungsnummer</label>
+    <name>ERPAgreementNumber__c</name>
+</CustomFieldTranslation>

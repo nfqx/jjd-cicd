@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Status Bonitätsprüfung</label>
+    <name>TotalCreditCheckStatus__c</name>
+    <picklistValues>
+        <masterLabel>Case approved by credit officer</masterLabel>
+        <translation>Vorgang durch Kreditbearbeiter freigegeben</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Credit check completed, case approved</masterLabel>
+        <translation>Kreditprüfung durchgeführt, Vorgang OK</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Credit check completed, case not approved</masterLabel>
+        <translation>Kreditprüfung durchgeführt, Vorgang nicht OK</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Credit check completed, case not approved, partial approval granted</masterLabel>
+        <translation>Kreditprüfung durchgeführt, Vorgang nicht OK, Teilfreigabe</translation>
+    </picklistValues>
+</CustomFieldTranslation>

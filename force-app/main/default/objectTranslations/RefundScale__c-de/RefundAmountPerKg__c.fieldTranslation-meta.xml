@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Eingabehilfe für Altform „Cent pro Kilo&quot; je Stufe — führend bleibt der Prozentsatz.</help>
+    <label>RV-Betrag (€/kg)</label>
+    <name>RefundAmountPerKg__c</name>
+</CustomFieldTranslation>

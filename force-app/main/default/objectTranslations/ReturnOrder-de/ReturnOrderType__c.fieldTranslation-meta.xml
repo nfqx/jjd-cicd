@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Return Order Type --></label>
+    <name>ReturnOrderType__c</name>
+    <picklistValues>
+        <masterLabel>Erw. Retoure</masterLabel>
+        <translation><!-- Erw. Retoure --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Retoure</masterLabel>
+        <translation><!-- Retoure --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Retoure AHS</masterLabel>
+        <translation><!-- Retoure AHS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Retoure Maschine</masterLabel>
+        <translation><!-- Retoure Maschine --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Retoure RKV</masterLabel>
+        <translation><!-- Retoure RKV --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Retoure intern</masterLabel>
+        <translation><!-- Retoure intern --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Retoure intern (LF)</masterLabel>
+        <translation><!-- Retoure intern (LF) --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

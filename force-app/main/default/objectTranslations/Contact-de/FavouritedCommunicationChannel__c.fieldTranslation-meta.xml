@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Bevorzugter Komunikationsweg</label>
+    <name>FavouritedCommunicationChannel__c</name>
+    <picklistValues>
+        <masterLabel>E-Mail</masterLabel>
+        <translation>E-Mail</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Facebook</masterLabel>
+        <translation>Facebook</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fax</masterLabel>
+        <translation>Fax</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Field sale service</masterLabel>
+        <translation>Außendienst</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mail</masterLabel>
+        <translation>Post</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Phone</masterLabel>
+        <translation>Telefon</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Twitter</masterLabel>
+        <translation>Twitter</translation>
+    </picklistValues>
+</CustomFieldTranslation>

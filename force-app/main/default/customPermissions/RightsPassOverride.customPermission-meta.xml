@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Removes the owner restriction. The controller and UI check the same condition: Editable = Account Owner OR this custom permission.</description>
+    <isLicensed>false</isLicensed>
+    <label>Rights-Pass Override</label>
+</CustomPermission>

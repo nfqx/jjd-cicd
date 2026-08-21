@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BaseMachine__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>Basisgerät als Grundlage für die Zusatzausstattung</inlineHelpText>
+    <label>Base Machine</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Product2.IsMaschine__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <infoMessage>Bitte wähle ein Basis-Gerät aus.</infoMessage>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Product2</referenceTo>
+    <relationshipLabel>Components (Product (Basisgerät))</relationshipLabel>
+    <relationshipName>Zusatzausstattungen</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

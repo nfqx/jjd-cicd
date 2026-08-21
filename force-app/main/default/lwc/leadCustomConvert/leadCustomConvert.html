@@ -1,0 +1,254 @@
+<template>
+    <lightning-quick-action-panel>  
+        <lightning-spinner alternative-text="Loading" size="small" if:true={isLoading}></lightning-spinner>
+        <!-- Body -->
+        <template if:true={isLoaded}>   
+            <template if:false={conversionSuccess}>        
+                <lightning-card icon-name="standard:lead" title={label.convertLeadLabel}></lightning-card>
+                <template if:true={isStepOne}>
+                    <div class="container slds_scrollable-y" style="height: 400px; padding: 0 10px 0 10px; border-top: 1px solid rgb(243, 243, 243); border-left: 1px solid rgb(243, 243, 243); border-right: 1px solid rgb(243, 243, 243); border-radius: 3px 3px 0 0;">
+                        <!-- case 1 -->
+                        <p style="font-size: 15px; font-weight:500; margin:20px;">{label.step1} <lightning-icon size="x-small" icon-name="standard:contact"></lightning-icon> {label.contact}</p>
+                        <div>
+                            <template if:true={hasContactResults}>
+                                <lightning-layout style="margin-bottom: 10px;">
+                                    <lightning-layout-item size="11">
+                                        <lightning-input type="text" placeholder={label.contactToMergeNotInList} onkeydown={handleContactKeyDown} onchange={handleChangeContactSearchTerm} style="margin-top: -1.25rem;"></lightning-input>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="1" style="margin-left: 5px;">
+                                        <lightning-button label={label.search} onclick={handleSearchContact} disabled={noContactSearchTerm}></lightning-button>
+                                    </lightning-layout-item>
+                                    <!--lightning-layout-item size="2" style="text-align: right; padding-right: 5px;">
+                                        <lightning-button label={label.selectForMerge} onclick={handlePrepareMergeContact} disabled={noContactSelected}></lightning-button>
+                                    </lightning-layout-item-->
+                                </lightning-layout>
+                                <template if:false={hasContactSearch}>
+                                    <div class="table-container">
+                                        <lightning-datatable class="container slds_scrollable-y scrollable-table" columns={contactColumns} data={contactResults} key-field="Id" max-row-selection="1" onrowselection={handleContactSelection}></lightning-datatable>
+                                    </div>
+                                </template>
+                                <template if:true={hasContactSearch}>
+                                    <template if:true={hasContactSearchResults}>
+                                        <div class="table-container">
+                                            <lightning-datatable class="container slds_scrollable-y scrollable-table" columns={contactColumns} data={contactResults} key-field="Id" max-row-selection="1" onrowselection={handleContactSelection}></lightning-datatable>
+                                        </div>
+                                    </template>
+                                    <template if:false={hasContactSearchResults}>
+                                        <p>{label.noContactSearchResults}: {searchTermContact}</p>
+                                    </template>
+                                </template>
+                            </template>
+                        </div>
+                        <!-- case 2 -->
+                        <div>
+                            <template if:false={hasContactResults}>                        
+                                <p style="margin-bottom: 5px; margin-left: 5px;">{label.noContactDupesFound}</p>
+                                <lightning-layout  style="margin-bottom: 10px;">
+                                    <lightning-layout-item size="11">
+                                        <lightning-input type="text" placeholder={label.searchContacts} onkeydown={handleContactKeyDown} onchange={handleChangeContactSearchTerm} style="margin-top: -1.25rem;"></lightning-input>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="1" style="margin-left: 5px;">
+                                        <lightning-button label={label.search} onclick={handleSearchContact} disabled={noContactSearchTerm}></lightning-button>
+                                    </lightning-layout-item>
+                                    <!--lightning-layout-item size="2" style="text-align: right; padding-right: 5px;">
+                                        <lightning-button label={label.selectForMerge} onclick={handlePrepareMergeContact} disabled={noContactSelected}></lightning-button>
+                                    </lightning-layout-item-->
+                                </lightning-layout>
+                                <template if:true={hasContactSearch}>
+                                    <template if:true={hasContactSearchResults}>
+                                        <div class="table-container">
+                                            <lightning-datatable class="container slds_scrollable-y scrollable-table" columns={contactColumns} data={contactResults} key-field="Id" max-row-selection="1" onrowselection={handleContactSelection}></lightning-datatable>
+                                        </div>
+                                    </template>
+                                    <template if:false={hasContactSearchResults}>
+                                        <p>{label.noContactSearchResults}: {searchTermContact}</p>
+                                    </template>
+                                </template>
+                            </template>
+                        </div>
+                    </div>
+                    <template if:true={contactSingleMergeMode}>
+                        <template if:true={createOpp}>
+                            <div class="section" style="margin-bottom: 30px;"> 
+                                <h2 style="margin-bottom: 5px;">{label.selectContactAccount}</h2>
+                                <lightning-datatable class="container slds_scrollable-y scrollable-table" columns={contactAccColumns} data={contactRelationOptions} key-field="AccountId" max-row-selection="1" selected-rows={contactAccountSelectedRows} onrowselection={handleContactAccountSelection}></lightning-datatable>
+                                <p if:true={createOppAndNoAcc}>
+                                    <lightning-dual-listbox
+                                        label={label.contactRoles} 
+                                        options={contactRoleOptions}
+                                        value={contactRoles}
+                                        onchange={handleChangeContactRoles}>
+                                    </lightning-dual-listbox>
+                                </p>
+                            </div>
+                            
+                        </template>
+                        <div class="section"> 
+                            <h2 style="margin-bottom: 5px;">{label.mergeFields}</h2>
+                            <c-record-merger class="slds-table slds-table_cell-buffer slds-table_bordered" if:false={contactMergerLoading} target-object={label.contact} field-results={contactSingleFieldResults} onfieldselection={handleContactMergerChange}></c-record-merger>
+                        </div>
+                    </template>
+                </template>
+                <template if:true={isStepTwo}>
+                    <div class="container slds_scrollable-y" style="height: 400px; padding: 0 10px 0 10px; border-top: 1px solid rgb(243, 243, 243); border-left: 1px solid rgb(243, 243, 243); border-right: 1px solid rgb(243, 243, 243); border-radius: 3px 3px 0 0;">
+                        <!-- Step 2 --> <!-- case 1 -->
+                        <p style="font-size: 15px; font-weight:500; margin:20px;">{label.step2} <lightning-icon size="x-small" icon-name="standard:account"></lightning-icon> {label.accLabel}</p>
+                        <template if:true={hasAccountResults}>
+                            <lightning-layout style="margin-bottom: 10px;">
+                                <lightning-layout-item size="11">
+                                    <lightning-input type="text" placeholder={label.accountToMergeNotInList} onkeydown={handleAccountKeyDown} onchange={handleChangeAccountSearchTerm} style="margin-top: -1.25rem;"></lightning-input>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="1" style="margin-left: 5px;">
+                                    <lightning-button label={label.search} onclick={handleSearchAccount} disabled={noAccountSearchTerm}></lightning-button>
+                                </lightning-layout-item>
+                                <!--lightning-layout-item size="2" style="text-align: right; padding-right: 5px;">
+                                    <lightning-button label={label.selectForMerge} onclick={handlePrepareMergeAccount} disabled={noAccountSelected}></lightning-button>
+                                </lightning-layout-item-->
+                            </lightning-layout>
+                            <template if:false={hasAccountSearch}>
+                                <div class="table-container">
+                                    <lightning-datatable class="container slds_scrollable-y scrollable-table" columns={accountColumns} data={accountResults} key-field="Id" max-row-selection="1" onrowselection={handleAccountSelection}></lightning-datatable>
+                                </div>
+                            </template>
+                            <template if:true={hasAccountSearch}>
+                                <template if:true={hasAccountSearchResults}>
+                                    <div class="table-container">
+                                        <lightning-datatable class="container slds_scrollable-y scrollable-table" columns={accountColumns} data={accountResults} key-field="Id" max-row-selection="1" onrowselection={handleAccountSelection}></lightning-datatable>
+                                    </div>
+                                </template>
+                                <template if:false={hasAccountSearchResults}>
+                                    <p>{label.noAccountSearchResults}: {searchTermAccount}</p>
+                                </template>
+                            </template>
+                        </template>
+                        <!-- case 2 -->
+                        <template if:false={hasAccountResults}>
+                            <p style="margin-bottom: 5px; margin-left: 5px;">{label.noAccountDupesFound}</p>
+                            <lightning-layout style="margin-bottom: 10px;">
+                                <lightning-layout-item size="11">
+                                    <lightning-input type="text" placeholder={label.searchAccounts} onkeydown={handleAccountKeyDown} onchange={handleChangeAccountSearchTerm}  style="margin-top: -1.25rem;"></lightning-input>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="1" style="margin-left: 5px;">
+                                    <lightning-button label={label.search} onclick={handleSearchAccount} disabled={noAccountSearchTerm}></lightning-button>
+                                </lightning-layout-item>
+                                <!--lightning-layout-item size="2" style="text-align: right; padding-right: 5px;">
+                                    <lightning-button label={label.selectForMerge} onclick={handlePrepareMergeAccount} disabled={noAccountSelected}></lightning-button>
+                                </lightning-layout-item-->
+                            </lightning-layout>
+                            <template if:true={hasAccountSearch}>
+                                <template if:true={hasAccountSearchResults}>
+                                    <div class="table-container">
+                                        <lightning-datatable class="container slds_scrollable-y scrollable-table" columns={accountColumns} data={accountResults} key-field="Id" max-row-selection="1" onrowselection={handleAccountSelection}></lightning-datatable>
+                                    </div>
+                                </template>
+                                <template if:false={hasAccountSearchResults}>
+                                    <p>{label.noAccountSearchResults}: {searchTermAccount}</p>
+                                </template>
+                            </template>
+                        </template>
+                    </div>
+                    <template if:true={accountSingleMergeMode}>
+                        <div class="section">
+                            <h2 style="margin-bottom: 5px;">{label.mergeFields}</h2>
+                            <c-record-merger target-object="Account" field-results={accountSingleFieldResults} onfieldselection={handleAccountMergerChange}></c-record-merger>
+                        </div>
+                    </template>
+                </template>
+                <div slot="footer">
+                    <lightning-layout>
+                        <lightning-layout-item size="2" class="slds-small-size_2-of-12">
+                            <lightning-input if:false={stepOneAndNoContactSelected} type="toggle" label={label.createOpp} onchange={handleChangeCreateOpp} checked={createOpp}></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="5" class="slds-form-element_stacked-mobile slds-small-size_5-of-12" style="display: flex;">
+                            <template if:true={createOpp}>
+                                <p if:false={stepOneAndNoContactSelected} style="text-align: left; margin: 5px 10px 0 20px;">{label.oppName}</p>
+                                <lightning-input if:false={stepOneAndNoContactSelected} style="width: 65%;" type="text" variant="label-hidden" value={oppName} onchange={handleChangeOppName}></lightning-input>
+                            </template>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="5" class="slds-small-size_5-of-12" style="text-align: right;">
+                            <lightning-button variant="neutral" label={label.cancel} onclick={closeModal}></lightning-button>
+                            <template if:true={isStepOne}>
+                                <template if:false={noContactSelected}>
+                                    &nbsp;<lightning-button variant="neutral" label={label.assignToContact} onclick={handleConvertLeadWithExistingContact} disabled={contactSingleMergeModeFalse}></lightning-button>
+                                </template>
+                                <template if:true={noContactSelected}>
+                                    &nbsp;<lightning-button variant="neutral" label={label.noDuplicateContact} onclick={handleGoToStepTwo}></lightning-button>
+                                </template>
+                            </template>
+                            <template if:true={isStepTwo}>
+                                &nbsp;<lightning-button size="" variant="neutral" label={label.backLabel} onclick={handleGoToStepOne}></lightning-button>
+                                <template if:false={noAccountSelected}>
+                                    &nbsp;<lightning-button variant="neutral" label={label.assignToAccount} onclick={handleConvertLeadWithExistingAccount} disabled={accountSingleMergeModeFalse}></lightning-button>
+                                </template>
+                                <template if:true={noAccountSelected}>
+                                    &nbsp;<lightning-button variant="neutral" label={label.noDuplicateAccount} onclick={handleConvertLead} disabled={oppNoName}></lightning-button>
+                                </template>
+                            </template>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </div>
+            </template>
+            <lightning-layout class="converted-container">
+                <template if:true={conversionSuccess}>
+                    <h2 class="title" align="center" style="font-weight: 300; margin:10px;">{label.leadConverted}</h2>
+                    <img class="subtitle" src={leadConvertCelebration} alt="Lead Convert Celebration"/>
+                    <div style="display: flex; gap: 20px; padding: 10px;">
+                        <div style="flex: 1;">
+                            <p style="font-size: 2em; font-weight:200; margin: 10px;">{label.accLabel}</p>
+                            <div class="record-section" style="border: 1px solid rgb(201, 201, 201); border-radius:3px; background-color:white;">
+                                <lightning-icon icon-name="standard:account"></lightning-icon>&nbsp;<a href={conversionData.accountIdAlt} target="_blank"><span style="font-weight: bold; font-size: 1.5rem;">{conversionData.accountName}</span></a>
+                                <lightning-record-view-form object-api-name="Account" record-id={conversionData.accountId}>
+                                    <lightning-output-field field-name="AccountNumber" variant="label-inline"></lightning-output-field>
+                                    <lightning-output-field field-name="BillingCity" variant="label-inline"></lightning-output-field>
+                                    <lightning-output-field field-name="Type" variant="label-inline"></lightning-output-field>
+                                    <lightning-output-field field-name="Industry" variant="label-inline"></lightning-output-field>
+                                    <lightning-output-field field-name="Rating" variant="label-inline"></lightning-output-field>
+                                </lightning-record-view-form>
+                            </div>
+                        </div>
+                        <div style="flex: 1;">
+                            <p style="font-size: 2em; font-weight:200; margin: 10px;">{label.contact}</p>
+                            <div class="record-section" style="border: 1px solid rgb(201, 201, 201); border-radius:3px; background-color:white;">
+                                <lightning-icon style="margin-right: 10px;" icon-name="standard:contact"></lightning-icon>&nbsp;<a href={conversionData.contactIdAlt} target="_blank"><span style="font-weight: bold; font-size: 1.5rem;">{conversionData.contactName}</span></a>
+                                <lightning-record-view-form object-api-name="Contact" record-id={conversionData.contactId}>
+                                    <lightning-output-field field-name="Title" variant="label-inline"></lightning-output-field>
+                                    <lightning-output-field field-name="AccountId" variant="label-inline"></lightning-output-field>
+                                    <lightning-output-field field-name="MailingCity" variant="label-inline"></lightning-output-field>
+                                    <lightning-output-field field-name="Phone" variant="label-inline"></lightning-output-field>
+                                    <lightning-output-field field-name="Email" variant="label-inline"></lightning-output-field>
+                                </lightning-record-view-form>
+                            </div>
+                        </div>
+                        <template if:true={createOpp}>
+                            <div style="flex: 1;">
+                                    <p style="font-size: 2em; font-weight:200; margin: 10px;">{label.oppLabel}</p>
+                                    <div class="record-section" style="border: 1px solid rgb(201, 201, 201); border-radius:3px; background-color:white;">
+                                        <lightning-icon style="margin-right: 10px;" icon-name="standard:opportunity"></lightning-icon>&nbsp;<a href={conversionData.opportunityIdAlt} target="_blank"><span style="font-weight: bold; font-size: 1.5rem;">{conversionData.opportunityName}</span></a>
+                                        <lightning-record-view-form object-api-name="Opportunity" record-id={conversionData.opportunityId}>
+                                            <lightning-output-field field-name="AccountId" variant="label-inline"></lightning-output-field>
+                                            <lightning-output-field field-name="Amount" variant="label-inline"></lightning-output-field>
+                                            <lightning-output-field field-name="StageName" variant="label-inline"></lightning-output-field>
+                                            <lightning-output-field field-name="CloseDate" variant="label-inline"></lightning-output-field>
+                                        </lightning-record-view-form>
+                                    </div>
+                            </div>
+                        </template>
+                    </div>
+                    <div slot="footer">
+                    <lightning-layout>
+                        <lightning-layout-item size="12" style="text-align: right;">
+                            <lightning-button size="" variant="neutral" label={label.goToLeads} onclick={handleGoToLeads}></lightning-button>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    </div>
+                </template>
+            </lightning-layout>
+            
+            <template if:true={isConverting}>
+                <div class="overlay">
+                    <lightning-spinner alternative-text="Converting..." size="medium" variant="brand"></lightning-spinner>
+                </div>
+            </template>
+        </template>
+    </lightning-quick-action-panel>
+</template>

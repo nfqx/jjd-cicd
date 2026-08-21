@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RefundAmountPerKg__c</fullName>
+    <description>Entry aid for the legacy &apos;cents per kilo&apos; form per step — the percentage remains the leading value. [Sources: C-01, K-5 2026-08-11]</description>
+    <inlineHelpText>Entry aid for the legacy &apos;cents per kilo&apos; form per step — the percentage remains the leading value.</inlineHelpText>
+    <label>Refund Amount (€/kg)</label>
+    <precision>12</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,111 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <div class="d-flex justify-content-center align-items-center">
+        <div if:true={isLoading}  class="spinner-border text-black-50" role="status"></div>
+    </div>
+    <!--ightning-spinner if:true={isLoading} alternative-text="Loading" size="small"></lightning-spinner-->
+    <template if:false={isLoading}>
+        <div class="container">
+            <div class="row">
+                <!-- Left side -->
+                <div class="col-12 col-lg-6 px-0 px-lg-4 details">
+                    <p class="heading-2">{label.checkout}</p>
+                    <!--Mobile device order summary block-->
+                    <div class="d-block d-lg-none d-flex align-items-center justify-content-between order-detail w-100 mb-3" onclick={handleOpenModal}>
+                        <div class="body-regular">
+                            <p class="m-0">{label.orderSummary}</p>
+                            <p class="body-bold m-0">({cartCount})</p>
+                        </div>
+                        <p class="components-badge-h4 m-0 d-flex align-items-center">
+                            <i class="bi bi-chevron-right"></i>
+                        </p>                    
+                    </div>   
+                    <!--END Mobile device order summary block-->
+                    <!-- Account Info-->
+                    <template if:true={showAccountInfo}>
+                        <div class="account-modal mb-3">
+                            <p class="label-uppercase gray-500 mb-1">{label.activeAccount}</p>
+                            <p class="large-medium m-0">{account.Name}</p>
+                            <p class="body-regular m-0">{account.Street}, {account.PostalCode} {account.City}</p>
+                        </div>
+                        <template if:true={showAddresses}>
+                            <p class="components-badge-h3">{label.shippingAddress}</p>
+                            <!--p class="body-regular">{account.Street}, {account.PostalCode} {account.City}</p-->
+                            <lightning-radio-group
+                                options={allAddresses}
+                                value={externalAddressId}
+                                onchange={handleChangeExternalAddressId}
+                                type="radio">
+                            </lightning-radio-group>
+                        </template>
+                        <div class="account-modal mb-3">
+                            <p class="label-uppercase gray-500 mb-1">{label.accountBilling}</p>
+                            <p class="large-medium m-0">{account.Name}</p>
+                            <p class="body-regular m-0">{account.StreetBilling}, {account.PostalCodeBilling} {account.CityBilling}</p>
+                        </div>
+                        <!--p>&nbsp;</p>
+                        <p class="components-badge-h3">{label.paymentConditionsHeader}</p>
+                        <p class="body-regular">{label.paymentConditionsBody}</p>
+                        <p>&nbsp;</p-->
+                    </template>
+                    <!-- End Account Info-->
+
+                    <!-- Checkout remarks -->
+                    <template if:true={showCommentsMask}>
+                        <p class="body-regular">{label.orderNumber}</p>
+                        <p>
+                            <input class="form-control" maxlength="35" onchange={handleSetOrderNumber}></input>
+                        </p>
+                        <p class="body-regular">{label.wishes}</p>
+                        <p>
+                            <input class="form-control" maxlength="255" onchange={handleSetComment}></input>
+                        </p>
+                    </template>
+                    <!-- End Checkout remarks -->
+                </div>
+                <!-- End Left side  -->
+
+                <!-- Right side -->
+                <div class="col-12 col-lg-6 px-0 px-lg-4 cart-summary">
+                    <div class="d-none d-lg-block">
+                        <!-- Product Summary-->
+                        <p class="components-badge-h3">{label.orderSummary} ({cartCount})</p>                        
+                        <template if:true={erpDataLoaded}>
+                            <c-webshop-order-simulation-summary erp-result={erpResult} show-prices={showPrices}></c-webshop-order-simulation-summary>
+                        </template>
+                        <!-- End Product Summary -->
+                    </div>
+                    <!-- Terms and Conditions -->
+                    <div class="body-regular" style="width: 100%; position: relative;" if:true={showTCSection}>
+                        <div class={checkboxStyle}>
+                            <input type="checkbox" onclick={handleSetTC}>&nbsp;<lightning-formatted-rich-text value={label.TC}></lightning-formatted-rich-text>
+                        </div>
+                        <div if:true={notOptedIn}>
+                            <input type="checkbox" onclick={handleSetNewsletter}>&nbsp;{label.newsletter}
+                        </div>
+                    </div>
+                    <!-- End Terms and Conditions -->
+                    <button class="btn btn-lg btn-primary mt-3" onclick={createOrder}>{label.placeOrder}</button>
+                </div>
+                <div class="order-modal d-none">
+                    <!-- Product Summary-->
+                    <div class="row border-bottom py-3 d-flex align-items-center justify-content-between sticky-top bg-white text-dark">
+                        <div class="col-6">
+                            <p class="components-badge-h3 m-0">{label.orderSummary}</p>
+                        </div>
+                        <div class="col-6 text-end no-print" onclick={handleCloseModal}>
+                            <i class="bi bi-x-lg"></i>
+                        </div>
+                    </div>
+                    <!--c-webshop-cart-product-summary show-empty-cart-message no-reload-after-change show-subtotal show-shipping show-total hide-inputs></c-webshop-cart-product-summary-->
+                    <template if:true={erpDataLoaded}>
+                        <c-webshop-order-simulation-summary erp-result={erpResult} show-prices={showPrices}></c-webshop-order-simulation-summary>
+                    </template>
+                    <!-- End Product Summary -->
+                </div>
+                <div class="order-block d-none d-lg-block"></div>
+            </div>
+        </div>
+        <!-- End right side -->
+    </template>
+</template>

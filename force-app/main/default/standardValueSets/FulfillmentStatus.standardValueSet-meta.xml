@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <groupingStringEnum>FulfillmentStatusCategory</groupingStringEnum>
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Entwurf</fullName>
+        <default>false</default>
+        <label>Entwurf</label>
+        <groupingString>DRAFT</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Zugeteilt</fullName>
+        <default>false</default>
+        <label>Zugeteilt</label>
+        <groupingString>ACTIVATED</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Zugewiesen</fullName>
+        <default>false</default>
+        <label>Zugewiesen</label>
+        <groupingString>FULFILLING</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Pick-Pack</fullName>
+        <default>false</default>
+        <label>Pick-Pack</label>
+        <groupingString>FULFILLING</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Abgewickelt</fullName>
+        <default>false</default>
+        <label>Abgewickelt</label>
+        <groupingString>CLOSED</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Abgebrochen</fullName>
+        <default>false</default>
+        <label>Abgebrochen</label>
+        <groupingString>CANCELLED</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Abgelehnt</fullName>
+        <default>false</default>
+        <label>Abgelehnt</label>
+        <groupingString>REJECTED</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Gedruckt</fullName>
+        <default>false</default>
+        <label>Gedruckt</label>
+        <groupingString>FULFILLING</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Abholung abgeschlossen</fullName>
+        <default>false</default>
+        <label>Abholung abgeschlossen</label>
+        <groupingString>FULFILLING</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Paketerstellung abgeschlossen</fullName>
+        <default>false</default>
+        <label>Paketerstellung abgeschlossen</label>
+        <groupingString>FULFILLING</groupingString>
+    </standardValue>
+</StandardValueSet>

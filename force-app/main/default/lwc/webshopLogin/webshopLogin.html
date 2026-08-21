@@ -1,0 +1,68 @@
+<template>
+  <c-webshop-toast></c-webshop-toast>
+  <div class="d-flex justify-content-center align-items-center">
+    <div if:true={isLoading}  class="spinner-border text-black-50" role="status"></div>
+  </div>
+  <!--lightning-spinner if:true={isLoading} alternative-text="Loading" size="medium"></lightning-spinner-->
+  <template if:false={isLoading}>
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-md-6">
+          <h2 class="heading-2">{label.LOGINHERE}</h2>
+          <p class="body-regular gray-700">{label.loginSubheader}</p>
+          <form>
+            <div class="bg-secondary-subtle border-secondary rounded mb-4 p-2 w-100" if:true={showError}> 
+              <h3 class="heading-6 m-0"><i class="bi bi-x-circle text-danger me-2"></i>{label.ERROR}</h3>
+              <p class="body-regular m-0">{errorMessage}</p>
+            </div>
+            <div class="mb-4"> 
+              <label for="username" class="form-label body-regular">{label.USERNAME}</label>
+              <input type="text" class="form-control" id="username" onchange={handleUsernameChange} required>
+            </div>
+            <div class="mb-4"> 
+              <label for="password" class="form-label body-regular">{label.PASSWORD}</label>
+              <div class="position-relative mb-2">
+              <input type="password" class="form-control" data-id="password" onkeydown={handlePasswordKeydown} required>
+              <span class="password-toggle" onclick={handlePasswordVisibility}>
+                <lightning-icon if:true={isPasswordVisible} icon-name="utility:hide" size="x-small"></lightning-icon>
+                <lightning-icon if:false={isPasswordVisible} icon-name="utility:preview" size="x-small"></lightning-icon>
+              </span>
+              </div>
+              {label.ForgotYourPasswordPreQuestion}&nbsp;<a class="link text-decoration-underline" onclick={forwardToForgotPassword}>{label.ForgotYourPasswordQuestion}</a>&nbsp;{label.ForgotYourPasswordPostQuestion} <!--| {label.needHelp} <a class="link text-decoration-underline" onclick={handleOpenContactModal}>{label.ContactUsButton}</a>-->
+            </div>        
+          </form>
+          <button type="button" class="btn btn-primary w-100" onclick={handleClick}>{label.LOGIN}</button>
+          <div>
+            <h3 class="mt-5 heading-2">{label.RegistrationHeader}</h3>
+            <p class="body-regular gray-700">{label.RegistrationDescription}</p>
+            <button type="button" class="btn btn-secondary w-100 mb-4" onclick={forwardToRegister}>{label.RegisterButton}</button>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 d-flex flex-column align-items-center gray-background p-3">
+            <img src={jjdMarketingLogo} alt="Marketing Image" class="d-none d-md-block">
+            <div class="text-box rounded p-3 mt-5" >
+              <p class="text-start body-regular">{label.NotACustomerMessage}</p>
+              <p>
+                <a href="#" class="text-start link" onclick={handleOpenContactLeadModal}>
+                  {label.ContactUsButton}
+                  <span>
+                    <i class="bi bi-arrow-right"></i>
+                  </span>
+                </a> 
+              </p>
+              <p class="text-start body-regular">{label.AlreadyCustomerMessage}</p>
+              <p>
+                <a href="#" class="text-start link" onclick={handleOpenContactModal}>
+                  {label.ContactUsButton}
+                  <span>
+                    <i class="bi bi-arrow-right"></i>
+                  </span>
+                </a> 
+              </p>
+            </div>
+        </div>
+      </div>
+    </div>
+    <c-webshop-contact-modal anonymous></c-webshop-contact-modal>
+  </template>
+</template>

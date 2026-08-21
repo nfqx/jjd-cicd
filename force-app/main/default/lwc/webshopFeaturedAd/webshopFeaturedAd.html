@@ -1,0 +1,23 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <div class="container-fluid"></div>
+    <div class={className} if:true={hasFeaturedAd}>
+        <a href={target} target="_blank" class="ad-container row" >
+            <div class="text col-12 col-lg-6">
+                <p class="title">{featuredAd.Title__c}</p>
+                <p class="sub-title">{featuredAd.Subtitle__c}</p>
+                <template if:true={showButton}>
+                    <a class="btn btn-secondary" href={featuredAd.Target__c}
+                        style="border: solid 2px rgba(53, 53, 54, 1);
+                                background-color: white;
+                                color: rgba(53, 53, 54, 1);
+                                transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;"
+                        >{featuredAd.ButtonLabel__c}</a>
+                </template>
+            </div>
+            <div class="img col-12 col-lg-6">
+                <lightning-formatted-rich-text value={featuredAd.Image__c}></lightning-formatted-rich-text>
+            </div>
+        </a>
+    </div>
+</template>

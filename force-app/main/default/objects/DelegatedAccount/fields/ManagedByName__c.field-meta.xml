@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ManagedByName__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;/&quot;&amp; ManagedBy.Id , ManagedBy.FirstName &amp;&quot; &quot;&amp; ManagedBy.LastName &amp; &quot; (&quot;&amp; ManagedBy.Username &amp;&quot;)&quot; , &quot;_blank&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Managed By Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

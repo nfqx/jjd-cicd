@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>0101</fullName>
+        <default>false</default>
+        <label>Green Coffee</label>
+    </customValue>
+    <customValue>
+        <fullName>0210</fullName>
+        <default>false</default>
+        <label>Idee Brand</label>
+    </customValue>
+    <customValue>
+        <fullName>0211</fullName>
+        <default>false</default>
+        <label>Mövenpick Brand</label>
+    </customValue>
+    <customValue>
+        <fullName>0212</fullName>
+        <default>false</default>
+        <label>Eilles Brand</label>
+    </customValue>
+    <customValue>
+        <fullName>0213</fullName>
+        <default>false</default>
+        <label>Intención Brand</label>
+    </customValue>
+    <customValue>
+        <fullName>0214</fullName>
+        <default>false</default>
+        <label>Verde Brand</label>
+    </customValue>
+    <customValue>
+        <fullName>0215</fullName>
+        <default>false</default>
+        <label>Ferne Welten Brand</label>
+    </customValue>
+    <customValue>
+        <fullName>0216</fullName>
+        <default>false</default>
+        <label>Alberto Brand</label>
+    </customValue>
+    <customValue>
+        <fullName>0217</fullName>
+        <default>false</default>
+        <label>Kränzchen Brand</label>
+    </customValue>
+    <customValue>
+        <fullName>0218</fullName>
+        <default>false</default>
+        <label>Burkhof Brand</label>
+    </customValue>
+    <customValue>
+        <fullName>0219</fullName>
+        <default>false</default>
+        <label>Alfredo Brand</label>
+    </customValue>
+    <customValue>
+        <fullName>0220</fullName>
+        <default>false</default>
+        <label>Mozart</label>
+    </customValue>
+    <customValue>
+        <fullName>0221</fullName>
+        <default>false</default>
+        <label>Joh. Joach. Darb. Bakery Business</label>
+    </customValue>
+    <customValue>
+        <fullName>0222</fullName>
+        <default>false</default>
+        <label>Rainforest Alliance</label>
+    </customValue>
+    <customValue>
+        <fullName>0223</fullName>
+        <default>false</default>
+        <label>Sansibar Brand</label>
+    </customValue>
+    <customValue>
+        <fullName>0224</fullName>
+        <default>false</default>
+        <label>Food Service</label>
+    </customValue>
+    <customValue>
+        <fullName>0225</fullName>
+        <default>false</default>
+        <label>Warca</label>
+    </customValue>
+    <customValue>
+        <fullName>0226</fullName>
+        <default>false</default>
+        <label>Hornig</label>
+    </customValue>
+    <customValue>
+        <fullName>0227</fullName>
+        <default>false</default>
+        <label>Other Roasted Coffees</label>
+    </customValue>
+    <customValue>
+        <fullName>0228</fullName>
+        <default>false</default>
+        <label>App Coffee</label>
+    </customValue>
+    <customValue>
+        <fullName>0230</fullName>
+        <default>false</default>
+        <label>Private Labels</label>
+    </customValue>
+    <customValue>
+        <fullName>0360</fullName>
+        <default>false</default>
+        <label>Packaging Materials</label>
+    </customValue>
+    <customValue>
+        <fullName>0462</fullName>
+        <default>false</default>
+        <label>Contract-Manufactured Roasted Coffee</label>
+    </customValue>
+    <customValue>
+        <fullName>0564</fullName>
+        <default>false</default>
+        <label>Coffee Extract</label>
+    </customValue>
+    <customValue>
+        <fullName>0666</fullName>
+        <default>false</default>
+        <label>Tea Products</label>
+    </customValue>
+    <customValue>
+        <fullName>0770</fullName>
+        <default>false</default>
+        <label>Other Instant Products</label>
+    </customValue>
+    <customValue>
+        <fullName>0871</fullName>
+        <default>false</default>
+        <label>Drinking Chocolate Products</label>
+    </customValue>
+    <customValue>
+        <fullName>0973</fullName>
+        <default>false</default>
+        <label>Biscuits and Chocolate Squares</label>
+    </customValue>
+    <customValue>
+        <fullName>1074</fullName>
+        <default>false</default>
+        <label>Cream and Condensed Milk</label>
+    </customValue>
+    <customValue>
+        <fullName>1175</fullName>
+        <default>false</default>
+        <label>Sugar and Sweeteners</label>
+    </customValue>
+    <customValue>
+        <fullName>1276</fullName>
+        <default>false</default>
+        <label>Alcoholic Beverage Products</label>
+    </customValue>
+    <customValue>
+        <fullName>1377</fullName>
+        <default>false</default>
+        <label>Operating Supplies</label>
+    </customValue>
+    <customValue>
+        <fullName>1478</fullName>
+        <default>false</default>
+        <label>Other Products at Reduced VAT Rate</label>
+    </customValue>
+    <customValue>
+        <fullName>1479</fullName>
+        <default>false</default>
+        <label>Other Products at Standard VAT Rate</label>
+    </customValue>
+    <customValue>
+        <fullName>1580</fullName>
+        <default>false</default>
+        <label>Promotional Materials</label>
+    </customValue>
+    <customValue>
+        <fullName>1581</fullName>
+        <default>false</default>
+        <label>Promotional Materials - Cup Doilies</label>
+    </customValue>
+    <customValue>
+        <fullName>1582</fullName>
+        <default>false</default>
+        <label>Promotional Materials - Beverage Menus</label>
+    </customValue>
+    <customValue>
+        <fullName>1583</fullName>
+        <default>false</default>
+        <label>Promotional Materials - Table Displays</label>
+    </customValue>
+    <customValue>
+        <fullName>1584</fullName>
+        <default>false</default>
+        <label>Promotional Materials - Calendars and Brochures</label>
+    </customValue>
+    <customValue>
+        <fullName>1585</fullName>
+        <default>false</default>
+        <label>Promotional Materials - Notepads</label>
+    </customValue>
+    <customValue>
+        <fullName>1586</fullName>
+        <default>false</default>
+        <label>Promotional Materials - Displays</label>
+    </customValue>
+    <customValue>
+        <fullName>1587</fullName>
+        <default>false</default>
+        <label>General Promotional Materials</label>
+    </customValue>
+    <customValue>
+        <fullName>1688</fullName>
+        <default>false</default>
+        <label>Coffee Machines</label>
+    </customValue>
+    <customValue>
+        <fullName>1789</fullName>
+        <default>false</default>
+        <label>Consumables</label>
+    </customValue>
+    <customValue>
+        <fullName>1890</fullName>
+        <default>false</default>
+        <label>Services</label>
+    </customValue>
+    <customValue>
+        <fullName>1891</fullName>
+        <default>false</default>
+        <label>Machine Rentals</label>
+    </customValue>
+    <customValue>
+        <fullName>1892</fullName>
+        <default>false</default>
+        <label>Sale of Fixed Assets</label>
+    </customValue>
+    <customValue>
+        <fullName>1893</fullName>
+        <default>false</default>
+        <label>Rebilling</label>
+    </customValue>
+    <customValue>
+        <fullName>1894</fullName>
+        <default>false</default>
+        <label>Sales Deductions</label>
+    </customValue>
+    <customValue>
+        <fullName>1895</fullName>
+        <default>false</default>
+        <label>Rebates</label>
+    </customValue>
+    <customValue>
+        <fullName>1896</fullName>
+        <default>false</default>
+        <label>Green Coffee Procurement Costs</label>
+    </customValue>
+    <customValue>
+        <fullName>1897</fullName>
+        <default>false</default>
+        <label>Licences and Costs</label>
+    </customValue>
+    <customValue>
+        <fullName>1898</fullName>
+        <default>false</default>
+        <label>Other Services</label>
+    </customValue>
+    <customValue>
+        <fullName>1899</fullName>
+        <default>false</default>
+        <label>Advance Payments</label>
+    </customValue>
+    <masterLabel>Product Main Group</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

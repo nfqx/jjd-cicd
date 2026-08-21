@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>67.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Triggers when the daily number of cups or estimated sales fields (Tea/Hot Chocolate) are populated with a value greater than 0, setting the corresponding interest field to TRUE.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>FormulaCoffee</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+OR(
+{!$Record.DailyNumberOfCups__c} = 0,
+ISBLANK({!$Record.DailyNumberOfCups__c})
+) , FALSE, TRUE)</expression>
+    </formulas>
+    <formulas>
+        <name>FormulaHotChocolate</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+    OR(
+        {!$Record.EstimatedSalesHotChocolate__c} = 0,
+        ISBLANK({!$Record.EstimatedSalesHotChocolate__c})
+    ), 
+    FALSE, 
+    TRUE
+)</expression>
+    </formulas>
+    <formulas>
+        <name>FormulaTea</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+    OR(
+        {!$Record.EstimatedSalesTea__c} = 0,
+        ISBLANK({!$Record.EstimatedSalesTea__c})
+    ), 
+    FALSE, 
+    TRUE
+)</expression>
+    </formulas>
+    <interviewLabel>Opportunity - Subflow Set Interest Checkboxes {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity - Subflow Set Interest Checkboxes</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>UpdateInterestedInCheckboxes</name>
+        <label>Update Interested In Checkboxes</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>InterestedInCoffee__c</field>
+            <value>
+                <elementReference>FormulaCoffee</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>InterestedInHotChocolate__c</field>
+            <value>
+                <elementReference>FormulaHotChocolate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>InterestedInTea__c</field>
+            <value>
+                <elementReference>FormulaTea</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>UpdateInterestedInCheckboxes</targetReference>
+        </connector>
+        <filterFormula>OR(
+    ISNEW(),
+    ISCHANGED({!$Record.EstimatedSalesTea__c}),
+    ISCHANGED({!$Record.EstimatedSalesHotChocolate__c}),
+    ISCHANGED({!$Record.DailyNumberOfCups__c})
+)</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

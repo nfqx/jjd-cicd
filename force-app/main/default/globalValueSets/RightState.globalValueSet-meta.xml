@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Agreed</fullName>
+        <default>false</default>
+        <label>Agreed</label>
+    </customValue>
+    <customValue>
+        <fullName>AgreedAccountOnly</fullName>
+        <default>false</default>
+        <label>AgreedAccountOnly</label>
+    </customValue>
+    <customValue>
+        <fullName>Locked</fullName>
+        <default>false</default>
+        <label>Locked</label>
+    </customValue>
+    <description>Own (negotiated) state of a right on the condition sheet. Used by the seven Own…RightState__c fields</description>
+    <masterLabel>Right State</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

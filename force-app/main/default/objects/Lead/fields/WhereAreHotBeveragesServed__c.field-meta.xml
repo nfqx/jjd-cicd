@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WhereAreHotBeveragesServed__c</fullName>
+    <label>Where Are Hot Beverages Served?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Breakfast area</fullName>
+                <default>false</default>
+                <label>Breakfast area</label>
+            </value>
+            <value>
+                <fullName>Reception/Lobby</fullName>
+                <default>false</default>
+                <label>Reception/Lobby</label>
+            </value>
+            <value>
+                <fullName>Conference Rooms</fullName>
+                <default>false</default>
+                <label>Conference Rooms</label>
+            </value>
+            <value>
+                <fullName>Room/Mini Bar</fullName>
+                <default>false</default>
+                <label>Room/Mini Bar</label>
+            </value>
+            <value>
+                <fullName>Restaurant/Bar</fullName>
+                <default>false</default>
+                <label>Restaurant/Bar</label>
+            </value>
+            <value>
+                <fullName>Employee area/Backoffice</fullName>
+                <default>false</default>
+                <label>Employee area/Backoffice</label>
+            </value>
+            <value>
+                <fullName>Customer area</fullName>
+                <default>false</default>
+                <label>Customer area</label>
+            </value>
+            <value>
+                <fullName>Counter/Bar</fullName>
+                <default>false</default>
+                <label>Counter/Bar</label>
+            </value>
+            <value>
+                <fullName>Self service station</fullName>
+                <default>false</default>
+                <label>Self service station</label>
+            </value>
+            <value>
+                <fullName>To go offer</fullName>
+                <default>false</default>
+                <label>To go offer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Sub Type --></label>
+    <name>SubType__c</name>
+    <picklistValues>
+        <masterLabel>Accounting</masterLabel>
+        <translation><!-- Accounting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Andere</masterLabel>
+        <translation><!-- Andere --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Answering Machine</masterLabel>
+        <translation><!-- Answering Machine --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Artikelvorbelegung pflegen</masterLabel>
+        <translation><!-- Artikelvorbelegung pflegen --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Create access</masterLabel>
+        <translation><!-- Create access --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Delivery inquiries</masterLabel>
+        <translation><!-- Delivery inquiries --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Export</masterLabel>
+        <translation><!-- Export --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fax</masterLabel>
+        <translation><!-- Fax --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Foreign object</masterLabel>
+        <translation><!-- Foreign object --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Handel</masterLabel>
+        <translation><!-- Handel --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Image database</masterLabel>
+        <translation><!-- Image database --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>JJD error</masterLabel>
+        <translation><!-- JJD error --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KAM</masterLabel>
+        <translation><!-- KAM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Machine</masterLabel>
+        <translation><!-- Machine --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Machine RG/foreign object</masterLabel>
+        <translation><!-- Machine RG/foreign object --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Machine replacement</masterLabel>
+        <translation><!-- Machine replacement --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Maintain article pre-assignment</masterLabel>
+        <translation><!-- Maintain article pre-assignment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Marketing</masterLabel>
+        <translation><!-- Marketing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Master data - Company name change</masterLabel>
+        <translation><!-- Master data - Company name change --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Master data - Price</masterLabel>
+        <translation><!-- Master data - Price --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Master data changes</masterLabel>
+        <translation><!-- Master data changes --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Master data transfer</masterLabel>
+        <translation><!-- Master data transfer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New Customer Setup</masterLabel>
+        <translation><!-- New Customer Setup --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No message/message under 8 seconds</masterLabel>
+        <translation><!-- No message/message under 8 seconds --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ohne Nachricht/ Nachricht unter 8 Sek.</masterLabel>
+        <translation><!-- Ohne Nachricht/ Nachricht unter 8 Sek. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Order - Customer</masterLabel>
+        <translation><!-- Order - Customer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Order - Field service</masterLabel>
+        <translation><!-- Order - Field service --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Order - Webshop</masterLabel>
+        <translation><!-- Order - Webshop --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Out-of-house service</masterLabel>
+        <translation><!-- Out-of-house service --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Outside of the house</masterLabel>
+        <translation><!-- Outside of the house --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>QS - Foreign Body</masterLabel>
+        <translation><!-- QS - Foreign Body --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>QS - Weld seam</masterLabel>
+        <translation><!-- QS - Weld seam --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>QS-Other</masterLabel>
+        <translation><!-- QS-Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Quality</masterLabel>
+        <translation><!-- Quality --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Qualität</masterLabel>
+        <translation><!-- Qualität --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Return</masterLabel>
+        <translation><!-- Return --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Return - packing error</masterLabel>
+        <translation><!-- Return - packing error --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Return - transport error</masterLabel>
+        <translation><!-- Return - transport error --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Trade</masterLabel>
+        <translation><!-- Trade --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Weld seam</masterLabel>
+        <translation><!-- Weld seam --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

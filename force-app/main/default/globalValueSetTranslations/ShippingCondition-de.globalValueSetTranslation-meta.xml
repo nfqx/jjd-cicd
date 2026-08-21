@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Customer Pickup</masterLabel>
+        <translation>Selbstabholer</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Customer Pickup (No TM)</masterLabel>
+        <translation>Selbstabholer keinTM</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Export</masterLabel>
+        <translation><!-- Export --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Express Delivery 10 AM</masterLabel>
+        <translation>Express 10 Uhr</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Express Delivery 12 PM</masterLabel>
+        <translation>Express 12 Uhr</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Express Saturday 10 AM</masterLabel>
+        <translation>Expr. Samstag 10 Uhr</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Express Saturday 12 PM</masterLabel>
+        <translation>Expr. Samstag 12 Uhr</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Freight Forwarder Only</masterLabel>
+        <translation>Nur Spediteur</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Internal Transfer / Re-delivery</masterLabel>
+        <translation>Umfuhren</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>International Express</masterLabel>
+        <translation><!-- International Express --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>LB Machines</masterLabel>
+        <translation>LB Maschinen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Machines</masterLabel>
+        <translation>Maschinen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Standard Outbound Freight</masterLabel>
+        <translation>Standard Ausgangsfracht</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Standard Parcel (DHL)</masterLabel>
+        <translation>Standard KEP (DHL)</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

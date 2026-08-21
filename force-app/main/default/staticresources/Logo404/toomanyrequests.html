@@ -1,0 +1,543 @@
+<!doctype html>
+<html
+    lang=de
+    dir=ltr>
+    <head>
+        <meta name='basePath' content='' />
+        <meta name='deployTarget' content='CORE' />
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1" />
+        <meta
+            name="lwr-revised"
+            content="236.0" />
+
+        <style>
+            /* required to give the component width/height and make it visible to test framework */
+            :root {
+                --lwc-borderWidthThin: 1px;
+            }
+            webruntime-app {
+                display: block;
+            }
+        </style>
+        <script>
+            /**
+             * Helper to launch SLDS modal for off-framework prompts
+             */
+            function launchModal({ id, titleLabel, contentLabel, buttonLabel, callback }) {
+                const modalTemplate = `<div id="${id}">
+                <section
+                role="alertdialog"
+                tabindex="-1"
+                aria-labelledby="prompt-heading-id"
+                aria-describedby="prompt-message-wrapper"
+                class="slds-modal slds-fade-in-open slds-modal_prompt"
+                aria-modal="true"
+                style="color: rgb(62, 62, 60)"
+                >
+                    <div class="slds-modal__container">
+                        <header class="slds-modal__header slds-theme_info slds-theme_alert-texture">
+                            <h2 class="slds-text-heading_medium">${titleLabel}</h2>
+                        </header>
+                        <div class="slds-modal__content slds-p-around_medium">
+                            <p id="prompt-message-id">${contentLabel}</p>
+                        </div>
+                        <footer class="slds-modal__footer slds-theme_default">
+                            <button class="slds-button slds-button_neutral js-button">${buttonLabel}</button>
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </div>`;
+                const div = document.createElement('div');
+                // eslint-disable-next-line @lwc/lwc/no-inner-html
+                div.innerHTML = modalTemplate;
+                div.querySelector('.js-button').addEventListener('click', callback);
+                if (!document.body) {
+                    document.body = document.createElement('body');
+                }
+                document.body.appendChild(div.querySelector(`#${id}`));
+            }
+
+            /**
+             * Handler for incompatible browsers
+             */
+            window.onload = () => {
+                if (!window.isBrowserSupportedByWebruntime) {
+                    const WEBRUNTIME_UNSUPPORTED_BROWSER_MODAL_ID = 'webruntime-browser-not-supported-message';
+                    launchModal({
+                        id: WEBRUNTIME_UNSUPPORTED_BROWSER_MODAL_ID,
+                        titleLabel: `Your browser isn't supported`,
+                        contentLabel: `Your browser doesn’t support some features on this site. For the best experience, update your browser to the latest version, or switch to another browser.`,
+                        buttonLabel: `Got It`,
+                        callback: () => {
+                            // eslint-disable-next-line @lwc/lwc/no-document-query
+                            const modal = document.querySelector(`#${WEBRUNTIME_UNSUPPORTED_BROWSER_MODAL_ID}`);
+                            document.body.removeChild(modal);
+                        },
+                    });
+                }
+            };
+
+            /**
+             * Handler for failed-to-load-resource client-errors
+             */
+            window.document.addEventListener('client-error', (error) => {
+                if (error.detail.type === 'FAILED_TO_LOAD_RESOURCE') {
+                    launchModal({
+                        id: 'webruntime-client-error-failed-to-load-resource',
+                        titleLabel: `Oops!`,
+                        contentLabel: `Something went wrong. Please try refreshing the app`,
+                        buttonLabel: `Refresh`,
+                        callback: () => {
+                            const url = new URL(window.location);
+                            url.searchParams.set('lwr.cachebust', new Date().getTime());
+                            window.location = url.href;
+                        },
+                    });
+                } else if (error.detail.type === 'TOO_MANY_REQUESTS') {
+                    window.document.cookie = 'TooManyRequests=true;max-age=30;';
+                    window.location.reload();
+                }
+            });
+        </script>
+        
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">!function(){const e={documentCreateElement:Document.prototype.createElement,elementSetAttribute:Element.prototype.setAttribute,elementAttachShadow:Element.prototype.attachShadow,elementAppendChild:Element.prototype.appendChild,htmlelementAddEventListener:Element.prototype.addEventListener,iframeContentDocumentGet:Object.getOwnPropertyDescriptor(HTMLIFrameElement.prototype,"contentDocument").get,iframeContentWindowGet:Object.getOwnPropertyDescriptor(HTMLIFrameElement.prototype,"contentWindow").get};Object.freeze(e),Object.defineProperty(window,"originalDomApis",{writable:!1,value:e});const t=window.frames;Object.defineProperty(window,"frames",{get:function(){const e=[];for(let n=0;n<t.length;n++)try{t[n].frameElement.getRootNode().nodeType===Node.DOCUMENT_FRAGMENT_NODE||e.push(t[n])}catch(o){e.push(t[n])}return e.length===t.length?t:e}})}();</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">!function(){"use strict";const e=`/webruntime${"/log/errors"}`;const n="UNKNOWN_ERROR";function t(){return e="basePath",document?.querySelector(`meta[name="${e}"]`)?.getAttribute("content")||"";var e}const{window:o}=globalThis;function r({subject:r,error:s={},extra:a}){let i,c,d;s?(i=s.message,c=s.stack,d=s.wcstack):a&&(i=a.message);const{pathname:u,hostname:l}=o.location,m={subject:r,message:i,stack:c,wcstack:d,extra:a,location:{pathname:u,hostname:l}},v=t();!function(e){document.dispatchEvent(new CustomEvent("client-error",{detail:{error:e,type:n}}))}(m),function(e,n){const t=JSON.stringify(n);if(!(window&&window.navigator&&window.navigator.sendBeacon&&window.navigator.sendBeacon(e,t))){const n=new XMLHttpRequest;n.open("POST",e,!0),n.setRequestHeader("Content-Type","text/plain;charset=UTF-8"),n.send(t)}}(globalThis.location.origin+v+e,m)}const s=(e={})=>{const{reason:n={}}=e;r({subject:"unhandledrejection",error:n})};function a(e={},n={}){const{message:t,filename:o,lineno:s,colno:a,error:i}=e;r({subject:"window error",error:i,extra:{message:t,filename:o,lineno:s,colno:a},...n})}o?.addEventListener("error",a),o?.addEventListener("unhandledrejection",s),o?.addEventListener("removeErrorReporting",function(){o?.removeEventListener("unhandledrejection",s),o?.removeEventListener("error",a),o?.removeEventListener("removeErrorReporting",this)})}();
+</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">!function(){"use strict";const e="webruntime";function t(t){return`/${e}${t}`}const o=t("/log/metrics"),n=t("/log/errors");function r(e,t){const o=JSON.stringify(t);if(!(window&&window.navigator&&window.navigator.sendBeacon&&window.navigator.sendBeacon(e,o))){const t=new XMLHttpRequest;t.open("POST",e,!0),t.setRequestHeader("Content-Type","text/plain;charset=UTF-8"),t.send(o)}}function a(e){return document?.querySelector(`meta[name="${e}"]`)?.getAttribute("content")||""}function s(){return a("basePath")}function i(){return a("deployTarget")||"CORE"}const c=`${e}-app-bootstrap`;function l(e){!function(e){const t=e?.detail||{};t.name=t.name||"",t.duration=t.duration||"",c===t.name&&(t.deployTarget=i(),r(s()+o,{webruntimeBootstrap:t,info:"lwr.bootstrap.end"}))}(e),globalThis?.removeEventListener("bootstrapLoaded",this)}globalThis?.addEventListener("bootstrapLoaded",l),globalThis.LWR=globalThis.LWR||{},globalThis.LWR&&Object.isExtensible(globalThis.LWR)&&(globalThis.LWR.onError=e=>{!function(e){const{message:t,stack:o,wcstack:a}=e,{pathname:c,hostname:l}=globalThis.location;let d=[];try{globalThis.performance&&globalThis.performance.getEntriesByType&&(d=globalThis.performance.getEntriesByType("resource").map(e=>({name:e.name,entryType:e.entryType,startTime:e.startTime,duration:e.duration,fetchStart:e.fetchStart,domainLookupStart:e.domainLookupStart,domainLookupEnd:e.domainLookupEnd,connectStart:e.connectStart,connectEnd:e.connectEnd,requestStart:e.requestStart,responseStart:e.responseStart,responseEnd:e.responseEnd,responseStatus:e.responseStatus,transferSize:e.transferSize,encodedBodySize:e.encodedBodySize,decodedBodySize:e.decodedBodySize,initiatorType:e.initiatorType,nextHopProtocol:e.nextHopProtocol,failed:e.failed||!1})))}catch(e){globalThis.console&&globalThis.console.error&&globalThis.console.error("Error collecting resource performance data",e)}r(s()+n,{subject:"bootstrap error",webruntimeBootstrap:{deployTarget:i(),resources:d,resourceCount:d.length},message:t,stack:o,wcstack:a,location:{pathname:c,hostname:l}})}(e),globalThis.launchModal&&launchModal({id:"webruntime-client-bootstrap-error-failed-to-load-lwr",titleLabel:"Oops!",contentLabel:"Something went wrong. Please try refreshing the app",buttonLabel:"Refresh",callback:function(){var e=new URL(window.location);e.searchParams.set("lwr.cachebust",(new Date).getTime()),window.location=e.href}}),globalThis?.removeEventListener("bootstrapLoaded",l),globalThis?.dispatchEvent(new CustomEvent("removeErrorReporting")),delete globalThis.LWR.onError})}();
+</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">({})?.a?.a;window.supportsOptionalChaining=true;
+</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">!function(){"use strict";window.isBrowserSupportedByWebruntime=function(){const n="performance"in window&&"mark"in window.performance,i="customElements"in window;return n&&i&&void 0!==window.supportsOptionalChaining}()}();
+</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">globalThis.lwcRuntimeFlags = globalThis.lwcRuntimeFlags || {};
+globalThis.lwcRuntimeFlags = { ...globalThis.lwcRuntimeFlags, ...{"ENABLE_LEGACY_SCOPE_TOKENS":false,"ENABLE_FORCE_SHADOW_MIGRATE_MODE":false,"ENABLE_MIXED_SHADOW_MODE":false,"LEGACY_LOCKER_ENABLED":false,"ENABLE_LEGACY_SIGNAL_CONTEXT_VALIDATION":false,"DISABLE_LEGACY_VALIDATION":false,"ENABLE_EXPERIMENTAL_SIGNALS":false,"DISABLE_SYNTHETIC_SHADOW":false,"DISABLE_SCOPE_TOKEN_VALIDATION":false,"DISABLE_DETACHED_REHYDRATION":true,"DISABLE_LIGHT_DOM_UNSCOPED_CSS":false,"ENABLE_LEGACY_CONTEXT_CONNECTION":false,"ENABLE_SLOT_FORWARDING_FIX":true,"DISABLE_NATIVE_CUSTOM_ELEMENT_LIFECYCLE":true,"DISABLE_TEMPORARY_V5_COMPILER_SUPPORT":true,"DISABLE_HOST_ATTACH_SHADOW_GUARD":false} };
+globalThis.LWR = globalThis.LWR || {};
+globalThis.LWR.initDeferDOM = false;
+globalThis.LWR.customInit = (lwr) => {
+
+        LWR.define('@app/apexApiBasePath', [], function() { return "webruntime/api"; });
+        LWR.define('@app/apiBasePath', [], function() { return "webruntime/api"; });
+        LWR.define('@app/basePath', [], function() { return ""; });
+        LWR.define('@app/deployTarget', [], function() { return "CORE"; });
+        LWR.define('@app/guestUuidCookieName', [], function() { return null; });
+        LWR.define('@app/isDesignMode', [], function() { return false; });
+        LWR.define('@app/isPreviewMode', [], function() { return false; });
+        LWR.define('@app/isSsrCodeTypeEnabled', [], function() { return false; });
+        LWR.define('@app/routes', [], function() { return [{"devName":"Too_Many_Requests","label":"Too Many Requests","createdOnVersion":null,"isPublic":true,"viewId":"be78124c-c5dc-4cdd-9a55-3ca3824af798","hasVanityURL":false,"patternMap":{},"id":"e447c5f9-4789-4a36-8250-916d99cbef0d","path":"/toomanyrequests.html","view":"tooManyRequests","isRoot":true,"isDefault":true,"page":{"type":"comm__namedPage","attributes":{"name":"Too_Many_Requests"}}}]; });
+        LWR.define('@app/templateDevName', [], function() { return "b2b-storefront"; });
+        LWR.define('@app/uiBasePath', [], function() { return ""; });
+        LWR.define('@app/versionKey', [], function() { return "0DB9O000000g2i9:162"; });
+        LWR.define('@app/viewToThemeLayoutMap', [], function() { return {"tooManyRequests":"snaThemeLayout"}; });
+        LWR.define('@app/webruntimeFrameworkVersion', [], function() { return "262.60"; });
+        LWR.define('@salesforce/community/Id', [], function() { return "0DB9O000000g2i9WAA"; });
+        LWR.define('@salesforce/community/basePath', [], function() { return ""; });
+        LWR.define('@salesforce/i18n/lang', [], function() { return "de"; });
+        LWR.define('@salesforce/site/Id', [], function() { return "0DM9O000000KETSWA4"; });
+        LWR.define('@salesforce/site/activeLanguages', [], function() { return [{"label":"German","code":"de","default":true}]; });
+        LWR.define('@salesforce/webstore/Id', [], function() { return "0ZE9O0000053rCzWAI"; });
+lwr.define("webruntime/dispatcher", [], function(){ return function o11yDipatcherInit(dispatcher) { typeof lwr !== 'undefined' && lwr.attachDispatcher(dispatcher); };});
+LWR.define('@salesforce/user/Id', ['@app/user'], function(m) { return (m && typeof m === 'object' && 'default' in m ? m.default : m)['id'] });
+LWR.define('@salesforce/user/isGuest', ['@app/user'], function(m) { return (m && typeof m === 'object' && 'default' in m ? m.default : m)['isGuest'] });
+LWR.define('@salesforce/user/contactId', ['@app/user'], function(m) { return (m && typeof m === 'object' && 'default' in m ? m.default : m)['contactId'] });
+lwr.initializeApp();
+globalThis.process = { env: { NODE_ENV: "dev" } };};</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">globalThis.CLWR = globalThis.CLWR || {};
+globalThis.CLWR.gates = {"enableDirtyStateCheck":true,"enableLwrLinkInfoProvider":false,"enableLwrRouteValidation":false};
+</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">globalThis.LWR = globalThis.LWR || {};
+Object.assign(globalThis.LWR, {
+  "bootstrapModule": "@lwrjs/app-service/communities_app/module/amd/v/0_22_17",
+  "autoBoot": false,
+  "rootComponents": [
+    "webruntime/app/v/1_66_1196-262_0"
+  ],
+  "requiredModules": [
+    "lwc/v/9_1_2",
+    "@lwrjs/app-service/communities_app/module/amd/v/0_22_17"
+  ],
+  "importMappings": {
+    "default": "webruntime/component/latest/prod/de/",
+    "imports": {
+      "/webruntime/component/latest/prod/de/lwc": "webruntime/framework/c6f5ab53a7/prod/lwr_lwc",
+      "@app/csrfToken": "webruntime/module/@app/csrfToken",
+      "@app/loginPath": "webruntime/module/@app/loginPath",
+      "@app/user": "webruntime/module/@app/user",
+      "@perm/": "webruntime/perm/",
+      "@salesforce/client/formFactor": "webruntime/module/@salesforce/client/formFactor",
+      "@salesforce/customPermission/": "webruntime/perm/custom/",
+      "@salesforce/featureFlag/": "webruntime/module/@salesforce/featureFlag/",
+      "@salesforce/user/Id": "webruntime/module/@salesforce/user/Id",
+      "@salesforce/user/contactId": "webruntime/module/@salesforce/user/contactId",
+      "@salesforce/user/isGuest": "webruntime/module/@salesforce/user/isGuest",
+      "@salesforce/userPermission/": "webruntime/perm/",
+      "@udd/": "webruntime/module/@udd/",
+      "@view/snaThemeLayout": "webruntime/view/7cf714aef16d7a0bf26e52d8b8b93a92/prod/de/snaThemeLayout_view",
+      "@view/tooManyRequests": "webruntime/view/c9db7c605184da6b5426924b7f6dc221/prod/de/tooManyRequests_view",
+      "force/luvioRuntimeWebruntime": "webruntime/component/5b8557d8725fba2dbf2e6a4968ec430c/prod/de/force/luvioRuntimeWebruntime_cmp",
+      "mobileruntime/hybridAppManager": "webruntime/framework/090ba030fe/prod/lwr_mobile",
+      "o11y/collectors": "webruntime/component/0af3d31fc8338a2518abfa12ed682846/prod/de/o11y/collectors_cmp",
+      "o11y/simple_collector": "webruntime/component/769a3bbaf4b329a78402db88550744d6/prod/de/o11y/simple_collector_cmp",
+      "webruntime/handlebarsEngine": "webruntime/framework/fdb5b3227a/prod/lwr_handlebars"
+    }
+  }
+});</script>
+        <script src="webruntime/framework/6ce0b87300/prod/lwr_loader"></script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">/**
+* Copyright (c) 2021, salesforce.com, inc.
+* All rights reserved.
+* SPDX-License-Identifier: MIT
+* For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/MIT
+*/
+/* LWR Error Shim v0.22.17 */
+!function(){"use strict";const o=globalThis;if(!(o.LWR&&o.LWR.define)){const r=new Error("The LWR application failed to bootstrap");if(!o.LWR||!o.LWR.onError)throw r;o.LWR.onError(r)}}();
+</script>
+        <script src="webruntime/framework/b73515aaa5/prod/lwr_bootstrap"></script>
+        <script src="webruntime/framework/cb2c1a2c50/prod/lwr_app_bootstrap_hook"></script>
+        <script src="webruntime/framework/c6f5ab53a7/prod/lwr_lwc"></script>
+        <script src="webruntime/framework/6186554a8e/prod/lwr_app"></script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('lwc', ['lwc/v/9_1_2'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">
+        LWR.define('@app/authenticationCookieName', [], function() { return "__Secure-has-sid"; });
+        LWR.define('@app/extraRouteParams', [], function() { return {}; });
+        LWR.define('@app/imageOpt', [], function() { return "none"; });
+        LWR.define('@app/isMobileAppMode', [], function() { return false; });
+        LWR.define('@app/user', [], function() { return {"isGuest":true,"id":null,"contactId":null,"csrfToken":null}; });
+        LWR.define('@salesforce/user/Id', [], function() { return null; });
+        LWR.define('@salesforce/user/contactId', [], function() { return null; });
+        LWR.define('@salesforce/user/isGuest', [], function() { return true; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/apexApiBasePath/v/1', ['@app/apexApiBasePath'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/apiBasePath/v/1', ['@app/apiBasePath'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/authenticationCookieName/v/1', ['@app/authenticationCookieName'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/basePath/v/1', ['@app/basePath'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/csrfToken/v/1', ['@app/csrfToken'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/deployTarget/v/1', ['@app/deployTarget'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/extraRouteParams/v/1', ['@app/extraRouteParams'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/guestUuidCookieName/v/1', ['@app/guestUuidCookieName'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/imageOpt/v/1', ['@app/imageOpt'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/isDesignMode/v/1', ['@app/isDesignMode'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/isMobileAppMode/v/1', ['@app/isMobileAppMode'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/isPreviewMode/v/1', ['@app/isPreviewMode'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/isSsrCodeTypeEnabled/v/1', ['@app/isSsrCodeTypeEnabled'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/o11yApiEndpoint/v/1', ['@app/o11yApiEndpoint'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/o11yConfiguration/v/1', ['@app/o11yConfiguration'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/o11yFalconEnabled/v/1', ['@app/o11yFalconEnabled'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/o11yGuestToken/v/1', ['@app/o11yGuestToken'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/o11ySamplingRate/v/1', ['@app/o11ySamplingRate'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/routes/v/1', ['@app/routes'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/templateDevName/v/1', ['@app/templateDevName'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/uiBasePath/v/1', ['@app/uiBasePath'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/user/v/1', ['@app/user'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/versionKey/v/1', ['@app/versionKey'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/viewToThemeLayoutMap/v/1', ['@app/viewToThemeLayoutMap'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@app/webruntimeFrameworkVersion/v/1', ['@app/webruntimeFrameworkVersion'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@salesforce/community/Id/v/1', ['@salesforce/community/Id'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@salesforce/i18n/lang/v/1', ['@salesforce/i18n/lang'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@salesforce/site/activeLanguages/v/1', ['@salesforce/site/activeLanguages'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@salesforce/site/Id/v/1', ['@salesforce/site/Id'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('@salesforce/webstore/Id/v/1', ['@salesforce/webstore/Id'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script type="text/javascript" nonce="890aed54-e07a-4e60-9a76-df841c919010">LWR.define('webruntime/dispatcher/v/1', ['webruntime/dispatcher'], function(m) { return m && typeof m === 'object' && 'default' in m ? m.default : m; });</script>
+        <script src="webruntime/view/c9db7c605184da6b5426924b7f6dc221/prod/de/tooManyRequests_view"></script>
+        <script src="webruntime/component/5b8557d8725fba2dbf2e6a4968ec430c/prod/de/force/luvioRuntimeWebruntime_cmp"></script>
+        <script src="webruntime/view/7cf714aef16d7a0bf26e52d8b8b93a92/prod/de/snaThemeLayout_view"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source%20Sans%203:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><style type="text/css" id="webruntime-branding">:root{--dxp-g-brand:#005fb2;--dxp-s-text-heading-medium-letter-spacing:0em;--dxp-s-form-element-text-font-family:"Salesforce Sans";--dxp-s-form-element-spacing-horizontal-start:12px;--dxp-s-text-heading-small-text-decoration:none;--dxp-s-dropdown-text-color:var(--dxp-g-root-contrast);--dxp-s-tertiary-button-text-color:var(--dxp-s-button-color);--dxp-s-form-element-caption-text-font-family:"Salesforce Sans";--dxp-s-form-element-spacing-block-start:0px;--dxp-g-neutral-contrast-3:#fff;--dxp-s-text-heading-medium-text-transform:none;--dxp-g-neutral-contrast-2:#000;--dxp-g-neutral-contrast-1:#000;--dxp-s-button-color-focus-contrast:#ffffff;--dxp-s-tertiary-button-border-color-1:rgba(0,0,0,0);--dxp-s-button-border-color-active:var(--dxp-s-button-border-color-focus);--dxp-s-link-text-color-1:rgb(0, 73, 137);--dxp-s-form-element-label-font-style:normal;--dxp-g-info:#0070d2;--dxp-g-root:rgb(255, 255, 255);--dxp-s-tertiary-button-text-color-focus:var(--dxp-s-tertiary-button-text-color-1);--dxp-s-form-element-text-text-decoration:none;--dxp-s-form-element-caption-text-font-weight:400;--dxp-s-body-line-height:1;--dxp-s-text-heading-extra-small-font-style:normal;--dxp-s-button-large-padding-block-end:0rem;--dxp-s-body-text-decoration:none;--dxp-s-section-content-spacing-inline-end-mobile:0.75rem;--dxp-s-form-element-text-font-weight:400;--dxp-s-tertiary-button-color-1:rgba(0,0,0,0);--dxp-s-text-heading-medium-font-style:normal;--dxp-s-form-checkbox-color-background-checked:var(--dxp-s-form-checkbox-color-background);--dxp-s-secondary-button-color-focus:var(--dxp-s-secondary-button-color-1);--dxp-s-text-heading-extra-extra-small-line-height:1.25;--dxp-g-warning-2:rgb(145, 111, 15);--dxp-g-warning-3:rgb(34, 26, 3);--dxp-s-form-element-color-border:var(--dxp-g-neutral-3);--dxp-g-warning-1:rgb(219, 167, 22);--dxp-s-header-content-max-width-mobile:none;--dxp-s-secondary-button-color-hover:var(--dxp-s-secondary-button-color-1);--dxp-s-text-heading-large-letter-spacing:0em;--dxp-s-button-padding-inline-end:1rem;--dxp-s-tertiary-button-border-color-hover:var(--dxp-s-tertiary-button-border-color-1);--dxp-s-tertiary-button-border-color-focus:var(--dxp-s-tertiary-button-border-color-1);--dxp-s-body-font-style:normal;--dxp-g-warning-contrast:#000;--dxp-s-form-element-text-text-transform:none;--dxp-s-button-large-padding-inline-start:1.25rem;--dxp-s-text-heading-medium-line-height:1.25;--dxp-s-column-spacer-size:1rem;--dxp-s-text-heading-large-text-transform:none;--dxp-s-secondary-button-border-color:var(--dxp-s-button-color);--dxp-s-text-heading-extra-large-letter-spacing:0em;--dxp-s-text-heading-large-font-size:1.75rem;--dxp-s-secondary-button-text-color:var(--dxp-s-button-color);--dxp-s-form-element-text-font-style:normal;--dxp-s-button-font-family:"Salesforce Sans";--dxp-s-form-element-placeholder-text-color:var(--dxp-g-neutral-3);--dxp-s-form-element-color-background:var(--dxp-g-root);--dxp-s-tertiary-button-border-color-active:var(--dxp-s-tertiary-button-border-color-focus);--dxp-s-button-padding-block-start:0rem;--dxp-s-text-heading-extra-extra-small-font-style:normal;--dxp-s-button-font-weight:400;--dxp-s-body-font-weight:600;--dxp-s-body-small-line-height:1.25;--dxp-s-html-font-family:var(--dxp-g-root-font-family);--dxp-g-offline:#444444;--dxp-s-button-small-font-size:0.75rem;--dxp-s-button-radius-border:4px;--dxp-s-button-small-padding-block-end:0rem;--dxp-s-component-wrapper-spacer-size-mobile:1.5rem;--dxp-s-form-element-label-font-size:1rem;--dxp-s-text-heading-extra-small-line-height:1.25;--dxp-s-text-heading-small-line-height:1.25;--dxp-s-section-content-spacing-block-end:1rem;--dxp-s-secondary-button-text-color-focus:var(--dxp-s-secondary-button-text-color-1);--dxp-g-success-3:rgb(9, 21, 10);--dxp-g-warning:#eab930;--dxp-g-success-2:rgb(44, 108, 51);--dxp-g-success-1:rgb(68, 166, 78);--dxp-s-button-small-padding-inline-end:0.75rem;--dxp-s-column-spacer-size-mobile:0.75rem;--dxp-s-text-heading-small-font-family:"Salesforce Sans";--dxp-s-text-heading-large-font-style:normal;--dxp-g-info-contrast-3:#fff;--dxp-s-form-checkbox-color-border-checked:var(--dxp-s-form-checkbox-color-border);--dxp-s-button-color-active:var(--dxp-s-button-color-focus);--dxp-s-section-content-spacing-inline-start-mobile:0.75rem;--dxp-s-section-content-spacing-block-end-mobile:1rem;--dxp-s-html-font-size:1rem;--dxp-s-body-font-family:"Source Sans 3";--dxp-s-link-text-decoration-focus:underline;--dxp-g-info-contrast-1:#fff;--dxp-s-dropdown-text-color-hover:var(--dxp-g-neutral-contrast);--dxp-g-info-contrast-2:#fff;--dxp-s-text-heading-extra-large-font-family:"Sentient";--dxp-s-text-heading-medium-text-decoration:none;--dxp-s-secondary-button-color-active:var(--dxp-s-secondary-button-color-focus);--dxp-s-form-element-label-line-height:1.5;--dxp-s-text-heading-extra-extra-small-font-family:"Salesforce Sans";--dxp-s-text-heading-small-font-weight:300;--dxp-s-text-heading-large-font-weight:300;--dxp-s-form-element-text-color:var(--dxp-g-root-contrast);--dxp-g-destructive-contrast:#fff;--dxp-s-form-checkbox-radius-border:4px;--dxp-g-destructive-contrast-1:#fff;--dxp-g-destructive-contrast-2:#fff;--dxp-g-root-1:rgb(235, 235, 235);--dxp-g-destructive-contrast-3:#fff;--dxp-g-root-2:rgb(194, 194, 194);--dxp-s-section-content-spacing-inline-start:1rem;--dxp-g-root-3:rgb(133, 133, 133);--dxp-s-button-color-1:rgb(0, 73, 137);--dxp-s-form-element-color-background-active:var(--dxp-s-form-element-color-background);--dxp-s-body-text-color:var(--dxp-g-root-contrast);--dxp-s-footer-content-max-width-mobile:none;--dxp-g-brand-contrast:#ffffff;--dxp-s-button-border-color-hover:var(--dxp-s-button-color-hover);--dxp-s-text-heading-extra-small-letter-spacing:0em;--dxp-s-form-element-width-border:1px;--dxp-s-body-small-text-color:var(--dxp-g-root-contrast);--dxp-s-form-checkbox-width-border:1px;--dxp-s-button-color-active-contrast:var(--dxp-s-button-color-focus-contrast);--dxp-s-button-line-height:2;--dxp-s-button-small-padding-inline-start:0.75rem;--dxp-s-site-logo-url:url(assets/images/logo-alpine-group.svg);--dxp-s-text-heading-extra-extra-small-text-transform:none;--dxp-s-form-element-color-border-focus:var(--dxp-g-brand);--dxp-s-button-large-radius-border:4px;--dxp-s-text-heading-extra-extra-small-font-weight:600;--dxp-s-button-border-color:var(--dxp-s-button-color);--dxp-s-secondary-button-color:var(--dxp-g-root);--dxp-s-text-heading-extra-small-text-decoration:none;--dxp-s-text-heading-extra-extra-small-color:var(--dxp-g-root-contrast);--dxp-s-form-element-radius-border:4px;--dxp-s-form-element-text-color-focus:var(--dxp-s-form-element-text-color);--dxp-s-tertiary-button-border-color:rgba(0,0,0,0);--dxp-g-destructive:#c23934;--dxp-s-tertiary-button-color-active:var(--dxp-s-tertiary-button-color-focus);--dxp-s-dropdown-color-border:var(--dxp-g-neutral);--dxp-g-offline-contrast:#fff;--dxp-s-text-heading-large-color:var(--dxp-g-root-contrast);--dxp-s-button-large-padding-block-start:0rem;--dxp-s-link-text-decoration-hover:underline;--dxp-s-button-color-focus:var(--dxp-s-button-color-1);--dxp-s-form-element-text-line-height:1.5;--dxp-s-form-element-caption-text-line-height:1.5;--dxp-s-site-logo-path:assets/images/logo-alpine-group.svg;--dxp-s-body-small-font-family:"Salesforce Sans";--dxp-s-body-small-letter-spacing:0em;--dxp-s-text-heading-extra-large-text-transform:none;--dxp-s-form-element-label-text-transform:none;--dxp-g-success:#58bb62;--dxp-s-form-checkbox-color-background:var(--dxp-s-form-element-color-background);--dxp-s-form-element-label-letter-spacing:0;--dxp-s-form-element-label-font-weight:400;--dxp-s-button-text-decoration:none;--dxp-s-text-heading-extra-large-line-height:1.25;--dxp-s-button-border-color-focus:var(--dxp-s-button-color-focus);--dxp-g-warning-contrast-3:#fff;--dxp-s-button-large-font-size:1.25rem;--dxp-s-button-small-radius-border:4px;--dxp-s-body-font-size:1.125rem;--dxp-s-dropdown-color-background:var(--dxp-g-root);--dxp-s-body-small-text-decoration:none;--dxp-s-secondary-button-text-color-active:var(--dxp-s-secondary-button-text-color-focus);--dxp-s-text-heading-large-line-height:1.25;--dxp-s-button-color-hover:var(--dxp-s-button-color-1);--dxp-s-button-font-size:1rem;--dxp-s-button-letter-spacing:0em;--dxp-g-warning-contrast-2:#fff;--dxp-g-warning-contrast-1:#000;--dxp-s-button-padding-inline-start:1rem;--dxp-g-root-contrast-1:rgb(8, 8, 8);--dxp-g-root-contrast:#1c1c1c;--dxp-g-root-contrast-2:rgb(0, 0, 0);--dxp-g-root-contrast-3:rgb(0, 0, 0);--dxp-s-header-content-max-width:1800px;--dxp-s-section-columns-max-width:1800px;--dxp-s-form-element-spacing-block-end:0px;--dxp-s-button-text-transform:none;--dxp-s-body-text-transform:none;--dxp-s-form-element-label-font-family:"Salesforce Sans";--dxp-s-form-checkbox-color-border:var(--dxp-s-form-element-color-border);--dxp-s-form-element-caption-text-text-transform:none;--dxp-s-body-letter-spacing:0em;--dxp-s-form-element-caption-text-letter-spacing:0;--dxp-s-tertiary-button-color:rgba(0,0,0,0);--dxp-s-body-small-font-style:normal;--dxp-s-text-heading-small-font-style:normal;--dxp-s-text-heading-extra-extra-small-font-size:0.625rem;--dxp-s-text-heading-small-color:var(--dxp-g-root-contrast);--dxp-s-section-content-spacing-block-start:1rem;--dxp-s-html-font-size-mobile:1rem;--dxp-s-section-content-spacing-inline-end:1rem;--dxp-s-body-small-font-weight:400;--dxp-g-offline-3:rgb(0, 0, 0);--dxp-g-offline-2:rgb(7, 7, 7);--dxp-g-offline-1:rgb(48, 48, 48);--dxp-s-button-color-contrast-1:var(--dxp-g-brand-contrast-1);--dxp-s-secondary-button-border-color-active:var(--dxp-s-secondary-button-border-color-focus);--dxp-s-text-heading-extra-extra-small-letter-spacing:0em;--dxp-s-text-heading-extra-large-text-decoration:none;--dxp-g-success-contrast:#000;--dxp-s-text-heading-small-font-size:1.125rem;--dxp-s-button-font-style:normal;--dxp-s-body-small-text-transform:none;--dxp-g-brand-contrast-1:#ffffff;--dxp-g-brand-contrast-3:#ffffff;--dxp-s-button-color-hover-contrast:#ffffff;--dxp-g-brand-contrast-2:#ffffff;--dxp-g-brand-1:rgb(0, 73, 137);--dxp-g-brand-2:rgb(0, 30, 56);--dxp-g-brand-3:rgb(0, 0, 0);--dxp-s-secondary-button-text-color-1:rgb(0, 73, 137);--dxp-s-link-text-color-hover:var(--dxp-s-link-text-color-1);--dxp-g-offline-contrast-3:#fff;--dxp-g-offline-contrast-2:#fff;--dxp-s-button-small-padding-block-start:0rem;--dxp-s-tertiary-button-color-hover:var(--dxp-s-tertiary-button-color-1);--dxp-s-text-heading-extra-small-font-family:"Salesforce Sans";--dxp-s-form-element-caption-text-text-decoration:none;--dxp-s-body-small-font-size:0.75rem;--dxp-g-destructive-1:rgb(162, 48, 43);--dxp-g-offline-contrast-1:#fff;--dxp-s-text-heading-small-text-transform:none;--dxp-s-tertiary-button-text-color-1:rgb(0, 73, 137);--dxp-g-info-contrast:#fff;--dxp-s-link-text-color:var(--dxp-g-brand);--dxp-s-text-heading-extra-extra-small-text-decoration:none;--dxp-g-neutral:#ecebea;--dxp-g-destructive-2:rgb(97, 29, 26);--dxp-g-destructive-3:rgb(1, 0, 0);--dxp-s-form-element-label-color:var(--dxp-g-root-contrast);--dxp-s-text-heading-extra-large-font-weight:500;--dxp-s-text-heading-large-font-family:"Sentient";--dxp-s-text-heading-extra-large-font-style:normal;--dxp-s-tertiary-button-text-color-active:var(--dxp-s-tertiary-button-text-color-focus);--dxp-s-text-heading-extra-small-text-transform:none;--dxp-s-text-heading-extra-small-font-weight:600;--dxp-s-form-element-text-font-size:1rem;--dxp-s-secondary-button-border-color-hover:var(--dxp-s-secondary-button-border-color-1);--dxp-s-button-large-padding:1.25rem;--dxp-g-info-2:rgb(0, 47, 88);--dxp-g-info-3:rgb(0, 0, 0);--dxp-s-secondary-button-border-color-focus:var(--dxp-s-secondary-button-border-color-1);--dxp-s-text-heading-medium-font-weight:300;--dxp-g-info-1:rgb(0, 90, 169);--dxp-g-neutral-contrast:#000;--dxp-s-dropdown-color-background-hover:var(--dxp-g-neutral);--dxp-s-button-color:var(--dxp-g-brand);--dxp-g-neutral-3:rgb(118, 113, 107);--dxp-g-neutral-2:rgb(178, 174, 170);--dxp-s-text-heading-extra-large-color:var(--dxp-g-root-contrast);--dxp-g-neutral-1:rgb(217, 215, 213);--dxp-s-secondary-button-color-1:rgb(235, 235, 235);--dxp-g-success-contrast-3:#fff;--dxp-g-success-contrast-2:#fff;--dxp-s-text-heading-extra-large-font-size:2.5rem;--dxp-s-secondary-button-border-color-1:rgb(0, 73, 137);--dxp-s-tertiary-button-color-focus:var(--dxp-s-tertiary-button-color-1);--dxp-s-form-element-caption-text-font-size:0.75rem;--dxp-s-form-element-spacing-horizontal-end:16px;--dxp-g-success-contrast-1:#000;--dxp-s-component-wrapper-spacer-size:1.5rem;--dxp-s-button-large-padding-inline-end:1.25rem;--dxp-s-text-heading-extra-small-color:var(--dxp-g-root-contrast);--dxp-s-tertiary-button-text-color-hover:var(--dxp-s-tertiary-button-text-color-1);--dxp-s-link-text-decoration:none;--dxp-s-text-heading-medium-font-size:1.25rem;--dxp-s-form-element-label-text-decoration:none;--dxp-s-text-heading-extra-small-font-size:0.8125rem;--dxp-s-button-color-contrast:var(--dxp-g-brand-contrast);--dxp-s-button-padding-block-end:0rem;--dxp-s-section-columns-max-width-mobile:none;--dxp-s-text-heading-medium-color:var(--dxp-g-root-contrast);--dxp-s-button-small-padding:0.75rem;--dxp-s-text-heading-large-text-decoration:none;--dxp-s-form-element-caption-text-font-style:normal;--dxp-s-button-padding:1rem;--dxp-s-secondary-button-text-color-hover:var(--dxp-s-secondary-button-text-color-1);--dxp-s-text-heading-medium-font-family:"Salesforce Sans";--dxp-s-footer-content-max-width:1800px;--dxp-s-text-heading-small-letter-spacing:0em;--dxp-s-form-element-text-letter-spacing:0;--dxp-s-section-content-spacing-block-start-mobile:1rem;--dxp-g-brand-h:208;--dxp-g-brand-s:100%;--dxp-g-brand-l:35%;--dxp-g-brand-a:1.0;--dxp-s-button-color-focus-contrast-h:0;--dxp-s-button-color-focus-contrast-s:0%;--dxp-s-button-color-focus-contrast-l:100%;--dxp-s-button-color-focus-contrast-a:1.0;--dxp-g-info-h:208;--dxp-g-info-s:100%;--dxp-g-info-l:41%;--dxp-g-info-a:1.0;--dxp-g-root-h:0;--dxp-g-root-s:0%;--dxp-g-root-l:100%;--dxp-g-root-a:1.0;--dxp-g-warning-contrast-h:0;--dxp-g-warning-contrast-s:0%;--dxp-g-warning-contrast-l:0%;--dxp-g-warning-contrast-a:1.0;--dxp-g-offline-h:0;--dxp-g-offline-s:0%;--dxp-g-offline-l:27%;--dxp-g-offline-a:1.0;--dxp-g-warning-h:44;--dxp-g-warning-s:82%;--dxp-g-warning-l:55%;--dxp-g-warning-a:1.0;--dxp-g-destructive-contrast-h:0;--dxp-g-destructive-contrast-s:0%;--dxp-g-destructive-contrast-l:100%;--dxp-g-destructive-contrast-a:1.0;--dxp-g-brand-contrast-h:0;--dxp-g-brand-contrast-s:0%;--dxp-g-brand-contrast-l:100%;--dxp-g-brand-contrast-a:1.0;--dxp-s-tertiary-button-border-color-h:0;--dxp-s-tertiary-button-border-color-s:0%;--dxp-s-tertiary-button-border-color-l:0%;--dxp-s-tertiary-button-border-color-a:0.0;--dxp-g-destructive-h:2;--dxp-g-destructive-s:58%;--dxp-g-destructive-l:48%;--dxp-g-destructive-a:1.0;--dxp-g-offline-contrast-h:0;--dxp-g-offline-contrast-s:0%;--dxp-g-offline-contrast-l:100%;--dxp-g-offline-contrast-a:1.0;--dxp-g-success-h:126;--dxp-g-success-s:42%;--dxp-g-success-l:54%;--dxp-g-success-a:1.0;--dxp-g-root-contrast-h:0;--dxp-g-root-contrast-s:0%;--dxp-g-root-contrast-l:11%;--dxp-g-root-contrast-a:1.0;--dxp-s-tertiary-button-color-h:0;--dxp-s-tertiary-button-color-s:0%;--dxp-s-tertiary-button-color-l:0%;--dxp-s-tertiary-button-color-a:0.0;--dxp-g-success-contrast-h:0;--dxp-g-success-contrast-s:0%;--dxp-g-success-contrast-l:0%;--dxp-g-success-contrast-a:1.0;--dxp-s-button-color-hover-contrast-h:0;--dxp-s-button-color-hover-contrast-s:0%;--dxp-s-button-color-hover-contrast-l:100%;--dxp-s-button-color-hover-contrast-a:1.0;--dxp-g-info-contrast-h:0;--dxp-g-info-contrast-s:0%;--dxp-g-info-contrast-l:100%;--dxp-g-info-contrast-a:1.0;--dxp-g-neutral-h:30;--dxp-g-neutral-s:5%;--dxp-g-neutral-l:92%;--dxp-g-neutral-a:1.0;--dxp-g-neutral-contrast-h:0;--dxp-g-neutral-contrast-s:0%;--dxp-g-neutral-contrast-l:0%;--dxp-g-neutral-contrast-a:1.0;}</style> <!-- branding stylesheets -->
+
+<link rel="stylesheet" href="assets/styles/salesforce-lightning-design-system.min.css?0DB9O000000g2i9:162">
+<link rel="stylesheet" href="assets/styles/dxp-site-spacing-styling-hooks.min.css?0DB9O000000g2i9:162">
+<link rel="stylesheet" href="assets/styles/dxp-styling-hooks.min.css?0DB9O000000g2i9:162">
+<link rel="stylesheet" href="assets/styles/dxp-slds-extensions.min.css?0DB9O000000g2i9:162">
+<link rel="stylesheet" href="{!URLFOR($Resource.bootstrap)}">
+<link rel="preload" href="assets/fonts/webfonts/SalesforceSans-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low">
+<link rel="preload" href="assets/fonts/webfonts/SalesforceSans-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low">
+<link rel="preload" href="assets/fonts/webfonts/SalesforceSans-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="low">
+<!--link rel="preconnect" href="//privacy-proxy.usercentrics.eu"-->
+<link rel="preload" href="//privacy-proxy.usercentrics.eu">
+<link rel="preload" href="//privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js" as="script">
+<script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="HxiaHXpjf" async></script>
+<!-- branding stylesheets -->
+    
+<!-- General -->
+<link rel="shortcut icon" href="/resource/webshopFavicon?0DB9O000000g2i9:162" type="image/x-icon">
+<!--link rel="shortcut icon" href="assets/favicon.ico?0DB9O000000g2i9:162"-->
+<link rel="stylesheet" href="assets/css/theme.css?0DB9O000000g2i9:162">
+<!-- Matomo -->
+<script type="text/plain" data-usercentrics="Matomo (self hosted)">
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://darboven.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '36']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.src='//cdn.matomo.cloud/darboven.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<!-- Matomo Cookie Code -->
+<script type="text/plain" data-usercentrics="Matomo">
+_paq.push(['setCookieConsentGiven']);
+_paq.push(['rememberCookieConsentGiven'])
+</script>
+<!-- End Matomo Cookie Code -->
+<!-- Google tag (gtag.js) -->
+<script type="text/plain" data-usercentrics="Google Analytics 4" async src="https://www.googletagmanager.com/gtag/js?id=G-VHT7E3K8GV"></script>
+<script type="text/plain" data-usercentrics="Google Analytics 4">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VHT7E3K8GV');
+</script>
+<!-- End Matomo -->
+<style>
+    @font-face {
+        font-family: "Sentient";
+        src: url("/resource/Sentient/Sentient-Variable.ttf") format("truetype");
+    }
+    @font-face {
+        font-family: "Source Sans 3";
+        src: url("/resource/SourceSans3/SourceSans3.ttf") format("truetype");
+    }
+    .favBadge{
+        position: absolute;
+        right: 3.5rem;
+        top: 1.9rem;
+        z-index: 99;
+    }
+    
+    /*Removed gap between product number and cart summary*/
+    commerce-layout-footer {
+        position:relative;
+        z-index:1;
+    }
+    
+    commerce_cart-footer.lwc-p5k8j3ff5a-host {
+        display: none;
+    }
+    
+    p.lwc-4rt99a8doqk {
+        margin:0!important;
+    }
+    
+    commerce_cart-header {
+        padding: 0!important;
+    }
+    
+    commerce_builder-b2b-cart-contents {
+        margin:0!important;
+    }
+    
+    ´/* End*/
+    
+    lwc-4nfn2rc40ch {
+        margin:0!important;
+    }
+    
+    @mobile (max-width:768px) {
+        .favBadge{
+            top:0.7rem;
+        }
+    }
+    .cartBadge{
+        position: absolute;
+        right: 0.5rem;
+        top: 1.1rem;
+        z-index: 99;
+    }    
+    commerce-layout-footer {
+        position:relative;
+        z-index:1;
+    }
+
+    ol.lwc-1okeam5n5rs > li.lwc-1okeam5n5rs > a.lwc-1okeam5n5rs {
+        color: rgba(203, 175, 107, 1) !important;
+    }
+    
+    ol.lwc-1okeam5n5rs > li.lwc-1okeam5n5rs > a.lwc-1okeam5n5rs:hover {
+        color: rgba(176, 156, 83, 1)!important;
+    }
+    
+    ol.lwc-1okeam5n5rs > li.lwc-1okeam5n5rs > a.lwc-1okeam5n5rs:active {
+        color: rgba(162, 136, 71, 1) !important;
+    }
+    
+    ol.lwc-1okeam5n5rs > li.lwc-1okeam5n5rs > span.lwc-1okeam5n5rs,
+    ol.lwc-1okeam5n5rs > li.lwc-1okeam5n5rs > a.lwc-1okeam5n5rs {
+        font-family: "Source Sans 3", sans-serif !important;
+        font-weight: 400 !important;
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+    }
+    
+    /*BUTTONS*/
+    .btn-lg {
+        height: 48px;
+        width:100%;
+        padding: 8px 16px;
+        gap: 8px;
+        border-radius: 4.8px;
+        font-size: 18px;
+        line-height: 27px;
+        font-weight: 600;
+}
+
+	.btn-primary {
+        border: solid 2px rgba(53, 53, 54, 1) !important;
+        background-color: rgba(53, 53, 54, 1) !important;
+}
+    .btn-primary:hover {
+        background-color: rgba(36, 36, 36, 1)!important;
+}
+    .btn-primary:disabled {
+        background-color: rgba(216,215,213,1);
+        color: gray;
+    }
+    /*TYPOGRAPHY*/
+    .body-small {
+        /*styleName: Body/Small;*/
+        font-family: Source Sans 3 !important;
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        line-height: 1.5 !important;
+}
+    
+   .body-regular {
+        /*styleName: Body/Regular;*/
+        font-family: "Source Sans 3", sans-serif !important;
+        font-weight: 400 !important;
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+}
+	.heading-1 {
+        /*styleName: Heading/H1*/
+        font-family: Sentient !important;
+        font-size: 40px !important;
+        font-weight: 500 !important;
+        line-height: 1.2 !important;
+}
+    .components-badge-h4 {
+    /*styleName: Components/Badge/H3;*/
+        font-family: Source Sans 3;
+        font-size: 18px !important;
+        font-weight: 600 !important;
+        line-height: 18px !important;
+    }
+    .components-badge-h3 {
+    /*styleName: Components/Badge/H3;*/
+        font-family: Source Sans 3;
+        font-size: 21px !important;
+        font-weight: 600 !important;
+        line-height: 21px !important;
+    }
+    .components-badge-h2 {
+    /*styleName: Components/Badge/H2;*/
+        font-family: Source Sans 3;
+        font-size: 24px !important;
+        font-weight: 600 !important;
+        line-height: 24px !important;
+}
+    /* COLOURS*/
+    .gray-700 {
+    color: rgba(73, 80, 87, 1);
+}
+    
+    .black {
+    color: rgba(33, 37, 41, 1) !impo; 
+}
+        
+
+    /*Shopping cart popup(modal)*/  
+    commerce_cart-mini-cart-panel{
+        position: absolute;
+        top: 20% !important;
+        left: 0% !important;
+        padding-left: 25%;
+        /* transform: translate(-50%, -50%) !important; */
+        width: 75vw !important;
+        height: 60vh !important;
+        z-index: 1000 !important;
+        overflow-y: auto;
+        border-radius: 5px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    } 
+
+    /*buttons in modal*/
+    .panel_footer {    
+        width: 100% !important;
+        position: relative !important;
+        margin-top: -10rem !important;
+    }
+    
+ /*SHOPPING CART*/
+    
+	h2.lwc-1noralhrh9q {
+        font-family: Source Sans 3;
+        font-size: 16px ;
+        font-weight: 500 ;
+        line-height: 1.5;
+        color: rgba(33, 37, 41, 1);
+        text-decoration: none;
+    }
+
+    /*Brand description on Brand Detail Page*/
+    p .lwc-4nfn2rc40ch {
+        /*styleName: Body/Large; */
+        font-family: Source Sans 3 !important;
+        font-size: 18px !important;
+        font-weight: 400 !important;
+        line-height: 1.5 !important;
+    }
+    /*Clear cart button in cart summary I think*/
+    commerce-action-button {
+        justify-content:end;
+    }
+    
+    @media (max-width: 768px) {
+    commerce-action-button {
+        justify-content:start;
+    }
+}
+
+    /*Input buttons*/
+    .number-input__decrement-button {
+        border-top-right-radius: 0 !important;
+    	border-bottom-right-radius: 0 !important;
+    }
+    .number-input__increment-button {
+        border-top-left-radius: 0 !important;
+    	border-bottom-left-radius: 0 !important;
+    }
+    .number-input__input {
+        margin-top: 0px !important; 
+        margin-bottom: 0px !important; 
+        -moz-appearance: textfield !important; /* For Firefox */
+        appearance: none !important; /* For general browsers */
+        border-color: #ced4da !important; /* Ensure border color remains consistent */
+        text-align: center !important; /* Center-align the input number */
+        outline: none !important; /* Remove blue outline on focus */
+        box-shadow: none !important; /* Remove blue shadow from Bootstrap */
+        padding-left: 0 !important; /* Remove any extra padding on the left */
+        padding-right: 0 !important; /* Remove any extra padding on the right */
+    }
+    img.lwc-6d0jmdgc6e8 {
+        object-fit: contain;
+        width: 100px;
+        height: auto;
+    }
+    
+    .custom-footer{
+        z-index: 0;
+        position: relative;
+    }
+
+</style>
+    </head>
+    <body id="main">
+        <webruntime-app></webruntime-app>
+    </body>
+</html>

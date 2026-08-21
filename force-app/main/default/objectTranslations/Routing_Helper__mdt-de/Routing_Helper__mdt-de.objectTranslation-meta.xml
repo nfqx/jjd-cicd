@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Routing Helper</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Routing Helpers</value>
+    </caseValues>
+    <gender>Neuter</gender>
+    <layouts>
+        <layout>Routing Helper Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Forwarding --></label>
+            <section>Forwarding</section>
+        </sections>
+        <sections>
+            <label><!-- Routing --></label>
+            <section>Routing</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

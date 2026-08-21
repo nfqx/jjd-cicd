@@ -1,0 +1,312 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <div class="d-flex justify-content-center align-items-center">
+        <div if:true={isLoading} class="spinner-border text-black-50" role="status"></div>
+    </div>
+    <template if:false={showExtendedRows}>
+        <div if:false={showMultipleRows}>
+            <div id="productSlider" if:true={_showSliderData}>
+                <div class="d-flex justify-content-center align-items-center">
+                    <div if:true={isLoading} class="spinner-border text-black-50" role="status"></div>
+                </div>
+                <template if:true={showSorting}>
+                    <select onchange={handleSortingChange}>
+                        <template for:each={sortOptions} for:item="sortOption">
+                            <option value={sortOption.value} key={sortOption.value}>{sortOption.label}</option>
+                        </template>
+                    </select>
+                </template>
+                <div class="carousel-one-row row">
+                    <div class="carousel-container">
+                        <div class="carousel-inner py-2">
+                            <template for:each={sliderData} for:item="sliderItem">
+                                <!--- Product 1 -->
+                                <div class="d-flex justify-content-center col-12 col-sm-6 col-lg-3 p-0 " key={sliderItem.product.Id}>
+                                    <div class="card p-2 mx-1">
+                                        <div class={singleRowProductBackgroundClass} if:true={showImage}>
+                                            <img src={sliderItem.imageUrl} class="product-slider-image cursor-pointer" alt={sliderItem.product.Name} data-productid={sliderItem.product.Id} onclick={handleNavigateToProduct}>
+                                            <template if:true={showWishlist}>
+                                                <button class="wishlist cursor-pointer">
+                                                    <i 
+                                                    class="bi bi-heart"
+                                                    data-id={sliderItem.product.Id}
+                                                    if:false={sliderItem.inWishlist}
+                                                    onclick={handleAddToWishlist}></i>
+                                                    <i 
+                                                    class="bi bi-heart-fill"
+                                                    data-id={sliderItem.product.Id}
+                                                    if:false={sliderItem.inWishlist}
+                                                    onclick={handleAddToWishlist}></i>
+                                                </button>
+                                                <button class="wishlist-added cursor-pointer">
+                                                    <i 
+                                                    class="bi bi-heart-fill"
+                                                    data-productid={sliderItem.product.Id}
+                                                    if:true={sliderItem.inWishlist}
+                                                    onclick={handleRemoveFromWishlist}></i>
+                                                </button>
+                                            </template>
+                                        </div>
+                                        <div class="card-body p-0 d-flex flex-column">
+                                            <p class="card-title large-medium m-0" data-productid={sliderItem.product.Id} onclick={handleNavigateToProduct}>{sliderItem.product.Name}</p>
+                                            <p class="card-text body-small gray-700 m-0">{sliderItem.product.ProductSubtitle__c}</p>
+                                            <p class="card-text body-small gray-700 m-0">{label.itemNumber}: {sliderItem.product.ProductCode}</p>
+                                            <p class="card-text body-small gray-700 m-0">{label.unit}: {sliderItem.product.QuantityUnitOfMeasure}</p>
+                                            <p class="card-text body-small gray-700 m-0">{label.contents}: {sliderItem.product.PackageUnit__c}</p>
+                                            <!--p class="card-text body-small gray-700 m-0">{label.availability}: <span class="availability-dot" style={sliderItem.availabilityStyle}></span></p-->
+                                            <p class="card-text body-small gray-700" if:true={showDescription}>{sliderItem.product.Description__c}</p>
+                                            <div class="mt-auto">
+                                                <p class="card-text large-medium" if:true={_showPrice}>{sliderItem.price}&nbsp;{sliderItem.product.CurrencyIsoCode}</p>
+                                                <template if:false={sliderItem.isAvailable}>
+                                                    <div class="d-block bg-error-subtle rounded border border-error text-error p-2 w-100 mb-3">
+                                                        <p align="center" class="m-0 body-regular"> <i class="bi bi-check-circle-fill text-error"></i> {label.noAvailability} </p>
+                                                    </div>
+                                                </template>
+                                                <template if:true={sliderItem.isAvailable}>
+                                                    <template if:false={sliderItem.addToCartClicked}>
+                                                        <button class="btn btn-primary w-100" 
+                                                            data-id={sliderItem.product.Id} 
+                                                            if:true={showCta} 
+                                                            onclick={handleAddToCart}>
+                                                            {label.AddToCart}
+                                                        </button>
+                                                    </template>
+                                                    <template if:true={sliderItem.addToCartClicked}>
+                                                        <!--lightning-layout>
+                                                            <lightning-layout-item size="1">
+                                                                <button class="btn btn-link p-0 text-decoration-none text-dark" data-id={sliderItem.product.Id} onclick={handleDeleteItemFromCart}>
+                                                                    <i class="bi bi-trash3"></i>
+                                                                </button>
+                                                            </lightning-layout-item>
+                                                            <lightning-layout-item size="11"-->
+                                                                <div class="input-group-prepend align-items-center justify-content-center combo-wrapper" style="width: 100%;">
+                                                                    <lightning-combobox style="margin:0!important;" variant="label-hidden" options={sliderItem.quantityOptions} value="1" data-id={sliderItem.product.Id} onchange={handleChangeQuantity} ></lightning-combobox>
+                                                                </div>
+                                                            <!--/lightning-layout-item>
+                                                        </lightning-layout-->
+                                                    </template>
+                                                    <template if:true={sliderItem.addToCartFading}>
+                                                        <div class="d-block bg-success-subtle rounded border border-success text-success p-2 w-100 mb-3">
+                                                            <p align="center" class="m-0 body-regular"> <i class="bi bi-check-circle-fill text-success"></i> {label.addedToCart} <!--span class="text-decoration-underline body-bold cursor-pointer" onclick={handleClickViewCart}>{label.viewCart}</span--></p>
+                                                        </div>
+                                                    </template>
+                                                </template>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    <!-- Add more slides as needed -->
+                </div>
+                <!-- Carousel controls -->
+                <div class="d-flex justify-content-between my-2">            
+                    <div if:true={showPaginationDots}>
+                        <template for:each={paginationDots} for:item="paginationDot">
+                            <span class={paginationDot.classNames} data-number={paginationDot.number} key={paginationDot.number} onclick={handleClickDot}> 
+                                <i class="bi bi-dot cursor-pointer"></i>
+                            </span>
+                        </template>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between">
+                        <button class="carousel-control-prev border rounded cursor-pointer bg-none me-2" onclick={handlePrev} disabled={disablePrev}>
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+                        <button class="carousel-control-next border rounded cursor-pointer bg-none" onclick={handleNext} disabled={disableNext}>
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="d-flex flex-wrap justify-content-between" if:true={showMultipleRows}>
+            <div class={filterColumnClass} if:true={_setFilters}>
+                <template if:false={filterReset}>
+                    <c-webshop-slider-filter loaded={filtersLoaded} has-data={hasSliderData} onfilterchange={handleFilterChange} filters={filters} show-prices={showPrices}></c-webshop-slider-filter>
+                </template>
+            </div>
+            <div class={carouselColumnClass}>
+                <div if:true={_showNoData}>
+                    <p class="components-badge-h3">{label.noMatchesForFilter}</p>
+                </div>
+                <div if:true={_showSliderData}> 
+                    <template if:true={showSorting}>
+                    <div class="row mb-3">
+                        <div class="col-12 d-flex justify-content-between body-small w-100"> <!--removed sort-option class-->
+                            <div>
+                                {recordsCount} {label.totalItemsFound}
+                            </div>
+                            <div>
+                                <span>{label.sortBy}&nbsp;</span>
+                                <select onchange={handleSortingChange}>
+                                    <template for:each={sortOptions} for:item="sortOption">
+                                        <option value={sortOption.value} key={sortOption.value}>{sortOption.label}</option>
+                                    </template>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    </template>
+                    <div class="row gy-3 flex-wrap">
+                        <template for:each={sliderData} for:item="sliderItem">
+                            <!--- Product 1 -->
+                            <div class={cardColumnClass} key={sliderItem.product.Id}>
+                                <!--ACTUAL PRODUCT CARD-->
+                                <div class="card p-2 mx-1">
+                                    <div class={multipleRowsProductBackgroundClass} if:true={showImage}>
+                                        <img src={sliderItem.imageUrl} class="product-slider-image cursor-pointer" alt={sliderItem.product.Name} data-productid={sliderItem.product.Id} onclick={handleNavigateToProduct}>
+                                        <template if:true={showWishlist}>
+                                            <button class="wishlist cursor-pointer">
+                                                <i 
+                                                class="bi bi-heart"
+                                                data-id={sliderItem.product.Id}
+                                                if:false={sliderItem.inWishlist}
+                                                onclick={handleAddToWishlist}></i>
+                                                <i 
+                                                class="bi bi-heart-fill"
+                                                data-id={sliderItem.product.Id}
+                                                if:false={sliderItem.inWishlist}
+                                                onclick={handleAddToWishlist}></i>
+                                            </button>
+                                            <button class="wishlist-added cursor-pointer">
+                                                <i 
+                                                class="bi bi-heart-fill"
+                                                data-productid={sliderItem.product.Id}
+                                                if:true={sliderItem.inWishlist}
+                                                onclick={handleRemoveFromWishlist}></i>
+                                            </button>
+                                        </template>
+                                    </div>
+                                    <div class="card-body p-0 d-flex flex-column">
+                                        <p class="card-title large-medium body-sm-medium m-0" data-productid={sliderItem.product.Id} onclick={handleNavigateToProduct}>{sliderItem.product.Name}</p>
+                                        <p class="card-text body-small gray-700 m-0">{sliderItem.product.ProductSubtitle__c}</p>
+                                        <p class="card-text body-small gray-700 m-0">{label.itemNumber}: {sliderItem.product.ProductCode}</p>
+                                        <p class="card-text body-small gray-700 m-0">{label.unit}: {sliderItem.product.QuantityUnitOfMeasure}</p>
+                                        <p class="card-text body-small gray-700 m-0">{label.contents}: {sliderItem.product.PackageUnit__c}</p>
+                                        <!--p class="card-text body-small gray-700 m-0">{label.availability}: <span class="availability-dot" style={sliderItem.availabilityStyle}></span></p-->
+                                        <p class="card-text body-small gray-700" if:true={showDescription}>{sliderItem.product.Description__c}</p>
+                                        <div class="mt-auto">
+                                            <p class="card-text large-medium body-sm-medium" if:true={_showPrice}>{sliderItem.price}&nbsp;{sliderItem.product.CurrencyIsoCode}</p>
+                                            <template if:false={sliderItem.isAvailable}>
+                                                <div class="d-block bg-error-subtle rounded border border-error text-error p-2 w-100 mb-3">
+                                                    <p align="center" class="m-0 body-regular"> <i class="bi bi-check-circle-fill text-error"></i> {label.noAvailability} </p>
+                                                </div>
+                                            </template>
+                                            <template if:true={sliderItem.isAvailable}>
+                                                <template if:false={sliderItem.addToCartClicked}>
+                                                    <button class="btn btn-primary w-100" 
+                                                        data-id={sliderItem.product.Id} 
+                                                        if:true={showCta} 
+                                                        onclick={handleAddToCart}>
+                                                        {label.AddToCart}
+                                                    </button>
+                                                </template>
+                                                <template if:true={sliderItem.addToCartClicked}>
+                                                    <!--lightning-layout>
+                                                        <lightning-layout-item size="1">
+                                                            <button class="btn btn-link p-0 text-decoration-none text-dark" data-id={sliderItem.product.Id} onclick={handleDeleteItemFromCart}>
+                                                                <i class="bi bi-trash3"></i>
+                                                            </button>
+                                                        </lightning-layout-item>
+                                                        <lightning-layout-item size="11"-->
+                                                            <div class="input-group-prepend align-items-center justify-content-center combo-wrapper" style="width: 100%;">
+                                                                <lightning-combobox style="margin:0!important;" variant="label-hidden" options={sliderItem.quantityOptions} value="1" data-id={sliderItem.product.Id} onchange={handleChangeQuantity}></lightning-combobox>
+                                                            </div>
+                                                        <!--/lightning-layout-item>
+                                                    </lightning-layout-->
+                                                </template>
+                                                <template if:true={sliderItem.addToCartFading}>
+                                                    <div class="d-block bg-success-subtle rounded border border-success text-success p-2 w-100 mb-3">
+                                                        <p align="center" class="m-0 body-regular"> <i class="bi bi-check-circle-fill text-success"></i> {label.addedToCart} <!--span class="text-decoration-underline body-bold cursor-pointer" onclick={handleClickViewCart}>{label.viewCart}</span--></p>
+                                                    </div>
+                                                </template>
+                                            </template>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--ACTUAL PRODUCT CARD END-->
+                            </div>
+                        </template>
+                        <template if:true={showProductPagination}>
+                            <div class="container">
+                                <div class="row" if:true={showPagination}>
+                                    <div class="col-12">
+                                        <c-webshop-pagination 
+                                            if:false={isLoading}
+                                            page-number={currentPage}
+                                            records-count={recordsCount}
+                                            records-per-page={recordsPerPage}
+                                            onpagechange={handlePageChange}>
+                                        </c-webshop-pagination>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template if:true={showExtendedRows}>
+        <template if:true={_showSliderData}> 
+            <div class="cart-carousel-container">
+                <template for:each={sliderData} for:item="sliderItem">
+                    <!--- ACTUAL PRODUCT CARD START -->
+                    <div class="d-flex my-2 mx-1 border-bottom py-1 col-6 col-xl-12 cart-card" key={sliderItem.product.Id}>
+                        <div class="recommended-product-image" if:true={showImage}> 
+                            <img src={sliderItem.imageUrl} class="cursor-pointer" alt={sliderItem.product.Name} data-productid={sliderItem.product.Id} onclick={handleNavigateToProduct}>
+                        </div>
+                        <div class="w-100 mx-2">
+                            <p data-productid={sliderItem.product.Id} class="body-small mb-0" onclick={handleNavigateToProduct}>{sliderItem.product.Name}</p>
+                            <p class="body-regular gray-700 mb-0">{label.contents}: {sliderItem.product.Package_Unit__c}</p>
+                            <!--p class="body-regular gray-700 mb-0">{label.availability}: <span class="availability-dot" style={sliderItem.availabilityStyle}></span></p-->
+                            <p if:true={_showPrice} class="body-regular gray-700">{sliderItem.price}&nbsp;{sliderItem.product.CurrencyIsoCode}</p>
+                            <template if:false={sliderItem.addToCartFading}>
+                                <lightning-layout multiple-rows>
+                                    <lightning-layout-item
+                                            size="12"
+                                            medium-device-size="12"
+                                            large-device-size="4"
+                                            class="slds-align-middle">
+                                        <div class="align-items-center justify-content-center my-2 my-md-0 w-100">
+                                            <lightning-combobox style="margin:0!important;" variant="label-hidden" options={sliderItem.quantityOptions} value="1" data-id={sliderItem.product.Id} onchange={handleChangeQuantityAlt}></lightning-combobox>
+                                        </div>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="1"></lightning-layout-item>
+                                    <lightning-layout-item
+                                        size="12"
+                                        medium-device-size="12"
+                                        large-device-size="7"
+                                        class="slds-align-middle">
+                                        <template if:false={sliderItem.isAvailable}>
+                                            <div class="d-block bg-error-subtle rounded border border-error text-error p-2 w-100 mb-3">
+                                                <p align="center" class="m-0 body-regular"> <i class="bi bi-check-circle-fill text-error"></i> {label.noAvailability} </p>
+                                            </div>
+                                        </template>
+                                        <template if:true={sliderItem.isAvailable}>
+                                            <button class="btn btn-primary body-small w-100" 
+                                                data-id={sliderItem.product.Id} 
+                                                onclick={handleAddToCartAlt}
+                                                >
+                                                {label.AddToCart}
+                                            </button>
+                                        </template>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                            </template>
+                            <template if:true={sliderItem.addToCartFading}>
+                                <div class="d-block bg-success-subtle rounded border border-success text-success p-2 w-100 mb-3">
+                                    <p align="center" class="m-0 body-regular"> <i class="bi bi-check-circle-fill text-success"></i> {label.addedToCart} <!--span class="text-decoration-underline body-bold cursor-pointer" onclick={handleClickViewCart}>{label.viewCart}</span--></p>
+                                </div>
+                            </template>
+                        </div>
+                        <!--ACTUAL PRODUCT CARD END-->
+                    </div>
+                </template>
+            </div>
+        </template>
+    </template>
+</template>

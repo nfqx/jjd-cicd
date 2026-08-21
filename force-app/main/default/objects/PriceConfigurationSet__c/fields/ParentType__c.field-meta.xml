@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ParentType__c</fullName>
+    <label>Parent Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Kette</fullName>
+                <default>false</default>
+                <label>Kette</label>
+            </value>
+            <value>
+                <fullName>Einkaufsgesellschaft KANN</fullName>
+                <default>false</default>
+                <label>Einkaufsgesellschaft KANN</label>
+            </value>
+            <value>
+                <fullName>Einkaufsgesellschaft MUSS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Einkaufsgesellschaft MUSS</label>
+            </value>
+            <value>
+                <fullName>KANN</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>KANN</label>
+            </value>
+            <value>
+                <fullName>MUSS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>MUSS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

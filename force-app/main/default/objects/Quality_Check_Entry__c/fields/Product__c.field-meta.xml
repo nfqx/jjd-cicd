@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product__c</fullName>
+    <label>Product</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Alfredo Caffè</fullName>
+                <default>false</default>
+                <label>Alfredo Caffè</label>
+            </value>
+            <value>
+                <fullName>Alfredo Espresso Cremazzurro</fullName>
+                <default>false</default>
+                <label>Alfredo Espresso Cremazzurro</label>
+            </value>
+            <value>
+                <fullName>Alfredo Espresso Primus Omnium</fullName>
+                <default>false</default>
+                <label>Alfredo Espresso Primus Omnium</label>
+            </value>
+            <value>
+                <fullName>Alfredo Espresso Super Bar</fullName>
+                <default>false</default>
+                <label>Alfredo Espresso Super Bar</label>
+            </value>
+            <value>
+                <fullName>Alfredo Espresso Tipo Bar</fullName>
+                <default>false</default>
+                <label>Alfredo Espresso Tipo Bar</label>
+            </value>
+            <value>
+                <fullName>Balance Extra</fullName>
+                <default>false</default>
+                <label>Balance Extra</label>
+            </value>
+            <value>
+                <fullName>Bistro Montana</fullName>
+                <default>false</default>
+                <label>Bistro Montana</label>
+            </value>
+            <value>
+                <fullName>Bistro Montana Café Crème</fullName>
+                <default>false</default>
+                <label>Bistro Montana Café Crème</label>
+            </value>
+            <value>
+                <fullName>Café Créme Original</fullName>
+                <default>false</default>
+                <label>Café Créme Original</label>
+            </value>
+            <value>
+                <fullName>Café Int. especiál Bio FT Espresso</fullName>
+                <default>false</default>
+                <label>Café Int. especiál Bio FT Espresso</label>
+            </value>
+            <value>
+                <fullName>Café Intención</fullName>
+                <default>false</default>
+                <label>Café Intención</label>
+            </value>
+            <value>
+                <fullName>Café Intención Café Crème</fullName>
+                <default>false</default>
+                <label>Café Intención Café Crème</label>
+            </value>
+            <value>
+                <fullName>Café Intención Espresso</fullName>
+                <default>false</default>
+                <label>Café Intención Espresso</label>
+            </value>
+            <value>
+                <fullName>Café Intención Filterkaffee</fullName>
+                <default>false</default>
+                <label>Café Intención Filterkaffee</label>
+            </value>
+            <value>
+                <fullName>Café Verde</fullName>
+                <default>false</default>
+                <label>Café Verde</label>
+            </value>
+            <value>
+                <fullName>Café Verde Espresso Bio</fullName>
+                <default>false</default>
+                <label>Café Verde Espresso Bio</label>
+            </value>
+            <value>
+                <fullName>Cantate</fullName>
+                <default>false</default>
+                <label>Cantate</label>
+            </value>
+            <value>
+                <fullName>Casino</fullName>
+                <default>false</default>
+                <label>Casino</label>
+            </value>
+            <value>
+                <fullName>Casino Royal</fullName>
+                <default>false</default>
+                <label>Casino Royal</label>
+            </value>
+            <value>
+                <fullName>Espresso Classico</fullName>
+                <default>false</default>
+                <label>Espresso Classico</label>
+            </value>
+            <value>
+                <fullName>Espresso Speciale</fullName>
+                <default>false</default>
+                <label>Espresso Speciale</label>
+            </value>
+            <value>
+                <fullName>Excelsior</fullName>
+                <default>false</default>
+                <label>Excelsior</label>
+            </value>
+            <value>
+                <fullName>Favorit Extra</fullName>
+                <default>false</default>
+                <label>Favorit Extra</label>
+            </value>
+            <value>
+                <fullName>Grand Gourmet</fullName>
+                <default>false</default>
+                <label>Grand Gourmet</label>
+            </value>
+            <value>
+                <fullName>Grand Gourmet Spezial</fullName>
+                <default>false</default>
+                <label>Grand Gourmet Spezial</label>
+            </value>
+            <value>
+                <fullName>Hochland</fullName>
+                <default>false</default>
+                <label>Hochland</label>
+            </value>
+            <value>
+                <fullName>Idee Kaffee Classic</fullName>
+                <default>false</default>
+                <label>Idee Kaffee Classic</label>
+            </value>
+            <value>
+                <fullName>Massimo Forte</fullName>
+                <default>false</default>
+                <label>Massimo Forte</label>
+            </value>
+            <value>
+                <fullName>Massimo Forte Espresso</fullName>
+                <default>false</default>
+                <label>Massimo Forte Espresso</label>
+            </value>
+            <value>
+                <fullName>Melange Bavaria</fullName>
+                <default>false</default>
+                <label>Melange Bavaria</label>
+            </value>
+            <value>
+                <fullName>Melange Finesse</fullName>
+                <default>false</default>
+                <label>Melange Finesse</label>
+            </value>
+            <value>
+                <fullName>Melange Finesse Café Crème</fullName>
+                <default>false</default>
+                <label>Melange Finesse Café Crème</label>
+            </value>
+            <value>
+                <fullName>Mövenpick</fullName>
+                <default>false</default>
+                <label>Mövenpick</label>
+            </value>
+            <value>
+                <fullName>Premium Brown</fullName>
+                <default>false</default>
+                <label>Premium Brown</label>
+            </value>
+            <value>
+                <fullName>Premium Dark</fullName>
+                <default>false</default>
+                <label>Premium Dark</label>
+            </value>
+            <value>
+                <fullName>Premium Melange</fullName>
+                <default>false</default>
+                <label>Premium Melange</label>
+            </value>
+            <value>
+                <fullName>Ratio</fullName>
+                <default>false</default>
+                <label>Ratio</label>
+            </value>
+            <value>
+                <fullName>Savoy Café Créme</fullName>
+                <default>false</default>
+                <label>Savoy Café Créme</label>
+            </value>
+            <value>
+                <fullName>Top Extra</fullName>
+                <default>false</default>
+                <label>Top Extra</label>
+            </value>
+            <value>
+                <fullName>Wiener Mocca</fullName>
+                <default>false</default>
+                <label>Wiener Mocca</label>
+            </value>
+            <value>
+                <fullName>Wiener Mokka</fullName>
+                <default>false</default>
+                <label>Wiener Mokka</label>
+            </value>
+            <value>
+                <fullName>Classic Brown</fullName>
+                <default>false</default>
+                <label>Classic Brown</label>
+            </value>
+            <value>
+                <fullName>Classic Organic</fullName>
+                <default>false</default>
+                <label>Classic Organic</label>
+            </value>
+            <value>
+                <fullName>Classic White</fullName>
+                <default>false</default>
+                <label>Classic White</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

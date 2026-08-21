@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Quotation_Phase_Primary_Contact</fullName>
+    <active>false</active>
+    <description>Enforces that a Primary Contact is assigned via the Opportunity Contact Roles before the Opportunity can be moved into the &apos;Quotation Phase&apos;, unless bypassed.</description>
+    <errorConditionFormula>AND(
+
+NOT(CONTAINS($Label.Validation_exempted_Users, $User.Username)), 				NOT(ISCHANGED(SkipValidations__c)), 
+	
+   ISCHANGED(StageName), 
+   ISPICKVAL(StageName, &apos;Quotation Phase&apos;),
+DecisionMakerContactRoleSetHelper__c = FALSE
+
+)</errorConditionFormula>
+    <errorMessage>Please assign the primary contact in the Opportunity Contact Roles!</errorMessage>
+</ValidationRule>

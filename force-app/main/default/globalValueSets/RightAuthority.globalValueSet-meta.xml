@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>KAM</fullName>
+        <default>false</default>
+        <label>KAM</label>
+    </customValue>
+    <customValue>
+        <fullName>VL</fullName>
+        <default>false</default>
+        <label>VL</label>
+    </customValue>
+    <customValue>
+        <fullName>GL</fullName>
+        <default>false</default>
+        <label>GL</label>
+    </customValue>
+    <description>Authority of a right — who granted it. Used by the six …RightAuthority__c fields.</description>
+    <masterLabel>Right Authority</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V2_Volume_Other_NonNegative</fullName>
+    <active>false</active>
+    <description>Enforces non-negative target volume for miscellaneous items.</description>
+    <errorConditionFormula>NOT(ISBLANK(	PurchaseQuantityOther__c))
+&amp;&amp; 	PurchaseQuantityOther__c &lt; 0</errorConditionFormula>
+    <errorMessage>Target volume for miscellaneous items cannot be negative.</errorMessage>
+</ValidationRule>

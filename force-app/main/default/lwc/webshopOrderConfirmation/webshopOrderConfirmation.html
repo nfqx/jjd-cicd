@@ -1,0 +1,170 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <div class="d-flex justify-content-center align-items-center">
+        <div if:true={isLoading}  class="spinner-border text-black-50" role="status"></div>
+    </div>
+    <!--lightning-spinner if:true={isLoading} alternative-text="Loading" size="small"></lightning-spinner-->
+    <template if:false={isLoading}>
+        <template if:true={hasData}>
+            <div class="container print-section">
+                <div class="row">
+                    <p class="body-medium">
+                        <i class="bi bi-check-circle-fill text-success"></i>
+                        {label.orderCompleted}</p>
+                </div>
+                <div class="row d-flex justify-content-between">
+                    <!-- LEFT SIDE -->
+                    <div class="col-12 col-lg-6">
+                        <div class="row justify-content-between">
+                            <div class="col">
+                                <p class="body-regular gray-700">{label.orderNumber}: {orderInfo.OrderNumber}</p>
+                            </div>
+                            <div class="col no-print">
+                                <p class="body-regular text-end"><a onclick={handlePrint}>
+                                    <i class="bi bi-printer"></i>
+                                    <span class="d-none d-lg-inline"> {label.print}</span></a></p>
+                            </div>
+                        </div>
+                        <h1 class="components-badge-h1 no-print">{label.thankYou} {orderInfo.CreatedBy.FirstName}!</h1>
+                        <p class="body-regular no-print">{label.thankYouSubheader}</p>
+                        <!--Mobile device order summary block-->
+                        <div class="d-block d-lg-none d-flex align-items-center justify-content-between order-detail w-100 no-print" onclick={handleOpenModal}>
+                            <p class="body-regular m-0">{label.orderDetails} ({orderProductsCount})</p>
+                            
+                            <p class="components-badge-h4 m-0 d-flex align-items-center">
+                                {orderInfo.TotalAmount}
+                                <i class="bi bi-chevron-right"></i>
+                            </p>
+                        </div>                    
+
+                        <h3 class="components-badge-h3 py-3">{label.orderDetails}</h3>
+                        <div class="order-detail w-100 mb-3"> 
+                            <p class="body-bold">{label.contactInformation}</p>
+                            <p>
+                                {orderInfo.CreatedBy.FirstName} {orderInfo.CreatedBy.LastName}<br />
+                                {orderInfo.CreatedBy.Email}
+                            </p>
+                        </div>
+                        <div class="order-detail w-100 mb-3">
+                            <p class="body-bold">{label.orderInformation}</p>
+                            <p>
+                                {label.orderDate}: {orderInfo.OrderDate}<br />
+                                {label.orderNumber}: {orderInfo.OrderNumber}
+                            </p>
+                        </div>
+                        <div class="order-detail w-100 mb-3">
+                            <p class="body-bold">{label.shippingAddress}</p>
+                            <p>
+                                <span class="body-bold">{orderInfo.Account.Name}</span><br />
+                                {orderInfo.Street}, {orderInfo.PostalCode} {orderInfo.City}
+                            </p>
+                        </div>
+                        <!--Shipping information on mobile-->
+                        <div class="d-block d-lg-none" if:true={showPrices}>
+                            <h3 class="components-badge-h3 py-3">{label.yourOrder}</h3>
+                            <p class="d-flex justify-content-between body-regular"><span>{label.subtotal}</span><span>{orderInfo.ProductCosts__c}&nbsp;{orderInfo.CurrencyIsoCode}</span></p>
+                            <p class="d-flex justify-content-between body-regular"><span>{label.shipping}</span><span>{_shipping}</span></p>
+                            <div class="border-top">
+                                <p class="d-flex justify-content-between components-badge-h2 pt-3"><span>{label.total}</span><span>{orderInfo.TotalAmount}&nbsp;{orderInfo.CurrencyIsoCode}</span></p>
+                            </div>
+                        </div>
+                        <!--Shipping information on mobile END-->
+                        <div class="row mt-4 justify-content-between no-print">
+                            <div class="col-12 col-md-6">
+                                <button class="btn btn-primary btn-lg w-100 w-md-auto" onclick={handleContinueShopping}>{label.continueShopping}</button>
+                            </div>
+                            <div class="col-12 col-lg-6 d-flex flex-column align-items-start align-items-lg-end justify-content-end">
+                                <p class="body-medium text-start text-lg-end m-lg-0 mt-3">{label.needHelp} <a class="link-medium" href="#" onclick={handleContactUs}>{label.contact}</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- RIGHT SIDE -->
+                    <div class="col-12 col-lg-5 border rounded p-0 p-md-4 mx-lg-4 d-none d-lg-block height-max-content">
+                        <template if:true={hasProducts}>
+                        
+                            <h3 class="components-badge-h3 border-bottom pb-3">{label.yourOrder}</h3>
+                            <template for:each={orderProducts} for:item="orderItem">
+                                <div class="border-bottom container mb-3 p-0" key={orderItem.orderProduct.Id}>
+                                    <div class="row gx-1 py-1 px-0">
+                                        <div if:true={orderItem.hasImage} class="col-3 no-print">
+                                            <img src={orderItem.imageUrl} class="product-image" alt={orderItem.orderProduct.Product2.Name} data-productid={orderItem.orderProduct.Product2Id} onclick={handleNavigateToProduct}>
+                                        </div>
+                                        <div if:false={orderItem.hasImage} class="col-3 no-print">
+                                            <div class="product-image"></div>
+                                        </div>
+                                        
+                                        <div class="col-6 d-flex flex-column justify-content-between">
+                                            <p class="body-medium text-wrap" data-productid={orderItem.orderProduct.Product2Id} onclick={handleNavigateToProduct}>{orderItem.orderProduct.Product2.Name}</p>
+                                            <p class="body-small gray-700 text-wrap">{orderItem.orderProduct.Product2.PackageUnit__c}</p>
+                                        </div>
+                                        <div class="col-3 d-flex flex-column justify-content-between">
+                                            <p class="components-badge-h3 text-end" if:true={showPrices}>{orderItem.price}&nbsp;{orderInfo.CurrencyIsoCode}</p>
+                                            <p class="body-small gray-700 text-end">{orderItem.orderProduct.Quantity}</p>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </template> 
+                            <template  if:true={showPrices}>
+                                <p class="d-flex justify-content-between body-regular"><span>{label.subtotal}</span><span>{orderInfo.ProductCosts__c}&nbsp;{orderInfo.CurrencyIsoCode}</span></p>
+                                <p class="d-flex justify-content-between body-regular"><span>{label.shipping}</span><span>{_shipping}</span></p>
+                                <div class="border-top">
+                                    <p class="d-flex justify-content-between components-badge-h2 pt-3"><span>{label.total}</span><span>{orderInfo.TotalAmount}&nbsp;{orderInfo.CurrencyIsoCode}</span></p>
+                                </div>
+                            </template>
+                            
+                        </template>
+                    </div>
+                </div>
+                <!--PRODUCT CART MODAL-->
+                <div class="container-fluid order-modal d-none vh-100 no-print">
+                    <!--Fixed header-->
+                    <div class="row border-bottom py-3 d-flex align-items-center justify-content-between sticky-top bg-white">
+                        <div class="col-6">
+                            <h3 class="components-badge-h3 m-0">{label.yourOrder} ({orderProductsCount})</h3>
+                        </div>
+                        <div class="col-6 text-end no-print">
+                                <i onclick={handleCloseModal} class="bi bi-x-lg"></i>
+                        </div>
+                    </div>
+                    <!--Product Infomation-->
+                    <template if:true={hasProducts}>
+                        <template for:each={orderProducts} for:item="orderItem">
+                            <div class="border-bottom container mb-3 p-0" key={orderItem.orderProduct.Id}>
+                                <div class="row gx-1 py-1 px-0">
+                                    <div if:true={orderItem.hasImage} class="col-3 no-print">
+                                        <img src={orderItem.imageUrl} class="product-image" alt={orderItem.orderProduct.Product2.Name}>
+                                    </div>
+                                    <div if:false={orderItem.hasImage} class="col-3 no-print">
+                                    </div>
+                                    <div class="col-6 d-flex flex-column justify-content-between">
+                                        <p class="body-medium text-wrap">{orderItem.orderProduct.Product2.Name}</p>
+                                        <p class="body-small gray-700 text-wrap">{orderItem.orderProduct.Product2.PackageUnit__c}</p>
+                                    </div>
+                                    <div class="col-3 d-flex flex-column justify-content-between">
+                                        <p class="components-badge-h3 text-end" if:true={showPrices}>{orderItem.price}&nbsp;{orderInfo.CurrencyIsoCode}</p>
+                                        <p class="body-small gray-700 text-end">{orderItem.orderProduct.Quantity}</p>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+                    <!--Order summary-->
+                    <template  if:true={showPrices}>
+                        <p class="d-flex justify-content-between body-regular"><span>{label.subtotal}</span><span>{orderInfo.ProductCosts__c}&nbsp;{orderInfo.CurrencyIsoCode}</span></p>
+                        <p class="d-flex justify-content-between body-regular"><span>{label.shipping}</span><span>{_shipping}</span></p>
+                        <div class="border-top">
+                            <p class="d-flex justify-content-between components-badge-h2 pt-3"><span>{label.total}</span><span>{orderInfo.TotalAmount}&nbsp;{orderInfo.CurrencyIsoCode}</span></p>
+                        </div>
+                    </template>
+            
+                </div>
+            </div>
+            <c-webshop-contact-modal></c-webshop-contact-modal>
+        </template>
+        <template if:false={hasData}>
+            {label.invalidOrder}
+        </template>
+    </template>
+</template>

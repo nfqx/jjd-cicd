@@ -1,0 +1,48 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item size={productColumnSize} class="slds-align_absolute-center" padding="around-small">
+            <c-lookup
+                object-api-name="Product2"
+                data-field="product"
+                onsearch={handleProductSearch}
+                onselectionchange={handleProductChange}
+                placeholder={label.product}
+                style="width:100%"
+                height-restricted
+                >
+            </c-lookup>
+        </lightning-layout-item>
+        <lightning-layout-item size="2" class="slds-align_absolute-center" padding="around-small">
+            <template if:false={_rowdata.isSubgroup}>
+                {_rowdata.previewPriceDisplay} €
+            </template>
+        </lightning-layout-item>
+        <lightning-layout-item class="slds-align_absolute-center" size="2" padding="around-small">
+            <lightning-input type="number" step="1" value={_rowdata.quantity} data-field="quantity" onchange={changeQuantity} variant="label-hidden"></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item size="2" class="slds-align_absolute-center" padding="around-small">
+            <template if:false={_rowdata.isSubgroup}>
+                {_rowdata.sumDisplay} €
+            </template>
+        </lightning-layout-item>
+        <lightning-layout-item class="slds-align_absolute-center" size="2" padding="around-small">
+            <lightning-combobox value={_rowdata.markForInitialOrder} options={yesNoOptions} onchange={changeField} data-field="markForInitialOrder" variant="label-hidden"></lightning-combobox>
+        </lightning-layout-item>
+        <lightning-layout-item size="1" padding="around-small" if:true={showTeaColumn}>
+            <div style="width: 80%; display: inline; float: left;">
+                <template if:false={_rowdata.isSubgroup}>
+                    <lightning-input type="number" step="1" value={_rowdata.teaDiscount}  onchange={changeField} data-field="teaDiscount"></lightning-input>
+                </template>
+            </div>
+            <div style="width: 20%; display: inline; float: left;">
+                <template if:true={maxTeaDiscountViolated}>
+                    <lightning-helptext icon-name="utility:warning" content={warningMessageLabel}></lightning-helptext>
+                </template>
+            </div>
+            
+        </lightning-layout-item>
+        <lightning-layout-item class="slds-align_absolute-center" size="1" padding="around-small">
+            <lightning-icon size="small" class="cursor-pointer" icon-name="utility:delete" onclick={handleRemoveRow}></lightning-icon>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SubType__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Sub Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Andere</fullName>
+                <default>true</default>
+                <label>Andere</label>
+            </value>
+            <value>
+                <fullName>Artikelvorbelegung pflegen</fullName>
+                <default>false</default>
+                <label>Artikelvorbelegung pflegen</label>
+            </value>
+            <value>
+                <fullName>Export</fullName>
+                <default>false</default>
+                <label>Export</label>
+            </value>
+            <value>
+                <fullName>Fax</fullName>
+                <default>false</default>
+                <label>Fax</label>
+            </value>
+            <value>
+                <fullName>Handel</fullName>
+                <default>false</default>
+                <label>Handel</label>
+            </value>
+            <value>
+                <fullName>KAM</fullName>
+                <default>false</default>
+                <label>KAM</label>
+            </value>
+            <value>
+                <fullName>Machine</fullName>
+                <default>false</default>
+                <label>Machine</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>Ohne Nachricht/ Nachricht unter 8 Sek.</fullName>
+                <default>false</default>
+                <label>Ohne Nachricht/ Nachricht unter 8 Sek.</label>
+            </value>
+            <value>
+                <fullName>Qualität</fullName>
+                <default>false</default>
+                <label>Qualität</label>
+            </value>
+            <value>
+                <fullName>Accounting</fullName>
+                <default>false</default>
+                <label>Accounting</label>
+            </value>
+            <value>
+                <fullName>Create access</fullName>
+                <default>false</default>
+                <label>Create access</label>
+            </value>
+            <value>
+                <fullName>Delivery inquiries</fullName>
+                <default>false</default>
+                <label>Delivery inquiries</label>
+            </value>
+            <value>
+                <fullName>Foreign object</fullName>
+                <default>false</default>
+                <label>Foreign object</label>
+            </value>
+            <value>
+                <fullName>JJD error</fullName>
+                <default>false</default>
+                <label>JJD error</label>
+            </value>
+            <value>
+                <fullName>Machine replacement</fullName>
+                <default>false</default>
+                <label>Machine replacement</label>
+            </value>
+            <value>
+                <fullName>Machine RG/foreign object</fullName>
+                <default>false</default>
+                <label>Machine RG/foreign object</label>
+            </value>
+            <value>
+                <fullName>Maintain article pre-assignment</fullName>
+                <default>false</default>
+                <label>Maintain article pre-assignment</label>
+            </value>
+            <value>
+                <fullName>Master data - Company name change</fullName>
+                <default>false</default>
+                <label>Master data - Company name change</label>
+            </value>
+            <value>
+                <fullName>Master data - Price</fullName>
+                <default>false</default>
+                <label>Master data - Price</label>
+            </value>
+            <value>
+                <fullName>Master data transfer</fullName>
+                <default>false</default>
+                <label>Master data transfer</label>
+            </value>
+            <value>
+                <fullName>No message/message under 8 seconds</fullName>
+                <default>false</default>
+                <label>No message/message under 8 seconds</label>
+            </value>
+            <value>
+                <fullName>Order - Customer</fullName>
+                <default>false</default>
+                <label>Order - Customer</label>
+            </value>
+            <value>
+                <fullName>Order - Field service</fullName>
+                <default>false</default>
+                <label>Order - Field service</label>
+            </value>
+            <value>
+                <fullName>Order - Webshop</fullName>
+                <default>false</default>
+                <label>Order - Webshop</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Out-of-house service</fullName>
+                <default>false</default>
+                <label>Out-of-house service</label>
+            </value>
+            <value>
+                <fullName>QS-Other</fullName>
+                <default>false</default>
+                <label>QS-Other</label>
+            </value>
+            <value>
+                <fullName>Quality</fullName>
+                <default>false</default>
+                <label>Quality</label>
+            </value>
+            <value>
+                <fullName>Return</fullName>
+                <default>false</default>
+                <label>Return</label>
+            </value>
+            <value>
+                <fullName>Return - packing error</fullName>
+                <default>false</default>
+                <label>Return - packing error</label>
+            </value>
+            <value>
+                <fullName>Return - transport error</fullName>
+                <default>false</default>
+                <label>Return - transport error</label>
+            </value>
+            <value>
+                <fullName>Trade</fullName>
+                <default>false</default>
+                <label>Trade</label>
+            </value>
+            <value>
+                <fullName>Weld seam</fullName>
+                <default>false</default>
+                <label>Weld seam</label>
+            </value>
+            <value>
+                <fullName>Answering Machine</fullName>
+                <default>false</default>
+                <label>Answering Machine</label>
+            </value>
+            <value>
+                <fullName>New Customer Setup</fullName>
+                <default>false</default>
+                <label>New Customer Setup</label>
+            </value>
+            <value>
+                <fullName>Master data changes</fullName>
+                <default>false</default>
+                <label>Master data changes</label>
+            </value>
+            <value>
+                <fullName>Outside of the house</fullName>
+                <default>false</default>
+                <label>Outside of the house</label>
+            </value>
+            <value>
+                <fullName>Image database</fullName>
+                <default>false</default>
+                <label>Image database</label>
+            </value>
+            <value>
+                <fullName>QS - Weld seam</fullName>
+                <default>false</default>
+                <label>QS - Weld seam</label>
+            </value>
+            <value>
+                <fullName>QS - Foreign Body</fullName>
+                <default>false</default>
+                <label>QS - Foreign Body</label>
+            </value>
+            <value>
+                <fullName>Außerhaus-Service</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Außerhaus-Service</label>
+            </value>
+            <value>
+                <fullName>Bestellung Außendienst</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bestellung Außendienst</label>
+            </value>
+            <value>
+                <fullName>Buchhaltung</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Buchhaltung</label>
+            </value>
+            <value>
+                <fullName>JJD Fehler</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>JJD Fehler</label>
+            </value>
+            <value>
+                <fullName>Lieferanfragen</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lieferanfragen</label>
+            </value>
+            <value>
+                <fullName>Maschinen Austausch</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Maschinen Austausch</label>
+            </value>
+            <value>
+                <fullName>QS-Andere</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>QS-Andere</label>
+            </value>
+            <value>
+                <fullName>Retouren</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Retouren</label>
+            </value>
+            <value>
+                <fullName>Retouren-Packfehler</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Retouren-Packfehler</label>
+            </value>
+            <value>
+                <fullName>Retouren-Transport Fehler</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Retouren-Transport Fehler</label>
+            </value>
+            <value>
+                <fullName>Schweißnaht</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Schweißnaht</label>
+            </value>
+            <value>
+                <fullName>Stammdaten - Preis</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stammdaten - Preis</label>
+            </value>
+            <value>
+                <fullName>Stammdaten - Umfirmierung</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stammdaten - Umfirmierung</label>
+            </value>
+            <value>
+                <fullName>Stammdaten-Umbuchung</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stammdaten-Umbuchung</label>
+            </value>
+            <value>
+                <fullName>Zugang erstellen</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Zugang erstellen</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

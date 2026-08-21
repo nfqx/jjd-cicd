@@ -1,0 +1,26 @@
+.container{
+    display: grid; 
+    grid-template-columns: repeat(5, 20%); 
+} 
+.container-alt{
+    display: grid; 
+    grid-template-columns: repeat(4, 25%); 
+}
+p {
+    margin: 10px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    display: flex;
+    align-items: center;
+}
+
+.container > div:nth-child(2) {
+    border-right: 1px solid #ccc;
+    padding-right: 3px; /* Add spacing before line */
+}
+
+/* Vertical separator after 4th column (after Contact section) */
+.container > div:nth-child(4) {
+    border-right: 1px solid #ccc;
+    padding-right: 3px;
+}

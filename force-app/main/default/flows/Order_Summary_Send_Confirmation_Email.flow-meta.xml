@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>67.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Order_Summary_Confirmation_Mail_Condition</name>
+        <label>Order Summary Confirmation Mail Condition</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Confirmation was sent</defaultConnectorLabel>
+        <rules>
+            <name>Confirmation_Was_not_sent</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Order_Summary.OrderLifeCycleType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>UNMANAGED</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Order_Summary.SalesStoreId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>0ZE</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Confirmation Was not sent</label>
+        </rules>
+    </decisions>
+    <description>The flow automatically sends a confirmation email for specific OrderSummary records and then marks those records as sent.</description>
+    <environments>Default</environments>
+    <interviewLabel>Order Summary - Send Confirmation Email {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Order Summary - Send Confirmation Email</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Order_Summary</name>
+        <label>Get Order Summary</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Order_Summary_Confirmation_Mail_Condition</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SourceOrderSummaryId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.OrderSummaryId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>OrderSummary</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Order_Summary</targetReference>
+        </connector>
+        <flowRunAsUser>TriggeringUser</flowRunAsUser>
+        <object>OrderSummaryCreatedEvent</object>
+        <triggerType>PlatformEvent</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

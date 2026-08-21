@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CustomerContract__c</fullName>
+    <description>The contract this causation party counts for. Causation rows live and die with the contract. [Sources: D-02]</description>
+    <inlineHelpText>The contract this causation party counts for. Causation rows live and die with the contract.</inlineHelpText>
+    <label>Customer Contract</label>
+    <referenceTo>CustomerContract__c</referenceTo>
+    <relationshipLabel>Causation Parties</relationshipLabel>
+    <relationshipName>CausationParties</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

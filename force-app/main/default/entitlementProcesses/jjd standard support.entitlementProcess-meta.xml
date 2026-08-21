@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EntitlementProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <SObjectType>Case</SObjectType>
+    <active>true</active>
+    <entryStartDateField>Case.CreatedDate</entryStartDateField>
+    <exitCriteriaFilterItems>
+        <field>Case.IsClosed</field>
+        <operation>equals</operation>
+        <value>true</value>
+    </exitCriteriaFilterItems>
+    <isVersionDefault>false</isVersionDefault>
+    <milestones>
+        <isDisplayedOnLinkedEntity>false</isDisplayedOnLinkedEntity>
+        <milestoneCriteriaFilterItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </milestoneCriteriaFilterItems>
+        <milestoneCriteriaFilterItems>
+            <field>Case.Priority</field>
+            <operation>equals</operation>
+            <value>High</value>
+        </milestoneCriteriaFilterItems>
+        <milestoneName>Annahme</milestoneName>
+        <minutesToComplete>120</minutesToComplete>
+        <useCriteriaStartTime>true</useCriteriaStartTime>
+    </milestones>
+    <milestones>
+        <isDisplayedOnLinkedEntity>false</isDisplayedOnLinkedEntity>
+        <milestoneCriteriaFilterItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </milestoneCriteriaFilterItems>
+        <milestoneCriteriaFilterItems>
+            <field>Case.Priority</field>
+            <operation>equals</operation>
+            <value>Medium, Low</value>
+        </milestoneCriteriaFilterItems>
+        <milestoneName>Annahme</milestoneName>
+        <minutesToComplete>240</minutesToComplete>
+        <useCriteriaStartTime>true</useCriteriaStartTime>
+    </milestones>
+    <milestones>
+        <isDisplayedOnLinkedEntity>false</isDisplayedOnLinkedEntity>
+        <milestoneCriteriaFilterItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Waiting on Customer</value>
+        </milestoneCriteriaFilterItems>
+        <milestoneCriteriaFilterItems>
+            <field>Case.Priority</field>
+            <operation>equals</operation>
+            <value>High</value>
+        </milestoneCriteriaFilterItems>
+        <milestoneName>Waiting on Customer</milestoneName>
+        <minutesToComplete>600</minutesToComplete>
+        <useCriteriaStartTime>true</useCriteriaStartTime>
+    </milestones>
+    <milestones>
+        <isDisplayedOnLinkedEntity>false</isDisplayedOnLinkedEntity>
+        <milestoneCriteriaFilterItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Waiting on Customer</value>
+        </milestoneCriteriaFilterItems>
+        <milestoneCriteriaFilterItems>
+            <field>Case.Priority</field>
+            <operation>equals</operation>
+            <value>Medium, Low</value>
+        </milestoneCriteriaFilterItems>
+        <milestoneName>Waiting on Customer</milestoneName>
+        <minutesToComplete>1200</minutesToComplete>
+        <useCriteriaStartTime>true</useCriteriaStartTime>
+    </milestones>
+    <milestones>
+        <isDisplayedOnLinkedEntity>false</isDisplayedOnLinkedEntity>
+        <milestoneCriteriaFilterItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Response Received</value>
+        </milestoneCriteriaFilterItems>
+        <milestoneName>Response Received</milestoneName>
+        <minutesToComplete>1440</minutesToComplete>
+        <useCriteriaStartTime>true</useCriteriaStartTime>
+    </milestones>
+    <name>JJD Standard Support</name>
+    <versionMaster>5529O00000WmzA2</versionMaster>
+    <versionNumber>1</versionNumber>
+</EntitlementProcess>

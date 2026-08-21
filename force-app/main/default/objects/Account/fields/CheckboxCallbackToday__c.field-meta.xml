@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CheckboxCallbackToday__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Marks, when a callback date is entered is is &quot;today&quot; - used for flow to reopen leads</description>
+    <label>Checkbox Callback Today</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

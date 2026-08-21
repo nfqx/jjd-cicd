@@ -1,0 +1,117 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <div class="mega-menu-container">
+        <!-- First-level menu -->
+        <div class="overlay" style="display: none;" onmouseover={closeDropdown}> </div>
+        <ul class="mega-menu-first-level d-block d-md-flex px-3 px-md-0 py-md-3">
+            <template for:each={megaMenuElements} for:item="elementFirstLevel">
+                <li class="dropdown-class my-2 p-0 px-md-2" key={elementFirstLevel.id}><!--  -->
+                    <!-- Overlay effect -->
+                    <div class="d-flex justify-content-between mb-1 mb-md-0"> <!--removed row-->
+                        <a
+                            href={elementFirstLevel.megaMenuItem.Target__c}
+                            target="_self"
+                            class="dropdown-toggle"
+                            data-recordid={elementFirstLevel.megaMenuItem.Id}
+                            onmouseover={handleDropdown}
+                            >
+                            {elementFirstLevel.label}
+                        </a>
+                        <i 
+                            class="bi bi-arrow-right d-flex d-md-none"
+                            data-recordid={elementFirstLevel.megaMenuItem.Id}
+                            onclick={handleDropdown}></i>
+                    </div>
+                    <!-- Mega Menu (Second-level menu) -->
+                    <div class="container-fluid mega-menu p-3 py-md-4 px-md-5 dropdown body-regular" style="display: none;" data-dropdownid={elementFirstLevel.megaMenuItem.Id}>
+                        <div if:true={isTemporary}  class="spinner-border text-black-50" role="status"></div>
+                        <template if:false={isTemporary}>
+                            <div class="row">
+                                <template if:true={elementFirstLevel.megaMenuItem.BrandItem__c}>
+                                    <template if:true={hasBrands}>
+                                        <ul class="mega-menu-second-level col-12 col-md-3 body-bold" style={brandStyle}>
+                                            <template for:each={brands} for:item="brand">
+                                                <li key={brand.value} class="dropdown-item mb-3">
+                                                    <a 
+                                                        href={brand.value} 
+                                                        target="_self"
+                                                        aria-expanded="false"
+                                                        class="text-dark"
+                                                        >
+                                                        {brand.label}
+                                                    </a>
+                                                
+                                                </li>
+                                            </template>
+                                        </ul>
+                                    </template>
+                                </template>
+                                <template if:false={elementFirstLevel.megaMenuItem.BrandItem__c}>
+                                    <ul class="mega-menu-second-level col-12 col-md-3" if:true={elementFirstLevel.hasChildren}>
+                                        <template for:each={elementFirstLevel.children} for:item="elementSecondLevel">
+                                            <li if:false={elementSecondLevel.disabled} class="show mb-3 category-label d-flex justify-content-between" key={elementSecondLevel.id}>
+                                                <a href={elementSecondLevel.targetUrl} class="text-dark d-flex justify-content-between" target="_self" data-recordid={elementSecondLevel.id} onmouseover={handleHoverSecondLevel}>{elementSecondLevel.label}
+                                                </a>
+                                                <i 
+                                                    class="bi bi-arrow-right d-flex d-md-none"
+                                                    style="font-size:20px"
+                                                    data-recordid={elementSecondLevel.id}
+                                                    onclick={handleHoverSecondLevel}></i>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </template>
+                                <!-- Third-level main children -->
+                                <div class="third-level col-12 col-md-3">
+                                    <template if:true={elementFirstLevel.hasChildren}>
+                                        <template for:each={elementFirstLevel.children} for:item="elementSecondLevel">
+                                            <template if:false={elementSecondLevel.disabled} >
+                                                <ul class="mega-menu-third-level mega-menu-third-level-main" style={elementSecondLevel.childrenColStyle} key={elementSecondLevel.id} data-thirdmain={elementSecondLevel.id} if:true={elementSecondLevel.hasChildren}>
+                                                    <p class="label-bold-uppercase gray-700">{elementSecondLevel.subheader}</p> <!-- if:true statement needed if label does not exist-->
+                                                    <template for:each={elementSecondLevel.children} for:item="elementThirdLevel">
+                                                        <li class="hide mb-3" key={elementThirdLevel.id} if:false={elementThirdLevel.disabled}>
+                                                            <a href={elementThirdLevel.targetUrl} class="text-dark text-decoration-none" target="_self">{elementThirdLevel.label}</a>                   
+                                                        </li>
+                                                    </template>
+                                                </ul>
+                                            </template>
+                                        </template>
+                                    </template>
+                                </div>
+                                <!-- Third-level featured children -->
+                                <div class="third-level-featured col-12 col-md-3">
+                                    <template if:true={elementFirstLevel.hasChildren}>
+                                        <template for:each={elementFirstLevel.children} for:item="elementSecondLevel">
+                                            <template if:false={elementSecondLevel.disabled} >
+                                                <ul class="mega-menu-third-level mega-menu-third-level-featured" style="display: none;" key={elementSecondLevel.id} data-thirdfeatured={elementSecondLevel.id} if:true={elementSecondLevel.hasFeaturedChildren}>
+                                                    <p class="label-bold-uppercase gray-700">{elementSecondLevel.subheaderFeatured}</p>
+                                                    <template for:each={elementSecondLevel.featuredChildren} for:item="elementThirdLevelFeatured">
+                                                        <li class="hide mb-3" key={elementThirdLevelFeatured.id} if:false={elementThirdLevelFeatured.disabled}>
+                                                            <a href={elementThirdLevelFeatured.targetUrl} class="text-dark text-decoration-none" target="_self">{elementThirdLevelFeatured.label}</a>
+                                                        </li>
+                                                    </template>
+                                                </ul>
+                                            </template>
+                                        </template>
+                                    </template>
+                                </div>
+                                <!-- Featured Ad -->
+                                <div class="mega-menu-featured-ad text-decoration-none col-3 d-none d-md-block">
+                                    <template if:true={elementFirstLevel.hasChildren}>
+                                        <template for:each={elementFirstLevel.children} for:item="elementSecondLevel">
+                                            <template if:false={elementSecondLevel.disabled} >
+                                                <div class="third-level-featured-ad" if:true={elementSecondLevel.hasFeaturedAd} style="display: none;" key={elementSecondLevel.id} data-thirdad={elementSecondLevel.id}>
+                                                    <c-webshop-featured-ad featured-ad-id={elementSecondLevel.megaMenuItem.FeaturedAd__c} style-name="megamenu"></c-webshop-featured-ad>
+                                                </div>
+                                            </template>
+                                        </template>
+                                    </template>
+                                </div>
+                            </div>     
+                        </template>
+                    </div>
+                </li>
+            </template>
+        </ul>
+    </div>
+</template>

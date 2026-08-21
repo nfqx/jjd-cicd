@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>viktor.kurilovich@apex-palantir.com</contactEmail>
+    <label>Mulesoft Connected App</label>
+    <oauthConfig>
+        <callbackUrl>https://localhost:8080/callback</callbackUrl>
+        <certificate>MIIEhDCCA2ygAwIBAgIOAZq1Jqj9AAAAADcxMmkwDQYJKoZIhvcNAQELBQAwgYMxGzAZBgNVBAMMEk11bGVTb2Z0XzIwMjVfMjAyNjEYMBYGA1UECwwPMDBEOU8wMDAwMEpySmo4MRcwFQYDVQQKDA5TYWxlc2ZvcmNlLmNvbTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzELMAkGA1UECAwCQ0ExDDAKBgNVBAYTA1VTQTAeFw0yNTExMjQwOTE2NDFaFw0yNjExMjQwMDAwMDBaMIGDMRswGQYDVQQDDBJNdWxlU29mdF8yMDI1XzIwMjYxGDAWBgNVBAsMDzAwRDlPMDAwMDBKckpqODEXMBUGA1UECgwOU2FsZXNmb3JjZS5jb20xFjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xCzAJBgNVBAgMAkNBMQwwCgYDVQQGEwNVU0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDUbMgTKFF2KTsDqTh1GZxfWBXOTwL/19xAgj+3pngHSPTS7Yq/FDWL0FSdXTBQ7gnMM+JJ9Xj3/kYyfVJz0zBiD1+NZWNPxHR/wEdiaZxf9VA+SWJYj77r2vVA+XXVNBcSqPppAyvWiUFqTk9kPlBFIT6VhqV4gBUq0lFa4lpY1DuKHZIceWT6aDe0/+TulZ+Thv+SpDYa/zrYf+Wji6qzGDiVbEGs5QVgvMavhITLRmV9Nz1ae1vCcr9o0pc/fK5PITP7qGCjRTo+t23iI2b+JawdwuhXDeY4XGP4ViaWciVLxGFEVIbTgqLXR7xrgZo8P9RX1l7/n7YYU7zhCjhvAgMBAAGjgfMwgfAwHQYDVR0OBBYEFH4VjB8Yl7mKXz8zCFN/xpPo8J9nMA8GA1UdEwEB/wQFMAMBAf8wgb0GA1UdIwSBtTCBsoAUfhWMHxiXuYpfPzMIU3/Gk+jwn2ehgYmkgYYwgYMxGzAZBgNVBAMMEk11bGVTb2Z0XzIwMjVfMjAyNjEYMBYGA1UECwwPMDBEOU8wMDAwMEpySmo4MRcwFQYDVQQKDA5TYWxlc2ZvcmNlLmNvbTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzELMAkGA1UECAwCQ0ExDDAKBgNVBAYTA1VTQYIOAZq1Jqj9AAAAADcxMmkwDQYJKoZIhvcNAQELBQADggEBABW/imAqHN0jbyF5IuvEU/eQROVhcMZfMsotCDort/PywpayU/vZEzDMu8Zl4DjYgKD4HiAGg9iEvwgLrohemRvPi7BDElsQRyF8ZCF7UhjhHoy6SXMWmIRj0gWJ+YguTGPOQr1o4vTpMCSq1UyM0FYD9EsJ3PPd1ciHriwEEVadeAUpCudSIaRjX+O6m20KZdSLDOJKsfMLyHxjjSCV+uc2siFFbL8IxAw5QpEy42vmWBPU6ph6e18bcQ1pF4JGBZzUGYr4xayETM/w3h82N8Wi+Ut5oNgjj/sQiAfbbDUYD075VgQ6jE60Djse0X9w5CUhhPYNGuJAc1Eh6khQD8s=</certificate>
+        <consumerKey>3MVG9CG8tifMyyO3WI29YVhJEdn_HXaczuttvaxaQ79nYDu8wi8yuHIcYGzFcE.jXbqK0t1hpEA==</consumerKey>
+        <isAdminApproved>true</isAdminApproved>
+        <isClientCredentialEnabled>false</isClientCredentialEnabled>
+        <isCodeCredentialEnabled>false</isCodeCredentialEnabled>
+        <isCodeCredentialPostOnly>false</isCodeCredentialPostOnly>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isNamedUserJwtEnabled>false</isNamedUserJwtEnabled>
+        <isPkceRequired>true</isPkceRequired>
+        <isRefreshTokenRotationEnabled>false</isRefreshTokenRotationEnabled>
+        <isSecretRequiredForRefreshToken>true</isSecretRequiredForRefreshToken>
+        <isSecretRequiredForTokenExchange>false</isSecretRequiredForTokenExchange>
+        <isTokenExchangeEnabled>false</isTokenExchangeEnabled>
+        <scopes>Basic</scopes>
+        <scopes>Api</scopes>
+        <scopes>Web</scopes>
+        <scopes>Full</scopes>
+        <scopes>Chatter</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>BYPASS</ipRelaxation>
+        <isTokenExchangeFlowEnabled>false</isTokenExchangeFlowEnabled>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+    <permissionSetName>Single: App - MuleSoft Connected App</permissionSetName>
+    <profileName>System Administrator</profileName>
+</ConnectedApp>

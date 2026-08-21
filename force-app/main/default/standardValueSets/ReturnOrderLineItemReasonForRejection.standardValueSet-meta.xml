@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Beschädigter Posten</fullName>
+        <default>false</default>
+        <label>Beschädigter Posten</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Fehlender Posten oder fehlendes Teil</fullName>
+        <default>true</default>
+        <label>Fehlender Posten oder fehlendes Teil</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Falscher Posten</fullName>
+        <default>false</default>
+        <label>Falscher Posten</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Garantie abgelaufen</fullName>
+        <default>false</default>
+        <label>Garantie abgelaufen</label>
+    </standardValue>
+</StandardValueSet>

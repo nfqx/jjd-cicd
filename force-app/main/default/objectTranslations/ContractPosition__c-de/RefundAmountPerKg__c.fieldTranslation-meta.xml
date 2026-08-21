@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Eingabehilfe für Altverträge, die noch „Cent pro Kilo&quot; vereinbart haben — wird gespeichert, aber intern in den führenden Prozentsatz umgerechnet.</help>
+    <label>RV-Betrag (€/kg)</label>
+    <name>RefundAmountPerKg__c</name>
+</CustomFieldTranslation>

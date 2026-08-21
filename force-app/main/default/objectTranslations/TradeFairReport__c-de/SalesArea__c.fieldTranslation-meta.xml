@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Bereich</label>
+    <name>SalesArea__c</name>
+    <picklistValues>
+        <masterLabel>Baden-Württemberg (H. Mangold)</masterLabel>
+        <translation>BADEN - WÜRTTEMBERG (H. Mangold)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bavaria North (C. Mitzler)</masterLabel>
+        <translation>BAYERN NORD (C. Mitzler)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bavaria South (W. Thaller)</masterLabel>
+        <translation>BAYERN SÜD (W. Thaller)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Berlin / Brandenburg (K. Schulze)</masterLabel>
+        <translation>BERLIN / BRANDENBURG (K. Schulze)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Export (J. Tesch)</masterLabel>
+        <translation>EXPORT (J. Tesch)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hamburg / Schleswig-Holstein (K. Thestorff)</masterLabel>
+        <translation>HAMBURG / SCHLESWIG - HOLSTEIN (K. Thestorff)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hesse / Rhineland-Palatinate, Saarland (T. Schröder)</masterLabel>
+        <translation>HESSEN / RHEINLAND - PFALZ, SAARLAND (T. Schröder)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KAM (N. Stoevesand)</masterLabel>
+        <translation>KAM (N. Stoevesand)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lower Saxony, Kassel (R. Kämmerling)</masterLabel>
+        <translation>NIEDERSACHSEN, KASSEL (R. Kämmerling)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Marketing (J. Tesch)</masterLabel>
+        <translation>MARKETING (J. Tesch)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mecklenburg-Western Pomerania (K. Schulze)</masterLabel>
+        <translation>MECKLENBURG - VORPOMMERN (K. Schulze)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>North Rhine-Westphalia (D. Budde)</masterLabel>
+        <translation>NORDRHEIN - WESTFALEN (D. Budde)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Saxony, Saxony-Anhalt / Thuringia (D. Henke)</masterLabel>
+        <translation>SACHSEN, SACHSEN- ANHALT / THÜRINGEN (D. Henke)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vending (A. Weiß)</masterLabel>
+        <translation>VENDING (A. Weiß)</translation>
+    </picklistValues>
+</CustomFieldTranslation>

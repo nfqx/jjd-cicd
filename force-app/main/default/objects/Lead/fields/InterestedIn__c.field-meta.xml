@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InterestedIn__c</fullName>
+    <label>Interested In</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Coffee</fullName>
+                <default>false</default>
+                <label>Coffee</label>
+            </value>
+            <value>
+                <fullName>Tea</fullName>
+                <default>false</default>
+                <label>Tea</label>
+            </value>
+            <value>
+                <fullName>Hot chocolate</fullName>
+                <default>false</default>
+                <label>Hot chocolate</label>
+            </value>
+            <value>
+                <fullName>Machines</fullName>
+                <default>false</default>
+                <label>Machines</label>
+            </value>
+            <value>
+                <fullName>Other (specify)</fullName>
+                <default>false</default>
+                <label>Other (specify)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

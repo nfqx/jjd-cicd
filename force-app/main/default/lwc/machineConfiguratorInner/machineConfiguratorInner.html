@@ -1,0 +1,696 @@
+<template>
+    
+    <template if:false={isLoading}>
+        <div class="wrap">
+            <div class="body">
+                <div style="margin-bottom: 1rem; Display: flex;" if:false={isStepFive}>
+                    <lightning-icon style="margin-right: 10px;" icon-name="standard:quotes"></lightning-icon>
+                    <h1 class="slds-text-heading_large" style="font-weight: bold;">{label.coffeeMachineConfiguration}</h1>
+                </div>
+                
+                <!-- Progress Indicator -->
+                <div style="padding: 10px 0 30px 0; margin: 20px 40px 20px 40px;">
+                    <div class="slds-progress" style="position: relative; max-width: 100%; margin: auto; ">
+                        <ol class="slds-progress__list">
+                            <template for:each={stepStatuses} for:item="status">
+                                <li key={status.key} class={status.itemClass}>
+                                    <div style="display:flex; flex-direction:column; align-items: center;">
+                                        <div class={status.markerClass} tabindex="0">
+                                            <template if:true={status.isCompleted}>
+                                                <svg class="slds-icon slds-icon_xx-small" aria-hidden="true">
+                                                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#success"></use>
+                                                </svg>
+                                                <span class="slds-assistive-text">- Completed</span>
+                                            </template>
+                                            <template if:true={status.isActive}>
+                                                <span class="slds-assistive-text">- Active</span>
+                                            </template>
+                                        </div>
+                                        <div style="margin-top: 20px; font-size: 15px; text-align:center;">
+                                            {status.label}
+                                        </div>
+                                    </div>    
+                                </li>
+                            </template>
+                        </ol>
+                        
+                        <div class="slds-progress-bar slds-progress-bar_x-small" style="position: absolute; top: 15%; left: 52%; width:calc(100% - 100px); transform: translateX(-50%)"
+                            aria-valuemin="0" aria-valuemax="100"
+                            aria-valuenow={progressPercentage}
+                            aria-label="Machine Configurator Progress Indicator"
+                            role="progressbar">
+                            <span class="slds-progress-bar__value progress-bar" style={progressBarStyle}>
+                                <span class="slds-assistive-text">{label.progress}: {progressPercentage}%</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container" style="padding: 1rem; border: 1px solid rgb(243, 243, 243); border-radius: 5px; margin-bottom: 2rem; background-color:rgb(243, 243, 243);" if:false={isStepFive}>
+                    <lightning-layout>
+                        <lightning-layout-item size="6">
+                            <div style="display: flex">
+                                <h1 style="font-size: 18px; font-weight: 600;margin-right:1rem"><lightning-icon size="small" icon-name="standard:account"></lightning-icon>&nbsp;{oppInfo.Account.Name}</h1>
+                                <h1 style="font-size: 18px; font-weight: 600;"><lightning-icon size="small" icon-name="standard:opportunity"></lightning-icon>&nbsp;{oppInfo.Name}</h1>
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="6">
+                            <div style="display: flex; justify-content:end">
+                                <template if:true={isStepThreeFourFive}>
+                                <lightning-input style="width: 140px; margin-right:1rem" type="currency" step="1" min="0" label={label.financingAmount} value={params.financingAmountDisplay} readonly></lightning-input><br />
+                                <lightning-input style="width: 140px; margin-right:1rem" type="currency" step="0.01" label={label.monthlyRateInEuro} value={params.monthlyRateAmountDisplay} readonly></lightning-input><br />
+                                <lightning-input style="width: 140px; margin-right:1rem" type="currency" step="0.01" label={label.finalMonthlyRateInEuro} value={params.finalMonthlyRateAmountDisplay} readonly></lightning-input>
+                                </template>
+                                <span class="slds-text-align_right" style="font-size: 1rem;font-weight: bold; margin-right:1rem;">{label.dateLabel}: {formattedDate}</span>
+                            </div>
+
+                            <template if:true={fromConfigurator}>
+                                <template if:true={isStepOneTwo}>
+                                    <div style="height:3rem; width: 100%;">
+                                        <lightning-input label={label.coffeePerYear} disabled={fromConfigurator} value={coffeeAnnual} type="number" step="1" onchange={changeCoffeeAnnual} style="width: 33%; float: right; margin-top: -0.75rem;"></lightning-input>
+                                    </div>
+                                    <div style="height:3rem; width: 100%; margin-top: 2rem;">
+                                        <lightning-input label={label.runtimeLabel} disabled={fromConfigurator} value={params.runtimeInMonths} type="number" step="1" onchange={changeRuntimeMonths} style="width: 33%; float: right; margin-top: -0.75rem;"></lightning-input>
+                                    </div>
+                                </template>
+                                <template if:true={isStepFour}>
+                                        <div style="height:3rem; float: right;">
+                                            <lightning-input message-toggle-active="" message-toggle-inactive="" label={label.surchargeCalculation} value={surchargeCalculation} type="toggle" onchange={changeSurchargeCalculation}></lightning-input>
+                                        </div>
+                                </template>
+                            </template>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </div>
+                <template if:true={isStepOneTwo}>
+                    <div class="container" style="min-height: 30rem;">
+                        <lightning-layout>
+                            <lightning-layout-item size="6" style="margin-bottom: 2rem;">
+                                <!-- Machine Lookup -->
+                                <template if:true={isStepOne}>
+                                    <template if:true={machineLookup}>
+                                        <c-lookup
+                                            label={label.producerSearch}
+                                            object-api-name="Product2"
+                                            data-field="product"
+                                            onsearch={handleBrandSearch}
+                                            onselectionchange={handleBrandChange}
+                                            placeholder={label.producerSearch}
+                                            style="width:100%"
+                                            height-restricted
+                                        ></c-lookup>
+                                    </template>
+                                    <!-- Machine Dropdown -->
+                                    <template if:false={machineLookup}>
+                                        <lightning-combobox
+                                            label={label.producerSearch}
+                                            options={brandOptions}
+                                            value={brandId}
+                                            onchange={handleBrandComboboxChange}
+                                        ></lightning-combobox>
+                                    </template>
+                                </template>
+                                <template if:true={isStepTwo}>
+                                    <template if:false={stepOneDisabled}>
+                                        <c-lookup
+                                            label={label.baseMachine}
+                                            selection={lastMachine}
+                                            data-field="productPopulated"
+                                            style="width:100%"
+                                            disabled
+                                            height-restricted
+                                        ></c-lookup>
+                                    </template>
+                                </template>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="2">&nbsp;</lightning-layout-item>
+                            <lightning-layout-item size="2">
+                                <template if:true={isStepOne}>
+                                    <lightning-input style="margin-top: 1rem;" message-toggle-active="" message-toggle-inactive="" checked={machineLookup} type="toggle" onchange={changeMachineLookup}></lightning-input>&nbsp;{label.enterFreeText}
+                                </template>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="2">
+                                <template if:true={isStepOne}>
+                                    <lightning-button style="margin-top: 1rem;" label={label.addSpecialMachine} onclick={handleOpenSpecialMachineModal}></lightning-button>
+                                </template>
+                            </lightning-layout-item>
+                            <!--lightning-layout-item size="2">
+                                <lightning-input style="margin-top: 1rem;" message-toggle-active="" message-toggle-inactive="" checked={specialOffers} type="toggle" onchange={changeSpecialOffers}></lightning-input>&nbsp;{label.showSpecialOffers}
+                            </lightning-layout-item-->
+                        </lightning-layout>
+
+                        <template if:true={isStepOne}>
+                            <template if:true={hasTableData}>
+                                <div class="table-container" style="max-height: 400px; overflow-y: auto; border: 1px solid #d8d8d8; padding: 5px; border-radius: 5px;">
+                                    <lightning-datatable
+                                        key-field="id"
+                                        columns={columns}
+                                        data={tableData}
+                                        max-row-selection="1"
+                                        onrowselection={handleRowSelection}>
+                                    </lightning-datatable>
+                                </div>
+                            </template>
+                        </template>
+                        <template if:true={isStepTwo}>
+                            <template if:true={hasTableDataComponents}>
+                                <h1>{label.selectComponents}</h1>
+                                <div class="table-container" style="max-height: 400px; overflow-y: auto; border: 1px solid #d8d8d8; padding: 5px; border-radius: 5px;">
+                                    <template for:each={tableDataComponents} for:item="tableDataComponent">
+                                        <lightning-datatable
+                                            key={tableDataComponent.name}
+                                            key-field="id"
+                                            columns={columns}
+                                            data={tableDataComponent.records}
+                                            selected-rows={tableDataComponent.selectedItems}
+                                            max-row-selection="999"
+                                            onrowselection={handleRowSelectionComponents}>
+                                        </lightning-datatable>
+                                    </template>
+                                </div>
+                            </template>
+                            <template if:false={hasTableDataComponents}>
+                                {label.noComponents}
+                            </template>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <template if:true={hasTableDataAccessories}>
+                                <h1>{label.selectAccessoires}</h1>
+                                <p>&nbsp;</p>
+                                <template for:each={tableDataAccessories} for:item="tableDataAccessoire">
+                                    <h2 key={tableDataAccessoire.name}>{tableDataAccessoire.name}</h2>
+                                    <div key={tableDataAccessoire.name} class="table-container" style="max-height: 400px; overflow-y: auto; border: 1px solid #d8d8d8; padding: 5px; border-radius: 5px;">
+                                        <lightning-datatable
+                                            data-section={tableDataAccessoire.nameAlt}
+                                            key-field="id"
+                                            columns={columnsAlt}
+                                            data={tableDataAccessoire.records}
+                                            selected-rows={tableDataAccessoire.selectedItems}
+                                            max-row-selection="999"
+                                            onrowselection={handleRowSelectionAccessoires}>
+                                        </lightning-datatable>
+                                    </div>
+                                    <p key={tableDataAccessoire.name}>&nbsp;</p>
+                                </template>
+                                <p>&nbsp;</p>
+                            </template>
+                            <template if:false={hasTableDataAccessories}>
+                                    {label.noAccessoriesAvailable}
+                            </template>
+                        </template>
+                    </div>
+                </template>
+                <template if:true={isStepThreeFourFive}>
+                    <div class="container" style="padding: 1rem; border: 1px solid; border-radius: 5px; margin-bottom: 2rem; min-height: 30rem;">
+                        <lightning-layout >
+                            <lightning-layout-item size="10" style="padding: 1rem;">
+                                <!--template if:true={isStepThree}>
+                                    <template if:true={fromQuote}>
+                                        <div style="padding: 1rem 0;">
+                                            <lightning-button variant="neutral" label={label.addNewBaseMachineLabel} onclick={handleGoToStepOne}></lightning-button>
+                                        </div>
+                                    </template>
+                                </template-->
+                                <template for:each={machines} for:item="machine" for:index="index">
+                                    <!-- Product Tables and Calculation -->
+                                    <div key={machine.id}>
+                                        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_fixed-layout" style="width: 100%; border: 1px solid #d8d8d8">
+                                            <thead>
+                                                <tr class="slds-line-height_reset light-gray">
+                                                    <th width="5%">&nbsp;</th>
+                                                    <th width="30%">
+                                                        <div class="slds-truncate" title={label.baseMachine}>
+                                                            {label.baseMachine}
+                                                        </div>
+                                                    </th>
+                                                    <th width="10%">{label.quantity}</th>
+                                                    <th width="10%">{label.listPrice}</th>
+                                                    <th width="10%">
+                                                        {label.discountInPercent}
+                                                        <template if:true={machine.hasMaxDiscountOne}>
+                                                            &nbsp;<lightning-helptext content={machine.maxDiscountOneString}></lightning-helptext>
+                                                        </template>
+                                                    </th>
+                                                    <th width="10%">
+                                                        {label.specialDiscountInPercent}
+                                                        <template if:true={machine.hasMaxDiscountTwo}>
+                                                            &nbsp;<lightning-helptext content={machine.maxDiscountTwoString}></lightning-helptext>
+                                                        </template>
+                                                    </th>
+                                                    <th width="10%">{label.salePrice}</th>
+                                                    <th width="10%">{label.subtotal}</th>
+                                                    <th width="5%">&nbsp;</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="slds-hint-parent">
+                                                    <th width="5%">
+                                                        <lightning-icon icon-name="utility:edit" size="small" data-index={machine.index} onclick={handleEditMachine}></lightning-icon>
+                                                    </th>
+                                                    <td width="30%">
+                                                        <div class="slds-truncate" title={machine.title}>
+                                                            {machine.title}
+                                                        </div>
+                                                    </td>
+                                                    <td width="10%"><input class="slds-input" type="number" disabled={isStepFourFive} value={machine.quantity} step="1" onchange={recalcBaseMachine} data-index={machine.index} data-field="quantity"></input></td>
+                                                    <td width="10%">{machine.priceDisplay}</td>
+                                                    <td width="10%">
+                                                        <template if:true={machine.discountable}>
+                                                            <div class="slds-grid slds-grid_vertical-align-center">
+                                                                <input class="slds-input slds-grow" type="number" disabled={isStepFourFive} value={machine.discount} step="0.01" onchange={recalcBaseMachine} data-index={machine.index} data-field="discount"></input>
+                                                                &nbsp;<lightning-icon if:true={machine.hasMaxDiscountOneViolation} icon-name="utility:warning" alternative-text={label.maxDiscountWarning} title={label.maxDiscountWarning}></lightning-icon>
+                                                                </div>
+                                                        </template>
+                                                        <template if:false={machine.discountable}>
+                                                            <input class="slds-input" type="number" disabled value={machine.discount}></input>
+                                                        </template>
+                                                    </td>
+                                                    <td width="10%">
+                                                        <template if:true={machine.discountable}>
+                                                            <template if:true={machine.secondDiscountPossible}>
+                                                                <div class="slds-grid slds-grid_vertical-align-center">
+                                                                    <input class="slds-input slds-grow" type="number" disabled={isStepFourFive} value={machine.specialDiscount} step="0.01" onchange={recalcBaseMachine} data-index={machine.index} data-field="specialDiscount"></input>
+                                                                    &nbsp;<lightning-icon if:true={machine.hasMaxDiscountTwoViolation} icon-name="utility:warning" alternative-text={label.maxDiscountWarning} title={label.maxDiscountWarning}></lightning-icon>
+                                                                </div>
+                                                            </template>
+                                                            <template if:false={machine.secondDiscountPossible}>
+                                                                <input class="slds-input" type="number" disabled value={machine.specialDiscount}></input>
+                                                            </template>
+                                                        </template>
+                                                        <template if:false={machine.discountable}>
+                                                            <input class="slds-input" type="number" disabled value={machine.specialDiscount}></input>
+                                                        </template>
+                                                    </td>
+                                                    <td width="10%">{machine.salePriceDisplay}</td>
+                                                    <td width="10%">{machine.rowTotalDisplay}</td>
+                                                    <th width="5%">
+                                                        <lightning-icon icon-name="utility:delete" size="small" data-index={machine.index} onclick={handleDeleteMachine}></lightning-icon>
+                                                    </th>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <!-- Add-On Table and Calculation -->
+                                        <template if:true={machine.hasAccessoires}>
+                                            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_fixed-layout" style="width: 100%; border: 1px solid #d8d8d8">
+                                                <thead>
+                                                    <tr class="slds-line-height_reset">
+                                                        <th width="5%">&nbsp;</th>
+                                                        <th width="30%">
+                                                            <div class="slds-truncate" title={label.accessoires}>
+                                                                {label.accessoires}
+                                                            </div>
+                                                        </th>
+                                                        <th width="10%"></th> <!--{label.quantity}-->
+                                                        <th width="10%"></th> <!--{label.listPrice}-->
+                                                        <th width="10%">
+                                                            <!--{label.discountInPercent}-->
+                                                            <!--template if:true={machine.hasMaxDiscountOne}>
+                                                                &nbsp;<lightning-helptext content={machine.maxDiscountOneString}></lightning-helptext>
+                                                            </template--> 
+                                                        </th>
+                                                        <th width="10%">
+                                                            <!--{label.specialDiscountInPercent}-->
+                                                            <!--template if:true={machine.hasMaxDiscountTwo}>
+                                                                &nbsp;<lightning-helptext content={machine.maxDiscountTwoString}></lightning-helptext>
+                                                            </template-->
+                                                        </th>
+                                                        <th width="10%"></th> <!--{label.salePrice}-->
+                                                        <th width="10%"></th> <!--{label.subtotal}-->
+                                                        <th width="5%">&nbsp;</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <template for:each={machine.accessoires} for:item="accessoire">
+                                                        <tr class="slds-hint-parent" key={accessoire.id}>
+                                                            <td width="5%">
+                                                                &nbsp;
+                                                            </td>
+                                                            <td width="30%">
+                                                                 <div class="slds-truncate" title={accessoire.title}>
+                                                                    {accessoire.title}
+                                                                </div>
+                                                            </td>
+                                                            <td width="10%"><input class="slds-input" type="number" disabled={isStepFourFive} value={accessoire.quantity} step="1" onchange={recalcAccessoires} data-index={machine.index} data-productid={accessoire.id} data-field="quantity"></input></td>
+                                                            <td width="10%">{accessoire.priceDisplay}</td>
+                                                            <td width="10%">
+                                                                <template if:true={accessoire.discountable}>
+                                                                    <template if:false={accessoire.discountCorrespondsToBaseDevice}>
+                                                                        <div class="slds-grid slds-grid_vertical-align-center">
+                                                                            <input class="slds-input" type="number" disabled={isStepFourFive} value={accessoire.discount} step="0.01" onchange={recalcAccessoires} data-index={machine.index} data-productid={accessoire.id} data-field="discount"></input>
+                                                                            &nbsp;<lightning-icon if:true={accessoire.hasMaxDiscountOneViolation} icon-name="utility:warning" alternative-text={label.maxDiscountWarning} title={label.maxDiscountWarning}></lightning-icon>
+                                                                        </div>
+                                                                    </template>
+                                                                    <template if:true={accessoire.discountCorrespondsToBaseDevice}>
+                                                                        <input class="slds-input" type="number" disabled value={accessoire.discount}></input>
+                                                                    </template>
+                                                                </template>
+                                                                <template if:false={accessoire.discountable}>
+                                                                    <input class="slds-input" type="number" disabled value={accessoire.discount}></input>
+                                                                </template>
+                                                            </td>
+                                                            <td width="10%">
+                                                                <template if:true={accessoire.discountable}>
+                                                                    <template if:true={accessoire.secondDiscountPossible}>
+                                                                        <template if:false={accessoire.discountCorrespondsToBaseDevice}>
+                                                                            <input class="slds-input" type="number" disabled={isStepFourFive} value={accessoire.specialDiscount} step="0.01" onchange={recalcAccessoires} data-index={machine.index} data-productid={accessoire.id} data-field="specialDiscount"></input>
+                                                                            &nbsp;<lightning-icon if:true={accessoire.hasMaxDiscountTwoViolation} icon-name="utility:warning" alternative-text={label.maxDiscountWarning} title={label.maxDiscountWarning}></lightning-icon>
+                                                                        </template>    
+                                                                        <template if:true={accessoire.discountCorrespondsToBaseDevice}>
+                                                                            <input class="slds-input" type="number" disabled value={accessoire.specialDiscount}></input>
+                                                                        </template>    
+                                                                    </template>
+                                                                    <template if:false={accessoire.secondDiscountPossible}>
+                                                                        <input class="slds-input" type="number" disabled value={accessoire.specialDiscount}></input>
+                                                                    </template>
+                                                                </template>
+                                                                <template if:false={accessoire.discountable}>
+                                                                    <input class="slds-input" type="number" disabled value={accessoire.specialDiscount}></input>
+                                                                </template>
+                                                            </td>
+                                                            <td width="10%">{accessoire.salePriceDisplay}</td>
+                                                            <td width="10%">{accessoire.rowTotalDisplay}</td>
+                                                            <td width="5%">
+                                                                <lightning-icon icon-name="utility:delete" size="small" data-index={machine.index} data-productid={accessoire.id}  onclick={handleDeleteAccessoire}></lightning-icon>
+                                                            </td>
+                                                        </tr>
+                                                    </template>
+                                                </tbody>
+                                            </table>
+                                        </template>
+                                        <template if:false={machine.hasAccessoires}>
+                                            <p style="margin-bottom: 2rem;">{label.noAccessories}</p>
+                                        </template>
+                                        <!-- Totals -->
+                                         
+                                        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_fixed-layout" style="width: 100%; margin-bottom: 2rem; border: 1px solid #d8d8d8">
+                                            <tbody>
+                                                <tr class="slds-hint-parent">
+                                                    <td width="5%">&nbsp;</td>
+                                                    <td width="80%"><strong>Total</strong></td>
+                                                    <td width="10%"><strong>{machine.totalNetAmountDisplay}</strong></td>
+                                                    <td width="5%">&nbsp;</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <lightning-layout>
+                                            <!-- Not needed for now 
+                                            <lightning-layout-item size="6">
+                                                <p style="float: right;">
+                                                    <lightning-input type="currency" step="0.01" label={label.netAmountNoDiscountMachine} value={params.totalNetAmountNoDiscountMachineDisplay} readonly></lightning-input><br />
+                                                    <lightning-input type="currency" step="0.01" label={label.netAmountNoDiscountAccessoires} value={params.totalNetAmountNoDiscountAccessoiresDisplay} readonly></lightning-input><br />
+                                                    <lightning-input type="currency" step="0.01" label={label.netAmountNoDiscount} value={params.totalNetAmountNoDiscountDisplay} readonly></lightning-input><br />
+                                                </p>
+                                            </lightning-layout-item>
+                                            -->
+                                            <lightning-layout-item size="6">
+                                                <p style="float: right;">
+                                                    <!-- Not needed for now 
+                                                    <lightning-input type="currency" step="0.01" label={label.netAmountMachine} value={params.totalNetAmountMachineDisplay} readonly></lightning-input><br />
+                                                    <lightning-input type="currency" step="0.01" label={label.netAmountAccessoires} value={params.totalNetAmountAccessoiresDisplay} readonly></lightning-input><br />
+                                                    -->
+                                                    <!-- moved to the other section
+                                                    <lightning-input type="currency" step="0.01" label={label.totalNetAmount} value={params.totalNetAmountDisplay} readonly></lightning-input><br />
+                                                    <lightning-input type="currency" step="0.01" label={label.vat19percent} value={params.vatAmountDisplay} readonly></lightning-input><br />
+                                                    <lightning-input type="currency" step="0.01" label={label.grossAmount} value={params.totalGrossAmountDisplay} readonly></lightning-input>
+                                                    -->
+                                                </p>
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                    </div>
+                                </template>
+                                <template if:true={hasSpecialMachines}>
+                                    <template for:each={specialMachines} for:item="machine" for:index="index">
+                                        <!-- Product Tables and Calculation -->
+                                        <div key={machine.id}>
+                                            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_fixed-layout" style="width: 100%; border: 1px solid #d8d8d8">
+                                                <thead>
+                                                    <tr class="slds-line-height_reset light-gray">
+                                                        <th width="5%">&nbsp;</th>
+                                                        <th width="30%">
+                                                            <div class="slds-truncate" title={label.specialMachines}>
+                                                                {label.specialMachines}
+                                                            </div>
+                                                        </th>
+                                                        <th width="10%">{label.quantity}</th>
+                                                        <th width="10%">{label.listPrice}</th>
+                                                        <th width="10%">{label.discountInPercent}</th>
+                                                        <th width="10%">{label.specialDiscountInPercent}</th>
+                                                        <th width="10%">{label.salePrice}</th>
+                                                        <th width="10%">{label.subtotal}</th>
+                                                        <th width="5%">&nbsp;</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="slds-hint-parent">
+                                                        <td width="5%">&nbsp;</td>
+                                                        <td width="30%">
+                                                            <div class="slds-truncate" title={machine.title}>
+                                                                <template if:true={isStepThree}>
+                                                                    <input class="slds-input slds-grow" type="text" disabled={isStepFourFive} value={machine.title} step="0.01" onchange={handleChangeSpecialMachineField} data-index={machine.index} data-field="title"></input>
+                                                                </template>
+                                                                <template if:false={isStepThree}>
+                                                                    {machine.title}
+                                                                </template>
+                                                            </div>
+                                                        </td>
+                                                        <td width="10%"><input class="slds-input" type="number" disabled={isStepFourFive} value={machine.quantity} step="1" onchange={recalcSpecialMachine} data-index={machine.index} data-field="quantity"></input></td>
+                                                        <td width="10%">{machine.priceDisplay}</td>
+                                                        <td width="10%">
+                                                            <div class="slds-grid slds-grid_vertical-align-center">
+                                                                <input class="slds-input slds-grow" type="number" disabled={isStepFourFive} value={machine.discount} step="0.01" onchange={recalcSpecialMachine} data-index={machine.index} data-field="discount"></input>
+                                                            </div>
+                                                        </td>
+                                                        <td width="10%">
+                                                            <div class="slds-grid slds-grid_vertical-align-center">
+                                                                <input class="slds-input slds-grow" type="number" disabled={isStepFourFive} value={machine.specialDiscount} step="0.01" onchange={recalcSpecialMachine} data-index={machine.index} data-field="specialDiscount"></input>
+                                                            </div>
+                                                        </td>
+                                                        <td width="10%">{machine.salePriceDisplay}</td>
+                                                        <td width="10%">{machine.rowTotalDisplay}</td>
+                                                        <td width="5%">
+                                                            <lightning-icon icon-name="utility:delete" size="small" data-index={machine.index} onclick={handleDeleteSpecialMachine}></lightning-icon>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="slds-hint-parent">
+                                                        <td width="5%">&nbsp;</td>
+                                                        <td style="white-space: normal; word-break: break-word; overflow-wrap: anywhere;" width="100%" colspan="7">
+                                                            <template if:true={isStepThree}>
+                                                                <input class="slds-input slds-grow" type="text" disabled={isStepFourFive} value={machine.description} step="0.01" onchange={handleChangeSpecialMachineField} data-index={machine.description} data-field="description"></input>
+                                                            </template>
+                                                            <template if:false={isStepThree}>
+                                                                {machine.description}
+                                                            </template>
+                                                        </td>
+                                                        <td width="5%">&nbsp;</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <!-- Totals -->
+                                            
+                                            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_fixed-layout" style="width: 100%; margin-bottom: 2rem; border: 1px solid #d8d8d8">
+                                                <tbody>
+                                                    <tr class="slds-hint-parent">
+                                                        <td width="5%">&nbsp;</td>
+                                                        <td width="80%"><strong>Total</strong></td>
+                                                        <td width="10%"><strong>{machine.totalNetAmountDisplay}</strong></td>
+                                                        <td width="5%">&nbsp;</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </template>
+                                </template>
+                                <!--template if:true={isStepThree}>
+                                    <template if:true={fromQuote}>
+                                        <div style="padding: 1rem 0;">
+                                            <lightning-button variant="neutral" label={label.addNewBaseMachineLabel} onclick={handleGoToStepOne}></lightning-button>
+                                        </div>
+                                    </template>
+                                </template-->
+                            </lightning-layout-item>
+                            <lightning-layout-item size="2" style="background-color: rgb(243, 243, 243); padding: 10px; margin-top:15px; border-radius: 3px;">
+                                <!-- Financial Parameters -->
+                                <lightning-input readonly={isStepFourFive} label={label.offerValidUntil} value={params.offerValidUntil} type="date" onchange={changeOfferValidUntil} ></lightning-input><br />
+                                <lightning-input readonly={isStepFourFive} disabled={fromConfigurator} label={label.runtimeLabel} value={params.runtimeInMonths} type="number" step="1" onchange={changeRuntimeMonths} ></lightning-input><br />
+                                <lightning-layout>
+                                    <lightning-layout-item size={minDownPaymentBelowWidth}>
+                                        <lightning-input field-level-help={minDownPaymentWarning} readonly={isStepFourFive} type="currency" step="1" min="0" max="100" label={label.downPaymentInPercent} value={params.downpaymentPercent} data-field="downpaymentPercent" onchange={changeParam}></lightning-input>&nbsp;
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="2" if:true={minDownPaymentBelow}>
+                                        <lightning-icon style="margin-top: 1.25rem; padding: 5px;" icon-name="utility:warning" alternative-text={minDownPaymentWarning} title={minDownPaymentWarning}></lightning-icon>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <lightning-input message-toggle-active="" message-toggle-inactive="" label={label.additionalDiscounts} checked={hasExtraDiscount} type="toggle" onchange={handleChangeExtraDiscount}></lightning-input>
+                                <lightning-input type="percent" step="0.01" label={label.totalDiscountPercent} value={params.totalDiscountPercentDisplay} readonly></lightning-input>
+                                <template if:true={fromConfigurator}>
+                                    <lightning-input label={label.adjustmentAmount} value={params.adjustmentAmountDisplay} type="number" readonly></lightning-input><br />
+                                </template>                     
+                                <br />
+                                <!-- Not needed for now 
+                                <lightning-input type="currency" step="0.01" label={label.downpaymentVat} value={params.vatAmountDisplay} readonly></lightning-input><br />
+                                <lightning-input type="currency" step="0.01" label={label.downpaymentAmount} value={params.downpaymentAmountDisplay} readonly></lightning-input><br />
+                                <lightning-input type="currency" step="0.01" label={label.downpaymentTotal} value={params.downpaymentVatAmountDisplay} readonly></lightning-input><br />
+                                -->
+                                <lightning-input type="currency" step="0.01" label={label.totalNetAmount} value={params.totalNetAmountDisplay} readonly></lightning-input><br />
+                                <lightning-input type="currency" step="0.01" label={label.vat19percent} value={params.vatAmountDisplay} readonly></lightning-input><br />
+                                <div class="slds-form-element">
+                                    <label class="gross-amount-label">{label.grossAmount}</label>
+                                    <input class="gross-amount-input" type="currency" step="0.01" value={params.totalGrossAmountDisplay} readonly></input>
+                                </div>
+                                <br />
+                                <!-- moved to the header 
+                                <lightning-input type="currency" step="1" min="0" label={label.financingAmount} value={params.financingAmountDisplay} readonly></lightning-input><br />
+                                <lightning-input type="currency" step="0.01" label={label.monthlyRateInEuro} value={params.monthlyRateAmountDisplay} readonly></lightning-input>
+                                -->
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>             
+                </template>
+            </div>
+            <!-- End Body -->
+            <div  class="footer" if:false={isStepFive}>
+                <lightning-button variant="neutral" label={label.cancel} onclick={handleCancel}></lightning-button>
+                <template if:true={isStepOne}>
+                    &nbsp;<lightning-button variant="neutral" label={label.directlyToCalculation} onclick={handleGoToStepThree} disabled={stepOneDisabledOrMonthsEmpty}></lightning-button>
+                    &nbsp;<lightning-button variant="brand" label={label.selectAccessoiresAndComponents} onclick={handleGoToStepTwo} disabled={stepOneDisabled}></lightning-button>
+                </template>
+                <template if:true={isStepTwo}>
+                    &nbsp;<lightning-button variant="neutral" label={label.addAnotherLabel} onclick={handleGoToStepOne}></lightning-button>
+                    &nbsp;<lightning-button variant="neutral" label={label.calculateNow} onclick={handleGoToStepThree} disabled={runtimeMonthsEmpty}></lightning-button>
+                </template>
+                <template if:true={isStepThree}>
+                    &nbsp;<lightning-button variant="neutral" label={label.addAnotherLabel} onclick={handleGoToStepOne}></lightning-button>
+                    &nbsp;<lightning-button variant="neutral" label={label.calculateNow} onclick={handleGoToStepFour} disabled={stepThreeDisabled}></lightning-button>
+                </template>
+                <template if:true={isStepFour}>
+                    &nbsp;<lightning-button variant="neutral" label={label.backLabel} onclick={handleGoToStepThree}></lightning-button>
+                    &nbsp;<lightning-button variant="neutral" label={label.finishLabel} onclick={handleFinish}></lightning-button>
+                </template>
+            </div>
+        </div>
+        <template if:true={showSpecialMachineModal}>
+            <div class="overlay"></div>
+            <div class="pop-up-modal">
+                <lightning-modal-body>
+                    <h2>{label.addSpecialMachine}</h2>
+                    <p>
+                        <lightning-input type="text" label={label.productName} value={specialMachineName} onchange={handleChangeSpecialMachineName} required></lightning-input>
+                    </p>
+                    <p>
+                        <lightning-textarea label={label.description} value={specialMachineDescription} onchange={handleChangeSpecialMachineDescription} required></lightning-textarea>
+                    </p>
+                    <p>
+                        <lightning-input type="number" step="0.01" label={label.priceInEuro} value={specialMachinePrice} onchange={handleChangeSpecialMachinePrice} required></lightning-input>
+                    </p>
+                </lightning-modal-body>
+                <lightning-modal-footer>
+                    <lightning-button
+                        label={label.cancel}
+                        variant="neutral"
+                        onclick={handleCloseSpecialMachineModal}>
+                    </lightning-button>
+                    <lightning-button
+                        label={label.save}
+                        variant="brand"
+                        onclick={handleSaveSpecialMachineModal}
+                        disabled={specialMachineModalDisabled}>
+                    </lightning-button>
+                </lightning-modal-footer>
+            </div>
+        </template>
+        <template if:true={showReasonOrSpecialMachinesTwoOrExtraDiscountModal}>
+            <div class="overlay"></div>
+            <div class="pop-up-modal">
+                <lightning-modal-body>
+                    <p>
+                        <lightning-input readonly type="percent" step="0.01" label={label.minDownPaymentText} value={minDownPayment}></lightning-input>
+                        <lightning-input readonly type="percent" step="0.01" label={label.maxDiscount} value={machineMaxDiscount}></lightning-input>
+                    </p>
+                    <template if:true={showReasonModal}>
+                        <hr />
+                        <template if:true={params.hasAccessoireDiscountViolation}>
+                            <p>
+                                <lightning-input type="text" label={label.enterReason} value={params.discountViolationReason} onchange={handleChangeReason}></lightning-input>
+                            </p>
+                            <p>
+                                <lightning-record-edit-form object-api-name="Opportunity">
+                                    <lightning-input-field field-name="CampaignId" value={params.discountViolationCampaign} onchange={handleChangeCampaign}></lightning-input-field>
+                                </lightning-record-edit-form>
+                            </p>
+                        </template>
+                        <template if:true={minDownPaymentBelow}>
+                            <p>
+                                <lightning-input type="text" label={label.enterDownPaymentReason} value={params.downPaymentViolationReason} onchange={handleChangeDownPaymentReason}></lightning-input>
+                            </p>
+                        </template>
+                    </template>
+                    <template if:true={showExtraDiscountModal}>
+                        <hr />
+                        <lightning-layout>
+                            <lightning-layout-item size="5">
+                                <h1>{label.additionalDiscount}</h1>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="2">
+                                &nbsp;
+                            </lightning-layout-item>
+                            <lightning-layout-item size="5">
+                                <h1>{label.temporaryDiscount}</h1>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout>
+                            <lightning-layout-item size="5">
+                                <lightning-input type="percent" step="0.01" label={label.baseMachine} onchange={handleChangeAdditionalDiscountBaseMachine} value={additionalDiscountBaseMachine}></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="2">
+                                &nbsp;
+                            </lightning-layout-item>
+                            <lightning-layout-item size="5">
+                                <lightning-input type="percent" step="0.01" label={label.baseMachine} onchange={handleChangeTemporaryDiscountBaseMachine} value={temporaryDiscountBaseMachine}></lightning-input>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout>
+                            <lightning-layout-item size="5">
+                                <lightning-input type="percent" step="0.01" label={label.baseComponents} onchange={handleChangeAdditionalDiscountBaseComponent} value={additionalDiscountBaseComponent}></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="2">
+                                &nbsp;
+                            </lightning-layout-item>
+                            <lightning-layout-item size="5">
+                                <lightning-input type="percent" step="0.01" label={label.baseComponents} onchange={handleChangeTemporaryDiscountBaseComponent} value={temporaryDiscountBaseComponent}></lightning-input>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout>
+                            <lightning-layout-item size="5">
+                                <lightning-input type="percent" step="0.01" label={label.accessoires} onchange={handleChangeAdditionalDiscountAccessories} value={additionalDiscountAccessories}></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="2">
+                                &nbsp;
+                            </lightning-layout-item>
+                            <lightning-layout-item size="5">
+                                <lightning-input type="percent" step="0.01" label={label.accessoires} onchange={handleChangeTemporaryDiscountAccessories} value={temporaryDiscountAccessories}></lightning-input>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </template>
+                    <template if:true={showSpecialMachinesTwoModal}>
+                        <hr />
+                        <h1>{label.additionalDiscount}</h1>
+                        <lightning-input type="currency" step="0.01" label={label.purchasePrice} onchange={handleChangeSpecialMachinesPurchasePrice} value={specialMachinesPurchasePrice}></lightning-input>
+                    </template>
+                </lightning-modal-body>
+                <lightning-modal-footer>
+                    <lightning-button
+                        label={label.cancel}
+                        variant="neutral"
+                        onclick={handleCloseReasonModal}>
+                    </lightning-button>
+                    <lightning-button
+                        label={label.save}
+                        variant="brand"
+                        onclick={handleSaveReasonModal}
+                        disabled={reasonModalDisabled}>
+                    </lightning-button>
+                </lightning-modal-footer>
+            </div>
+        </template>
+    </template>
+</template>

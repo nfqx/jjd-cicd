@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Termination date from SAP. Important: it does NOT automatically change the contract status in SAP — a termination is only visible via this field. --></help>
+    <label>Kündigungsdatum</label>
+    <name>TerminationDate__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V2_Volume_Coffee_NonNegative</fullName>
+    <active>false</active>
+    <description>Enforces non-negative target volume for coffee.</description>
+    <errorConditionFormula>NOT(ISBLANK(	PurchaseQuantityCoffee__c))
+&amp;&amp; 	PurchaseQuantityCoffee__c &lt; 0</errorConditionFormula>
+    <errorMessage>Coffee target volume in kg cannot be negative.</errorMessage>
+</ValidationRule>

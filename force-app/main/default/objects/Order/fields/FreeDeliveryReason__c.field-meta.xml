@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FreeDeliveryReason__c</fullName>
+    <label>Free Delivery Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>001</fullName>
+                <default>false</default>
+                <label>Sales Rep Visit</label>
+            </value>
+            <value>
+                <fullName>002</fullName>
+                <default>false</default>
+                <label>Trade Fair Contact</label>
+            </value>
+            <value>
+                <fullName>003</fullName>
+                <default>false</default>
+                <label>TV Advertising</label>
+            </value>
+            <value>
+                <fullName>004</fullName>
+                <default>false</default>
+                <label>Customer Referral</label>
+            </value>
+            <value>
+                <fullName>005</fullName>
+                <default>false</default>
+                <label>Newspaper Ad</label>
+            </value>
+            <value>
+                <fullName>006</fullName>
+                <default>false</default>
+                <label>Favorable Price</label>
+            </value>
+            <value>
+                <fullName>007</fullName>
+                <default>false</default>
+                <label>Fast Delivery</label>
+            </value>
+            <value>
+                <fullName>008</fullName>
+                <default>false</default>
+                <label>Good Service</label>
+            </value>
+            <value>
+                <fullName>009</fullName>
+                <default>false</default>
+                <label>Expedited Return</label>
+            </value>
+            <value>
+                <fullName>100</fullName>
+                <default>false</default>
+                <label>Price Difference: Price was too high</label>
+            </value>
+            <value>
+                <fullName>101</fullName>
+                <default>false</default>
+                <label>Poor Quality</label>
+            </value>
+            <value>
+                <fullName>102</fullName>
+                <default>false</default>
+                <label>Transport Damage 102</label>
+            </value>
+            <value>
+                <fullName>103</fullName>
+                <default>false</default>
+                <label>Quantity Discrepancy</label>
+            </value>
+            <value>
+                <fullName>104</fullName>
+                <default>false</default>
+                <label>Spoiled Goods</label>
+            </value>
+            <value>
+                <fullName>105</fullName>
+                <default>false</default>
+                <label>Free Sample</label>
+            </value>
+            <value>
+                <fullName>200</fullName>
+                <default>false</default>
+                <label>Price Difference: Price was too low</label>
+            </value>
+            <value>
+                <fullName>300</fullName>
+                <default>false</default>
+                <label>Down Payment Request</label>
+            </value>
+            <value>
+                <fullName>AUS</fullName>
+                <default>false</default>
+                <label>Defective / Exchange</label>
+            </value>
+            <value>
+                <fullName>EDI</fullName>
+                <default>false</default>
+                <label>Credit Memo Procedure</label>
+            </value>
+            <value>
+                <fullName>FA</fullName>
+                <default>false</default>
+                <label>Incorrect Delivery</label>
+            </value>
+            <value>
+                <fullName>GA</fullName>
+                <default>false</default>
+                <label>Business Closure</label>
+            </value>
+            <value>
+                <fullName>JDR</fullName>
+                <default>false</default>
+                <label>DRM Claim - Price Guar., ShpDeb, Refund</label>
+            </value>
+            <value>
+                <fullName>LEI</fullName>
+                <default>false</default>
+                <label>Rental Fee Charge</label>
+            </value>
+            <value>
+                <fullName>LEV</fullName>
+                <default>false</default>
+                <label>Rental Contract</label>
+            </value>
+            <value>
+                <fullName>LR</fullName>
+                <default>false</default>
+                <label>Warehouse Return</label>
+            </value>
+            <value>
+                <fullName>PNS</fullName>
+                <default>false</default>
+                <label>S2K: PN Status Request</label>
+            </value>
+            <value>
+                <fullName>POS</fullName>
+                <default>false</default>
+                <label>S2K: PO Status Request</label>
+            </value>
+            <value>
+                <fullName>QBI</fullName>
+                <default>false</default>
+                <label>SBWAP: Difference Settlement (Qty/Value)</label>
+            </value>
+            <value>
+                <fullName>QOI</fullName>
+                <default>false</default>
+                <label>SBWAP: New Open Item (Qty/Value)</label>
+            </value>
+            <value>
+                <fullName>R01</fullName>
+                <default>false</default>
+                <label>RE: Refusal of Acceptance</label>
+            </value>
+            <value>
+                <fullName>R02</fullName>
+                <default>false</default>
+                <label>RE: Refusal of Acceptance Subsequent Delivery</label>
+            </value>
+            <value>
+                <fullName>R03</fullName>
+                <default>false</default>
+                <label>RE: Refusal of Acceptance Load Carrier</label>
+            </value>
+            <value>
+                <fullName>R04</fullName>
+                <default>false</default>
+                <label>RE: Damage</label>
+            </value>
+            <value>
+                <fullName>R05</fullName>
+                <default>false</default>
+                <label>RE: Loading Error Parcel Service</label>
+            </value>
+            <value>
+                <fullName>R06</fullName>
+                <default>false</default>
+                <label>RE: Recipient Unknown</label>
+            </value>
+            <value>
+                <fullName>R07</fullName>
+                <default>false</default>
+                <label>RE: Incorrect Delivery</label>
+            </value>
+            <value>
+                <fullName>R08</fullName>
+                <default>false</default>
+                <label>RE: Incorrect Customer Order</label>
+            </value>
+            <value>
+                <fullName>R09</fullName>
+                <default>false</default>
+                <label>RE: Incorrect Entry JJD</label>
+            </value>
+            <value>
+                <fullName>R10</fullName>
+                <default>false</default>
+                <label>RE: Incorrect Loading JJD</label>
+            </value>
+            <value>
+                <fullName>R11</fullName>
+                <default>false</default>
+                <label>RE: Order Error GL</label>
+            </value>
+            <value>
+                <fullName>R12</fullName>
+                <default>false</default>
+                <label>RE: Customer Not Reached</label>
+            </value>
+            <value>
+                <fullName>R13</fullName>
+                <default>false</default>
+                <label>RE: Vacuum Loss / Leaker</label>
+            </value>
+            <value>
+                <fullName>R14</fullName>
+                <default>false</default>
+                <label>RE: Expiration Date (or BBD)</label>
+            </value>
+            <value>
+                <fullName>R15</fullName>
+                <default>false</default>
+                <label>RE: Not Picked Up from Branch</label>
+            </value>
+            <value>
+                <fullName>R16</fullName>
+                <default>false</default>
+                <label>RE: Packing Error</label>
+            </value>
+            <value>
+                <fullName>R17</fullName>
+                <default>false</default>
+                <label>RE: Labeling Error</label>
+            </value>
+            <value>
+                <fullName>R18</fullName>
+                <default>false</default>
+                <label>RE: Quality Defects</label>
+            </value>
+            <value>
+                <fullName>R19</fullName>
+                <default>false</default>
+                <label>RE: Internal Return</label>
+            </value>
+            <value>
+                <fullName>R20</fullName>
+                <default>false</default>
+                <label>RE: Return by Customer Request</label>
+            </value>
+            <value>
+                <fullName>R21</fullName>
+                <default>false</default>
+                <label>RE: Product Assortment Change Customer</label>
+            </value>
+            <value>
+                <fullName>R22</fullName>
+                <default>false</default>
+                <label>RE: Event</label>
+            </value>
+            <value>
+                <fullName>R23</fullName>
+                <default>false</default>
+                <label>RE: Loading Error Freight Forwarder</label>
+            </value>
+            <value>
+                <fullName>RF</fullName>
+                <default>false</default>
+                <label>Legal Case - New -</label>
+            </value>
+            <value>
+                <fullName>RKW</fullName>
+                <default>false</default>
+                <label>Return by Customer Request / No Longer Needed</label>
+            </value>
+            <value>
+                <fullName>RÜF</fullName>
+                <default>false</default>
+                <label>JJD Demands Return - No Sales or similar</label>
+            </value>
+            <value>
+                <fullName>SIC</fullName>
+                <default>false</default>
+                <label>Securing of Goods</label>
+            </value>
+            <value>
+                <fullName>TS</fullName>
+                <default>false</default>
+                <label>Transport Damage</label>
+            </value>
+            <value>
+                <fullName>VA</fullName>
+                <default>false</default>
+                <label>Event</label>
+            </value>
+            <value>
+                <fullName>VBI</fullName>
+                <default>false</default>
+                <label>SBWAP: Difference Settlement (Value)</label>
+            </value>
+            <value>
+                <fullName>VOI</fullName>
+                <default>false</default>
+                <label>SBWAP: New Open Item (Value)</label>
+            </value>
+            <value>
+                <fullName>WBT</fullName>
+                <default>false</default>
+                <label>Cross-charge to Subsidiaries</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

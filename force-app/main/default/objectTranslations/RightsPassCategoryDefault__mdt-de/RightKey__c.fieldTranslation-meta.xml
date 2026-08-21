@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Right key — must match the registry key in the controller (lower case only). --></help>
+    <label><!-- Right Key --></label>
+    <name>RightKey__c</name>
+</CustomFieldTranslation>

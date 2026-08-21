@@ -1,0 +1,60 @@
+{
+  "type" : "sfdc_cms__trustedSites",
+  "title" : "trustedSites",
+  "contentBody" : {
+    "trustedSites" : [ {
+      "isActive" : true,
+      "source" : "https://darboven--full.sandbox.lightning.force.com/",
+      "sourceName" : "LWC"
+    }, {
+      "isActive" : true,
+      "source" : "https://a.tile.openstreetmap.org",
+      "sourceName" : "OSM-A"
+    }, {
+      "isActive" : true,
+      "source" : "https://b.tile.openstreetmap.org",
+      "sourceName" : "OSM-B"
+    }, {
+      "isActive" : true,
+      "source" : "https://c.tile.openstreetmap.org",
+      "sourceName" : "OSM-C"
+    }, {
+      "isActive" : true,
+      "source" : "https://app.usercentrics.eu/",
+      "sourceName" : "Usercentrics App"
+    }, {
+      "isActive" : true,
+      "source" : "https://privacy-proxy.usercentrics.eu/",
+      "sourceName" : "Usercentrics Privacy Proxy"
+    }, {
+      "isActive" : true,
+      "source" : "https://cdn.matomo.cloud",
+      "sourceName" : "Matomo"
+    }, {
+      "isActive" : true,
+      "source" : "https://static.cloudflareinsights.com",
+      "sourceName" : "Cloudflare Insights"
+    }, {
+      "isActive" : true,
+      "source" : "https://*.google-analytics.com",
+      "sourceName" : "Google Analytics"
+    }, {
+      "isActive" : true,
+      "source" : "https://*.googletagmanager.com",
+      "sourceName" : "GTM"
+    }, {
+      "isActive" : true,
+      "source" : "https://*.analytics.google.com",
+      "sourceName" : "Google Analytics 2"
+    }, {
+      "isActive" : true,
+      "source" : "https://*.g.doubleclick.net",
+      "sourceName" : "Doubleclick"
+    }, {
+      "isActive" : true,
+      "source" : "https://td.doubleclick.net",
+      "sourceName" : "Doubleclick 2"
+    } ]
+  },
+  "urlName" : "trustedsites"
+}

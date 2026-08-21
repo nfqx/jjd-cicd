@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Letterhead xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <backgroundColor>#CCCCCC</backgroundColor>
+    <bodyColor>#FFFFFF</bodyColor>
+    <bottomLine>
+        <color>#FF6600</color>
+        <height>0</height>
+    </bottomLine>
+    <description>Der Briefkopf für Shop-Mails</description>
+    <footer>
+        <backgroundColor>#58585a</backgroundColor>
+        <height>0</height>
+        <horizontalAlignment>Center</horizontalAlignment>
+        <verticalAlignment>Top</verticalAlignment>
+    </footer>
+    <header>
+        <backgroundColor>#58585a</backgroundColor>
+        <height>0</height>
+        <horizontalAlignment>Center</horizontalAlignment>
+        <logo>Webshop/LOGO_WEISS.png</logo>
+        <verticalAlignment>Top</verticalAlignment>
+    </header>
+    <middleLine>
+        <color>#FFFFFF</color>
+        <height>0</height>
+    </middleLine>
+    <name>Shop Header</name>
+    <topLine>
+        <color>#FF6600</color>
+        <height>0</height>
+    </topLine>
+</Letterhead>

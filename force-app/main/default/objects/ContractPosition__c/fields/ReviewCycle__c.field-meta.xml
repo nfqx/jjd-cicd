@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ReviewCycle__c</fullName>
+    <description>How often the index check takes place for this customer — most customers quarterly, some semi-annually, few monthly. [Sources: XLSX-002]</description>
+    <inlineHelpText>How often the index check takes place for this customer — most customers quarterly, some semi-annually, few monthly.</inlineHelpText>
+    <label>Review Cycle</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+                <label>Monthly</label>
+            </value>
+            <value>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+                <label>Quarterly</label>
+            </value>
+            <value>
+                <fullName>SemiAnnual</fullName>
+                <default>false</default>
+                <label>Semi-annual</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

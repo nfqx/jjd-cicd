@@ -1,0 +1,15 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Product",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "id" : "f8e25417-0063-42f2-a9ce-3307d549464a",
+        "attributes" : {
+          "maxContentWidth" : "none"
+        }
+      } ]
+    }
+  },
+  "urlName" : "product"
+}

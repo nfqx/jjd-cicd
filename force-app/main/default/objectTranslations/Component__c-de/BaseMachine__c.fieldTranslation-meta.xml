@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Basisgerät als Grundlage für die Zusatzausstattung --></help>
+    <label><!-- Base Machine --></label>
+    <name>BaseMachine__c</name>
+    <relationshipLabel><!-- Components (Product (Basisgerät)) --></relationshipLabel>
+</CustomFieldTranslation>

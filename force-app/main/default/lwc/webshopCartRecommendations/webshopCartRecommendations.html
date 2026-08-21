@@ -1,0 +1,16 @@
+<template>
+    <div class="component my-3 p-2">
+        <div if:true={hasData}>  
+            <p class="heading-3 mx-2">{label.recommendedProducts}</p>
+        </div> 
+        <div class="content-area">
+            <c-webshop-slider 
+                recommended
+                show-image
+                show-price
+                onhasdata={showHeading}
+                show-extended-rows>
+            </c-webshop-slider>
+        </div>
+    </div>
+</template>

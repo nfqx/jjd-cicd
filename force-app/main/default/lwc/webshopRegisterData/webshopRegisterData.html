@@ -1,0 +1,35 @@
+<template>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 left-section mt-5">
+                <a href="#" class="back-arrow" onclick={handleBack}>
+                        <lightning-icon icon-name="utility:back" alternative-text="Back"></lightning-icon>
+                </a>
+                <h2>{label.YourCompanyDetails}</h2>
+                <p>{label.CompanyDetailsMsg}</p>
+                <form onsubmit={handleSubmit}>
+                    <div class="mb-3">
+                        <label for="companyField1" class="form-label">Label</label>
+                        <input type="text" class="form-control" id="companyField1" placeholder="Placeholder">
+                    </div>
+                    <div class="mb-3">
+                        <label for="companyField2" class="form-label">Label</label>
+                        <input type="text" class="form-control" id="companyField2" placeholder="Placeholder">
+                    </div>
+                    <div class="mb-3">
+                        <label for="companyField3" class="form-label">Label</label>
+                        <input type="text" class="form-control" id="companyField3" placeholder="Placeholder">
+                    </div>
+                    <div class="mb-3">
+                        <label for="companyField4" class="form-label">Label</label>
+                        <input type="text" class="form-control" id="companyField4" placeholder="Placeholder">
+                    </div>
+                    <button type="button" class="btn btn-black">{label.NextLabel}</button>
+                </form>
+            </div>
+            <div class="col-md-6 right-section">
+                <!-- Placeholder for future marketing content -->
+            </div>
+        </div>
+    </div>
+</template>

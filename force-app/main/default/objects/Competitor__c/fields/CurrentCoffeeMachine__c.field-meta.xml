@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CurrentCoffeeMachine__c</fullName>
+    <label>CurrentCoffeeMachine</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Astoria</fullName>
+                <default>false</default>
+                <label>Astoria</label>
+            </value>
+            <value>
+                <fullName>Bonamat</fullName>
+                <default>false</default>
+                <label>Bonamat</label>
+            </value>
+            <value>
+                <fullName>Coffema</fullName>
+                <default>false</default>
+                <label>Coffema</label>
+            </value>
+            <value>
+                <fullName>Della Corte</fullName>
+                <default>false</default>
+                <label>Della Corte</label>
+            </value>
+            <value>
+                <fullName>Eversys</fullName>
+                <default>false</default>
+                <label>Eversys</label>
+            </value>
+            <value>
+                <fullName>Faema</fullName>
+                <default>false</default>
+                <label>Faema</label>
+            </value>
+            <value>
+                <fullName>Franke</fullName>
+                <default>false</default>
+                <label>Franke</label>
+            </value>
+            <value>
+                <fullName>Jura</fullName>
+                <default>false</default>
+                <label>Jura</label>
+            </value>
+            <value>
+                <fullName>La Chimbali</fullName>
+                <default>false</default>
+                <label>La Chimbali</label>
+            </value>
+            <value>
+                <fullName>La San Marco</fullName>
+                <default>false</default>
+                <label>La San Marco</label>
+            </value>
+            <value>
+                <fullName>Melitta</fullName>
+                <default>false</default>
+                <label>Melitta</label>
+            </value>
+            <value>
+                <fullName>N &amp; W</fullName>
+                <default>false</default>
+                <label>N &amp; W</label>
+            </value>
+            <value>
+                <fullName>Nuova Simonelli</fullName>
+                <default>false</default>
+                <label>Nuova Simonelli</label>
+            </value>
+            <value>
+                <fullName>Rex Royal</fullName>
+                <default>false</default>
+                <label>Rex Royal</label>
+            </value>
+            <value>
+                <fullName>Schaerer</fullName>
+                <default>false</default>
+                <label>Schaerer</label>
+            </value>
+            <value>
+                <fullName>Servomat Steigler</fullName>
+                <default>false</default>
+                <label>Servomat Steigler</label>
+            </value>
+            <value>
+                <fullName>Sielaff</fullName>
+                <default>false</default>
+                <label>Sielaff</label>
+            </value>
+            <value>
+                <fullName>Sonstige</fullName>
+                <default>false</default>
+                <label>Sonstige</label>
+            </value>
+            <value>
+                <fullName>Thermoplan</fullName>
+                <default>false</default>
+                <label>Thermoplan</label>
+            </value>
+            <value>
+                <fullName>Wittenburg</fullName>
+                <default>false</default>
+                <label>Wittenburg</label>
+            </value>
+            <value>
+                <fullName>WMF</fullName>
+                <default>false</default>
+                <label>WMF</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

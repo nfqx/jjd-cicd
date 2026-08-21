@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>D006</fullName>
+        <default>false</default>
+        <label>10 Tage 0,5% Skonto (LS)</label>
+    </customValue>
+    <customValue>
+        <fullName>D005</fullName>
+        <default>false</default>
+        <label>10 Tage 0% Skonto (LS)</label>
+    </customValue>
+    <customValue>
+        <fullName>D008</fullName>
+        <default>false</default>
+        <label>10 Tage 2% Skonto, 21 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K012</fullName>
+        <default>false</default>
+        <label>10 Tage 2% Skonto, 21 Tage netto (K012)</label>
+    </customValue>
+    <customValue>
+        <fullName>K013</fullName>
+        <default>false</default>
+        <label>10 Tage 2% Skonto, 25 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K014</fullName>
+        <default>false</default>
+        <label>10 Tage 2% Skonto, 28 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D009</fullName>
+        <default>false</default>
+        <label>10 Tage 2% Skonto, 30 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K015</fullName>
+        <default>false</default>
+        <label>10 Tage 2% Skonto, 30 Tage netto (K015)</label>
+    </customValue>
+    <customValue>
+        <fullName>D010</fullName>
+        <default>false</default>
+        <label>10 Tage 2% Skonto, 40 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D011</fullName>
+        <default>false</default>
+        <label>10 Tage 2% Skonto, 42 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D007</fullName>
+        <default>false</default>
+        <label>10 Tage 2% Skonto (LS)</label>
+    </customValue>
+    <customValue>
+        <fullName>D013</fullName>
+        <default>false</default>
+        <label>10 Tage 3% Skonto, 21 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K016</fullName>
+        <default>false</default>
+        <label>10 Tage 3% Skonto, 21 Tage netto (K016)</label>
+    </customValue>
+    <customValue>
+        <fullName>D012</fullName>
+        <default>false</default>
+        <label>10 Tage 3% Skonto (LS)</label>
+    </customValue>
+    <customValue>
+        <fullName>D014</fullName>
+        <default>false</default>
+        <label>10 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K017</fullName>
+        <default>false</default>
+        <label>10 Tage netto (K017)</label>
+    </customValue>
+    <customValue>
+        <fullName>D064</fullName>
+        <default>false</default>
+        <label>120 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K040</fullName>
+        <default>false</default>
+        <label>120 Tage netto (K040)</label>
+    </customValue>
+    <customValue>
+        <fullName>K018</fullName>
+        <default>false</default>
+        <label>12 Tage 2% Skonto, 18 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K019</fullName>
+        <default>false</default>
+        <label>12 Tage 2% Skonto, 21 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K020</fullName>
+        <default>false</default>
+        <label>12 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D016</fullName>
+        <default>false</default>
+        <label>14 Tage 2% Skonto, 21 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K021</fullName>
+        <default>false</default>
+        <label>14 Tage 2% Skonto, 21 Tage netto (K021)</label>
+    </customValue>
+    <customValue>
+        <fullName>K022</fullName>
+        <default>false</default>
+        <label>14 Tage 2% Skonto, 25 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K023</fullName>
+        <default>false</default>
+        <label>14 Tage 2% Skonto, 28 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D017</fullName>
+        <default>false</default>
+        <label>14 Tage 2% Skonto, 30 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K024</fullName>
+        <default>false</default>
+        <label>14 Tage 2% Skonto, 30 Tage netto (K024)</label>
+    </customValue>
+    <customValue>
+        <fullName>D018</fullName>
+        <default>false</default>
+        <label>14 Tage 2% Skonto, 40 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D019</fullName>
+        <default>false</default>
+        <label>14 Tage 2% Skonto, 45 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D015</fullName>
+        <default>false</default>
+        <label>14 Tage 2% Skonto (LS)</label>
+    </customValue>
+    <customValue>
+        <fullName>D021</fullName>
+        <default>false</default>
+        <label>14 Tage 3% Skonto, 21 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K025</fullName>
+        <default>false</default>
+        <label>14 Tage 3% Skonto, 21 Tage netto (K025)</label>
+    </customValue>
+    <customValue>
+        <fullName>K026</fullName>
+        <default>false</default>
+        <label>14 Tage 3% Skonto, 28 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D022</fullName>
+        <default>false</default>
+        <label>14 Tage 3% Skonto, 30 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K027</fullName>
+        <default>false</default>
+        <label>14 Tage 3% Skonto, 30 Tage netto (K027)</label>
+    </customValue>
+    <customValue>
+        <fullName>D023</fullName>
+        <default>false</default>
+        <label>14 Tage 3% Skonto, 42 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D020</fullName>
+        <default>false</default>
+        <label>14 Tage 3% Skonto (LS)</label>
+    </customValue>
+    <customValue>
+        <fullName>D024</fullName>
+        <default>false</default>
+        <label>14 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K028</fullName>
+        <default>false</default>
+        <label>14 Tage netto (K028)</label>
+    </customValue>
+    <customValue>
+        <fullName>K029</fullName>
+        <default>false</default>
+        <label>15 Tage 2% Skonto, 26 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K030</fullName>
+        <default>false</default>
+        <label>15 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K031</fullName>
+        <default>false</default>
+        <label>18 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K001</fullName>
+        <default>false</default>
+        <label>1 Tag netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D025</fullName>
+        <default>false</default>
+        <label>20 Tage 1% Skonto, 30 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D027</fullName>
+        <default>false</default>
+        <label>20 Tage 2% Skonto, 21 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D028</fullName>
+        <default>false</default>
+        <label>20 Tage 2% Skonto, 31 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D029</fullName>
+        <default>false</default>
+        <label>20 Tage 2% Skonto, 60 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D026</fullName>
+        <default>false</default>
+        <label>20 Tage 2% Skonto (LS)</label>
+    </customValue>
+    <customValue>
+        <fullName>D030</fullName>
+        <default>false</default>
+        <label>20 Tage 3% Skonto, 31 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K032</fullName>
+        <default>false</default>
+        <label>20 Tage 3% Skonto, 31 Tage netto (K032)</label>
+    </customValue>
+    <customValue>
+        <fullName>K033</fullName>
+        <default>false</default>
+        <label>20 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D031</fullName>
+        <default>false</default>
+        <label>21 Tage 1% Skonto, 45 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D032</fullName>
+        <default>false</default>
+        <label>21 Tage 3% Skonto, 30 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D033</fullName>
+        <default>false</default>
+        <label>21 Tage 3% Skonto, 60 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D034</fullName>
+        <default>false</default>
+        <label>21 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K034</fullName>
+        <default>false</default>
+        <label>21 Tage netto (K034)</label>
+    </customValue>
+    <customValue>
+        <fullName>D035</fullName>
+        <default>false</default>
+        <label>25 Tage 2% Skonto, 31 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K035</fullName>
+        <default>false</default>
+        <label>25 Tage 3% Skonto, 26 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K036</fullName>
+        <default>false</default>
+        <label>25 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D036</fullName>
+        <default>false</default>
+        <label>28 Tage 2% Skonto, 29 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D037</fullName>
+        <default>false</default>
+        <label>28 Tage 2% Skonto, 30 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K037</fullName>
+        <default>false</default>
+        <label>28 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D040</fullName>
+        <default>false</default>
+        <label>30 Tage 1% Skonto, 31 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D039</fullName>
+        <default>false</default>
+        <label>30 Tage 1% Skonto (LS)</label>
+    </customValue>
+    <customValue>
+        <fullName>D041</fullName>
+        <default>false</default>
+        <label>30 Tage 2% Skonto, 32 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D042</fullName>
+        <default>false</default>
+        <label>30 Tage 2% Skonto, 40 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D038</fullName>
+        <default>false</default>
+        <label>30 Tage 2% Skonto (LS)</label>
+    </customValue>
+    <customValue>
+        <fullName>D044</fullName>
+        <default>false</default>
+        <label>30 Tage 3% Skonto, 40 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D045</fullName>
+        <default>false</default>
+        <label>30 Tage 3% Skonto, 60 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D043</fullName>
+        <default>false</default>
+        <label>30 Tage 3% Skonto (LS)</label>
+    </customValue>
+    <customValue>
+        <fullName>D046</fullName>
+        <default>true</default>
+        <label>30 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K038</fullName>
+        <default>false</default>
+        <label>30 Tage netto (K038)</label>
+    </customValue>
+    <customValue>
+        <fullName>D047</fullName>
+        <default>false</default>
+        <label>35 Tage 2% Skonto, 36 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D048</fullName>
+        <default>false</default>
+        <label>35 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D049</fullName>
+        <default>false</default>
+        <label>40 Tage 2% Skonto, 41 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D050</fullName>
+        <default>false</default>
+        <label>40 Tage 2% Skonto, 50 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D051</fullName>
+        <default>false</default>
+        <label>40 Tage 3% Skonto, 50 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D052</fullName>
+        <default>false</default>
+        <label>40 Tage 4% Skonto, 75 Tage Netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D053</fullName>
+        <default>false</default>
+        <label>40 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D054</fullName>
+        <default>false</default>
+        <label>45 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D055</fullName>
+        <default>false</default>
+        <label>50 Tage 2% Skonto, 61 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K039</fullName>
+        <default>false</default>
+        <label>50 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D056</fullName>
+        <default>false</default>
+        <label>57 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D057</fullName>
+        <default>false</default>
+        <label>59 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D152</fullName>
+        <default>false</default>
+        <label>5 Tage nach Zollabfertigung (Ukraine)</label>
+    </customValue>
+    <customValue>
+        <fullName>D058</fullName>
+        <default>false</default>
+        <label>60 Tage 2% Skonto, 61 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D059</fullName>
+        <default>false</default>
+        <label>60 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D060</fullName>
+        <default>false</default>
+        <label>70 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K002</fullName>
+        <default>false</default>
+        <label>7 Tage 2% Skonto, 14 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K003</fullName>
+        <default>false</default>
+        <label>7 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K004</fullName>
+        <default>false</default>
+        <label>8 Tage 2% Skonto, 21 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K005</fullName>
+        <default>false</default>
+        <label>8 Tage 2% Skonto, 25 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K006</fullName>
+        <default>false</default>
+        <label>8 Tage 2% Skonto, 28 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K007</fullName>
+        <default>false</default>
+        <label>8 Tage 2% Skonto, 30 Tage netto (K007)</label>
+    </customValue>
+    <customValue>
+        <fullName>D003</fullName>
+        <default>false</default>
+        <label>8 Tage 2% Skonto, 30 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D002</fullName>
+        <default>false</default>
+        <label>8 Tage 2% Skonto (LS)</label>
+    </customValue>
+    <customValue>
+        <fullName>K008</fullName>
+        <default>false</default>
+        <label>8 Tage 3% Skonto, 14 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K009</fullName>
+        <default>false</default>
+        <label>8 Tage 3% Skonto, 28 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K010</fullName>
+        <default>false</default>
+        <label>8 Tage 3% Skonto, 30 Tage netto (K010)</label>
+    </customValue>
+    <customValue>
+        <fullName>D004</fullName>
+        <default>false</default>
+        <label>8 Tage 3% Skonto, 30 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K011</fullName>
+        <default>false</default>
+        <label>8 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D061</fullName>
+        <default>false</default>
+        <label>90 Tage 2% Skonto, 91 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D063</fullName>
+        <default>false</default>
+        <label>90 Tage 2% Skonto (LS)</label>
+    </customValue>
+    <customValue>
+        <fullName>D062</fullName>
+        <default>false</default>
+        <label>90 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>K151</fullName>
+        <default>false</default>
+        <label>Bankeinzug/ Abbuchung Kreditor</label>
+    </customValue>
+    <customValue>
+        <fullName>D151</fullName>
+        <default>false</default>
+        <label>Letter of Credit (Akkreditiv)</label>
+    </customValue>
+    <customValue>
+        <fullName>D001</fullName>
+        <default>false</default>
+        <label>Sofort 2% Skonto, 2 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>D000</fullName>
+        <default>false</default>
+        <label>Sofort ohne Abzug</label>
+    </customValue>
+    <customValue>
+        <fullName>K000</fullName>
+        <default>false</default>
+        <label>Sofort ohne Abzug (K000)</label>
+    </customValue>
+    <customValue>
+        <fullName>D150</fullName>
+        <default>false</default>
+        <label>Vorauskasse</label>
+    </customValue>
+    <customValue>
+        <fullName>K150</fullName>
+        <default>false</default>
+        <label>Vorauskasse (K150)</label>
+    </customValue>
+    <customValue>
+        <fullName>Z000</fullName>
+        <default>false</default>
+        <label>Z000</label>
+    </customValue>
+    <customValue>
+        <fullName>0001</fullName>
+        <default>false</default>
+        <label>0001</label>
+    </customValue>
+    <customValue>
+        <fullName>0002</fullName>
+        <default>false</default>
+        <label>0002</label>
+    </customValue>
+    <customValue>
+        <fullName>D065</fullName>
+        <default>false</default>
+        <label>D065</label>
+    </customValue>
+    <customValue>
+        <fullName>D066</fullName>
+        <default>false</default>
+        <label>D066</label>
+    </customValue>
+    <customValue>
+        <fullName>D067</fullName>
+        <default>false</default>
+        <label>D067</label>
+    </customValue>
+    <masterLabel>Payment Terms</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

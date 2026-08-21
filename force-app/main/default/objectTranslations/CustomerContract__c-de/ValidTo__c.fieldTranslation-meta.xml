@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Ende der Vertragslaufzeit. SAP „löscht&quot; nie, sondern begrenzt die Gültigkeit — unbefristete Verträge stehen auf 31.12.2099. Basis für die Auslaufwarnung an den KAM.</help>
+    <label>Gültig bis</label>
+    <name>ValidTo__c</name>
+</CustomFieldTranslation>

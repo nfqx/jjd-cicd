@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Free Delivery Reason --></label>
+    <name>FreeDeliveryReason__c</name>
+    <picklistValues>
+        <masterLabel>Business Closure</masterLabel>
+        <translation>Geschäftsaufgabe</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Credit Memo Procedure</masterLabel>
+        <translation>Gutschriftsverfahren</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cross-charge to Subsidiaries</masterLabel>
+        <translation>Weiterberechnung Töchter</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer Referral</masterLabel>
+        <translation>Empfehlung durch Kunden</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DRM Claim - Price Guar., ShpDeb, Refund</masterLabel>
+        <translation>DRM Anspr. - Preisgar., ShpDeb, Rückzlg.</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Defective / Exchange</masterLabel>
+        <translation>Defekt/Tausch</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Down Payment Request</masterLabel>
+        <translation>Anzahlungsanforderung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Event</masterLabel>
+        <translation>Veranstaltung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Expedited Return</masterLabel>
+        <translation>Beschleunigte Retoure</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fast Delivery</masterLabel>
+        <translation>schnelle Lieferung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Favorable Price</masterLabel>
+        <translation>günstiger Preis</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Free Sample</masterLabel>
+        <translation>kostenloses Muster</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Good Service</masterLabel>
+        <translation>guter Service</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Incorrect Delivery</masterLabel>
+        <translation>Falschanlieferung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>JJD Demands Return - No Sales or similar</masterLabel>
+        <translation>JJD fordert zurück - kein Absatz o.ä.</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Legal Case - New -</masterLabel>
+        <translation>Rechtsfall - neu -</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Newspaper Ad</masterLabel>
+        <translation>Zeitungsanzeige</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Poor Quality</masterLabel>
+        <translation>schlechte Qualität</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Price Difference: Price was too high</masterLabel>
+        <translation>Preisdifferenz: Preis war zu hoch</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Price Difference: Price was too low</masterLabel>
+        <translation>Preisdifferenz: Preis war zu niedrig</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Quantity Discrepancy</masterLabel>
+        <translation>Mengendifferenz</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Customer Not Reached</masterLabel>
+        <translation>RE Kunde nicht angetroffen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Damage</masterLabel>
+        <translation>RE Beschädigung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Event</masterLabel>
+        <translation>RE Veranstaltung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Expiration Date (or BBD)</masterLabel>
+        <translation>RE MHD</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Incorrect Customer Order</masterLabel>
+        <translation>RE Falsche Bestellung Kunde</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Incorrect Delivery</masterLabel>
+        <translation>RE Falschanlieferung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Incorrect Entry JJD</masterLabel>
+        <translation>RE Falsche Eingabe JJD</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Incorrect Loading JJD</masterLabel>
+        <translation>RE Falsche Verladung JJD</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Internal Return</masterLabel>
+        <translation>RE Retoure intern</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Labeling Error</masterLabel>
+        <translation>RE Etikettierfehler</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Loading Error Freight Forwarder</masterLabel>
+        <translation>RE Verladefehler Spediteur</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Loading Error Parcel Service</masterLabel>
+        <translation>RE Verladefehler Paketdienst</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Not Picked Up from Branch</masterLabel>
+        <translation>RE Nicht aus Filiale abgeholt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Order Error GL</masterLabel>
+        <translation>RE Bestellfehler GL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Packing Error</masterLabel>
+        <translation>RE Packfehler</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Product Assortment Change Customer</masterLabel>
+        <translation>RE Sortenwechsel Kunde</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Quality Defects</masterLabel>
+        <translation>RE Qualitätsmängel</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Recipient Unknown</masterLabel>
+        <translation>RE Empfänger unbekannt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Refusal of Acceptance</masterLabel>
+        <translation>RE Annahmeverweigerung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Refusal of Acceptance Load Carrier</masterLabel>
+        <translation>RE Annahmeverweigerung Ladungsträger</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Refusal of Acceptance Subsequent Delivery</masterLabel>
+        <translation>RE Annahmeverweigerung Nachlieferung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Return by Customer Request</masterLabel>
+        <translation>RE Rückgabe Kundenwunsch</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RE: Vacuum Loss / Leaker</masterLabel>
+        <translation>RE Luftzieher</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rental Contract</masterLabel>
+        <translation>Leihvertrag</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rental Fee Charge</masterLabel>
+        <translation>Berechnung Leihgebühren</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Return by Customer Request / No Longer Needed</masterLabel>
+        <translation>Rückgabe Kundenwunsch/Nicht mehr benötig</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>S2K: PN Status Request</masterLabel>
+        <translation>S2K: PN-Statusanfrage</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>S2K: PO Status Request</masterLabel>
+        <translation>S2K: POStatusanfrage</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SBWAP: Difference Settlement (Qty/Value)</masterLabel>
+        <translation>SBWAP: Differenzausgleich (Menge/Wert)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SBWAP: Difference Settlement (Value)</masterLabel>
+        <translation>SBWAP: Differenzausgleich (Wert)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SBWAP: New Open Item (Qty/Value)</masterLabel>
+        <translation>SBWAP: Neuer offener Posten (Menge/Wert)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SBWAP: New Open Item (Value)</masterLabel>
+        <translation>SBWAP: Neuer offener Posten (Wert)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sales Rep Visit</masterLabel>
+        <translation>Vertreterbesuch</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Securing of Goods</masterLabel>
+        <translation>Sicherstellung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Spoiled Goods</masterLabel>
+        <translation>Ware verdorben</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TV Advertising</masterLabel>
+        <translation>Fernsehwerbung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Trade Fair Contact</masterLabel>
+        <translation>Messekontakt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Transport Damage</masterLabel>
+        <translation>Transportschaden</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Transport Damage 102</masterLabel>
+        <translation>Transportschaden 102</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Warehouse Return</masterLabel>
+        <translation>Lagerretoure</translation>
+    </picklistValues>
+</CustomFieldTranslation>

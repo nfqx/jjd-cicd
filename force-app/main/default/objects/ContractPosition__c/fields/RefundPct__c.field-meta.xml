@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RefundPct__c</fullName>
+    <description>The leading refund rate: this share of revenue (or its equivalent) flows back to the customer. Basis for accruals, settlements and refund reporting. [Sources: C-01, XLSX-003]</description>
+    <inlineHelpText>The leading refund rate: this share of revenue (or its equivalent) flows back to the customer. Basis for accruals, settlements and refund reporting.</inlineHelpText>
+    <label>Refund Rate (%)</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

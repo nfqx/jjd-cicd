@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Quality Check Machine --></label>
+    <name>Quality_Check_Machine__c</name>
+    <relationshipLabel><!-- Quality Check Entrie --></relationshipLabel>
+</CustomFieldTranslation>

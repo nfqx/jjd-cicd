@@ -1,0 +1,9 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <div class="container">
+        <div class="search-container d-flex flex-row align-items-center gap-2 rounded p-2" if:true={showSearchMask}>
+            <i class="bi bi-search"></i>
+            <input type="text" class="search-input bg-transparent border-0 px-2 w-100" placeholder={label.search} aria-label={label.search} onblur={handleInput} onkeyup={handleKeypress} />
+        </div>
+    </div>
+</template>

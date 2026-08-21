@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Parent Type --></label>
+    <name>ParentType__c</name>
+    <picklistValues>
+        <masterLabel>Einkaufsgesellschaft KANN</masterLabel>
+        <translation><!-- Einkaufsgesellschaft KANN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kette</masterLabel>
+        <translation><!-- Kette --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

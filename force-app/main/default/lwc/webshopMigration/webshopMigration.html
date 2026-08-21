@@ -1,0 +1,106 @@
+<template>
+    <lightning-card title="Webshop Migration">
+
+        <div class="slds-p-around_medium">
+
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+
+                <thead>
+                    <tr>
+                        <th>
+                            <div class="slds-truncate">Operation</div>
+                        </th>
+                        <th>
+                            <div class="slds-truncate">Action</div>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Migrate Product Images</td>
+                        <td>
+                            <lightning-button
+                                label="Start"
+                                variant="brand"
+                                onclick={startImageMigration}>
+                            </lightning-button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Migrate Categories</td>
+                        <td>
+                            <lightning-button
+                                label="Start"
+                                variant="brand"
+                                onclick={startCategoryMigration}>
+                            </lightning-button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Migrate Products and Links</td>
+                        <td>
+                            <lightning-button
+                                label="Start"
+                                variant="brand"
+                                onclick={startProductMigration}>
+                            </lightning-button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Migrate Product Groups and Subgroups</td>
+                        <td>
+                            <lightning-button
+                                label="Start"
+                                variant="brand"
+                                onclick={startProductGroupMigration}>
+                            </lightning-button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Migrate Product Entitlements</td>
+                        <td>
+                            <lightning-button
+                                label="Start"
+                                variant="brand"
+                                onclick={startProductEntitlementMigration}>
+                            </lightning-button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Migrate Contacts and Users</td>
+                        <td>
+                            <lightning-button
+                                label="Start"
+                                variant="brand"
+                                onclick={startContactUserMigration}>
+                            </lightning-button>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>Migrate for PuK</td>
+                        <td>
+                            <lightning-button
+                                label="Start"
+                                variant="brand"
+                                onclick={startPuKMigration}>
+                            </lightning-button>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </lightning-card>
+</template>

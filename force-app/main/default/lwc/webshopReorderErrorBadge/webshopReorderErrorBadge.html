@@ -1,0 +1,12 @@
+<template>
+    <div class="d-block bg-error-subtle rounded border border-error text-error p-2 w-100 mb-3">
+        <p class="m-0">
+            {label.couldNotAddToCart}
+        </p>
+        <ul>
+            <template for:each={products} for:item="product">
+                <li key={product.Id}>{product.Name} ({product.ProductCode})</li>
+            </template>
+        </ul>
+    </div>
+</template>

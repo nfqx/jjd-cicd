@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Group__c</fullName>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Product Group</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Röstkaffee</fullName>
+                <default>false</default>
+                <label>Röstkaffee</label>
+            </value>
+            <value>
+                <fullName>Tee</fullName>
+                <default>false</default>
+                <label>Tee</label>
+            </value>
+            <value>
+                <fullName>Trinkschokolade</fullName>
+                <default>false</default>
+                <label>Trinkschokolade</label>
+            </value>
+            <value>
+                <fullName>Sonstiges</fullName>
+                <default>false</default>
+                <label>Sonstiges</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+<template>
+    <div class="row mb-5">
+        <div class="body-regular gray-700">
+            <a class="link" onclick={handleClickHome}>{label.home}</a>&nbsp;/&nbsp;
+            <template for:each={path} for:item="pathItem">
+                <template if:true={pathItem.hasLink}>
+                    <span key={pathItem.value} class="link" data-target={pathItem.value} data-type={pathItem.type} onclick={handleForward}>{pathItem.label}</span>&nbsp;/&nbsp;
+                </template>
+                <template if:false={pathItem.hasLink}>
+                    <span key={pathItem.value} class="link">{pathItem.label}</span>&nbsp;/&nbsp;
+                </template>
+            </template>
+            {lastElement}
+        </div>
+    </div>
+</template>

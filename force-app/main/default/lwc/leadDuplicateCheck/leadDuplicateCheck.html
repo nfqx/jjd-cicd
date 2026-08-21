@@ -1,0 +1,81 @@
+<template>
+    <lightning-card variant="narrow" icon-name="standard:lead">
+        <h1 slot="title">{label.leadDuplicates}</h1>
+        <div slot="actions">
+            <lightning-button
+                label={label.selectForMerge}
+                onclick={handleSelectForMerge}
+                disabled={selectForMergeDisabled}
+            ></lightning-button>
+        </div>
+        <lightning-spinner alternative-text="Loading" size="small" if:true={isLoading}></lightning-spinner>
+        <!-- Body -->
+        <div style="margin: 1rem;">
+            <template if:true={isLoaded}>
+                <template if:true={hasData}>
+                    <lightning-layout class="buttons" style="margin-bottom: 1rem;" >
+                        <lightning-layout-item>
+                            <lightning-button label={label.emailLabel} variant="brand" onclick={toggleEmailFilter} class={emailCssClass}></lightning-button>
+                        </lightning-layout-item>
+                        <lightning-layout-item style="padding: 0 1rem;">
+                            <lightning-button label={label.companyStreet} variant="brand" onclick={toggleCompanyStreetFilter} class={companyStreetCssClass}></lightning-button>
+                        </lightning-layout-item>
+                        <lightning-layout-item>
+                            <lightning-button label={label.lastNameCompany} variant="brand" onclick={toggleLastNameCompanyFilter} class={lastNameCompanyCssClass}></lightning-button>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <template if:true={hasDataDisplayed}>
+                        <lightning-datatable 
+                            data={dataDisplayed}
+                            columns={columns}
+                            key-field="id"
+                            selected-rows={selectedRows}
+                            onrowselection={handleRowSelect}
+                        ></lightning-datatable>
+                        <!--max-row-selection="1"-->
+                    </template>
+                    <template if:false={hasDataDisplayed}>
+                        <p>{label.noFilteredDupes}</p>
+                    </template>
+                </template>
+                <template if:false={hasData}>
+                    <p>{label.noDupes}</p>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+    
+    <c-modal show={showMergeModal} name="mergeModal" onclose={handleCloseMergeModal}>
+      <span slot="header">{label.leadDuplicates}</span>
+      <div slot="body" if:true={dataLoaded} class="modal-body">
+        <c-record-merger-multiple 
+            if:false={isSaving}
+            target-object="Lead"
+            field-results={fieldValues} 
+            record-names={recordNames} 
+            master-id={recordId}
+            record-ids={selectedRowsCopy}
+            onmainrecordchange={handleMainRecordChange}
+            onfieldselection={handleMergeChange}>
+        </c-record-merger-multiple>
+        <template if:true={isSaving}>
+            <div class="overlay">
+                <lightning-spinner alternative-text="Saving" size="medium" variant="brand"></lightning-spinner>
+            </div>
+        </template>
+      </div>
+      <div slot="footer">
+        <lightning-layout>
+            <lightning-layout-item size="6">
+                <!--lightning-input type="toggle" message-toggle-inactive={label.no} message-toggle-active={label.yes} label={label.mergeAllComments} onchange={handleChangeMergeAllComments} checked={mergeAllComments}></lightning-input-->
+                &nbsp;
+            </lightning-layout-item>
+            <lightning-layout-item size="6">
+                <div style="float: right;">
+                    <lightning-button name="cancelAction" class="slds-p-right_small" label={label.cancel} title={label.cancel} onclick={handleCloseMergeModal} disabled={isSaving}></lightning-button>
+                    <lightning-button name="nextAction" variant="brand" type="submit" class="nextButton slds-p-right_small" label={label.save} title={label.save} onclick={handleSave} disabled={isSaving}></lightning-button>
+                </div></lightning-layout-item>
+        </lightning-layout>
+      </div>
+    </c-modal>
+</template>

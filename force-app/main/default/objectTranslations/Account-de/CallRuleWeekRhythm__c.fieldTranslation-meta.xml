@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Wochenrhythmus der Anrufregel</label>
+    <name>CallRuleWeekRhythm__c</name>
+    <picklistValues>
+        <masterLabel>WO-1-VW</masterLabel>
+        <translation><!-- WO-1-VW --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WO-12-VW</masterLabel>
+        <translation><!-- WO-12-VW --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WO-2-VW</masterLabel>
+        <translation><!-- WO-2-VW --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WO-3-VW</masterLabel>
+        <translation><!-- WO-3-VW --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WO-4-VW</masterLabel>
+        <translation><!-- WO-4-VW --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WO-5-VW</masterLabel>
+        <translation><!-- WO-5-VW --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WO-6-VW</masterLabel>
+        <translation><!-- WO-6-VW --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WO-7-VW</masterLabel>
+        <translation><!-- WO-7-VW --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WO-8-VW</masterLabel>
+        <translation><!-- WO-8-VW --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

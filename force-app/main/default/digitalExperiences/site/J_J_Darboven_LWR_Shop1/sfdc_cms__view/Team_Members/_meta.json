@@ -1,0 +1,5 @@
+{
+  "apiName" : "Team_Members",
+  "type" : "sfdc_cms__view",
+  "path" : "views"
+}

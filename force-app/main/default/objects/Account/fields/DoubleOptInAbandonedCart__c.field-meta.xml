@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DoubleOptInAbandonedCart__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>CRM-1090 Granting double opt-in for abandoned cart automated emails (AbandonedCartEmailBatch)</description>
+    <label>Double Opt-In (Abandoned Cart)</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

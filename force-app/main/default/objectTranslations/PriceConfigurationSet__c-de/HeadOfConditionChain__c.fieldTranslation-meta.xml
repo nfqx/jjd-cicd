@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Head of Condition Chain --></label>
+    <name>HeadOfConditionChain__c</name>
+    <relationshipLabel><!-- Price Configuration Sets (Head of Chain Account) --></relationshipLabel>
+</CustomFieldTranslation>

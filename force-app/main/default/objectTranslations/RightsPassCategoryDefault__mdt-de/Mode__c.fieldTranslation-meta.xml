@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Mode of the frame. No record means editable (open frame). inherited = no own value; the parent&apos;s state applies, incl. causer (used by exactly one record: Department_sampling). --></help>
+    <label><!-- Mode --></label>
+    <name>Mode__c</name>
+</CustomFieldTranslation>

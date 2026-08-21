@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ERPCausationKey__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>Technical upsert key of the causation row — so the nightly sync finds rows reliably. [Sources: D-02, D-01-Prinzip]</description>
+    <externalId>true</externalId>
+    <inlineHelpText>Technical upsert key of the causation row — so the nightly sync finds rows reliably.</inlineHelpText>
+    <label>ERP Causation Key</label>
+    <length>40</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- ERP-System --></label>
+    <name>ERPSystem__c</name>
+    <picklistValues>
+        <masterLabel>AT_SAP</masterLabel>
+        <translation><!-- AT_SAP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CZ_Navision</masterLabel>
+        <translation><!-- CZ_Navision --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DE_Navision</masterLabel>
+        <translation><!-- DE_Navision --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DE_SAP</masterLabel>
+        <translation><!-- DE_SAP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NL_Business Central</masterLabel>
+        <translation><!-- NL_Business Central --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SK_Navision</masterLabel>
+        <translation><!-- SK_Navision --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

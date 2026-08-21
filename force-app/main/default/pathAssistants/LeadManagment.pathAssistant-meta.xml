@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Lead</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>Lead Managment</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>EstimatedVolumeCoffee__c</fieldNames>
+        <fieldNames>EstimatedSalesTea__c</fieldNames>
+        <fieldNames>EstimatedSalesHotChocolate__c</fieldNames>
+        <fieldNames>Address</fieldNames>
+        <fieldNames>Timeframe__c</fieldNames>
+        <info>&lt;p&gt;&lt;strong&gt;To complete the prequalification, please fill in the following fields:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Estimated volume: Coffee ✅&lt;/li&gt;&lt;li&gt;Estimated sales: Tea ✅&lt;/li&gt;&lt;li&gt;Estimated sales: Hot Chocolate ✅&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Please also ensure that:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;a postal code ✅&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;is entered in the address details.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Based on this information, the potential revenue will be calculated and the lead will be evaluated. The status will update &lt;strong&gt;automatically &lt;/strong&gt;once all required information has been completed.&lt;/p&gt;</info>
+        <picklistValueName>In Prequalification</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>SalesCategory__c</fieldNames>
+        <fieldNames>LegalForm__c</fieldNames>
+        <fieldNames>MemberOfChain__c</fieldNames>
+        <info>&lt;p&gt;&lt;strong style=&quot;font-size: 13px;&quot;&gt;To complete the sales qualification, please fill in the following fields:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Sales Category ✅&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Legal Form&lt;/span&gt;&lt;strong style=&quot;font-size: 13px;&quot;&gt; ✅&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 13px;&quot;&gt;Please also ensure that:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;the lead’s chain affiliation has been clarified and documented ✅&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 13px;&quot;&gt;Once all required information has been completed and the chain affiliation has been confirmed, the lead record can be converted.&lt;/strong&gt;&lt;/p&gt;</info>
+        <picklistValueName>In Sales Qualification</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Name</fieldNames>
+        <fieldNames>Email</fieldNames>
+        <fieldNames>Phone</fieldNames>
+        <fieldNames>MobilePhone</fieldNames>
+        <fieldNames>Company</fieldNames>
+        <info>&lt;p&gt;&lt;strong&gt;To proceed to the next status, please complete the following information:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Complete name (Salutation, First name, Last name) ✅&lt;/li&gt;&lt;li&gt;Valid email address ✅&lt;/li&gt;&lt;li&gt;At least one phone number&lt;ul&gt;&lt;li&gt;Phone &lt;strong&gt;or ✅&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;Mobile ✅&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Once all mandatory fields are completed, the status will update &lt;strong&gt;automatically&lt;/strong&gt;.&lt;/p&gt;</info>
+        <picklistValueName>New</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;b style=&quot;font-family: Arial; font-size: 10pt;&quot;&gt;Hooray! You have a new deal to bring across the finish line.&lt;/b&gt;&lt;/p&gt;</info>
+        <picklistValueName>Qualified</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

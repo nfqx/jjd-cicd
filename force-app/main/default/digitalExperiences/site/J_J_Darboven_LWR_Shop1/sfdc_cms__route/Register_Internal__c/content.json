@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Register Internal",
+  "contentBody" : {
+    "activeViewId" : "Register_Internal",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-register-internal",
+    "urlPrefix" : "register-internal"
+  },
+  "urlName" : "register-internal"
+}

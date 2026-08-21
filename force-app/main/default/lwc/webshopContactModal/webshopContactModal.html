@@ -1,0 +1,81 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <c-modal
+        show={_show}
+        onclose={handleClose}
+    >
+        <span class="body-large" slot="header">{label.modalTitle}</span>
+        <div class="body-regular" slot="body">
+            <template if:false={isSuccess}>
+                <div class="d-flex justify-content-center align-items-center">
+                    <div if:true={isLoading}  class="spinner-border text-black-50" role="status"></div>
+                </div>
+                <!--lightning-spinner if:true={isLoading} alternative-text="Loading" size="small"></lightning-spinner-->
+                <p align="center">{label.modalBody}</p>
+                <p>
+                    <select class="form-select" value={subject} onchange={handleChangeSubject}>
+                        <template for:each={subjectOptions} for:item="subjectOption">
+                            <option key={subjectOption.value} value={subjectOption.value}>{subjectOption.label}</option>
+                        </template>
+                    </select>
+                </p>
+                <template if:true={anonymous}>
+                    <input class={nameInputClass} placeholder={label.name} onkeyup={handleChangeName} onchange={handleChangeName} />
+                    <template if:true={invalidName}>
+                        <div class="invalid-feedback">
+                            {label.invalidNameLabel} 
+                        </div>
+                    </template>
+                </template>
+                <template if:true={anonymous}>
+                    <input class={emailInputClass} placeholder={label.email} onkeyup={handleChangeEmail} onchange={handleChangeEmail} />
+                    <template if:true={invalidEmail}>
+                        <div class="invalid-feedback">
+                            {label.invalidEmailLabel}
+                        </div>
+                    </template>
+                </template>
+                <template if:true={anonymous}>
+                    <input class={phoneInputClass} placeholder={label.phone} onkeyup={handleChangePhone} onchange={handleChangePhone} />
+                    <template if:true={invalidPhone}>
+                        <div class="invalid-feedback">
+                            {label.invalidPhoneLabel}
+                        </div>
+                    </template>
+                </template>
+                <p>
+                    <template if:true={subjectIsOther}>
+                        <input class="form-control" onkeyup={handleChangeSubjectAlt}></input>
+                    </template>
+                </p>
+                <!--Free input-->
+                <p>
+                    <textarea class="form-control text-input" onkeyup={handleChangeMessage} onchange={handleChangeMessage}></textarea>
+                </p>
+            </template>
+            <template if:true={isSuccess}>
+                {label.success}
+            </template>
+        </div>
+
+        <div class="d-flex justify-content-start align-items-end" slot="footer">
+            <button 
+                if:false={isSuccess}
+                type="submit"  
+                class="btn btn-primary contact-btn"  
+                label={label.send} 
+                title={label.send} 
+                onclick={handleSend}
+                disabled={sendDisabled}
+                >{label.send} 
+            </button>
+            <button 
+                class="btn btn-link link contact-btn" 
+                label={label.cancel} 
+                title={label.cancel} 
+                onclick={handleClose}
+                >{label.cancel}
+            </button>
+        </div>
+    </c-modal>
+</template>

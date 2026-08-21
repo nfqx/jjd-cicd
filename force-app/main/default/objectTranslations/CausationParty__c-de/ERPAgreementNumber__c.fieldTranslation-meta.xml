@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Grouping/capsule key: filled = this causation party applies to exactly this SAP agreement; empty = it applies to the whole contract. The causation circle is a capsule per agreement. --></help>
+    <label><!-- ERP Agreement Number --></label>
+    <name>ERPAgreementNumber__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Interesse an</label>
+    <name>InterestedIn__c</name>
+    <picklistValues>
+        <masterLabel>Cocoa</masterLabel>
+        <translation>KAKAO</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coffee</masterLabel>
+        <translation>KAFFEE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Machines</masterLabel>
+        <translation>MASCHINEN</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation>SONSTIGES(WAS)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tea</masterLabel>
+        <translation>TEE</translation>
+    </picklistValues>
+</CustomFieldTranslation>

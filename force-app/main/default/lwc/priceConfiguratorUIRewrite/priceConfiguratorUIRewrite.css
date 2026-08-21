@@ -1,0 +1,93 @@
+.section{
+    border: 1px solid rgb(176, 176, 176);
+    margin: 0 1rem 1rem 1rem;
+    border-radius: 4px;
+    background-color: transparent !important;
+}
+
+.section:hover {
+    background-color: transparent !important;
+}
+
+.section:focus {
+    background-color: transparent !important;
+}
+
+.table-row {
+    background-color: #FAFAF9;
+    border-bottom: 2px solid rgb(221, 221, 221);
+    align-items:center;
+}
+
+.table-row lightning-layout-item {
+    font-weight: bold;
+    color: rgb(24, 24, 24);
+    text-align:center;
+    align-items:center;
+    justify-content: center;
+}
+
+.title-bold {
+    font-weight: bold;
+    color: rgb(24, 24, 24);
+}
+
+.section-warning{
+    margin-top: -1rem;
+}
+
+:host {
+    --slds-c-modal-footer-spacing-block-start:0.4rem;
+    --slds-c-modal-footer-spacing-block-end:0.4rem;
+}
+
+.tabs-container {
+    display: flex;
+    border-bottom: 1px solid #c9c7c5; 
+}
+
+.tab-button {
+    position: relative;
+    --sds-c-button-sizing-border: 0;
+    --sds-c-button-neutral-color-background: transparent;
+    --sds-c-button-neutral-color-background-hover: transparent;
+    --sds-c-button-neutral-color-background-active: transparent;
+    --sds-c-button-color-border: transparent;
+    --sds-c-button-neutral-color-border: transparent;
+    --sds-c-button-neutral-color-border-hover: transparent;
+    --sds-c-button-neutral-color-border-active: transparent;
+    --sds-c-button-text-color: #444444; 
+    --sds-c-button-text-color-hover: #0176d3; 
+    --sds-c-button-shadow-focus: transparent;
+    --sds-c-button-radius-border: 0;
+    padding: 0 1rem 4px 1rem; 
+    margin-bottom: -1px; 
+    font-weight: 500;    
+    border-bottom: none; 
+}
+
+.tab-button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #210903; 
+    transform: scaleX(0); 
+    transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1); 
+}
+
+.tab-button[data-active="true"] {
+    --sds-c-button-neutral-color-background-disabled: transparent;
+    --sds-c-button-neutral-color-border-disabled: transparent;
+    --sds-c-button-color-border-disabled: transparent;
+    --sds-c-button-text-color-disabled: #000000; 
+    -webkit-text-fill-color: #000000; 
+    color: #000000;
+    opacity: 1 !important; 
+}
+
+.tab-button[data-active="true"]::after {
+    transform: scaleX(1); 
+}

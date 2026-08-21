@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>
+        <!-- Die Steuernummer verfügt über ein bundeseinheitliches 13-stelliges Format. Zulässig sind nur Ziffern. Bitte darauf achten, dass keine Leerzeichen oder Sonderzeichen enthalten sind.
+
+Beispiel: 123/456/78901 -->
+    </help>
+    <label>Steuernummer</label>
+    <name>TaxNumber__c</name>
+</CustomFieldTranslation>

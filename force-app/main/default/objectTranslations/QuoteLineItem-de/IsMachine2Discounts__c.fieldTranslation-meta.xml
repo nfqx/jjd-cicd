@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Is Machine 2 Discounts --></label>
+    <name>IsMachine2Discounts__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Competitor --></label>
+    <name>Competitor__c</name>
+    <picklistValues>
+        <masterLabel>Amazon</masterLabel>
+        <translation><!-- Amazon --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chaqwa (Coca-Cola)</masterLabel>
+        <translation><!-- Chaqwa (Coca-Cola) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dallmayr Professional / Vending &amp; Office</masterLabel>
+        <translation><!-- Dallmayr Professional / Vending &amp; Office --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dinzler</masterLabel>
+        <translation><!-- Dinzler --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GOURVITA</masterLabel>
+        <translation><!-- GOURVITA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Heimbs / Azul / Dallmayr</masterLabel>
+        <translation><!-- Heimbs / Azul / Dallmayr --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IOCS / Darboven</masterLabel>
+        <translation><!-- IOCS / Darboven --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Illy Kaffee</masterLabel>
+        <translation><!-- Illy Kaffee --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Jacobs / JDE Professional</masterLabel>
+        <translation><!-- Jacobs / JDE Professional --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Jacobs Douwe Egberts</masterLabel>
+        <translation><!-- Jacobs Douwe Egberts --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Julius Meinl</masterLabel>
+        <translation><!-- Julius Meinl --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kaffee Partner</masterLabel>
+        <translation><!-- Kaffee Partner --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LEH</masterLabel>
+        <translation><!-- LEH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LOGO</masterLabel>
+        <translation><!-- LOGO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lavazza</masterLabel>
+        <translation><!-- Lavazza --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Melitta</masterLabel>
+        <translation><!-- Melitta --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Metro</masterLabel>
+        <translation><!-- Metro --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nespresso</masterLabel>
+        <translation><!-- Nespresso --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Regionaler Röster</masterLabel>
+        <translation><!-- Regionaler Röster --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Schirmer</masterLabel>
+        <translation><!-- Schirmer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Seeberger</masterLabel>
+        <translation><!-- Seeberger --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Segafredo</masterLabel>
+        <translation><!-- Segafredo --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sonstige</masterLabel>
+        <translation><!-- Sonstige --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tchibo Coffee Service</masterLabel>
+        <translation><!-- Tchibo Coffee Service --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Westhoff</masterLabel>
+        <translation><!-- Westhoff --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

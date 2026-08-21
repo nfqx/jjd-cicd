@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V2_Index_Discount_Range</fullName>
+    <active>true</active>
+    <description>Restricts index discount to a range of 0-100%.</description>
+    <errorConditionFormula>NOT(ISBLANK(	DiscountIndexCondition__c)) &amp;&amp; 
+(	DiscountIndexCondition__c &lt; 0 || 	DiscountIndexCondition__c&gt; 1)</errorConditionFormula>
+    <errorMessage>Index discount must be between 0% and 100%.</errorMessage>
+</ValidationRule>

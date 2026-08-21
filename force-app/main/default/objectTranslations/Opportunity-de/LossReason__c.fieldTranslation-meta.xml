@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Grund für Verlust</label>
+    <name>LossReason__c</name>
+    <picklistValues>
+        <masterLabel>Business Closed</masterLabel>
+        <translation>Geschäft geschlossen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Change of Management</masterLabel>
+        <translation>Wechsel im Management</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Failed Credit Check</masterLabel>
+        <translation>Bonitätscheck negativ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Failed Sanction List</masterLabel>
+        <translation>Sanktionslistenprüfung negativ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Length of Sales Cycle</masterLabel>
+        <translation>Länge des Verkaufsprozesses</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Long Sales Cycle</masterLabel>
+        <translation>Zu langer Verkaufsprozess</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lost to Competitor</masterLabel>
+        <translation>An Wettbewerber verloren</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Budget / Lost Funding</masterLabel>
+        <translation>Kein Budget</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Decision / Non-Responsive</masterLabel>
+        <translation>Keine Reaktion/Entscheidung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation>Sonstiges</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product/Solution not satisfying</masterLabel>
+        <translation>Produkt nicht zufriedenstellend</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Quality/Taste (Coffee)</masterLabel>
+        <translation>Qualität/Geschmack des Kaffees</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rejected by Masterdata</masterLabel>
+        <translation>Von Stammdaten abgelehnt</translation>
+    </picklistValues>
+</CustomFieldTranslation>

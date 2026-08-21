@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Brands Related List",
+  "contentBody" : {
+    "activeViewId" : "Brands_Related_List",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "relatedlist-WebshopBrand__c",
+    "urlPrefix" : "webshopbrand"
+  },
+  "urlName" : "brands-related-list"
+}

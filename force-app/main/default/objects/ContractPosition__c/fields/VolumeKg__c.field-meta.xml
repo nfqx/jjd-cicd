@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VolumeKg__c</fullName>
+    <description>Reference quantity for variable subsidies (the amount grows with the volume). Irrelevant and hidden for fixed amounts. [Sources: MN-003 Z.641-647]</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Reference quantity for variable subsidies (the amount grows with the volume). Irrelevant and hidden for fixed amounts.</inlineHelpText>
+    <label>Volume (kg)</label>
+    <precision>10</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ERPCustomerNumber__c</fullName>
+    <description>A unique external customer number to identify the correct integration record in the ERP system.</description>
+    <externalId>true</externalId>
+    <label>ERP Customer Number</label>
+    <length>29</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

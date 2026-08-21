@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type --></label>
+    <name>Type__c</name>
+    <picklistValues>
+        <masterLabel>Bestellweg</masterLabel>
+        <translation><!-- Bestellweg --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Grundrabatt</masterLabel>
+        <translation><!-- Grundrabatt --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Index-Kondition</masterLabel>
+        <translation><!-- Index-Kondition --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Markensichtbarkeit</masterLabel>
+        <translation><!-- Markensichtbarkeit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Maximaler Teerabatt</masterLabel>
+        <translation><!-- Maximaler Teerabatt --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Skonto</masterLabel>
+        <translation><!-- Skonto --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sortiment</masterLabel>
+        <translation><!-- Sortiment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Volumen</masterLabel>
+        <translation><!-- Volumen --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wachstum</masterLabel>
+        <translation><!-- Wachstum --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

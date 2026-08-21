@@ -1,0 +1,71 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <div class="background"></div>
+    <div class="sidebar d-none d-lg-block">
+        <c-webshop-my-area-sidebar active-element="My_Invoices__c"></c-webshop-my-area-sidebar>
+    </div>
+    <div class="container-fluid content-zone">
+        <div class="row">
+            <div class="col-auto d-none d-lg-block">
+                <!--makes space for sidebar-->
+            </div>
+            <div class="col-12 col-lg-11 p-0 px-md-4">
+                <div class="content-area">
+                <div class="d-flex flex-row flex-wrap justify-content-between align-items-start mb-3">
+                    <div class="col-12 col-lg-9"> 
+                        <p class="heading-2">{label.myInvoices}</p>
+                        <p class="body-regular">{label.myInvoicesSubtitle}</p>
+                    </div>
+                    <button class="col-12 col-lg-3 btn btn-link link d-flex justify-content-start justify-content-lg-end align-items-center" 
+                            type="button" onclick={handleClickBackToShop}>
+                        <i class="bi bi-arrow-left"></i>&nbsp;{label.backToShop}
+                    </button> 
+                </div>
+                    <!-- {invoiceHistory} -->
+                    <div class="col-12 mb-3 d-flex">
+                        <input class="form-control body-regular gray-700 me-3" type="text" placeholder={label.searchByInvoiceNumber} onchange={changeSearchTerm} />
+                        <select class="form-select body-medium cursor-pointer" style="width:150px;" onchange={changeDaysFilter}>
+                            <template for:each={daysOptions} for:item="option">
+                                <option key={option.value} value={option.value}>{option.label}</option>
+                            </template> 
+                        </select>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div if:true={isLoading} class="spinner-border text-black-50" role="status"></div>
+                    </div>
+                    <!--lightning-spinner if:true={isLoading} alternative-text="Loading" size="small"></lightning-spinner-->
+                    <template if:false={isLoading}>
+                        <template for:each={invoicesDisplayed} for:item="invoice">
+                            <div key={invoice.Id} class="col-12 d-flex flex-row bg-white rounded flex-wrap justify-content-between component p-3 mb-3">
+                                <div class="col-12 col-md-2">
+                                    <p class="d-flex flex-column m-0"><span class="body-small gray-700">{label.invoiceNumber}:</span> <span class="body-medium">{invoice.ERPInvoiceNumber__c}</span></p>
+                                    <span if:true={invoice.isCancelled} class="bg-primary-subtle border border-primary rounded text-dark components-badge-h6 p-1 ms-2">{label.cancelled}</span>
+                                </div>
+                                <div class="col-12 col-md-2">
+                                    <p class="d-flex flex-column m-0">
+                                        <span class="body-small gray-700">{label.invoiceDate}:</span><span class="body-medium">{invoice.InvoiceDate}</span>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-2">
+                                    <p class="d-flex flex-column m-0" if:true={showPrices}>
+                                        <span class="body-small gray-700">{label.totalAmount}:</span><span class="body-medium">{invoice.TotalAmount}&nbsp;{invoice.CurrencyIsoCode}</span>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-6 d-flex flex-wrap m-0">
+                                    <div class="col-12 col-md-6 p-0 p-md-1 mt-2 mt-md-0">
+                                        <button class="btn btn-secondary w-100 m-0 mx-md-1" onclick={handleClickInvoice} data-invoiceid={invoice.Id}>{label.viewDetails}</button>
+                                    </div>
+                                    <!-- FBA HOTFIX --> 
+                                    <div class="col-12 col-md-6 p-0 p-md-1 mt-2 mt-md-0">
+                                        <button class="btn btn-secondary w-100 m-0 mx-md-1" disabled><i class="bi bi-download"></i> Download </button>
+                                    </div>
+                                    <!-- FBA HOTFIX END -->
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

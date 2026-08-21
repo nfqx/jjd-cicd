@@ -1,0 +1,13 @@
+<template>
+    <template if:true={loaded}>
+        <template if:true={currentRight.clickable}>
+             <p><a onclick={handleClickCell}>{rightsAltText}</a></p>
+        </template>
+        <template if:false={currentRight.clickable}>
+            <p>{rightsAltText}</p>
+        </template>
+        <template if:true={currentRight.ischanged}>
+            <p>Changed!</p>
+        </template>
+    </template>
+</template>

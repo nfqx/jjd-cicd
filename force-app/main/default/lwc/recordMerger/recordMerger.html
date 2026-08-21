@@ -1,0 +1,75 @@
+<template>
+        <!-- Columns Labels-->
+    <div style="border:1px solid rgb(229, 229, 229); border-radius: 3px;">
+        <template if:false={hasRow}>
+            {label.nothingToMerge}
+        </template>
+        <template if:true={hasRow}>
+            <div class={containerClass} style="background-color:rgb(229, 229, 229);">
+                <div>
+                    <p><strong>{label.generalLead} {label.generalFields}</strong></p>
+                </div>
+                <div>
+                    <p><strong>{label.generalValue}</strong></p>
+                </div>
+                <div>
+                    <p><strong>{targetObject} {label.generalFields}</strong></p>
+                </div>
+                <div>
+                    <p><strong>{label.generalValue}</strong></p>
+                </div>
+                <div if:true={showLastColumn}>
+                    <p><strong>{label.mergeValues}</strong></p>
+                </div>
+            </div>
+                
+                <!-- rows-->
+            <template for:each={fieldResults} for:item="fieldResult">
+                <template if:false={fieldResult.sourceEqualTarget}>
+                    <div class={containerClass} key={fieldResult.targetFieldName}>
+                        <div>
+                            <p>{fieldResult.sourceFieldLabel}</p>
+                        </div>
+                        <div>
+                            <p>
+                                <input style="margin-right: 5px;" type="radio" data-merge='none' name={fieldResult.targetFieldName} data-targetfield={fieldResult.targetFieldName} onchange={handleRadioChange} value={fieldResult.sourceValue} /> 
+                                <template if:true={fieldResult.sourceValueIsNull}>
+                                    ({label.emptyValue})
+                                </template>
+                                <template if:false={fieldResult.sourceValueIsNull}>
+                                    {fieldResult.sourceLabel}
+                                </template>
+                            </p>
+                        </div>
+                        <div>
+                            <p>{fieldResult.targetFieldLabel}</p>
+                        </div>
+                        <div>
+                            <p>
+                                <input style="margin-right: 5px;" type="radio" data-merge='none' name={fieldResult.targetFieldName} data-targetfield={fieldResult.targetFieldName} onchange={handleRadioChange} value={fieldResult.targetValue} checked /> 
+                                <template if:true={fieldResult.targetValueIsNull}>
+                                    ({label.emptyValue})
+                                </template>
+                                <template if:false={fieldResult.targetValueIsNull}>
+                                    {fieldResult.targetLabel}
+                                </template>
+                            </p>
+                        </div>
+                        <div if:true={showLastColumn}>
+                            <template if:false={fieldResult.sourceOrTargetEmpty}>
+                                <p if:true={fieldResult.isMultiPicklist}>
+                                    <input style="margin-right: 5px;" type="radio" name={fieldResult.targetFieldName} data-merge='merge' data-targetfield={fieldResult.targetFieldName} onchange={handleRadioChange} value="$$$merge$$$" data-firstvalue={fieldResult.sourceValue} data-secondvalue={fieldResult.targetValue} /> 
+                                    {label.mergeValues}
+                                </p>
+                                <p if:true={fieldResult.isTextArea}>
+                                    <input style="margin-right: 5px;" type="radio" name={fieldResult.targetFieldName} data-merge='mergeTextarea' data-targetfield={fieldResult.targetFieldName} onchange={handleRadioChange} value="$$$merge$$$" data-firstvalue={fieldResult.sourceValue} data-secondvalue={fieldResult.targetValue} /> 
+                                    {label.mergeValues}
+                                </p>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </template>
+        </template>
+    </div>    
+</template>

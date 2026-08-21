@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Technical upsert key of the interface: SAP agreement number plus condition sequence number. Ensures the nightly sync finds each condition line reliably instead of overwriting or duplicating positions. --></help>
+    <label><!-- ERP Condition Key --></label>
+    <name>ERPConditionKey__c</name>
+</CustomFieldTranslation>

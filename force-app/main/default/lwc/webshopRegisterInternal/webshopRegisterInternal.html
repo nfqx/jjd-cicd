@@ -1,0 +1,50 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <div class="d-flex justify-content-center align-items-center">
+        <div if:true={isLoading}  class="spinner-border text-black-50" role="status"></div>
+    </div>
+    <!--lightning-spinner if:true={showSpinner} alternative-text="Loading" size="medium"></lightning-spinner-->
+    <template if:true={showMask}>
+        <!-- Step Two -->
+        <div class="container-fluid" if:true={stepTwo}>
+            <div class="row">
+                <h2>{label.enterInformation}</h2>
+                <div class="mb-3">
+                    <label for="personalField1" class="form-label">{label.firstNameLabel}</label>
+                    <input type="text" class="form-control" id="personalField1" placeholder={label.firstNameLabel} value={firstName} onchange={handleChangeFirstName}>
+                </div>
+                <div class="mb-3">
+                    <label for="personalField2" class="form-label">{label.lastNameLabel}</label>
+                    <input type="text" class="form-control" id="personalField2" placeholder={label.lastNameLabel} value={lastName} onchange={handleChangeLastName}>
+                </div>
+                <div class="mb-3">
+                    <label for="personalField3" class="form-label">{label.emailLabel}</label>
+                    <input type="text" class="form-control" id="personalField3" placeholder={label.emailLabel} value={email} onchange={handleChangeEmail}>
+                </div>
+                <div class="mb-3">
+                    <label for="personalField4" class="form-label">{label.phoneLabel}</label>
+                    <input type="text" class="form-control" id="personalField4" placeholder={label.phoneLabel} value={phone} onchange={handleChangePhone}>
+                </div>
+                <lightning-button class="btn btn-black" label={label.Continue} disabled={secondStepDisabled} onclick={handleSubmitStepTwo}></lightning-button>
+            </div>
+        </div>
+    
+        <!-- Step Three - Success -->
+        <div class="container-fluid" if:true={stepThreeSuccess}>
+            <p>{label.profileCreationGLSuccessHeader}</p>
+            <p>{label.profileCreationGLSuccessMsg}</p>
+        </div>
+    
+        <!-- Step Three - Unauthorized -->
+        <div class="container-fluid" if:true={stepThreeUnauthorized}>
+            <p>{label.profileCreationGLUnauthorizedHeader}</p>
+            <p>{label.profileCreationGLUnauthorizedMsg}</p>
+        </div>
+    
+        <!-- Step Three - Already active -->
+        <div class="container-fluid" if:true={stepThreeAlreadyActive}>
+            <p>{label.profileCreationGLAlreadyActiveHeading}</p>
+            <p>{label.profileCreationGLAlreadyActiveMessage}</p>
+        </div>
+    </template>
+</template>

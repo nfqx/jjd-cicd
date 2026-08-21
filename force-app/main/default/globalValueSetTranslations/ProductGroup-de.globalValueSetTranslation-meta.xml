@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>ALFREDO ESPRESSO CREMAZZURRO</masterLabel>
+        <translation>ALFREDO ESPRESSO CREMAZZURRO</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>ALFREDO ESPRESSO Primus-Omnium</masterLabel>
+        <translation>ALFREDO ESPRESSO Primus-Omnium</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>ALFREDO ESPRESSO SUPER BAR</masterLabel>
+        <translation>ALFREDO ESPRESSO SUPER BAR</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>ALFREDO ESPRESSO TIPO BAR</masterLabel>
+        <translation>ALFREDO ESPRESSO TIPO BAR</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Advance Payments</masterLabel>
+        <translation>Anzahlungen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Alberto Crema</masterLabel>
+        <translation>Alberto Crema</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Alberto Espresso</masterLabel>
+        <translation>Alberto Espresso</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Alcoholic Beverages</masterLabel>
+        <translation>Alkoholische Getränke</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Alfredo Capsule</masterLabel>
+        <translation>Alfredo Kapsel</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Alfredo Espresso Caffè</masterLabel>
+        <translation>Alfredo Espresso Caffè</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Alfredo Espresso Decaffeinato</masterLabel>
+        <translation>Alfredo Espresso Decaffeinato</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Alfredo Espresso Futuro</masterLabel>
+        <translation>Alfredo Espresso Futuro</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Alfredo Ground Coffee Varieties</masterLabel>
+        <translation>Alfredo Mahlkaffeesorten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Alfredo Roasted Coffee Varieties</masterLabel>
+        <translation>Alfredo Röstkaffeesorten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Arko</masterLabel>
+        <translation>Arko</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>BALANCE EXTRA</masterLabel>
+        <translation>BALANCE EXTRA</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>BISTRO MONTANA</masterLabel>
+        <translation>BISTRO MONTANA</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Bela</masterLabel>
+        <translation>Bela</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Biscuits and Chocolate Squares</masterLabel>
+        <translation>Kekse und Naps</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Brosio</masterLabel>
+        <translation>Brosio</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Burkhof Coffee</masterLabel>
+        <translation>Burkhof Kaffee</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Burkhof Ground Coffee Varieties</masterLabel>
+        <translation>Burkhof Mahlkaffeesorten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Burkhof Roasted Coffee Varieties</masterLabel>
+        <translation>Burkhof Röstkaffeesorten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>CASINO</masterLabel>
+        <translation>CASINO</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>COFFEE POUCHES</masterLabel>
+        <translation>KAFFEE-POUCHES</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Coffee Extract</masterLabel>
+        <translation>Extrakt-Kaffee</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Coffee Extract Varieties</masterLabel>
+        <translation>Extrakt-Kaffeesorten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Consumables</masterLabel>
+        <translation>Verbrauchsmaterial</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Contract-Manufactured Ground Coffee Varieties</masterLabel>
+        <translation>Lohnproduktion Mahlkaffeesorten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Contract-Manufactured Roasted Coffee Variety</masterLabel>
+        <translation>Lohnproduktion Röstkaffeesorte</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cream and Condensed Milk</masterLabel>
+        <translation>Sahne und Kondensmilch</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Drinking Chocolate</masterLabel>
+        <translation>Trinkschokolade</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>EILLES Roasted Coffee Varieties</masterLabel>
+        <translation>EILLES Röstkaffeesorten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>EILLES TEA Brand</masterLabel>
+        <translation>Marke EILLES TEE</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>EXCELSIOR</masterLabel>
+        <translation>EXCELSIOR</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Eilles Coffee</masterLabel>
+        <translation>Eilles-Kaffee</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>FAVORIT EXTRA</masterLabel>
+        <translation>FAVORIT EXTRA</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Ferne Welten</masterLabel>
+        <translation>Ferne Welten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Food-Service Ground Coffee Varieties</masterLabel>
+        <translation>Gastro Mahlkaffeesorten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Food-Service Partner</masterLabel>
+        <translation>GV-Partner</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Food-Service Roasted Coffee Varieties</masterLabel>
+        <translation>Gastro Röstkaffeesorten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>GRAND GOURMET</masterLabel>
+        <translation>GRAND GOURMET</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>General Promotional Materials</masterLabel>
+        <translation>Werbematerial allgemein</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Globus</masterLabel>
+        <translation>Globus</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Green Coffee Blends</masterLabel>
+        <translation>Rohkaffeemischungen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Green Coffee Procurement Costs</masterLabel>
+        <translation>Rohkaffee-Beschaffungskosten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Green Coffee Qualities</masterLabel>
+        <translation>Rohkaffeequalitäten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>HFF</masterLabel>
+        <translation>HFF</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Hornig</masterLabel>
+        <translation>Hornig</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>ID ORIGINS</masterLabel>
+        <translation>ID ORIGINS</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>IDEE COFFEE CLASSIC</masterLabel>
+        <translation>IDEE KAFFEE CLASSIC</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>IDEE DECAFFEINATED COFFEE</masterLabel>
+        <translation>IDEE KAFFEE ENTCOFFEINIERT</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>IDEE Ground Coffee Varieties</masterLabel>
+        <translation>IDEE Mahlkaffeesorten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>IDEE NATURALLY MILD COFFEE</masterLabel>
+        <translation>IDEE KAFFEE NATUR MILD</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>IDEE Roasted Coffee Varieties</masterLabel>
+        <translation>IDEE Röstkaffeesorten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Intención Coffee</masterLabel>
+        <translation>Intención - KAFFEE</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Intención Ground Coffee Varieties</masterLabel>
+        <translation>Intención Mahlkaffeesorten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Intención Roasted Coffee Varieties</masterLabel>
+        <translation>Intención Röstkaffeesorten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>J. J. Darb. Bakery Business - Other</masterLabel>
+        <translation>J. J. Darb. Bäckergeschäft -Sonstiges-</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>J.J. Darboven Cappuccino</masterLabel>
+        <translation>J.J. Darboven Cappuccino</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>JJD Maintenance Service</masterLabel>
+        <translation>JJD-Wartungsservice</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>JJD Rental Service</masterLabel>
+        <translation>JJD-Mietservice</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Joh. Joach. Darb. Bakery Business</masterLabel>
+        <translation>Joh. Joach. Darb. Bäckergeschäft</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kränzchen Coffee</masterLabel>
+        <translation>Kränzchen Kaffee</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kränzchen Ground Coffee Varieties</masterLabel>
+        <translation>Kränzchen Mahlkaffeesorten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kränzchen Roasted Coffee Varieties</masterLabel>
+        <translation>Kränzchen Röstkaffeesorten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Licences and Costs</masterLabel>
+        <translation>Lizensen und Kosten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>MELANGE FINESSE</masterLabel>
+        <translation>MELANGE FINESSE</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Machines</masterLabel>
+        <translation>Maschinen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mozart</masterLabel>
+        <translation>Mozart</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>MÖVENPICK CAFÉ DER HIMMLISCHE</masterLabel>
+        <translation>MÖVENPICK CAFE DER HIMMLISCHE</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>MÖVENPICK ESPRESSO</masterLabel>
+        <translation>MÖVENPICK ESPRESSO</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>MÖVENPICK KOLBEN COFFEE</masterLabel>
+        <translation>MÖVENPICK KOLBEN KAFFEE</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mövenpick</masterLabel>
+        <translation>Mövenpick</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mövenpick Capsules</masterLabel>
+        <translation>Mövenpick Kapseln</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mövenpick Corazon</masterLabel>
+        <translation>Mövenpick Corazon</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mövenpick EL AUTENTICO</masterLabel>
+        <translation>Mövenpick EL AUTENTICO</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mövenpick Fine Composition</masterLabel>
+        <translation>Mövenpick Edle Komposition</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mövenpick Ground Coffee Varieties</masterLabel>
+        <translation>Mövenpick Mahlkaffeesorten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mövenpick Roasted Coffee Varieties</masterLabel>
+        <translation>Mövenpick Röstkaffeesorten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mövenpick Vending</masterLabel>
+        <translation>Mövenpick Vending</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Operating Supplies</masterLabel>
+        <translation>Betriebsstoffe</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other Food-Service Equipment</masterLabel>
+        <translation>Sonstige gastronomische Geräte</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other Food-Service Roasted Coffee</masterLabel>
+        <translation>Sonstiger Röstkaffee Gastro</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other Goods</masterLabel>
+        <translation>Sonstige Waren</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other Roasted Coffee</masterLabel>
+        <translation>Sonstiger Röstkaffee</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other Services</masterLabel>
+        <translation>Sonstige Dienstleistung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other Tea</masterLabel>
+        <translation>Sonstiger Tee</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Packaging Materials</masterLabel>
+        <translation>Verpackungsmaterial</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Packaging Materials (1587690)</masterLabel>
+        <translation>Verpackungsmaterial</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pass-Through Third-Party Products</masterLabel>
+        <translation>Durchlaufende Fremdartikel</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Private Labels Export</masterLabel>
+        <translation>Eigenmarken Export</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Private Labels Food Service</masterLabel>
+        <translation>Eigenmarken Gastronomie</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Private Labels Retail</masterLabel>
+        <translation>Eigenmarken Handel</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Private-Label Tea</masterLabel>
+        <translation>Privat Label Tee</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Promotional Materials</masterLabel>
+        <translation>Werbematerial</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Promotional Materials - Beverage Menus</masterLabel>
+        <translation>Werbematerial Getränkekarten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Promotional Materials - Calendars and Brochures</masterLabel>
+        <translation>Werbematerial Kalender,Prospekte</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Promotional Materials - Cup Doilies</masterLabel>
+        <translation>Werbematerial Tassendeckchen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Promotional Materials - Displays</masterLabel>
+        <translation>Werbematerial Displays</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Promotional Materials - Notepads</masterLabel>
+        <translation>Werbematerial Notablocks</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Promotional Materials - Table Displays</masterLabel>
+        <translation>Werbematerial Tischaufsteller</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Rainforest Alliance</masterLabel>
+        <translation>Rainforest Alliance</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Ratio Roasted Coffee</masterLabel>
+        <translation>Ratio Röstkaffee</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Rebates</masterLabel>
+        <translation>Rückvergütungen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Rebilling</masterLabel>
+        <translation>Weiterberechnung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>SPECIAL BLEND</masterLabel>
+        <translation>SONDERMISCHUNG</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sale of Fixed Assets</masterLabel>
+        <translation>Verkauf aus dem Anlagevermögen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sales Deductions</masterLabel>
+        <translation>Erlösschmälerungen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sansibar</masterLabel>
+        <translation>Sansibar</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Serving Items</masterLabel>
+        <translation>Servierartikel</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Spare Parts</masterLabel>
+        <translation>Ersatzteile</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Spare Parts (1688770)</masterLabel>
+        <translation>Ersatzteile</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sugar and Sweeteners</masterLabel>
+        <translation>Zucker und Süßstoff</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Syrup</masterLabel>
+        <translation>Sirup</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Top Extra</masterLabel>
+        <translation>Top Extra</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Topping Powder</masterLabel>
+        <translation>Topping-Pulver</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Verde</masterLabel>
+        <translation>Verde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>WIENER MOCCA</masterLabel>
+        <translation>WIENER MOCCA</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Warca</masterLabel>
+        <translation>Warca</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

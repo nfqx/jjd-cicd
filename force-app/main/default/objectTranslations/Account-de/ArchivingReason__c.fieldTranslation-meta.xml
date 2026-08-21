@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Archiving Reason --></label>
+    <name>ArchivingReason__c</name>
+    <picklistValues>
+        <masterLabel>Buys from competition</masterLabel>
+        <translation><!-- Buys from competition --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No more interest</masterLabel>
+        <translation><!-- No more interest --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other reason</masterLabel>
+        <translation><!-- Other reason --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Too expensive</masterLabel>
+        <translation><!-- Too expensive --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

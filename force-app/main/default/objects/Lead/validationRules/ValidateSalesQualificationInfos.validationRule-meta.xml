@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidateSalesQualificationInfos</fullName>
+    <active>false</active>
+    <description>Validates estimated revenue, address, and timeframe fields.</description>
+    <errorConditionFormula>AND(ISCHANGED(Status), 
+				ISPICKVAL(Status, &apos;In Sales Qualification&apos;), 
+				OR(ISBLANK(EstimatedVolumeCoffee__c), 
+							ISBLANK(PostalCode), 
+							ISBLANK(EstimatedSalesTea__c), 
+							ISBLANK(	EstimatedSalesHotChocolate__c), 
+							ISPICKVAL(Timeframe__c, &quot;&quot;)))</errorConditionFormula>
+    <errorMessage>Please check fields:
+-Est. Revenue: Coffee, Tea, Hot Chocolate
+-Address (Postal Code)
+-Timeframe</errorMessage>
+</ValidationRule>

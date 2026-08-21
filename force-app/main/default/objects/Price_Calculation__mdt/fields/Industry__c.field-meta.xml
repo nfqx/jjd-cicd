@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industry__c</fullName>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Industry</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Gemeinschaftsverpflegung</fullName>
+                <default>false</default>
+                <label>Gemeinschaftsverpflegung</label>
+            </value>
+            <value>
+                <fullName>Vending</fullName>
+                <default>false</default>
+                <label>Vending</label>
+            </value>
+            <value>
+                <fullName>Gastro &amp; Sonstige</fullName>
+                <default>false</default>
+                <label>Gastro &amp; Sonstige</label>
+            </value>
+            <value>
+                <fullName>Einkaufsgesellschaft</fullName>
+                <default>false</default>
+                <label>Einkaufsgesellschaft</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,45 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <c-modal
+        class="modal-right"
+        show={show}
+        onclose={handleClose}
+        no-header
+        no-footer
+    >
+        <div slot="header">
+            <template if:true={showNote}>
+                <!--span class="components-badge-h4 d-flex text-start">
+                    <i class="bi bi-check-circle-fill text-success"></i>
+                    &nbsp;{_newitems}&nbsp;{label.itemsAddedToCart}</span-->
+            </template>
+            <p class="heading-3 m-0">{label.myCart}</p>
+        </div>
+        <div class="body-regular" slot="body">
+            <c-webshop-cart-product-summary show-empty-cart-message no-reload-after-change></c-webshop-cart-product-summary>
+            <template if:true={showRelated}>
+                <p class="heading-4" if:true={showSliderHeading} >{label.productsRelatedTo}&nbsp;{_productname}</p>
+                <c-webshop-slider 
+                    product-id={_productId} 
+                    product-code={_productCode} 
+                    product-slider={_productSlider} 
+                    product-brand={_productBrand} 
+                    onhasdata={showHeading}
+                    show-image
+                    show-price
+                    get-brand-instead
+                    show-wishlist
+                    show-cta>
+                </c-webshop-slider>
+            </template>
+        </div>
+        <div class="d-block d-lg-flex my-1 gap-3" slot="footer">
+                <button class="btn btn-secondary mb-2 mb-lg-0 w-100" onclick={handleClose}>
+                    {label.continueShopping}
+                </button>
+                <button class="btn btn-primary w-100" onclick={handleViewCart}>
+                    {label.viewCart}
+                </button>
+        </div>
+    </c-modal>
+</template>

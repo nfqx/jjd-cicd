@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Shop_Header</letterhead>
+    <name>WebshopInternalInfoWrongAccOrNotCustomer</name>
+    <style>freeForm</style>
+    <subject>Information: Fehlgeschlagene Webshop-Registrierung</subject>
+    <textOnly>Folgender User hat sich versucht, im Webshop zu registrieren:
+
+{0} {1}
+Email: {2}
+Telefon: {3}
+Account: {4}
+
+Fehler:
+{5}
+{6}
+
+
+Dies ist eine automatische Salesforce-Benachrichtigung.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

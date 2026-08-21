@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>None</contactAccessLevel>
+    <description>LPT Test PuK Account 8-AELR2D Kunde-Benutzer</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>LPT Test PuK Account 8-AELR2D Kunde-Benutzer</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>Darboven</parentRole>
+</Role>

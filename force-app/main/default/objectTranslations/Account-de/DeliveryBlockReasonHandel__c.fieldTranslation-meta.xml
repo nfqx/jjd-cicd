@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Delivery Block Reason (Handel) --></label>
+    <name>DeliveryBlockReasonHandel__c</name>
+    <picklistValues>
+        <masterLabel>Cash Sale</masterLabel>
+        <translation>Barverkauf</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Credit Limit</masterLabel>
+        <translation>Kreditlimit</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Delivery Block</masterLabel>
+        <translation>Liefersperre</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Delivery Block – Logistics</masterLabel>
+        <translation>Liefersp.Logistik</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Delivery Block – Sales</masterLabel>
+        <translation>Liefersp.Vertrieb</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Delivery Cost Check</masterLabel>
+        <translation>KostenLief.prüfen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>JIT Delivery (PAB)</masterLabel>
+        <translation>JIT-Lieferung (PAB)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kanban Delivery</masterLabel>
+        <translation>Kanbanlieferung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Material Shortage</masterLabel>
+        <translation>Engpassmaterial</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Missing Export Documents</masterLabel>
+        <translation>Exportpapiere fehlen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Navision Block</masterLabel>
+        <translation>Sperre Navision</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Print</masterLabel>
+        <translation>Kein Druck</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Political Reasons</masterLabel>
+        <translation>Politische Gründe</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Prepayment</masterLabel>
+        <translation>Vorkasse</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Price Change Approval</masterLabel>
+        <translation>Genehmigung Preisänd</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Quantity Change</masterLabel>
+        <translation>Mengenänderung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Suspected Cerberus Fraud</masterLabel>
+        <translation>Zerberus-Verdacht</translation>
+    </picklistValues>
+</CustomFieldTranslation>

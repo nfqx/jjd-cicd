@@ -1,0 +1,89 @@
+<template>
+        <!-- Columns Labels-->
+    <div style="border:1px solid rgb(229, 229, 229); border-radius: 3px;">
+        <div class="slds-scrollable_x">
+            <lightning-layout>
+                <lightning-layout-item size="3">
+                    <p><strong>{label.generalLead} {label.generalFields}</strong></p>
+                </lightning-layout-item>
+                <template for:each={recordNames} for:item="recordName">
+                    <lightning-layout-item size="3" key={recordName}>
+                        <p><strong>{recordName}</strong></p>
+                    </lightning-layout-item>
+                </template>
+                <lightning-layout-item size="3" if:true={showLastColumn}>
+                    <p><strong>{label.mergeValues}</strong></p>
+                </lightning-layout-item>
+            </lightning-layout>                    
+            <!-- rows-->
+            <lightning-layout>
+                <lightning-layout-item size="3">
+                    <p><strong>{label.setAsMaster}</strong></p>
+                </lightning-layout-item>
+                <lightning-layout-item size="3">
+                    <p style="width: 100%;">
+                        <input type="radio" name="masterField" onchange={handleMasterChange} value={masterId} checked /> 
+                    </p>
+                </lightning-layout-item>
+                <template for:each={recordIds} for:item="recordId">
+                    <lightning-layout-item size="3" key={recordId}>
+                        <p style="width: 100%;">
+                            <input type="radio" name="masterField" onchange={handleMasterChange} value={recordId}  /> 
+                        </p>
+                    </lightning-layout-item>
+                </template>
+                <lightning-layout-item size="3" if:true={showLastColumn}>
+                    &nbsp;
+                </lightning-layout-item>
+            </lightning-layout>   
+            <template if:false={hasRow}>
+                {label.nothingToMerge}
+            </template>
+            <template if:true={hasRow}>
+                <template for:each={fieldResults} for:item="fieldResult">
+                    <template if:false={fieldResult.hideRow}>
+                        <lightning-layout key={fieldResult.targetFieldName}>
+                            <lightning-layout-item size="3">
+                                <p>{fieldResult.sourceFieldLabel}</p>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="3">
+                                <p>
+                                    <input style="margin-right: 5px;" type="radio" data-merge='none' name={fieldResult.targetFieldName} data-targetfield={fieldResult.targetFieldName} onchange={handleRadioChange} value={fieldResult.sourceValue.value} checked /> 
+                                    <template if:true={fieldResult.sourceValue.isNull}>
+                                        ({label.emptyValue})
+                                    </template>
+                                    <template if:false={fieldResult.sourceValue.isNull}>
+                                        {fieldResult.sourceValue.label}
+                                    </template>
+                                </p>
+                            </lightning-layout-item>
+                            <template for:each={fieldResult.targetValues} for:item="targetValue">
+                                <lightning-layout-item size="3" key={targetValue.value}>
+                                    <p>
+                                        <input style="margin-right: 5px;" type="radio" data-merge='none' name={fieldResult.targetFieldName} data-targetfield={fieldResult.targetFieldName} onchange={handleRadioChange} value={targetValue.value} /> 
+                                        <template if:true={targetValue.isNull}>
+                                            ({label.emptyValue})
+                                        </template>
+                                        <template if:false={targetValue.isNull}>
+                                            {targetValue.label}
+                                        </template>
+                                    </p>
+                                </lightning-layout-item>
+                            </template>
+                            <lightning-layout-item size="3" if:true={showLastColumn}>
+                                <p if:true={fieldResult.isMultiPicklist}>
+                                    <input style="margin-right: 5px;" type="radio" name={fieldResult.targetFieldName} data-merge='merge' data-targetfield={fieldResult.targetFieldName} onchange={handleRadioChange} value="$$$merge$$$" data-firstvalue={fieldResult.sourceValueRaw} data-secondvalue={fieldResult.targetValuesRaw} /> 
+                                    {label.mergeValues}
+                                </p>
+                                <p if:true={fieldResult.isTextArea}>
+                                    <input style="margin-right: 5px;" type="radio" name={fieldResult.targetFieldName} data-merge='mergeTextarea' data-targetfield={fieldResult.targetFieldName} onchange={handleRadioChange} value="$$$merge$$$" data-firstvalue={fieldResult.sourceValueRaw} data-secondvalue={fieldResult.targetValuesRaw} /> 
+                                    {label.mergeValues}
+                                </p>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </template>
+                </template>
+            </template>
+        </div>
+    </div>    
+</template>

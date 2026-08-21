@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The SAP tax code of the payout, e.g. A1 (taxable revenue 19%) or A2 (7%). Deliberately a text field, not a picklist: 19 accounting values, display only. --></help>
+    <label><!-- ERP Tax Code --></label>
+    <name>ERPTaxCode__c</name>
+</CustomFieldTranslation>

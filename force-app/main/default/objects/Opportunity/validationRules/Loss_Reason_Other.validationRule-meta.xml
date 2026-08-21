@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loss_Reason_Other</fullName>
+    <active>false</active>
+    <description>prevents users to change stage to closed lost when loss reason = blank, forces users to enter additional info when loss reason = other and also forces to reference a competitor when loss reason = lost to competitor</description>
+    <errorConditionFormula>AND(ISPICKVAL(StageName, &quot;Closed Lost&quot;), 
+				ISPICKVAL(LossReason__c,&quot;Other&quot;), 
+				ISBLANK(addLossReason__c))</errorConditionFormula>
+    <errorMessage>Missing Info:
+• Loss Reason cannot be empty.
+• Loss Reason = &quot;Other&quot; - Please ensure additional info is entered in the text field.</errorMessage>
+</ValidationRule>

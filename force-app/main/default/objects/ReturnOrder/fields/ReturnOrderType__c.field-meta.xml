@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ReturnOrderType__c</fullName>
+    <label>Return Order Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ZREA</fullName>
+                <default>false</default>
+                <label>Retoure AHS</label>
+            </value>
+            <value>
+                <fullName>ZREI</fullName>
+                <default>false</default>
+                <label>Retoure intern</label>
+            </value>
+            <value>
+                <fullName>ZREM</fullName>
+                <default>false</default>
+                <label>Retoure Maschine</label>
+            </value>
+            <value>
+                <fullName>ZRE</fullName>
+                <default>false</default>
+                <label>Retoure</label>
+            </value>
+            <value>
+                <fullName>ZR2</fullName>
+                <default>false</default>
+                <label>Erw. Retoure</label>
+            </value>
+            <value>
+                <fullName>ZREL</fullName>
+                <default>false</default>
+                <label>Retoure intern (LF)</label>
+            </value>
+            <value>
+                <fullName>ZRES</fullName>
+                <default>false</default>
+                <label>Retoure RKV</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

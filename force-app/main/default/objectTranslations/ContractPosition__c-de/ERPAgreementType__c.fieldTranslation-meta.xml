@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Die SAP-Vereinbarungsart, unter der das ZKS die Vereinbarung in SAP anlegt — z. B. „110, debitorisch fest&quot; für WKZ-Festbeträge.</help>
+    <label>SAP-Vereinbarungsart</label>
+    <name>ERPAgreementType__c</name>
+</CustomFieldTranslation>

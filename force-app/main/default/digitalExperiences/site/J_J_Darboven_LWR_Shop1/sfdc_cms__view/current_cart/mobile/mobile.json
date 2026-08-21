@@ -1,0 +1,56 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Cart",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "attributes" : {
+          "dxpStyle" : {
+            "margin" : {
+              "bottom" : "15px",
+              "left" : "15px",
+              "right" : "15px",
+              "top" : "15px"
+            }
+          },
+          "sectionColumnGutterWidth" : "0rem"
+        },
+        "id" : "27fc9a7d-6e32-41b3-8d5f-d80f934ecab8"
+      }, {
+        "id" : "fd33d666-5a9d-4ed7-a658-6e88a65eff8d",
+        "attributes" : {
+          "dxpStyle" : {
+            "padding" : {
+              "bottom" : "",
+              "left" : "",
+              "right" : "",
+              "top" : ""
+            },
+            "margin" : {
+              "top" : "0px",
+              "right" : "0px",
+              "bottom" : "0px",
+              "left" : "0px"
+            }
+          },
+          "componentSpacerSize" : "0rem",
+          "maxContentWidth" : "480px",
+          "sectionVerticalAlign" : "center"
+        }
+      }, {
+        "id" : "df8379e9-e5aa-49d0-949b-abb04ecab6b3",
+        "attributes" : {
+          "dxpStyle" : {
+            "margin" : {
+              "top" : "",
+              "right" : "",
+              "bottom" : "",
+              "left" : ""
+            }
+          }
+        }
+      } ]
+    }
+  },
+  "urlName" : "cart"
+}

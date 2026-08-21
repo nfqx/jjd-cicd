@@ -1,0 +1,89 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <div if:true={dataLoaded}>
+        <div class="container" style="z-index: 5; position: relative;">
+            <div class="greeting-modal">
+                <p class="heading-1 mb-2">{label.hello}, {firstName}!</p>
+                <div class="d-md-flex flex-column d-block align-items-start"> <!--style="margin-top: -1.5rem;"-->
+                    <p class="body-large m-0">{label.onBehalf}</p>
+                    <p class="body-large m-0">{mainAccountOption}</p>
+                    <div class="col-12 col-md-7">
+                        <template if:true={hasMultipleOptions}>
+                            <div class="slds-combobox_container">
+                                <div
+                                    class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click"
+                                    aria-expanded="true"
+                                    aria-haspopup="listbox"
+                                    role="combobox"
+                                >
+                                    <lightning-input
+                                        type="text"
+                                        value={searchTerm}
+                                        onchange={handleSearch}
+                                        onclick={showDropdown}
+                                        placeholder={label.searchAccounts}
+                                    >
+                                    </lightning-input>
+
+                                    <template if:true={showOptions}>
+                                        <div class="slds-dropdown slds-dropdown_fluid">
+                                            <ul class="slds-listbox slds-listbox_vertical" role="listbox">
+                                                <template for:each={filteredOptions} for:item="opt">
+                                                    <li
+                                                        key={opt.value}
+                                                        data-value={opt.value}
+                                                        data-label={opt.label}
+                                                        onclick={handleSelect}
+                                                        class="slds-listbox__item"
+                                                        role="presentation"
+                                                    >
+                                                        <div
+                                                            class="slds-media slds-listbox__option slds-listbox__option_plain"
+                                                            role="option"
+                                                        >
+                                                            <span class="slds-media__body">
+                                                                <span>{opt.label}</span>
+                                                            </span>
+                                                        </div>
+                                                    </li>
+                                                </template>
+                                            </ul>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <template  if:true={showAccountWarning}>
+        <div class="container">
+            <div style="padding: 1rem; margin: 1rem 0 0; border: 2px solid; text-align: center; font-size: 1.2rem;">{accountWarning}</div>
+        </div>
+    </template>
+    <div class="container">
+        <p if:true={showSliderHeadingOne} class="heading-2 mt-4">{label.topProductsTitle}</p>
+        <p if:true={showSliderHeadingOne} class="body-regular">{label.topProductsSubtitle}</p>
+        <c-webshop-slider 
+            slider-name={label.topPicksSlider} 
+            onhasdata={showHeadingOne}
+            show-image
+            show-price
+            show-wishlist
+            show-cta>
+        </c-webshop-slider>
+        <c-webshop-featured-ad featured-ad-name={label.frontpageSlider} style-name="full"></c-webshop-featured-ad>
+        <p if:true={showSliderHeadingTwo} class="heading-2 mt-4">{label.buyAgainTitle}</p>
+        <p if:true={showSliderHeadingTwo} class="body-regular">{label.buyAgainSubtitle}</p>
+        <c-webshop-slider 
+            slider-name={label.buyAgainSlider} 
+            onhasdata={showHeadingTwo}
+            show-image
+            show-price
+            show-wishlist
+            show-cta>
+        </c-webshop-slider>
+    </div>
+</template>

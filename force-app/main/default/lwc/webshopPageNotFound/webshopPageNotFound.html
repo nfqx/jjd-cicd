@@ -1,0 +1,21 @@
+<template>
+    <div class="container">
+        <div class="row d-flex flex-column align-items-center text-center my-5">
+            <img style="width:250px;" src={logo404} alt="404 Not Found" />
+            <p class="heading-2 g-1">{label.firstLine}</p>
+            <p class="body-regular gray-700">{label.secondLine}</p>
+            <p class="body-regular gray-700"><lightning-formatted-rich-text value={label.thirdLine}></lightning-formatted-rich-text></p>
+        </div>
+        <div class="row">
+            <p if:true={showSliderHeading} class="heading-2">{label.topPicksTranslateable}</p>
+            <c-webshop-slider 
+                onhasdata={showHeading}
+                slider-name={label.topPicks} 
+                show-image
+                show-price
+                show-wishlist
+                show-cta>
+            </c-webshop-slider>
+        </div>
+    </div>
+</template>

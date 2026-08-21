@@ -1,0 +1,35 @@
+/*@font-face {
+    font-family: "Sentient";
+    src: url("/resource/Sentient/Sentient-Variable.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Source Sans 3";
+    src: url("/resource/SourceSans3/SourceSans3.ttf") format("truetype");
+}
+
+
+.link {
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    text-decoration: underline;
+    color: rgba(203, 175, 107, 1);
+}
+
+.link:hover {
+    color:rgba(176, 156, 83, 1);
+}
+
+.link:active {
+    color: rgba(162, 136, 71, 1);
+}
+
+.heading-1 {
+    font-family: "Sentient";
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+*/

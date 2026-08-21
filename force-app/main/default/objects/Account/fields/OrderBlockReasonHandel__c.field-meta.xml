@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OrderBlockReasonHandel__c</fullName>
+    <label>Order Block Reason (Handel)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>01</fullName>
+                <default>false</default>
+                <label>General Block</label>
+            </value>
+            <value>
+                <fullName>02</fullName>
+                <default>false</default>
+                <label>All Free of Charge</label>
+            </value>
+            <value>
+                <fullName>03</fullName>
+                <default>false</default>
+                <label>Test Block</label>
+            </value>
+            <value>
+                <fullName>08</fullName>
+                <default>false</default>
+                <label>08 DRM Billing Block</label>
+            </value>
+            <value>
+                <fullName>09</fullName>
+                <default>false</default>
+                <label>09 DRM Billing Block</label>
+            </value>
+            <value>
+                <fullName>12</fullName>
+                <default>false</default>
+                <label>Navision Block</label>
+            </value>
+            <value>
+                <fullName>99</fullName>
+                <default>false</default>
+                <label>Test (e)</label>
+            </value>
+            <value>
+                <fullName>SA</fullName>
+                <default>false</default>
+                <label>Suspected Cerberus Fraud</label>
+            </value>
+            <value>
+                <fullName>Placeholder</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Placeholder</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

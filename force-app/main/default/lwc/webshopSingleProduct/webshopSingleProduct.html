@@ -1,0 +1,253 @@
+<template>
+    <c-webshop-toast></c-webshop-toast>
+    <template if:true={productLoaded}>
+        <div class="container">
+            <c-webshop-breadcrumbs path={path} last-element={productRecord.product.Name}></c-webshop-breadcrumbs>
+            <div class="container align-items-start mb-2"> 
+                <div class="row">
+                    <!-- Product Image -->
+                    <div class="col-12 col-md-6 mb-4" if:true={productImagesLoaded}> <!--d-flex justify-content-center align-items-start-->
+                            <div class="row">
+                                <!-- Thumbnails on the left -->
+                                <div class="col-md-2 col-12 p-0 d-flex flex-md-column flex-row order-2 order-md-1 overflow-auto custom-scroll justify-content-start">
+                                    <template for:each={imageList} for:item="productImage">
+                                        <div 
+                                        onclick={handleThumbnailClick}
+                                        data-image={productImage.url}
+                                        class={productImage.divClass}
+                                        key={productImage.url}>
+                                            <img src={productImage.url}
+                                                key={productImage.url}
+                                                /> 
+                                        </div>
+                                    </template>
+                                </div>
+                        
+                                <!-- Main highlighted image -->
+                                <div class="col-md-10 col-12 d-flex justify-content-center order-1 order-md-2"> 
+                                    <img src={highlightedImage} class="img-fluid highlight-image mb-3"/> 
+                                </div>
+                            </div>
+                        
+                    </div>
+                    <!-- End of Product Image -->
+                    
+                    <!-- Product Details Section -->
+                    <div class="col-12 col-md-6 px-0 px-md-5">
+                        <!-- Product Details -->
+                        <div class="mb-4">
+                            <!-- Brand Name (if available) -->
+                            <p if:true={hasBrand} class="link mb-2">
+                                <a data-brandid={productRecord.product.BrandId__c} onclick={handleGoToBrand}>
+                                    {productRecord.product.BrandName__c}
+                                </a>
+                            </p> 
+                            
+                            <!-- Product Name --> 
+                            <h1 class="heading-2 mb-2">{productRecord.product.Name}</h1>
+                            
+                            <!-- SKU and Item Number -->
+                            <p class="body-small gray-700 mb-3" if:true={hasSubtitle}>
+                                {productRecord.product.ProductSubtitle__c}
+                            </p>
+                            
+                            <!-- Item Number -->
+                            <p class="body-small gray-700 mb-3">
+                                {label.itemNumber}: {productRecord.product.ProductCode}
+                            </p>
+                            
+                            <!-- Contents -->
+                            <p class="d-flex justify-content-between">
+                                <span class="body-regular gray-700">{label.contents}:</span>
+                                <span class="body-medium black">{productRecord.product.PackageUnit__c}</span>
+                            </p>
+                            <!--p class="d-flex justify-content-between">
+                                <span class="body-regular gray-700">{label.availability}:</span>
+                                <span class="availability-dot" style={dotStyle}></span>
+                            </p-->
+                            <hr>
+                            
+                            <!-- Quantity Input >
+                            <div class="d-flex justify-content-between align-items-center p-0">
+                                <span class="body-regular gray-700 me-2">{label.quantity}:</span>
+                                <div class="d-inline-flex input-group-sm"> 
+                                    <div class="input-group-prepend align-items-center justify-content-center">
+                                        <lightning-combobox options={oneToHundredOptions} value={quantity} onchange={handleChangeQuantity}></lightning-combobox>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr-->
+                             
+                            <!-- Price -->
+                            <p class="body-medium gray-700" if:true={showPrices}>
+                                {label.netPrice}
+                                <span class="components-badge-h2 black"> {productRecord.price}&nbsp;{productRecord.product.CurrencyIsoCode}</span>
+                            </p>
+                        </div>
+                        <!-- End of Product Details -->
+                        
+                        <!-- Buttons -->
+                        <div class="d-flex flex-column gap-3 mb-4">
+                            <template if:false={isAvailable}>
+                                <div class="d-block bg-error-subtle rounded border border-error text-error p-2 w-100 mb-3">
+                                    <p align="center" class="m-0 body-regular"> <i class="bi bi-check-circle-fill text-error"></i> {label.noAvailability} </p>
+                                </div>
+                            </template>
+                            <template if:true={isAvailable}>
+                                <button class="d-block w-100 btn btn-primary btn-lg" onclick={handleAddToCart} if:false={addToCartClicked}>
+                                    {label.addToCart}
+                                </button>
+                                <lightning-layout if:true={addToCartClicked}>
+                                    <!--lightning-layout-item size="1">
+                                        <button class="btn btn-link p-0 text-decoration-none text-dark" onclick={handleDeleteItemFromCart}>
+                                            <i class="bi bi-trash3"></i>
+                                        </button>
+                                    </lightning-layout-item-->
+                                    <lightning-layout-item size="12">
+                                        <div class="input-group-prepend align-items-center justify-content-center combo-wrapper" style="width: 100%;">
+                                            <lightning-combobox variant="label-hidden" options={oneToHundredOptions} value="1" onchange={handleChangeQuantity}></lightning-combobox>
+                                        </div>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <template if:true={addToCartFading}>
+                                    <div class="d-block bg-success-subtle rounded border border-success text-success p-2 w-100 mb-3">
+                                        <p align="center" class="m-0"> <i class="bi bi-check-circle-fill text-success body-regular"></i> {label.addedToCart} <!--span class="text-decoration-underline body-bold cursor-pointer" onclick={handleClickViewCart}>{label.viewCart}</span--></p>
+                                    </div>
+                                </template>
+                            </template>
+                            <button class="d-block w-100 btn btn-secondary btn-lg" onclick={handleAddToWishlist} if:false={productRecord.inWishlist}>
+                                <i class="bi bi-heart"></i> {label.addToWishlist}
+                            </button>
+                            <button class="d-block w-100 btn btn-secondary btn-lg" onclick={handleRemoveFromWishlist}  if:true={productRecord.inWishlist}>
+                                <i class="bi bi-heart-fill"></i> {label.alreadyInWishlist}
+                            </button>
+                        </div>
+                        <!-- End of Buttons -->
+                        
+                        <!-- Accordion Information -->
+                        <div>
+        
+                            <div class="accordion d-flex flex-column w-100" id="accordionExample">
+                                
+                                <!-- Product Details-->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button body-bold" type="button" data-id="collapseOne" aria-expanded="true" aria-controls="collapseOne" onclick={toggleAccordion}>
+                                            {label.productDetails}
+                                        </button>
+                                    </h2>
+                                    <div data-recipient="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+                                        <div class="accordion-body body-regular">
+                                            {productRecord.product.Description}
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End of Product Details -->
+                                
+                                <!-- Ingredients Details -->
+                                <div class="accordion-item" if:true={hasIngredients}>
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button body-bold collapsed" type="button" data-id="collapseThree" aria-expanded="false" aria-controls="collapseThree" onclick={toggleAccordion}>
+                                            {label.ingredients}
+                                        </button>
+                                    </h2>
+                                    <div data-recipient="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" >
+                                        <div class="accordion-body body-regular">
+                                            <lightning-formatted-text value={productRecord.product.Ingredients__c}></lightning-formatted-text>                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End of Ingredients Details -->
+                                
+                                <!-- Allergens Details -->
+                                <div class="accordion-item" if:true={hasAllergens}>
+                                    <h2 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button body-bold collapsed" type="button" data-id="collapseFour" aria-expanded="false" aria-controls="collapseFour" onclick={toggleAccordion}>
+                                            {label.allergens}
+                                        </button>
+                                    </h2>
+                                    <div data-recipient="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" >
+                                        <div class="accordion-body body-regular">
+                                            <lightning-formatted-text value={productRecord.product.Allergens__c}></lightning-formatted-text>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End of Allergens Details -->
+                                
+                                <!-- Nutritional Value Details -->
+                                <div class="accordion-item" if:true={hasNutritionalValue}>
+                                    <h2 class="accordion-header" id="headingFive">
+                                        <button class="accordion-button body-bold collapsed" type="button" data-id="collapseFive" aria-expanded="false" aria-controls="collapseFive" onclick={toggleAccordion}>
+                                            {label.nutritionalValue}
+                                        </button>
+                                    </h2>
+                                    <div data-recipient="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" >
+                                        <div class="accordion-body body-regular">
+                                            <lightning-formatted-rich-text value={productRecord.product.NutritionalValue__c}></lightning-formatted-rich-text>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End of Allergens Details -->
+                                
+                                <!-- Shipping Details -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button body-bold collapsed" type="button" data-id="collapseTwo" aria-expanded="false" aria-controls="collapseTwo" onclick={toggleAccordion}>
+                                            {label.shippingReturns}
+                                        </button>
+                                    </h2>
+                                    <div data-recipient="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" >
+                                        <div class="accordion-body body-regular">
+                                            {label.shippingReturnsDetails}
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End of Shipping Details -->
+                                
+                            </div>
+                        </div>
+                        <!-- End of Accordion Information -->
+                    </div>
+                    <!-- End of Product Details Section -->
+                    
+                </div>
+                
+            </div> 
+        
+            <!-- Related Items Slider -->
+            <h2 class="heading-2" if:true={showSliderHeadingOne}>{label.relatedProducts}</h2>
+            <template if:true={productCodeLoaded}>
+                <c-webshop-slider 
+                    onhasdata={showHeadingOne}
+                    product-id={recordId} 
+                    product-code={productCode} 
+                    product-slider={productSlider}
+                    product-brand={brandId}
+                    show-image
+                    show-price
+                    show-wishlist
+                    show-cta>
+                </c-webshop-slider>
+            </template>
+            <!-- End of Related Items Slider -->
+            
+            <!-- Same Brand Slider -->
+            <template if:true={hasBrand}>
+                <h2 class="heading-2" if:true={showSliderHeadingTwo}>{label.moreFrom} {brandName}</h2>
+                <c-webshop-slider 
+                    onhasdata={showHeadingTwo}
+                    brand-id={brandId}
+                    show-image
+                    show-price
+                    show-wishlist
+                    show-cta>
+                </c-webshop-slider>
+            </template>
+            <!-- End of Same Brand Slider -->
+            <template if:true={hasStaticSlider}>
+                <c-webshop-static-slider slider-id={brandStaticSliderId}></c-webshop-static-slider>
+            </template>
+            
+        </div>
+    </template>
+</template>

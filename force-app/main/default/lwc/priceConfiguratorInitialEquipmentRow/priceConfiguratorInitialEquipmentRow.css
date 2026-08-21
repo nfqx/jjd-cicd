@@ -1,0 +1,9 @@
+.table-row {
+    background-color: #FAFAF9;
+    border-bottom: 2px solid rgb(221, 221, 221);
+    align-items:center;
+}
+
+.cursor-pointer {
+    cursor: pointer!important;
+}

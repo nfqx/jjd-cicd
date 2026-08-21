@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This Permission Set Group controls the access for Inside Sales agents.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Profile: Burkhof Kava Inside Sales</label>
+    <permissionSets>CPermission_Burkhof_Kava_Inside_Sales</permissionSets>
+    <permissionSets>CPermission_Inside_Sales</permissionSets>
+    <permissionSets>Field_Access_Burkhof_Kava_Inside_Sales</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

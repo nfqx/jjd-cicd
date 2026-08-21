@@ -1,0 +1,1595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>1 per cubic centimeter</masterLabel>
+        <translation>1/Kubikzentimeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>1 per cubic meter</masterLabel>
+        <translation>1/Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>1 per minute (Per minute)</masterLabel>
+        <translation>1/Minute</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>1 per square meter</masterLabel>
+        <translation>1 / Quadratmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>20-foot standard container unit (TEU)</masterLabel>
+        <translation>20-Fuß-Standardcnt.-Einheit</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>60 kg per bag</masterLabel>
+        <translation>60 kg pro Sack</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>69 kg per bag</masterLabel>
+        <translation>69kg pro Sack</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>70 kg per bag</masterLabel>
+        <translation>70 kg pro Sack</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>ADR dangerous goods exemption points</masterLabel>
+        <translation>ADR GG-Freistellungspunkte</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Acre</masterLabel>
+        <translation>Acre</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Ampere</masterLabel>
+        <translation>Ampere</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>BTU per standard cubic foot</masterLabel>
+        <translation>Btu/Standardkubikfuß</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Bag</masterLabel>
+        <translation>Tüte</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Bag 60 kg</masterLabel>
+        <translation>Sack 60 kg</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Bag 69 kg</masterLabel>
+        <translation>Sack 69 kg</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Bag 70 kg</masterLabel>
+        <translation>Sack 70 kg</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Bar</masterLabel>
+        <translation>bar</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Barrel of oil equivalent</masterLabel>
+        <translation>Barrel-Öl-Äquivalent</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Becquerel (1/second)</masterLabel>
+        <translation>Becquerel (1/Sekunde)</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Becquerel per cubic meter</masterLabel>
+        <translation>Bequerel/Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Becquerel per gram</masterLabel>
+        <translation>Becquerel pro Gramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Becquerel per kilogram</masterLabel>
+        <translation>Becquerel/Kilogramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Becquerel per square centimeter</masterLabel>
+        <translation>Becquerel/Quadratzentimeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Becquerel per square meter</masterLabel>
+        <translation>Becquerel pro Quadratmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Bottle</masterLabel>
+        <translation>Flasche</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Box / Crate</masterLabel>
+        <translation>Kasten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>British Thermal Unit</masterLabel>
+        <translation>British Thermal Unit</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>British Thermal Unit per US barrel</masterLabel>
+        <translation>British Thermal Unit/US Barrel</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>British Thermal Unit per US gallon</masterLabel>
+        <translation>British Thermal Unit/US Gallon</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>British Thermal Unit per US pound</masterLabel>
+        <translation>British Thermal Unit/US Pfund</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>British Thermal Unit per cubic foot</masterLabel>
+        <translation>British Thermal Unit/Kubikfuß</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>British Thermal Unit per month</masterLabel>
+        <translation>British Thermal Unit/Monat</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>British Thermal Unit per year</masterLabel>
+        <translation>British Thermal Unit/Jahr</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Candela</masterLabel>
+        <translation>Candela</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Canister / Jug</masterLabel>
+        <translation>Kanister</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Centiliter</masterLabel>
+        <translation>Zentiliter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Centimeter</masterLabel>
+        <translation>Zentimeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Centimeter per hour</masterLabel>
+        <translation>Zentimeter/Stunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Centimeter per second</masterLabel>
+        <translation>Zentimeter/Sekunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Consulting days</masterLabel>
+        <translation>Beratungstage</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Copies</masterLabel>
+        <translation>Kopien</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Crate / Box</masterLabel>
+        <translation>Kiste</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cubic centimeter</masterLabel>
+        <translation>Kubikzentimeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cubic centimeter per kilogram</masterLabel>
+        <translation>Kubikzentimeter pro Kilogramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cubic centimeter per second</masterLabel>
+        <translation>Kubikzentimeter/Sekunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cubic decimeter</masterLabel>
+        <translation>Kubikdezimeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cubic foot</masterLabel>
+        <translation>Kubikfuß</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cubic inch</masterLabel>
+        <translation>Kubikzoll</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cubic meter</masterLabel>
+        <translation>Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cubic meter per cubic meter</masterLabel>
+        <translation>Kubikmeter/Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cubic meter per day</masterLabel>
+        <translation>Kubikmeter/Tag</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cubic meter per hour</masterLabel>
+        <translation>Kubikmeter/Stunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cubic meter per second</masterLabel>
+        <translation>Kubikmeter/Sekunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cubic millimeter</masterLabel>
+        <translation>Kubikmillimeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cubic yard</masterLabel>
+        <translation>Kubik Yard</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Days</masterLabel>
+        <translation>Tage</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Days T</masterLabel>
+        <translation>Tage</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Decibel (A-weighted)</masterLabel>
+        <translation>Dezibel (A-Bewertung)</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Decibel (C-weighted)</masterLabel>
+        <translation>Dezibel (C-Bewertung)</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Decimeter</masterLabel>
+        <translation>Dezimeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Degree</masterLabel>
+        <translation>Grad</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Degree Celsius</masterLabel>
+        <translation>Grad Celsius</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dozen</masterLabel>
+        <translation>Dutzend</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Drum</masterLabel>
+        <translation>Trommel</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Enzyme units</masterLabel>
+        <translation>Einheiten Enzyme</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Enzyme units per milliliter</masterLabel>
+        <translation>Einheiten Enzyme / Milliliter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Evaporation rate</masterLabel>
+        <translation>Verdampfungsgeschwindigkeit</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Fahrenheit</masterLabel>
+        <translation>Fahrenheit</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Farad</masterLabel>
+        <translation>Farad</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Fibers per cubic centimeter</masterLabel>
+        <translation>Fasern/Kubikzentimeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Fibers per cubic meter</masterLabel>
+        <translation>Fasern/Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Fibers per milliliter</masterLabel>
+        <translation>Fasern/Milliliter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Fluid Ounce (US)</masterLabel>
+        <translation>Fluid Ounce US</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Foot</masterLabel>
+        <translation>Fuß</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>GRM</masterLabel>
+        <translation><!-- GRM --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gallons per hour (US)</masterLabel>
+        <translation>Gallonen pro Stunde (US)</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gallons per mile (US)</masterLabel>
+        <translation>Gallonen pro Meile (US)</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gigabecquerel</masterLabel>
+        <translation>Gigabecquerel</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gigajoule</masterLabel>
+        <translation>Gigajoule</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gigajoule per 1000 cubic meters</masterLabel>
+        <translation>Gigajoule/1000 Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gigajoule per US ton</masterLabel>
+        <translation>Gigajoule/US Tonne</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gigajoule per cubic meter</masterLabel>
+        <translation>Gigajoule/Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gigajoule per kiloliter</masterLabel>
+        <translation>Gigajoule/Kiloliter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gigajoule per metric ton</masterLabel>
+        <translation>Gigajoule/Tonne</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gigaohm</masterLabel>
+        <translation>Gigaohm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gram active ingredient</masterLabel>
+        <translation>Gramm Wirkstoff</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gram active ingredient per liter</masterLabel>
+        <translation>Gramm Wirkstoff / Liter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gram of gold</masterLabel>
+        <translation>Gramm Gold</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gram per US gallon</masterLabel>
+        <translation>Gramm/US Gallone</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gram per US ton</masterLabel>
+        <translation>Gramm/US Tonne</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gram per cubic centimeter</masterLabel>
+        <translation>Gramm/Kubikzentimeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gram per cubic meter</masterLabel>
+        <translation>Gramm/Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gram per cubic meter per kilopascal</masterLabel>
+        <translation>Gramm/Kubikmeter/Kilopascal</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gram per gigajoule</masterLabel>
+        <translation>Gramm/Gigajoule</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gram per hectogram</masterLabel>
+        <translation>Gramm/Hektogramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gram per kilogram</masterLabel>
+        <translation>Gramm/Kilogramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gram per kilometer</masterLabel>
+        <translation>Gramm/Kilometer</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gram per kilowatt-hour</masterLabel>
+        <translation>Gramm/Kilowattstunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gram per liter</masterLabel>
+        <translation>Gramm/Liter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gram per metric ton</masterLabel>
+        <translation>Gramm/Tonne</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gram per mile</masterLabel>
+        <translation>Gramm/Meile</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gram per million BTU</masterLabel>
+        <translation>Gramm/Millionen BTU</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gram per mole</masterLabel>
+        <translation>Gramm/Mol</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gram per square meter</masterLabel>
+        <translation>Gramm/Quadratmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gramm</masterLabel>
+        <translation><!-- Gramm --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gross</masterLabel>
+        <translation>Gross</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Group share / Corporate share</masterLabel>
+        <translation>Konzernanteil</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Hectare</masterLabel>
+        <translation>Hektar</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Hectoliter</masterLabel>
+        <translation>Hektoliter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Hectopascal</masterLabel>
+        <translation>Hektopascal</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Hertz (1/second)</masterLabel>
+        <translation>Hertz (1/Sekunde)</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Hours</masterLabel>
+        <translation>Stunden</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Hours H</masterLabel>
+        <translation>Stunden</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Inch</masterLabel>
+        <translation>Zoll (inch)</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Joule</masterLabel>
+        <translation>Joule</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Joule per cubic meter</masterLabel>
+        <translation>Joule/Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Joule per gram</masterLabel>
+        <translation>Joule/Gramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Joule per kilogram</masterLabel>
+        <translation>Joule/Kilogramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Joule per mole</masterLabel>
+        <translation>Joule/Mol</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Karton</masterLabel>
+        <translation><!-- Karton --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kelvin</masterLabel>
+        <translation>Kelvin</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kelvin per minute</masterLabel>
+        <translation>Kelvin/Minute</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kelvin per second</masterLabel>
+        <translation>Kelvin/Sekunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kiloampere</masterLabel>
+        <translation>Kiloampere</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilobecquerel</masterLabel>
+        <translation>Kilobecquerel</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilobecquerel per gram</masterLabel>
+        <translation>Kilobecquerel/Gramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilobecquerel per kilogram</masterLabel>
+        <translation>Kilobecquerel/Kilogramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilobecquerel per square centimeter</masterLabel>
+        <translation>Kilobecquerel/Quadratcentimet.</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram</masterLabel>
+        <translation>Kilogramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram active ingredient</masterLabel>
+        <translation>Kilogramm Wirkstoff</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram per US barrel</masterLabel>
+        <translation>Kilogramm/US Barrel</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram per US gallon</masterLabel>
+        <translation>Kilogramm/US Gallone</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram per US ton</masterLabel>
+        <translation>Kilogramm/US Tonne</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram per cubic decimeter</masterLabel>
+        <translation>Kilogramm/Kubikdezimeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram per cubic meter</masterLabel>
+        <translation>Kilogramm/Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram per gigajoule</masterLabel>
+        <translation>Kilogramm/Gigajoule</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram per hour</masterLabel>
+        <translation>Kilogramm/Stunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram per joule</masterLabel>
+        <translation>Kilogramm/Joule</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram per kilogram</masterLabel>
+        <translation>Kilogramm/Kilogramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram per kilogram mole</masterLabel>
+        <translation>Kilogramm/Kilogramm Mol</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram per kilowatt-hour</masterLabel>
+        <translation>Kilogramm/Kilowattstunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram per megawatt-hour</masterLabel>
+        <translation>Kilogramm/Megawattstunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram per meter</masterLabel>
+        <translation>Kilogramm/Meter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram per metric ton</masterLabel>
+        <translation>Kilogramm/Tonne</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram per mile</masterLabel>
+        <translation>Kilogramm/Meile</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram per million BTU</masterLabel>
+        <translation>Kilogramm/Millionen BTU</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram per minute</masterLabel>
+        <translation>Kilogramm/Minute</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram per mole</masterLabel>
+        <translation>Kilogramm/Mol</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram per second</masterLabel>
+        <translation>Kilogramm/Sekunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram per square meter</masterLabel>
+        <translation>Kilogramm/Quadratmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilogram per standard cubic foot</masterLabel>
+        <translation>Kilogramm/Standard Kubikfuß</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilohertz</masterLabel>
+        <translation>Kilohertz</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilojoule</masterLabel>
+        <translation>Kilojoule</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilojoule per gram</masterLabel>
+        <translation>Kilojoule/Gramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilojoule per kilogram</masterLabel>
+        <translation>Kilojoule/Kilogramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilojoule per mole</masterLabel>
+        <translation>Kilojoule/Mol</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilometer</masterLabel>
+        <translation>Kilometer</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilometer per hour</masterLabel>
+        <translation>Kilometer/Stunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilomole</masterLabel>
+        <translation>Kilomol</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilonewton</masterLabel>
+        <translation>Kilonewton</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kiloohm</masterLabel>
+        <translation>Kiloohm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilopascal</masterLabel>
+        <translation>Kilopascal</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kiloton</masterLabel>
+        <translation>Kilotonne</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilovolt</masterLabel>
+        <translation>Kilovolt</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilovolt-ampere</masterLabel>
+        <translation>Kilovoltampere</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilowatt</masterLabel>
+        <translation>Kilowatt</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilowatt-hour</masterLabel>
+        <translation>Kilowattstunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilowatt-hour per kilogram</masterLabel>
+        <translation>Kilowattstunde/Kilogramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kilowatt-hours per cubic meter</masterLabel>
+        <translation>Kilowatt hours/Cubic Meter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Layers per pallet</masterLabel>
+        <translation>Lagen pro Palette</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Length in meters per unit</masterLabel>
+        <translation>Länge in Metern pro Einheit</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Liter</masterLabel>
+        <translation>Liter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Liter of alcohol</masterLabel>
+        <translation>Liter Alkohol</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Liter per cubic centimeter</masterLabel>
+        <translation>Liter/Kubikzentimeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Liter per hour</masterLabel>
+        <translation>Liter pro Stunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Liter per minute</masterLabel>
+        <translation>Liter/Minute</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Liter per mole-second</masterLabel>
+        <translation>Liter/Molsekunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Liters per 100 km</masterLabel>
+        <translation>Liter pro 100 km</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lot London</masterLabel>
+        <translation>LOT London</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lot London ZLL</masterLabel>
+        <translation>Lot London ZLL</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lot New York</masterLabel>
+        <translation>LOT New York</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lot New York ZLN</masterLabel>
+        <translation>Lot New York ZLN</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>MMBtu per million standard cubic feet</masterLabel>
+        <translation>MMBtu/Mill. Standardkubikfuß</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mass parts per billion</masterLabel>
+        <translation>Massen-parts per billion</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mass parts per million</masterLabel>
+        <translation>Massen-parts per million</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mass parts per trillion</masterLabel>
+        <translation>Massen-parts per trillion</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mass per mille</masterLabel>
+        <translation>Massenpromille</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mass percent</masterLabel>
+        <translation>Massenprozent</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Megabecquerel</masterLabel>
+        <translation>Megabecquerel</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Megabecquerel per gram</masterLabel>
+        <translation>Megabecquerel/Gramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Megabecquerel per square centimeter</masterLabel>
+        <translation>Megabecquerel/Quadratzentim.</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Megahertz</masterLabel>
+        <translation>Megahertz</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Megajoule</masterLabel>
+        <translation>Megajoule</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Megajoule per cubic meter</masterLabel>
+        <translation>Megajoule/Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Megajoule per kilogram</masterLabel>
+        <translation>Megajoule/Kilogramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Meganewton</masterLabel>
+        <translation>Meganewton</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Megaohm</masterLabel>
+        <translation>Megaohm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Megapascal</masterLabel>
+        <translation>Megapascal</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Megavolt</masterLabel>
+        <translation>Megavolt</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Megavolt-ampere</masterLabel>
+        <translation>Megavoltampere</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Megawatt</masterLabel>
+        <translation>Megawatt</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Megawatt-hour</masterLabel>
+        <translation>Megawattstunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Meter</masterLabel>
+        <translation>Meter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Meter per hour</masterLabel>
+        <translation>Meter/Stunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Meter per minute</masterLabel>
+        <translation>Meter/Minute</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Meter per second</masterLabel>
+        <translation>Meter/Sekunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Meter per second squared</masterLabel>
+        <translation>Meter/Quadratsekunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Meter-bar per second</masterLabel>
+        <translation>Meterbar/Sekunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Meter-pascal per second</masterLabel>
+        <translation>Meterpascal/Sekunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Metric ton</masterLabel>
+        <translation>Tonne</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Metric ton per 1000 cubic meters</masterLabel>
+        <translation>Tonne/1000 Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Metric ton per 1000 liters</masterLabel>
+        <translation>Tonne/1000 Liter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Metric ton per British Thermal Unit</masterLabel>
+        <translation>Tonne/British Thermal Unit</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Metric ton per US barrel</masterLabel>
+        <translation>Tonne/US Barrel</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Metric ton per US ton</masterLabel>
+        <translation>Tonne/US-Tonne</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Metric ton per cubic meter</masterLabel>
+        <translation>Tonne/Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Metric ton per hectare</masterLabel>
+        <translation>Tonne pro Hektar</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Metric ton per hour</masterLabel>
+        <translation>Tonne/Stunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Metric ton per joule</masterLabel>
+        <translation>Tonne/Joule</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Metric ton per kiloton</masterLabel>
+        <translation>Tonne/Kilotonne</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Metric ton per metric ton</masterLabel>
+        <translation>Tonne/Tonne</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Metric ton per million US barrels</masterLabel>
+        <translation>Tonne/Millionen US Barrel</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Metric ton per million standard cubic feet</masterLabel>
+        <translation>Tonne/Mill. Standardkubikfuß</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Metric ton per month</masterLabel>
+        <translation>Tonne/Monat</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Metric ton per terajoule</masterLabel>
+        <translation>Tonne/Terajoule</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Metric ton per year</masterLabel>
+        <translation>Tonne/Jahr</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Microampere</masterLabel>
+        <translation>Mikroampere</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Microfarad</masterLabel>
+        <translation>Mikrofarad</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Microgram per cubic meter</masterLabel>
+        <translation>Mikrogramm/Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Microgram per gigajoule</masterLabel>
+        <translation>Mikrogramm/Gigajoule</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Microgram per liter</masterLabel>
+        <translation>Mikrogramm/Liter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Microliter</masterLabel>
+        <translation>Mikroliter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Micrometer</masterLabel>
+        <translation>Mikrometer</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Microsecond</masterLabel>
+        <translation>Mikrosekunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Microsiemens per centimeter</masterLabel>
+        <translation>Microsiemens pro Zentimeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Microsievert per hour</masterLabel>
+        <translation>Mikrosievert/Stunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mile</masterLabel>
+        <translation>Meile</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Miles per gallon (US)</masterLabel>
+        <translation>Meilen pro Gallone (US)</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Milli-inch (Mil)</masterLabel>
+        <translation>Millizoll</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Milliampere</masterLabel>
+        <translation>Milliampere</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Millibar</masterLabel>
+        <translation>Millibar</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Millifarad</masterLabel>
+        <translation>Millifarad</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Milligram</masterLabel>
+        <translation>Milligramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Milligram per 10 cubic meters</masterLabel>
+        <translation>Milligramm/10 Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Milligram per cubic meter</masterLabel>
+        <translation>Milligramm/Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Milligram per gigajoule</masterLabel>
+        <translation>Milligramm/Gigajoule</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Milligram per gram</masterLabel>
+        <translation>Milligramm/Gramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Milligram per kilogram</masterLabel>
+        <translation>Milligramm/Kilogramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Milligram per liter</masterLabel>
+        <translation>Milligramm/Liter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Milligram per metric ton</masterLabel>
+        <translation>Miligramm/Tonne</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Milligram per square centimeter</masterLabel>
+        <translation>Milligramm/Quadratzentimeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Millijoule</masterLabel>
+        <translation>Millijoule</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Milliliter</masterLabel>
+        <translation>Milliliter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Milliliter active ingredient</masterLabel>
+        <translation>Milliliter Wirkstoff</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Milliliter per cubic meter</masterLabel>
+        <translation>Milliliter/Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Millimeter</masterLabel>
+        <translation>Millimeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Millimeter of mercury (mmHg)</masterLabel>
+        <translation>Millimeter Quecksilbersäule</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Millimeter per hour</masterLabel>
+        <translation>Millimeter/Stunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Millimeter per second</masterLabel>
+        <translation>Millimeter/Sekunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Millimeter per year</masterLabel>
+        <translation>Millimeter/Jahr</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Millimole</masterLabel>
+        <translation>Millimol</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Millimole per gram</masterLabel>
+        <translation>Millimol/Gramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Millimole per kilogram</masterLabel>
+        <translation>Millimol/Kilogramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Millimole per liter</masterLabel>
+        <translation>Millimol pro Liter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Millinewton per meter</masterLabel>
+        <translation>Millinewton/Meter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Million BTU per US barrel</masterLabel>
+        <translation>Millionen BTU/US Barrel</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Million BTU per US gallon</masterLabel>
+        <translation>Millionen BTU/US-Gallone</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Million BTU per US ton</masterLabel>
+        <translation>Millionen BTU/US Tonne</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Million BTU per kilogram</masterLabel>
+        <translation>Millionen BTU/Kilogramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Million BTU per pound</masterLabel>
+        <translation>Millionen BTU/Pound</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Million BTU per standard cubic foot</masterLabel>
+        <translation>Millionen Btu/Standardkubikfuß</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Million British Thermal Units</masterLabel>
+        <translation>Millionen British Thermal Unit</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Million particles per cubic foot</masterLabel>
+        <translation>Million Teilchen/Kubikfuß</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Million particles per cubic meter</masterLabel>
+        <translation>Million Teilchen/Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Millipascal-second</masterLabel>
+        <translation>Millipascalsekunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Millisecond</masterLabel>
+        <translation>Millisekunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Millisievert per hour</masterLabel>
+        <translation>Millisievert/Stunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Millitesla</masterLabel>
+        <translation>Millitesla</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Millivolt</masterLabel>
+        <translation>Millivolt</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Milliwatt</masterLabel>
+        <translation>Milliwatt</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Minutes</masterLabel>
+        <translation>Minuten</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mole</masterLabel>
+        <translation>Mol</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mole per cubic meter</masterLabel>
+        <translation>Mol pro Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mole per kilogram</masterLabel>
+        <translation>Mol/Kilogramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mole per liter</masterLabel>
+        <translation>Mol pro Liter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Months</masterLabel>
+        <translation>Monate</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Nanoampere</masterLabel>
+        <translation>Nanoampere</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Nanofarad</masterLabel>
+        <translation>Nanofarad</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Nanogram per cubic meter</masterLabel>
+        <translation>Nanogramm/Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Nanogram per gigajoule</masterLabel>
+        <translation>Nanogramm/Gigajoule</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Nanogram per metric ton</masterLabel>
+        <translation>Nanogramm/Tonne</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Nanogram per square centimeter-hour</masterLabel>
+        <translation>Nanogramm/Quadratzentim. Std.</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Nanometer</masterLabel>
+        <translation>Nanometer</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Nanosecond</masterLabel>
+        <translation>Nanosekunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Newton</masterLabel>
+        <translation>Newton</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Newton per meter</masterLabel>
+        <translation>Newton/Meter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Newton per square millimeter</masterLabel>
+        <translation>Newton/Quadratmillimeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Number of persons</masterLabel>
+        <translation>Anzahl Personen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Ohm</masterLabel>
+        <translation>Ohm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>One</masterLabel>
+        <translation>Eins</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Ounce</masterLabel>
+        <translation>Unze</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pack</masterLabel>
+        <translation>Pack</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pair</masterLabel>
+        <translation>Paar</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pallet</masterLabel>
+        <translation>Palette</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Parking space / Storage space</masterLabel>
+        <translation>Stellplatz</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Particles per cubic centimeter</masterLabel>
+        <translation>Teilchen/Kubikzentimeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Parts per billion</masterLabel>
+        <translation>Parts per billion</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Parts per million</masterLabel>
+        <translation>Parts per million</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Parts per trillion</masterLabel>
+        <translation>Parts per trillion</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pascal</masterLabel>
+        <translation>Pascal</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pascal-second</masterLabel>
+        <translation>Pascalsekunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Per mille (Parts per thousand)</masterLabel>
+        <translation>Promille</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Percent</masterLabel>
+        <translation>Prozent</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Permeation rate</masterLabel>
+        <translation>Permeationsrate</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Permeation rate SI</masterLabel>
+        <translation>Permeationsrate SI</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Picofarad</masterLabel>
+        <translation>Pikofarad</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Picogram per cubic meter</masterLabel>
+        <translation>Pikogramm/Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Picosecond</masterLabel>
+        <translation>Pikosekunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pieces per storage space</masterLabel>
+        <translation>ST p STELLPLATZ</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pint (US liquid)</masterLabel>
+        <translation>Pint, U.S. liquid</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Points</masterLabel>
+        <translation>Punkte</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pound</masterLabel>
+        <translation>Pfund</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pound per megawatt-hour</masterLabel>
+        <translation>Pfund/Megawattstunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pound per month</masterLabel>
+        <translation>Pfund (Pound)/Monat</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pound per square inch (PSI)</masterLabel>
+        <translation>Pfund/Quadratzoll</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pound per year</masterLabel>
+        <translation>Pfund (Pound)/Jahr</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Power unit / Service unit</masterLabel>
+        <translation>Leistungseinheit</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Quart (US liquid)</masterLabel>
+        <translation>Quart, U.S. liquid</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Reciprocal kilogram</masterLabel>
+        <translation>Reziprokes Kilogramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Reciprocal milligram</masterLabel>
+        <translation>Reziprokes Milligramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Recyclable material / Valuable material</masterLabel>
+        <translation>Wertmaterial</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Roll</masterLabel>
+        <translation>Rolle</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Seconds</masterLabel>
+        <translation>Sekunden</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Siemens per meter</masterLabel>
+        <translation>Siemens pro Meter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sievert per hour</masterLabel>
+        <translation>Sievert/Stunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sievert per second</masterLabel>
+        <translation>Sievert/Sekunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Specific electrical resistance (Resistivity)</masterLabel>
+        <translation>Spez. elek. Widerstand</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Specific electrical resistance (Resistivity) OCM</masterLabel>
+        <translation>Spez. elek. Widerstand OCM</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Specific heat capacity</masterLabel>
+        <translation>Spez. Wärmekapazität</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Spores per cubic meter</masterLabel>
+        <translation>Sporen/Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Square centimeter</masterLabel>
+        <translation>Quadratzentimeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Square foot</masterLabel>
+        <translation>Quadratfuß</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Square inch</masterLabel>
+        <translation>Quadratzoll</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Square kilometer</masterLabel>
+        <translation>Quadratkilometer</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Square meter</masterLabel>
+        <translation>Quadratmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Square meter per cubic centimeter</masterLabel>
+        <translation>Quadratmeter/Kubikzentimeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Square meter per cubic meter</masterLabel>
+        <translation>Quadratmeter/Kubikmeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Square meter per gram</masterLabel>
+        <translation>Quadratmeter/Gramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Square meter per kilogram</masterLabel>
+        <translation>Quadratmeter/Kilogramm</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Square meter per second</masterLabel>
+        <translation>Quadratmeter/Sekunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Square mile</masterLabel>
+        <translation>Quadratmeile</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Square millimeter</masterLabel>
+        <translation>Quadratmillimeter</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Square millimeter per second</masterLabel>
+        <translation>Quadratmillimeter/Sekunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Square yard</masterLabel>
+        <translation>Quadrat Yard</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Standard cubic feet per million US barrels</masterLabel>
+        <translation>StandKubikfuß/Mill. US Barrel</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Standard cubic foot</masterLabel>
+        <translation>Standardkubikfuß</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Standard cubic foot per hour</masterLabel>
+        <translation>Standardkubikfuß/Stunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Standard cubic foot per year</masterLabel>
+        <translation>Standardkubikfuß/Jahr</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Stück</masterLabel>
+        <translation><!-- Stück --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Terabecquerel</masterLabel>
+        <translation>Terabecquerel</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Tesla</masterLabel>
+        <translation>Tesla</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Therm (EC)</masterLabel>
+        <translation>Therm (EC)</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Thermal conductivity</masterLabel>
+        <translation>Wärmeleitfähigkeit</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Thousand</masterLabel>
+        <translation>Tausend</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>US gallon</masterLabel>
+        <translation>US-Gallone</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>US pound per 100,000 hp-hours</masterLabel>
+        <translation>US Pfund/100.000 Hp-Std.</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>US pound per 1000 US barrels</masterLabel>
+        <translation>US Pfund/1000 US Barrel</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>US pound per 1000 cubic feet</masterLabel>
+        <translation>US Pfund/1000 Kubikfuß</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>US pound per 1000 horsepower-hours</masterLabel>
+        <translation>US Pfund/1000 Horsepower-Std.</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>US pound per British Thermal Unit</masterLabel>
+        <translation>US Pfund/British Thermal Unit</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>US pound per US gallon</masterLabel>
+        <translation>US-Pfund/US-Gallone</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>US pound per US pound mole</masterLabel>
+        <translation>US Pfund/US Pfund Mol</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>US pound per US ton</masterLabel>
+        <translation>US Pfund/US Tonne</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>US pound per horsepower-hour</masterLabel>
+        <translation>US Pfund/Horsepower-Stunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>US pound per million BTU</masterLabel>
+        <translation>US Pfund/Millionen BTU</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>US pound per million US gallons</masterLabel>
+        <translation>US Pfund/Millionen US Gallonen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>US pound per million cubic feet</masterLabel>
+        <translation>US Pfund/Million Kubikfuß</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>US pound per standard cubic foot</masterLabel>
+        <translation>US Pfund/Standard Kubikfuß</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>US pound per thousand US gallons</masterLabel>
+        <translation>US Pfund/Tausend US Gallonen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>US ton (Short ton)</masterLabel>
+        <translation>US-Tonne</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>US ton per US gallon</masterLabel>
+        <translation>US Tonne/US Gallone</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>US ton per US ton</masterLabel>
+        <translation>US Tonne/US Tonne</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>US ton per hour</masterLabel>
+        <translation>US-Tonne/Stunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>US ton per month</masterLabel>
+        <translation>US-Tonne/Monat</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>US ton per year</masterLabel>
+        <translation>US-Tonne/Jahr</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Volt</masterLabel>
+        <translation>Volt</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Volt-ampere</masterLabel>
+        <translation>Voltampere</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Volume parts per billion</masterLabel>
+        <translation>Volumen-parts per billion</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Volume parts per million</masterLabel>
+        <translation>Volumen-parts per million</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Volume parts per trillion</masterLabel>
+        <translation>Volumen-parts per trillion</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Volume per mille</masterLabel>
+        <translation>Volumenpromille</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Volume percent</masterLabel>
+        <translation>Volumenprozent</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Watt</masterLabel>
+        <translation>Watt</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Watt per square meter per parts per billion</masterLabel>
+        <translation>Watt/Quadratm./Parts p. billon</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Weeks</masterLabel>
+        <translation>Wochen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Yard</masterLabel>
+        <translation>Yard</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Years (annum)</masterLabel>
+        <translation>Jahre (annum)</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>kg active ingredient per kg</masterLabel>
+        <translation>kg Wirkstoff / kg</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

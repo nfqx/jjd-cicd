@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Payment Blocking Reason --></label>
+    <name>PaymentBlockingReason__c</name>
+    <picklistValues>
+        <masterLabel>Blocked by Agent</masterLabel>
+        <translation>Gesperrt durch den Sachbearbeiter</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Blocked by dunning procedure</masterLabel>
+        <translation>Gesperrt durch Mahnverfahren</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Blocked due to outstanding payment</masterLabel>
+        <translation>Gesperrt aufgrund von Zahlungsrückstand</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Blocked for all payment methods</masterLabel>
+        <translation>Gesperrt für alle Zahlungsarten</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Blocked for manual payment</masterLabel>
+        <translation>Gesperrt für manuelle Zahlung</translation>
+    </picklistValues>
+</CustomFieldTranslation>

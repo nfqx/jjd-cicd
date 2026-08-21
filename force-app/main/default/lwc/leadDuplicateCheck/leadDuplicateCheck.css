@@ -1,0 +1,34 @@
+.unselectedButton{
+    --sds-c-button-brand-color-background: grey;
+}
+
+.selectedButton{
+    --sds-c-button-brand-color-background: green;
+}
+
+.buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.buttons lightning-button {
+    flex: 1;
+}
+
+.modal-body{
+    position: relative;
+    min-height: 200px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}

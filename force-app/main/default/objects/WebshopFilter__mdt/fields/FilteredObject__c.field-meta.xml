@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FilteredObject__c</fullName>
+    <description>By default Product2</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Filtered Object</label>
+    <referenceTo>EntityDefinition</referenceTo>
+    <relationshipLabel>WebshopFilters</relationshipLabel>
+    <relationshipName>WebshopFilters</relationshipName>
+    <required>false</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

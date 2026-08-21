@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OwnSamplingRightState__c</fullName>
+    <description>Sampling, own state — goods-flow right. Departments never hold an own value: sampling is inherited from the parent, the field stays blank on their sheets.</description>
+    <label>Sampling Right (Own)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>RightState</valueSetName>
+    </valueSet>
+</CustomField>

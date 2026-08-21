@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This Permission Set Group controls the access for Outside Sales agents.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Profile: J. Hornig GmbH Outside Sales</label>
+    <permissionSets>CPermission_J_Hornig_GmbH_Outside_Sales</permissionSets>
+    <permissionSets>CPermission_Outside_Sales</permissionSets>
+    <permissionSets>Field_Access_J_Hornig_GmbH_Outside_Sales</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>
