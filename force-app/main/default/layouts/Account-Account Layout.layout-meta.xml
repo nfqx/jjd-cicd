@@ -795,7 +795,6 @@
         <fields>Name</fields>
         <fields>ManagedBy</fields>
         <fields>Target</fields>
-        <fields>Access</fields>
         <relatedList>DelegatedAccounts</relatedList>
     </relatedLists>
     <relatedLists>

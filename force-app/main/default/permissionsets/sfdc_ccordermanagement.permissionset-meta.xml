@@ -558,11 +558,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.bofc__BOFC_ACC_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Account.differentBillingAddress__c</field>
         <readable>true</readable>
     </fieldPermissions>

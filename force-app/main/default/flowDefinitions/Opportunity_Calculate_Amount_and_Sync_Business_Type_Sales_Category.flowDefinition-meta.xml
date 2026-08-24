@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
-    <activeVersionNumber>1</activeVersionNumber>
-    <description>Calculates the Amount field and transfers SalesCategory and TypeOfBusiness from the Account to the Opportunity.
-Jira Ticket: JJDSF-407</description>
-    <masterLabel>Opportunity - Calculate Amount and Sync Business Type/Sales Category</masterLabel>
-</FlowDefinition>
