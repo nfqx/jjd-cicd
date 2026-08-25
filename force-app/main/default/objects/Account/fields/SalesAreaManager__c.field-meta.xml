@@ -4,7 +4,7 @@
     <deleteConstraint>SetNull</deleteConstraint>
     <label>Sales Area Manager (GL)</label>
     <referenceTo>User</referenceTo>
-    <relationshipName>Accounts2</relationshipName>
+    <relationshipName>SalesAreaManagedBy</relationshipName>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
