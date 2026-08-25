@@ -7,9 +7,9 @@ implements Database.Batchable<SObject>, Database.AllowsCallouts {
     public Database.QueryLocator start(Database.BatchableContext bc){
 
         return Database.getQueryLocator([
-            SELECT Id, CustomerReferenceId__c
+            SELECT Id, ERPCustomerNumber__c
             FROM Account
-            WHERE CustomerReferenceId__c != NULL
+            WHERE ERPCustomerNumber__c != NULL
         ]);
     }
 
@@ -24,7 +24,7 @@ implements Database.Batchable<SObject>, Database.AllowsCallouts {
         Set<String> refs = new Set<String>();
 
         for(Account a : scope){
-            refs.add(a.CustomerReferenceId__c);
+            refs.add(a.ERPCustomerNumber__c);
         }
 
         if(refs.isEmpty()) return;
@@ -32,8 +32,8 @@ implements Database.Batchable<SObject>, Database.AllowsCallouts {
         /* Query old accounts */
 
         String soql =
-            'SELECT Id, CustomerReferenceID__c ' +
-            'FROM Account WHERE CustomerReferenceID__c IN (\'' +
+            'SELECT Id, AccountNumber ' +
+            'FROM Account WHERE AccountNumber IN (\'' +
             String.join(new List<String>(refs), '\',\'') + '\')';
 
         HttpRequest req = new HttpRequest();
@@ -63,7 +63,7 @@ implements Database.Batchable<SObject>, Database.AllowsCallouts {
             Map<String,Object> row = (Map<String,Object>)rowPre;
 
             oldAccountIdByRef.put(
-                (String)row.get('CustomerReferenceID__c'),
+                (String)row.get('AccountNumber'),
                 (String)row.get('Id')
             );
         }
@@ -108,11 +108,10 @@ implements Database.Batchable<SObject>, Database.AllowsCallouts {
         Map<String,Account> newAccountByRef = new Map<String,Account>();
 
         for(Account a : scope){
-            newAccountByRef.put(a.CustomerReferenceId__c, a);
+            newAccountByRef.put(a.ERPCustomerNumber__c, a);
         }
 
         List<Contact> upserts = new List<Contact>();
-        System.debug(sourceContacts);
         for(Object rowPre : sourceContacts){
 
             Map<String,Object> row = (Map<String,Object>)rowPre;

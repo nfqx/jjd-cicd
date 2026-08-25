@@ -7,7 +7,7 @@ implements Database.Batchable<SObject>, Database.AllowsCallouts {
     public Database.QueryLocator start(Database.BatchableContext bc){
 
         return Database.getQueryLocator([
-            SELECT Id, OldId__c, FirstName, LastName, Account.CustomerReferenceId__c
+            SELECT Id, OldId__c, FirstName, LastName, Account.ERPCustomerNumber__c
             FROM Contact
             WHERE OldId__c != NULL
         ]);
@@ -125,16 +125,9 @@ implements Database.Batchable<SObject>, Database.AllowsCallouts {
             String username =
                 ((String)row.get('Username')) + '.jjd2.0dev';
 
-            String alias;
+            String alias = con.Account.ERPCustomerNumber__c;
 
-            if(con.Account.CustomerReferenceId__c != null){
-
-                alias =
-                    con.Account.CustomerReferenceId__c
-                    .replace('001-','');
-
-            }else{
-
+            if(alias == null){
                 String first =
                     con.FirstName != null
                     ? con.FirstName.substring(0,1)

@@ -8,9 +8,9 @@ implements Database.Batchable<SObject>, Database.AllowsCallouts {
     public Database.QueryLocator start(Database.BatchableContext bc) {
 
         return Database.getQueryLocator([
-            SELECT Id, CustomerReferenceId__c
+            SELECT Id, ERPCustomerNumber__c
             FROM Account
-            WHERE CustomerReferenceId__c != NULL
+            WHERE ERPCustomerNumber__c != NULL
         ]);
     }
 
@@ -27,7 +27,7 @@ implements Database.Batchable<SObject>, Database.AllowsCallouts {
         Set<String> customerRefs = new Set<String>();
 
         for(Account a : scope){
-            customerRefs.add(a.CustomerReferenceId__c);
+            customerRefs.add(a.ERPCustomerNumber__c);
         }
 
         if(customerRefs.isEmpty()){
@@ -39,9 +39,9 @@ implements Database.Batchable<SObject>, Database.AllowsCallouts {
         ------------------------------------------------------- */
 
         String soql =
-            'SELECT Id, CustomerReferenceId__c ' +
+            'SELECT Id, AccountNumber ' +
             'FROM Account ' +
-            'WHERE CustomerReferenceId__c IN (\'' +
+            'WHERE AccountNumber IN (\'' +
             String.join(new List<String>(customerRefs), '\',\'') +
             '\')';
 
@@ -78,7 +78,7 @@ implements Database.Batchable<SObject>, Database.AllowsCallouts {
         Map<String,Account> newAccountByRef = new Map<String,Account>();
 
         for(Account a : scope){
-            newAccountByRef.put(a.CustomerReferenceId__c, a);
+            newAccountByRef.put(a.ERPCustomerNumber__c, a);
         }
 
         Map<String,String> oldAccountIdByRef = new Map<String,String>();
@@ -88,7 +88,7 @@ implements Database.Batchable<SObject>, Database.AllowsCallouts {
             Map<String,Object> row = (Map<String,Object>)rowPre;
 
             oldAccountIdByRef.put(
-                (String)row.get('CustomerReferenceId__c'),
+                (String)row.get('AccountNumber'),
                 (String)row.get('Id')
             );
         }
@@ -104,7 +104,7 @@ implements Database.Batchable<SObject>, Database.AllowsCallouts {
         }
 
         String productSoql =
-            'SELECT Id, Product.ProductCode, Policy.Account__r.CustomerReferenceId__c ' +
+            'SELECT Id, Product.ProductCode, Policy.Account__r.AccountNumber ' +
             'FROM CommerceEntitlementProduct ' +
             'WHERE Policy.Account__c IN (\'' +
             String.join(new List<String>(oldAccountIds), '\',\'') +
@@ -236,6 +236,19 @@ implements Database.Batchable<SObject>, Database.AllowsCallouts {
             }
         }
 
+        List<CommerceEntitlementBuyerGroup> buyerGroupEntitlements = new List<CommerceEntitlementBuyerGroup>();
+
+        for(BuyerGroup bg :
+            [SELECT Id, Account__c
+             FROM BuyerGroup
+             WHERE Account__c IN :scope]){
+            if(policyByAccount.containsKey(bg.Account__c)){
+                buyerGroupEntitlements.add(new CommerceEntitlementBuyerGroup(BuyerGroupId = bg.Id, PolicyId = policyByAccount.get(bg.Account__c).Id));
+            }
+        }
+
+        Database.insert(buyerGroupEntitlements, false);
+
         /* -------------------------------------------------------
            9. Build entitlement inserts
         ------------------------------------------------------- */
@@ -257,7 +270,7 @@ implements Database.Batchable<SObject>, Database.AllowsCallouts {
             if(prod == null || policyAcc == null) continue;
 
             String productCode = (String)prod.get('ProductCode');
-            String ref = (String)policyAcc.get('CustomerReferenceId__c');
+            String ref = (String)policyAcc.get('AccountNumber');
 
             Account newAcc = newAccountByRef.get(ref);
             if(newAcc == null) continue;

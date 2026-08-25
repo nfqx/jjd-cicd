@@ -4,7 +4,7 @@
     <deleteConstraint>SetNull</deleteConstraint>
     <label>Sales Manager (VL)</label>
     <referenceTo>User</referenceTo>
-    <relationshipName>SalesManagedBy</relationshipName>
+    <relationshipName>Accounts1</relationshipName>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

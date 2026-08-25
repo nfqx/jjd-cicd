@@ -703,7 +703,8 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Contact.DoNotCall</field>
+        <field>Contact.DoNotCall</fiel
+        d>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

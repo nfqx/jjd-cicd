@@ -103,7 +103,9 @@ public with sharing class ReturnOrderSyncService {
                    ShipTo__r.ERPCustomerNumber__c,
                    BillTo__r.ERPCustomerNumber__c,
                    Payer__r.ERPCustomerNumber__c,
-                   (SELECT Product2.ProductCode, QuantityExpected, QuantityUnitOfMeasure, CurrencyIsoCode
+                   (SELECT Product2.ProductCode, Product2.BaseProductCode__c,
+                           Product2.QuantityUnitOfMeasure,
+                           QuantityExpected, QuantityUnitOfMeasure, CurrencyIsoCode
                     FROM ReturnOrderLineItems)
             FROM ReturnOrder
             WHERE Id IN :returnOrderIds
@@ -123,9 +125,9 @@ public with sharing class ReturnOrderSyncService {
         if (ro.ReturnOrderLineItems != null) {
             for (ReturnOrderLineItem item : ro.ReturnOrderLineItems) {
                 lineItems.add(new Map<String, Object>{
-                    'material'             => item.Product2 != null ? item.Product2.ProductCode : null,
+                    'material'             => item.Product2 == null ? null : (String.isNotBlank(item.Product2.BaseProductCode__c) ? item.Product2.BaseProductCode__c : item.Product2.ProductCode),
                     'requestedQuantity'    => item.QuantityExpected,
-                    'requestedQuantityUnit'=> item.QuantityUnitOfMeasure,
+                    'requestedQuantityUnit'=> item.Product2 != null && String.isNotBlank(item.Product2.QuantityUnitOfMeasure) ? item.Product2.QuantityUnitOfMeasure : item.QuantityUnitOfMeasure,
                     'transactionCurrency'  => item.CurrencyIsoCode
                 });
             }

@@ -7,7 +7,6 @@ public class MigrationProductImagesBatch implements Database.Batchable<SObject>,
         'Tile Image' => 'Kachelbild',
         'Attachments' => 'Anhänge'
     };
-    private List<ElectronicMediaObject> emoList = new List<ElectronicMediaObject>();
 
     public Database.QueryLocator start(Database.BatchableContext bc) {
 
@@ -37,6 +36,7 @@ public class MigrationProductImagesBatch implements Database.Batchable<SObject>,
 
 
     private void migrateProductImages(Product2 targetProduct) {
+        List<ElectronicMediaObject> emoList = new List<ElectronicMediaObject>();
         String productCode = targetProduct.OldProductNumber__c;
         /*
          * Find source product media
@@ -76,19 +76,19 @@ public class MigrationProductImagesBatch implements Database.Batchable<SObject>,
                 /*
                 * Create CMS content in target org
                 */
-                this.emoList.add(new ElectronicMediaObject(targetProduct.Id, null, sortOrder, sourceElectronicMediaGroupName, image));
+                emoList.add(new ElectronicMediaObject(targetProduct.Id, null, sortOrder, sourceElectronicMediaGroupName, image));
                 
             }
         }
         List<String> managedContentIDs = new List<String>();
-        for(ElectronicMediaObject emo : this.emoList){
+        for(ElectronicMediaObject emo : emoList){
             emo.managedContentId = uploadManagedContent(emo.sourceImage);
             managedContentIDs.add(emo.managedContentId);
         }        
         ConnectApi.ManagedContentPublishInput publishInput = new ConnectApi.ManagedContentPublishInput();
         publishInput.contentIds = managedContentIDs;
         ConnectApi.ManagedContent.publish(publishInput);
-        createProductMedia(this.emoList);
+        createProductMedia(emoList);
     }
 
 

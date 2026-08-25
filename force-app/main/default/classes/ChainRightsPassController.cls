@@ -95,9 +95,13 @@ public with sharing class ChainRightsPassController {
     @AuraEnabled(cacheable=true)
     public static ItemHolder retrieveData(Id accountId, Boolean onlyActive){
         Set<String> expansionTree = new Set<String>{};
-        Account currentAcc = Database.query('SELECT ' + String.join(ACCOUNT_SELECT_FIELDS, ',') + ' FROM Account WHERE Id = : accountId');
+        Set<String> selectFields = ACCOUNT_SELECT_FIELDS;
+        for(String rightMapKey : RIGHT_FIELD_MAPPING.keySet()){
+            selectFields.addAll(RIGHT_FIELD_MAPPING.get(rightMapKey).values());
+        }
+        Account currentAcc = Database.query('SELECT ' + String.join(selectFields, ',') + ' FROM Account WHERE Id = : accountId');
         Id headId = currentAcc.ConditionChainHead__c == null ? accountId : currentAcc.ConditionChainHead__c;
-        Account headAcc = Database.query('SELECT ' + String.join(ACCOUNT_SELECT_FIELDS, ',') + ' FROM Account WHERE Id = : headId');
+        Account headAcc = Database.query('SELECT ' + String.join(selectFields, ',') + ' FROM Account WHERE Id = : headId');
         Set<Id> lowestAccIds = new Set<Id>{headId};
 
 
@@ -108,7 +112,7 @@ public with sharing class ChainRightsPassController {
         Set<Id> allAccountsSoFar = lowestAccIds;
         List<Item> topAccIdToItemList = new List<Item>();
 
-        List<Account> nextLevelChildren = Database.query('SELECT ' + String.join(ACCOUNT_SELECT_FIELDS, ',') + ' FROM Account WHERE ConditionChainHead__c = : headId AND ConditionChainParent__c IN : lowestAccIds');
+        List<Account> nextLevelChildren = Database.query('SELECT ' + String.join(selectFields, ',') + ' FROM Account WHERE ConditionChainHead__c = : headId AND ConditionChainParent__c IN : lowestAccIds');
         while(!nextLevelChildren.isEmpty() && highestLevel < MAX_HIGHEST_LEVEL){
             highestLevel++;
             lowestAccIds = new Set<Id>();
@@ -122,7 +126,7 @@ public with sharing class ChainRightsPassController {
             }
             parentToImmediateChildrenMap.put(highestLevel, innerMap);
             Set<Id> accIdToItemMapKeys = accIdToItemMap.keySet();
-            nextLevelChildren = Database.query('SELECT ' + String.join(ACCOUNT_SELECT_FIELDS, ',') + ' FROM Account WHERE ConditionChainHead__c = : headId AND ConditionChainParent__c IN : lowestAccIds AND Id NOT IN : accIdToItemMapKeys');
+            nextLevelChildren = Database.query('SELECT ' + String.join(selectFields, ',') + ' FROM Account WHERE ConditionChainHead__c = : headId AND ConditionChainParent__c IN : lowestAccIds AND Id NOT IN : accIdToItemMapKeys');
         }
 
         Id idToExpand = accountId;
