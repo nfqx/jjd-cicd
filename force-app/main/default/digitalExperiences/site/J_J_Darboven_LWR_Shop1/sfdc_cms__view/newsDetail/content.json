@@ -56,7 +56,6 @@
       "type" : "component"
     },
     "dataProviders" : [ ],
-    "themeLayoutType" : "Inner",
     "viewType" : "managed-content-sfdc_cms__news"
   },
   "urlName" : "news-detail"

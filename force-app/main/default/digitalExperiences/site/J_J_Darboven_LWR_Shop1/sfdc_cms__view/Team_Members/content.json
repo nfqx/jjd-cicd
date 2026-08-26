@@ -64,7 +64,6 @@
       "type" : "component"
     },
     "dataProviders" : [ ],
-    "themeLayoutType" : "Inner",
     "viewType" : "custom-team-members"
   },
   "urlName" : "my-team-members"

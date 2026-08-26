@@ -64,7 +64,6 @@
       "type" : "component"
     },
     "dataProviders" : [ ],
-    "themeLayoutType" : "Inner",
     "viewType" : "custom-my-account-settings"
   },
   "urlName" : "my-account-settings"

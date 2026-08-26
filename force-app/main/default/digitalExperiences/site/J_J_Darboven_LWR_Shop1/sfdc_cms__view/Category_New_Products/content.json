@@ -64,7 +64,6 @@
       "type" : "component"
     },
     "dataProviders" : [ ],
-    "themeLayoutType" : "Inner",
     "viewType" : "custom-category-new-products"
   },
   "urlName" : "category-new-products"

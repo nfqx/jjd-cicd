@@ -56,7 +56,6 @@
       "type" : "component"
     },
     "dataProviders" : [ ],
-    "themeLayoutType" : "Inner",
     "viewType" : "custom-register-internal"
   },
   "urlName" : "register-internal"

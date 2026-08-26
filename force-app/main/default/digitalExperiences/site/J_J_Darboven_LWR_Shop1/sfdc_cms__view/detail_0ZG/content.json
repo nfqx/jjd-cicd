@@ -72,7 +72,6 @@
         "categoryId" : "{!Route.recordId}"
       }
     } ],
-    "themeLayoutType" : "Inner",
     "viewType" : "detail-0ZG"
   },
   "urlName" : "category"

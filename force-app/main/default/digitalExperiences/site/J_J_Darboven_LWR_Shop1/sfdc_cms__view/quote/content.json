@@ -354,7 +354,6 @@
         "recordId" : "{!Route.quoteId}"
       }
     } ],
-    "themeLayoutType" : "Inner",
     "viewType" : "quote"
   },
   "urlName" : "quote"
