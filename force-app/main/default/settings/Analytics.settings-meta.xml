@@ -4,7 +4,7 @@
     <analyticsAdoptionMetadata>false</analyticsAdoptionMetadata>
     <autoInstallApps>false</autoInstallApps>
     <canAccessAnalyticsViaAPI>false</canAccessAnalyticsViaAPI>
-    <canAnnotateDashboards>false</canAnnotateDashboards>
+    <canAnnotateDashboards>false</canAnnotateDashboards>AccountScreenCreateExternalManagedAccount
     <canEnableSavedView>false</canEnableSavedView>
     <canExploreDataConversationally>false</canExploreDataConversationally>
     <!--canShareAppsWithCommunities>false</canShareAppsWithCommunities-->
