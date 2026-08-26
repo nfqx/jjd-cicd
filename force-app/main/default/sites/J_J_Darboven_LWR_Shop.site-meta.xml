@@ -24,8 +24,8 @@
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
     <selfRegPage>SiteRegister</selfRegPage>
     <serverIsDown>Logo404</serverIsDown>
-    <siteAdmin>darboven@nfq-x.com.jjd</siteAdmin>
-    <siteGuestRecordDefaultOwner>igoec@darboven.com.jjd</siteGuestRecordDefaultOwner>
+    <siteAdmin>darboven@nfq-x.com.jjd.uat</siteAdmin>
+    <siteGuestRecordDefaultOwner>darboven@nfq-x.com.jjd.uat</siteGuestRecordDefaultOwner>
     <siteType>ChatterNetwork</siteType>
     <urlPathPrefix>lwrshopvforcesite</urlPathPrefix>
 </CustomSite>

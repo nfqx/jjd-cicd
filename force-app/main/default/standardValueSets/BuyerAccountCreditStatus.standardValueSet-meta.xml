@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Good Credit</fullName>
+        <default>true</default>
+        <label>Good Credit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Delinquent</fullName>
+        <default>false</default>
+        <label>Delinquent</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Bad Credit</fullName>
+        <default>false</default>
+        <label>Bad Credit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>On Hold</fullName>
+        <default>false</default>
+        <label>On Hold</label>
+    </standardValue>
+</StandardValueSet>

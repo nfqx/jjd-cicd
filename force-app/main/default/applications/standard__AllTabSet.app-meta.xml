@@ -108,14 +108,12 @@
     <tabs>standard-DuplicateRecordSet</tabs>
     <tabs>standard-Solution</tabs>
     <tabs>PriceConfigurationSet__c</tabs>
-    <tabs>bofc__BOFC_Home</tabs>
     <tabs>standard-AuthorizationFormDataUse</tabs>
     <tabs>standard-BusinessAlertStatus</tabs>
     <tabs>standard-ProcessException</tabs>
     <tabs>BankInfo__c</tabs>
     <tabs>standard-CommSubscriptionChannelType</tabs>
     <tabs>standard-report</tabs>
-    <tabs>bofc__Bulk_Object_Field_Creator</tabs>
     <tabs>standard-InventoryReservation</tabs>
     <tabs>standard-CollaborationGroup</tabs>
     <tabs>standard-EngagementAttendee</tabs>
