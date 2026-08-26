@@ -48,7 +48,6 @@
     </relatedLists>
     <relatedLists>
         <fields>WebStore</fields>
-        <fields>BuyerGroup</fields>
         <relatedList>WebStoreBuyerGroups</relatedList>
     </relatedLists>
     <relatedLists>
