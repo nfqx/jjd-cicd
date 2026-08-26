@@ -69,6 +69,7 @@
         "categoryId" : "{!Route.recordId}"
       }
     } ],
+    "themeLayoutType" : "Inner",
     "viewType" : "global-search"
   },
   "urlName" : "search"

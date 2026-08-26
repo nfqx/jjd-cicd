@@ -98,6 +98,7 @@
       "type" : "component"
     },
     "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
     "viewType" : "terms-and-conditions"
   },
   "urlName" : "terms-and-conditions"

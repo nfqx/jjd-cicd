@@ -317,6 +317,7 @@
       "sfdcExpressionKey" : "Cart",
       "attributes" : { }
     } ],
+    "themeLayoutType" : "Inner",
     "viewType" : "current-cart"
   },
   "urlName" : "cart"

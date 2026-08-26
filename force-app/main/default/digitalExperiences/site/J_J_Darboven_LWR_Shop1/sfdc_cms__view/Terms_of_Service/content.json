@@ -79,6 +79,7 @@
       "type" : "component"
     },
     "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
     "viewType" : "custom-terms-of-service"
   },
   "urlName" : "terms-of-service"

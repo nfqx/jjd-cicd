@@ -78,6 +78,7 @@
         "recordId" : "{!recordId}"
       }
     } ],
+    "themeLayoutType" : "Inner",
     "viewType" : "detail-01t"
   },
   "urlName" : "product"

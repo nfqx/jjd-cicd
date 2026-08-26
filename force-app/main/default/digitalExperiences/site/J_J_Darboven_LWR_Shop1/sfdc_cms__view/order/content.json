@@ -67,6 +67,7 @@
         "recordId" : "{!Route.orderNumber}"
       }
     } ],
+    "themeLayoutType" : "Inner",
     "viewType" : "order"
   },
   "urlName" : "order"

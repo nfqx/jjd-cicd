@@ -98,6 +98,7 @@
       "type" : "component"
     },
     "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
     "viewType" : "privacy-policy"
   },
   "urlName" : "privacy-policy-1"

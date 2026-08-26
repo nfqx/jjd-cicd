@@ -60,6 +60,7 @@
       "type" : "component"
     },
     "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
     "viewType" : "custom-my-invoices"
   },
   "urlName" : "my-invoices"

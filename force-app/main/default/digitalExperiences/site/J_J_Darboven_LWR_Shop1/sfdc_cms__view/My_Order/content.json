@@ -64,6 +64,7 @@
       "type" : "component"
     },
     "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
     "viewType" : "custom-my-order"
   },
   "urlName" : "my-order"

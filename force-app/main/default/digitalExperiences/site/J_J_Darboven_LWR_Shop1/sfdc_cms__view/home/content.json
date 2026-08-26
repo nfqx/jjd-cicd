@@ -90,6 +90,7 @@
       "type" : "component"
     },
     "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
     "viewType" : "home"
   },
   "urlName" : "home"

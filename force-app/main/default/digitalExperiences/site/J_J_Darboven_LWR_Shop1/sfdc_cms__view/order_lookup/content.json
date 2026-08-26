@@ -119,6 +119,7 @@
         "recordId" : "{!Route.recordId}"
       }
     } ],
+    "themeLayoutType" : "Inner",
     "viewType" : "order-lookup"
   },
   "urlName" : "order-lookup"

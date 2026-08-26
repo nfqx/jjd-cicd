@@ -53,6 +53,7 @@
       "type" : "component"
     },
     "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
     "viewType" : "list-WebshopBrand__c"
   },
   "urlName" : "brands-list"

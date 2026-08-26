@@ -60,6 +60,7 @@
       "type" : "component"
     },
     "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
     "viewType" : "custom-upload-order"
   },
   "urlName" : "upload-order"

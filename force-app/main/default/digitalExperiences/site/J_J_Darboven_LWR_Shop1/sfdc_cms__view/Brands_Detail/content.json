@@ -97,6 +97,7 @@
       "type" : "component"
     },
     "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
     "viewType" : "detail-WebshopBrand__c"
   },
   "urlName" : "brands-detail"
