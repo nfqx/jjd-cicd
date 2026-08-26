@@ -7,7 +7,7 @@
     <canAnnotateDashboards>false</canAnnotateDashboards>
     <canEnableSavedView>false</canEnableSavedView>
     <canExploreDataConversationally>false</canExploreDataConversationally>
-    <canShareAppsWithCommunities>false</canShareAppsWithCommunities>
+    <!--canShareAppsWithCommunities>false</canShareAppsWithCommunities-->
     <canViewThumbnailAssets>false</canViewThumbnailAssets>
     <enableAmazonRedshiftOutputConnector>false</enableAmazonRedshiftOutputConnector>
     <enableAnalyticsSharingEnable>true</enableAnalyticsSharingEnable>

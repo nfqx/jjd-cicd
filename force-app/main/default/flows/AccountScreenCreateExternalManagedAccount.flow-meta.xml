@@ -67,7 +67,7 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>AccessManageUsers</field>
+            <field>Manager__c</field>
             <value>
                 <elementReference>ManageUsers</elementReference>
             </value>
