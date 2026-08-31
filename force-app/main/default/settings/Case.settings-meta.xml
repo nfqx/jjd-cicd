@@ -39,7 +39,6 @@
             <casePriority>Medium</casePriority>
             <createTask>false</createTask>
             <emailAddress>dbeb-anrufbeantworter@darboven.com</emailAddress>
-            <emailServicesAddress>dbeb-anrufbeantworter@473bubauar4w1yxlbl1r9mk8k026d4hmlb88drmwlbp7p761k.9o-jrjj8uaf.deu14s.case.sandbox.salesforce.com</emailServicesAddress>
             <isPermsetControlled>false</isPermsetControlled>
             <isVerified>true</isVerified>
             <newEntityRecordType>Case.ZKS_Cases</newEntityRecordType>
@@ -54,7 +53,6 @@
             <casePriority>Medium</casePriority>
             <createTask>false</createTask>
             <emailAddress>dbeb-anrufbeantworter-ueberlauf@darboven.com</emailAddress>
-            <emailServicesAddress>dbeb-anrufbeantworter-ueberlauf@30kkb7jf4cnd0suvnpar5h85vbswmreuqsalrh17xkezolb44r.9o-jrjj8uaf.deu14s.case.sandbox.salesforce.com</emailServicesAddress>
             <isPermsetControlled>false</isPermsetControlled>
             <isVerified>true</isVerified>
             <newEntityRecordType>Case.ZKS_Cases</newEntityRecordType>
@@ -67,7 +65,6 @@
             <casePriority>Medium</casePriority>
             <createTask>false</createTask>
             <emailAddress>info@darboven.com</emailAddress>
-            <emailServicesAddress>info@v-161r7iiw2smasm8r59fg9l74erkm3ivrdcfogidedgvuy16o3d.9o-jrjj8uaf.deu14s.case.sandbox.salesforce.com</emailServicesAddress>
             <isPermsetControlled>false</isPermsetControlled>
             <isVerified>true</isVerified>
             <newEntityRecordType>Case.ZKS_Cases</newEntityRecordType>
@@ -80,7 +77,6 @@
             <casePriority>Medium</casePriority>
             <createTask>false</createTask>
             <emailAddress>kundenservice@darboven.com</emailAddress>
-            <emailServicesAddress>kundenservice@yh8lt25wlvgtbkbwm3nkj7dlrcrj93nwjke17eiau3jvrsylv.9o-jrjj8uaf.deu14s.case.sandbox.salesforce.com</emailServicesAddress>
             <isPermsetControlled>false</isPermsetControlled>
             <isVerified>true</isVerified>
             <newEntityRecordType>Case.ZKS_Cases</newEntityRecordType>
@@ -95,7 +91,6 @@
             <casePriority>Medium</casePriority>
             <createTask>false</createTask>
             <emailAddress>bestellungen@darboven.com</emailAddress>
-            <emailServicesAddress>bestellungen@yquydgyonha8y5tfp6ohcd881mpwqp52im468650auer33uow.9o-jrjj8uaf.deu14s.case.sandbox.salesforce.com</emailServicesAddress>
             <isPermsetControlled>false</isPermsetControlled>
             <isVerified>true</isVerified>
             <newEntityRecordType>Case.ZKS_Cases</newEntityRecordType>
@@ -110,7 +105,6 @@
             <casePriority>Medium</casePriority>
             <createTask>false</createTask>
             <emailAddress>stammdaten@darboven.com</emailAddress>
-            <emailServicesAddress>stammdaten@h-qwz68rdj981zp661c214bhrh6gmiyz4gawknxn6gxnr29zk01.9o-jrjj8uaf.deu14s.case.sandbox.salesforce.com</emailServicesAddress>
             <isPermsetControlled>false</isPermsetControlled>
             <isVerified>false</isVerified>
             <newEntityRecordType>Case.ZKS_Cases</newEntityRecordType>
@@ -123,7 +117,6 @@
             <casePriority>Medium</casePriority>
             <createTask>false</createTask>
             <emailAddress>jjd-sued@darboven.com</emailAddress>
-            <emailServicesAddress>jjd-sued@7-2zxz6zp5ufd2y1yi2o2tcvkgaw0o3b49b9bsqlycaojiwpl17s.9o-jrjj8uaf.deu14s.case.sandbox.salesforce.com</emailServicesAddress>
             <isPermsetControlled>false</isPermsetControlled>
             <isVerified>true</isVerified>
             <newEntityRecordType>Case.ZKS_Cases</newEntityRecordType>

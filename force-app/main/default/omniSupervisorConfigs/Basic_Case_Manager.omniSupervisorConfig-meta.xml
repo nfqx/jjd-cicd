@@ -148,7 +148,7 @@
         <tabType>AgentforceSDR</tabType>
     </omniSupervisorConfigTab>
     <omniSupervisorConfigUser>
-        <user>darboven@nfq-x.com.jjd.dev</user>
+        <user>darboven@nfq-x.com.jjd.uat</user>
     </omniSupervisorConfigUser>
     <skillVisibility>AllSkills</skillVisibility>
 </OmniSupervisorConfig>
