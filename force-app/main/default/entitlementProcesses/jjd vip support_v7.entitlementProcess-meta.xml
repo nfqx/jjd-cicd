@@ -174,7 +174,7 @@
         <minutesCustomClass>EndOfBusinessDayMilestoneCalculator</minutesCustomClass>
         <timeTriggers>
             <actions>
-                <name>Case.Escalated</name>
+                <name>Escalated</name>
                 <type>FieldUpdate</type>
             </actions>
             <actions>
@@ -202,7 +202,7 @@
         <minutesToComplete>960</minutesToComplete>
         <timeTriggers>
             <actions>
-                <name>Case.Escalated</name>
+                <name>Escalated</name>
                 <type>FieldUpdate</type>
             </actions>
             <actions>
