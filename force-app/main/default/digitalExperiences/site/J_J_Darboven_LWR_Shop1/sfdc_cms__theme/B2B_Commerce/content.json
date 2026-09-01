@@ -6,24 +6,19 @@
     "definitionName" : "b2b-commerce",
     "layouts" : [ {
       "layoutId" : "externalLayout",
-      "layoutType" : "External",
-      "themeLayoutType" : "External"
+      "layoutType" : "External"
     }, {
       "layoutId" : "checkoutLayout",
-      "layoutType" : "Checkout",
-      "themeLayoutType" : "Checkout"
+      "layoutType" : "Checkout"
     }, {
       "layoutId" : "snaThemeLayout",
-      "layoutType" : "ServiceNotAvailable",
-      "themeLayoutType" : "ServiceNotAvailable"
+      "layoutType" : "ServiceNotAvailable"
     }, {
       "layoutId" : "myAccountLayout",
-      "layoutType" : "MyAccount",
-      "themeLayoutType" : "MyAccount"
+      "layoutType" : "MyAccount"
     }, {
       "layoutId" : "commerceLayout",
-      "layoutType" : "Inner",
-      "themeLayoutType" : "Inner"
+      "layoutType" : "Inner"
     } ]
   },
   "urlName" : "b2b-commerce"
