@@ -341,7 +341,7 @@ private without sharing class WebshopDataControllerTest {
         insert slider;
         CommerceEntitlementProduct entitlementProduct = createTestEntitlementProduct(testAccount.Id, product.Id);  // Assuming Product2 Id
         Test.startTest();
-            WebshopDataController.WebshopProductSuperiorWrapper categoryData = WebshopDataController.getSliderDataByCategory(cat.Id, testAccount.Id, 0, '', null, '', false, product.Id, false);
+            WebshopDataController.WebshopProductSuperiorWrapper categoryData = WebshopDataController.getSliderDataByCategory(cat.Id, testAccount.Id, 0, '', null, '', false, product.Id, null, false);
         Test.stopTest();
     }
 
