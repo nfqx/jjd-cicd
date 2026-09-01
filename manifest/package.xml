@@ -5322,8 +5322,6 @@
         <members>AccountScreenCreateExternalManagedAccount</members>
         <members>AccountScreenDisplayAndEditOpeningHours</members>
         <members>Agent_Work_Update_Case_Status</members>
-        <members>Cancel_All</members>
-        <members>Cancel_Item</members>
         <members>CaseScreenCreateNewLeadFromCase</members>
         <members>CaseScreenParentAccountOrderRelatedRemarks</members>
         <members>CaseSubflowFetchUnratedCasesforMassEdit</members>
@@ -5409,8 +5407,6 @@
         <members>AccountScreenCreateExternalManagedAccount</members>
         <members>AccountScreenDisplayAndEditOpeningHours</members>
         <members>Agent_Work_Update_Case_Status</members>
-        <members>Cancel_All</members>
-        <members>Cancel_Item</members>
         <members>CaseScreenCreateNewLeadFromCase</members>
         <members>CaseScreenParentAccountOrderRelatedRemarks</members>
         <members>CaseSubflowFetchUnratedCasesforMassEdit</members>
@@ -7561,8 +7557,6 @@
         <members>AccountScreenCreateExternalManagedAccount</members>
         <members>AccountScreenDisplayAndEditOpeningHours</members>
         <members>Agent_Work_Update_Case_Status</members>
-        <members>Cancel_All</members>
-        <members>Cancel_Item</members>
         <members>CaseScreenCreateNewLeadFromCase</members>
         <members>CaseScreenParentAccountOrderRelatedRemarks</members>
         <members>CaseSubflowFetchUnratedCasesforMassEdit</members>

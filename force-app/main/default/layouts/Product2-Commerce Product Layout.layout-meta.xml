@@ -175,12 +175,6 @@
         <relatedList>RelatedChildProduct</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>FeaturedProduct</fields>
-        <fields>FeatrProdtRelaType</fields>
-        <fields>Sequence</fields>
-        <relatedList>FeaturedProducts</relatedList>
-    </relatedLists>
-    <relatedLists>
         <fields>ProductCategory</fields>
         <fields>IsPrimaryCategory</fields>
         <relatedList>RelatedProductCategories</relatedList>
