@@ -1,5 +1,5 @@
 {
-  "apiName" : "list_0Q0",
+  "apiName" : "quote_summary",
   "type" : "sfdc_cms__view",
   "path" : "views"
 }
