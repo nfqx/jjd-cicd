@@ -341,7 +341,7 @@ private without sharing class WebshopDataControllerTest {
         insert slider;
         CommerceEntitlementProduct entitlementProduct = createTestEntitlementProduct(testAccount.Id, product.Id);  // Assuming Product2 Id
         Test.startTest();
-            WebshopDataController.WebshopProductSuperiorWrapper categoryData = WebshopDataController.getSliderDataByCategory(cat.Id, testAccount.Id, 0, '', null, '', false, product.Id, '');
+            WebshopDataController.WebshopProductSuperiorWrapper categoryData = WebshopDataController.getSliderDataByCategory(cat.Id, testAccount.Id, 0, '', null, '', false, product.Id, false);
         Test.stopTest();
     }
 
@@ -402,7 +402,7 @@ private without sharing class WebshopDataControllerTest {
         insert slider;
         CommerceEntitlementProduct entitlementProduct = createTestEntitlementProduct(testAccount.Id, product.Id);  // Assuming Product2 Id
         Test.startTest();
-            WebshopDataController.WebshopProductSuperiorWrapper myProductsData = WebshopDataController.getSliderDataByMyProducts(testAccount.Id, 0, '', null, '', false);
+            WebshopDataController.WebshopProductSuperiorWrapper myProductsData = WebshopDataController.getSliderDataByMyProducts(testAccount.Id, 0, '', null, '', false, false);
         Test.stopTest();
     }
 
@@ -609,10 +609,10 @@ private without sharing class WebshopDataControllerTest {
     static void testGetAccountSwitcherOptions() {
         Account account = [SELECT Id FROM Account LIMIT 1];
         Test.startTest();
-            List<WebshopDataController.OptionWrapper> options = WebshopDataController.getAccountSwitcherOptions(account.Id);
+            WebshopDataController.OptionSuperiorWrapper options = WebshopDataController.getAccountSwitcherOptions(account.Id);
         Test.stopTest();
-        System.assertNotEquals(null, options, 'Options should not be null.');
-        System.assert(!options.isEmpty(), 'Options should not be empty.');
+        System.assertNotEquals(null, options.accountOptions, 'Options should not be null.');
+        System.assert(!options.accountOptions.isEmpty(), 'Options should not be empty.');
     }
 
     @isTest
@@ -712,7 +712,7 @@ private without sharing class WebshopDataControllerTest {
     @isTest
     static void testSetPersonal() {
         Test.startTest();
-            Boolean result = WebshopDataController.setPersonal('UpdatedFirstName', 'UpdatedLastName', 'updatedemail@example.com', '1234567890');
+            Boolean result = WebshopDataController.setPersonal('UpdatedFirstName', 'UpdatedLastName', 'updatedemail@example.com', '123456789', '1234567890');
         Test.stopTest();
 
         System.assertEquals(true, result, 'Personal details should be updated successfully');
@@ -941,13 +941,13 @@ private without sharing class WebshopDataControllerTest {
         WebCart cart = [SELECT Id FROM WebCart LIMIT 1];
         Account testAccount = [SELECT Id FROM Account LIMIT 1];
         User u = [SELECT Id FROM User WHERE IsActive = TRUE AND ContactId != NULL AND Profile.name = 'Customer Community Plus User' ORDER BY CreatedDate DESC LIMIT 1];
-        Boolean result;
+        List<Product2> result;
         Test.startTest();
             System.runAs(u){
                 result = WebshopDataController.reorder(testOrder.Id, testAccount.Id, cart.Id);
             }
         Test.stopTest();
-        System.assertEquals(true, result, 'Reorder should return true for valid input');
+        System.assertNotEquals(null, result, 'Reorder should return not null for valid input');
     }
 
     @isTest
