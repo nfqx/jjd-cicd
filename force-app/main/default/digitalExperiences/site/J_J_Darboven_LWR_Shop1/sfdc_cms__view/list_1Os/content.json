@@ -300,7 +300,7 @@
     },
     "dataProviders" : [ ],
     "themeLayoutType" : "MyAccount",
-    "viewType" : "order-summary-list"
+    "viewType" : "list-1Os"
   },
   "urlName" : "order-summary-list"
 }
