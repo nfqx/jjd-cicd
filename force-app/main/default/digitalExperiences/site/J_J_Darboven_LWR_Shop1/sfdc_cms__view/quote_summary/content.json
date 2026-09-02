@@ -31,7 +31,7 @@
                 "layoutDirectionTablet" : "column",
                 "maxContentWidth" : "",
                 "sectionColumnGutterWidth" : "",
-                "sectionConfig" : "{\"UUID\":\"f927af64-3a9b-4549-816b-3b0ca0ab4461\",\"columns\":[{\"UUID\":\"de4a6f0a-8e2e-400d-9fdf-a08032ccced5\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                "sectionConfig" : "{\"UUID\":\"2c89b4eb-e2ce-4cce-a294-19fc97a8cc41\",\"columns\":[{\"UUID\":\"3f0c6b6e-3380-4393-ac1a-2c3058a41457\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
                 "sectionMinHeight" : "",
                 "sectionVerticalAlign" : "flex-start"
               },
@@ -46,16 +46,16 @@
                     "textSize" : "small"
                   },
                   "definition" : "commerce_builder:breadcrumbs",
-                  "id" : "24b4c7ca-46f1-40cc-a558-30f755a54322",
+                  "id" : "805952da-a95e-4112-994c-3fa8c7ebf640",
                   "type" : "component"
                 } ],
-                "id" : "de4a6f0a-8e2e-400d-9fdf-a08032ccced5",
+                "id" : "3f0c6b6e-3380-4393-ac1a-2c3058a41457",
                 "name" : "col1",
                 "title" : "Column 1",
                 "type" : "region"
               } ],
               "definition" : "community_layout:section",
-              "id" : "f927af64-3a9b-4549-816b-3b0ca0ab4461",
+              "id" : "2c89b4eb-e2ce-4cce-a294-19fc97a8cc41",
               "type" : "component"
             }, {
               "attributes" : {
@@ -75,7 +75,7 @@
                 "layoutDirectionTablet" : "column",
                 "maxContentWidth" : "",
                 "sectionColumnGutterWidth" : "",
-                "sectionConfig" : "{\"UUID\":\"540b89b2-34e6-461b-b015-396fb37685d9\",\"columns\":[{\"UUID\":\"107da9df-38b1-4cea-b97c-f801e4cb6036\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":null},{\"UUID\":\"a4033d57-4b0b-4915-8eed-66d0bcbe27f6\",\"columnName\":\"Column 2 - Renegotiate\",\"columnKey\":\"col2a\",\"columnWidth\":\"3\",\"seedComponents\":null},{\"UUID\":\"b723abef-8dab-45e2-8680-9dac29c3330d\",\"columnName\":\"Column 2 - Accept & Buy / Duplicate to Cart\",\"columnKey\":\"col2b\",\"columnWidth\":\"3\",\"seedComponents\":null}]}",
+                "sectionConfig" : "{\"UUID\":\"dc7d1cdb-6c1e-4aa6-bd98-d1679920f246\",\"columns\":[{\"UUID\":\"87cb6276-f289-4429-a404-e373556f4414\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":null},{\"UUID\":\"73df1c63-a803-4240-9d62-b3f2330f3ac3\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":null}]}",
                 "sectionMinHeight" : "",
                 "sectionVerticalAlign" : "flex-start"
               },
@@ -93,90 +93,21 @@
                     "textDisplayInfo" : "{\"textStyle\": \"heading-large\", \"headingTag\": \"h1\"}"
                   },
                   "definition" : "dxp_base:textBlock",
-                  "id" : "b2f3b57e-e895-4fe3-869a-92e116b09a1f",
+                  "id" : "239eab0e-1d29-4249-b701-7889e6f02221",
                   "type" : "component"
                 } ],
-                "id" : "107da9df-38b1-4cea-b97c-f801e4cb6036",
+                "id" : "87cb6276-f289-4429-a404-e373556f4414",
                 "name" : "col1",
                 "title" : "Column 1",
                 "type" : "region"
               }, {
-                "children" : [ {
-                  "attributes" : {
-                    "buttonText" : "Renegotiate or Decline",
-                    "declineButtonLabel" : "Decline",
-                    "hasLineItems" : "{!QuoteDetail.hasLineItems}",
-                    "headerText" : "Renegotiate or decline quote?",
-                    "notesPlaceholder" : "Describe the modifications you need or your reason for declining...",
-                    "quoteId" : "{!QuoteDetail.id}",
-                    "quoteStatus" : "{!QuoteDetail.status}",
-                    "renegotiateButtonLabel" : "Renegotiate",
-                    "size" : "standard",
-                    "subheadingText" : "Request a revised quote for a better offer, or decline this quote.",
-                    "variant" : "secondary",
-                    "width" : "stretch"
-                  },
-                  "definition" : "commerce_builder:quoteDeclineRenegotiateButton",
-                  "id" : "bed1e09e-cdc5-4b9c-a6e6-267b8a8ee3e3",
-                  "type" : "component"
-                } ],
-                "id" : "a4033d57-4b0b-4915-8eed-66d0bcbe27f6",
-                "name" : "col2a",
-                "title" : "col2a",
-                "type" : "region"
-              }, {
-                "children" : [ {
-                  "attributes" : {
-                    "acceptAndBuyButtonText" : "Accept & Buy",
-                    "acceptAndBuyModalCancelButtonLabel" : "Cancel",
-                    "acceptAndBuyModalDescriptionLabel" : "Accepting this quote locks the prices and takes you to the default cart to complete the purchase.",
-                    "acceptAndBuyModalInfoText" : "This action removes any promotions applied to items that are already in the default cart.",
-                    "acceptAndBuyModalSendRequestButtonLabel" : "Accept & Buy",
-                    "acceptAndBuyModalTitleText" : "Accept quote?",
-                    "buyButtonText" : "Buy",
-                    "buyModalCancelButtonLabel" : "Cancel",
-                    "buyModalDescriptionLabel" : "You'll be taken to your cart to finalize the purchase.",
-                    "buyModalInfoText" : "Proceeding removes any promotions applied to items already in your cart.",
-                    "buyModalSendRequestButtonLabel" : "Buy",
-                    "buyModalTitleText" : "Complete purchase?",
-                    "hasLineItems" : "{!QuoteDetail.hasLineItems}",
-                    "orderId" : "{!QuoteDetail.orderId}",
-                    "quoteId" : "{!QuoteDetail.id}",
-                    "quoteStatus" : "{!QuoteDetail.status}",
-                    "size" : "standard",
-                    "variant" : "primary",
-                    "width" : "stretch"
-                  },
-                  "definition" : "commerce_builder:quoteAcceptAndBuyButton",
-                  "id" : "1df7a950-50c5-43ec-bd83-b0339b7a99e8",
-                  "type" : "component"
-                }, {
-                  "attributes" : {
-                    "buttonText" : "Duplicate to Cart",
-                    "cancelButtonLabel" : "Cancel",
-                    "descriptionLabel" : "Copying this quote adds its products to your default cart.",
-                    "hasLineItems" : "{!QuoteDetail.hasLineItems}",
-                    "infoText" : "This action adds products to your cart at current store prices, not quote prices.",
-                    "orderId" : "{!QuoteDetail.orderId}",
-                    "quoteId" : "{!QuoteDetail.id}",
-                    "quoteStatus" : "{!QuoteDetail.status}",
-                    "sendRequestButtonLabel" : "Copy to Cart",
-                    "size" : "standard",
-                    "titleText" : "Copy items from your quote to cart?",
-                    "variant" : "tertiary",
-                    "width" : "stretch"
-                  },
-                  "definition" : "commerce_builder:quoteDuplicateToCartButton",
-                  "id" : "acaed913-03d1-4e81-a99d-6df0f4ba299e",
-                  "type" : "component"
-                } ],
-                "id" : "b723abef-8dab-45e2-8680-9dac29c3330d",
-                "name" : "col2b",
-                "title" : "col2b",
+                "id" : "73df1c63-a803-4240-9d62-b3f2330f3ac3",
+                "name" : "col2",
+                "title" : "Column 2",
                 "type" : "region"
               } ],
               "definition" : "community_layout:section",
-              "id" : "540b89b2-34e6-461b-b015-396fb37685d9",
+              "id" : "dc7d1cdb-6c1e-4aa6-bd98-d1679920f246",
               "type" : "component"
             }, {
               "attributes" : {
@@ -196,7 +127,7 @@
                 "layoutDirectionTablet" : "column",
                 "maxContentWidth" : "",
                 "sectionColumnGutterWidth" : "",
-                "sectionConfig" : "{\"UUID\":\"c7d2de57-e334-4d96-a21a-1510e4455462\",\"columns\":[{\"UUID\":\"f74e9f4e-d676-4af0-a935-2aa38775a9da\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                "sectionConfig" : "{\"UUID\":\"f3b24c97-81b1-4542-be45-5896953ff525\",\"columns\":[{\"UUID\":\"7cdeea07-4657-4e08-86d7-68989101a8c4\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
                 "sectionMinHeight" : "",
                 "sectionVerticalAlign" : "flex-start"
               },
@@ -209,16 +140,16 @@
                     "width" : 100
                   },
                   "definition" : "dxp_base:horizontalLine",
-                  "id" : "e0cd35be-e2a0-4041-acbe-8f9818cd4e16",
+                  "id" : "98f1cd51-0d6a-4c7b-b940-86c05a61b29d",
                   "type" : "component"
                 } ],
-                "id" : "f74e9f4e-d676-4af0-a935-2aa38775a9da",
+                "id" : "7cdeea07-4657-4e08-86d7-68989101a8c4",
                 "name" : "col1",
                 "title" : "Column 1",
                 "type" : "region"
               } ],
               "definition" : "community_layout:section",
-              "id" : "c7d2de57-e334-4d96-a21a-1510e4455462",
+              "id" : "f3b24c97-81b1-4542-be45-5896953ff525",
               "type" : "component"
             }, {
               "attributes" : {
@@ -238,7 +169,7 @@
                 "layoutDirectionTablet" : "column",
                 "maxContentWidth" : "",
                 "sectionColumnGutterWidth" : "3rem",
-                "sectionConfig" : "{\"UUID\":\"ec771e06-37fd-461f-9ad6-9cbb6feb7fd2\",\"columns\":[{\"UUID\":\"15ab7f45-ee36-47fa-a123-09f243147db7\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"8\",\"seedComponents\":null},{\"UUID\":\"f6e04c76-9381-4040-b028-72b8863c6084\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"4\",\"seedComponents\":null}]}",
+                "sectionConfig" : "{\"UUID\":\"8c2c64c2-227e-4839-a575-98541793e476\",\"columns\":[{\"UUID\":\"7ee3ad9d-930d-4f7a-90e6-eecba2af96f4\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"8\",\"seedComponents\":null},{\"UUID\":\"1f8df445-edd3-4a25-a9a3-187cf4c30a8f\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"4\",\"seedComponents\":null}]}",
                 "sectionMinHeight" : "",
                 "sectionVerticalAlign" : "flex-start"
               },
@@ -259,7 +190,7 @@
                     "trackerCardBorderRadius" : 5
                   },
                   "definition" : "commerce_builder:quoteStatusTracker",
-                  "id" : "490312a4-ddb2-4bfd-a084-bb8cc5393aff",
+                  "id" : "75563c2a-8439-4395-abf7-8e938c2204ac",
                   "type" : "component"
                 }, {
                   "attributes" : {
@@ -267,18 +198,14 @@
                     "imageAspectRatio" : "1",
                     "imageSize" : "contain",
                     "items" : "{!QuoteDetail.LineItems}",
-                    "nextPageToken" : "{!QuoteDetail.nextPageToken}",
-                    "pageSize" : 10,
+                    "pageSize" : 100,
                     "productDetailsPillBackgroundColor" : "rgb(217, 223, 231)",
                     "productDetailsPillBorderColor" : "rgb(217, 223, 231)",
                     "productDetailsPillBorderRadius" : 8,
                     "productDetailsPillFontSize" : "small",
-                    "productUnavailableMessage" : "(Not Available)",
                     "removeProductLinks" : false,
                     "showProductImage" : true,
-                    "showViewBundleDetail" : false,
-                    "totalPrice" : "{!QuoteDetail.fields.TotalPrice.text}",
-                    "viewBundleDetailLabel" : "View Details"
+                    "totalPrice" : "{!QuoteDetail.fields.TotalPrice.text}"
                   },
                   "children" : [ {
                     "children" : [ {
@@ -288,16 +215,16 @@
                         "linkAssistiveText" : "",
                         "paddingHorizontal" : "none",
                         "paddingVertical" : "none",
-                        "text" : "Items in Your Quote",
+                        "text" : "Items in Your Quote ({!QuoteDetail.fields.LineItemCount.text})",
                         "textAlign" : "left",
                         "textDecoration" : "{\"bold\": true}",
                         "textDisplayInfo" : "{\"textStyle\": \"heading-small\", \"headingTag\": \"h4\"}"
                       },
                       "definition" : "dxp_base:textBlock",
-                      "id" : "4a69766d-b93b-4db2-9dbe-83c11b1a6533",
+                      "id" : "3ef9d5c8-2672-48d5-b106-924f535b6d98",
                       "type" : "component"
                     } ],
-                    "id" : "ac115bd5-c67d-4f99-b4d0-efc83ca44bc5",
+                    "id" : "0bfa3460-68b4-44b2-bdf2-f29bf9d6a4f1",
                     "name" : "header",
                     "title" : "header",
                     "type" : "region"
@@ -315,19 +242,19 @@
                         "textDisplayInfo" : "{\"textStyle\": \"body-regular\", \"headingTag\": \"p\"}"
                       },
                       "definition" : "dxp_base:textBlock",
-                      "id" : "9a592875-0450-431b-9803-436df8a948ad",
+                      "id" : "ea56fef4-4331-4ec6-979e-9ab10016ea46",
                       "type" : "component"
                     } ],
-                    "id" : "d53e29e4-b0fd-4a20-9193-c832d6350226",
+                    "id" : "a8030208-b681-4213-83d3-2637b621e4c9",
                     "name" : "showMore",
                     "title" : "showMore",
                     "type" : "region"
                   } ],
                   "definition" : "commerce_builder:quoteConfirmationItems",
-                  "id" : "0b936e74-b60f-48a6-a316-25596debde38",
+                  "id" : "eec6f522-6fb7-4ef7-b641-d95915b00b74",
                   "type" : "component"
                 } ],
-                "id" : "15ab7f45-ee36-47fa-a123-09f243147db7",
+                "id" : "7ee3ad9d-930d-4f7a-90e6-eecba2af96f4",
                 "name" : "col1",
                 "title" : "Column 1",
                 "type" : "region"
@@ -338,28 +265,28 @@
                     "notesTitle" : "Notes Exchange"
                   },
                   "definition" : "commerce_builder:notesThread",
-                  "id" : "3a7193be-609b-4101-ae09-3bb7d2f076e3",
+                  "id" : "d7688549-5e1a-4ebf-a20b-84d60ba113b7",
                   "type" : "component"
                 } ],
-                "id" : "f6e04c76-9381-4040-b028-72b8863c6084",
+                "id" : "1f8df445-edd3-4a25-a9a3-187cf4c30a8f",
                 "name" : "col2",
                 "title" : "Column 2",
                 "type" : "region"
               } ],
               "definition" : "community_layout:section",
-              "id" : "ec771e06-37fd-461f-9ad6-9cbb6feb7fd2",
+              "id" : "8c2c64c2-227e-4839-a575-98541793e476",
               "type" : "component"
             } ],
-            "id" : "374649ad-b922-48e8-8f26-4a95d87e5e35",
+            "id" : "6bf6e53c-6997-47bf-88a6-1a0bc6930c55",
             "name" : "content",
             "title" : "content",
             "type" : "region"
           } ],
           "definition" : "commerce_builder:quoteSummaryContentLayout",
-          "id" : "de7f9628-af2a-45bf-bd82-7e61ad14c19a",
+          "id" : "87a36e13-dc11-461a-86fa-7eb738045bf8",
           "type" : "component"
         } ],
-        "id" : "9a909f29-a21b-43ca-ae40-c1df968cd77a",
+        "id" : "f661cd38-35f6-492f-825c-2c1c4abaadee",
         "name" : "content",
         "title" : "Content",
         "type" : "region"
@@ -369,16 +296,16 @@
             "recordId" : "{!recordId}"
           },
           "definition" : "community_builder:seoAssistant",
-          "id" : "fa32ae04-4f6a-4589-bc28-5f27b051b35d",
+          "id" : "cffe9f6d-503d-4d32-9ab5-7e6df1817e06",
           "type" : "component"
         } ],
-        "id" : "5a9afdd0-1034-45e0-a0d3-3815689101a6",
+        "id" : "5f26c1dc-86d5-4821-9eaf-e85cb2fbd079",
         "name" : "sfdcHiddenRegion",
         "title" : "sfdcHiddenRegion",
         "type" : "region"
       } ],
       "definition" : "community_layout:sldsFlexibleLayout",
-      "id" : "7b8857ad-b8de-4b39-983a-531dee4801f3",
+      "id" : "0d247f8c-a591-4071-82ce-85c0101d4c21",
       "type" : "component"
     },
     "dataProviders" : [ {

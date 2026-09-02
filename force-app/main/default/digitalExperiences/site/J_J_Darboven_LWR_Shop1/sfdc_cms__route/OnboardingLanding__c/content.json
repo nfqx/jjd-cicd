@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Onboarding Landing",
+  "contentBody" : {
+    "activeViewId" : "Onboarding_Landing",
+    "configurationTags" : [ ],
+    "pageAccess" : "Public",
+    "routeType" : "custom-onboarding-landing",
+    "urlPrefix" : "onboarding-landing"
+  },
+  "urlName" : "onboarding-landing"
+}

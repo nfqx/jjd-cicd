@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Onboarding 2026",
+  "contentBody" : {
+    "activeViewId" : "Onboarding_2026",
+    "configurationTags" : [ ],
+    "pageAccess" : "Public",
+    "routeType" : "custom-onboarding-2026",
+    "urlPrefix" : "onboarding-2026"
+  },
+  "urlName" : "onboarding-2026"
+}

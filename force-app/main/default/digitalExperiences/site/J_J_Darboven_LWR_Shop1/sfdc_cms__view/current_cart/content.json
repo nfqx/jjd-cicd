@@ -247,6 +247,11 @@
               "definition" : "c:webshopCartProductSummary",
               "id" : "3b96a187-a8b7-4d6b-af88-35037dfbd5dd",
               "type" : "component"
+            }, {
+              "attributes" : { },
+              "definition" : "c:webshopNewProducts",
+              "id" : "389d01e2-b343-413c-93a2-323632816348",
+              "type" : "component"
             } ],
             "id" : "fef63ba4-cbc0-4695-a913-d3cb18c48d64",
             "name" : "col1",
@@ -265,6 +270,31 @@
                   "definition" : "c:webshopCartProductSummaryHolder",
                   "id" : "36b31177-8046-4645-957c-35a9d339bfbe",
                   "type" : "component"
+                }, {
+                  "attributes" : {
+                    "alignment" : "center",
+                    "buttonBackgroundColor" : "rgba(255, 255, 255, 0)",
+                    "buttonBackgroundHoverColor" : "rgba(255, 255, 255, 0)",
+                    "buttonBorderColor" : "rgba(0, 95, 178, 0)",
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "0%",
+                        "left" : "0%",
+                        "right" : "0%",
+                        "top" : "0%"
+                      }
+                    },
+                    "layoutDesktop" : "label",
+                    "layoutMobile" : "price",
+                    "size" : "standard",
+                    "text" : "{!Label.c.WebshopCheckout}",
+                    "variant" : "primary",
+                    "width" : "stretch"
+                  },
+                  "customCssClasses" : "btn-lg btn-primary",
+                  "definition" : "commerce_builder:checkoutButton",
+                  "id" : "6f00572a-cedf-4a7a-a763-411c3ee0931c",
+                  "type" : "component"
                 } ],
                 "id" : "2ef32f66-d1be-4cea-abd0-ad90437971e1",
                 "name" : "content",
@@ -277,7 +307,7 @@
             }, {
               "attributes" : { },
               "definition" : "c:webshopCartRecommendations",
-              "id" : "5f0c592f-624a-47a2-bda2-e74625488e48",
+              "id" : "87d0a25f-d467-46de-b6a9-ce8ff90b5394",
               "type" : "component"
             } ],
             "id" : "cfbe4d08-bbf9-45fa-8c7a-ae56f0e84236",

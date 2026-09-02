@@ -1,6 +1,6 @@
 {
   "type" : "sfdc_cms__view",
-  "title" : "All Products",
+  "title" : "Onboarding Landing",
   "contentBody" : {
     "component" : {
       "children" : [ {
@@ -14,27 +14,27 @@
             "layoutDirectionTablet" : "column",
             "maxContentWidth" : "",
             "sectionColumnGutterWidth" : "",
-            "sectionConfig" : "{\"UUID\":\"a4051f92-d465-4972-bd09-bdb4f0e3171a\",\"columns\":[{\"UUID\":\"e42a58f8-6e38-4f06-9950-7205c802c855\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionConfig" : "{\"UUID\":\"24675d35-d427-459f-bea7-ec52cc6468a4\",\"columns\":[{\"UUID\":\"3e9cd87d-86eb-4706-8e6f-7ef7eab63bd3\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
             "sectionMinHeight" : "",
             "sectionVerticalAlign" : "flex-start"
           },
           "children" : [ {
             "children" : [ {
               "attributes" : { },
-              "definition" : "c:webshopAllProducts",
-              "id" : "d487ca17-4b01-42e5-8049-df25d5d9461e",
+              "definition" : "c:webshopOnboardingLanding",
+              "id" : "d2fb5081-47f1-45dc-9181-829f676173cf",
               "type" : "component"
             } ],
-            "id" : "e42a58f8-6e38-4f06-9950-7205c802c855",
+            "id" : "3e9cd87d-86eb-4706-8e6f-7ef7eab63bd3",
             "name" : "col1",
             "title" : "Column 1",
             "type" : "region"
           } ],
           "definition" : "community_layout:section",
-          "id" : "a4051f92-d465-4972-bd09-bdb4f0e3171a",
+          "id" : "24675d35-d427-459f-bea7-ec52cc6468a4",
           "type" : "component"
         } ],
-        "id" : "7e7f5405-1395-4e6d-a3a9-62114f55c9ae",
+        "id" : "26421e5d-b30b-4528-be9b-e8a9e16d26fb",
         "name" : "content",
         "title" : "Content",
         "type" : "region"
@@ -43,25 +43,25 @@
           "attributes" : {
             "customHeadTags" : "",
             "description" : "",
-            "pageTitle" : "All Products",
+            "pageTitle" : "Onboarding Landing",
             "recordId" : "{!recordId}"
           },
           "definition" : "community_builder:seoAssistant",
-          "id" : "144f2c95-7f3e-445a-8d56-6851ae7c2f01",
+          "id" : "47b2f409-c4c3-4b92-8c6a-72def75e283e",
           "type" : "component"
         } ],
-        "id" : "d20f15ce-7604-4e28-a023-afaf58fc5204",
+        "id" : "3420cd1b-05ed-4020-9fa2-f8fc0e8098ff",
         "name" : "sfdcHiddenRegion",
         "title" : "sfdcHiddenRegion",
         "type" : "region"
       } ],
       "definition" : "community_layout:sldsFlexibleLayout",
-      "id" : "58c569ca-056b-4db9-8b11-05a46e1e40dd",
+      "id" : "d7fd9d6e-b05d-4539-8763-dcb7ae696d4b",
       "type" : "component"
     },
     "dataProviders" : [ ],
-    "themeLayoutType" : "Inner",
-    "viewType" : "custom-all-products"
+    "themeLayoutType" : "External",
+    "viewType" : "custom-onboarding-landing"
   },
-  "urlName" : "all-products"
+  "urlName" : "onboarding-landing"
 }

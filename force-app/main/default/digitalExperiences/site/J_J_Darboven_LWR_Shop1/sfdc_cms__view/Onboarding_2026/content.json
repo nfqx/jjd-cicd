@@ -1,6 +1,6 @@
 {
   "type" : "sfdc_cms__view",
-  "title" : "All Products",
+  "title" : "Onboarding 2026",
   "contentBody" : {
     "component" : {
       "children" : [ {
@@ -14,27 +14,27 @@
             "layoutDirectionTablet" : "column",
             "maxContentWidth" : "",
             "sectionColumnGutterWidth" : "",
-            "sectionConfig" : "{\"UUID\":\"a4051f92-d465-4972-bd09-bdb4f0e3171a\",\"columns\":[{\"UUID\":\"e42a58f8-6e38-4f06-9950-7205c802c855\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionConfig" : "{\"UUID\":\"5cee1363-f434-4d22-a317-25260a1a045f\",\"columns\":[{\"UUID\":\"a2f4c576-3edb-45e9-9985-6c7c63f93ebc\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
             "sectionMinHeight" : "",
             "sectionVerticalAlign" : "flex-start"
           },
           "children" : [ {
             "children" : [ {
               "attributes" : { },
-              "definition" : "c:webshopAllProducts",
-              "id" : "d487ca17-4b01-42e5-8049-df25d5d9461e",
+              "definition" : "c:webshopOnboarding",
+              "id" : "515fd980-1c57-457b-bee3-668971c3c227",
               "type" : "component"
             } ],
-            "id" : "e42a58f8-6e38-4f06-9950-7205c802c855",
+            "id" : "a2f4c576-3edb-45e9-9985-6c7c63f93ebc",
             "name" : "col1",
             "title" : "Column 1",
             "type" : "region"
           } ],
           "definition" : "community_layout:section",
-          "id" : "a4051f92-d465-4972-bd09-bdb4f0e3171a",
+          "id" : "5cee1363-f434-4d22-a317-25260a1a045f",
           "type" : "component"
         } ],
-        "id" : "7e7f5405-1395-4e6d-a3a9-62114f55c9ae",
+        "id" : "e260a4a4-f79f-420b-be7c-1589a7b997ef",
         "name" : "content",
         "title" : "Content",
         "type" : "region"
@@ -43,25 +43,25 @@
           "attributes" : {
             "customHeadTags" : "",
             "description" : "",
-            "pageTitle" : "All Products",
+            "pageTitle" : "Onboarding 2026",
             "recordId" : "{!recordId}"
           },
           "definition" : "community_builder:seoAssistant",
-          "id" : "144f2c95-7f3e-445a-8d56-6851ae7c2f01",
+          "id" : "cf26d17c-9ead-4684-b364-d1acb85d5968",
           "type" : "component"
         } ],
-        "id" : "d20f15ce-7604-4e28-a023-afaf58fc5204",
+        "id" : "2b5d3f3b-0f9c-4fb2-8cee-d084fd9c9258",
         "name" : "sfdcHiddenRegion",
         "title" : "sfdcHiddenRegion",
         "type" : "region"
       } ],
       "definition" : "community_layout:sldsFlexibleLayout",
-      "id" : "58c569ca-056b-4db9-8b11-05a46e1e40dd",
+      "id" : "55e5ef6e-324e-4a10-bcb2-2ee5b57dd606",
       "type" : "component"
     },
     "dataProviders" : [ ],
-    "themeLayoutType" : "Inner",
-    "viewType" : "custom-all-products"
+    "themeLayoutType" : "External",
+    "viewType" : "custom-onboarding-2026"
   },
-  "urlName" : "all-products"
+  "urlName" : "onboarding-2026"
 }

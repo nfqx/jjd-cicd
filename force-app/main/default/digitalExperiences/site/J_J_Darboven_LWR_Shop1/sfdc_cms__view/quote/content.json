@@ -22,7 +22,7 @@
             "layoutDirectionTablet" : "column",
             "maxContentWidth" : "",
             "sectionColumnGutterWidth" : "",
-            "sectionConfig" : "{\"UUID\":\"a02a2bfe-a0aa-4804-8918-fc31f8467ddc\",\"columns\":[{\"UUID\":\"3ee31494-83a6-43f1-8424-fc4ad032faa3\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+            "sectionConfig" : "{\"UUID\":\"bac71302-4b69-48b3-97bb-902edb178eb7\",\"columns\":[{\"UUID\":\"db7854e8-6df1-4df1-906c-b4e4fd1a5f39\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
             "sectionMinHeight" : "",
             "sectionVerticalAlign" : "flex-start"
           },
@@ -49,10 +49,10 @@
                         "textDisplayInfo" : "{\"textStyle\": \"heading-large\", \"headingTag\": \"h2\"}"
                       },
                       "definition" : "dxp_base:textBlock",
-                      "id" : "a80b50ec-6f9f-42bf-b132-11d11fc66e9d",
+                      "id" : "8d8c91f0-f89e-4ba0-ab08-448b0a9a7c8d",
                       "type" : "component"
                     } ],
-                    "id" : "ee4c019f-8eca-4ced-8640-567b198eb66e",
+                    "id" : "55fee3a3-f3c8-436e-a0f6-c723d5141a29",
                     "name" : "title",
                     "title" : "title",
                     "type" : "region"
@@ -70,7 +70,7 @@
                         "textDisplayInfo" : "{\"textStyle\": \"heading-small\", \"headingTag\": \"p\"}"
                       },
                       "definition" : "dxp_base:textBlock",
-                      "id" : "6122c8b9-39df-45f9-9a01-f97c1b5d11d2",
+                      "id" : "f1034c62-3a46-4247-9df8-69826c402955",
                       "type" : "component"
                     }, {
                       "attributes" : {
@@ -85,16 +85,16 @@
                         "textDisplayInfo" : "{\"textStyle\": \"heading-small\", \"headingTag\": \"p\"}"
                       },
                       "definition" : "dxp_base:textBlock",
-                      "id" : "2a64614a-fc5a-4692-85fa-76da88ae71e8",
+                      "id" : "53d2a2aa-5155-4bcd-8c77-3d280d0200d3",
                       "type" : "component"
                     } ],
-                    "id" : "7341db33-6570-433b-827e-fdfeca02078a",
+                    "id" : "6509659c-5927-4fb9-826d-7cd80f5d04ff",
                     "name" : "description",
                     "title" : "description",
                     "type" : "region"
                   } ],
                   "definition" : "commerce_builder:quoteConfirmationSuccessMessage",
-                  "id" : "78d11b11-c47e-425d-9ff6-29db6f9761fa",
+                  "id" : "9e65a55a-7f10-485e-81c6-3d72d10e1ddf",
                   "type" : "component"
                 }, {
                   "attributes" : {
@@ -112,7 +112,7 @@
                     "width" : 100
                   },
                   "definition" : "dxp_base:horizontalLine",
-                  "id" : "ed7e6cc5-182c-4277-8d6b-912fb3ca6864",
+                  "id" : "6cdc4276-81d5-490e-a230-0fa02182eb92",
                   "type" : "component"
                 }, {
                   "attributes" : {
@@ -122,7 +122,7 @@
                     "type" : "info"
                   },
                   "definition" : "commerce_builder:quoteConfirmationScopedNotification",
-                  "id" : "0d237136-4dc0-4ba3-9339-dc7bbad7f1a0",
+                  "id" : "c7090ac4-dc4f-4858-90b2-7eced1e384a6",
                   "type" : "component"
                 }, {
                   "attributes" : {
@@ -153,10 +153,10 @@
                         "textDisplayInfo" : "{\"textStyle\": \"heading-small\", \"headingTag\": \"h4\"}"
                       },
                       "definition" : "dxp_base:textBlock",
-                      "id" : "6cf65fe3-f721-498f-a530-c181c7a0524a",
+                      "id" : "fe7b213e-cecf-4a8c-a7e9-d33f3c76df5f",
                       "type" : "component"
                     } ],
-                    "id" : "e1727134-26f4-4af4-ae81-1bf0430c263c",
+                    "id" : "0b29e59e-c384-4335-ae2c-2344468d92d8",
                     "name" : "header",
                     "title" : "header",
                     "type" : "region"
@@ -174,16 +174,16 @@
                         "textDisplayInfo" : "{\"textStyle\": \"body-regular\", \"headingTag\": \"p\"}"
                       },
                       "definition" : "dxp_base:textBlock",
-                      "id" : "d1eafc59-734c-4f6c-8a47-f10321a47553",
+                      "id" : "a035cf10-ef3f-4afa-9356-8fc8a3d2a5db",
                       "type" : "component"
                     } ],
-                    "id" : "e071e5e4-219e-479a-89d4-a3f2fc378528",
+                    "id" : "eb012d5c-0c8e-46df-a825-b1a1c0ff429c",
                     "name" : "showMore",
                     "title" : "showMore",
                     "type" : "region"
                   } ],
                   "definition" : "commerce_builder:quoteConfirmationItems",
-                  "id" : "cf5fa728-4bb8-43ba-b29d-9d06358bc7fb",
+                  "id" : "807d1f53-510c-43a8-a367-428f280a73a1",
                   "type" : "component"
                 }, {
                   "attributes" : {
@@ -201,7 +201,7 @@
                     "layoutDirectionDesktop" : "row",
                     "layoutDirectionMobile" : "column",
                     "layoutDirectionTablet" : "column",
-                    "sectionConfig" : "{\"UUID\":\"647a4d2d-ad19-4e9e-a278-206fc56197be\",\"columns\":[{\"UUID\":\"cecfcbb6-24fb-479f-84ff-f3dc1904cfc6\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"8\",\"seedComponents\":null},{\"UUID\":\"eeef870b-00a8-45e5-a014-03f6984ee6a8\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"4\",\"seedComponents\":null}]}"
+                    "sectionConfig" : "{\"UUID\":\"b182b5ec-5620-46cb-9495-207720ebb133\",\"columns\":[{\"UUID\":\"744b22b5-e109-4274-83e1-aa0955168085\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"8\",\"seedComponents\":null},{\"UUID\":\"4a5e300f-82b8-4386-95c9-226e25a86b7b\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"4\",\"seedComponents\":null}]}"
                   },
                   "children" : [ {
                     "children" : [ {
@@ -222,10 +222,10 @@
                         "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"comm__namedPage\",\"attributes\":{\"name\":\"Home\"}}}}"
                       },
                       "definition" : "dxp_base:button",
-                      "id" : "613ebb66-f384-4be9-a74a-ffdb2c61a963",
+                      "id" : "192be7a4-49dd-4839-ab21-11c4637240bd",
                       "type" : "component"
                     } ],
-                    "id" : "cecfcbb6-24fb-479f-84ff-f3dc1904cfc6",
+                    "id" : "744b22b5-e109-4274-83e1-aa0955168085",
                     "name" : "col1",
                     "title" : "Column 1",
                     "type" : "region"
@@ -237,27 +237,27 @@
                         "stretch" : "stretch",
                         "text" : "View My Quotes",
                         "type" : "primary",
-                        "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__objectPage\",\"attributes\":{\"objectApiName\":\"Quote\",\"actionName\":\"list\"},\"state\":{\"filterName\":\"Default\"}}}}"
+                        "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"comm__namedPage\",\"attributes\":{\"name\":\"Quote_Summary_List\"}}}}"
                       },
                       "definition" : "dxp_base:button",
-                      "id" : "b400ccda-5546-43b6-9be0-75d59a8e9779",
+                      "id" : "a0ec2383-eb9b-43f5-9fbb-e83534fc9628",
                       "type" : "component"
                     } ],
-                    "id" : "eeef870b-00a8-45e5-a014-03f6984ee6a8",
+                    "id" : "4a5e300f-82b8-4386-95c9-226e25a86b7b",
                     "name" : "col2",
                     "title" : "Column 2",
                     "type" : "region"
                   } ],
                   "definition" : "dxp_layout:columns",
-                  "id" : "647a4d2d-ad19-4e9e-a278-206fc56197be",
+                  "id" : "b182b5ec-5620-46cb-9495-207720ebb133",
                   "type" : "component"
                 } ],
-                "id" : "8cf413ae-a8ca-4bba-a33e-d3fec55379f8",
+                "id" : "fd49d5f7-9292-42a9-a9ed-2d877f438970",
                 "name" : "content",
                 "title" : "content",
                 "type" : "region"
               }, {
-                "id" : "e2e78567-0831-4de0-bcbd-c076de2ad1fa",
+                "id" : "c173073e-4044-4c82-980f-3d0c7fad5c39",
                 "name" : "summary",
                 "title" : "summary",
                 "type" : "region"
@@ -280,7 +280,7 @@
                         "textDisplayInfo" : "{\"textStyle\": \"heading-medium\", \"headingTag\": \"h1\"}"
                       },
                       "definition" : "dxp_base:textBlock",
-                      "id" : "e435350b-e153-4b32-b61e-4d2bed5f0c40",
+                      "id" : "85290ad1-5d6b-4238-bec8-eb23fb745950",
                       "type" : "component"
                     }, {
                       "attributes" : {
@@ -295,37 +295,37 @@
                         "textDisplayInfo" : "{\"textStyle\": \"heading-medium\", \"headingTag\": \"p\"}"
                       },
                       "definition" : "dxp_base:textBlock",
-                      "id" : "372efcad-eca5-4bd9-9f1d-eda76f876abf",
+                      "id" : "b7ae320c-4764-4d8a-8628-381d9cbc53e7",
                       "type" : "component"
                     } ],
-                    "id" : "bfd45cab-0f27-41e8-b3e5-685f8a4289c2",
+                    "id" : "be7bf721-c3da-4101-98d6-1858a2028b94",
                     "name" : "errorMessageText",
                     "title" : "errorMessageText",
                     "type" : "region"
                   } ],
                   "definition" : "commerce_builder:quoteConfirmationErrorMessage",
-                  "id" : "195e8287-6eda-4e6b-a6b1-822d9c0d06bc",
+                  "id" : "2c687084-033c-4d57-8fed-039209cfe601",
                   "type" : "component"
                 } ],
-                "id" : "298ec783-b706-45e5-8241-a5d64f33175e",
+                "id" : "29c15c0c-0bc3-441f-a2b3-9181718f3d78",
                 "name" : "error",
                 "title" : "error",
                 "type" : "region"
               } ],
               "definition" : "commerce_builder:quoteConfirmationContentLayout",
-              "id" : "595894bb-6d47-4eec-ac0a-2e280a54e58f",
+              "id" : "88194a4c-e1a0-4e86-8239-6211b823f68d",
               "type" : "component"
             } ],
-            "id" : "3ee31494-83a6-43f1-8424-fc4ad032faa3",
+            "id" : "db7854e8-6df1-4df1-906c-b4e4fd1a5f39",
             "name" : "col1",
             "title" : "Column 1",
             "type" : "region"
           } ],
           "definition" : "community_layout:section",
-          "id" : "a02a2bfe-a0aa-4804-8918-fc31f8467ddc",
+          "id" : "bac71302-4b69-48b3-97bb-902edb178eb7",
           "type" : "component"
         } ],
-        "id" : "08d7bda0-f620-498c-a51d-7e4031cb2521",
+        "id" : "c4d9be83-7620-4ca8-beaf-256baccd86de",
         "name" : "content",
         "title" : "Content",
         "type" : "region"
@@ -335,16 +335,16 @@
             "recordId" : "{!recordId}"
           },
           "definition" : "community_builder:seoAssistant",
-          "id" : "c9c7587d-68b6-461e-8b1f-cde494a09e59",
+          "id" : "50519632-5576-46f2-8618-71365a2e8365",
           "type" : "component"
         } ],
-        "id" : "3d1652e4-fd22-47fc-951c-b0029e265ea1",
+        "id" : "25a7dbf6-6514-493f-a8d9-4cafb5970f54",
         "name" : "sfdcHiddenRegion",
         "title" : "sfdcHiddenRegion",
         "type" : "region"
       } ],
       "definition" : "community_layout:sldsFlexibleLayout",
-      "id" : "fd5b8345-d03f-4e1e-9184-5e9c44e4e8aa",
+      "id" : "f122a9be-525d-467e-bd77-6f3ae377b842",
       "type" : "component"
     },
     "dataProviders" : [ {

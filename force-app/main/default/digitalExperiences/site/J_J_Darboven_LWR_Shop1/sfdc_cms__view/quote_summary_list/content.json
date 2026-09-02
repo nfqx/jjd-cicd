@@ -22,7 +22,7 @@
             "layoutDirectionTablet" : "column",
             "maxContentWidth" : "",
             "sectionColumnGutterWidth" : "",
-            "sectionConfig" : "{\"UUID\":\"315a348d-2cde-4f66-9c10-d8e00d41f729\",\"columns\":[{\"UUID\":\"fdd45f14-1b27-4d83-8063-21aa0da8dc72\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionConfig" : "{\"UUID\":\"c5964633-1140-4f90-885c-61d6a8c5885b\",\"columns\":[{\"UUID\":\"26880cf2-5385-479a-8524-db7cacf82698\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
             "sectionMinHeight" : "",
             "sectionVerticalAlign" : "flex-start"
           },
@@ -40,16 +40,16 @@
                 "textDisplayInfo" : "{\"textStyle\": \"heading-large\", \"headingTag\": \"h2\"}"
               },
               "definition" : "dxp_base:textBlock",
-              "id" : "a11d5f8f-9526-4f8e-8751-a68549342aec",
+              "id" : "3d23f9ba-43e0-4414-b832-bd7fd1f88bac",
               "type" : "component"
             } ],
-            "id" : "fdd45f14-1b27-4d83-8063-21aa0da8dc72",
+            "id" : "26880cf2-5385-479a-8524-db7cacf82698",
             "name" : "col1",
             "title" : "Column 1",
             "type" : "region"
           } ],
           "definition" : "community_layout:section",
-          "id" : "315a348d-2cde-4f66-9c10-d8e00d41f729",
+          "id" : "c5964633-1140-4f90-885c-61d6a8c5885b",
           "type" : "component"
         }, {
           "attributes" : {
@@ -69,7 +69,7 @@
             "layoutDirectionTablet" : "column",
             "maxContentWidth" : "",
             "sectionColumnGutterWidth" : "",
-            "sectionConfig" : "{\"UUID\":\"f6ad596d-0f15-45a3-a7a0-35cdeea2fd87\",\"columns\":[{\"UUID\":\"b3ae6fa6-461e-49ca-ad85-95bda86f4782\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+            "sectionConfig" : "{\"UUID\":\"719d461e-1b2e-48fd-a2df-ff2cc44c7e5f\",\"columns\":[{\"UUID\":\"a16837e6-e397-4813-858b-5487aafdd0b9\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
             "sectionMinHeight" : "",
             "sectionVerticalAlign" : "flex-start"
           },
@@ -80,10 +80,10 @@
                 "children" : [ {
                   "attributes" : { },
                   "definition" : "commerce_builder:quoteListDateFilter",
-                  "id" : "6cc8bc82-89f4-4065-a9bb-761d195c8292",
+                  "id" : "cef28f76-870a-4592-8b64-5b45d0041d30",
                   "type" : "component"
                 } ],
-                "id" : "0569fee1-a8c9-425e-ab38-8df9fe9f575c",
+                "id" : "186e4baf-b32e-4b15-98e1-1df6001fa000",
                 "name" : "dateFilter",
                 "title" : "dateFilter",
                 "type" : "region"
@@ -101,7 +101,7 @@
                     "textDisplayInfo" : "{\"headingTag\": \"h3\", \"textStyle\": \"heading-medium\"}"
                   },
                   "definition" : "dxp_base:textBlock",
-                  "id" : "1ba21eaa-007d-4f0d-8ce0-8ff18d21a35f",
+                  "id" : "d6cacfc6-e2a8-4967-abbe-4a689ddf398e",
                   "type" : "component"
                 }, {
                   "attributes" : {
@@ -116,7 +116,7 @@
                     "textDisplayInfo" : "{\"headingTag\": \"h3\", \"textStyle\": \"heading-medium\"}"
                   },
                   "definition" : "dxp_base:textBlock",
-                  "id" : "9b024d01-41e5-4af2-9f7a-9fa3fb97f5a9",
+                  "id" : "1be5b207-a14f-4726-bef6-9241c0efa2fd",
                   "type" : "component"
                 }, {
                   "attributes" : {
@@ -131,7 +131,7 @@
                     "textDisplayInfo" : "{\"headingTag\": \"h4\", \"textStyle\": \"heading-small\"}"
                   },
                   "definition" : "dxp_base:textBlock",
-                  "id" : "187f4618-4333-4316-8cd7-3afc5930f491",
+                  "id" : "d2903770-1c81-4ab3-afc0-da072ce17ca0",
                   "type" : "component"
                 }, {
                   "attributes" : {
@@ -143,10 +143,10 @@
                     "url" : "/"
                   },
                   "definition" : "dxp_base:button",
-                  "id" : "d6400ef4-d4ca-4394-a498-a5e05b963ea5",
+                  "id" : "6627d7fa-1d31-4dfc-a733-7c1c43f9afca",
                   "type" : "component"
                 } ],
-                "id" : "2338fcbd-5113-4199-836c-2171d767f895",
+                "id" : "6aba1bdd-52f1-4c70-b3ad-e584a3c38694",
                 "name" : "emptyBody",
                 "title" : "emptyBody",
                 "type" : "region"
@@ -198,10 +198,10 @@
                             "textDisplayInfo" : "{\"textStyle\": \"heading-small\", \"headingTag\": \"p\", \"enableOverride\":true}"
                           },
                           "definition" : "dxp_base:textBlock",
-                          "id" : "d9a1c63c-3a3b-4e74-9329-fef1fc527976",
+                          "id" : "24cb4ce5-6d26-4612-909e-759d85ea67fe",
                           "type" : "component"
                         } ],
-                        "id" : "6e915a30-7920-47f7-981a-e75ea77061e3",
+                        "id" : "9ff545d0-16fa-413e-ac08-db8499ebb647",
                         "name" : "quoteNumberLabel",
                         "title" : "quoteNumberLabel",
                         "type" : "region"
@@ -219,19 +219,19 @@
                             "textDisplayInfo" : "{\"textStyle\": \"heading-small\", \"headingTag\": \"p\", \"enableOverride\":true}"
                           },
                           "definition" : "dxp_base:textBlock",
-                          "id" : "a5a7d185-50ed-422b-a7a4-1380e67283e8",
+                          "id" : "0210c7eb-7c93-4883-9f3e-2c8eaa2f8423",
                           "type" : "component"
                         } ],
-                        "id" : "cc0e7e58-e957-4741-9be6-dacd3c80226b",
+                        "id" : "08c0f80e-7725-405a-ba47-1edf03c55d35",
                         "name" : "quoteNumber",
                         "title" : "quoteNumber",
                         "type" : "region"
                       } ],
                       "definition" : "commerce_builder:quoteSummary",
-                      "id" : "ee4fa072-b58c-45dd-b0b5-6738f6f676da",
+                      "id" : "2ecb0fa2-a588-40c8-9428-f2515d743a1b",
                       "type" : "component"
                     } ],
-                    "id" : "cbe6559f-e52e-4e06-92be-6dfdd80db2d5",
+                    "id" : "db2cd18e-517c-411f-b494-382eff9957d9",
                     "name" : "sfdcRepeaterItem",
                     "title" : "sfdcRepeaterItem",
                     "type" : "region"
@@ -245,25 +245,25 @@
                         "children" : [ {
                           "attributes" : { },
                           "definition" : "dxp_page_layout:placeHolder",
-                          "id" : "5a0193a8-296e-407a-91b8-cf0feb2db93f",
+                          "id" : "5769090c-be98-40d0-9ba4-4028563ca559",
                           "type" : "component"
                         } ],
-                        "id" : "27cd38a1-7d8b-4db1-ae61-073854bfa79b",
+                        "id" : "2af515c1-0d52-4452-bfff-7d91bcac9655",
                         "name" : "placeholder",
                         "title" : "placeholder",
                         "type" : "region"
                       } ],
                       "definition" : "dxp_content_layout:paginator2",
-                      "id" : "b9c669f2-dbce-4f0d-ba98-3e300733e1b0",
+                      "id" : "c7ff69f7-6815-43cb-8802-ba2678821f53",
                       "type" : "component"
                     } ],
-                    "id" : "60998390-5cd9-40dc-b519-79c812cc526c",
+                    "id" : "13aa9880-7702-43a7-bda3-46bbbf44dc13",
                     "name" : "pagination",
                     "title" : "pagination",
                     "type" : "region"
                   } ],
                   "definition" : "dxp_content_layout:list",
-                  "id" : "55a3f5eb-a384-4f62-b299-74bc0dc546a4",
+                  "id" : "0677340d-4058-4a40-a6f4-abffd3f83fe8",
                   "type" : "component",
                   "dataProviders" : [ {
                     "definition" : "sfdc_cms__commerceQuoteSummaryListDataProvider",
@@ -271,25 +271,25 @@
                     "attributes" : { }
                   } ]
                 } ],
-                "id" : "68a83bb8-97f9-4735-9790-d887197c80dd",
+                "id" : "4e24c3c9-9efa-4ec4-a6d6-165674851a16",
                 "name" : "quoteListRepeater",
                 "title" : "quoteListRepeater",
                 "type" : "region"
               } ],
               "definition" : "commerce_builder:quoteList",
-              "id" : "76fd6759-60d0-48a8-aa6d-916fa4e6fb33",
+              "id" : "2b5f224b-9e6f-4ef5-9ee4-ea7b6cfb2780",
               "type" : "component"
             } ],
-            "id" : "b3ae6fa6-461e-49ca-ad85-95bda86f4782",
+            "id" : "a16837e6-e397-4813-858b-5487aafdd0b9",
             "name" : "col1",
             "title" : "Column 1",
             "type" : "region"
           } ],
           "definition" : "community_layout:section",
-          "id" : "f6ad596d-0f15-45a3-a7a0-35cdeea2fd87",
+          "id" : "719d461e-1b2e-48fd-a2df-ff2cc44c7e5f",
           "type" : "component"
         } ],
-        "id" : "e1f01d29-627c-4c8c-92ed-b5347efd5018",
+        "id" : "fd680350-d4dc-457f-99b4-727fafa73632",
         "name" : "content",
         "title" : "Content",
         "type" : "region"
@@ -299,16 +299,16 @@
             "recordId" : "{!recordId}"
           },
           "definition" : "community_builder:seoAssistant",
-          "id" : "b99130b6-efd6-409e-ae36-f3358b1e7892",
+          "id" : "26a0adc0-67fd-4ac6-b9b1-27097c6fd595",
           "type" : "component"
         } ],
-        "id" : "17fdc88e-6f27-4249-b120-6d621c18fc96",
+        "id" : "ea7eb3ad-0c31-4717-86b0-a639b9e081d5",
         "name" : "sfdcHiddenRegion",
         "title" : "sfdcHiddenRegion",
         "type" : "region"
       } ],
       "definition" : "community_layout:sldsFlexibleLayout",
-      "id" : "841e15d9-020f-4549-979e-2a6675ef4275",
+      "id" : "eae462d6-0c15-412b-ac2c-9d332be63e6d",
       "type" : "component"
     },
     "dataProviders" : [ ],
