@@ -59,8 +59,8 @@
     </networkAuthApiSettings>
     <networkMemberGroups>
         <permissionSet>JJDarbovenWebshop</permissionSet>
-        <profile>Admin</profile>
-        <profile>Customer Community Plus User</profile>
+        <profile>admin</profile>
+        <profile>customer community plus user</profile>
     </networkMemberGroups>
     <networkPageOverrides>
         <changePasswordPageOverrideSetting>Standard</changePasswordPageOverrideSetting>

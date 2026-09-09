@@ -12,3 +12,12 @@ package.xml
 **/__tests__/**
 
 node_modules/
+
+
+#force-app/main/default/digitalExperiences
+#force-app/main/default/digitalExperienceConfigs
+#force-app/main/default/navigationMenus
+#force-app/main/default/networkBranding
+#force-app/main/default/networks
+#force-app/main/default/sites
+#force-app/main/default/managedTopics
