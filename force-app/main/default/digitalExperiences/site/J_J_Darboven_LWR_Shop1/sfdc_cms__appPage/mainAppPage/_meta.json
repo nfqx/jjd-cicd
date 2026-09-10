@@ -1,5 +1,6 @@
 {
   "apiName" : "mainAppPage",
   "type" : "sfdc_cms__appPage",
-  "path" : ""
+  "path" : "",
+  "contentKey" : "MCHSW3U2PUT5AUPFUWZYCAWCBZOY"
 }

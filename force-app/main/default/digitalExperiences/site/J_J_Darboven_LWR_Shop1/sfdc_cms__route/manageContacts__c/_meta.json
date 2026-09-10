@@ -1,5 +1,6 @@
 {
   "apiName" : "manageContacts__c",
   "type" : "sfdc_cms__route",
-  "path" : "routes"
+  "path" : "routes",
+  "contentKey" : "MCKUEAZ2TJRVF3ZH3DESVBTTNT5M"
 }

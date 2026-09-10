@@ -1,5 +1,6 @@
 {
   "apiName" : "payment_processing",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MCJBUVA5AJINGIVGQ4DY6LT3OR6E"
 }

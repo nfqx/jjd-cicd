@@ -1,5 +1,6 @@
 {
   "apiName" : "tooManyRequests",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MCXZ4BETGF3RGN3GSVHSRYESXXTA"
 }

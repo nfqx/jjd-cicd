@@ -1,5 +1,6 @@
 {
   "apiName" : "checkoutLayout",
   "type" : "sfdc_cms__themeLayout",
-  "path" : "themeLayouts"
+  "path" : "themeLayouts",
+  "contentKey" : "MC3KWYZQWIQNHETHFO7CEZ5FKPDE"
 }

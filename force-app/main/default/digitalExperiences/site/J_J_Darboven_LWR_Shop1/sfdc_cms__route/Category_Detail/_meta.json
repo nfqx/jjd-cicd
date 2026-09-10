@@ -1,5 +1,6 @@
 {
   "apiName" : "Category_Detail",
   "type" : "sfdc_cms__route",
-  "path" : "routes"
+  "path" : "routes",
+  "contentKey" : "MCJD4QTZI345EPLE7CD3K26WNJWQ"
 }

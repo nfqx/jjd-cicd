@@ -1,5 +1,6 @@
 {
   "apiName" : "Register_Internal__c",
   "type" : "sfdc_cms__route",
-  "path" : "routes"
+  "path" : "routes",
+  "contentKey" : "MCBFUES6VIJZB2BPFM2E5SPZ5AOY"
 }

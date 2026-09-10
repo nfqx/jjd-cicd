@@ -1,5 +1,6 @@
 {
   "apiName" : "My_Invoice",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MCUBPQ4E5CL5AJLOM3UGVPNYDPUM"
 }

@@ -1,5 +1,6 @@
 {
   "apiName" : "B2B_Commerce",
   "type" : "sfdc_cms__theme",
-  "path" : "themes"
+  "path" : "themes",
+  "contentKey" : "MCBQKM6J5ZFJD6JNPPAK4VYRO7ZI"
 }

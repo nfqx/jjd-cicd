@@ -1,5 +1,6 @@
 {
   "apiName" : "Brands_Related_List__c",
   "type" : "sfdc_cms__route",
-  "path" : "routes"
+  "path" : "routes",
+  "contentKey" : "MC7QWK53I2V5DTLMM6H2ZCQQDDVE"
 }

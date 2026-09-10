@@ -1,5 +1,6 @@
 {
   "apiName" : "Self_Service__c",
   "type" : "sfdc_cms__route",
-  "path" : "routes"
+  "path" : "routes",
+  "contentKey" : "MCM3G4NFFJ7RBZ7M432OK76XPN3Y"
 }

@@ -1,5 +1,6 @@
 {
   "apiName" : "Current_Checkout",
   "type" : "sfdc_cms__route",
-  "path" : "routes"
+  "path" : "routes",
+  "contentKey" : "MCV7GSU33G5NHOFDQ6OARMQ76UUQ"
 }

@@ -1,5 +1,6 @@
 {
   "apiName" : "Quote_Summary",
   "type" : "sfdc_cms__route",
-  "path" : "routes"
+  "path" : "routes",
+  "contentKey" : "MCC2YQAW5F7BCTBAPJ4Y6OVYA3SQ"
 }

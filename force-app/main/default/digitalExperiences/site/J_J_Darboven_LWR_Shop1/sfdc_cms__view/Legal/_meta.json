@@ -1,5 +1,6 @@
 {
   "apiName" : "Legal",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MC76JQIXJIQJHV7LUYJF3QREDSMU"
 }

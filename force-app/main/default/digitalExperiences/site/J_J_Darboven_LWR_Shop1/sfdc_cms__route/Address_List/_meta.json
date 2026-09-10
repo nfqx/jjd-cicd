@@ -1,5 +1,6 @@
 {
   "apiName" : "Address_List",
   "type" : "sfdc_cms__route",
-  "path" : "routes"
+  "path" : "routes",
+  "contentKey" : "MCOWVZ6BBHHNF7BORNN6WAZJXNKI"
 }

@@ -1,5 +1,6 @@
 {
   "apiName" : "Complete_Registration",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MCJ3MPJ526RBAPNBY3OSR6UOVJJI"
 }

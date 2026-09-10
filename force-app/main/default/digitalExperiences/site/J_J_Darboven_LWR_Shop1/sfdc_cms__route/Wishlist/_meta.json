@@ -1,5 +1,6 @@
 {
   "apiName" : "Wishlist",
   "type" : "sfdc_cms__route",
-  "path" : "routes"
+  "path" : "routes",
+  "contentKey" : "MCFDY7UU5HVBA3HMDVPA6LDSV3IE"
 }

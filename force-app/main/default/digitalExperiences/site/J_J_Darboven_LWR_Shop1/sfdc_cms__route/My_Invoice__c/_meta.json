@@ -1,5 +1,6 @@
 {
   "apiName" : "My_Invoice__c",
   "type" : "sfdc_cms__route",
-  "path" : "routes"
+  "path" : "routes",
+  "contentKey" : "MC2QSSPMM2GNAJLEWODWHYX6D7O4"
 }

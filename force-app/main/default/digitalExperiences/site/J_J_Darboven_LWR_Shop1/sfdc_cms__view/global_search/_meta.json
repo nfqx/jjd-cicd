@@ -1,5 +1,6 @@
 {
   "apiName" : "global_search",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MCOAN6IXVPDFAW3B33ZD3FQYEAS4"
 }

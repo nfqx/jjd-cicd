@@ -1,5 +1,6 @@
 {
   "apiName" : "myAccountLayout",
   "type" : "sfdc_cms__themeLayout",
-  "path" : "themeLayouts"
+  "path" : "themeLayouts",
+  "contentKey" : "MCNKNGQ6NRLNG2FOAZ4VO3EXGHSI"
 }

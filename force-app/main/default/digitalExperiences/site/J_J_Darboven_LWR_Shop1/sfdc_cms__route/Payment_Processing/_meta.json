@@ -1,5 +1,6 @@
 {
   "apiName" : "Payment_Processing",
   "type" : "sfdc_cms__route",
-  "path" : "routes"
+  "path" : "routes",
+  "contentKey" : "MCQ73Q6YIM6BE7HEQI2XPCWOYA6M"
 }

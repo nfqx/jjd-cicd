@@ -1,5 +1,6 @@
 {
   "apiName" : "My_Orders",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MCPCUO5JVNHVEHDN4Q73SF76BYNM"
 }

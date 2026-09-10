@@ -1,5 +1,6 @@
 {
   "apiName" : "split_shipment",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MCJ3EVXYCPFVEYLOGD3I4DTQUUJ4"
 }

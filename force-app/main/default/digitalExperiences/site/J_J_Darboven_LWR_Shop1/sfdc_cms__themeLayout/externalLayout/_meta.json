@@ -1,5 +1,6 @@
 {
   "apiName" : "externalLayout",
   "type" : "sfdc_cms__themeLayout",
-  "path" : "themeLayouts"
+  "path" : "themeLayouts",
+  "contentKey" : "MCN2EXOSQJXZEL5E6MKRCLSMOV6I"
 }

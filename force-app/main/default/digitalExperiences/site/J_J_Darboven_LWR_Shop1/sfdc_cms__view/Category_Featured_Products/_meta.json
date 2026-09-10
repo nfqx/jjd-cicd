@@ -1,5 +1,6 @@
 {
   "apiName" : "Category_Featured_Products",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MC5NPFVZ5W4FFENFH6763VFZ32XI"
 }

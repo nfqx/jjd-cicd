@@ -1,5 +1,6 @@
 {
   "apiName" : "Complete_Registration__c",
   "type" : "sfdc_cms__route",
-  "path" : "routes"
+  "path" : "routes",
+  "contentKey" : "MCYVUG2T5FUZAX5JAZOPZAD27RRM"
 }

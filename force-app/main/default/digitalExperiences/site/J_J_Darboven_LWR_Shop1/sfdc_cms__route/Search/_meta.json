@@ -1,5 +1,6 @@
 {
   "apiName" : "Search",
   "type" : "sfdc_cms__route",
-  "path" : "routes"
+  "path" : "routes",
+  "contentKey" : "MCFSLVT3XO3JFBLLJ76LFB5OHSIE"
 }

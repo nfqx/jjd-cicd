@@ -1,5 +1,6 @@
 {
   "apiName" : "Register_Internal",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MCSTRWTKSVMRB73NLTLXG4SNAQSU"
 }

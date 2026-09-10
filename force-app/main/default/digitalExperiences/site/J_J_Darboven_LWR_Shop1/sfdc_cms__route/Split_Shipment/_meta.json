@@ -1,5 +1,6 @@
 {
   "apiName" : "Split_Shipment",
   "type" : "sfdc_cms__route",
-  "path" : "routes"
+  "path" : "routes",
+  "contentKey" : "MCWUDZGG2ILBCSNNIDBC7EHDDPY4"
 }

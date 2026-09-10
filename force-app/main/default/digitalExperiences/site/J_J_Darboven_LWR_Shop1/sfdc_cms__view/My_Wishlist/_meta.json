@@ -1,5 +1,6 @@
 {
   "apiName" : "My_Wishlist",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MCYSANTMHAVRAZ3HKXQJ2PZY32CM"
 }

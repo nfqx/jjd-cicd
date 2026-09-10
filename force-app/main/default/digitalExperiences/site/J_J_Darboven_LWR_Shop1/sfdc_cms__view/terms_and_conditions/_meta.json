@@ -1,5 +1,6 @@
 {
   "apiName" : "terms_and_conditions",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MCSGRV27SISFH23F3Z7QZEJKU7GA"
 }

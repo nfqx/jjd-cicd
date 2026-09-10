@@ -1,5 +1,6 @@
 {
   "apiName" : "list_1Os",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MC3AKQ6NZKXRB4VMBGB4E6FPWEWM"
 }

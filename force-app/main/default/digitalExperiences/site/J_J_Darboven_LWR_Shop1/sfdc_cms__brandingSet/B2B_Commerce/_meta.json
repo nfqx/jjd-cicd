@@ -1,5 +1,6 @@
 {
   "apiName" : "B2B_Commerce",
   "type" : "sfdc_cms__brandingSet",
-  "path" : "brandingSets"
+  "path" : "brandingSets",
+  "contentKey" : "MCQCO3TFT32ZAQTPCBKYXWCWFPSE"
 }

@@ -1,5 +1,6 @@
 {
   "apiName" : "All_Products",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MCFLLHFC5HYBETZGLGMHSSFYFU24"
 }

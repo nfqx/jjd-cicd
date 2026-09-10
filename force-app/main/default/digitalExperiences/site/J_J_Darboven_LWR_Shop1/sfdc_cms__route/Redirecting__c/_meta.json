@@ -1,5 +1,6 @@
 {
   "apiName" : "Redirecting__c",
   "type" : "sfdc_cms__route",
-  "path" : "routes"
+  "path" : "routes",
+  "contentKey" : "MCXOQJKQ2HEFD3HHKKDX5TBN4FKY"
 }

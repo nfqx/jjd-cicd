@@ -1,5 +1,6 @@
 {
   "apiName" : "Cookies_Settings",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MC4BR2THM7V5F75DXX2PU4M7R6JY"
 }

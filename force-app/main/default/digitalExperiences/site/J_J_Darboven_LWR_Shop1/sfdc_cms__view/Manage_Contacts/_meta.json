@@ -1,5 +1,6 @@
 {
   "apiName" : "Manage_Contacts",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MCAJGCMWUDGNDGBEYCTBONJTYCMU"
 }

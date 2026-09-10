@@ -1,5 +1,6 @@
 {
   "apiName" : "My_Account",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MC66FHV2ETQRF4NAMFJGOIRI53TE"
 }

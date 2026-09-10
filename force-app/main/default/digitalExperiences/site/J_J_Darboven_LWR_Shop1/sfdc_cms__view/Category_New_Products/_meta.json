@@ -1,5 +1,6 @@
 {
   "apiName" : "Category_New_Products",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MCOSQNCHXPGBDPXNDWLSFQM7IL2Y"
 }

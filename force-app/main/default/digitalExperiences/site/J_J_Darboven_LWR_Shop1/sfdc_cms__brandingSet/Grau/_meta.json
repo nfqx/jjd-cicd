@@ -1,5 +1,6 @@
 {
   "apiName" : "Grau",
   "type" : "sfdc_cms__brandingSet",
-  "path" : "brandingSets"
+  "path" : "brandingSets",
+  "contentKey" : "MCET7ANFV63VDNVGZAAQ6OTGR5KE"
 }

@@ -1,5 +1,6 @@
 {
   "apiName" : "Privacy_Policy",
   "type" : "sfdc_cms__route",
-  "path" : "routes"
+  "path" : "routes",
+  "contentKey" : "MCZSNFFXPFS5BWTGGKL24AH6HZQM"
 }

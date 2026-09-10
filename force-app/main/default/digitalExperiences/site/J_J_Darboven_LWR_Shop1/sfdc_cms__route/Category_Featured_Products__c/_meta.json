@@ -1,5 +1,6 @@
 {
   "apiName" : "Category_Featured_Products__c",
   "type" : "sfdc_cms__route",
-  "path" : "routes"
+  "path" : "routes",
+  "contentKey" : "MCZIFQ2DCQ4JEZVI2QE6NELNRM6Y"
 }

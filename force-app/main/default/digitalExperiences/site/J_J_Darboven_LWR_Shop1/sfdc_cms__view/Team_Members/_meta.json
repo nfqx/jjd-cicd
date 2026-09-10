@@ -1,5 +1,6 @@
 {
   "apiName" : "Team_Members",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MCTE2W7FMJGJCQXGHJ2W6HB4PQ2M"
 }

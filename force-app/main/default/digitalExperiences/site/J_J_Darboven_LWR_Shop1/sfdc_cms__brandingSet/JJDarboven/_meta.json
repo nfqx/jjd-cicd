@@ -1,5 +1,6 @@
 {
   "apiName" : "JJDarboven",
   "type" : "sfdc_cms__brandingSet",
-  "path" : "brandingSets"
+  "path" : "brandingSets",
+  "contentKey" : "MCKRK4OCGAX5EUBOTFDKZAHXZM3E"
 }

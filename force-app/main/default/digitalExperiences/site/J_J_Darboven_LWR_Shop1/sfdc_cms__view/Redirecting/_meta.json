@@ -1,5 +1,6 @@
 {
   "apiName" : "Redirecting",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MCC4GTMTOILFBR7AWZDXQX2XM644"
 }

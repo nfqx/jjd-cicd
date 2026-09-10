@@ -2,5 +2,6 @@
   "apiName" : "My_Outlets__c",
   "type" : "sfdc_cms__route",
   "parentId" : "sfdc_cms__route/Self_Service__c",
-  "path" : "routes"
+  "path" : "routes",
+  "contentKey" : "MCJL7K6E2A3JDSLBO6HTOMCNBEX4"
 }

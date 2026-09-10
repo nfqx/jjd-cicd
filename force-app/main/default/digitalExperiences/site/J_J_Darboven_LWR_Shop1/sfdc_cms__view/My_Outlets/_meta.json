@@ -1,5 +1,6 @@
 {
   "apiName" : "My_Outlets",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MC4NCTZDIUAZCUDPPII2OVNVJ73Q"
 }

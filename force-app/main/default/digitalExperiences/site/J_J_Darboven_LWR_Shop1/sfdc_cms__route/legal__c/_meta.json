@@ -1,5 +1,6 @@
 {
   "apiName" : "legal__c",
   "type" : "sfdc_cms__route",
-  "path" : "routes"
+  "path" : "routes",
+  "contentKey" : "MC62VWQPAOG5BOTOTVSZAHUJ63RA"
 }

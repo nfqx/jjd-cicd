@@ -1,5 +1,6 @@
 {
   "apiName" : "trustedSites",
   "type" : "sfdc_cms__trustedSites",
-  "path" : ""
+  "path" : "",
+  "contentKey" : "MCDM2QU4T5IJHSBFXAHSAUFGZANI"
 }

@@ -1,36 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>*</members>
-        <name>DigitalExperience</name>
+        <members>J_J_Darboven_LWR_Shop</members>
+        <name>CustomSite</name>
     </types>
     <types>
-        <members>*</members>
+        <members>content/J_J_Darboven_Webshop_Managed_Content_Space_uBhrPWxD</members>
+        <members>site/J_J_Darboven_LWR_Shop1</members>
         <name>DigitalExperienceBundle</name>
     </types>
     <types>
-        <members>*</members>
+        <members>J_J_Darboven_LWR_Shop1</members>
         <name>DigitalExperienceConfig</name>
     </types>
     <types>
-        <members>*</members>
+        <members>J.J. Darboven LWR Shop</members>
         <name>ManagedTopics</name>
     </types>
     <types>
-        <members>*</members>
+        <members>SFDC_Default_Navigation_JUU002eJUU002e_Darboven_LWR_Shop</members>
         <name>NavigationMenu</name>
     </types>
     <types>
-        <members>*</members>
+        <members>J%2EJ%2E Darboven LWR Shop</members>
         <name>Network</name>
     </types>
     <types>
-        <members>*</members>
+        <members>cbJ_J_Darboven_LWR_Shop</members>
         <name>NetworkBranding</name>
     </types>
-    <types>
-        <members>*</members>
-        <name>SiteDotCom</name>
-    </types>
-    <version>67.0</version>
+    <version>68.0</version>
 </Package>

@@ -1,5 +1,6 @@
 {
   "apiName" : "Terms_And_Conditions",
   "type" : "sfdc_cms__route",
-  "path" : "routes"
+  "path" : "routes",
+  "contentKey" : "MCT3QDQSHTSBBJ7PACVJ5Q4RKFN4"
 }

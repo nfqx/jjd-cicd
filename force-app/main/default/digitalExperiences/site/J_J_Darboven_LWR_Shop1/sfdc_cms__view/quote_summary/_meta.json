@@ -1,5 +1,6 @@
 {
   "apiName" : "quote_summary",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MC772XQ22WQVHIHC4PEXOM4IYVLU"
 }

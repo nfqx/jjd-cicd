@@ -1,5 +1,6 @@
 {
   "apiName" : "My_Brands",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MCTIEKSKYCRNBLXGIQG3H3ZDLMC4"
 }

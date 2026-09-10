@@ -1,5 +1,6 @@
 {
   "apiName" : "Order",
   "type" : "sfdc_cms__route",
-  "path" : "routes"
+  "path" : "routes",
+  "contentKey" : "MCNKFNO5T3PVBXPN76UFJR52JUGU"
 }

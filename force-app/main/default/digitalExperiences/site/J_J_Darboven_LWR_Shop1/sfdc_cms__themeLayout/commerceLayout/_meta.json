@@ -1,5 +1,6 @@
 {
   "apiName" : "commerceLayout",
   "type" : "sfdc_cms__themeLayout",
-  "path" : "themeLayouts"
+  "path" : "themeLayouts",
+  "contentKey" : "MCXDDNXRO5FZFBRNGTDU52PRKKY4"
 }

@@ -1,5 +1,6 @@
 {
   "apiName" : "Privacy_Policy",
   "type" : "sfdc_cms__view",
-  "path" : "views"
+  "path" : "views",
+  "contentKey" : "MCPG72RNAQSZAZHD2IC4SNVNUPXA"
 }
