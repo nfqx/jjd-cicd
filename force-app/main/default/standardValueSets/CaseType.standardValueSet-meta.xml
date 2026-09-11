@@ -17,6 +17,11 @@
         <label>General inquiries</label>
     </standardValue>
     <standardValue>
+        <fullName>Lead</fullName>
+        <default>false</default>
+        <label>Lead</label>
+    </standardValue>
+    <standardValue>
         <fullName>Logistics</fullName>
         <default>false</default>
         <label>Logistics</label>
@@ -50,5 +55,10 @@
         <fullName>Unrated</fullName>
         <default>false</default>
         <label>Unrated</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Webshop</fullName>
+        <default>false</default>
+        <label>Webshop</label>
     </standardValue>
 </StandardValueSet>

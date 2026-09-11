@@ -13,6 +13,10 @@
         <translation>Allg. Anfragen</translation>
     </valueTranslation>
     <valueTranslation>
+        <masterLabel>Lead</masterLabel>
+        <translation><!-- Lead --></translation>
+    </valueTranslation>
+    <valueTranslation>
         <masterLabel>Logistics</masterLabel>
         <translation>Logistik</translation>
     </valueTranslation>
@@ -39,5 +43,9 @@
     <valueTranslation>
         <masterLabel>Unrated</masterLabel>
         <translation>Unbewertet</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Webshop</masterLabel>
+        <translation>Webshop</translation>
     </valueTranslation>
 </StandardValueSetTranslation>

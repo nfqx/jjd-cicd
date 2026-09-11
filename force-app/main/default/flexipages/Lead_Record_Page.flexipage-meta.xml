@@ -7,22 +7,7 @@
                     <name>actionNames</name>
                     <valueList>
                         <valueListItems>
-                            <value>Edit</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Delete</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Lead.CustomConvert</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Lead.Disqualify</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>ChangeOwnerOne</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Convert</value>
+                            <value>Lead.Plan_Visit</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Lead.AssignToTeleSales</value>
@@ -33,6 +18,24 @@
                                     <rightValue>In Sales Qualification</rightValue>
                                 </criteria>
                             </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Lead.CustomConvert</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Convert</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Lead.Disqualify</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>ChangeOwnerOne</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Edit</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Delete</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -2230,6 +2233,70 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>daysToShow</name>
+                    <value>60</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>earliestRange</name>
+                    <value>3</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>iconStyle</name>
+                    <value>Square</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>latestRange</name>
+                    <value>0.5</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>preferredHeight</name>
+                    <value>3 - Default</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showToday</name>
+                    <value>No</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>timelineParent</name>
+                    <value>Default_Picklist_Value</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>timelineTitle</name>
+                    <value>Timeline</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>zoomTo</name>
+                    <value>Current Date</value>
+                </componentInstanceProperties>
+                <componentName>bmpyrckt:timeline</componentName>
+                <identifier>bmpyrckt_timeline</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-sef7jlgzsgr</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;h1&gt;Guide to Processing a Lead&lt;/h1&gt;&lt;p&gt;A &lt;strong&gt;Lead&lt;/strong&gt; represents a potential new customer who still needs to be qualified. The purpose of the Lead process is to capture and validate the key contact, potential, and customer structure information before transferring the prospect into the regular sales process.&lt;/p&gt;&lt;p&gt;The Lead progresses through the following stages:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;New → In Prequalification → In Sales Qualification → Qualified&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;At any point during the qualification process, a Lead may also be &lt;strong&gt;Disqualified&lt;/strong&gt; if it becomes clear that no business opportunity will result.&lt;/p&gt;&lt;p&gt;____________________________________________________________________________&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;h2&gt;🆕 1. New&lt;/h2&gt;&lt;p&gt;In the &lt;strong&gt;New&lt;/strong&gt; stage, the basic contact information of the prospect is captured.&lt;/p&gt;&lt;h3&gt;Objective&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Ensure that the prospect can be clearly identified&lt;/li&gt;&lt;li&gt;Enable the sales team to contact the prospect&lt;/li&gt;&lt;li&gt;Provide the basic information required for further qualification&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;Required Information&lt;/h3&gt;&lt;p&gt;The following information must be completed:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Salutation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;First Name&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Last Name&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;At least one phone number in &lt;strong&gt;Phone&lt;/strong&gt; or &lt;strong&gt;Mobile&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;💡 &lt;strong&gt;Note:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Please ensure that names, email addresses, and phone numbers are entered correctly. This information will later be transferred to the Contact during Lead conversion.&lt;/p&gt;&lt;h3&gt;Complete the Stage&lt;/h3&gt;&lt;p&gt;Once all required information has been entered, complete the stage by selecting:&lt;/p&gt;&lt;p&gt;➡️ &lt;strong&gt;Mark Status as Complete&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;The Lead will then move to &lt;strong&gt;In Prequalification&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt;____________________________________________________________________________&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;h2&gt;📊 2. In Prequalification&lt;/h2&gt;&lt;p&gt;During &lt;strong&gt;Prequalification&lt;/strong&gt;, the prospect&apos;s initial business potential is assessed.&lt;/p&gt;&lt;h3&gt;Objective&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Assess the initial commercial potential of the prospect&lt;/li&gt;&lt;li&gt;Capture the expected annual sales or volume&lt;/li&gt;&lt;li&gt;Ensure sufficient address information is available for further processing and assignment&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;Required Information&lt;/h3&gt;&lt;p&gt;Enter or complete the expected annual sales or volume for:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Coffee&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Tea&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Drinking Chocolate&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;In addition, the prospect&apos;s address must be reviewed.&lt;/p&gt;&lt;p&gt;In particular:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Postal Code&lt;/strong&gt; must be available and correct&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;💡 &lt;strong&gt;Note:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;The entered sales and volume information is used to assess the potential of the prospect and provides an important basis for further qualification.&lt;/p&gt;&lt;h3&gt;Complete the Stage&lt;/h3&gt;&lt;p&gt;Once all required information has been completed and the prospect should proceed in the qualification process, select:&lt;/p&gt;&lt;p&gt;➡️ &lt;strong&gt;Mark Status as Complete&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;The Lead will then move to &lt;strong&gt;In Sales Qualification&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt;____________________________________________________________________________&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;h2&gt;🔗 3. In Sales Qualification&lt;/h2&gt;&lt;p&gt;The &lt;strong&gt;In Sales Qualification&lt;/strong&gt; stage is used to clarify the prospect&apos;s organizational and commercial customer structure.&lt;/p&gt;&lt;p&gt;A particular focus is placed on possible &lt;strong&gt;chain, purchasing company, or purchasing group affiliations&lt;/strong&gt;.&lt;/p&gt;&lt;h3&gt;Objective&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Clarify whether the prospect belongs to a chain or purchasing organization&lt;/li&gt;&lt;li&gt;Ensure that existing parent or affiliated customer relationships are considered&lt;/li&gt;&lt;li&gt;Identify whether existing chain-related conditions or discounts may apply&lt;/li&gt;&lt;li&gt;Establish a reliable basis for the subsequent quotation and price negotiation process&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;Information to Clarify with the Prospect&lt;/h3&gt;&lt;p&gt;Please verify in particular:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Does the prospect belong to a &lt;strong&gt;chain&lt;/strong&gt;?&lt;/li&gt;&lt;li&gt;Is the prospect affiliated with a &lt;strong&gt;Purchasing Company / Purchasing Group&lt;/strong&gt;?&lt;/li&gt;&lt;li&gt;Is there an existing parent, group, or customer structure?&lt;/li&gt;&lt;li&gt;Are there existing &lt;strong&gt;conditions or discounts&lt;/strong&gt; that need to be considered due to a chain affiliation?&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;✅ Before converting the Lead, the customer structure should be clarified sufficiently to ensure that relevant conditions or discounts are correctly considered during the subsequent Opportunity and quotation process.&lt;/p&gt;&lt;p&gt;⚠️ &lt;strong&gt;Important:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;An unclear chain affiliation may result in incorrect or incomplete conditions being applied during the quotation process. Therefore, this information should be clarified &lt;strong&gt;before Lead conversion whenever possible&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt;____________________________________________________________________________&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;h2&gt;🔄 4. Convert the Lead&lt;/h2&gt;&lt;p&gt;Once the prospect has been fully qualified and the relevant customer structure has been clarified, the Lead can be converted.&lt;/p&gt;&lt;p&gt;➡️ Select the &lt;strong&gt;Convert Lead&lt;/strong&gt; action.&lt;/p&gt;&lt;p&gt;During the conversion, the records required for the subsequent sales process are created or assigned:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Account&lt;/strong&gt; – the company or customer&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Contact&lt;/strong&gt; – the related contact person&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Opportunity&lt;/strong&gt; – the specific sales opportunity&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The information already captured on the Lead will be transferred to the corresponding target records where applicable.&lt;/p&gt;&lt;p&gt;💡 &lt;strong&gt;Note:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Before converting the Lead, review all relevant information once again and ensure that it is complete and correct. In particular, contact, address, potential, and customer structure information should be validated.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt;____________________________________________________________________________&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;h2&gt;✅ 5. Qualified&lt;/h2&gt;&lt;p&gt;After the Lead has been successfully converted, its status changes to &lt;strong&gt;Qualified&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;The Lead qualification process is now complete.&lt;/p&gt;&lt;p&gt;Further sales activities will continue on the corresponding records:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Account&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Contact&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Opportunity&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;➡️ Continue with the newly created &lt;strong&gt;Opportunity&lt;/strong&gt; to manage the next steps in the sales process.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt;____________________________________________________________________________&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;h2&gt;❌ Disqualifying a Lead&lt;/h2&gt;&lt;p&gt;A Lead can be &lt;strong&gt;Disqualified at any time during the qualification process&lt;/strong&gt; if it becomes clear that no business opportunity will result.&lt;/p&gt;&lt;p&gt;Typical reasons may include, for example:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;No customer interest&lt;/li&gt;&lt;li&gt;Insufficient business potential&lt;/li&gt;&lt;li&gt;No further contact possible&lt;/li&gt;&lt;li&gt;Prospect has chosen another supplier&lt;/li&gt;&lt;li&gt;Other defined business reasons&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;Disqualification Reason&lt;/h3&gt;&lt;p&gt;When disqualifying a Lead, always select the &lt;strong&gt;most appropriate Disqualification Reason&lt;/strong&gt; available.&lt;/p&gt;&lt;p&gt;✅ The selected reason should reflect as accurately as possible why the Lead is no longer being pursued.&lt;/p&gt;&lt;p&gt;⚠️ &lt;strong&gt;Important:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;The option &lt;strong&gt;Other&lt;/strong&gt; should only be selected in exceptional cases when none of the available predefined reasons adequately describes the situation.&lt;/p&gt;&lt;p&gt;Using a specific reason wherever possible ensures reliable reporting and helps improve the analysis of unsuccessful Leads.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt;____________________________________________________________________________&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;h1&gt;💡 General Guidance&lt;/h1&gt;&lt;ul&gt;&lt;li&gt;Enter information as soon as it becomes available during the qualification process.&lt;/li&gt;&lt;li&gt;Avoid incomplete or temporary entries when the correct information is already known.&lt;/li&gt;&lt;li&gt;Review the displayed &lt;strong&gt;Guidance for Success&lt;/strong&gt; before completing each stage.&lt;/li&gt;&lt;li&gt;Use &lt;strong&gt;Mark Status as Complete&lt;/strong&gt; once all requirements for the current stage have been fulfilled.&lt;/li&gt;&lt;li&gt;Clarify any &lt;strong&gt;chain or purchasing group affiliation before Lead conversion&lt;/strong&gt;.&lt;/li&gt;&lt;li&gt;If no business opportunity is expected, &lt;strong&gt;Disqualify the Lead instead of progressing it further&lt;/strong&gt;.&lt;/li&gt;&lt;li&gt;Always select the most appropriate &lt;strong&gt;Disqualification Reason&lt;/strong&gt; and use &lt;strong&gt;Other&lt;/strong&gt; only as an exception.&lt;/li&gt;&lt;li&gt;After conversion, continue the sales process using the corresponding &lt;strong&gt;Account, Contact, and Opportunity&lt;/strong&gt; records.&lt;/li&gt;&lt;/ul&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-6e9ffb74-cd98-43c0-b387-8f657f74c991</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>body</name>
                     <value>Facet-8c199177-fbe1-4c31-8510-bfe0d1f7a620</value>
                 </componentInstanceProperties>
@@ -2309,6 +2376,34 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab8</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-sef7jlgzsgr</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Time Warp</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab11</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-6e9ffb74-cd98-43c0-b387-8f657f74c991</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Guide</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab9</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-95d60e22-1ba8-44b5-b623-67852f4353bd</name>

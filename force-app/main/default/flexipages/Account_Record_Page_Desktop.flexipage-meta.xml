@@ -12,6 +12,9 @@
                         <valueListItems>
                             <value>Delete</value>
                         </valueListItems>
+                        <valueListItems>
+                            <value>Account.OrderMask</value>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -994,6 +997,56 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.PaymentBlockingReason__c</fieldItem>
                 <identifier>RecordPaymentBlockingReason__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.LastInvoiceDate__c</fieldItem>
+                <identifier>RecordLastInvoiceDate__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.LastDeliveryDate__c</fieldItem>
+                <identifier>RecordLastDeliveryDate__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.SoldToParty__c</fieldItem>
+                <identifier>RecordSoldToParty__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.ShipToParty__c</fieldItem>
+                <identifier>RecordShipToParty__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.CurrentAccountCondition__c</fieldItem>
+                <identifier>RecordCurrentAccountCondition__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-9317228b-9000-4df5-9218-7d1560529bcc</name>

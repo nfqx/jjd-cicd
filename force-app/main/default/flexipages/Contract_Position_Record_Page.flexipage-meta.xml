@@ -2,6 +2,40 @@
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
     <flexiPageRegions>
         <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>collapsed</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>enableActionsConfiguration</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>enableActionsInNative</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideChatterActions</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideSlackAction</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>numVisibleActions</name>
+                    <value>3</value>
+                </componentInstanceProperties>
+                <componentName>force:highlightsPanel</componentName>
+                <identifier>highlightsPanel</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>header</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
@@ -97,6 +131,12 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>flexipage:blankSpace</componentName>
+                <identifier>flexipage_blankSpace</identifier>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -591,7 +631,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>horizontalAlignment</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -747,6 +787,10 @@
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>parentFieldApiName</name>
                     <value>ContractPosition__c.Id</value>
                 </componentInstanceProperties>
@@ -810,6 +854,10 @@
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>parentFieldApiName</name>
                     <value>ContractPosition__c.Id</value>
                 </componentInstanceProperties>
@@ -868,6 +916,10 @@
                             <value>New</value>
                         </valueListItems>
                     </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
@@ -967,6 +1019,10 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Tabs</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>tabs</name>
                     <value>Facet-tabs</value>
                 </componentInstanceProperties>
@@ -979,16 +1035,6 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <name>sidebar</name>
-        <type>Region</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentName>force:highlightsPanel</componentName>
-                <identifier>highlightsPanel</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>header</name>
         <type>Region</type>
     </flexiPageRegions>
     <masterLabel>Contract Position Record Page</masterLabel>

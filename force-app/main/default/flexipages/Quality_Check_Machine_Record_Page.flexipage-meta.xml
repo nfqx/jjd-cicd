@@ -62,6 +62,10 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>hideChatterActions</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>numVisibleActions</name>
                     <value>3</value>
                 </componentInstanceProperties>
@@ -103,12 +107,20 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Actions_to_improve_quality__c</fieldItem>
                 <identifier>RecordActions_to_improve_quality__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Additional_Comments__c</fieldItem>
                 <identifier>RecordAdditional_Comments__cField</identifier>
             </fieldInstance>
@@ -231,11 +243,6 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>actionNames</name>
-                    <valueList>
-                        <valueListItems>
-                            <value>New</value>
-                        </valueListItems>
-                    </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>maxRecordsToDisplay</name>

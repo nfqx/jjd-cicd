@@ -8,13 +8,6 @@
                     <valueList>
                         <valueListItems>
                             <value>Event.Close_Visit</value>
-                            <visibilityRule>
-                                <criteria>
-                                    <leftValue>{!Record.Status__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>Open</rightValue>
-                                </criteria>
-                            </visibilityRule>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>

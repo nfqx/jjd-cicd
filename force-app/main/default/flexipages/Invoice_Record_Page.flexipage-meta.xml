@@ -214,6 +214,12 @@
                 <identifier>RecordTaxCountryInfo__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.ShippingCosts__c</fieldItem>
+                <identifier>RecordShippingCosts__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-6fa8593c-5f48-4e4f-9723-fc793d60d3a1</name>
         <type>Facet</type>
     </flexiPageRegions>

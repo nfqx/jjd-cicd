@@ -4,19 +4,58 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>actionNames</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>AccountHierarchy</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Edit</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Delete</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Global.LogACall</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Global.NewTask</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>EmailHighlightAction</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>FeedItem.ContentNote</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>FeedItem.TextPost</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>FeedItem.ContentPost</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Account.OrderMask</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>collapsed</name>
                     <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>enableActionsConfiguration</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>enableActionsInNative</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideChatterActions</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideSlackAction</name>
                     <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -116,6 +155,10 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Tabs</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>tabs</name>
                     <value>maintabs</value>
                 </componentInstanceProperties>
@@ -199,6 +242,10 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Tabs</value>
+                </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>sidebartabs</value>
