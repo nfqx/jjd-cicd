@@ -9,6 +9,7 @@ Wird durch den Flow:xy beim Erstellung von Quote befüllt</description>
     <relationshipLabel>Quotes</relationshipLabel>
     <relationshipName>Quotes</relationshipName>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Lookup</type>
 </CustomField>

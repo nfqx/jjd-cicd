@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ReturnOrderNoDocumentReasonRequired</fullName>
+    <active>true</active>
+    <description>Without an order or invoice reference a reason is required.</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL( ReferenceType__c , &quot;NONE&quot;),
+  ISBLANK( NoDocumentReason__c )
+)</errorConditionFormula>
+    <errorDisplayField>NoDocumentReason__c</errorDisplayField>
+    <errorMessage>Without an order or invoice reference a reason is required. State in one sentence why no document exists.</errorMessage>
+</ValidationRule>

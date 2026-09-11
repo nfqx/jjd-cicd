@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FreeGoodsBudgetUsed__c</fullName>
+    <inlineHelpText>Sum of free goods orders charged to this budget in the current calendar year. Written by the system when the ERP order is created, reduced by returns. Do not edit.</inlineHelpText>
+    <label>Budget Used</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Event_Infos</name>
+        <label>Assign Event Infos</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>objectEvent.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Subject</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectEvent.WhoId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formulaWhoId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectEvent.WhatId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formulaWhatId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectEvent.Location</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Location</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectEvent.Type</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Visit</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectEvent.StartDateTime</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Start_Date_Time</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectEvent.EndDateTime</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>End_Date_Time</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectEvent.Goals__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Additional_Goals</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectEvent.Description</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Additional_Details</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Event</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>testChoice</name>
+        <choiceText>{!Main_Goal}</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <elementReference>Main_Goal</elementReference>
+        </value>
+    </choices>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
+    <decisions>
+        <name>Decision_Record_Type</name>
+        <label>Decision Record Type</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Screen_Plan_Visit</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>001</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Account</targetReference>
+            </connector>
+            <label>Account</label>
+        </rules>
+        <rules>
+            <name>Opportunity</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>006</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Opportunity</targetReference>
+            </connector>
+            <label>Opportunity</label>
+        </rules>
+        <rules>
+            <name>Lead</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>00Q</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Lead</targetReference>
+            </connector>
+            <label>Lead</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Main_Goal_also_selected_as_Additional_Goal</name>
+        <label>Main Goal also selected as Additional Goal?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Event_Infos</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Main_Goal</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>Additional_Details</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>Screen_Visit_Goals</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>with Main Goal</description>
+    <dynamicChoiceSets>
+        <name>colContacts</name>
+        <dataType>String</dataType>
+        <displayField>ContactFullName__c</displayField>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Account.Id</elementReference>
+            </value>
+        </filters>
+        <object>AccountContactRelation</object>
+        <valueField>ContactId</valueField>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>picklistEventGoals</name>
+        <dataType>Multipicklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Goals__c</picklistField>
+        <picklistObject>Event</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>picklistMainGoal</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Main_Goal__c</picklistField>
+        <picklistObject>Event</picklistObject>
+    </dynamicChoiceSets>
+    <ends>
+        <name>END_ELEMENT_1</name>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+    </ends>
+    <environments>Default</environments>
+    <formulas>
+        <name>formulaDefaultEndDateTime</name>
+        <dataType>DateTime</dataType>
+        <expression>{!Start_Date_Time}   + (1 / 24)</expression>
+    </formulas>
+    <formulas>
+        <name>formulaDefaultGoals</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+    {!varSourceType},
+
+    &quot;Lead&quot;,
+    &quot;New Customer Acquisition / First Visit&quot;,
+
+    &quot;Opportunity&quot;,
+    &quot;Contract or Commercial Terms Negotiation&quot;,
+
+    &quot;Account&quot;,
+    &quot;Existing Customer Relationship Management&quot;,
+
+    &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>formulaDefaultLocation</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+    {!varSourceType},
+
+    &quot;Account&quot;,
+    TRIM(
+        {!Get_Account.ShippingStreet}
+        &amp; &quot;, &quot;
+        &amp; {!Get_Account.ShippingPostalCode}
+        &amp; &quot; &quot;
+        &amp; {!Get_Account.ShippingCity}
+    ),
+
+    &quot;Opportunity&quot;,
+    TRIM(
+        {!Get_Opportunity.Account.ShippingStreet}
+        &amp; &quot;, &quot;
+        &amp; {!Get_Opportunity.Account.ShippingPostalCode}
+        &amp; &quot; &quot;
+        &amp; {!Get_Opportunity.Account.ShippingCity}
+    ),
+
+    &quot;Lead&quot;,
+    TRIM(
+        {!Get_Lead.Street}
+        &amp; &quot;, &quot;
+        &amp; {!Get_Lead.PostalCode}
+        &amp; &quot; &quot;
+        &amp; {!Get_Lead.City}
+    ),
+
+    &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>formulaDefaultStartDateTime</name>
+        <dataType>DateTime</dataType>
+        <expression>Now()</expression>
+    </formulas>
+    <formulas>
+        <name>formulaDefaultSubject</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+    {!varSourceType},
+
+    &quot;Lead&quot;,
+    &quot;Besuch: &quot; &amp; {!Get_Lead.Name} &amp; &quot; - &quot; &amp; {!Get_Lead.Company} &amp; &quot; (Lead)&quot;,
+
+    &quot;Account&quot;,
+    &quot;Besuch: &quot; &amp; {!Get_Account.Name} &amp; &quot; (Account)&quot;,
+
+    &quot;Opportunity&quot;,
+    &quot;Besuch: &quot; &amp; {!Get_Opportunity.Name} &amp; &quot; (Opportunity)&quot;,
+
+    &quot;Besuch:&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>formulaDisplayText</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    {!formulaGoalValidationError} = TRUE,
+    &quot;⚠️ Main Goal already selected&quot; &amp; BR() &amp;
+    &quot;The Main Goal should not also be selected as an Additional Goal.&quot;,
+    &quot;✅ All good&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>formulaGoalValidationError</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+    NOT(ISBLANK({!Main_Goal})),
+    NOT(ISBLANK({!Additional_Goals})),
+    CONTAINS(
+        {!Additional_Goals},
+        {!Main_Goal}
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>formulaWhatId</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+    {!varSourceType},
+
+    &quot;Account&quot;,
+    {!recordId},
+
+    &quot;Opportunity&quot;,
+    {!recordId},
+
+    &quot;Lead&quot;,
+    &quot;&quot;,
+
+    &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>formulaWhoId</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    {!varSourceType} = &quot;Lead&quot;,
+    {!recordId},
+    {!Responsible_Contact.selectedChoiceValues}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>varSourceType</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+    LEFT({!recordId}, 3),
+    &quot;001&quot;, &quot;Account&quot;,
+    &quot;006&quot;, &quot;Opportunity&quot;,
+    &quot;00Q&quot;, &quot;Lead&quot;,
+    &quot;Unknown&quot;
+)</expression>
+    </formulas>
+    <interviewLabel>Screen - Plan Visit {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Screen - Plan Visit</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_Event</name>
+        <label>Create Event</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>END_ELEMENT_1</targetReference>
+        </connector>
+        <inputReference>objectEvent</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Account</name>
+        <label>Get Account</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Screen_Plan_Visit</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Lead</name>
+        <label>Get Lead</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Screen_Plan_Visit</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Lead</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Opportunity</name>
+        <label>Get Opportunity</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Screen_Plan_Visit</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <screens>
+        <name>Screen_Plan_Visit</name>
+        <label>Screen_Plan_Visit</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Screen_Visit_Goals</targetReference>
+        </connector>
+        <fields>
+            <name>Text_Screen_Plan_Visit</name>
+            <fieldText>&lt;h2&gt;📅 Plan Customer Visit&lt;/h2&gt;&lt;p&gt;👤 &lt;strong&gt;Select Responsible Contact&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Select the &lt;strong&gt;contact person&lt;/strong&gt; you are planning to meet during the customer visit.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;▶️ &lt;strong&gt;Start Date&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Enter the date on which the customer visit is planned.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;🏁 &lt;strong&gt;Planned End Date&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Enter the date by which the visit is expected to be completed.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;✅ Once the appointment details have been entered, click &lt;strong&gt;Next&lt;/strong&gt; to define the &lt;strong&gt;goal of the visit&lt;/strong&gt;.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Subject</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>formulaDefaultSubject</elementReference>
+            </defaultValue>
+            <fieldText>Subject</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Responsible_Contact</name>
+            <choiceReferences>colContacts</choiceReferences>
+            <extensionName>flowruntime:choiceLookup</extensionName>
+            <fieldText>Responsible Contact</fieldText>
+            <fieldType>ComponentChoice</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Account</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Screen_Plan_Visit_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Screen_Plan_Visit_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Start_Date_Time</name>
+                    <dataType>DateTime</dataType>
+                    <defaultValue>
+                        <elementReference>formulaDefaultStartDateTime</elementReference>
+                    </defaultValue>
+                    <fieldText>Start Date Time</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Screen_Plan_Visit_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>End_Date_Time</name>
+                    <dataType>DateTime</dataType>
+                    <defaultValue>
+                        <elementReference>formulaDefaultEndDateTime</elementReference>
+                    </defaultValue>
+                    <fieldText>End Date Time</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Location</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>formulaDefaultLocation</elementReference>
+            </defaultValue>
+            <fieldText>Location</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Screen_Visit_Goals</name>
+        <label>Screen_Visit_Goals</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Main_Goal_also_selected_as_Additional_Goal</targetReference>
+        </connector>
+        <fields>
+            <name>Text_Define_Goals</name>
+            <fieldText>&lt;h2&gt;🎯 Define Visit Goal&lt;/h2&gt;&lt;p&gt;🏆 &lt;strong&gt;Select Primary Visit Goal&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Select the &lt;strong&gt;main goal&lt;/strong&gt; you want to achieve during the customer visit.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;📝 &lt;strong&gt;Additional Details&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Enter any additional information that may help you prepare for the visit or further specify the selected goal.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;✅ Once the visit goal and any relevant details have been entered, click &lt;strong&gt;Next&lt;/strong&gt; to continue.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Main_Goal</name>
+            <choiceReferences>picklistMainGoal</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>formulaDefaultGoals</elementReference>
+            </defaultValue>
+            <fieldText>Main Goal</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>test</name>
+            <fieldText>&lt;p&gt;Main: &lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!varSelectedMainGoal}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Add: {!varSelectedAddGoals}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Additional_Goals</name>
+            <choiceReferences>picklistEventGoals</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Additional Goals</fieldText>
+            <fieldType>MultiSelectCheckboxes</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>TestCheckbox</name>
+            <dataType>Boolean</dataType>
+            <defaultValue>
+                <elementReference>formulaGoalValidationError</elementReference>
+            </defaultValue>
+            <fieldText>⚠️ Main Goal already selected  The Main Goal cannot also be selected as an Additional Goal. Please remove it from the Additional Goals.</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isDisabled>
+                <booleanValue>true</booleanValue>
+            </isDisabled>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>text_Error_Main_Goal</name>
+            <fieldText>&lt;p&gt;⚠️ &lt;strong&gt;Main Goal already selected&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;The Main Goal cannot also be selected as an Additional Goal. Please remove it from the Additional Goals.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>formulaGoalValidationError</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Additional_Details</name>
+            <fieldText>Additional Details</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Decision_Record_Type</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+    <variables>
+        <name>objectEvent</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Event</objectType>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varSelectedAddGoals</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>Additional_Goals</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <name>varSelectedMainGoal</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>Main_Goal</elementReference>
+        </value>
+    </variables>
+</Flow>

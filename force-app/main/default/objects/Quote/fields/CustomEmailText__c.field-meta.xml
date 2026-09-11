@@ -3,6 +3,7 @@
     <fullName>CustomEmailText__c</fullName>
     <label>Custom Email Text</label>
     <length>1500</length>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>LongTextArea</type>
     <visibleLines>3</visibleLines>

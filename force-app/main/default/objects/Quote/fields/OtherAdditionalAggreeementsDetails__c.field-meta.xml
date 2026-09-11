@@ -3,6 +3,7 @@
     <fullName>OtherAdditionalAggreeementsDetails__c</fullName>
     <label>Other Additional Aggreeements - Details</label>
     <length>5000</length>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Html</type>
     <visibleLines>25</visibleLines>

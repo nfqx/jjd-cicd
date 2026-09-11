@@ -215,6 +215,11 @@
                 <label>QS - Foreign Body</label>
             </value>
             <value>
+                <fullName>Unannounced Parcel</fullName>
+                <default>false</default>
+                <label>Unannounced Parcel</label>
+            </value>
+            <value>
                 <fullName>Außerhaus-Service</fullName>
                 <default>false</default>
                 <isActive>false</isActive>

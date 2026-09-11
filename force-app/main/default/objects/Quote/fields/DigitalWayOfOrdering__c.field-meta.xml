@@ -3,6 +3,7 @@
     <fullName>DigitalWayOfOrdering__c</fullName>
     <defaultValue>false</defaultValue>
     <label>Digital Way of Ordering</label>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>

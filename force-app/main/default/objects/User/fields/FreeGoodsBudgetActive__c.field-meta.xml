@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FreeGoodsBudgetActive__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Free goods orders of this user are charged against the personal budget. Without this flag the Free Goods order type cannot be selected.</inlineHelpText>
+    <label>Budget Active</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -13,8 +13,8 @@
     <filterScope>Everything</filterScope>
     <filters>
         <field>Status__c</field>
-        <operation>equals</operation>
-        <value>Open,In Progress,Incomplete,Planned</value>
+        <operation>notEqual</operation>
+        <value>Completed</value>
     </filters>
     <filters>
         <field>Assigned_To_Me__c</field>

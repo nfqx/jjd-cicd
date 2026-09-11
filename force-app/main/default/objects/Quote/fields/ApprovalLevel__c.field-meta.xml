@@ -3,6 +3,7 @@
     <fullName>ApprovalLevel__c</fullName>
     <label>Approval Level</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>true</trackHistory>
     <type>Picklist</type>
     <valueSet>

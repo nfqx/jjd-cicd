@@ -3,6 +3,7 @@
     <fullName>MachineSurchargeCalculation__c</fullName>
     <defaultValue>false</defaultValue>
     <label>Surcharge Calculation</label>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>

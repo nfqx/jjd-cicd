@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ReturnOrderShippingConditionRequired</fullName>
+    <active>true</active>
+    <description>A shipping condition is required before the return order is sent.</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL( Status , &quot;Gesendet&quot;),
+  ISPICKVAL( ShippingCondition__c , &quot;&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>ShippingCondition__c</errorDisplayField>
+    <errorMessage>Choose the pickup or shipping condition. Logistics assigns the parcel service or freight forwarder based on it.</errorMessage>
+</ValidationRule>

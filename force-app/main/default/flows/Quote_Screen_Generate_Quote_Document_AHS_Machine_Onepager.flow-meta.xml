@@ -197,6 +197,9 @@
         <filters>
             <field>Name</field>
             <operator>EqualTo</operator>
+            <value>
+                <stringValue>Email Onepager</stringValue>
+            </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>cadmus_core__Pack__c</object>

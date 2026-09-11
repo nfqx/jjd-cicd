@@ -210,8 +210,8 @@
     <recordLookups>
         <name>Get_Queue_Id</name>
         <label>Get Queue Id</label>
-        <locationX>486</locationX>
-        <locationY>830</locationY>
+        <locationX>747</locationX>
+        <locationY>782</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Triggered_Case</targetReference>
@@ -238,8 +238,8 @@
     <recordUpdates>
         <name>Update_Triggered_Case</name>
         <label>Update Triggered Case</label>
-        <locationX>485</locationX>
-        <locationY>1084</locationY>
+        <locationX>748</locationX>
+        <locationY>959</locationY>
         <inputAssignments>
             <field>OwnerId</field>
             <value>
@@ -249,7 +249,7 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>621</locationX>
+        <locationX>620</locationX>
         <locationY>50</locationY>
         <connector>
             <targetReference>Get_Custom_Metadata</targetReference>
@@ -273,7 +273,7 @@
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>routingConfId</name>
         <dataType>String</dataType>

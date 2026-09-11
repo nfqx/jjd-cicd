@@ -6,6 +6,7 @@
     <label>Reason for falling below the minimum dep</label>
     <length>255</length>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Text</type>
     <unique>false</unique>

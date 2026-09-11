@@ -2,15 +2,114 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>67.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Owner_Id_to_Case_Record</name>
+        <label>Assign Owner Id to Case Record</label>
+        <locationX>1475</locationX>
+        <locationY>1429</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>queueId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>RecordType_Change_is_Needed_or_Not</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Record_Type_Id</name>
+        <label>Assign Record Type Id</label>
+        <locationX>2057</locationX>
+        <locationY>1899</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordTypeId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Types_and_Entitlements</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Types_and_Entitlements</name>
+        <label>Assign Types and Entitlements</label>
+        <locationX>1803</locationX>
+        <locationY>2012</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.EntitlementId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Entitlement_Assignment.entitlementId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Account_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Entitlement_Assignment.accountType</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Type</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Case_Type_Metadata_Query.Case_Type__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Case</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Unrated_Parameters</name>
+        <label>Update Unrated Parameters</label>
+        <locationX>1099</locationX>
+        <locationY>1650</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.EntitlementId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Entitlement_Assignment.entitlementId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Account_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Entitlement_Assignment.accountType</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>queueId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Type</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Unrated</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Case</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <name>Case_Pre_Clustering</name>
         <label>Case Pre Clustering</label>
-        <locationX>960</locationX>
-        <locationY>491</locationY>
+        <locationX>757</locationX>
+        <locationY>1126</locationY>
         <defaultConnector>
-            <targetReference>Case_Type_Validation</targetReference>
+            <targetReference>Case_Type_Metadata_Query</targetReference>
         </defaultConnector>
-        <defaultConnectorLabel>Type and Subtype Check</defaultConnectorLabel>
+        <defaultConnectorLabel>No Type and Subtype</defaultConnectorLabel>
         <rules>
             <name>Voicemail_Cases_ohne_Nachricht</name>
             <conditionLogic>(1 AND 2 ) OR (1 AND 3)</conditionLogic>
@@ -41,6 +140,35 @@
             <label>Voicemail Cases ohne Nachricht</label>
         </rules>
         <rules>
+            <name>Voicemail_Cases_for_Routing</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Origin</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Voicemail</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Nachricht von</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>fx_CheckSubjectForPhoneCalls</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Voicemail_RecordType_Id</targetReference>
+            </connector>
+            <label>Voicemail Cases for Routing</label>
+        </rules>
+        <rules>
             <name>Fax</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
@@ -51,7 +179,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Fax_Case</targetReference>
+                <targetReference>Check_Fax_RecordType_Id</targetReference>
             </connector>
             <label>Fax</label>
         </rules>
@@ -59,10 +187,10 @@
     <decisions>
         <name>Case_Type_Validation</name>
         <label>Case Type Validation</label>
-        <locationX>1216</locationX>
-        <locationY>505</locationY>
+        <locationX>758</locationX>
+        <locationY>704</locationY>
         <defaultConnector>
-            <targetReference>Entitlement_Assignment</targetReference>
+            <targetReference>Update_Entitlement_Only_Case</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No Type Check Needed</defaultConnectorLabel>
         <rules>
@@ -76,9 +204,84 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Case_Type_Metadata_Query</targetReference>
+                <targetReference>Case_Pre_Clustering</targetReference>
             </connector>
             <label>Yes, Type is blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Queue_Update_Needed_or_Not</name>
+        <label>Queue Update Needed or Not</label>
+        <locationX>1699</locationX>
+        <locationY>1289</locationY>
+        <defaultConnector>
+            <targetReference>RecordType_Change_is_Needed_or_Not</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Queue Update Needed</defaultConnectorLabel>
+        <rules>
+            <name>Update_Queue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>queueId</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Owner_Id_to_Case_Record</targetReference>
+            </connector>
+            <label>Update Queue</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>RecordType_Change_is_Needed_or_Not</name>
+        <label>RecordType Change is Needed or Not</label>
+        <locationX>1712</locationX>
+        <locationY>1750</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Types_and_Entitlements</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No RecordType Check is needed</defaultConnectorLabel>
+        <rules>
+            <name>Change_RecordType</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case_Type_Metadata_Query.RecordType_API_Name__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_RecordType_Id</targetReference>
+            </connector>
+            <label>Change RecordType</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Routing_Helper_has_Found_or_Not</name>
+        <label>Routing Helper has Found or Not</label>
+        <locationX>1087</locationX>
+        <locationY>1286</locationY>
+        <defaultConnector>
+            <targetReference>Get_Queue_Id</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Routing Helper exists</defaultConnectorLabel>
+        <rules>
+            <name>Routing_Helper_not_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case_Type_Metadata_Query.Id</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Queue_Default</targetReference>
+            </connector>
+            <label>Routing Helper not Found</label>
         </rules>
     </decisions>
     <environments>Default</environments>
@@ -114,11 +317,11 @@ AND(
     <recordLookups>
         <name>Case_Type_Metadata_Query</name>
         <label>Case Type Metadata Query</label>
-        <locationX>1270</locationX>
-        <locationY>792</locationY>
+        <locationX>1094</locationX>
+        <locationY>1123</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Entitlement_Assignment</targetReference>
+            <targetReference>Routing_Helper_has_Found_or_Not</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -147,10 +350,126 @@ AND(
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Check_Fax_RecordType_Id</name>
+        <label>Check Fax RecordType Id</label>
+        <locationX>585</locationX>
+        <locationY>1245</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Fax_Case</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Case</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Order_Cases</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Check_RecordType_Id</name>
+        <label>Check RecordType Id</label>
+        <locationX>2049</locationX>
+        <locationY>1622</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Record_Type_Id</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Case</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Case_Type_Metadata_Query.RecordType_API_Name__c</elementReference>
+            </value>
+        </filters>
+        <object>RecordType</object>
+        <outputAssignments>
+            <assignToReference>recordTypeId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <name>Check_Voicemail_RecordType_Id</name>
+        <label>Check Voicemail RecordType Id</label>
+        <locationX>474</locationX>
+        <locationY>1135</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Voicemail_Case</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Case</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Order_Cases</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Queue_Id</name>
+        <label>Get Queue Id</label>
+        <locationX>1393</locationX>
+        <locationY>1287</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Queue_Update_Needed_or_Not</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Queue</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Case_Type_Metadata_Query.Queue_API_Name__c</elementReference>
+            </value>
+        </filters>
+        <object>Group</object>
+        <outputAssignments>
+            <assignToReference>queueId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
         <name>JJD_Non_Routable_Queue</name>
         <label>JJD Non Routable Queue</label>
-        <locationX>336</locationX>
-        <locationY>489</locationY>
+        <locationX>538</locationX>
+        <locationY>970</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Voicemail_Cases</targetReference>
@@ -175,13 +494,43 @@ AND(
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>Standard_Entitlement</name>
-        <label>Standard Entitlement</label>
-        <locationX>964</locationX>
-        <locationY>329</locationY>
+        <name>Queue_Default</name>
+        <label>Queue Default</label>
+        <locationX>1199</locationX>
+        <locationY>1514</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Case_Pre_Clustering</targetReference>
+            <targetReference>Update_Unrated_Parameters</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Queue</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>JJD_Support</stringValue>
+            </value>
+        </filters>
+        <object>Group</object>
+        <outputAssignments>
+            <assignToReference>queueId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <name>Standard_Entitlement</name>
+        <label>Standard Entitlement</label>
+        <locationX>766</locationX>
+        <locationY>359</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Entitlement_Assignment</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -203,10 +552,17 @@ AND(
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <name>Update_Case</name>
+        <label>Update Case</label>
+        <locationX>743</locationX>
+        <locationY>1955</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Entitlement_Only_Case</name>
         <label>Update Entitlement Only Case</label>
-        <locationX>975</locationX>
-        <locationY>1345</locationY>
+        <locationX>1275</locationX>
+        <locationY>699</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Type</field>
@@ -232,8 +588,8 @@ AND(
     <recordUpdates>
         <name>Update_Fax_Case</name>
         <label>Update Fax Case</label>
-        <locationX>705</locationX>
-        <locationY>930</locationY>
+        <locationX>289</locationX>
+        <locationY>1303</locationY>
         <inputAssignments>
             <field>EntitlementId</field>
             <value>
@@ -244,6 +600,12 @@ AND(
             <field>Origin</field>
             <value>
                 <stringValue>Fax</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Check_Fax_RecordType_Id.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -261,37 +623,38 @@ AND(
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
-        <name>Update_Type_Case</name>
-        <label>Update Type Case</label>
-        <locationX>975</locationX>
-        <locationY>1188</locationY>
-        <connector>
-            <targetReference>Update_Entitlement_Only_Case</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Type</field>
-            <operator>IsNull</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Account_Type__c</field>
-            <value>
-                <elementReference>Entitlement_Assignment.accountType</elementReference>
-            </value>
-        </inputAssignments>
+        <name>Update_Voicemail_Case</name>
+        <label>Update Voicemail Case</label>
+        <locationX>268</locationX>
+        <locationY>1142</locationY>
         <inputAssignments>
             <field>EntitlementId</field>
             <value>
-                <elementReference>Entitlement_Assignment.entitlementId</elementReference>
+                <elementReference>Standard_Entitlement.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Origin</field>
+            <value>
+                <stringValue>Voicemail</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Check_Voicemail_RecordType_Id.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SubType__c</field>
+            <value>
+                <stringValue>Answering Machine</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>Type</field>
             <value>
-                <elementReference>Case_Type_Metadata_Query.Case_Type__c</elementReference>
+                <stringValue>Order</stringValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -299,8 +662,8 @@ AND(
     <recordUpdates>
         <name>Update_Voicemail_Cases</name>
         <label>Update Voicemail Cases</label>
-        <locationX>50</locationX>
-        <locationY>488</locationY>
+        <locationX>267</locationX>
+        <locationY>968</locationY>
         <inputAssignments>
             <field>OwnerId</field>
             <value>
@@ -328,7 +691,7 @@ AND(
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>837</locationX>
+        <locationX>641</locationX>
         <locationY>50</locationY>
         <connector>
             <targetReference>Standard_Entitlement</targetReference>
@@ -337,14 +700,14 @@ AND(
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <subflows>
         <name>Entitlement_Assignment</name>
         <label>Entitlement Assignment</label>
-        <locationX>974</locationX>
-        <locationY>1014</locationY>
+        <locationX>766</locationX>
+        <locationY>525</locationY>
         <connector>
-            <targetReference>Update_Type_Case</targetReference>
+            <targetReference>Case_Type_Validation</targetReference>
         </connector>
         <flowName>Case_Subflow_Entitlement_Assignment</flowName>
         <inputAssignments>
@@ -369,6 +732,20 @@ AND(
     </subflows>
     <variables>
         <name>accountId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>queueId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recordTypeId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

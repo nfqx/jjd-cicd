@@ -3,6 +3,7 @@
     <fullName>BrandDisplayMenu__c</fullName>
     <defaultValue>false</defaultValue>
     <label>Brand Display: Menu</label>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>

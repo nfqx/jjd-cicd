@@ -238,6 +238,11 @@
             <label>The Same</label>
         </rules>
     </decisions>
+    <description>Allows ZKS users to process incoming Cases by creating or reactivating Leads. The Flow:
+Searches for existing Leads using the contact&apos;s name and email address.
+Reactivates and updates a selected matching Lead, if applicable.
+Creates a new Lead and assigns it to the Marketing Qualified Leads queue when no suitable Lead exists (or the user selects Different Person).
+Closes the originating Case after successful processing.</description>
     <dynamicChoiceSets>
         <name>ChoiceCaseCountry</name>
         <dataType>Picklist</dataType>
@@ -391,7 +396,7 @@
             <field>DeveloperName</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>MarketingQualifiedLeads</stringValue>
+                <stringValue>TeleSales</stringValue>
             </value>
         </filters>
         <filters>
@@ -601,6 +606,19 @@
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>LeadsFound1</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 16px; color: rgb(255, 0, 0);&quot;&gt;{!$Label.Flow_CaseCreateLeadLeadsFound}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
                     <stringValue>top</stringValue>
@@ -1414,6 +1432,19 @@
             </styleProperties>
         </fields>
         <fields>
+            <name>CaseInformation</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 16px; color: rgb(255, 0, 0);&quot;&gt;{!$Label.Flow_CaseCreateLeadCaseInformationMissing}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
             <name>ScreenSetCaseType_Section1</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
@@ -1536,7 +1567,7 @@
             <targetReference>GetCaseDetails</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <textTemplates>
         <name>LeadReactiveInfoText</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
@@ -1544,8 +1575,8 @@
     </textTemplates>
     <textTemplates>
         <name>Script1TextTemplate</name>
-        <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;{!$Label.GeneralHello} {!$User.FirstName} {!$Label.Flow_CaseCreateLeadGreeting}&lt;/p&gt;</text>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!$Label.GeneralHello} {!$User.FirstName} {!$Label.Flow_CaseCreateLeadGreeting}</text>
     </textTemplates>
     <variables>
         <name>NewLead</name>

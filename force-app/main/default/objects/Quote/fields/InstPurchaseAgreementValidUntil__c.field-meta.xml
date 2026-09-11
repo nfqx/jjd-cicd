@@ -3,6 +3,7 @@
     <fullName>InstPurchaseAgreementValidUntil__c</fullName>
     <label>Inst. Purchase Agreement Valid Until</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Date</type>
 </CustomField>

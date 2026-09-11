@@ -26,16 +26,6 @@
                 <label>In Progress</label>
             </value>
             <value>
-                <fullName>Incomplete</fullName>
-                <default>false</default>
-                <label>Incomplete</label>
-            </value>
-            <value>
-                <fullName>Completed</fullName>
-                <default>false</default>
-                <label>Completed</label>
-            </value>
-            <value>
                 <fullName>Follow-up Required</fullName>
                 <default>false</default>
                 <label>Follow-up Required</label>
@@ -44,6 +34,17 @@
                 <fullName>Follow-up Scheduled</fullName>
                 <default>false</default>
                 <label>Follow-up Scheduled</label>
+            </value>
+            <value>
+                <fullName>Completed</fullName>
+                <default>false</default>
+                <label>Completed</label>
+            </value>
+            <value>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Incomplete</label>
             </value>
         </valueSetDefinition>
     </valueSet>

@@ -3,6 +3,7 @@
     <fullName>BrandDisplayTable__c</fullName>
     <defaultValue>false</defaultValue>
     <label>Brand Display: Table</label>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>

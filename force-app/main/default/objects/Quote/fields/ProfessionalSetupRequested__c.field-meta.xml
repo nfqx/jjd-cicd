@@ -3,6 +3,7 @@
     <fullName>ProfessionalSetupRequested__c</fullName>
     <defaultValue>false</defaultValue>
     <label>Professional Setup Requested</label>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>

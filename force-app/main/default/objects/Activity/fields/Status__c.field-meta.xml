@@ -18,6 +18,11 @@
                 <default>false</default>
                 <label>Closed</label>
             </value>
+            <value>
+                <fullName>In progress</fullName>
+                <default>false</default>
+                <label>In progress</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

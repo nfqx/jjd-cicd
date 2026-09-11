@@ -3,6 +3,7 @@
     <fullName>MachineDirectDebitCollectionDay1or15__c</fullName>
     <label>Direct Debit Collection Day (1st/15th)</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Picklist</type>
     <valueSet>

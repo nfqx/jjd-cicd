@@ -3,6 +3,7 @@
     <fullName>OfferSentDigitally__c</fullName>
     <defaultValue>false</defaultValue>
     <label>Offer Sent Digitally</label>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>

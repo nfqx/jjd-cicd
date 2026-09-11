@@ -160,6 +160,7 @@
         <object>Quote</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
     <screens>
         <name>ErrorScreenNoContact</name>
         <label>ErrorScreenNoContact</label>

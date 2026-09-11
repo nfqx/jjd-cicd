@@ -4,6 +4,7 @@
     <defaultValue>false</defaultValue>
     <description>CRM-1483 Ob eine Simulation vorliegt</description>
     <label>Simulation</label>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>

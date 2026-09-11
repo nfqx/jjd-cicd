@@ -153,6 +153,7 @@
         </connector>
         <inputReference>var_UpdateRecordCollection</inputReference>
     </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
     <start>
         <locationX>787</locationX>
         <locationY>48</locationY>

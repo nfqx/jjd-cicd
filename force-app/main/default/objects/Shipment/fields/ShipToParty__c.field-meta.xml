@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ShipToParty__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Represents the ship-to party / goods recipient.</description>
+    <inlineHelpText>Select the Account to which the goods will physically be delivered.</inlineHelpText>
+    <label>Ship-To Party</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Shipments (Ship-To Party)</relationshipLabel>
+    <relationshipName>Shipments2</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

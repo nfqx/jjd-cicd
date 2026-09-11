@@ -108,6 +108,11 @@
                 <default>false</default>
                 <label>Missing Base Key</label>
             </value>
+            <value>
+                <fullName>06</fullName>
+                <default>false</default>
+                <label>06</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

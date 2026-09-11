@@ -3,6 +3,7 @@
     <fullName>InitialReview__c</fullName>
     <label>Initial Review</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Date</type>
 </CustomField>

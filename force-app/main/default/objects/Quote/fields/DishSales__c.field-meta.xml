@@ -3,6 +3,7 @@
     <fullName>DishSales__c</fullName>
     <defaultValue>false</defaultValue>
     <label>Dish Sales</label>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>

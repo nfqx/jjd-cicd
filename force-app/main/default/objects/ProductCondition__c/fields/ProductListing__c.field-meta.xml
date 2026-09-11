@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProductListing__c</fullName>
+    <label>Product Listing</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Inherited Listing</fullName>
+                <default>false</default>
+                <label>Inherited Listing</label>
+            </value>
+            <value>
+                <fullName>Own Listing</fullName>
+                <default>false</default>
+                <label>Own Listing</label>
+            </value>
+            <value>
+                <fullName>Core Product Line</fullName>
+                <default>false</default>
+                <label>Core Product Line</label>
+            </value>
+            <value>
+                <fullName>Inherited Listing Block</fullName>
+                <default>false</default>
+                <label>Inherited Listing Block</label>
+            </value>
+            <value>
+                <fullName>Own Listing Block</fullName>
+                <default>false</default>
+                <label>Own Listing Block</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

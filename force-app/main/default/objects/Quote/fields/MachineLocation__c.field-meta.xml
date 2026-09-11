@@ -3,6 +3,7 @@
     <fullName>MachineLocation__c</fullName>
     <label>Machine Location</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>TextArea</type>
 </CustomField>

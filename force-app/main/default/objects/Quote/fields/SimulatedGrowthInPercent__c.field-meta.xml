@@ -3,6 +3,7 @@
     <fullName>SimulatedGrowthInPercent__c</fullName>
     <label>Simulated Growth in %</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Picklist</type>
     <valueSet>

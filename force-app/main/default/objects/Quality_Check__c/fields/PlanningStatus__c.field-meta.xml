@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PlanningStatus__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    ISBLANK(Planned_Check_Date__c),
+    &quot;⚪ Not Scheduled&quot;,
+
+    IF(
+        TODAY() &lt; Start_Date__c,
+        &quot;🔵 Upcoming – Execution starts in &quot; &amp;
+        TEXT(Start_Date__c - TODAY()) &amp;
+        &quot; days&quot;,
+
+        IF(
+            TODAY() &gt; Due_Date__c,
+            &quot;🔴 Overdue by &quot; &amp;
+            TEXT(ABS(Due_Date__c - TODAY())) &amp;
+            &quot; days&quot;,
+
+            IF(
+                TODAY() = Due_Date__c,
+                &quot;🕒 Due Today&quot;,
+
+                IF(
+                    Due_Date__c - TODAY() &lt;= 14,
+                    &quot;🟠 Due Soon – &quot; &amp;
+                    TEXT(Due_Date__c - TODAY()) &amp;
+                    &quot; days remaining&quot;,
+
+                    &quot;🟢 Execution Window Open – &quot; &amp;
+                    TEXT(Due_Date__c - TODAY()) &amp;
+                    &quot; days remaining&quot;
+                )
+            )
+        )
+    )
+)</formula>
+    <label>Planning Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

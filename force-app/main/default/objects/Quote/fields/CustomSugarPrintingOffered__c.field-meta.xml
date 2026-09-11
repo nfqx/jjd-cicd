@@ -3,6 +3,7 @@
     <fullName>CustomSugarPrintingOffered__c</fullName>
     <defaultValue>false</defaultValue>
     <label>Custom Sugar Printing Offered</label>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>

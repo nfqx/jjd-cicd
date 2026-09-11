@@ -3,6 +3,7 @@
     <fullName>MachineHandoverToMachineTeam__c</fullName>
     <defaultValue>false</defaultValue>
     <label>Handover to Machine Team Done</label>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>

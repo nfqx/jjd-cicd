@@ -3,6 +3,7 @@
     <fullName>KAMApprovalHelper__c</fullName>
     <defaultValue>false</defaultValue>
     <label>KAM Approval Helper</label>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>

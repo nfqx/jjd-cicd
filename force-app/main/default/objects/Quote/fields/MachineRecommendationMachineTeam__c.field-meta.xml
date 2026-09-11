@@ -3,6 +3,7 @@
     <fullName>MachineRecommendationMachineTeam__c</fullName>
     <label>Machine Recommendation Machine Team</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Picklist</type>
     <valueSet>

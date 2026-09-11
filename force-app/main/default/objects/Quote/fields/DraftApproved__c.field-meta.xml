@@ -3,6 +3,7 @@
     <fullName>DraftApproved__c</fullName>
     <defaultValue>false</defaultValue>
     <label>Draft Approved</label>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>

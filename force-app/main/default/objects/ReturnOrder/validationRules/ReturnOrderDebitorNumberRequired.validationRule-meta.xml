@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ReturnOrderDebitorNumberRequired</fullName>
+    <active>true</active>
+    <description>The customer number of the case is required before the return order is sent.</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL( Status , &quot;Gesendet&quot;),
+  ISBLANK( Case.DebitorNumber__c )
+)</errorConditionFormula>
+    <errorMessage>The customer number from the case is missing for the handover. Open the case and add the customer number.</errorMessage>
+</ValidationRule>

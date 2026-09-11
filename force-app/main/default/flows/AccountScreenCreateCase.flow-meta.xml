@@ -493,7 +493,7 @@
         <inputAssignments>
             <field>RecordTypeId</field>
             <value>
-                <elementReference>GetRecordTypeSupport.Id</elementReference>
+                <elementReference>GetRecordType.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -627,7 +627,7 @@
             </value>
         </filters>
         <filters>
-            <field>SuppliedName</field>
+            <field>AccountId</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>recordId</elementReference>
@@ -636,6 +636,9 @@
         <filters>
             <field>Type</field>
             <operator>EqualTo</operator>
+            <value>
+                <stringValue>Webshop</stringValue>
+            </value>
         </filters>
         <filters>
             <field>SubType__c</field>
@@ -753,7 +756,7 @@
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>GetRecordTypeSupport</targetReference>
+            <targetReference>VerifyContactData</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -817,27 +820,6 @@
             <operator>EqualTo</operator>
             <value>
                 <stringValue>ZKS_Cases</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>RecordType</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>GetRecordTypeSupport</name>
-        <label>Get Record Type - Support</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>VerifyContactData</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>DeveloperName</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>SalesforceSupport</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -1430,7 +1412,7 @@ NOT(ISBLANK({!ContactName.firstName})),NOT(ISBLANK({!ContactName.lastName}))
         </connector>
         <fields>
             <name>WebshopAccessBlocked</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 18px; color: rgb(255, 0, 0);&quot;&gt;{!$Label.Flow_AccountCreateCaseWebshopBlocked}&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(255, 0, 0); font-size: 18px;&quot;&gt;{!$Label.Flow_AccountCreateCaseWebshopBlocked}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 16px;&quot;&gt;{!$Label.GeneralAccount}: &lt;/span&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); font-size: 16px;&quot;&gt;{!GetAccount.Name}&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -1451,16 +1433,16 @@ NOT(ISBLANK({!ContactName.firstName})),NOT(ISBLANK({!ContactName.lastName}))
             <targetReference>GetAccount</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <textTemplates>
         <name>txtCaseSubject</name>
-        <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;{!Type} for {!GetAccount.AccountNumber} - {!GetAccount.Name}&lt;/p&gt;</text>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!Type} for {!GetAccount.AccountNumber} - {!GetAccount.Name}</text>
     </textTemplates>
     <textTemplates>
         <name>txtWelcome</name>
-        <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;{!$Label.Flow_AccountCreateCaseWelcomeText} {!GetAccount.AccountNumber}!&lt;/p&gt;</text>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!$Label.Flow_AccountCreateCaseWelcomeText} {!GetAccount.AccountNumber}!</text>
     </textTemplates>
     <variables>
         <name>recordId</name>

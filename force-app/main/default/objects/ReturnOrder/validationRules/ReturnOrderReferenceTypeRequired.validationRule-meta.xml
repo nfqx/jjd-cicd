@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ReturnOrderReferenceTypeRequired</fullName>
+    <active>true</active>
+    <description>A reference type is required before the return order is sent.</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL( Status , &quot;Gesendet&quot;),
+  ISPICKVAL( ReferenceType__c , &quot;&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>ReferenceType__c</errorDisplayField>
+    <errorMessage>Choose a reference type: order, invoice or no document. Without a reference type the return order is rejected.</errorMessage>
+</ValidationRule>

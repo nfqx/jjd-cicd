@@ -3,6 +3,7 @@
     <fullName>SimulatedGrowthInSales__c</fullName>
     <label>Simulated Growth In Sales</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Picklist</type>
     <valueSet>

@@ -3,6 +3,7 @@
     <fullName>MachineDownpaymentBeforeOrAfterOrder__c</fullName>
     <label>Downpayment before or after order</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Picklist</type>
     <valueSet>

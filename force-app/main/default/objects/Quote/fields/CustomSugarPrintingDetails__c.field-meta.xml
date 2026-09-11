@@ -3,6 +3,7 @@
     <fullName>CustomSugarPrintingDetails__c</fullName>
     <label>Custom Sugar Printing Details</label>
     <length>5000</length>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Html</type>
     <visibleLines>25</visibleLines>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DaysUntilDue__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    ISBLANK(Due_Date__c),
+    &quot;⚪ No Due Date&quot;,
+    IF(
+        Due_Date__c &lt; TODAY(),
+        &quot;🔴 Overdue by &quot; &amp; TEXT(ABS(Due_Date__c - TODAY())) &amp; &quot; days&quot;,
+        IF(
+            Due_Date__c = TODAY(),
+            &quot;🔴 Due today&quot;,
+            IF(
+                Due_Date__c - TODAY() &lt;= 14,
+                &quot;🟠 &quot; &amp; TEXT(Due_Date__c - TODAY()) &amp; &quot; days remaining&quot;,
+                &quot;🟢 &quot; &amp; TEXT(Due_Date__c - TODAY()) &amp; &quot; days remaining&quot;
+            )
+        )
+    )
+)</formula>
+    <label>Days Until Due</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

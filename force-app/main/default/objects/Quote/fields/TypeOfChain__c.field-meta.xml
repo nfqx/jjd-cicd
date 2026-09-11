@@ -3,6 +3,7 @@
     <fullName>TypeOfChain__c</fullName>
     <label>Type of Chain</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Picklist</type>
     <valueSet>

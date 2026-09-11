@@ -7,7 +7,6 @@
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
@@ -49,6 +48,46 @@
                 <fullName>Matcha</fullName>
                 <default>false</default>
                 <label>Matcha</label>
+            </value>
+            <value>
+                <fullName>Existing Customer Relationship Management</fullName>
+                <default>false</default>
+                <label>Existing Customer Relationship Management</label>
+            </value>
+            <value>
+                <fullName>On-Site Competitor Observation</fullName>
+                <default>false</default>
+                <label>On-Site Competitor Observation</label>
+            </value>
+            <value>
+                <fullName>POS Visibility / Brand Presentation</fullName>
+                <default>false</default>
+                <label>POS Visibility / Brand Presentation</label>
+            </value>
+            <value>
+                <fullName>Contract or Commercial Terms Negotiation</fullName>
+                <default>false</default>
+                <label>Contract or Commercial Terms Negotiation</label>
+            </value>
+            <value>
+                <fullName>Product Introduction / Assortment Expansion</fullName>
+                <default>false</default>
+                <label>Product Introduction / Assortment Expansion</label>
+            </value>
+            <value>
+                <fullName>New Customer Acquisition / First Visit</fullName>
+                <default>false</default>
+                <label>New Customer Acquisition / First Visit</label>
+            </value>
+            <value>
+                <fullName>Complaint Handling / Foreign Object Issue</fullName>
+                <default>false</default>
+                <label>Complaint Handling / Foreign Object Issue</label>
+            </value>
+            <value>
+                <fullName>Sales Decline / Variance Analysis</fullName>
+                <default>false</default>
+                <label>Sales Decline / Variance Analysis</label>
             </value>
         </valueSetDefinition>
     </valueSet>

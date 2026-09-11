@@ -3,6 +3,7 @@
     <fullName>OtherAdditionalAggreeementsSpecified__c</fullName>
     <defaultValue>false</defaultValue>
     <label>Other Additional Aggreeements - Specifie</label>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>

@@ -40,6 +40,31 @@
             <label>Yes</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>IsUserOrGroup</name>
+        <label>Is User or Group?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>UpdateLead</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Group</defaultConnectorLabel>
+        <rules>
+            <name>User</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>SelectUser.recordId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>005</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GetSelectedUser</targetReference>
+            </connector>
+            <label>User</label>
+        </rules>
+    </decisions>
     <description>Allows the manual assignment of a Lead to another user. The flow validates whether the selected user is currently out of office and prevents the assignment if they are unavailable.
 JJDSF-1009</description>
     <environments>Default</environments>
@@ -101,7 +126,7 @@ JJDSF-1009</description>
         <inputAssignments>
             <field>OwnerId</field>
             <value>
-                <elementReference>GetSelectedUser.Id</elementReference>
+                <elementReference>SelectUser.recordId</elementReference>
             </value>
         </inputAssignments>
         <object>Lead</object>
@@ -115,7 +140,7 @@ JJDSF-1009</description>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>GetSelectedUser</targetReference>
+            <targetReference>IsUserOrGroup</targetReference>
         </connector>
         <fields>
             <name>SelectUserText</name>
@@ -205,7 +230,7 @@ JJDSF-1009</description>
             <targetReference>TransferLeadToSalesAreaManager</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>recordId</name>
         <dataType>SObject</dataType>

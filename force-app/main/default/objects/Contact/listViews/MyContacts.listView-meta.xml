@@ -3,8 +3,8 @@
     <fullName>MyContacts</fullName>
     <columns>FULL_NAME</columns>
     <columns>ACCOUNT.NAME</columns>
-    <columns>CONTACT.EMAIL</columns>
     <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
     <columns>Function__c</columns>
     <columns>CORE.USERS.ALIAS</columns>
     <columns>CONTACT.ADDRESS2_STREET</columns>

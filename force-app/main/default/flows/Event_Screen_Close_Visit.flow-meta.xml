@@ -3,6 +3,38 @@
     <apiVersion>67.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
+        <name>Assign_existing_Visit_Report_ID</name>
+        <label>Assign existing Visit Report ID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>varVisitReportId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Event.Visit_Report__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Visit_Report_Lines_for_Repeater</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_POS_Check_Line_ID</name>
+        <label>Assign POS Check Line ID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>recReportVisitLinePOS</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_POS_Check_Goal</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>POS_Check</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Assignment_Repeater_Values</name>
         <label>Assignment Repeater Values</label>
         <locationX>0</locationX>
@@ -25,7 +57,28 @@
             <assignToReference>ObjectVisitReportLines.Visit_Report__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Create_Visit_Report.Id</elementReference>
+                <elementReference>varVisitReportId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ObjectVisitReportLines.Comment__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_Repeater.Comment</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ObjectVisitReportLines.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_Repeater.UniqueField__Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ObjectVisitReportLines.Goal_Achieved__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_Repeater.Goal_Achieved</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -39,12 +92,265 @@
             <targetReference>Loop_Repeater</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Initialize_Visit_Goals</name>
+        <label>Initialize Visit Goals</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>varRemainingGoals</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Event.Goals__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varRemainingGoals</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>;</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Visit_Goals_Remaining</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Prepare_Visit_Report_Line</name>
+        <label>Prepare Visit Report Line</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>recVisitReportLine.Visit_Report__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varVisitReportId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>recVisitReportLine.Topic__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmCurrentGoal</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>colVisitReportLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>recVisitReportLine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Remove_Processed_Goal</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Remove_colVisitReportLines</name>
+        <label>Remove colVisitReportLines</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>colVisitReportLines</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Event_with_Created_Visit_Report</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Remove_Processed_Goal</name>
+        <label>Remove Processed Goal</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>varRemainingGoals</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>frmRemainingGoals</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Visit_Goals_Remaining</targetReference>
+        </connector>
+    </assignments>
     <customProperties>
         <name>ScreenProgressIndicator</name>
         <value>
             <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
         </value>
     </customProperties>
+    <decisions>
+        <name>Contact_Selected</name>
+        <label>Contact Selected?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Subflow_Create_Contact</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Contact_selected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Select_Conctact</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Update_Contact_on_Event</targetReference>
+            </connector>
+            <label>Yes, Contact selected</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Goals_Exists</name>
+        <label>Goals Exists?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Get_Visit_Report_Lines_for_Repeater</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_goals_exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Event.Goals__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Initialize_Visit_Goals</targetReference>
+            </connector>
+            <label>Yes, goals exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>POS_Check</name>
+        <label>POS Check?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Update_Event</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>POS_Check_needed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_POS_Check_Goal.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Screen_POS_Check</targetReference>
+            </connector>
+            <label>POS Check needed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Visit_Goals_Remaining</name>
+        <label>Visit Goals Remaining?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Create_New_Visit_Report_Lines</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Goals_Remaining</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varRemainingGoals</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Prepare_Visit_Report_Line</targetReference>
+            </connector>
+            <label>Yes, Goals Remaining</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Visit_Report_Exists</name>
+        <label>Visit Report Exists?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Assign_existing_Visit_Report_ID</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>No_Report</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Event.Visit_Report__r.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Visit_Report</targetReference>
+            </connector>
+            <label>No Report</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>WhoId_is_empty</name>
+        <label>WhoId is empty</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Set_Event_in_progress</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Event.WhoId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Screen_Select_Contact</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <dynamicChoiceSets>
+        <name>colRelatedContacts</name>
+        <dataType>String</dataType>
+        <displayField>ContactFullName__c</displayField>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Event.Account.Id</elementReference>
+            </value>
+        </filters>
+        <object>AccountContactRelation</object>
+        <valueField>ContactId</valueField>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>picklistGoalAchieved</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Goal_Achieved__c</picklistField>
+        <picklistObject>VisitReportLine__c</picklistObject>
+    </dynamicChoiceSets>
     <dynamicChoiceSets>
         <name>PicklistTopic</name>
         <dataType>Picklist</dataType>
@@ -53,7 +359,33 @@
         <picklistField>Topic__c</picklistField>
         <picklistObject>VisitReportLine__c</picklistObject>
     </dynamicChoiceSets>
+    <ends>
+        <name>END_ELEMENT_2</name>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+    </ends>
     <environments>Default</environments>
+    <formulas>
+        <name>frmCurrentGoal</name>
+        <dataType>String</dataType>
+        <expression>TRIM(
+    LEFT(
+        {!varRemainingGoals},
+        FIND(&quot;;&quot;, {!varRemainingGoals}) - 1
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>frmRemainingGoals</name>
+        <dataType>String</dataType>
+        <expression>TRIM(
+    MID(
+        {!varRemainingGoals},
+        FIND(&quot;;&quot;, {!varRemainingGoals}) + 1,
+        LEN({!varRemainingGoals})
+    )
+)</expression>
+    </formulas>
     <formulas>
         <name>varAccountIdFromEvent</name>
         <dataType>String</dataType>
@@ -131,12 +463,23 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
+        <name>Create_New_Visit_Report_Lines</name>
+        <label>Create New Visit Report Lines</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Remove_colVisitReportLines</targetReference>
+        </connector>
+        <inputReference>colVisitReportLines</inputReference>
+    </recordCreates>
+    <recordCreates>
         <name>Create_Visit_Report</name>
         <label>Create Visit Report</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
+        <assignRecordIdToReference>varVisitReportId</assignRecordIdToReference>
         <connector>
-            <targetReference>Loop_Repeater</targetReference>
+            <targetReference>Goals_Exists</targetReference>
         </connector>
         <inputAssignments>
             <field>Account__c</field>
@@ -169,7 +512,6 @@
             </value>
         </inputAssignments>
         <object>VisitReport__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
         <name>Create_Visit_Report_Lines</name>
@@ -177,8 +519,9 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Update_Event</targetReference>
+            <targetReference>Get_POS_Check_Goal</targetReference>
         </connector>
+        <doesUpsert>true</doesUpsert>
         <inputReference>colVisitReportLines</inputReference>
     </recordCreates>
     <recordLookups>
@@ -188,7 +531,7 @@
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Input_Screen_Visit_Report_Line</targetReference>
+            <targetReference>WhoId_is_empty</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -202,11 +545,111 @@
         <object>Event</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_POS_Check_Goal</name>
+        <label>Get POS Check Goal</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_POS_Check_Line_ID</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Visit_Report__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varVisitReportId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Topic__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>POS Visibility / Brand Presentation</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>VisitReportLine__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Visit_Report_Lines_for_Repeater</name>
+        <label>Get Visit Report Lines for Repeater</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Input_Screen_Visit_Report_Line</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Visit_Report__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varVisitReportId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>VisitReportLine__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Set_Event_in_progress</name>
+        <label>Set Event in progress</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Visit_Report_Exists</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Event.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>In progress</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Event</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Contact_on_Event</name>
+        <label>Update Contact on Event</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Event_in_progress</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>WhoId</field>
+            <value>
+                <elementReference>Select_Conctact</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Event</object>
+    </recordUpdates>
     <recordUpdates>
         <name>Update_Event</name>
         <label>Update Event</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
+        <connector>
+            <targetReference>END_ELEMENT_2</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -224,10 +667,68 @@
         <inputAssignments>
             <field>Visit_Report__c</field>
             <value>
-                <elementReference>Create_Visit_Report.Id</elementReference>
+                <elementReference>varVisitReportId</elementReference>
             </value>
         </inputAssignments>
         <object>Event</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Event_with_Created_Visit_Report</name>
+        <label>Update Event with Created Visit Report</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Visit_Report_Lines_for_Repeater</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Event.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Visit_Report__c</field>
+            <value>
+                <elementReference>varVisitReportId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Event</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_new_Contact_on_Event</name>
+        <label>Update new Contact on Event</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Event_in_progress</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>WhoId</field>
+            <value>
+                <elementReference>Subflow_Create_Contact.ContactIdCreatedConctact</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Event</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_POS_Check_Line</name>
+        <label>Update POS Check Line</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Event</targetReference>
+        </connector>
+        <inputReference>recReportVisitLinePOS</inputReference>
     </recordUpdates>
     <screens>
         <name>Input_Screen_Visit_Report_Line</name>
@@ -238,11 +739,11 @@
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Create_Visit_Report</targetReference>
+            <targetReference>Loop_Repeater</targetReference>
         </connector>
         <fields>
             <name>Text_Repeater_Screen</name>
-            <fieldText>&lt;p&gt;📝 &lt;strong&gt;Document the visit details&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Use this section to document the topics and key points discussed during the visit.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;➕ To capture additional discussion points, click &lt;strong&gt;Add&lt;/strong&gt; and complete another entry.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;✅ When you have finished capturing the visit details, click &lt;strong&gt;Finish&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;____________________________________________________________________________________________&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 20px;&quot;&gt;📝 &lt;/span&gt;&lt;strong style=&quot;font-size: 20px;&quot;&gt;Document the visit details&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Use this section to document the &lt;strong&gt;topics and key points discussed during the visit&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;🎯 &lt;strong&gt;Evaluate goal achievement&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;For each planned visit goal, indicate whether the &lt;strong&gt;goal was achieved&lt;/strong&gt; and add a comment if additional context is required.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;➕ To capture additional discussion points, click &lt;strong&gt;Add&lt;/strong&gt; and complete another entry.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;✅ Once all visit details and the &lt;strong&gt;goal achievement&lt;/strong&gt; have been documented, click &lt;strong&gt;Finish&lt;/strong&gt; to complete the visit report.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -260,7 +761,30 @@
                 <name>Topic</name>
                 <choiceReferences>PicklistTopic</choiceReferences>
                 <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>Get_Visit_Report_Lines_for_Repeater[$EachItem].Topic__c</elementReference>
+                </defaultValue>
                 <fieldText>Topic</fieldText>
+                <fieldType>DropdownBox</fieldType>
+                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                <isRequired>true</isRequired>
+                <styleProperties>
+                    <verticalAlignment>
+                        <stringValue>top</stringValue>
+                    </verticalAlignment>
+                    <width>
+                        <stringValue>8</stringValue>
+                    </width>
+                </styleProperties>
+            </fields>
+            <fields>
+                <name>Goal_Achieved</name>
+                <choiceReferences>picklistGoalAchieved</choiceReferences>
+                <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>Get_Visit_Report_Lines_for_Repeater[$EachItem].Goal_Achieved__c</elementReference>
+                </defaultValue>
+                <fieldText>Goal Achieved</fieldText>
                 <fieldType>DropdownBox</fieldType>
                 <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                 <isRequired>true</isRequired>
@@ -276,6 +800,9 @@
             <fields>
                 <name>Comment</name>
                 <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>Get_Visit_Report_Lines_for_Repeater[$EachItem].Comment__c</elementReference>
+                </defaultValue>
                 <fieldText>Comment</fieldText>
                 <fieldType>InputField</fieldType>
                 <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -285,10 +812,28 @@
                         <stringValue>top</stringValue>
                     </verticalAlignment>
                     <width>
-                        <stringValue>8</stringValue>
+                        <stringValue>12</stringValue>
                     </width>
                 </styleProperties>
             </fields>
+            <inputParameters>
+                <name>collection</name>
+                <value>
+                    <elementReference>Get_Visit_Report_Lines_for_Repeater</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>canAddItem</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>canRemoveItem</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </inputParameters>
             <isRequired>false</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -309,6 +854,264 @@
             <scope>Container</scope>
         </styleSettings>
     </screens>
+    <screens>
+        <name>Screen_POS_Check</name>
+        <label>Screen POS Check</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Update_POS_Check_Line</targetReference>
+        </connector>
+        <fields>
+            <name>Text_Screen_POS_Check</name>
+            <fieldText>&lt;h2&gt;🏷️ POS Check&lt;/h2&gt;&lt;p&gt;👀 &lt;strong&gt;Check Brand Visibility&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Review how J.J. Darboven brands and products are presented at the customer location.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;✅ Complete the POS Check and click &lt;/span&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Next&lt;/strong&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt; to continue.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;_________________________________________________________________________________________________________&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Text_Machinen_Branding</name>
+            <fieldText>&lt;p&gt;☕ &lt;strong&gt;Machine Branding - &lt;/strong&gt;Check whether a &lt;strong&gt;brand logo or sticker&lt;/strong&gt; is visible on the machine.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <fieldType>ObjectProvided</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <objectFieldReference>recReportVisitLinePOS.BrandLogoonMachine__c</objectFieldReference>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Text_Tea_Display</name>
+            <fieldText>&lt;p&gt;🍵 &lt;strong&gt;Tea Display - &lt;/strong&gt;Confirm whether &lt;strong&gt;tea products are visibly presented&lt;/strong&gt; in the designated display area.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <fieldType>ObjectProvided</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <objectFieldReference>recReportVisitLinePOS.TeaInDisplay__c</objectFieldReference>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Text_Beverage_Menu</name>
+            <fieldText>&lt;p&gt;📋 &lt;strong&gt;Beverage Menu - &lt;/strong&gt;Check whether the relevant &lt;strong&gt;J.J. Darboven brand(s)&lt;/strong&gt; are listed on the beverage menu.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <fieldType>ObjectProvided</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <objectFieldReference>recReportVisitLinePOS.BrandOnBeverageMenu__c</objectFieldReference>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <fieldType>ObjectProvided</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <objectFieldReference>recReportVisitLinePOS.BrandsOnBeverageMenu__c</objectFieldReference>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>recReportVisitLinePOS.BrandOnBeverageMenu__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Text_Branded_Cups</name>
+            <fieldText>&lt;p&gt;☕ &lt;strong&gt;Branded Cups - &lt;/strong&gt;Confirm whether &lt;strong&gt;branded cups&lt;/strong&gt; are available and in use.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <fieldType>ObjectProvided</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <objectFieldReference>recReportVisitLinePOS.BrandedCups__c</objectFieldReference>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <fieldType>ObjectProvided</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <objectFieldReference>recReportVisitLinePOS.OtherPOSVisibility__c</objectFieldReference>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Text_POS_Material_Needed</name>
+            <fieldText>&lt;p&gt;📦 &lt;strong&gt;Additional POS Material Needed - &lt;/strong&gt;Indicate whether any &lt;strong&gt;additional POS or promotional material&lt;/strong&gt; is required.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <fieldType>ObjectProvided</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <objectFieldReference>recReportVisitLinePOS.POSMaterialNeeded__c</objectFieldReference>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <fieldType>ObjectProvided</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <objectFieldReference>recReportVisitLinePOS.RequiredPOSMaterial__c</objectFieldReference>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Screen_Select_Contact</name>
+        <label>Screen Select Contact</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Contact_Selected</targetReference>
+        </connector>
+        <fields>
+            <name>Text_Select_Contact</name>
+            <fieldText>&lt;p&gt;👤 &lt;strong&gt;Select or create a contact&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Select the contact associated with this visit from the list below.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;➕ If the contact is not available in the list, select &lt;strong&gt;None&lt;/strong&gt; and click &lt;strong&gt;Next&lt;/strong&gt; to create a new contact.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;✅ Once you have selected the correct contact, click &lt;strong&gt;Next&lt;/strong&gt; to continue.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;____________________________________________________________________________________________&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Select_Conctact</name>
+            <choiceReferences>colRelatedContacts</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Select Conctact</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
     <start>
         <locationX>0</locationX>
         <locationY>0</locationY>
@@ -317,6 +1120,31 @@
         </connector>
     </start>
     <status>Active</status>
+    <subflows>
+        <name>Subflow_Create_Contact</name>
+        <label>Subflow Create Contact</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_new_Contact_on_Event</targetReference>
+        </connector>
+        <flowName>Subflow_Create_Contact</flowName>
+        <inputAssignments>
+            <name>varAccountId</name>
+            <value>
+                <elementReference>Get_Event.Account.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <variables>
+        <name>colReportsLinesAfterLoop</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>VisitReportLine__c</objectType>
+    </variables>
     <variables>
         <name>colVisitReportLines</name>
         <dataType>SObject</dataType>
@@ -324,6 +1152,14 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>VisitReportLine__c</objectType>
+    </variables>
+    <variables>
+        <name>objectContact</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Contact</objectType>
     </variables>
     <variables>
         <name>ObjectVisitReportLines</name>
@@ -338,6 +1174,36 @@
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recReportVisitLinePOS</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>VisitReportLine__c</objectType>
+    </variables>
+    <variables>
+        <name>recVisitReportLine</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>VisitReportLine__c</objectType>
+    </variables>
+    <variables>
+        <name>varRemainingGoals</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varVisitReportId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
         <isOutput>false</isOutput>
     </variables>
 </Flow>

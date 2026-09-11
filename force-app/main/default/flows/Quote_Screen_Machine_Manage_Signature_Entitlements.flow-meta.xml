@@ -672,6 +672,7 @@
         <object>SignatureEntitlement__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
     <screens>
         <name>Fehler</name>
         <label>Fehler</label>
@@ -1407,7 +1408,7 @@
         <inputAssignments>
             <name>var_NewHauptansprechpartnerId</name>
             <value>
-                <elementReference>var_NewContactId</elementReference>
+                <elementReference>Contact.recordId</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1426,7 +1427,7 @@
         <inputAssignments>
             <name>var_NewHauptansprechpartnerId</name>
             <value>
-                <elementReference>var_NewContactId</elementReference>
+                <elementReference>TableDelete_0.firstSelectedRow.Contact__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1448,7 +1449,7 @@
         <inputAssignments>
             <name>var_NewHauptansprechpartnerId</name>
             <value>
-                <elementReference>var_NewContactId</elementReference>
+                <elementReference>NewMainContactSelection.firstSelectedRow.Contact__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>

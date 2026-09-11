@@ -3,6 +3,7 @@
     <fullName>MachineDepositMustBePaidUntil__c</fullName>
     <label>Deposit must be paid until</label>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Date</type>
 </CustomField>

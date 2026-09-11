@@ -3,6 +3,7 @@
     <fullName>ApprovalProcessSkipped__c</fullName>
     <defaultValue>false</defaultValue>
     <label>Approval Process Skipped</label>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>

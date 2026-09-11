@@ -3,6 +3,7 @@
     <fullName>Refund__c</fullName>
     <defaultValue>false</defaultValue>
     <label>Refund?</label>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>

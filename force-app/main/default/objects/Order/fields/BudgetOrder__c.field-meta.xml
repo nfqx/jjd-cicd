@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BudgetOrder__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>This order is charged against a personal free goods budget. Set by the Order Wizard, never manually.</inlineHelpText>
+    <label>Budget Order</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>
