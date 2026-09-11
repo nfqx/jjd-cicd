@@ -2,34 +2,59 @@
     <div if:true={isLoading}>
         <lightning-spinner variant="base" size="medium"></lightning-spinner>
     </div>
-    <div class="slds-m-top_medium slds-m-bottom_x-large">
-        <div class="slds-p-around_medium lgc-bg">
+    <div class="slds-m-top_medium slds-m-bottom_x-large slds-box slds-theme_default custom-card-shadow">
+        <div class="slds-p-around_medium">
             <lightning-layout>
-                <lightning-layout-item size="8" class="slds-text-align_right">
-                    <lightning-input type="toggle" variant="label-stacked" message-toggle-inactive={label.accountTreeActiveInactiveAccs} message-toggle-active={label.accountTreeOnlyActiveAccs} value={onlyActiveAccToggleVal} onchange={changeOnlyActiveAccToggle} checked></lightning-input>                
+                <lightning-layout-item size="3" class="slds-text-align_right">
+                    <lightning-combobox
+                        name="view"
+                        onchange={switchGridColumns}
+                        options={viewOptions}
+                        variant="label-hidden"
+                    >
+                    </lightning-combobox>
                 </lightning-layout-item>
-                <lightning-layout-item size="2">
-                    <!--lightning-input type="toggle" variant="label-stacked" message-toggle-inactive={label.accountTreeEverybodysAccs} message-toggle-active={label.accountTreeOnlyMyAccs} value={onlyMyAccToggleVal} onchange={changeOnlyMyAccToggle}></lightning-input-->
+                <lightning-layout-item size="3" class="slds-text-align_right">                    
+                    <lightning-input class="toggle" type="toggle" variant="label-stacked" disabled={hasNoInactive} message-toggle-inactive={label.accountTreeActiveInactiveAccs} message-toggle-active={label.accountTreeOnlyActiveAccs} value={onlyActiveAccToggleVal} onchange={changeOnlyActiveAccToggle} checked></lightning-input>
                 </lightning-layout-item>
-                <lightning-layout-item size="2" class="slds-text-align_right">
+                <lightning-layout-item size="3">
+                    <lightning-input class="toggle" type="toggle" variant="label-stacked" disabled={hasNoInternalDepartments} message-toggle-inactive={label.internalDepartments} message-toggle-active={label.internalDepartments} value={internalDepartmentsToggleVal} onchange={changeInternalDepartmentsToggle} checked></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" class="slds-text-align_right">
                     <lightning-button label={_expandAll} onclick={handleExpandAll}></lightning-button>
                 </lightning-layout-item>
             </lightning-layout>
+            <div class="slds-m-bottom_medium slds-m-top_small legend-container">
+                <span class="legend-badge legend-granted">{label.rightGranted}</span>
+                <span class="legend-badge legend-ends-here">{label.rightEndsHere}</span>
+                <span class="legend-badge legend-removed">{label.rightRemoved}</span>
+                <span class="legend-badge legend-locked">{label.rightLockedByChain}</span>
+                <span class="legend-badge legend-not-allowed">{label.rightNotAllowed}</span>
+            </div>
             <template if:true={hasData}>
                 <c-custom-tree-grid
-                        columns={gridColumns}
+                        class="slds-button_icon-bare"
+                        columns={gridColumnsUsed}
                         data={gridData}
                         key-field="id"
                         onrowselection={handleSelectRow}
                         onrowaction={handleRowAction}
                         expanded-rows={currentExpanded}
-                        min-column-width=100
+                        min-column-width=60
                         hide-checkbox-column
                         onrightschange={handleRightsChange}
                 ></c-custom-tree-grid>
             </template>
             <template if:true={showSave}>
-                Cancel - <span onclick={handleSaveChanges}>Save</span>
+                <div class="slds-grid slds-grid_align-spread slds-m-top_medium slds-p-top_medium" style="border-top: 1px solid #d8dde6;">
+                    <div class="slds-col slds-align-middle">
+                        <span class="slds-text-color_weak">{changeListLength} {label.accountsChanged}</span>
+                    </div>
+                    <div class="slds-col">
+                        <lightning-button label={label.cancel} variant="neutral" class="slds-m-right_small" onclick={handleCancel}></lightning-button>
+                        <lightning-button label={label.save} variant="brand" onclick={handleSaveChanges}></lightning-button>
+                    </div>
+                </div>
             </template>
         </div>
     </div>

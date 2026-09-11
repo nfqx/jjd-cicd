@@ -46,12 +46,12 @@ private class DailyCalculateMaxBatchPaletteCountTest {
         productAttributes.add(new ProductAttribute(
             ProductId = boxProduct.Id,
             VariantParentId = prod2.Id,
-            Unit__c = 'KARTON'
+            Unit__c = 'KAR'
         ));
         productAttributes.add(new ProductAttribute(
             ProductId = pieceProduct.Id,
             VariantParentId = prod2.Id,
-            Unit__c = 'STUECK'
+            Unit__c = 'STK'
         ));
         insert productAttributes;
     }

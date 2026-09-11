@@ -275,3 +275,8 @@
 .cart-total-price {
     color: #0176d3;
 }
+
+.price-input { max-width: 8rem; }
+.price-input .slds-input { text-align: right; }
+.price-delta-down { color: #2e844a; font-weight: 700; }
+.price-delta-up   { color: #b27a03; font-weight: 700; }

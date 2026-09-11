@@ -1,0 +1,91 @@
+<template>
+    <lightning-card title={playerTitle} icon-name="standard:asset_relationship">
+        <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading attachments" size="small"></lightning-spinner>
+            </template>
+
+            <template if:false={isLoading}>
+                <template if:true={hasAudio}>
+                    <div class="player-container">
+                        <audio
+                            src={resolvedAudioUrl}
+                            preload="metadata"
+                            onloadedmetadata={handleLoadedMetadata}
+                            ontimeupdate={handleTimeUpdate}
+                            onended={handleEnded}
+                        ></audio>
+
+                        <div class="controls slds-grid slds-grid_vertical-align-center">
+                            <lightning-button-icon
+                                icon-name={playIcon}
+                                variant="brand"
+                                alternative-text={playLabel}
+                                title={playLabel}
+                                onclick={handlePlayPause}
+                                class="slds-m-right_small play-btn"
+                            ></lightning-button-icon>
+
+                            <span class="time-label slds-m-right_x-small">{currentTimeDisplay}</span>
+
+                            <div class="progress-wrap slds-grow">
+                                <input
+                                    type="range"
+                                    min="0"
+                                    max="100"
+                                    step="0.1"
+                                    value={progressPercent}
+                                    oninput={handleSeek}
+                                    class="progress-slider"
+                                />
+                            </div>
+
+                            <span class="time-label slds-m-left_x-small">{durationDisplay}</span>
+                        </div>
+
+                        <div class="volume-row slds-grid slds-grid_vertical-align-center slds-m-top_small">
+                            <lightning-icon icon-name="utility:volume_high" size="xx-small" class="slds-m-right_x-small"></lightning-icon>
+                            <input
+                                type="range"
+                                min="0"
+                                max="1"
+                                step="0.01"
+                                value={volume}
+                                oninput={handleVolumeChange}
+                                class="volume-slider"
+                            />
+                        </div>
+
+                        <template if:true={showTrackList}>
+                            <ul class="track-list slds-m-top_small">
+                                <template for:each={displayTracks} for:item="track" for:index="index">
+                                    <li
+                                        key={track.key}
+                                        data-index={index}
+                                        class={track.rowClass}
+                                        onclick={handleTrackClick}
+                                    >
+                                        <lightning-icon icon-name="utility:music" size="xx-small" class="slds-m-right_x-small"></lightning-icon>
+                                        <span class="track-name">{track.name}</span>
+                                        <span class="track-source slds-text-color_weak">{track.sourceLabel}</span>
+                                    </li>
+                                </template>
+                            </ul>
+                        </template>
+                    </div>
+                </template>
+
+                <template if:false={hasAudio}>
+                    <div class="slds-text-color_weak slds-p-vertical_small">
+                        <template if:true={loadError}>
+                            Couldn't load attachments for this record.
+                        </template>
+                        <template if:false={loadError}>
+                            No audio attachments found on this record.
+                        </template>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

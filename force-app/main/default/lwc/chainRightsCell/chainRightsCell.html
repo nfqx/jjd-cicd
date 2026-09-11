@@ -1,13 +1,10 @@
 <template>
     <template if:true={loaded}>
-        <template if:true={currentRight.clickable}>
-             <p><a onclick={handleClickCell}>{rightsAltText}</a></p>
-        </template>
-        <template if:false={currentRight.clickable}>
-            <p>{rightsAltText}</p>
-        </template>
-        <template if:true={currentRight.ischanged}>
-            <p>Changed!</p>
-        </template>
+        <button 
+            class={cellClass} 
+            title={rightsAltText} 
+            onclick={handleClickCell}>
+            <lightning-icon icon-name={iconName} size="x-small"></lightning-icon>
+        </button>
     </template>
 </template>

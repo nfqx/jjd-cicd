@@ -16,7 +16,7 @@ public without sharing class AbandonedCartCheckoutEmailBatch implements Database
         Map<Id, User> userMap = new Map<Id, User>([SELECT Id, Contact.DoubleOptInAbandonedCart__c FROM User WHERE Id IN : userIds]);
 
         List<Messaging.SingleEmailMessage> messages = new List<Messaging.SingleEmailMessage>();
-        List<OrgWideEmailAddress> oweaList = [ SELECT Id FROM OrgWideEmailAddress WHERE Address = 'noreply@darboven.com' ];
+        List<OrgWideEmailAddress> oweaList = [ SELECT Id FROM OrgWideEmailAddress WHERE Address = : System.Label.NoReplyAddress ];
         // Initialize Email Template Details
         List<EmailTemplate> emailTemplateList = [ SELECT Id, HtmlValue, Subject FROM EmailTemplate WHERE DeveloperName = 'Warenkorbabbrecher'];
         if (oweaList.size() > 0 && emailTemplateList.size() > 0) {

@@ -1,0 +1,95 @@
+<template>
+    <div class="editor">
+        <div class="slds-text-heading_small slds-m-bottom_x-small">
+            SOQL Get Records
+        </div>
+        <p class="slds-text-body_small slds-text-color_weak slds-m-bottom_medium">
+            Führt genau eine lesende SOQL-Abfrage im Benutzerkontext aus. Die
+            Treffer stehen danach im Output <strong>records</strong> als
+            Record-Collection bereit.
+        </p>
+
+        <div class="slds-notify slds-notify_alert slds-alert_warning slds-m-bottom_medium" role="alert">
+            <span class="slds-assistive-text">Hinweis</span>
+            Die Abfrage wird von einem Flow-Admin konfiguriert. Schreibende
+            Anweisungen, Kommentare, Aggregate und Sperrabfragen sind gesperrt.
+        </div>
+
+        <lightning-input
+            data-name="outputObjectApiName"
+            label="Ausgabeobjekt (API-Name)"
+            value={outputObjectApiName}
+            placeholder="Account"
+            field-level-help="Muss dem Objekt hinter dem äußeren FROM entsprechen und bestimmt den Typ der Output-Collection."
+            required
+            onchange={handleObjectChange}
+        ></lightning-input>
+
+        <lightning-textarea
+            class="query-input slds-m-top_medium"
+            data-name="soqlQuery"
+            label="SOQL-Abfrage"
+            value={soqlQuery}
+            placeholder="SELECT Id, Name FROM Account WHERE ParentId = :recordId ORDER BY Name"
+            field-level-help="Salesforce verwendet SOQL, nicht SQL. Erlaubt ist eine SELECT-Abfrage."
+            required
+            onchange={handleStringChange}
+        ></lightning-textarea>
+
+        <lightning-input
+            class="slds-m-top_medium"
+            data-name="maxRows"
+            type="number"
+            label="Maximale Datensatzanzahl"
+            value={maxRows}
+            min="1"
+            max="10000"
+            step="1"
+            field-level-help="Ohne eigenes LIMIT ergänzt die Action automatisch LIMIT :maxRows. Standard: 2.000."
+            onchange={handleNumberChange}
+        ></lightning-input>
+
+        <lightning-accordion class="slds-m-top_medium" allow-multiple-sections-open>
+            <lightning-accordion-section
+                name="bindValues"
+                label="Optionale Bind-Variablen"
+            >
+                <p class="slds-text-body_small slds-text-color_weak slds-m-bottom_small">
+                    Im SOQL mit Doppelpunkt verwenden, zum Beispiel
+                    <code>:recordId</code>. Ein Flow-Wert kann als
+                    <code>{flowRecordIdExample}</code> eingetragen werden.
+                </p>
+
+                <template for:each={bindFields} for:item="field">
+                    <lightning-input
+                        key={field.name}
+                        class="slds-m-bottom_small"
+                        data-name={field.name}
+                        data-data-type={field.dataType}
+                        label={field.label}
+                        value={field.value}
+                        placeholder={field.placeholder}
+                        field-level-help={field.helpText}
+                        onchange={handleBindChange}
+                    ></lightning-input>
+                </template>
+            </lightning-accordion-section>
+        </lightning-accordion>
+
+        <template if:true={validationMessage}>
+            <div class="slds-text-color_error slds-text-body_small slds-m-top_medium" role="alert">
+                {validationMessage}
+            </div>
+        </template>
+
+        <div class="output-note slds-box slds-theme_shade slds-m-top_medium">
+            <div class="slds-text-title_bold">Output speichern</div>
+            <p class="slds-text-body_small slds-m-top_x-small">
+                Unter <strong>Store Output Values</strong> den Output
+                <strong>records</strong> einer Record-Collection desselben
+                Objekttyps zuweisen. Alternativ kann der automatische Output
+                direkt im nächsten Flow-Element verwendet werden.
+            </p>
+        </div>
+    </div>
+</template>

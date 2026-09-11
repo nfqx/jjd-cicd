@@ -1,8 +1,7 @@
 <template>
     <template if:true={readyLoaded}>
-        {showPrices}
         <template if:true={erpFailed}>
-            {label.errorDesc}: {errorLoggingId}
+            {label.errorDesc}: {errorLoggingId} ({errorMessage})
         </template>
         <template if:true={erpSucceeded}>
             <template if:false={_erpResult.hasSuccessfulItems}>
@@ -25,8 +24,6 @@
                                 <p class="components-badge-h3" if:true={showPrices}>
                                     <template if:true={cartItem.hasPromotion}>
                                         <template if:false={cartItem.freeItem}>
-                                            <!--span style="text-decoration: line-through; font-size: 0.8rem;">{cartItem.cartItem.TotalLineAmount}&nbsp;{cartItem.cartItem.CurrencyIsoCode}</span>&nbsp;{cartItem.cartItem.TotalAmount}&nbsp;{cartItem.cartItem.CurrencyIsoCode}
-                                            <br /><span style="text-align: right; font-size: 0.8rem;">({cartItem.cartItem.TotalPromoAdjustmentAmount}&nbsp;{cartItem.cartItem.CurrencyIsoCode})</span-->
                                             <template if:false={cartItem.differentAmounts}>
                                                 {cartItem.cartItem.TotalLineAmountRounded}&nbsp;{cartItem.orderItem.CurrencyIsoCode}
                                             </template>

@@ -235,21 +235,14 @@ public without sharing class WebshopDataController {
         Set<String> allowedProductIds = new Set<String>();
         Set<Id> allBuyerGroupIds = new Set<Id>();
         Set<Id> allPolicyIds = new Set<Id>();
-        Boolean assortmentExtended = checkIfCustomerAssortmentExtended(accountId);
-        if(assortmentExtended){
-            for(BuyerGroupMember bgm : [SELECT Id, BuyerGroupId FROM BuyerGroupMember WHERE BuyerId = : accountId]){
-                allBuyerGroupIds.add(bgm.BuyerGroupId);
-            }
-            for(WebStoreBuyerGroup wsb : [SELECT Id, BuyerGroupId FROM WebStoreBuyerGroup WHERE BuyerGroupId IN : allBuyerGroupIds AND WebStoreId = : CURRENT_STORE_ID]){
-                allBuyerGroupIds.add(wsb.BuyerGroupId);
-            }
-            for(CommerceEntitlementBuyerGroup cebg : [SELECT Id, PolicyId FROM CommerceEntitlementBuyerGroup WHERE BuyerGroupId IN : allBuyerGroupIds]){
-                allPolicyIds.add(cebg.PolicyId);
-            }
-        } else {
-            for(CommerceEntitlementPolicy policy : [SELECT Id FROM CommerceEntitlementPolicy WHERE Account__c = : accountId]){
-                allPolicyIds.add(policy.Id);
-            }
+        for(BuyerGroupMember bgm : [SELECT Id, BuyerGroupId FROM BuyerGroupMember WHERE BuyerId = : accountId]){
+            allBuyerGroupIds.add(bgm.BuyerGroupId);
+        }
+        for(WebStoreBuyerGroup wsb : [SELECT Id, BuyerGroupId FROM WebStoreBuyerGroup WHERE BuyerGroupId IN : allBuyerGroupIds AND WebStoreId = : CURRENT_STORE_ID]){
+            allBuyerGroupIds.add(wsb.BuyerGroupId);
+        }
+        for(CommerceEntitlementBuyerGroup cebg : [SELECT Id, PolicyId FROM CommerceEntitlementBuyerGroup WHERE BuyerGroupId IN : allBuyerGroupIds]){
+            allPolicyIds.add(cebg.PolicyId);
         }
         if(productCodes != null && !productCodes.isEmpty()){
             if(excludeId != null){
@@ -2337,7 +2330,7 @@ public without sharing class WebshopDataController {
 
             if(res.getStatusCode() >= 300){
                 Map<String, Object> data = (Map<String, Object>) JSON.deserializeUntyped(res.getBody());
-                String errorMessage = data.containsKey('message') ? (String)data.get('message') : 'Unknown Error';
+                String errorMessage = data.containsKey('error') ? (String)data.get('error') : 'Unknown Error';
                 ErrorLogging__c el = new ErrorLogging__c(
                     ProcessName__c = 'Order Simulation',
                     Error__c = errorMessage

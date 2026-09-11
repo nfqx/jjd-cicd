@@ -41,6 +41,7 @@ import generalError from '@salesforce/label/c.WebshopGeneralError';
 import generalErrorMsg from '@salesforce/label/c.WebshopGeneralErrorMsg';
 import paymentConditionsBody from '@salesforce/label/c.WebshopPaymentConditionsBody';
 import paymentConditionsHeader from '@salesforce/label/c.WebshopPaymentConditionsHeader';
+import noAddress from '@salesforce/label/c.WebshopNoAddress';
 
 
 export default class WebshopCheckout extends NavigationMixin(LightningElement) {
@@ -66,6 +67,8 @@ export default class WebshopCheckout extends NavigationMixin(LightningElement) {
     @track showAddresses = false;
     @track checkboxStyle = '';
     @track erpDataLoaded = false;
+    @track accountGeneralAddress = '';
+    @track accountBillingAddress = '';
 
     label = {
         activeAccount,
@@ -82,7 +85,8 @@ export default class WebshopCheckout extends NavigationMixin(LightningElement) {
         generalErrorMsg,
         paymentConditionsBody,
         paymentConditionsHeader,
-        accountBilling
+        accountBilling,
+        noAddress
     }
 
     connectedCallback() {
@@ -220,6 +224,20 @@ export default class WebshopCheckout extends NavigationMixin(LightningElement) {
                             this.account.CountryBilling = this.account.ShippingCountry;
                             this.account.PostalCodeBilling = this.account.ShippingPostalCode;
                         }
+                        if(!stringIsNotBlank(this.account.Street) && !stringIsNotBlank(this.account.PostalCode) && !stringIsNotBlank(this.account.City)){
+                            this.accountGeneralAddress = this.label.noAddress;
+                        } else if(!stringIsNotBlank(this.account.Street)){
+                            this.accountGeneralAddress = this.account.PostalCode + ' ' + this.account.City;
+                        } else {
+                            this.accountGeneralAddress = this.account.Street + ', ' + this.account.PostalCode + ' ' + this.account.City;
+                        } 
+                        if(!stringIsNotBlank(this.account.StreetBilling) && !stringIsNotBlank(this.account.PostalCodeBilling) && !stringIsNotBlank(this.account.CityBilling)){
+                            this.accountBillingAddress = this.label.noAddress;
+                        } else if(!stringIsNotBlank(this.account.StreetBilling)){
+                            this.accountBillingAddress = this.account.PostalCodeBilling + ' ' + this.account.CityBilling;
+                        } else {
+                            this.accountBillingAddress = this.account.StreetBilling + ', ' + this.account.PostalCodeBilling + ' ' + this.account.CityBilling;
+                        } 
                         this.showAccountInfo = true;
                         countItemsInCart({accountId: this.accountId, cartId: this.cartId})
                         .then(innerResult => {
@@ -310,6 +328,7 @@ export default class WebshopCheckout extends NavigationMixin(LightningElement) {
             this.template.querySelector('c-webshop-toast').show = true;});  
         });
     }
+
 
     handleSetNewsletter(event){
         this.setNewsletter = event.target.checked;

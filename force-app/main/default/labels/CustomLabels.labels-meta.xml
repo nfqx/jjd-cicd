@@ -174,7 +174,7 @@ Nein → Info an E-Commerce, um den User als Community Plus User zu deaktivieren
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>AccountTreeExportModalMessage</shortDescription>
-        <value>You will get notified by email once the file is ready. This might take a few minutes, depending on the amount of data processed. The email is sent from noreply@darboven.com.</value>
+        <value>You will get notified by email once the file is ready. This might take a few minutes, depending on the amount of data processed. The email is sent from no-reply@darboven.com.</value>
     </labels>
     <labels>
         <fullName>AccountTreeExportModalTitle</fullName>
@@ -686,9 +686,7 @@ Thank you for your understanding.</value>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Flow_AccountCreateCaseWebshopBlocked</shortDescription>
-        <value>The following account is blocked for the Webshop!
-
-Account Name:</value>
+        <value>The following account is blocked for the Webshop!</value>
     </labels>
     <labels>
         <fullName>Flow_AccountCreateCaseWebshopExistingPart1</fullName>
@@ -2981,7 +2979,7 @@ Please assign a Sales Area Manager (GL) to the Account and try again!</value>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>NoReplyAddress</shortDescription>
-        <value>noreply@darboven.com</value>
+        <value>no-reply@darboven.com</value>
     </labels>
     <labels>
         <fullName>OrderSimulationTestMappingField</fullName>
@@ -5054,7 +5052,7 @@ Please assign a Sales Area Manager (GL) to the Account and try again!</value>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>WebshopDoNotTranslateMainPermissionSetName</shortDescription>
-        <value>B2BNewWebshop</value>
+        <value>B2BBuyer</value>
     </labels>
     <labels>
         <fullName>WebshopDoNotTranslateMaxBoxCount</fullName>
@@ -6980,5 +6978,1808 @@ If you don&apos;t get the email soon, check your spam folder.</value>
         <protected>false</protected>
         <shortDescription>webshopFavourites</shortDescription>
         <value>Favourites</value>
+    </labels>
+    <labels>
+        <fullName>AccountTreeAccountsChanged</fullName>
+        <categories>Account Tree</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountTreeAccountsChanged</shortDescription>
+        <value>Accounts changed</value>
+    </labels>
+    <labels>
+        <fullName>AccountTreeViewCondition</fullName>
+        <categories>Account Tree</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountTreeViewCondition</shortDescription>
+        <value>Condition</value>
+    </labels>
+    <labels>
+        <fullName>AccountTreeViewStatistics</fullName>
+        <categories>Account Tree</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountTreeViewStatistics</shortDescription>
+        <value>Statistics</value>
+    </labels>
+    <labels>
+        <fullName>ChainRightsInternalDepartments</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ChainRightsInternalDepartments</shortDescription>
+        <value>Internal Departments</value>
+    </labels>
+    <labels>
+        <fullName>Flow_CaseCreateLeadCaseInformationMissing</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow_CaseCreateLeadCaseInformationMissing</shortDescription>
+        <value>There are important Case information missing.
+Please fill them out!</value>
+    </labels>
+    <labels>
+        <fullName>Flow_CaseCreateLeadLeadsFound</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow_CaseCreateLeadLeadsFound</shortDescription>
+        <value>Matching Leads were found. Please select a record.</value>
+    </labels>
+    <labels>
+        <fullName>Flow_TradeFairReportContactAddedToCampaign1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow_TradeFairReportContactAddedToCampaign1</shortDescription>
+        <value>The following Contact was found/added to the following Campaign.</value>
+    </labels>
+    <labels>
+        <fullName>Flow_TradeFairReportContactAddedToCampaign2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow_TradeFairReportContactAddedToCampaign2</shortDescription>
+        <value>Please create a Trade Fair Report!</value>
+    </labels>
+    <labels>
+        <fullName>Flow_TradeFairReportContactVisitor</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow_TradeFairReportContactVisitor</shortDescription>
+        <value>Task: Contact Trade Fair visitor</value>
+    </labels>
+    <labels>
+        <fullName>Flow_TradeFairReportErrorContactOrLeadOnly</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow_TradeFairReportErrorContactOrLeadOnly</shortDescription>
+        <value>The Contact and Lead fields cannot be populated at the same time.</value>
+    </labels>
+    <labels>
+        <fullName>Flow_TradeFairReportErrorMsgTryAgain</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow_TradeFairReportErrorMsgTryAgain</shortDescription>
+        <value>An unexpected error occurred. Please wait 5-10 seconds and try again. If the problem persists, contact your system administrator for assistance.</value>
+    </labels>
+    <labels>
+        <fullName>Flow_TradeFairReportFollowUpAction</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow_TradeFairReportFollowUpAction</shortDescription>
+        <value>Follow-up Action:</value>
+    </labels>
+    <labels>
+        <fullName>Flow_TradeFairReportInterestedIn</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow_TradeFairReportInterestedIn</shortDescription>
+        <value>Interested in:</value>
+    </labels>
+    <labels>
+        <fullName>Flow_TradeFairReportLastNameRequired</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow_TradeFairReportLastNameRequired</shortDescription>
+        <value>Last name is required.</value>
+    </labels>
+    <labels>
+        <fullName>Flow_TradeFairReportNoRecordFound</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow_TradeFairReportNoRecordFound</shortDescription>
+        <value>No matching record was found. Please create a Trade Fair Report.</value>
+    </labels>
+    <labels>
+        <fullName>Flow_TradeFairReportNote</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow_TradeFairReportNote</shortDescription>
+        <value>Bemerkung:</value>
+    </labels>
+    <labels>
+        <fullName>Flow_TradeFairReportOther</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow_TradeFairReportOther</shortDescription>
+        <value>Other:</value>
+    </labels>
+    <labels>
+        <fullName>Flow_TradeFairReportPostalCodeRequired</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow_TradeFairReportPostalCodeRequired</shortDescription>
+        <value>Postal code is required.</value>
+    </labels>
+    <labels>
+        <fullName>Flow_TradeFairReportPrevioussupplier</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow_TradeFairReportPrevioussupplier</shortDescription>
+        <value>Pervious Supplier:</value>
+    </labels>
+    <labels>
+        <fullName>Flow_TradeFairReportScreenErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow_TradeFairReportScreenErrorMessage</shortDescription>
+        <value>An unexpected error occurred. Please try again. If the problem persists, contact your system administrator for assistance.</value>
+    </labels>
+    <labels>
+        <fullName>Flow_TradeFairReportScriptType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow_TradeFairReportScriptType</shortDescription>
+        <value>Trade Fair Report</value>
+    </labels>
+    <labels>
+        <fullName>Flow_TradeFairReportSearchMsgOnlyContact</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow_TradeFairReportSearchMsgOnlyContact</shortDescription>
+        <value>Please search for an existing Contact first. If no matching record is found, please create a new Lead.</value>
+    </labels>
+    <labels>
+        <fullName>Flow_TradeFairReportSelectSalesRep</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow_TradeFairReportSelectSalesRep</shortDescription>
+        <value>Please select the responsible Sales Area Manager (GL). If the Sales Area Manager is unknown, select the responsible Sales Manager (VL) instead. To search, use the last name or the four-digit business unit.</value>
+    </labels>
+    <labels>
+        <fullName>Flow_TradeFairReportSuccessMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow_TradeFairReportSuccessMsg</shortDescription>
+        <value>Your data has been saved successfully. Thank you for your submission!</value>
+    </labels>
+    <labels>
+        <fullName>Flow_TradeFairReportValNoEmailFound</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow_TradeFairReportValNoEmailFound</shortDescription>
+        <value>An email address is required. Please populate the email on the associated Contact or Lead.</value>
+    </labels>
+    <labels>
+        <fullName>Flow_TradeFairReportWarningContactOrLead</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Flow_TradeFairReportWarningContactOrLead</shortDescription>
+        <value>Warning: Please select either a Contact or a Lead.</value>
+    </labels>
+    <labels>
+        <fullName>GeneralCampaign</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GeneralCampaign</shortDescription>
+        <value>Campaign</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskAction</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskAction</shortDescription>
+        <value>Action</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskActions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskActions</shortDescription>
+        <value>Actions</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskAdd</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskAdd</shortDescription>
+        <value>Add</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskAfterApprovalAutomaticTransmissionToSAP</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskAfterApprovalAutomaticTransmissionToSAP</shortDescription>
+        <value>After approval: automatic transmission to SAP</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskAmount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskAmount</shortDescription>
+        <value>Amount</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskApplyDiscount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskApplyDiscount</shortDescription>
+        <value>Apply discount</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskApprovalBySalesManagerRequired</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskApprovalBySalesManagerRequired</shortDescription>
+        <value>Approval by sales manager required</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskApprovalRequired</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskApprovalRequired</shortDescription>
+        <value>Approval required</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskArticleItem</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskArticleItem</shortDescription>
+        <value>Article / Item</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskAwaitingApproval</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskAwaitingApproval</shortDescription>
+        <value>Awaiting approval</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskBack</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskBack</shortDescription>
+        <value>Back</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskBackToCustomer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskBackToCustomer</shortDescription>
+        <value>Back to customer</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskCancel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskCancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskChargeShippingCosts</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskChargeShippingCosts</shortDescription>
+        <value>Charge shipping costs</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskClickOrTypeToSearchEnterInTheQuantityFieldAddsTheArticle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskClickOrTypeToSearchEnterInTheQuantityFieldAddsTheArticle</shortDescription>
+        <value>Click or type to search. Enter in the quantity field adds the article</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskClose</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskClose</shortDescription>
+        <value>Close</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskCondition</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskCondition</shortDescription>
+        <value>Condition:</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskConfirmedDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskConfirmedDate</shortDescription>
+        <value>Confirmed date:</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskCustNo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskCustNo</shortDescription>
+        <value>Cust. no.</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskCustomer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskCustomer</shortDescription>
+        <value>Customer</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskCustomerInfo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskCustomerInfo</shortDescription>
+        <value>Customer info</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskCustomerMasterLookupTipNameOrCustomerNo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskCustomerMasterLookupTipNameOrCustomerNo</shortDescription>
+        <value>Customer master lookup (tip: name or customer no.)</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskCustomerOrder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskCustomerOrder</shortDescription>
+        <value>Customer &amp; Order</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskCustomerPONo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskCustomerPONo</shortDescription>
+        <value>Customer PO no.</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskCustomerPurchaseOrderNumber</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskCustomerPurchaseOrderNumber</shortDescription>
+        <value>Customer purchase order number</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskCustomerSStoredAddresses</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskCustomerSStoredAddresses</shortDescription>
+        <value>Customer&apos;s stored addresses</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskDate</shortDescription>
+        <value>Date</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskDateOfOrderEntry</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskDateOfOrderEntry</shortDescription>
+        <value>Date of order entry</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskDelivery</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskDelivery</shortDescription>
+        <value>Delivery</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskDeliveryNotesOptional</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskDeliveryNotesOptional</shortDescription>
+        <value>Delivery notes (optional)</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskDeliveryText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskDeliveryText</shortDescription>
+        <value>Delivery text</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskDifferentDeliveryAddress</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskDifferentDeliveryAddress</shortDescription>
+        <value>Different delivery address</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskDiscountType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskDiscountType</shortDescription>
+        <value>Discount type</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskDraft</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskDraft</shortDescription>
+        <value>Draft</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskEarliestPossible</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskEarliestPossible</shortDescription>
+        <value>Earliest possible</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskEnterArticleNoOrDescription</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskEnterArticleNoOrDescription</shortDescription>
+        <value>Enter article no. or description...</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskExpressCharge</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskExpressCharge</shortDescription>
+        <value>19.95</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskFreeDeliverySampleOrderMandatoryFields</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskFreeDeliverySampleOrderMandatoryFields</shortDescription>
+        <value>Free delivery / sample order: mandatory fields</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskFreeNoCharge</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskFreeNoCharge</shortDescription>
+        <value>Free / no charge</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskFreeOfCharge</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskFreeOfCharge</shortDescription>
+        <value>free of charge</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskGoodsRecipient</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskGoodsRecipient</shortDescription>
+        <value>Goods recipient</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskGoodsValueNet</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskGoodsValueNet</shortDescription>
+        <value>Goods value (net)</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskGrantDiscount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskGrantDiscount</shortDescription>
+        <value>Grant discount</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskInternalRemark</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskInternalRemark</shortDescription>
+        <value>Internal remark</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskLineItems</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskLineItems</shortDescription>
+        <value>Line items</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskListPrice</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskListPrice</shortDescription>
+        <value>List price:</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskMandatoryFieldSalesManagerMustKnowTheReason</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskMandatoryFieldSalesManagerMustKnowTheReason</shortDescription>
+        <value>Mandatory field – sales manager must know the reason</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskNewAmount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskNewAmount</shortDescription>
+        <value>New amount</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskNewOrder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskNewOrder</shortDescription>
+        <value>New Order</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskNewPriceUnit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskNewPriceUnit</shortDescription>
+        <value>New price / unit</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskNext</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskNext</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskNoLineItemsYet</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskNoLineItemsYet</shortDescription>
+        <value>No line items yet</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskNotTransmittedToTheCustomer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskNotTransmittedToTheCustomer</shortDescription>
+        <value>Not transmitted to the customer</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskNoteForCarrier</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskNoteForCarrier</shortDescription>
+        <value>Note for carrier</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskNoteForCarrierPlaceholder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskNoteForCarrierPlaceholder</shortDescription>
+        <value>Note for carrier...</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskNotesForSalesManagerOrColleagues</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskNotesForSalesManagerOrColleagues</shortDescription>
+        <value>Notes for sales manager or colleagues...</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskOnlyRelevantForFreightShipping</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskOnlyRelevantForFreightShipping</shortDescription>
+        <value>Only relevant for freight shipping</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskOnlyRelevantForSelfPickup</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskOnlyRelevantForSelfPickup</shortDescription>
+        <value>Only relevant for self-pickup</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskOrderDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskOrderDate</shortDescription>
+        <value>Order date</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskOrderSentAwaitingApprovalBySalesManager</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskOrderSentAwaitingApprovalBySalesManager</shortDescription>
+        <value>Order sent – awaiting approval by sales manager</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskOrderSource</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskOrderSource</shortDescription>
+        <value>Order source</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskOrderSuccessfullyTransmitted</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskOrderSuccessfullyTransmitted</shortDescription>
+        <value>Order successfully transmitted</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskOrderType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskOrderType</shortDescription>
+        <value>Order type</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskPickupLocation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskPickupLocation</shortDescription>
+        <value>Pickup location</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskPleaseSelect</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskPleaseSelect</shortDescription>
+        <value>Please select</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskPrice</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskPrice</shortDescription>
+        <value>Price</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskPriceUnit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskPriceUnit</shortDescription>
+        <value>Price/unit</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskPrintOrderConfirmation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskPrintOrderConfirmation</shortDescription>
+        <value>Print order confirmation</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskPrintedOnTheDeliveryNote</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskPrintedOnTheDeliveryNote</shortDescription>
+        <value>Printed on the delivery note</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskProducts</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskProducts</shortDescription>
+        <value>Products</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskQuantity</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskQuantity</shortDescription>
+        <value>Quantity</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskQuantity2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskQuantity2</shortDescription>
+        <value>Quantity:</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskQuoteIsWithSalesManagementForApproval</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskQuoteIsWithSalesManagementForApproval</shortDescription>
+        <value>Quote is with sales management for approval</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskReasonFreeDelivery</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskReasonFreeDelivery</shortDescription>
+        <value>Reason (free delivery)</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskRecalculating</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskRecalculating</shortDescription>
+        <value>Recalculating...</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskRecommendationBasedOnOrderWeight</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskRecommendationBasedOnOrderWeight</shortDescription>
+        <value>Recommendation based on order weight</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskRemarkFreeDelivery</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskRemarkFreeDelivery</shortDescription>
+        <value>Remark (free delivery)</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskRemoveDiscount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskRemoveDiscount</shortDescription>
+        <value>Remove discount</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskRequestedDeliveryDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskRequestedDeliveryDate</shortDescription>
+        <value>Requested delivery date</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskSaveDraft</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskSaveDraft</shortDescription>
+        <value>Save draft</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskSaving</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskSaving</shortDescription>
+        <value>Saving</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskSelectAddress</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskSelectAddress</shortDescription>
+        <value>Select address...</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskSelectDeliveryAddress</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskSelectDeliveryAddress</shortDescription>
+        <value>Select delivery address</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskSendOrder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskSendOrder</shortDescription>
+        <value>Send order</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskSendOrderConfirmation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskSendOrderConfirmation</shortDescription>
+        <value>Send order confirmation</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskShipping</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskShipping</shortDescription>
+        <value>Shipping</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskShippingMethod</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskShippingMethod</shortDescription>
+        <value>Shipping method</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskSource</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskSource</shortDescription>
+        <value>Source</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskStateReason</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskStateReason</shortDescription>
+        <value>State reason</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskSummary</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskSummary</shortDescription>
+        <value>Summary</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskTextForDeliveryNote</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskTextForDeliveryNote</shortDescription>
+        <value>Text for delivery note...</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskTotalGross</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskTotalGross</shortDescription>
+        <value>Total (gross)</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskTotalNet</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskTotalNet</shortDescription>
+        <value>Total (net)</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskTransmittedToSAP</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskTransmittedToSAP</shortDescription>
+        <value>Transmitted to SAP</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskUnit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskUnit</shortDescription>
+        <value>Unit</value>
+    </labels>
+    <labels>
+        <fullName>OrderMaskVAT</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderMaskVAT</shortDescription>
+        <value>VAT</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskAccountDetails</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskAccountDetails</shortDescription>
+        <value>Account details</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskAdd</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskAdd</shortDescription>
+        <value>add</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskAddress</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskAddress</shortDescription>
+        <value>Address</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskAllActiveDarbovenProducts</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskAllActiveDarbovenProducts</shortDescription>
+        <value>All active Darboven products</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskAllActiveProducts</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskAllActiveProducts</shortDescription>
+        <value>all active products</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskAllMatchingProductsAdded</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskAllMatchingProductsAdded</shortDescription>
+        <value>All matching products are already included in the case. Change the quantity directly in the table.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskAmount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskAmount</shortDescription>
+        <value>Amount</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskAnswerGoodsOrCredit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskAnswerGoodsOrCredit</shortDescription>
+        <value>Answer the preliminary question — are goods being returned, or is this a value credit only?</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskAnswerPreliminaryQuestion</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskAnswerPreliminaryQuestion</shortDescription>
+        <value>Answer the preliminary question on the left — the relevant information will appear here.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskAnswerRefundQuestion</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskAnswerRefundQuestion</shortDescription>
+        <value>Answer the refund question — will the customer receive money for the return?</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskAppliesToEntireCase</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskAppliesToEntireCase</shortDescription>
+        <value>Applies to the entire case; individual line items may differ in step 2.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskBackToEditing</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskBackToEditing</shortDescription>
+        <value>Back to editing</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskBackToReference</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskBackToReference</shortDescription>
+        <value>Back to reference</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskCase</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskCase</shortDescription>
+        <value>Case</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskCaseCategory</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskCaseCategory</shortDescription>
+        <value>Case category</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskCaseInvoice</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskCaseInvoice</shortDescription>
+        <value>Invoice according to the case</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskCaseOrder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskCaseOrder</shortDescription>
+        <value>Order according to the case</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskCaseReason</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskCaseReason</shortDescription>
+        <value>Reason for the case</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskCaseSelections</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskCaseSelections</shortDescription>
+        <value>Case selections</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskCaseType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskCaseType</shortDescription>
+        <value>Case type</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskChooseSelectionsFirst</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskChooseSelectionsFirst</shortDescription>
+        <value>first make the selections on the left</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskCollectiveInvoiceFor</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskCollectiveInvoiceFor</shortDescription>
+        <value>Collective invoice for</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskContinueToEditing</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskContinueToEditing</shortDescription>
+        <value>Continue to editing</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskCoreProductRange</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskCoreProductRange</shortDescription>
+        <value>Core product range</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskCredit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskCredit</shortDescription>
+        <value>Credit</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskCreditValue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskCreditValue</shortDescription>
+        <value>Credit value</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskCustomer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskCustomer</shortDescription>
+        <value>Customer</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskCustomerNumber</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskCustomerNumber</shortDescription>
+        <value>Customer number</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskCustomerReceivesRefund</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskCustomerReceivesRefund</shortDescription>
+        <value>Will the customer receive a refund for the return?</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskCustomerShips</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskCustomerShips</shortDescription>
+        <value>Customer ships</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskCustomerShipsGoodsText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskCustomerShipsGoodsText</shortDescription>
+        <value>the customer ships the goods</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskDarbovenArrangesTransport</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskDarbovenArrangesTransport</shortDescription>
+        <value>Darboven arranges transportation</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskDate</shortDescription>
+        <value>Date</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskDeliveryAddress</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskDeliveryAddress</shortDescription>
+        <value>Delivery address</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskDerived</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskDerived</shortDescription>
+        <value>Derived</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskDerivedFromSelections</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskDerivedFromSelections</shortDescription>
+        <value>Determined by the selections on the left.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskDetails</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskDetails</shortDescription>
+        <value>Details</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskDocumentLinesBehavior</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskDocumentLinesBehavior</shortDescription>
+        <value>Document lines follow the document; manually entered and modified lines remain unchanged.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskEdit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskEdit</shortDescription>
+        <value>Edit</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskEditable</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskEditable</shortDescription>
+        <value>Editable</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskEmails</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskEmails</shortDescription>
+        <value>Emails</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskExpectedArrivalDateHelp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskExpectedArrivalDateHelp</shortDescription>
+        <value>When are the goods expected to arrive? If the date is in the past, they have already arrived.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskFinalReviewInstructions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskFinalReviewInstructions</shortDescription>
+        <value>Final check before submission: review the line items below and the case details in the overview on the right. To make changes, use the Edit link in step 2. The quantities below are those announced by the customer and will be sent to SAP as shown. The quantities actually counted by Goods Receipt are recorded there and do not change these quantities.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskFromInvoice</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskFromInvoice</shortDescription>
+        <value>From invoice</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskFromOrder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskFromOrder</shortDescription>
+        <value>From order</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskGoodsAlreadyReceived</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskGoodsAlreadyReceived</shortDescription>
+        <value>Goods already received</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskGoodsAlreadyThereInfo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskGoodsAlreadyThereInfo</shortDescription>
+        <value>No pickup and no advance notice — the goods are already there and receipt processing is underway.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskGoodsBeingReturned</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskGoodsBeingReturned</shortDescription>
+        <value>Are goods being returned?</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskGoodsMovement</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskGoodsMovement</shortDescription>
+        <value>Goods movement</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskGoodsReceivedWhen</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskGoodsReceivedWhen</shortDescription>
+        <value>The goods are already at Goods Receipt — when did they arrive?</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskGoodsWillBePickedUp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskGoodsWillBePickedUp</shortDescription>
+        <value>Goods will be picked up</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskIdentifiedFromCase</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskIdentifiedFromCase</shortDescription>
+        <value>identified from the case</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskInDocument</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskInDocument</shortDescription>
+        <value>in the document</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskInSAP</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskInSAP</shortDescription>
+        <value>In SAP</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskIncludedOrders</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskIncludedOrders</shortDescription>
+        <value>Included orders</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskIndustry</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskIndustry</shortDescription>
+        <value>Industry</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskInternalNote</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskInternalNote</shortDescription>
+        <value>Internal note</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskInternalNotePlaceholder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskInternalNotePlaceholder</shortDescription>
+        <value>e.g., internal note about the case…</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskInvoice</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskInvoice</shortDescription>
+        <value>Invoice</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskItemsFromProductSearch</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskItemsFromProductSearch</shortDescription>
+        <value>Line items are added using the product search below, from the product list available to the customer.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskItemsInTableBelow</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskItemsInTableBelow</shortDescription>
+        <value>Line items are shown in the table below</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskLineItemType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskLineItemType</shortDescription>
+        <value>Line item type</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskLineItems</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskLineItems</shortDescription>
+        <value>Line items</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskManually</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskManually</shortDescription>
+        <value>manually</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskMultipleTypesPossibleInfo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskMultipleTypesPossibleInfo</shortDescription>
+        <value>The information permits more than one type, so it can be selected here. A customer credit is suggested.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskNoDocumentReason</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskNoDocumentReason</shortDescription>
+        <value>Reason for “no document”</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskNoDocumentReasonExample</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskNoDocumentReasonExample</shortDescription>
+        <value>e.g., confirmation by phone, no delivery note available…</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskNoDocumentReasonHelp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskNoDocumentReasonHelp</shortDescription>
+        <value>Enter a brief reason so the case can proceed without a document.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskNoGoodsReturned</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskNoGoodsReturned</shortDescription>
+        <value>Not applicable — no goods are being returned.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskNoGoodsValueCreditInfo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskNoGoodsValueCreditInfo</shortDescription>
+        <value>If no goods are returned, the value credit is the entire case and there is no goods movement.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskNoLineItemsYet</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskNoLineItemsYet</shortDescription>
+        <value>No line items have been entered yet.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskNoNotices</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskNoNotices</shortDescription>
+        <value>no notices</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskNoReturnOrderWithoutGoods</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskNoReturnOrderWithoutGoods</shortDescription>
+        <value>Not applicable — the branch without a goods movement does not create a return order.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskNoValueCreditOnly</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskNoValueCreditOnly</shortDescription>
+        <value>No — value credit only</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskNoWithoutCredit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskNoWithoutCredit</shortDescription>
+        <value>No — without credit</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskNone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskNone</shortDescription>
+        <value>none</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskNotInCustomerListing</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskNotInCustomerListing</shortDescription>
+        <value>Product not in customer listing</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskOptional</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskOptional</shortDescription>
+        <value>optional</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskOrder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskOrder</shortDescription>
+        <value>Order</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskOrderDocument</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskOrderDocument</shortDescription>
+        <value>Order</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskOrders</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskOrders</shortDescription>
+        <value>Orders</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskOutsideDocumentProducts</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskOutsideDocumentProducts</shortDescription>
+        <value>Products from the selected document are shown at the top. Products not included in the document can be selected and are flagged in the table.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskPicklistChangedReason</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskPicklistChangedReason</shortDescription>
+        <value>Picklist changed — select the reason for the case again.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskPicklistValuesNote</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskPicklistValuesNote</shortDescription>
+        <value>Note: The field picklist contains seven values. It is not yet documented which input leads to the other five, so they are not offered here.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskPickupAddressHelp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskPickupAddressHelp</shortDescription>
+        <value>Address where the goods will be picked up — an existing delivery address for the account or a newly created one.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskPickupLocation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskPickupLocation</shortDescription>
+        <value>Pickup location</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskPleaseSelect</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskPleaseSelect</shortDescription>
+        <value>Please select…</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskPrice</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskPrice</shortDescription>
+        <value>Price</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskProduct</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskProduct</shortDescription>
+        <value>Product</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskProductListing</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskProductListing</shortDescription>
+        <value>Product listing</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskProductSearchHelp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskProductSearchHelp</shortDescription>
+        <value>Click or tap to search. Selecting a result creates the line; then enter the quantity in the table.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskProductSearchPlaceholder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskProductSearchPlaceholder</shortDescription>
+        <value>Enter product number or description…</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskProductsAvailable</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskProductsAvailable</shortDescription>
+        <value>Products available</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskQuantity</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskQuantity</shortDescription>
+        <value>Quantity</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskReadyForRetrieval</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskReadyForRetrieval</shortDescription>
+        <value>Ready for retrieval</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskReason</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskReason</shortDescription>
+        <value>Reason</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskReference</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskReference</shortDescription>
+        <value>Reference</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskReferenceRelation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskReferenceRelation</shortDescription>
+        <value>Reference</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskRequestedPickupDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskRequestedPickupDate</shortDescription>
+        <value>Requested pickup date</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskRequestedPickupDateHelp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskRequestedPickupDateHelp</shortDescription>
+        <value>When the goods should be picked up, if the customer specifies a date. Otherwise, leave the field blank.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskReturnShippingMethodHelp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskReturnShippingMethodHelp</shortDescription>
+        <value>How the goods are returned. The carrier order is created in the system of record.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskReviewAndComplete</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskReviewAndComplete</shortDescription>
+        <value>Review &amp; complete</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskSearchProduct</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskSearchProduct</shortDescription>
+        <value>Search for product</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskSelectCaseReason</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskSelectCaseReason</shortDescription>
+        <value>Select the reason for the case</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskSelectGoodsMovement</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskSelectGoodsMovement</shortDescription>
+        <value>Select the goods movement — pickup, customer shipment, or already received</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskSelectReferenceDocument</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskSelectReferenceDocument</shortDescription>
+        <value>Select a document above as the reference; the table will be populated from it. Without a document, add products using the search.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskSelectShippingMethod</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskSelectShippingMethod</shortDescription>
+        <value>Select a shipping method — parcel service, freight forwarder, or outbound freight</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskShippingMethod</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskShippingMethod</shortDescription>
+        <value>Shipping method</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskSource</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskSource</shortDescription>
+        <value>Source</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskStatus</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskStatus</shortDescription>
+        <value>Status</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskSubject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskSubject</shortDescription>
+        <value>Subject</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskSubmitSAPGoodsReceiptInfo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskSubmitSAPGoodsReceiptInfo</shortDescription>
+        <value>When submitted, the return order is sent to SAP, which then notifies Goods Receipt.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskSubmitSAPStartsPickupInfo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskSubmitSAPStartsPickupInfo</shortDescription>
+        <value>When submitted, the return order is sent to SAP. SAP notifies Logistics and initiates the pickup.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskSubmitToSAP</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskSubmitToSAP</shortDescription>
+        <value>Submit to SAP</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskSubtype</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskSubtype</shortDescription>
+        <value>Subtype</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskTableNotices</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskTableNotices</shortDescription>
+        <value>Notice(s) in the table</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskTotalGoodsValue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskTotalGoodsValue</shortDescription>
+        <value>Total goods value</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskType</shortDescription>
+        <value>Type</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskUnannouncedReturnReceived</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskUnannouncedReturnReceived</shortDescription>
+        <value>unannounced return — already at Goods Receipt</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskUnit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskUnit</shortDescription>
+        <value>Unit</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskValue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskValue</shortDescription>
+        <value>Value</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskValues</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskValues</shortDescription>
+        <value>Values</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskWarnings</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskWarnings</shortDescription>
+        <value>Warnings</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskWhoMovesGoodsHelp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskWhoMovesGoodsHelp</shortDescription>
+        <value>Who moves the goods? This determines the case; no one selects a code.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskWith</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskWith</shortDescription>
+        <value>with</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskWithout</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskWithout</shortDescription>
+        <value>without</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskWithoutDocument</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskWithoutDocument</shortDescription>
+        <value>Without document</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskWithoutDocumentLower</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskWithoutDocumentLower</shortDescription>
+        <value>without document</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskYesCreditOnlyCase</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskYesCreditOnlyCase</shortDescription>
+        <value>Yes — without a return shipment, the credit is the entire case.</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskYesGoodsReturned</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskYesGoodsReturned</shortDescription>
+        <value>Yes — goods are being returned</value>
+    </labels>
+    <labels>
+        <fullName>ReturnOrderMaskYesWithCredit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReturnOrderMaskYesWithCredit</shortDescription>
+        <value>Yes — with credit</value>
+    </labels>
+    <labels>
+        <fullName>Test1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WebshopDoNotTranslateRefreshCartInMsTwo</shortDescription>
+        <value>5000</value>
+    </labels>
+    <labels>
+        <fullName>WebshopDoNotTranslateRefreshCartInMsTwo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WebshopDoNotTranslateRefreshCartInMsTwo</shortDescription>
+        <value>5000</value>
+    </labels>
+    <labels>
+        <fullName>WebshopNoAddress</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WebshopNoAddress</shortDescription>
+        <value>No address</value>
     </labels>
 </CustomLabels>

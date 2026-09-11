@@ -1,0 +1,21 @@
+.editor {
+    padding: 0.25rem;
+}
+
+.query-input {
+    --slds-c-textarea-sizing-min-height: 9rem;
+}
+
+.slds-alert_warning {
+    color: var(--slds-g-color-neutral-base-10, #181818);
+}
+
+.output-note {
+    border-radius: 0.25rem;
+}
+
+code {
+    background: #f3f3f3;
+    border-radius: 0.125rem;
+    padding: 0.05rem 0.2rem;
+}

@@ -23,7 +23,7 @@ import cart from '@salesforce/label/c.WebshopCart';
 import favourites from '@salesforce/label/c.webshopFavourites';
 import logout from '@salesforce/label/c.WebshopLogout';
 import refreshCartInMs from '@salesforce/label/c.WebshopDoNotTranslateRefreshCartInMs';
-
+import refreshCartInMsTwo from '@salesforce/label/c.WebshopDoNotTranslateRefreshCartInMsTwo';
 
 export default class webshopCustomHeader extends NavigationMixin(LightningElement) {
     @wire(CurrentPageReference) pageRef;
@@ -52,7 +52,8 @@ export default class webshopCustomHeader extends NavigationMixin(LightningElemen
         cart,
         favourites,
         logout,
-        refreshCartInMs
+        refreshCartInMs,
+        refreshCartInMsTwo
     }
 
     handleLogout(){
@@ -136,7 +137,15 @@ export default class webshopCustomHeader extends NavigationMixin(LightningElemen
             self.template.querySelectorAll('c-webshop-cart-modal').forEach(element => {
                 element.recalc();
             });
-        }, parseInt(this.label.refreshCartInMs));
+        }, parseInt(this.label.refreshCartInMs));        
+        setTimeout(function(){
+            self.template.querySelectorAll('c-webshop-wishlist-count[data-type="Cart"]').forEach(element => {
+                element.recalc();
+            });
+            self.template.querySelectorAll('c-webshop-cart-modal').forEach(element => {
+                element.recalc();
+            });
+        }, parseInt(this.label.refreshCartInMsTwo));
     }
 
     handleContactUs(){

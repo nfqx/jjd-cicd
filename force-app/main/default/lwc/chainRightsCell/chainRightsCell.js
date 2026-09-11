@@ -7,17 +7,28 @@ import rightLockedByChain from '@salesforce/label/c.ChainRightsLockedByChain';
 import rightInheritedByParent from '@salesforce/label/c.ChainRightsInheritedByParent';
 import rightNotAllowed from '@salesforce/label/c.ChainRightsNotAllowed';
 
+const ICONS = {
+    listing: 'utility:list',
+    condition: 'utility:percent',
+    rebate: 'utility:money',
+    wkz: 'utility:announcement',
+    index: 'utility:trending',
+    sampling: 'utility:kanban'
+};
+
 export default class ChainRightsCell extends LightningElement {
-    @api right;
+    @api ownRight;
+    @api inheritedRight;
     @api type;
     @api accountid;
+    @api owner;
     @track currentRight = [];
     @track originalRight = [];
-    @track ischanged = false;
 
     connectedCallback(){
-        this.currentRight = JSON.parse(JSON.stringify(this.right));
-        this.originalRight = JSON.parse(JSON.stringify(this.right));
+        this.currentRight = this.inheritedRight && this.inheritedRight != null && Object.keys(this.inheritedRight).includes(this.type) ? 
+            (this.inheritedRight[this.type].granted ? JSON.parse(JSON.stringify(this.ownRight[this.type])) : JSON.parse(JSON.stringify(this.inheritedRight[this.type]))) : 
+            JSON.parse(JSON.stringify(this.ownRight[this.type]));
         this.loaded = true;
     }
 
@@ -46,8 +57,39 @@ export default class ChainRightsCell extends LightningElement {
         }
     }
 
+    get iconName() {
+        const typeKey = this.type ? this.type.toLowerCase() : '';
+        return ICONS[typeKey] || 'utility:info';
+    }
+
+    get isNotClickable() {
+        return !this.currentRight.removed && !this.currentRight.endshere && !this.currentRight.granted;
+    }
+
+    get cellClass() {
+        let cls = 'slds-button slds-button_icon cell-button';
+        
+        if (this.currentRight.notallowed) {
+            cls += ' status-not-allowed';
+        } else if (this.currentRight.lockedbychain || this.currentRight.inheritedbyparent) {
+            cls += ' status-locked';
+        } else if (this.currentRight.removed) {
+            cls += ' status-removed';
+        } else if (this.currentRight.endshere) {
+            cls += ' status-ends-here';
+        } else if (this.currentRight.granted) {
+            cls += ' status-granted';
+        }
+
+        if (this.currentRight.ischanged) {
+            cls += ' is-changed';
+        }
+
+        return cls;
+    }
+
     handleClickCell(){
-        if(this.currentRight.clickable){
+        if(!this.isNotClickable && this.owner){
             let newstatus = null;
             if(this.currentRight.granted){
                 newstatus = 'endshere';

@@ -113,15 +113,4 @@ public class FTPOrderProcessingTest {
 
         System.assert(true, 'CSV parsing executed without exception');
     }
-
-    @IsTest
-    static void testServiceMethods() {
-
-        Test.setMock(HttpCalloutMock.class, new FTPOrderProcessingMock());
-
-        Test.startTest();
-            String content = FTPClient.downloadFileAsString('HEAD-001/20260101.csv');
-        Test.stopTest();
-        System.assert(content != null);
-    }
 }

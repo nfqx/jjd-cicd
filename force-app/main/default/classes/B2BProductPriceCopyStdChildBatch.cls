@@ -13,7 +13,7 @@ public without sharing class B2BProductPriceCopyStdChildBatch implements Databas
     // Execute method
     public void execute(Database.BatchableContext bc, List<PricebookEntry> scope)
     {
-        List<Pricebook2> pb2s = [SELECT Id FROM Pricebook2 WHERE Name = : System.Label.WebshopDoNotTranslateInternalListpricePricebookName OR Pricebook2.Name = : System.Label.WebshopDoNotTranslateStandardPriceBookCopyForQuotes];
+        List<Pricebook2> pb2s = [SELECT Id FROM Pricebook2 WHERE Name = : System.Label.WebshopDoNotTranslateInternalListpricePricebookName];
         //Pricebook2 pb2copy = [SELECT Id FROM Pricebook2 WHERE Name = : System.Label.WebshopDoNotTranslateInternalListpricePricebookName AND IsStandard = FALSE];
 
         List<String> involvedProdIds = CollectionUtils.generateStringListFromSObjectList(scope, 'Product2Id', true, true);

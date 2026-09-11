@@ -1,0 +1,76 @@
+.player-container {
+    width: 100%;
+}
+
+.controls {
+    width: 100%;
+}
+
+.play-btn {
+    flex-shrink: 0;
+}
+
+.time-label {
+    font-variant-numeric: tabular-nums;
+    font-size: 0.75rem;
+    color: #706e6b;
+    min-width: 2.5rem;
+    text-align: center;
+}
+
+.progress-wrap {
+    flex: 1;
+}
+
+.progress-slider,
+.volume-slider {
+    width: 100%;
+    cursor: pointer;
+    accent-color: #0176d3;
+}
+
+.volume-row {
+    width: 60%;
+}
+
+audio {
+    display: none;
+}
+
+.track-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #e5e5e5;
+}
+
+.track-row {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.25rem;
+    border-bottom: 1px solid #f3f3f3;
+    cursor: pointer;
+    font-size: 0.8125rem;
+}
+
+.track-row:hover {
+    background-color: #f3f3f3;
+}
+
+.track-row.active {
+    background-color: #eef4ff;
+    font-weight: 600;
+}
+
+.track-name {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 0.5rem;
+}
+
+.track-source {
+    font-size: 0.6875rem;
+    flex-shrink: 0;
+}

@@ -6,7 +6,7 @@ public class BatchAutomateAssortmentExtension implements Schedulable, Database.B
         Database.executeBatch(new BatchAutomateAssortmentExtension(), 100);
     }
     public Database.QueryLocator start(Database.BatchableContext bc) {
-        return Database.getQueryLocator('SELECT Id FROM Account WHERE IsWebshopAccount__c = TRUE AND AssortmentExtensionExclusion__c = FALSE AND AssortmentExtensionManual__c = FALSE');
+        return Database.getQueryLocator('SELECT Id FROM Account WHERE IsWebshopAccount__c = TRUE AND AssortmentExtensionExclusion__c = FALSE AND AssortmentExtendedManual__c = FALSE');
     }
     
     public void execute(Database.BatchableContext bc, List<Account> scope) {

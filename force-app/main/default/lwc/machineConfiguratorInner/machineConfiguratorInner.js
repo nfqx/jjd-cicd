@@ -691,7 +691,6 @@ export default class MachineConfiguratorInner extends NavigationMixin(LightningE
                     this.machineMaxDiscount = machine.hasMaxDiscountOne ? machine.maxDiscountOne : null;
                     machine.hasMaxDiscountOneViolation = machine.hasMaxDiscountOne && stringIsNotBlank(machine.discount) && parseFloat(machine.discount) > machine.maxDiscountOne;
                     machine.hasMaxDiscountTwoViolation = machine.hasMaxDiscountTwo && stringIsNotBlank(machine.specialDiscount) && parseFloat(machine.specialDiscount) > machine.maxDiscountTwo;
-                    this.params.hasAccessoireDiscountViolation = this.params.hasAccessoireDiscountViolation === true || machine.hasMaxDiscountOneViolation === true || machine.hasMaxDiscountTwoViolation === true;
                     
                     machine.discountAmount = (parseFloat(machine.price ?? 0) * ((parseFloat(machine.discount ?? 0) / 100))) + ((parseFloat(machine.price ?? 0) * (1 - (parseFloat(machine.discount ?? 0) / 100))) * (parseFloat(machine.specialDiscount ?? 0) / 100) );
                     let discountAmountHypothetical = this.temporaryDiscountBaseMachine != null && this.temporaryDiscountBaseMachine > 0 ? 
@@ -754,6 +753,7 @@ export default class MachineConfiguratorInner extends NavigationMixin(LightningE
             }
             i++;
         });
+        this.recalcViolation();
     }
     recalcAccessoiresGeneral(withRecalcAll, machineIndex){
         this.machines.forEach(machine => {
@@ -767,7 +767,6 @@ export default class MachineConfiguratorInner extends NavigationMixin(LightningE
                         ){
                             row.hasMaxDiscountOneViolation = row.hasMaxDiscountOne && stringIsNotBlank(row.discount) && parseFloat(row.discount) > row.maxDiscountOne;
                             row.hasMaxDiscountTwoViolation = row.hasMaxDiscountTwo && stringIsNotBlank(row.specialDiscount) && parseFloat(row.specialDiscount) > row.maxDiscountTwo;
-                            this.params.hasAccessoireDiscountViolation = this.params.hasAccessoireDiscountViolation === true || row.hasMaxDiscountOneViolation === true || row.hasMaxDiscountTwoViolation === true;
                             
                             row.discountAmount = (parseFloat(row.price ?? 0) * ((parseFloat(row.discount ?? 0) / 100))) + ((parseFloat(row.price ?? 0) * (1 - (parseFloat(row.discount ?? 0) / 100))) * (parseFloat(row.specialDiscount ?? 0) / 100) );
                             let discountAmountHypothetical = 0;
@@ -807,6 +806,23 @@ export default class MachineConfiguratorInner extends NavigationMixin(LightningE
         if(withRecalcAll){
             this.recalcTotal();
         }
+        this.recalcViolation();
+    }
+    recalcViolation(){
+        this.params.hasAccessoireDiscountViolation = false;        
+        this.machines.forEach(machine => {
+            if(machine.hasMaxDiscountOneViolation === true || machine.hasMaxDiscountTwoViolation === true){
+                this.params.hasAccessoireDiscountViolation = true;
+                return;
+            }
+            machine.accessoires.forEach(row => {
+                if(row.hasMaxDiscountOneViolation === true || row.hasMaxDiscountTwoViolation === true){
+                    this.params.hasAccessoireDiscountViolation = true;
+                    return;
+                }
+            });
+        });
+
     }
     recalcTotal(){
         let totalNetAmount = 0;
@@ -1140,6 +1156,8 @@ export default class MachineConfiguratorInner extends NavigationMixin(LightningE
         this.step = 3;
     }
     handleGoToStepFour(event){
+        console.log(this.params.hasAccessoireDiscountViolation);
+        console.log(this.minDownPaymentBelow);
         if(this.params.hasAccessoireDiscountViolation || this.minDownPaymentBelow){
             this.showReasonModal = true;
         } 
@@ -1247,7 +1265,7 @@ export default class MachineConfiguratorInner extends NavigationMixin(LightningE
                 temporaryDiscountAccessories: stringIsNotBlank(this.temporaryDiscountAccessories) ? this.temporaryDiscountAccessories : null,
                 specialMachinesPurchasePrice: this.specialMachinesPurchasePrice
             }).then(result => {
-                if(result != null){
+                if(stringIsNotBlank(result) && !result.includes('Error: ')){
                     if(this.fromQuote && stringIsNotBlank(this.quoteId) && this.quoteId.includes(result)){
                         const evt = new ShowToastEvent({
                             title: this.label.success,
@@ -1284,7 +1302,7 @@ export default class MachineConfiguratorInner extends NavigationMixin(LightningE
                 } else {
                     const evt = new ShowToastEvent({
                       title: this.label.error,
-                      message: this.label.error,
+                      message: result,
                       variant: 'error',
                     });
                     this.dispatchEvent(evt);

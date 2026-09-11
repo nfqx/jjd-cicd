@@ -3,7 +3,7 @@ public without sharing class BatchPopulateFirstContactActivationTest {
     @testSetup
     private static void setupTestData() {
         // Create test accounts
-        Account account = new Account(Name = 'Test Account'); //, SalesClassification__c = '1-Customer');
+        Account account = new Account(Name = 'Test Account', LegalForm__c = 'AG'); //, SalesClassification__c = '1-Customer');
         insert account;
 
         // Create test contacts and users

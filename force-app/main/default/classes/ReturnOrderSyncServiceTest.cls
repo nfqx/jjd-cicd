@@ -13,7 +13,7 @@ private class ReturnOrderSyncServiceTest {
             AccountId = account.Id,
             Status = 'Draft',
             ERPReturnOrderNumber__c = '5000000123',
-            BillingBlocked__c = true
+            BillingBlockReason__c = 'R1'
         );
         insert returnOrder;
     }
@@ -68,20 +68,19 @@ private class ReturnOrderSyncServiceTest {
         Map<String, Object> payloadMap = (Map<String, Object>) JSON.deserializeUntyped(payload);
         System.assertEquals(returnOrder.Id, payloadMap.get('id'), 'Should contain return order ID');
         System.assertEquals(returnOrder.ERPReturnOrderNumber__c, payloadMap.get('erpReturnOrderNumber'), 'Should contain ERP return order number');
-        System.assertEquals(returnOrder.BillingBlocked__c, payloadMap.get('billingBlocked'), 'Should contain billing blocked flag');
     }
 
     @IsTest
     static void testBillingRelease_TriggersOutboundIntegration() {
-        // HAVING — billing block is currently true (from setup)
-        ReturnOrder returnOrder = [SELECT Id, BillingBlocked__c FROM ReturnOrder LIMIT 1];
+        // HAVING — billing block reason is currently set (from setup)
+        ReturnOrder returnOrder = [SELECT Id, BillingBlockReason__c FROM ReturnOrder LIMIT 1];
         ReturnOrderSyncService.isTestEnvironment = true;
         ReturnOrderSyncService.testEndpoint = 'https://test.mulesoft.com/api';
         ReturnOrderSyncService.capturedRequests.clear();
 
-        // WHEN — release the billing block (true -> false)
+        // WHEN — release the billing block (reason cleared)
         Test.startTest();
-        returnOrder.BillingBlocked__c = false;
+        returnOrder.BillingBlockReason__c = null;
         update returnOrder;
         Test.stopTest();
 

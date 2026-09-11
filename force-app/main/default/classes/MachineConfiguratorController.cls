@@ -1,5 +1,5 @@
 public without sharing class MachineConfiguratorController {
-    private static final Pricebook2 STANDARD_PRICEBOOK_COPY = [SELECT Id FROM Pricebook2 WHERE Name = : System.Label.WebshopDoNotTranslateStandardPriceBookCopyForQuotes ORDER BY CreatedDate LIMIT 1];
+    private static final Pricebook2 STANDARD_PRICEBOOK_COPY = [SELECT Id FROM Pricebook2 WHERE Name = : System.Label.WebshopDoNotTranslateInternalListpricePricebookName ORDER BY CreatedDate LIMIT 1];
     
     @AuraEnabled(cacheable=false)
     public static Opportunity getOppInfo(String opportunityId){
@@ -339,6 +339,7 @@ public without sharing class MachineConfiguratorController {
                                 Discount__c = machineWrapper.discount,
                                 SpecialDiscount__c = machineWrapper.specialDiscount,
                                 PricebookEntryId = standardPricebookEntries.get(machineWrapper.id).Id,
+                                OfferPositionName__c = machineWrapper.title,
                                 MachineType__c = 'Machine',
                                 ParentMachine__c = machineWrapper.id
                             ));
@@ -366,6 +367,7 @@ public without sharing class MachineConfiguratorController {
                                 PricebookEntryId = standardPricebookEntries.get(wrapper.id).Id,
                                 MachineType__c = 'Accessoire',
                                 ParentMachine__c = machineWrapper.id,
+                                OfferPositionName__c = wrapper.title,
                                 ParentMachineQL__c = quoteLineItems.get(machineWrapper.index).Id,
                                 IsComponent__c = wrapper.isComponent
                             ));
@@ -388,14 +390,13 @@ public without sharing class MachineConfiguratorController {
                 return 'Error: No Opportunity';
             }
         } catch(Exception e){
-            System.debug(e);
             insert new ErrorLogging__c(
                 Error__c = e.getMessage(),
                 RecordIDs__c = opportunityId,
                 ProcessName__c = 'MachineConfiguratorController.createOffer()'
             );
+            return 'Error: ' + e.getMessage();
         }
-        return null;
     }
 
     

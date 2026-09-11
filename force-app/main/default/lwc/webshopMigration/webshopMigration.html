@@ -19,7 +19,14 @@
                 <tbody>
 
                     <tr>
-                        <td>Migrate Product Images</td>
+                        <td>
+                            <strong>Migrate Product Images</strong>
+                            <ul>
+                                <li>Apex: MigrationProductImagesBatch</li>
+                                <li>Mapping: Product2.OldProductNumber__c (2.0) &lt;-&gt; Product2.ProductNumber (1.0)</li>
+                                <li>Creates Managed Content records and links them with the Parent Product2 record</li>
+                            </ul>
+                        </td>
                         <td>
                             <lightning-button
                                 label="Start"
@@ -30,7 +37,15 @@
                     </tr>
 
                     <tr>
-                        <td>Migrate Categories</td>
+                        <td>
+                            <strong>Migrate Categories</strong>
+                            <ul>
+                                <li>Apex: MigrationBatchProductCategory</li>
+                                <li>Mapping: ProductCategory.OldId__c (2.0) &lt;-&gt; ProductCategory.Id (1.0)</li>
+                                <li>Creates ProductCategory records and reparents them via the OldId__c field.</li>
+                                <li>No Product-Category relation is written here.</li>
+                            </ul>
+                        </td>
                         <td>
                             <lightning-button
                                 label="Start"
@@ -41,7 +56,17 @@
                     </tr>
 
                     <tr>
-                        <td>Migrate Products and Links</td>
+                        <td>
+                            <strong>Migrate Products and Attributes</strong>
+                            <ul>
+                                <li>Apex: MigrationProductBrandMappingJob, MigrationProductCategoryLinkJob, MigrationWebshopProductLinkJob, MigrationWebshopBrandLinkJob</li>
+                                <li>Mapping: ProductCategory.OldId__c (2.0) &lt;-&gt; ProductCategory.Id (1.0)</li>
+                                <li>Step 1: Populate Product Attributes and direct Product-Brand Assignments.</li>
+                                <li>Step 2: Populate Product-Category Assignments.</li>
+                                <li>Step 3: Populate Product-Product Links (WebshopProductLink__c object).</li>
+                                <li>Step 4: Populate Product-Brand Links (WebshopBrandLink__c object).</li>
+                            </ul>
+                        </td>
                         <td>
                             <lightning-button
                                 label="Start"
@@ -52,7 +77,15 @@
                     </tr>
 
                     <tr>
-                        <td>Migrate Product Groups and Subgroups</td>
+                        <td>
+                            <strong>Migrate Product Groups and Subgroups</strong>
+                            <ul>
+                                <li>Apex: MigrationProductGroupLoadJob, MigrationProductGroupMappingJob</li>
+                                <li>Mapping: ProductCategory.OldId__c (2.0) &lt;-&gt; ProductCategory.Id (1.0)</li>
+                                <li>Step 1: Create Product Groups and Subgroups, and linkages between these, mapped by Name.</li>
+                                <li>Step 2: Populate Product-Product Group and Product-Product Subgroup Assignments.</li>
+                            </ul>
+                        </td>
                         <td>
                             <lightning-button
                                 label="Start"
@@ -63,7 +96,15 @@
                     </tr>
 
                     <tr>
-                        <td>Migrate Product Entitlements</td>
+                        <td>
+                            <strong>Migrate Product Entitlements</strong>
+                            <ul>
+                                <li>Apex: MigrationProductEntitlementJob</li>
+                                <li>Mapping: Product2.OldProductNumber__c (2.0) &lt;-&gt; Product2.ProductNumber (1.0); Account.ERPCustomerNumber__c (2.0)&lt;-&gt; Account.AccountNumber (1.0)</li>
+                                <li>Maps Entitlement Policy Products by Account Number and Product Number, and inserts entries for Parent and Child Products in order.</li>
+                                <li>Entitlement Policies with direct Account__c lookup must exist for the Account in the old org. An Account-bound Entitlement Policy is created and linked with the Account's Buyer Group if it doesn't exist yet.</li>
+                            </ul>
+                        </td>
                         <td>
                             <lightning-button
                                 label="Start"
@@ -74,7 +115,15 @@
                     </tr>
 
                     <tr>
-                        <td>Migrate Contacts and Users</td>
+                        <td>
+                            <strong>Migrate Contacts and Users</strong>
+                            <ul>
+                                <li>Apex: MigrationContactJob, MigrationUserJob</li>
+                                <li>Mapping: Account.ERPCustomerNumber__c (2.0)&lt;-&gt; Account.AccountNumber (1.0), Contact.OldId__c (2.0)&lt;-&gt; Contact.Id (1.0)</li>
+                                <li>Recreates Contacts and Users on Accounts based on Org 1.0 .</li>
+                                <li>User Migration Part might be killed or modified based on pending SF Support request.</li>
+                            </ul>
+                        </td>
                         <td>
                             <lightning-button
                                 label="Start"
@@ -86,12 +135,20 @@
 
 
                     <tr>
-                        <td>Migrate for PuK</td>
+                        <td>
+                            <strong>Migrate Account Attributes</strong>
+                            <ul>
+                                <li>Apex: MigrationAccountJob</li>
+                                <li>Mapping: Account.ERPCustomerNumber__c (2.0)&lt;-&gt; Account.AccountNumber (1.0)</li>
+                                <li>Populates Webshop related Account custom fields based on Org 1.0 data.</li>
+                                <li>Also migrates AccountBrandAssignment__c records mapped by Brand Name.</li>
+                            </ul>
+                        </td>
                         <td>
                             <lightning-button
                                 label="Start"
                                 variant="brand"
-                                onclick={startPuKMigration}>
+                                onclick={startAccountMigration}>
                             </lightning-button>
                         </td>
                     </tr>

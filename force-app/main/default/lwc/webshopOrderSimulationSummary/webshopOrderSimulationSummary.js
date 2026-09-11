@@ -72,6 +72,7 @@ export default class WebshopOrderSimulationSummary extends LightningElement {
     @track erpSucceeded = false;
     @track paymentTermsLineOne = null;
     @track paymentTermsLineTwo = null;
+    @track errorMessage = null;
     @track errorLoggingId = null;
     @track readyLoaded = false;
     @track hasPromotions = false;
@@ -94,6 +95,7 @@ export default class WebshopOrderSimulationSummary extends LightningElement {
         this._erpResult = JSON.parse(JSON.stringify(this.erpResult));
         this.erpSucceeded = this._erpResult.success === true;
         this.erpFailed = this._erpResult.success === false;
+        this.errorMessage = this._erpResult.errorMessage;
         this.errorLoggingId = this._erpResult.errorLoggingId;
         if(this.erpSucceeded){
             this._erpResult.TotalCartAmountRounded = this.roundToTwo(this._erpResult.totalCartAmount);

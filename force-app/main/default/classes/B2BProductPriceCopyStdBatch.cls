@@ -11,7 +11,7 @@ public without sharing class B2BProductPriceCopyStdBatch implements Database.Bat
     }
 
     public Database.QueryLocator start(Database.BatchableContext bc) {       
-        Database.delete([SELECT Id FROM PricebookEntry WHERE Pricebook2.Name =: System.Label.WebshopDoNotTranslateInternalListpricePricebookName OR Pricebook2.Name = : System.Label.WebshopDoNotTranslateStandardPriceBookCopyForQuotes], false);
+        Database.delete([SELECT Id FROM PricebookEntry WHERE Pricebook2.IsStandard = FALSE AND (Pricebook2.Name =: System.Label.WebshopDoNotTranslateInternalListpricePricebookName OR Pricebook2.Name = : System.Label.WebshopDoNotTranslateStandardPriceBookCopyForQuotes)], false);
         return Database.getQueryLocator([SELECT Id,IsActive,Product2Id,ProductSellingModelId,UnitPrice,UseStandardPrice FROM PricebookEntry WHERE Pricebook2.IsStandard = TRUE AND Product2.ProductClass IN ('VariationParent', 'Simple')]);
     }
     

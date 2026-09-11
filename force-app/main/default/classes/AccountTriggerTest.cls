@@ -113,11 +113,10 @@ private class AccountTriggerTest {
 
     @IsTest
     static void testParentChangeStartsReclassificationBatch() {
-        Account oldParent = new Account(Name = 'Old Parent');
-        Account newParent = new Account(Name = 'New Parent');
+        Account oldParent = new Account(Name = 'Old Parent', LegalForm__c = 'AG');
+        Account newParent = new Account(Name = 'New Parent', LegalForm__c = 'AG');
         Account child = new Account(
-            Name = 'Child',
-            IsChainMember__c = true
+            Name = 'Child', IsChainMember__c = true, LegalForm__c = 'AG'
         );
 
         insertWithoutClassification(
@@ -153,11 +152,13 @@ private class AccountTriggerTest {
     static void testDeleteStartsReclassificationBatch() {
         Account parent = new Account(
             Name = 'Parent',
-            IsChainMember__c = true
+            IsChainMember__c = true, 
+            LegalForm__c = 'AG'
         );
         Account child = new Account(
             Name = 'Child',
-            IsChainMember__c = true
+            IsChainMember__c = true, 
+            LegalForm__c = 'AG'
         );
 
         insertWithoutClassification(new List<Account>{parent, child});
@@ -190,7 +191,8 @@ private class AccountTriggerTest {
     static void testSuppression() {
         Account ac = new Account(
             Name = 'Suppressed Account',
-            IsChainMember__c = false
+            IsChainMember__c = false, 
+            LegalForm__c = 'AG'
         );
 
         AccountTriggerHandler.suppressClassification = true;

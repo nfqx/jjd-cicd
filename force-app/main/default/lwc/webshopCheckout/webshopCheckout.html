@@ -26,7 +26,7 @@
                         <div class="account-modal mb-3">
                             <p class="label-uppercase gray-500 mb-1">{label.activeAccount}</p>
                             <p class="large-medium m-0">{account.Name}</p>
-                            <p class="body-regular m-0">{account.Street}, {account.PostalCode} {account.City}</p>
+                            <p class="body-regular m-0">{accountGeneralAddress}</p>
                         </div>
                         <template if:true={showAddresses}>
                             <p class="components-badge-h3">{label.shippingAddress}</p>
@@ -41,7 +41,7 @@
                         <div class="account-modal mb-3">
                             <p class="label-uppercase gray-500 mb-1">{label.accountBilling}</p>
                             <p class="large-medium m-0">{account.Name}</p>
-                            <p class="body-regular m-0">{account.StreetBilling}, {account.PostalCodeBilling} {account.CityBilling}</p>
+                            <p class="body-regular m-0">{accountBillingAddress}</p>
                         </div>
                         <!--p>&nbsp;</p>
                         <p class="components-badge-h3">{label.paymentConditionsHeader}</p>

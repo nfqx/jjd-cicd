@@ -13,15 +13,218 @@ import createOrder from '@salesforce/apex/OrderMaskController.createOrder';
 import saveOrderDraft from '@salesforce/apex/OrderMaskController.saveOrderDraft';
 import getAccountContext from '@salesforce/apex/OrderMaskController.getAccountContext';
 
+// LABELS
+import orderMaskAction from '@salesforce/label/c.OrderMaskAction';
+import orderMaskActions from '@salesforce/label/c.OrderMaskActions';
+import orderMaskAdd from '@salesforce/label/c.OrderMaskAdd';
+import orderMaskAfterApprovalAutomaticTransmissionToSAP from '@salesforce/label/c.OrderMaskAfterApprovalAutomaticTransmissionToSAP';
+import orderMaskAmount from '@salesforce/label/c.OrderMaskAmount';
+import orderMaskApplyDiscount from '@salesforce/label/c.OrderMaskApplyDiscount';
+import orderMaskApprovalBySalesManagerRequired from '@salesforce/label/c.OrderMaskApprovalBySalesManagerRequired';
+import orderMaskApprovalRequired from '@salesforce/label/c.OrderMaskApprovalRequired';
+import orderMaskArticleItem from '@salesforce/label/c.OrderMaskArticleItem';
+import orderMaskAwaitingApproval from '@salesforce/label/c.OrderMaskAwaitingApproval';
+import orderMaskBack from '@salesforce/label/c.OrderMaskBack';
+import orderMaskBackToCustomer from '@salesforce/label/c.OrderMaskBackToCustomer';
+import orderMaskCancel from '@salesforce/label/c.OrderMaskCancel';
+import orderMaskChargeShippingCosts from '@salesforce/label/c.OrderMaskChargeShippingCosts';
+import orderMaskClickOrTypeToSearchEnterInTheQuantityFieldAddsTheArticle from '@salesforce/label/c.OrderMaskClickOrTypeToSearchEnterInTheQuantityFieldAddsTheArticle';
+import orderMaskClose from '@salesforce/label/c.OrderMaskClose';
+import orderMaskCondition from '@salesforce/label/c.OrderMaskCondition';
+import orderMaskConfirmedDate from '@salesforce/label/c.OrderMaskConfirmedDate';
+import orderMaskCustNo from '@salesforce/label/c.OrderMaskCustNo';
+import orderMaskCustomer from '@salesforce/label/c.OrderMaskCustomer';
+import orderMaskCustomerInfo from '@salesforce/label/c.OrderMaskCustomerInfo';
+import orderMaskCustomerMasterLookupTipNameOrCustomerNo from '@salesforce/label/c.OrderMaskCustomerMasterLookupTipNameOrCustomerNo';
+import orderMaskCustomerOrder from '@salesforce/label/c.OrderMaskCustomerOrder';
+import orderMaskCustomerPONo from '@salesforce/label/c.OrderMaskCustomerPONo';
+import orderMaskCustomerPurchaseOrderNumber from '@salesforce/label/c.OrderMaskCustomerPurchaseOrderNumber';
+import orderMaskCustomerSStoredAddresses from '@salesforce/label/c.OrderMaskCustomerSStoredAddresses';
+import orderMaskDate from '@salesforce/label/c.OrderMaskDate';
+import orderMaskDateOfOrderEntry from '@salesforce/label/c.OrderMaskDateOfOrderEntry';
+import orderMaskDelivery from '@salesforce/label/c.OrderMaskDelivery';
+import orderMaskDeliveryNotesOptional from '@salesforce/label/c.OrderMaskDeliveryNotesOptional';
+import orderMaskDeliveryText from '@salesforce/label/c.OrderMaskDeliveryText';
+import orderMaskDifferentDeliveryAddress from '@salesforce/label/c.OrderMaskDifferentDeliveryAddress';
+import orderMaskDiscountType from '@salesforce/label/c.OrderMaskDiscountType';
+import orderMaskDraft from '@salesforce/label/c.OrderMaskDraft';
+import orderMaskEarliestPossible from '@salesforce/label/c.OrderMaskEarliestPossible';
+import orderMaskEnterArticleNoOrDescription from '@salesforce/label/c.OrderMaskEnterArticleNoOrDescription';
+import orderMaskFreeDeliverySampleOrderMandatoryFields from '@salesforce/label/c.OrderMaskFreeDeliverySampleOrderMandatoryFields';
+import orderMaskFreeNoCharge from '@salesforce/label/c.OrderMaskFreeNoCharge';
+import orderMaskFreeOfCharge from '@salesforce/label/c.OrderMaskFreeOfCharge';
+import orderMaskGoodsRecipient from '@salesforce/label/c.OrderMaskGoodsRecipient';
+import orderMaskGoodsValueNet from '@salesforce/label/c.OrderMaskGoodsValueNet';
+import orderMaskGrantDiscount from '@salesforce/label/c.OrderMaskGrantDiscount';
+import orderMaskInternalRemark from '@salesforce/label/c.OrderMaskInternalRemark';
+import orderMaskLineItems from '@salesforce/label/c.OrderMaskLineItems';
+import orderMaskListPrice from '@salesforce/label/c.OrderMaskListPrice';
+import orderMaskMandatoryFieldSalesManagerMustKnowTheReason from '@salesforce/label/c.OrderMaskMandatoryFieldSalesManagerMustKnowTheReason';
+import orderMaskNewAmount from '@salesforce/label/c.OrderMaskNewAmount';
+import orderMaskNewOrder from '@salesforce/label/c.OrderMaskNewOrder';
+import orderMaskNewPriceUnit from '@salesforce/label/c.OrderMaskNewPriceUnit';
+import orderMaskNext from '@salesforce/label/c.OrderMaskNext';
+import orderMaskNoLineItemsYet from '@salesforce/label/c.OrderMaskNoLineItemsYet';
+import orderMaskNoteForCarrier from '@salesforce/label/c.OrderMaskNoteForCarrier';
+import orderMaskNoteForCarrierPlaceholder from '@salesforce/label/c.OrderMaskNoteForCarrierPlaceholder';
+import orderMaskNotesForSalesManagerOrColleagues from '@salesforce/label/c.OrderMaskNotesForSalesManagerOrColleagues';
+import orderMaskNotTransmittedToTheCustomer from '@salesforce/label/c.OrderMaskNotTransmittedToTheCustomer';
+import orderMaskOnlyRelevantForFreightShipping from '@salesforce/label/c.OrderMaskOnlyRelevantForFreightShipping';
+import orderMaskOnlyRelevantForSelfPickup from '@salesforce/label/c.OrderMaskOnlyRelevantForSelfPickup';
+import orderMaskOrderDate from '@salesforce/label/c.OrderMaskOrderDate';
+import orderMaskOrderSentAwaitingApprovalBySalesManager from '@salesforce/label/c.OrderMaskOrderSentAwaitingApprovalBySalesManager';
+import orderMaskOrderSource from '@salesforce/label/c.OrderMaskOrderSource';
+import orderMaskOrderSuccessfullyTransmitted from '@salesforce/label/c.OrderMaskOrderSuccessfullyTransmitted';
+import orderMaskOrderType from '@salesforce/label/c.OrderMaskOrderType';
+import orderMaskPickupLocation from '@salesforce/label/c.OrderMaskPickupLocation';
+import orderMaskPleaseSelect from '@salesforce/label/c.OrderMaskPleaseSelect';
+import orderMaskPrice from '@salesforce/label/c.OrderMaskPrice';
+import orderMaskPriceUnit from '@salesforce/label/c.OrderMaskPriceUnit';
+import orderMaskPrintedOnTheDeliveryNote from '@salesforce/label/c.OrderMaskPrintedOnTheDeliveryNote';
+import orderMaskPrintOrderConfirmation from '@salesforce/label/c.OrderMaskPrintOrderConfirmation';
+import orderMaskProducts from '@salesforce/label/c.OrderMaskProducts';
+import orderMaskQuantity from '@salesforce/label/c.OrderMaskQuantity';
+import orderMaskQuantity2 from '@salesforce/label/c.OrderMaskQuantity2';
+import orderMaskQuoteIsWithSalesManagementForApproval from '@salesforce/label/c.OrderMaskQuoteIsWithSalesManagementForApproval';
+import orderMaskReasonFreeDelivery from '@salesforce/label/c.OrderMaskReasonFreeDelivery';
+import orderMaskRecalculating from '@salesforce/label/c.OrderMaskRecalculating';
+import orderMaskRecommendationBasedOnOrderWeight from '@salesforce/label/c.OrderMaskRecommendationBasedOnOrderWeight';
+import orderMaskRemarkFreeDelivery from '@salesforce/label/c.OrderMaskRemarkFreeDelivery';
+import orderMaskRemoveDiscount from '@salesforce/label/c.OrderMaskRemoveDiscount';
+import orderMaskRequestedDeliveryDate from '@salesforce/label/c.OrderMaskRequestedDeliveryDate';
+import orderMaskSaveDraft from '@salesforce/label/c.OrderMaskSaveDraft';
+import orderMaskSaving from '@salesforce/label/c.OrderMaskSaving';
+import orderMaskSelectAddress from '@salesforce/label/c.OrderMaskSelectAddress';
+import orderMaskSelectDeliveryAddress from '@salesforce/label/c.OrderMaskSelectDeliveryAddress';
+import orderMaskSendOrder from '@salesforce/label/c.OrderMaskSendOrder';
+import orderMaskSendOrderConfirmation from '@salesforce/label/c.OrderMaskSendOrderConfirmation';
+import orderMaskShipping from '@salesforce/label/c.OrderMaskShipping';
+import orderMaskShippingMethod from '@salesforce/label/c.OrderMaskShippingMethod';
+import orderMaskSource from '@salesforce/label/c.OrderMaskSource';
+import orderMaskStateReason from '@salesforce/label/c.OrderMaskStateReason';
+import orderMaskSummary from '@salesforce/label/c.OrderMaskSummary';
+import orderMaskTextForDeliveryNote from '@salesforce/label/c.OrderMaskTextForDeliveryNote';
+import orderMaskTotalGross from '@salesforce/label/c.OrderMaskTotalGross';
+import orderMaskTotalNet from '@salesforce/label/c.OrderMaskTotalNet';
+import orderMaskTransmittedToSAP from '@salesforce/label/c.OrderMaskTransmittedToSAP';
+import orderMaskUnit from '@salesforce/label/c.OrderMaskUnit';
+import orderMaskVAT from '@salesforce/label/c.OrderMaskVAT';
+import expressCosts from '@salesforce/label/c.OrderMaskExpressCharge';
+
+const ORDER_SOURCE_BY_CONTEXT = {
+    Case: 'E-mail',
+    Account: 'Telefon'
+};
+const round2 = (value) => Math.round(value * 100) / 100;
+
 export default class CustomOrderMask extends LightningElement {
 
     @api recordId;       
     @api objectApiName;
 
+    label = {
+        orderMaskAction,
+        orderMaskActions,
+        orderMaskAdd,
+        orderMaskAfterApprovalAutomaticTransmissionToSAP,
+        orderMaskAmount,
+        orderMaskApplyDiscount,
+        orderMaskApprovalBySalesManagerRequired,
+        orderMaskApprovalRequired,
+        orderMaskArticleItem,
+        orderMaskAwaitingApproval,
+        orderMaskBack,
+        orderMaskBackToCustomer,
+        orderMaskCancel,
+        orderMaskChargeShippingCosts,
+        orderMaskClickOrTypeToSearchEnterInTheQuantityFieldAddsTheArticle,
+        orderMaskClose,
+        orderMaskCondition,
+        orderMaskConfirmedDate,
+        orderMaskCustNo,
+        orderMaskCustomer,
+        orderMaskCustomerInfo,
+        orderMaskCustomerMasterLookupTipNameOrCustomerNo,
+        orderMaskCustomerOrder,
+        orderMaskCustomerPONo,
+        orderMaskCustomerPurchaseOrderNumber,
+        orderMaskCustomerSStoredAddresses,
+        orderMaskDate,
+        orderMaskDateOfOrderEntry,
+        orderMaskDelivery,
+        orderMaskDeliveryNotesOptional,
+        orderMaskDeliveryText,
+        orderMaskDifferentDeliveryAddress,
+        orderMaskDiscountType,
+        orderMaskDraft,
+        orderMaskEarliestPossible,
+        orderMaskEnterArticleNoOrDescription,
+        orderMaskFreeDeliverySampleOrderMandatoryFields,
+        orderMaskFreeNoCharge,
+        orderMaskFreeOfCharge,
+        orderMaskGoodsRecipient,
+        orderMaskGoodsValueNet,
+        orderMaskGrantDiscount,
+        orderMaskInternalRemark,
+        orderMaskLineItems,
+        orderMaskListPrice,
+        orderMaskMandatoryFieldSalesManagerMustKnowTheReason,
+        orderMaskNewAmount,
+        orderMaskNewOrder,
+        orderMaskNewPriceUnit,
+        orderMaskNext,
+        orderMaskNoLineItemsYet,
+        orderMaskNoteForCarrier,
+        orderMaskNoteForCarrierPlaceholder,
+        orderMaskNotesForSalesManagerOrColleagues,
+        orderMaskNotTransmittedToTheCustomer,
+        orderMaskOnlyRelevantForFreightShipping,
+        orderMaskOnlyRelevantForSelfPickup,
+        orderMaskOrderDate,
+        orderMaskOrderSentAwaitingApprovalBySalesManager,
+        orderMaskOrderSource,
+        orderMaskOrderSuccessfullyTransmitted,
+        orderMaskOrderType,
+        orderMaskPickupLocation,
+        orderMaskPleaseSelect,
+        orderMaskPrice,
+        orderMaskPriceUnit,
+        orderMaskPrintedOnTheDeliveryNote,
+        orderMaskPrintOrderConfirmation,
+        orderMaskProducts,
+        orderMaskQuantity,
+        orderMaskQuantity2,
+        orderMaskQuoteIsWithSalesManagementForApproval,
+        orderMaskReasonFreeDelivery,
+        orderMaskRecalculating,
+        orderMaskRecommendationBasedOnOrderWeight,
+        orderMaskRemarkFreeDelivery,
+        orderMaskRemoveDiscount,
+        orderMaskRequestedDeliveryDate,
+        orderMaskSaveDraft,
+        orderMaskSaving,
+        orderMaskSelectAddress,
+        orderMaskSelectDeliveryAddress,
+        orderMaskSendOrder,
+        orderMaskSendOrderConfirmation,
+        orderMaskShipping,
+        orderMaskShippingMethod,
+        orderMaskSource,
+        orderMaskStateReason,
+        orderMaskSummary,
+        orderMaskTextForDeliveryNote,
+        orderMaskTotalGross,
+        orderMaskTotalNet,
+        orderMaskTransmittedToSAP,
+        orderMaskUnit,
+        orderMaskVAT,
+        expressCosts
+    };
+
     currentStep = 1;
     hasRendered = false;
     customNotification = null;
-    @track searchType = 'bought';  
+    @track searchType = 'entitled';  
     searchTerm = '';  
     isFirstOrder = false;
 
@@ -34,7 +237,7 @@ export default class CustomOrderMask extends LightningElement {
     @track orderData = {
         //step 1
         orderNumber: '',
-        source: '',
+        source: this.defaultOrderSource,
         type: '',
         requestedDeliveryDate: '',
         orderStartDate: this.todayIsoDate(),
@@ -84,9 +287,9 @@ export default class CustomOrderMask extends LightningElement {
     // EXTRACT THESE TWO ABOVE FROM this.erpResponse
     @track orderSourceOptions = [];
     @track orderTypeOptions = [];
+    @track reasonOptions = [];
     @track pickupLocationOptions = [];
     @track preferredShippingConditionOptions = [];
-    @track countryOptions = [];
     @track lineDiscounts = {};              // { prodId: { percent: 10 } | { absolute: 2 } }
     isDiscountModalOpen = false;
     discountModalProductId = null;
@@ -94,6 +297,7 @@ export default class CustomOrderMask extends LightningElement {
     discountValue = '';
     @track discountModalItem = null;
     isDifferentShippingAddress = false;
+    isShippingFree = false;
     orderSent = false;
 
     _activeTimerId;
@@ -121,10 +325,7 @@ export default class CustomOrderMask extends LightningElement {
 
             if (data.picklistFieldValues.OrderSource__c) {
                 this.orderSourceOptions = data.picklistFieldValues.OrderSource__c.values
-                .map(item => ({
-                    label: item.label,
-                    value: item.value
-                }));
+                    .map(item => ({ label: item.label, value: item.value }));
             }
             if (data.picklistFieldValues.PreferredShippingCondition__c) {
                 this.preferredShippingConditionOptions = data.picklistFieldValues.PreferredShippingCondition__c.values.map(item => ({
@@ -132,8 +333,8 @@ export default class CustomOrderMask extends LightningElement {
                     value: item.value
                 }));
             }
-            if (data.picklistFieldValues.ShippingCountryCode) {
-                this.countryOptions = data.picklistFieldValues.ShippingCountryCode.values.map(item => ({
+            if (data.picklistFieldValues.FreeDeliveryReason__c) {
+                this.reasonOptions = data.picklistFieldValues.FreeDeliveryReason__c.values.map(item => ({
                     label: item.label,
                     value: item.value
                 }));
@@ -226,7 +427,8 @@ export default class CustomOrderMask extends LightningElement {
 
         this.orderData = {
             ...this.orderData,
-            billingAddress: ''
+            billingAddress: '',
+            source: this.orderData.source || this.defaultOrderSource
         };
         
         this.applyRecipientData(this.currentAccountId, data);
@@ -265,14 +467,8 @@ export default class CustomOrderMask extends LightningElement {
     }
 
     handleSearch(event) {
-        window.clearTimeout(this.delayTimeout);
         this.searchTerm = event.target.value;
-
-        if (this.searchTerm.trim().length < 2) {
-            this.foundProducts = [];
-            return;
-        }
-
+        window.clearTimeout(this.delayTimeout);
         this.delayTimeout = setTimeout(() => this.executeProductSearch(), 300);
     }
 
@@ -285,28 +481,13 @@ export default class CustomOrderMask extends LightningElement {
 
     handleTypeChange(event) {
         const previousType = this.orderData.type;
-        this.orderData.type = event.detail.value;
+        this.orderData = { ...this.orderData, type: event.detail.value };
 
-        if (this.freeShipping) {
+        if (this.isFreeDeliveryOrder) {
             this.markAllItemsFree();
         } else if (previousType === 'ZKLA') {
             this.lineDiscounts = {};
-        }
-
-        if (this.isDirectShipmentOrder) {
-            this.isDifferentShippingAddress = false;
-            this.selectedShippingAddressId = null;
-            this.orderData = {
-                ...this.orderData,
-                shippingName: '',
-                shippingStreet: '',
-                shippingCity: '',
-                shippingPostalCode: '',
-                shippingCountry: ''
-            };
-        } else {
-            this.orderData = { ...this.orderData, shippingName: '' };
-            this.resetRecipientAddressSelection();
+            this.orderData = { ...this.orderData, reason: '', description: '' };
         }
     }
 
@@ -337,21 +518,6 @@ export default class CustomOrderMask extends LightningElement {
     }
     handlePickupLocationChange(event) {
         this.orderData = { ...this.orderData, pickupLocation: event.detail.value };
-    }
-    handleDirectShipmentNameChange(event) {
-        this.orderData = { ...this.orderData, shippingName: event.target.value };
-    }
-    handleDirectShipmentStreetChange(event) {
-        this.orderData = { ...this.orderData, shippingStreet: event.target.value };
-    }
-    handleDirectShipmentPostalCodeChange(event) {
-        this.orderData = { ...this.orderData, shippingPostalCode: event.target.value };
-    }
-    handleDirectShipmentCityChange(event) {
-        this.orderData = { ...this.orderData, shippingCity: event.target.value };
-    }
-    handleDirectShipmentCountryChange(event) {
-        this.orderData = { ...this.orderData, shippingCountry: event.detail.value };
     }
 
     handleShippingAddressChange(event) {
@@ -466,99 +632,7 @@ export default class CustomOrderMask extends LightningElement {
     handleRecipientAccountChange(event) {
         this.loadRecipientContext(event.detail.recordId);
     }
-    /*
-    fetchOrderSimulation() {
-        if (!this.currentAccountId) {
-            this.showNotification('error', 'Konto-ID fehlt.');
-            return Promise.reject();
-        }
-        if (!this.cartItems || this.cartItems.length === 0) {
-            this.showNotification('error', 'Warenkorb ist leer.');
-            return Promise.reject();
-        }
-
-        const cleanOrderItemsPayload = this.buildCartItemsPayload();
-        console.log('Sending this flat Map to Apex:', cleanOrderItemsPayload);
-
-        this.isSimulating = true;
-
-        sendToOrderSimulation({ accountId: this.currentAccountId, orderItems: cleanOrderItemsPayload}) //, requestedDate: this.orderData.requestedDeliveryDate 
-            .then(result => {
-                if(result != null){
-                    //this.erpResponse = JSON.parse(JSON.stringify(result));
-                    this.erpResponse = result;
-                    if (result && result.order) {
-
-                        const orderHeader = result.order;
-
-                        this.shippingData = {
-                            requestedDeliveryDate: orderHeader.RequestedDeliveryDate__c,
-                            confirmedDeliveryDate: orderHeader.ConfirmedDeliveryDate__c,
-                            shippingCondition: orderHeader.ShippingCondition__c,
-                            preferredShippingCondition: orderHeader.PreferredShippingCondition__c,
-                            shippingCosts: orderHeader.ShippingCosts__c ?? 0
-                        };
-
-                        this.summaryData = {
-                            netTotal: orderHeader.TotalAmount,
-                            taxTotal: orderHeader.TotalTaxAmount,
-                            grandTotal: orderHeader.GrandTotalAmount,
-                            currencyIsoCode: orderHeader.CurrencyIsoCode,
-                            paymentTerms: orderHeader.PaymentTerms__c,
-                            orderReference: orderHeader.OrderReferenceNumber,
-                            taxRate: result.taxItems && result.taxItems.length > 0 ? result.taxItems[0].taxRate : 0,
-
-                            orderType: orderHeader.Type,
-                            salesOrganization: orderHeader.SalesOrganization__c,
-                            distributionChannel: orderHeader.DistributionChannel__c,
-                            organizationDivision: orderHeader.OrganizationDivision__c,
-                            accountErpNumber: orderHeader.Account ? orderHeader.Account.ERPCustomerNumber__c : null,
-                            soldToErpNumber: orderHeader.SoldTo__r ? orderHeader.SoldTo__r.ERPCustomerNumber__c : null
-                        };
-
-                        this.simulatedCartItems = [];
-                        if (orderHeader.OrderItems && orderHeader.OrderItems.length > 0) {
-                            this.simulatedCartItems = orderHeader.OrderItems.map(item => {
-                                return {
-                                    id: item.Product2?.Id || null,
-                                    productCode: item.Product2?.ProductCode || '',
-                                    unit: item.Product2?.QuantityUnitOfMeasure || '',
-                                    lineNumber: item.LineNumber,
-                                    quantity: item.Quantity,
-                                    availableQuantity: item.AvailableQuantity,
-
-                                    unitPrice: item.UnitPrice,               
-                                    grossUnitPrice: item.GrossUnitPrice,      
-                                    totalLineTaxAmount: item.TotalLineTaxAmount, 
-                                    totalPrice: item.TotalPrice,             
-                                    currencyIsoCode: item.CurrencyIsoCode
-                                };
-                            });
-                        }
-
-                        //console.log('Shipping data', this.shippingData);
-                        //console.log('Summary data', this.summaryData);
-                        console.log('ERP Response data' + JSON.stringify(this.erpResponse));
-                        this.isSimulating = false;
-                
-                    }
-                    if (this.erpResponse.hasPriceDifference || this.erpResponse.hasTotalPriceDifference) {
-                        this.showNotification('info', 'Preise wurden nach SAP-Abgleich angepasst');
-                    }
-                    this.currentStep = 4;
-                } else {
-                    this.showNotification('error','Die Bestellung konnte nicht an das ERP-System übermittelt werden.')
-                    //console.log('Order Simulation error');
-                }
-            })
-            .catch(error => {
-                console.error(error);
-                console.log('Order Simulation failed');
-                this.isSimulating = false; 
-            });
-            
-    }
-    */
+    
     fetchOrderSimulation() {
         if (!this.currentAccountId) {
             this.showNotification('error', 'Konto-ID fehlt.');
@@ -579,6 +653,10 @@ export default class CustomOrderMask extends LightningElement {
             .then(result => {
                 if (result == null) {
                     throw new Error('simulation returned null');
+                }
+
+                if(!result.success){
+                    throw new Error('Error: ' + result.errorMessage + ', Error Logging ID: ' + result.errorLoggingId);
                 }
 
                 this.erpResponse = result;
@@ -661,7 +739,9 @@ export default class CustomOrderMask extends LightningElement {
             accountId: this.currentAccountId, 
             erpResponse: JSON.stringify(this.erpResponse), 
             orderData: this.buildOrderDataPayload(),
-            discounts: this.buildDiscountsPayload() })
+            discounts: this.buildDiscountsPayload(),
+            isExpress: this.isExpressShipping
+        })
             .then(result => {
                 if(result != null && result.success === true){
                     console.log(JSON.stringify(result));
@@ -700,10 +780,11 @@ export default class CustomOrderMask extends LightningElement {
         return payload;
     }
 
-    priceMap = {};
     executeProductSearch() {
-        const searchText = (this.searchTerm || '').trim();
-        if (searchText.length < 2) {
+        const term = (this.searchTerm || '').trim();
+        const searchText = term.length >= 2 ? term : '';   
+
+        if (!this.currentAccountId || (!searchText && this.searchType === 'regular')) {
             this.foundProducts = [];
             return;
         }
@@ -739,8 +820,8 @@ export default class CustomOrderMask extends LightningElement {
             variations,
             selectedId: preferred ? preferred.Id : null,
             quantity: '1',
-            price: preferred.price,
-            total: preferred.price
+            price: preferred?.price ?? 0, 
+            total: preferred?.price ?? 0
         });
     }
 
@@ -842,7 +923,7 @@ export default class CustomOrderMask extends LightningElement {
         if (!prodId) return;
 
         const isLastItem = this.displayCartItems.length <= 1;
-        if (!isLastItem && !this.freeShipping && !this.hasOtherChargeableItem(prodId)) {
+        if (!isLastItem && !this.isFreeDeliveryOrder && !this.hasOtherChargeableItem(prodId)) {
             this.showNotification(
                 'warning',
                 'Mindestens eine Position muss berechnet werden. Bitte zuerst den Rabatt der übrigen Positionen entfernen oder die Auftragsart auf "Kostenlose Lieferung" (ZKLA) ändern.'
@@ -878,12 +959,23 @@ export default class CustomOrderMask extends LightningElement {
 
     handleSummaryQuantityChange(event) {
         const prodId = event.target.dataset.id;
-        let newQty = parseInt(event.target.value, 10);
-        if (!prodId || !newQty || newQty < 1) return;
-
         const index = this.cartItems.findIndex(wrapper => wrapper[prodId] !== undefined);
-        if (index === -1) return;
-        if (this.cartItems[index][prodId].quantity === newQty) return;
+        if (!prodId || index === -1) return;
+
+        const current = this.cartItems[index][prodId].quantity;
+        const raw = event.target.value;
+
+        if (raw === '' || raw == null) {
+            this.refreshQuantityInput(prodId, current);
+            return;
+        }
+
+        const newQty = parseInt(raw, 10);
+        if (isNaN(newQty) || newQty < 1) {
+            this.refreshQuantityInput(prodId, current);
+            return;
+        }
+        if (newQty === current) return;
 
         const previousCart = JSON.parse(JSON.stringify(this.cartItems));
 
@@ -897,6 +989,24 @@ export default class CustomOrderMask extends LightningElement {
                 this.cartItems = previousCart;
             });
         }, 800);
+    }
+
+    handleQuantityKeyDown(event) {
+        if (event.key === 'Enter') {
+            event.target.blur();
+        } else if (event.key === 'Escape') {
+            const prodId = event.target.dataset.id;
+            const index = this.cartItems.findIndex(wrapper => wrapper[prodId] !== undefined);
+            if (index !== -1) {
+                this.refreshQuantityInput(prodId, this.cartItems[index][prodId].quantity);
+            }
+            event.target.blur();
+        }
+    }
+
+    refreshQuantityInput(prodId, value) {
+        const input = this.template.querySelector(`lightning-input.qty-input[data-id="${prodId}"]`);
+        if (input) input.value = value;
     }
 
     handleAddItem(event) {
@@ -930,19 +1040,21 @@ export default class CustomOrderMask extends LightningElement {
         }
 
         this.updateRow(key, { quantity: '1' });
-        if (this.freeShipping) {
+        if (this.isFreeDeliveryOrder) {
             this.lineDiscounts = { ...this.lineDiscounts, [prodId]: { isFree: true } };
         }
     }
 
     handleNext() {
         if (this.currentStep === 3) {
-            console.log('current account', this.currentAccountId)
             this.fetchOrderSimulation().catch(() => {});
             return;
         }
         if (this.currentStep < 4) {
             this.currentStep++;
+            if (this.currentStep === 2) {
+                this.executeProductSearch();
+            }
         }
     }
 
@@ -1039,7 +1151,9 @@ export default class CustomOrderMask extends LightningElement {
             this.discountModalProductId = prodId;
             this.discountModalItem = { name: item.name, quantity: item.quantity, originalUnitPrice: item.originalUnitPrice };
             this.discountType = existing && existing.absolute != null ? 'absolute' : 'percent';
-            this.discountValue = (existing && !existing.isFree) ? String(existing.percent ?? existing.absolute) : '';
+            this.discountValue = (existing && !existing.isFree && existing.absolute > 0)
+                ? String(existing.percent ?? existing.absolute)
+                : (existing?.percent != null ? String(existing.percent) : '');
             this.isDiscountModalOpen = true;
         } else if (action === 'free') {
             if (!this.canMarkItemFree(prodId)) {
@@ -1057,12 +1171,21 @@ export default class CustomOrderMask extends LightningElement {
         }
     }
 
+    handleShippingAction(event) {
+        const action = event.detail.value;
+        if (action === 'free') {
+            this.isShippingFree = true;
+        } else if (action === 'remove') {
+            this.isShippingFree = false;
+        }
+    }
+
     hasOtherChargeableItem(prodId) {
         return this.displayCartItems.some(i => i.id !== prodId && (i.unitPrice || 0) > 0);
     }
 
     canMarkItemFree(prodId) {
-        if (this.freeShipping) return true;       
+        if (this.isFreeDeliveryOrder) return true;       
         return this.hasOtherChargeableItem(prodId);
     }
 
@@ -1114,7 +1237,7 @@ export default class CustomOrderMask extends LightningElement {
     defaultOrderData() {
         return {
             orderNumber: '',
-            source: '',
+            source: this.defaultOrderSource,
             type: '',
             requestedDeliveryDate: '',
             orderStartDate: this.todayIsoDate(),
@@ -1148,8 +1271,9 @@ export default class CustomOrderMask extends LightningElement {
         this.cartItems = [];
         this.foundProducts = [];
         this.searchTerm = '';
-        this.searchType = 'bought';
+        this.searchType = 'entitled';
         this.lineDiscounts = {};
+        this.isShippingFree = false;
 
         this.erpResponse = {};
         this.shippingData = {};
@@ -1199,7 +1323,7 @@ export default class CustomOrderMask extends LightningElement {
     get accountMatchingFields() {
         return ['Name', 'AccountNumber'];
     }
-    get freeShipping(){
+    get isFreeDeliveryOrder(){
         return this.orderData.type === 'ZKLA';
     }
     get toastClasses() {
@@ -1245,7 +1369,7 @@ export default class CustomOrderMask extends LightningElement {
             && this.orderData.source 
             && this.orderData.orderStartDate;
 
-        if (this.freeShipping) {
+        if (this.isFreeDeliveryOrder) {
             return base && this.orderData.reason;
         }
         return base;
@@ -1256,21 +1380,8 @@ export default class CustomOrderMask extends LightningElement {
     }
 
     get isStepThreeValid() {
-        if (!this.orderData.shippingCondition) {
-            return false;
-        }
-        if (this.isCustomerPickup && !this.orderData.pickupLocation) {
-            return false;
-        }
-
-        if (this.isDirectShipmentOrder) {
-            return !!(this.orderData.shippingName
-                && this.orderData.shippingStreet
-                && this.orderData.shippingPostalCode
-                && this.orderData.shippingCity
-                && this.orderData.shippingCountry);
-        }
-
+        if (!this.orderData.shippingCondition) return false;
+        if (this.isCustomerPickup && !this.orderData.pickupLocation) return false;
         if (!this.recipientAccountId) return false;
         if (this.isDifferentShippingAddress) return !!this.selectedShippingAddressId;
         return true;
@@ -1290,10 +1401,6 @@ export default class CustomOrderMask extends LightningElement {
         return this.recipientAccountData.shippingAddress
             ? this.formatCompoundAddress(this.recipientAccountData.shippingAddress)
             : 'Keine Lieferadresse hinterlegt';
-    }
-
-    get isDirectShipmentOrder() {
-        return this.orderData.type === 'ZTST';
     }
 
     get shippingAddressOptions() {
@@ -1317,12 +1424,17 @@ export default class CustomOrderMask extends LightningElement {
         return JSON.stringify({
             ...this.orderData,
             requestedDeliveryDate: this.effectiveRequestedDeliveryDate,
+            freeShippingCosts: this.isShippingCostFree,
             requiresApproval: this.requiresApproval
         });
     }
 
     get hasCartItems() {
         return this.cartItems && this.cartItems.length > 0;
+    }
+
+    get defaultOrderSource() {
+        return ORDER_SOURCE_BY_CONTEXT[this.objectApiName] || '';
     }
 
     get sidebarCartItems() {
@@ -1347,7 +1459,7 @@ export default class CustomOrderMask extends LightningElement {
     }
 
     get cartTotalClass() {
-        return this.freeShipping
+        return this.isFreeDeliveryOrder
             ? 'slds-text-heading_small slds-font-weight_bold cart-total-price strikethrough-price'
             : 'slds-text-heading_small slds-font-weight_bold cart-total-price';
     }
@@ -1377,11 +1489,15 @@ export default class CustomOrderMask extends LightningElement {
                         unitPrice = Math.round(listUnitPrice * (1 - discount.percent / 100) * 100) / 100;
                         discountBadge = `Rabatt: -${discount.percent}%`;
                     } else if (discount.absolute != null) {
-                        unitPrice = Math.round((listUnitPrice - discount.absolute) * 100) / 100;
-                        discountBadge = `Rabatt: -${discount.absolute} EUR`;
+                        unitPrice = round2(listUnitPrice - discount.absolute);
+                        discountBadge = discount.absolute > 0
+                            ? `Rabatt: ${discount.absolute} EUR`
+                            : `Aufschlag: ${Math.abs(discount.absolute)} EUR`;
                     }
                     if (unitPrice < 0) unitPrice = 0;
                 }
+
+                const priceChanged = round2(unitPrice - listUnitPrice) !== 0;
 
                 return {
                     id: prodId,
@@ -1395,7 +1511,8 @@ export default class CustomOrderMask extends LightningElement {
                     unitPrice,
                     originalUnitPrice: listUnitPrice,
                     hasDiscount: !!discount,
-                    isFree, 
+                    priceChanged,
+                    isFree,
                     discountBadge,
                     totalPrice: unitPrice * qty,
                     currency: item.CurrencyIsoCode
@@ -1430,10 +1547,7 @@ export default class CustomOrderMask extends LightningElement {
     }
 
     get cartTotal() {
-        return this.sidebarCartItems.reduce((acc, item) => {
-            acc.total += item.lineTotal;
-            return acc;
-        }, { total: 0 });
+        return this.sidebarCartItems.reduce((sum, item) => sum + item.lineTotal, 0);
     }
 
     get isCustomerPickup() {
@@ -1491,7 +1605,7 @@ export default class CustomOrderMask extends LightningElement {
     get discountLeavesNoChargeableItem() {
         const preview = this.discountPreview;
         if (!preview || preview.newUnitPrice > 0) return false;
-        if (this.freeShipping) return false;
+        if (this.isFreeDeliveryOrder) return false;
         return !this.hasOtherChargeableItem(this.discountModalProductId);
     }
 
@@ -1526,25 +1640,23 @@ export default class CustomOrderMask extends LightningElement {
         return this.foundProducts.length;
     }
 
-    get reasonOptions() {
-        return [
-            { label: 'Ersatz / Reklamation', value: 'Ersatz / Reklamation' },
-            { label: 'Packfehler', value: 'Packfehler' },
-            { label: 'Leihvereinbarung', value: 'Leihvereinbarung' }
-        ];
-    }
     get isExpressShipping() {
         const opt = this.preferredShippingConditionOptions.find(o => o.value === this.orderData.shippingCondition);
         return !!opt && /express/i.test(opt.label);
     }
+    get isExpressSaturdayShipping() {
+        const opt = this.preferredShippingConditionOptions.find(o => o.value === this.orderData.shippingCondition);
+        return !!opt && /express/i.test(opt.label) && /saturday/i.test(opt.label);
+    }
 
     get approvalNetTotal() {
-        return this.isStepFour ? this.discountedNetTotal : this.cartTotal.total;
+        return this.isStepFour ? this.discountedNetTotal : this.cartTotal;
     }
 
     get requiresApproval() {
-        if (this.freeShipping) return true;
-        if (this.isExpressShipping) return true;
+        if (this.isFreeDeliveryOrder) return true;
+        if (this.isShippingFree) return true;
+        //if (this.isExpressSaturdayShipping) return true;
 
         const net = this.approvalNetTotal;
         if (net > 10000) return true;
@@ -1555,17 +1667,87 @@ export default class CustomOrderMask extends LightningElement {
             (sum, i) => sum + ((i.originalUnitPrice || 0) * (i.quantity || 0)), 0
         );
     }
-    get effectiveShippingCosts() {
-        return this.freeShipping ? 0 : (this.shippingData.shippingCosts || 0);
-    }
 
+    get expressCosts(){
+        return this.isExpressShipping ? parseFloat(this.label.expressCosts) : 0;
+    }
     get originalShippingCosts() {
-        return this.shippingData.shippingCosts || 0;
+        return (this.shippingData.shippingCosts || 0) + this.expressCosts;
     }
     get originalTaxTotal() {
         return this.originalNetTotal * ((this.summaryData.taxRate || 0) / 100);
     }
     get originalGrandTotal() {
         return this.originalNetTotal + this.originalTaxTotal + this.originalShippingCosts;
+    }
+    get hasFoundProducts() { return this.foundProducts.length > 0; }
+    get emptyProductsText() {
+        return this.searchType === 'regular'
+            ? 'Bitte Suchbegriff eingeben (min. 2 Zeichen).'
+            : 'Keine Artikel gefunden.';
+    }
+
+    handleUnitPriceChange(event) {
+        const prodId = event.target.dataset.id;
+        const item = this.displayCartItems.find(i => i.id === prodId);
+        if (!prodId || !item) return;
+
+        const raw = event.target.value;
+        if (raw === '' || raw == null || isNaN(parseFloat(raw))) {
+            this.refreshPriceInput(prodId, item.unitPrice);
+            return;
+        }
+
+        const value = round2(parseFloat(event.target.value));
+            if (value < 0) {
+            this.refreshPriceInput(prodId, item.unitPrice);
+            return;
+        }
+
+        if (value === 0 && !this.canMarkItemFree(prodId)) {
+            this.showNotification(
+                'warning',
+                'Mindestens eine Position muss berechnet werden. Bitte zuerst die Auftragsart auf "Kostenlose Lieferung" (ZKLA) ändern.'
+            );
+            this.refreshPriceInput(prodId, item.unitPrice);
+            return;
+        }
+
+        const delta = round2(item.originalUnitPrice - value);
+        const next = { ...this.lineDiscounts };
+        if (delta === 0) {
+            delete next[prodId];                  // back at the ERP price = no adjustment
+        } else {
+            next[prodId] = { absolute: delta };   // positive = Rabatt, negative = Aufschlag
+        }
+        this.lineDiscounts = next;
+    }
+
+    handlePriceKeyDown(event) {
+        if (event.key === 'Enter') {
+            event.target.blur();   
+        } else if (event.key === 'Escape') {
+            const prodId = event.target.dataset.id;
+            const item = this.displayCartItems.find(i => i.id === prodId);
+            if (item) this.refreshPriceInput(prodId, item.unitPrice);
+            event.target.blur();
+        }
+    }
+
+    refreshPriceInput(prodId, value) {
+        const input = this.template.querySelector(`lightning-input.price-input[data-id="${prodId}"]`);
+        if (input) input.value = value;
+    }
+
+    get isPriceEditDisabled() {
+        return this.isSimulating || this.isFreeDeliveryOrder;
+    }
+
+    get isShippingCostFree() {
+        return this.isFreeDeliveryOrder || this.isShippingFree;
+    }
+
+    get effectiveShippingCosts() {
+        return (this.isShippingCostFree ? 0 : (this.shippingData.shippingCosts || 0)) + this.expressCosts;
     }
 }

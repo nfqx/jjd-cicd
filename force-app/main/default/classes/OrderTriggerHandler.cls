@@ -76,7 +76,7 @@ public without sharing class OrderTriggerHandler {
             if(!oweaList.isEmpty()){
                 List<Messaging.SingleEmailMessage> emailsToSend = new List<Messaging.SingleEmailMessage>();
                 Map<Id, Order> orderMap = new Map<Id, Order>([SELECT Id, OrderNumber, (SELECT Id, Quantity, Product2.Name FROM OrderItems) FROM Order WHERE Id IN : newRecords AND AccountId IN : contactsToNotify.keySet()]);
-                Map<Id, Account> accountMap = new Map<Id, Account>([SELECT Id, OwnerId, Name FROM Account WHERE Id IN : contactsToNotify.keySet()]);
+                Map<Id, Account> accountMap = new Map<Id, Account>([SELECT Id, ERPCustomerNumber__c, OwnerId, Name FROM Account WHERE Id IN : contactsToNotify.keySet()]);
                 for(Order o : newRecords){
                     if(contactsToNotify.containsKey(o.AccountId)){
                         Account ac = accountMap.get(o.AccountId);
@@ -95,7 +95,7 @@ public without sharing class OrderTriggerHandler {
                         // Use baseUrl constant and only set HTML Email Body
                         String formattedBody = 'Eine neue Bestellung ist eingegangen!<br /><br />';
                         Order orderWithItems = orderMap.get(o.Id);
-                        formattedBody += (ac.Name + ': Bestellung Nr. ' + orderWithItems.OrderNumber + '<br /><br />');
+                        formattedBody += ('(' + ac.ERPCustomerNumber__c + ')' + ac.Name + ': Bestellung Nr. ' + orderWithItems.OrderNumber + '<br /><br />');
                         for(OrderItem oi : orderWithItems.OrderItems){
                             formattedBody += ('  ' + oi.Quantity + 'x ' + oi.Product2.Name + '<br />');
                         }

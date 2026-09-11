@@ -1,0 +1,337 @@
+<template>
+    <!--h1>{label.quoteInstallmentPurchasePlan}</h1-->
+    <template if:true={showData}>
+        <template if:true={isAdminOrGLOrMachineTeam}>
+            <!-- Informationen vom GL anzugeben -->
+            <div class="section-card slds-m-bottom_large">
+                <div class="section-header">
+                    <lightning-icon icon-name="standard:quotes" size="small" class="slds-m-right_small"></lightning-icon>
+                    <h2 class="section-title">{label.headerFirst}</h2>
+                </div>
+                <div class="section-body">
+                    <!--Absatz und Standort-->
+                    <div class="slds-section__title slds-theme_shade slds-m-bottom_small">
+                        <span class="slds-truncate slds-p-horizontal_small" title="Absatz und Standort">
+                            {label.salesAndLocation}
+                        </span>
+                    </div>
+                    <lightning-record-edit-form object-api-name="Quote" record-id={recordId}>
+                        <lightning-layout >
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="MachineSalesExpectationCoffee__c" value={quoteData.MachineSalesExpectationCoffee__c} data-column="MachineSalesExpectationCoffee__c" onchange={handleChangeQuoteDataUpper}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input value={annualMachineExpectation} label={label.annualMachineExpectation} style="margin-left: 0.25rem;" readonly></lightning-input>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout >
+                            <lightning-layout-item size="12">
+                                <lightning-input-field field-name="MachineLocation__c" value={quoteData.MachineLocation__c} data-column="MachineLocation__c" onchange={handleChangeQuoteDataUpper}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </lightning-record-edit-form>
+                    <!--Angaben zum Geschäftsführer-->
+                    <div class="slds-section__title slds-theme_shade slds-m-bottom_small">
+                        <span class="slds-truncate slds-p-horizontal_small" title="Absatz und Standort">
+                            {label.detailsOfmanagingDirector}
+                        </span>
+                    </div>
+                    <lightning-record-edit-form object-api-name="Contact" if:true={hasContact}>
+                        <lightning-layout >
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="FirstName" value={contactData.FirstName} data-column="FirstName" readonly></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="LastName" value={contactData.LastName} data-column="LastName" readonly></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout >
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="MachinePrivateAddress__Street__s" value={contactStreet} data-column="MachinePrivateAddress__Street__s" onchange={handleChangeContactDataUpper}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="MachinePrivateAddress__City__s" value={contactCity} data-column="MachinePrivateAddress__City__s" onchange={handleChangeContactDataUpper}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout >
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="MachinePrivateAddress__PostalCode__s" value={contactPostalCode} data-column="MachinePrivateAddress__PostalCode__s" onchange={handleChangeContactDataUpper}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="MachinePrivateAddress__CountryCode__s" value={contactCountry} data-column="MachinePrivateAddress__CountryCode__s" onchange={handleChangeContactDataUpper}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout >
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="Birthdate" value={contactData.Birthdate} data-column="Birthdate" onchange={handleChangeContactDataUpper}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="MachineSelfEmployedSince__c" value={contactData.MachineSelfEmployedSince__c} data-column="MachineSelfEmployedSince__c" onchange={handleChangeContactDataUpper}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </lightning-record-edit-form>
+                    <!--Vertragsdetails-->
+                    <div class="slds-section__title slds-theme_shade slds-m-bottom_small">
+                        <span class="slds-truncate slds-p-horizontal_small" title="Absatz und Standort">
+                            {label.contractDetails}
+                        </span>
+                    </div>
+                    <lightning-record-edit-form object-api-name="Quote" record-id={recordId}>
+                        <lightning-layout >
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="MachineDownpaymentBeforeOrAfterOrder__c" value={quoteData.MachineDownpaymentBeforeOrAfterOrder__c} data-column="MachineDownpaymentBeforeOrAfterOrder__c" onchange={handleChangeQuoteDataUpper}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="MachineDirectDebitCollectionDay1or15__c" value={quoteData.MachineDirectDebitCollectionDay1or15__c} data-column="MachineDirectDebitCollectionDay1or15__c" onchange={handleChangeQuoteDataUpper}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout >
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="InstPurchaseAgreementValidUntil__c" value={quoteData.InstPurchaseAgreementValidUntil__c} data-column="InstPurchaseAgreementValidUntil__c" onchange={handleChangeQuoteDataUpper}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="MachineDepositMustBePaidUntil__c" value={quoteData.MachineDepositMustBePaidUntil__c} data-column="MachineDepositMustBePaidUntil__c" onchange={handleChangeQuoteDataUpper}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <!--Anmerkung GL-->
+                        <lightning-layout >
+                            <lightning-layout-item size="12">
+                                <lightning-input-field field-name="MachineNotesOnTheContract__c" value={quoteData.MachineNotesOnTheContract__c} data-column="MachineNotesOnTheContract__c" onchange={handleChangeQuoteDataUpper}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </lightning-record-edit-form>
+                    <div class="section-footer">
+                        <lightning-button variant="brand" label={label.save} disabled={upperSendDisabled} onclick={handleUpperSend}></lightning-button>
+                    </div>
+                </div>
+            </div>
+            <!--Vetragsinformationen-->
+            
+            <div class="section-card slds-m-bottom_large">
+                <div class="section-header">
+                    <lightning-icon icon-name="standard:contract" size="small" class="slds-m-right_small"></lightning-icon>
+                    <h2 class="section-title">{label.contractDetails}</h2>
+                </div>
+                <div class="section-body">
+                    <div class="slds-section__title slds-theme_shade slds-m-bottom_small">
+                            <span class="slds-truncate slds-p-horizontal_small" title="Absatz und Standort">
+                                {label.headerSecond}
+                            </span>
+                    </div>
+                    <!--h2>{label.headerSecond}</h2-->
+                    <!-- Kundeninformationen -->
+                    <lightning-record-view-form object-api-name="Account" record-id={accountData.Id}>
+                        <lightning-layout>
+                            <lightning-layout-item size="6">
+                                <lightning-output-field field-name="Name" value={accountData.Name}></lightning-output-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-output-field field-name="AccountNumber" value={accountData.AccountNumber}></lightning-output-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout>
+                            <lightning-layout-item size="6">
+                                <lightning-output-field field-name="ShippingAddress" value={accountData.ShippingAddress}></lightning-output-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-output-field field-name="ChainType__c" value={accountData.ChainType__c}></lightning-output-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout >
+                            <lightning-layout-item size="6">
+                                <!--lightning-output-field field-name="CreatedDate" value={accountData.CreatedDate}></lightning-output-field-->
+                                <div class="slds-form-element slds-form-element_stacked">
+                                    <label class="slds-form-element__label" for="created-date-field">
+                                        {label.customerSince}
+                                    </label>
+                                    
+                                    <div class="slds-form-element__control">
+                                        <lightning-output-field field-name="CreatedDate" value={accountData.CreatedDate} variant="label-hidden"></lightning-output-field>
+                                    </div>
+                                </div>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                 <lightning-output-field field-name="HeadOfConditionChain__c" value={accountData.HeadOfConditionChain__c} readonly></lightning-output-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </lightning-record-view-form>
+                
+                    <div class="slds-section__title slds-theme_shade slds-m-bottom_small">
+                            <span class="slds-truncate slds-p-horizontal_small" title="Absatz und Standort">
+                                {label.headerThird}
+                            </span>
+                    </div>
+                    <!--h2>{label.headerThird}</h2-->
+                    <!-- Finanzierungsdaten -->
+                    <lightning-record-view-form object-api-name="Quote" record-id={recordId}>
+                        <lightning-layout>
+                            <lightning-layout-item size="6">
+                                <lightning-output-field field-name="MachineTotalFinancingAmount__c" value={quoteData.MachineTotalFinancingAmount__c}></lightning-output-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-output-field field-name="MachineRuntimeInMonths__c" value={quoteData.MachineRuntimeInMonths__c}></lightning-output-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout>
+                            <lightning-layout-item size="6">
+                                <lightning-output-field field-name="MachineProducerDiscountTotalInEuro__c" value={quoteData.MachineProducerDiscountTotalInEuro__c}></lightning-output-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-output-field field-name="MachineMonthlyRateInEuro__c" value={quoteData.MachineMonthlyRateInEuro__c}></lightning-output-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout>
+                            <lightning-layout-item size="6">
+                                <lightning-output-field field-name="MachineCustomerDiscountTotalInEuro__c" value={quoteData.MachineCustomerDiscountTotalInEuro__c}></lightning-output-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-output-field field-name="MachineFinalRateInEuro__c" value={quoteData.MachineFinalRateInEuro__c}></lightning-output-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout>
+                            <lightning-layout-item size="6">
+                                <lightning-output-field field-name="MachineRoasterDiscountTotalInEuro__c" value={quoteData.MachineRoasterDiscountTotalInEuro__c}></lightning-output-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-output-field field-name="MachineTotalAmountMinusDownpayment__c" value={quoteData.MachineTotalAmountMinusDownpayment__c}></lightning-output-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout>
+                            <lightning-layout-item size="6" >
+                                <lightning-output-field field-name="MachineInterestRates__c" value={quoteData.MachineInterestRates__c}></lightning-output-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-output-field field-name="MachineDownpaymentPercent__c" value={quoteData.MachineDownpaymentPercent__c}></lightning-output-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout>
+                            <lightning-layout-item size="6" >
+                                <lightning-output-field field-name="MachineFinancingChargePerKG__c" value={quoteData.MachineFinancingChargePerKG__c}></lightning-output-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                &nbsp;
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </lightning-record-view-form>
+                </div>
+            </div>
+
+            <!-- Informationen vom Maschinenteam anzugeben -->
+            <div class="section-card slds-m-bottom_large">
+                <div class="section-header">
+                    <lightning-icon icon-name="standard:expense" size="small" class="slds-m-right_small"></lightning-icon>
+                    <h2 class="section-title">{label.headerFourth}</h2>
+                </div>
+                <div class="section-body">
+                    <!--Umsätze Kaffee-->
+                    <div class="slds-section__title slds-theme_shade slds-m-bottom_small">
+                        <span class="slds-truncate slds-p-horizontal_small" title="Absatz und Standort">
+                            {label.coffeeSales}
+                        </span>
+                    </div>
+                    
+                    <lightning-record-edit-form object-api-name="Quote" record-id={recordId}>                            
+                        <lightning-layout>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="MachineNetRevenueLastYear__c" readonly={isGLOnly} value={quoteData.MachineNetRevenueLastYear__c} data-column="MachineNetRevenueLastYear__c" onchange={handleChangeQuoteDataLower}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="MachineNetRevenueCurrentYear__c" readonly={isGLOnly} value={quoteData.MachineNetRevenueCurrentYear__c} data-column="MachineNetRevenueCurrentYear__c" onchange={handleChangeQuoteDataLower}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </lightning-record-edit-form>
+                    <!--Sales CY and LY-->          
+                    <!--lightning-record-edit-form object-api-name="Account">                   
+                        <lightning-layout >
+                            <lightning-layout-item size="6">
+                                <lightning-input-field
+                                    readonly
+                                    field-name="SalesQuantityLYTotal__c"
+                                    value={salesQuantityLY} >
+                                </lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field 
+                                    readonly
+                                    field-name="SalesQuantityCYToday__c"
+                                    value={salesQuantityCY} >
+                                </lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </lightning-record-edit-form-->
+                    <!--Kreditdaten-->
+                    <div class="slds-section__title slds-theme_shade slds-m-bottom_small">
+                        <span class="slds-truncate slds-p-horizontal_small" title="Absatz und Standort">
+                            {label.loanDetails}
+                        </span>
+                    </div>
+                    <lightning-record-edit-form object-api-name="Account" record-id={accountData.Id} if:true={hasAccount}>
+                        <lightning-layout if:false={isGLOnly} >
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="MachineCrefoIndex__c" value={accountData.MachineCrefoIndex__c} data-column="MachineCrefoIndex__c" onchange={handleChangeAccountDataLower}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="MachineCeditLimit__c" value={accountData.MachineCeditLimit__c} data-column="MachineCeditLimit__c" onchange={handleChangeAccountDataLower}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </lightning-record-edit-form>
+                    <lightning-record-edit-form object-api-name="Quote" record-id={recordId}>
+                        <lightning-layout>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="MachineRentalAgreementEuroPerKG__c" readonly={isGLOnly} value={quoteData.MachineRentalAgreementEuroPerKG__c} data-column="MachineRentalAgreementEuroPerKG__c" onchange={handleChangeQuoteDataLower}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="InterestOnOutstandingPrice__c" readonly={isGLOnly} value={quoteData.InterestOnOutstandingPrice__c} data-column="InterestOnOutstandingPrice__c" onchange={handleChangeQuoteDataLower}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout >
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="MachineMachineAccountBalance__c" readonly={isGLOnly} value={quoteData.MachineMachineAccountBalance__c} data-column="MachineMachineAccountBalance__c" onchange={handleChangeQuoteDataLower}></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                &nbsp;
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout >
+                            <lightning-layout-item size="12">
+                                <lightning-input-field field-name="MachineMerchandiseAccountBalance__c" readonly={isGLOnly} value={quoteData.MachineMerchandiseAccountBalance__c} data-column="MachineMerchandiseAccountBalance__c" onchange={handleChangeQuoteDataLower}></lightning-input-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout >
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="MachineTotalMachineValues__c" value={quoteData.MachineTotalMachineValues__c} readonly></lightning-input-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field field-name="MachineRecommendationMachineTeam__c" if:false={isGLOnly} value={quoteData.MachineRecommendationMachineTeam__c} data-column="MachineRecommendationMachineTeam__c" onchange={handleChangeQuoteDataLower}></lightning-input-field>
+                                <lightning-output-field field-name="MachineRecommendationMachineTeam__c" if:true={isGLOnly} value={quoteData.MachineRecommendationMachineTeam__c}></lightning-output-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </lightning-record-edit-form>
+                    <div class="section-footer" if:false={isGLOnly}>
+                        <lightning-button label={label.save} disabled={lowerSendDisabled} onclick={handleLowerSend}></lightning-button>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </template>
+        <h2 style="margin:8px 0;">{label.quoteInstallmentProductCalculation}</h2>
+        <lightning-record-edit-form object-api-name="Quote" record-id={recordId} if:false={quoteReloading}>
+            <lightning-layout >
+                <lightning-layout-item size="11">
+                    <lightning-input-field field-name="PriceConfiguratorQuote__c" value={quoteData.PriceConfiguratorQuote__c} disabled></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="1">
+                    <lightning-button style="margin-top: 1rem; float: right;" label={label.reloadQuote} onclick={handleReloadQuote}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-record-edit-form>
+        
+        <template if:true={showProducts}>
+            <lightning-datatable
+                data={products}
+                key-field="id"
+                columns={columns}
+                hide-checkbox-column
+            ></lightning-datatable>
+        </template>
+</template>

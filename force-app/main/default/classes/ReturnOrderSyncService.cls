@@ -35,7 +35,7 @@ public with sharing class ReturnOrderSyncService {
         sendToMuleSoft('{"data":[' + String.join(payloads, ', ') + ']}', getMulesoftEndpoint(), 'POST');
     }
 
-    // JJD-26 — Credit Memo / Billing Release. Triggered when BillingBlocked__c changes true -> false.
+    // JJD-26 — Credit Memo / Billing Release. Triggered when BillingBlockReason__c is cleared.
     // Pushes the release to MuleSoft, which removes the billing block on the SAP CustomerReturn
     // (PATCH A_CustomerReturn, identified by ERPReturnOrderNumber__c). Mirrors OrderSyncService.
     public static void pushBillingReleases(Set<Id> returnOrderIds) {
@@ -79,7 +79,7 @@ public with sharing class ReturnOrderSyncService {
     @TestVisible
     private static List<ReturnOrder> getReturnOrders(Set<Id> returnOrderIds) {
         return [
-            SELECT Id, ReturnOrderNumber, ERPReturnOrderNumber__c, BillingBlocked__c
+            SELECT Id, ReturnOrderNumber, ERPReturnOrderNumber__c
             FROM ReturnOrder
             WHERE Id IN :returnOrderIds
         ];
@@ -164,7 +164,6 @@ public with sharing class ReturnOrderSyncService {
         payload.put('returnOrderNumber', returnOrder.ReturnOrderNumber);
         // Key for identifying the SAP CustomerReturn (= CustomerReturn / BELNR).
         payload.put('erpReturnOrderNumber', returnOrder.ERPReturnOrderNumber__c);
-        payload.put('billingBlocked', returnOrder.BillingBlocked__c);
         return JSON.serialize(payload);
     }
 

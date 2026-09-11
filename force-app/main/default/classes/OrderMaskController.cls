@@ -138,7 +138,9 @@ public with sharing class OrderMaskController {
             for (SObject sob : searchResults[0]) {
                 Product2 prod2 = (Product2)sob;
                 if(prod2.ProductClass == 'Simple'){
-                    products.add(new ParentProductWrapper(prod2.Name, prod2.ProductCode, prod2, new Map<Id, Decimal>{prod2.Id => priceMap.get(prod2.Id)}));
+                    if(priceMap.containsKey(prod2.Id)){
+                        products.add(new ParentProductWrapper(prod2.Name, prod2.ProductCode, prod2, new Map<Id, Decimal>{prod2.Id => priceMap.get(prod2.Id)}));
+                    }
                 } else {
                     childIdMap.put((Id)sob.get('Id'), prod2);
                 }
@@ -148,9 +150,11 @@ public with sharing class OrderMaskController {
                 FROM ProductAttribute
                 WHERE ProductId IN :childIdMap.keySet()
             ]){
-                List<Product2> innerList = parentToChildrenMap.containsKey(pa.VariantParentId) ? parentToChildrenMap.get(pa.VariantParentId) : new List<Product2>();
-                innerList.add(childIdMap.get(pa.ProductId));
-                parentToChildrenMap.put(pa.VariantParentId, innerList);
+                if(priceMap.containsKey(pa.ProductId)){
+                    List<Product2> innerList = parentToChildrenMap.containsKey(pa.VariantParentId) ? parentToChildrenMap.get(pa.VariantParentId) : new List<Product2>();
+                    innerList.add(childIdMap.get(pa.ProductId));
+                    parentToChildrenMap.put(pa.VariantParentId, innerList);
+                }
             }
 
             for(Product2 prod2 : [SELECT Id, Name, ProductCode FROM Product2 WHERE Id IN : parentToChildrenMap.keySet()]){
@@ -302,9 +306,14 @@ public with sharing class OrderMaskController {
             
 
             if(res.getStatusCode() >= 300){
-                throw new CalloutException(
-                    'ERP Order failed: ' + res.getBody()
+                Map<String, Object> data = (Map<String, Object>) JSON.deserializeUntyped(res.getBody());
+                String errorMessage = data.containsKey('error') ? (String)data.get('error') : 'Unknown Error';
+                ErrorLogging__c el = new ErrorLogging__c(
+                    ProcessName__c = 'Order Mask',
+                    Error__c = errorMessage
                 );
+                insert el;
+                return new WebshopDataController.ERPResponseWrapper(errorMessage, el.Id);
             }
             System.debug(res.getBody());
             Map<String, Object> data = (Map<String, Object>) JSON.deserializeUntyped(res.getBody());
@@ -335,7 +344,7 @@ public with sharing class OrderMaskController {
     }
 
     @AuraEnabled(cacheable=false)
-    public static OrderWrapper createOrder(Id accountId, String erpResponse, String orderData, Map<Id, LineDiscountWrapper> discounts){
+    public static OrderWrapper createOrder(Id accountId, String erpResponse, String orderData, Map<Id, LineDiscountWrapper> discounts, Boolean isExpress){
         try {
             Map<String, Object> erpResponseMap = (Map<String, Object>) System.JSON.deserializeUntyped(erpResponse);
             Map<String, Object> orderDataMap = (Map<String, Object>) System.JSON.deserializeUntyped(orderData);
@@ -368,8 +377,12 @@ public with sharing class OrderMaskController {
                 }
             }
 
-            if ('ZKLA'.equals((String) orderDataMap.get('type'))) {
+            if ('ZKLA'.equals((String) orderDataMap.get('type')) || orderDataMap.get('freeShippingCosts') == true) {
                 shippingCosts = 0;
+            }
+
+            if(isExpress){
+                shippingCosts += Decimal.valueOf(System.Label.OrderMaskExpressCharge);
             }
 
             Date effectiveDate = String.isNotBlank((String) orderDataMap.get('orderStartDate'))
@@ -382,19 +395,6 @@ public with sharing class OrderMaskController {
             Order order = new Order(
                 AccountId = accountId,
                 SalesStoreId = System.Label.WebshopDoNotTranslateStoreID,
-                //PoNumber = orderNumber,
-                //WebshopPhone__c = phoneNumber,
-                //Comment__c = comment,
-                //ShippingName__c = shippingName, 
-                //BillingStreet = shippingStreet,
-                //ShippingStreet = shippingStreet,          
-                //ShippingCosts__c = shippingCosts,
-                //BillingCity = shippingCity,
-                //ShippingCity = shippingCity,             
-                //BillingPostalCode = shippingPostalCode,
-                //ShippingPostalCode = shippingPostalCode,  
-                //BillingCountry = shippingCountry,
-                //ShippingCountry = shippingCountry, 
                 ShippingName__c = shippingName,
                 BillingStreet = billingStreet,
                 BillingCity = billingCity,
@@ -406,7 +406,9 @@ public with sharing class OrderMaskController {
                 ShippingCountryCode = shippingCountry,
                 ShippingCosts__c = shippingCosts, 
                 PreferredShippingCondition__c = (String) orderDataMap.get('shippingCondition'), 
-                PlantLocation__c = (String) orderDataMap.get('pickupLocation'),    
+                PlantLocation__c = (String) orderDataMap.get('pickupLocation'),
+                FreeDeliveryReason__c = (String) orderDataMap.get('reason'),  
+                Comment__c = (String) orderDataMap.get('description'),  
                 EffectiveDate = effectiveDate,
                 OrderedDate = Date.today(),
                 RequestedDeliveryDate__c = requestedDeliveryDate,
@@ -531,16 +533,11 @@ public with sharing class OrderMaskController {
             String billingCity = acc.BillingCity;
             String billingPostalCode = acc.BillingPostalCode;
             String billingCountry = acc.BillingCountry;
-            /*
-            String shippingStreet = (String.isNotBlank(acc.BillingStreet) ? acc.BillingStreet : acc.ShippingStreet);
-            String shippingCity = (String.isNotBlank(acc.BillingCity) ? acc.BillingCity : acc.ShippingCity);
-            String shippingPostalCode = (String.isNotBlank(acc.BillingPostalCode) ? acc.BillingPostalCode : acc.ShippingPostalCode);
-            String shippingCountry = (String.isNotBlank(acc.BillingCountry) ? acc.BillingCountry : acc.ShippingCountry);
-            */
             String shippingStreet = (String) orderDataMap.get('shippingStreet');
             String shippingCity = (String) orderDataMap.get('shippingCity');
             String shippingPostalCode = (String) orderDataMap.get('shippingPostalCode');
             String shippingCountry = (String) orderDataMap.get('shippingCountry');
+            
             
             Date effectiveDate = String.isNotBlank((String) orderDataMap.get('orderStartDate'))
                 ? Date.valueOf((String) orderDataMap.get('orderStartDate'))
@@ -553,10 +550,6 @@ public with sharing class OrderMaskController {
                 AccountId = accountId,
                 SalesStoreId = System.Label.WebshopDoNotTranslateStoreID,
                 ShippingName__c = shippingName,
-                //BillingStreet = shippingStreet,
-                //BillingCity = shippingCity,
-                //BillingPostalCode = shippingPostalCode,
-                //BillingCountry = shippingCountry,
                 BillingStreet = billingStreet,
                 BillingCity = billingCity,
                 BillingPostalCode = billingPostalCode,
@@ -567,6 +560,8 @@ public with sharing class OrderMaskController {
                 ShippingCountryCode = shippingCountry,
                 PreferredShippingCondition__c = (String) orderDataMap.get('shippingCondition'),
                 PlantLocation__c = (String) orderDataMap.get('pickupLocation'),
+                FreeDeliveryReason__c = (String) orderDataMap.get('reason'),
+                Comment__c = (String) orderDataMap.get('description'),
                 EffectiveDate = effectiveDate,
                 OrderedDate = Date.today(),
                 RequestedDeliveryDate__c = requestedDeliveryDate,

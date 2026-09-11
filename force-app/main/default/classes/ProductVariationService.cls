@@ -22,7 +22,8 @@ public with sharing class ProductVariationService {
     private static final Set<String> PRODUCT_STRING_FIELDS = new Set<String>{
         'Name', 'ProductCode', 'StockKeepingUnit', 'ERPProductNumber__c', 'MaterialType__c',
         'IndustrySector__c', 'QuantityUnitOfMeasure', 'BaseUnitCode__c', 'GTIN__c', 'EAN__c', 'Description__c',
-        'BaseProductCode__c', 'OldProductNumber__c'
+        'BaseProductCode__c', 'OldProductNumber__c',
+        'ProductHierarchy__c', 'Class__c', 'MainGroup__c', 'Group__c', 'SubGroup__c'
     };
     private static final Set<String> PRODUCT_DECIMAL_FIELDS = new Set<String>{
         'NetWeight__c', 'GrossWeight__c', 'Factor__c'
