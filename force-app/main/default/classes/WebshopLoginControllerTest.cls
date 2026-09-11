@@ -8,7 +8,7 @@ private without sharing class WebshopLoginControllerTest {
             Email = username,
             Username = username,
             Alias = 'tuser',
-            CommunityNickname = 'testuser',
+            CommunityNickname = 'testuser_xxx001',
             TimeZoneSidKey = 'America/Los_Angeles',
             LocaleSidKey = 'en_US',
             EmailEncodingKey = 'UTF-8',

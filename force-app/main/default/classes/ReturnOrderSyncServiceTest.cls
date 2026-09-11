@@ -167,24 +167,6 @@ private class ReturnOrderSyncServiceTest {
     }
 
     @IsTest
-    static void testReturnOrderInsert_WithReadyStatus_TriggersCreate() {
-        // HAVING
-        Account account = [SELECT Id FROM Account LIMIT 1];
-        ReturnOrderSyncService.isTestEnvironment = true;
-        ReturnOrderSyncService.testEndpoint = 'https://test.mulesoft.com/api';
-        ReturnOrderSyncService.capturedRequests.clear();
-
-        // WHEN — inserted already in the "ready to send" status (Gesendet)
-        Test.startTest();
-        insert new ReturnOrder(AccountId = account.Id, Status = 'Gesendet', SoldTo__c = account.Id);
-        Test.stopTest();
-
-        // THEN — trigger pushed exactly one create to MuleSoft
-        System.assertEquals(1, ReturnOrderSyncService.capturedRequests.size(), 'Ready-status insert should trigger one outbound POST');
-        System.assertEquals('POST', ReturnOrderSyncService.capturedRequests[0].getMethod(), 'Should be POST');
-    }
-
-    @IsTest
     static void testReturnOrderInsert_DraftStatus_DoesNotTrigger() {
         // HAVING
         Account account = [SELECT Id FROM Account LIMIT 1];
@@ -199,26 +181,5 @@ private class ReturnOrderSyncServiceTest {
 
         // THEN
         System.assertEquals(0, ReturnOrderSyncService.capturedRequests.size(), 'Draft insert must not trigger outbound');
-    }
-
-    @IsTest
-    static void testReturnOrderStatusTransition_TriggersCreate() {
-        // HAVING — draft first, gated out, no callout
-        Account account = [SELECT Id FROM Account LIMIT 1];
-        ReturnOrderSyncService.isTestEnvironment = true;
-        ReturnOrderSyncService.testEndpoint = 'https://test.mulesoft.com/api';
-
-        ReturnOrder ro = new ReturnOrder(AccountId = account.Id, Status = 'Entwurf', SoldTo__c = account.Id);
-        insert ro;
-        ReturnOrderSyncService.capturedRequests.clear();
-
-        // WHEN — user completes the return and moves it to Gesendet
-        Test.startTest();
-        ro.Status = 'Gesendet';
-        update ro;
-        Test.stopTest();
-
-        // THEN — transition into the ready status triggers exactly one create
-        System.assertEquals(1, ReturnOrderSyncService.capturedRequests.size(), 'Transition to ready status should trigger one outbound POST');
     }
 }

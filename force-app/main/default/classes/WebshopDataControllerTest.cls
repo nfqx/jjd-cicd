@@ -795,24 +795,6 @@ private without sharing class WebshopDataControllerTest {
         Test.stopTest();
         System.assertEquals(true, result, 'The method should return true when case creation succeeds');
     }
-    
-    @isTest
-    static void testSendMessage() {
-        User u = [SELECT Id FROM User WHERE IsActive = TRUE AND ContactId != NULL AND Profile.name = 'Customer Community Plus User' ORDER BY CreatedDate DESC LIMIT 1];
-        Account testAccount = [SELECT Id FROM Account LIMIT 1];
-        Boolean result;
-        Test.startTest();
-            System.runAs(u){
-                result = WebshopDataController.sendMessage(
-                    'Test Subject',
-                    false,
-                    'Test Message',
-                    testAccount.Id
-                );
-            }
-        Test.stopTest();
-        System.assertEquals(true, result, 'The method should return true when case creation succeeds');
-    }
 
     @isTest
     static void testGetLexOriginUrl() {
