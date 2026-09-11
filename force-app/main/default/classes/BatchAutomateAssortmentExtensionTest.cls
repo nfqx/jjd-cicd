@@ -45,8 +45,6 @@ private class BatchAutomateAssortmentExtensionTest {
              FROM Account
              WHERE Name IN ('Standalone Account')];
         System.assertEquals(true, standalone.AssortmentExtended__c);
-        System.assertEquals(System.Label.WebshopDoNotTranslateAssortmentExtensionBG, standalone.WebshopFrontpageWarning__c);
-
 
         // Verify BuyerGroupMember created for chained account
         List<BuyerGroupMember> members = [

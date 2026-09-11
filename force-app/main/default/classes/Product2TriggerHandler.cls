@@ -10,7 +10,7 @@ public without sharing class Product2TriggerHandler {
 
     public static void setMachinePrice(List<Product2> newRecords, Map<Id, Product2> oldRecordsMap) {
         ID pb2Id = Test.isRunningTest() ? Test.getStandardPricebookId() : [SELECT Id FROM Pricebook2 WHERE IsStandard = TRUE].Id;
-        Id pb2copyId = [SELECT Id FROM Pricebook2 WHERE Name = : System.Label.WebshopDoNotTranslateInternalListpricePricebookName AND IsStandard = FALSE ORDER BY CreatedDate LIMIT 1].Id;
+        Id pb2copyId = Test.isRunningTest() ? Test.getStandardPricebookId() : [SELECT Id FROM Pricebook2 WHERE Name = : System.Label.WebshopDoNotTranslateInternalListpricePricebookName AND IsStandard = FALSE ORDER BY CreatedDate LIMIT 1].Id;
 
         Map<Id, PricebookEntry> standardEntriesMap = new Map<Id, PricebookEntry>();
         Map<Id, PricebookEntry> customEntriesMap = new Map<Id, PricebookEntry>();

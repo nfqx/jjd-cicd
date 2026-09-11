@@ -18,6 +18,11 @@ public class UserTriggerTest {
         // Get required profile
         Profile p = [SELECT Id FROM Profile WHERE Name = 'Customer Community Plus User' LIMIT 1];
 
+        UserRole userRole = new UserRole();
+        userRole.Name = 'Test Role';
+        userRole.ParentRoleId = null;
+        userRole.DeveloperName = 'TestRole';
+        insert userRole;
         // Create User (inactive first)
         User u = new User(
             Username = 'testuser' + System.currentTimeMillis() + '@test.com',
@@ -30,7 +35,8 @@ public class UserTriggerTest {
             LanguageLocaleKey = 'en_US',
             ProfileId = p.Id,
             IsActive = true,
-            ContactId = con.Id
+            ContactId = con.Id,
+            UserRoleId = userRole.Id
         );
         insert u;
     }

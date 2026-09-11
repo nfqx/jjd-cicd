@@ -13,6 +13,11 @@ public without sharing class BatchPopulateFirstContactActivationTest {
         contacts.add(con);
         insert contacts;
         
+        UserRole userRole = new UserRole();
+        userRole.Name = 'Test Role';
+        userRole.ParentRoleId = null;
+        userRole.DeveloperName = 'TestRole';
+        insert userRole;
         List<Profile> profiles = [SELECT Id FROM Profile WHERE Name = 'Customer Community Plus User'];
         insert new User(Username = 'testuser' + con.Id + '@test.com',
                             LastName = 'Test',
@@ -24,6 +29,7 @@ public without sharing class BatchPopulateFirstContactActivationTest {
                             ProfileId = profiles[0].Id,
                             LanguageLocaleKey = 'en_US',
                             ContactId = con.Id,
+                            UserRoleId = userRole.Id,
                             IsActive = true);
     }
 
