@@ -1,0 +1,27 @@
+<apex:component controller="CasePDFComponentController">
+    <!-- Component Attribute Entry Definition -->
+    <apex:attribute name="caseId" description="The Record ID of the target Case" type="Id" assignTo="{!targetCaseId}"/>
+    
+    <style>
+        .pdf-container { border: 1px solid #ccc; border-radius: 4px; overflow: hidden; font-family: Arial, sans-serif; background: #fff;}
+        .pdf-header { background: #f4f6f9; color: #16325c; padding: 12px; font-weight: bold; border-bottom: 1px solid #d8dde6; font-size: 13px;}
+        .pdf-error { color: #c23934; padding: 15px; font-weight: 500; border: 1px dashed #c23934; border-radius: 4px; background: #fff0ef; text-align: center; margin: 10px;}
+    </style>
+
+    <div class="pdf-container">
+        <!-- Renders PDF Frame if Found -->
+        <apex:outputPanel rendered="{!hasPDF}">
+            <div class="pdf-header">
+                📄 Attachment Preview: {!fileName}
+            </div>
+            <iframe src="data:application/pdf;base64,{!pdfBase64}" width="100%" height="600px" style="border:none;"></iframe>
+        </apex:outputPanel>
+
+        <!-- Renders Fallback state if No PDF Found -->
+        <apex:outputPanel rendered="{!NOT(hasPDF)}">
+            <div class="pdf-error">
+                No valid PDF document attachment or associated Email PDF files discovered on this Case.
+            </div>
+        </apex:outputPanel>
+    </div>
+</apex:component>
