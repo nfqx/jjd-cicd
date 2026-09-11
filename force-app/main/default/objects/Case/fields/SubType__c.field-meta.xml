@@ -8,6 +8,7 @@
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
+        <controllingField>Type</controllingField>
         <valueSetDefinition>
             <sorted>true</sorted>
             <value>
@@ -176,6 +177,11 @@
                 <label>Return</label>
             </value>
             <value>
+                <fullName>Return - goods return</fullName>
+                <default>false</default>
+                <label>Return - goods return</label>
+            </value>
+            <value>
                 <fullName>Return - packing error</fullName>
                 <default>false</default>
                 <label>Return - packing error</label>
@@ -191,10 +197,106 @@
                 <label>Trade</label>
             </value>
             <value>
+                <fullName>Unannounced Parcel</fullName>
+                <default>false</default>
+                <label>Unannounced Parcel</label>
+            </value>
+            <value>
                 <fullName>Weld seam</fullName>
                 <default>false</default>
                 <label>Weld seam</label>
             </value>
         </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Logistics</controllingFieldValue>
+            <valueName>Delivery inquiries</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Logistics</controllingFieldValue>
+            <valueName>Return - goods return</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Logistics</controllingFieldValue>
+            <valueName>Return - packing error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Logistics</controllingFieldValue>
+            <valueName>Return - transport error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>General inquiries</controllingFieldValue>
+            <valueName>Accounting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>General inquiries</controllingFieldValue>
+            <valueName>Export</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>General inquiries</controllingFieldValue>
+            <valueName>Handel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>General inquiries</controllingFieldValue>
+            <valueName>Image database</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>General inquiries</controllingFieldValue>
+            <valueName>Marketing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>General inquiries</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>General inquiries</controllingFieldValue>
+            <valueName>Outside of the house</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order</controllingFieldValue>
+            <valueName>Answering Machine</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order</controllingFieldValue>
+            <valueName>Fax</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order</controllingFieldValue>
+            <valueName>Machine</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QS complaint</controllingFieldValue>
+            <controllingFieldValue>Complaint General</controllingFieldValue>
+            <valueName>QS - Foreign Body</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QS complaint</controllingFieldValue>
+            <controllingFieldValue>Complaint General</controllingFieldValue>
+            <valueName>QS-Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QS complaint</controllingFieldValue>
+            <controllingFieldValue>Complaint General</controllingFieldValue>
+            <valueName>QS - Weld seam</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Complaint General</controllingFieldValue>
+            <valueName>Machine replacement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Complaint General</controllingFieldValue>
+            <valueName>Machine RG/foreign object</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Complaint General</controllingFieldValue>
+            <valueName>Unannounced Parcel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Master data</controllingFieldValue>
+            <valueName>Master data changes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Master data</controllingFieldValue>
+            <valueName>Master data - Company name change</valueName>
+        </valueSettings>
     </valueSet>
 </CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TotalValueOfQuote__c</fullName>
+    <formula>TotalValueofInitialEquipment__c +
+PurchaseQuantityOther__c +
+PurchaseQuantityTea__c +
+( PurchaseQuantityCoffee__c * ((LowestPriceCoffeeProducts__c + HighestPriceCoffeeProducts__c ) /2 )) +
+( PurchaseQuantityHotChoc__c * (( LowestPriceHotChocProducts__c + HighestPriceHotChocProducts__c) /2))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Value of Quote</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

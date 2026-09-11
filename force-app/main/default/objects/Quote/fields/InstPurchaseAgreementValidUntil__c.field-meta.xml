@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>MachineSEPAIBAN__c</fullName>
-    <label>IBAN</label>
+    <fullName>InstPurchaseAgreementValidUntil__c</fullName>
+    <label>Inst. Purchase Agreement Valid Until</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
-    <type>TextArea</type>
+    <type>Date</type>
 </CustomField>

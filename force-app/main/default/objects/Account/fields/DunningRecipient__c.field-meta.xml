@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>ChainParentConditionID__c</fullName>
+    <fullName>DunningRecipient__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <label>Chain Parent Condition ID</label>
+    <label>Dunning Recipient</label>
     <referenceTo>Account</referenceTo>
-    <relationshipLabel>Accounts (Chain Parent Condition ID__c)</relationshipLabel>
-    <relationshipName>ConditionChild</relationshipName>
+    <relationshipLabel>Accounts (Dunning Recipient)</relationshipLabel>
+    <relationshipName>Accounts6</relationshipName>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

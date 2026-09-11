@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsProcurementAssociation__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>This account is a procurement association (buying group). Its members order through it; agreements of the association can apply to members and members can hold deviating agreements.</inlineHelpText>
+    <label>Procurement Association</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

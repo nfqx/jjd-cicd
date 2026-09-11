@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>ZKS_Cases</fullName>
+    <fullName>Complaint_Case</fullName>
     <active>true</active>
     <businessProcess>ZKS Cases</businessProcess>
-    <compactLayoutAssignment>JJD_Case_Custom</compactLayoutAssignment>
-    <label>ZKS Cases</label>
+    <label>Reklamation</label>
     <picklistValues>
         <picklist>Account_Type__c</picklist>
         <values>
@@ -346,10 +345,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Unannounced Parcel</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Weld seam</fullName>
             <default>false</default>
         </values>
@@ -357,15 +352,15 @@
     <picklistValues>
         <picklist>Type</picklist>
         <values>
-            <fullName>Complaint General</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>End customer inquiry</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>General inquiries</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead</fullName>
             <default>false</default>
         </values>
         <values>
@@ -394,6 +389,10 @@
         </values>
         <values>
             <fullName>Unrated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webshop</fullName>
             <default>false</default>
         </values>
     </picklistValues>

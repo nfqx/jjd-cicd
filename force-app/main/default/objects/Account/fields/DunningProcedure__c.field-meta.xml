@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Salutation__c</fullName>
-    <description>Formal title used in correspondence (e.g., &apos;Herr&apos;, &apos;Frau&apos;, &apos;Firma&apos;). Determines how the contact is addressed in communications and legal documents.</description>
-    <label>Salutation</label>
+    <fullName>DunningProcedure__c</fullName>
+    <label>Dunning Procedure</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
@@ -12,29 +11,34 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Frau</fullName>
+                <fullName>0001</fullName>
                 <default>false</default>
-                <label>Frau</label>
+                <label>Four-step dunning, every 14 days (0001)</label>
             </value>
             <value>
-                <fullName>Herr</fullName>
+                <fullName>0003</fullName>
                 <default>false</default>
-                <label>Herr</label>
-            </value>
-            <value>
-                <fullName>Firma</fullName>
-                <default>false</default>
-                <label>Firma</label>
-            </value>
-            <value>
-                <fullName>Herr und Frau</fullName>
-                <default>false</default>
-                <label>Herr und Frau</label>
+                <label>Payment reminder, every 14 days</label>
             </value>
             <value>
                 <fullName>0005</fullName>
                 <default>false</default>
-                <label>Familie</label>
+                <label>Four-step dunning, every 14 days, IS-RE forms</label>
+            </value>
+            <value>
+                <fullName>INST</fullName>
+                <default>false</default>
+                <label>Installment payment dunning procedure</label>
+            </value>
+            <value>
+                <fullName>Z007</fullName>
+                <default>false</default>
+                <label>Four-step dunning, every 7 days</label>
+            </value>
+            <value>
+                <fullName>Z014</fullName>
+                <default>false</default>
+                <label>Four-step dunning, every 14 days (Z014)</label>
             </value>
         </valueSetDefinition>
     </valueSet>

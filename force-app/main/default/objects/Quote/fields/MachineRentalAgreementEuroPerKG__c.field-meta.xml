@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Machine_SEPAIBAN__c</fullName>
-    <externalId>false</externalId>
-    <label>IBAN</label>
-    <length>255</length>
+    <fullName>MachineRentalAgreementEuroPerKG__c</fullName>
+    <label>Rental Agreement (Euro/kg)</label>
+    <precision>18</precision>
     <required>false</required>
+    <scale>2</scale>
     <trackHistory>false</trackHistory>
-    <type>Text</type>
-    <unique>false</unique>
+    <type>Currency</type>
 </CustomField>
