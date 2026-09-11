@@ -48,12 +48,12 @@
     <customValue>
         <fullName>ZVUB</fullName>
         <default>false</default>
-        <label>ZVUB</label>
+        <label>Verbundene Unternehmen</label>
     </customValue>
     <customValue>
         <fullName>ZVUD</fullName>
         <default>false</default>
-        <label>ZVUD</label>
+        <label>Verbundene Unternehmen Debitor</label>
     </customValue>
     <customValue>
         <fullName>Z2</fullName>

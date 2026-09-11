@@ -1,0 +1,4 @@
+<apex:page standardController="Case" sidebar="false" showHeader="false">
+    <!-- Injecting the component into the page layout container -->
+    <c:casePdfAttachment caseId="{!Case.Id}" />
+</apex:page>

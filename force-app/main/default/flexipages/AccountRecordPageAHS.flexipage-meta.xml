@@ -3758,7 +3758,7 @@
         <name>Facet-scv0uhalsq</name>
         <type>Facet</type>
     </flexiPageRegions>
-    <flexiPageRegions>
+    <!--flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
@@ -3803,7 +3803,7 @@
         </itemInstances>
         <name>Facet-c0f35469-a4ab-40fd-9876-ea858c78e1d5</name>
         <type>Facet</type>
-    </flexiPageRegions>
+    </flexiPageRegions-->
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
@@ -4063,7 +4063,7 @@
                 <identifier>flexipage_tab14</identifier>
             </componentInstance>
         </itemInstances>
-        <itemInstances>
+        <!--itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
@@ -4076,7 +4076,7 @@
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab17</identifier>
             </componentInstance>
-        </itemInstances>
+        </itemInstances-->
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>

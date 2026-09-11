@@ -2229,7 +2229,7 @@
         <name>Facet-1048f47c-ddce-443e-be11-49c90180eb09</name>
         <type>Facet</type>
     </flexiPageRegions>
-    <flexiPageRegions>
+    <!--flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
@@ -2274,7 +2274,7 @@
         </itemInstances>
         <name>Facet-sef7jlgzsgr</name>
         <type>Facet</type>
-    </flexiPageRegions>
+    </flexiPageRegions-->
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
@@ -2378,7 +2378,7 @@
                 <identifier>flexipage_tab8</identifier>
             </componentInstance>
         </itemInstances>
-        <itemInstances>
+        <!--itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
@@ -2391,7 +2391,7 @@
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab11</identifier>
             </componentInstance>
-        </itemInstances>
+        </itemInstances-->
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>

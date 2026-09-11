@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>00</fullName>
+        <default>false</default>
+        <label>Check Exchange Rate</label>
+    </customValue>
+    <customValue>
+        <fullName>01</fullName>
+        <default>false</default>
+        <label>Missing Calculation</label>
+    </customValue>
+    <customValue>
+        <fullName>02</fullName>
+        <default>false</default>
+        <label>Missing Feedback</label>
+    </customValue>
+    <customValue>
+        <fullName>03</fullName>
+        <default>false</default>
+        <label>Incomplete Pricing</label>
+    </customValue>
+    <customValue>
+        <fullName>04</fullName>
+        <default>false</default>
+        <label>Check Payment Terms</label>
+    </customValue>
+    <customValue>
+        <fullName>05</fullName>
+        <default>false</default>
+        <label>Check Delivery Terms</label>
+    </customValue>
+    <customValue>
+        <fullName>08</fullName>
+        <default>false</default>
+        <label>Check Credit Note</label>
+    </customValue>
+    <customValue>
+        <fullName>09</fullName>
+        <default>false</default>
+        <label>Check Direct Debit</label>
+    </customValue>
+    <customValue>
+        <fullName>12</fullName>
+        <default>false</default>
+        <label>Navision Block</label>
+    </customValue>
+    <customValue>
+        <fullName>30</fullName>
+        <default>false</default>
+        <label>Price Change Approval</label>
+    </customValue>
+    <customValue>
+        <fullName>91</fullName>
+        <default>false</default>
+        <label>NE Note Determination Error</label>
+    </customValue>
+    <customValue>
+        <fullName>92</fullName>
+        <default>false</default>
+        <label>Coverage Without End Date</label>
+    </customValue>
+    <customValue>
+        <fullName>93</fullName>
+        <default>false</default>
+        <label>Coverage Without Fixed Rate</label>
+    </customValue>
+    <customValue>
+        <fullName>94</fullName>
+        <default>false</default>
+        <label>Coverage Quantity Below Order Quantity</label>
+    </customValue>
+    <customValue>
+        <fullName>95</fullName>
+        <default>false</default>
+        <label>Exchange Rate Conversion Error</label>
+    </customValue>
+    <customValue>
+        <fullName>96</fullName>
+        <default>false</default>
+        <label>No Goods Issue/Goods Receipt Posting</label>
+    </customValue>
+    <customValue>
+        <fullName>97</fullName>
+        <default>false</default>
+        <label>Order Quantity Below Ordered Quantity</label>
+    </customValue>
+    <customValue>
+        <fullName>98</fullName>
+        <default>false</default>
+        <label>Missing Purchase Exchange Rate</label>
+    </customValue>
+    <customValue>
+        <fullName>99</fullName>
+        <default>false</default>
+        <label>Missing Base Key</label>
+    </customValue>
+    <masterLabel>Billing Block Reason</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

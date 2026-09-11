@@ -101,11 +101,6 @@
         <label>12 Tage 2% Skonto, 21 Tage netto</label>
     </customValue>
     <customValue>
-        <fullName>K020</fullName>
-        <default>false</default>
-        <label>12 Tage netto</label>
-    </customValue>
-    <customValue>
         <fullName>D016</fullName>
         <default>false</default>
         <label>14 Tage 2% Skonto, 21 Tage netto</label>
@@ -558,32 +553,40 @@
     <customValue>
         <fullName>Z000</fullName>
         <default>false</default>
-        <label>Z000</label>
-    </customValue>
-    <customValue>
-        <fullName>0001</fullName>
-        <default>false</default>
-        <label>0001</label>
-    </customValue>
-    <customValue>
-        <fullName>0002</fullName>
-        <default>false</default>
-        <label>0002</label>
+        <label>bei Rechnungsstellung bis zum Ende des Monats</label>
     </customValue>
     <customValue>
         <fullName>D065</fullName>
         <default>false</default>
-        <label>D065</label>
+        <label>54 Tage 2%, 55 Tage netto</label>
     </customValue>
     <customValue>
         <fullName>D066</fullName>
         <default>false</default>
-        <label>D066</label>
+        <label>12 Tage netto</label>
     </customValue>
     <customValue>
         <fullName>D067</fullName>
         <default>false</default>
-        <label>D067</label>
+        <label>52 Tage netto</label>
+    </customValue>
+    <customValue>
+        <fullName>0002</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>0002</label>
+    </customValue>
+    <customValue>
+        <fullName>K020</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>12 Tage netto (alt)</label>
+    </customValue>
+    <customValue>
+        <fullName>0001</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>0001</label>
     </customValue>
     <masterLabel>Payment Terms</masterLabel>
     <sorted>false</sorted>

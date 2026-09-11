@@ -18,27 +18,27 @@
     <customValue>
         <fullName>40</fullName>
         <default>false</default>
-        <label>40</label>
+        <label>Töchter</label>
     </customValue>
     <customValue>
         <fullName>80</fullName>
         <default>false</default>
-        <label>80</label>
+        <label>Nichtvertrieb</label>
     </customValue>
     <customValue>
         <fullName>70</fullName>
         <default>false</default>
-        <label>70</label>
+        <label>Marketing/Events</label>
     </customValue>
     <customValue>
         <fullName>50</fullName>
         <default>false</default>
-        <label>50</label>
+        <label>Lohnproduktion Kaffee</label>
     </customValue>
     <customValue>
         <fullName>60</fullName>
         <default>false</default>
-        <label>60</label>
+        <label>Rohkaffeehandel</label>
     </customValue>
     <masterLabel>Distribution Channel</masterLabel>
     <sorted>false</sorted>
