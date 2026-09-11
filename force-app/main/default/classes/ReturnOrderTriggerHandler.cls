@@ -1,17 +1,17 @@
-public without sharing class ReturnOrderTriggerHandler extends TriggerHandler {
+public without sharing class ReturnOrderTriggerHandler {
 
     // Gate for outbound create (JJD-28): the ReturnOrder is sent to SAP only once it reaches this
     // status (label/API "Gesendet"), so header + line items + partners are complete. Mirrors
     // OrderTriggerHandler ('Ready for Transmission to ERP'). 'Gesendet' is the confirmed final status.
     private static final String STATUS_READY_TO_SEND = 'Gesendet';
 
-    public override void afterInsert() {
-        pushReturnOrderCreates((List<ReturnOrder>) Trigger.new, null);
+    public static void handleAfterInsert(List<ReturnOrder> newRecords) {
+        pushReturnOrderCreates(newRecords, null);
     }
 
-    public override void afterUpdate() {
-        pushReturnOrderCreates((List<ReturnOrder>) Trigger.new, (Map<Id, ReturnOrder>) Trigger.oldMap);
-        pushBillingReleases((List<ReturnOrder>) Trigger.new, (Map<Id, ReturnOrder>) Trigger.oldMap);
+    public static void handleAfterUpdate(List<ReturnOrder> newRecords, Map<Id, ReturnOrder> oldRecordsMap) {
+        pushReturnOrderCreates(newRecords, oldRecordsMap);
+        pushBillingReleases(newRecords, oldRecordsMap);
     }
 
     // JJD-28 — push a ReturnOrder to SAP for creation only when it reaches STATUS_READY_TO_SEND

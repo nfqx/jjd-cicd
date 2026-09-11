@@ -13,6 +13,10 @@
         <translation><!-- Fax --></translation>
     </valueTranslation>
     <valueTranslation>
+        <masterLabel>Field Sales / Management</masterLabel>
+        <translation><!-- Field Sales / Management --></translation>
+    </valueTranslation>
+    <valueTranslation>
         <masterLabel>Formular</masterLabel>
         <translation><!-- Formular --></translation>
     </valueTranslation>
@@ -27,6 +31,10 @@
     <valueTranslation>
         <masterLabel>Phone</masterLabel>
         <translation>Tefefon</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Unannounced Parcel</masterLabel>
+        <translation><!-- Unannounced Parcel --></translation>
     </valueTranslation>
     <valueTranslation>
         <masterLabel>Voicemail</masterLabel>

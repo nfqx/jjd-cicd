@@ -17,6 +17,11 @@
         <label>Fax</label>
     </standardValue>
     <standardValue>
+        <fullName>Field Sales / Management</fullName>
+        <default>false</default>
+        <label>Field Sales / Management</label>
+    </standardValue>
+    <standardValue>
         <fullName>Formular</fullName>
         <default>false</default>
         <label>Formular</label>
@@ -35,6 +40,11 @@
         <fullName>Phone</fullName>
         <default>false</default>
         <label>Phone</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Unannounced Parcel</fullName>
+        <default>false</default>
+        <label>Unannounced Parcel</label>
     </standardValue>
     <standardValue>
         <fullName>Voicemail</fullName>
