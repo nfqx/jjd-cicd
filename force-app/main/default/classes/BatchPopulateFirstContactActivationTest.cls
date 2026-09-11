@@ -18,6 +18,8 @@ public without sharing class BatchPopulateFirstContactActivationTest {
         userRole.ParentRoleId = null;
         userRole.DeveloperName = 'TestRole';
         insert userRole;
+        User u = new User(Id = UserInfo.getUserId(), UserRoleId = userRole.Id);
+        update u;
         List<Profile> profiles = [SELECT Id FROM Profile WHERE Name = 'Customer Community Plus User'];
         insert new User(Username = 'testuser' + con.Id + '@test.com',
                             LastName = 'Test',
@@ -29,7 +31,6 @@ public without sharing class BatchPopulateFirstContactActivationTest {
                             ProfileId = profiles[0].Id,
                             LanguageLocaleKey = 'en_US',
                             ContactId = con.Id,
-                            UserRoleId = userRole.Id,
                             IsActive = true);
     }
 

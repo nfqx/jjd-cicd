@@ -20,11 +20,11 @@ public without sharing class DailyCalculateMaxBatchPaletteCount implements Sched
         Map<Id, List<Product2>> parentToBoxMap = new Map<Id, List<Product2>>();
         Map<Id, Map<String, Integer>> perUnitMap = new Map<Id, Map<String, Integer>>();
         for(ProductAttribute att : [SELECT Unit__c, ProductId, Product.Factor__c, VariantParentId FROM ProductAttribute WHERE VariantParentId IN :scope]){
-            if(att.Unit__c == 'STUECK'){
+            if(att.Unit__c == 'ST'){
                 List<Product2> innerList = parentToPieceMap.containsKey(att.VariantParentId) ? parentToPieceMap.get(att.VariantParentId) : new List<Product2>();
                 innerList.add(att.Product);
                 parentToPieceMap.put(att.VariantParentId, innerList);
-            } else if(att.Unit__c == 'KARTON'){
+            } else if(att.Unit__c == 'KAR'){
                 List<Product2> innerList = parentToBoxMap.containsKey(att.VariantParentId) ? parentToBoxMap.get(att.VariantParentId) : new List<Product2>();
                 innerList.add(att.Product);
                 parentToBoxMap.put(att.VariantParentId, innerList);
@@ -33,7 +33,7 @@ public without sharing class DailyCalculateMaxBatchPaletteCount implements Sched
                     innerMap.put('box', Integer.valueOf(att.Product.Factor__c));
                     perUnitMap.put(att.VariantParentId, innerMap);
                 }
-            } else if(att.Unit__c == 'PALETTE'){
+            } else if(att.Unit__c == 'PAL'){
                 if(att.Product.Factor__c != null){
                     Map<String, Integer> innerMap = perUnitMap.containsKey(att.VariantParentId) ? perUnitMap.get(att.VariantParentId) : new Map<String, Integer>();
                     innerMap.put('palette', Integer.valueOf(att.Product.Factor__c));

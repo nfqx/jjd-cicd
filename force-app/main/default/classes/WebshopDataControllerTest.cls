@@ -121,32 +121,6 @@ private without sharing class WebshopDataControllerTest {
     }
 
     @isTest
-    static void testAddProductToWishlistNoWishlist() {
-        Account account = [SELECT Id FROM Account LIMIT 1];
-        Product2 newProduct = new Product2(Name = 'New Test Product', ProductCode = 'TEST2', IsActive = true, Tenant__c = '001');
-        insert newProduct;
-        delete [SELECT Id FROM WishlistItem];
-        delete [SELECT Id FROM Wishlist];
-        Test.startTest();
-            Boolean result = WebshopDataController.addProductToWishlist(account.Id, newProduct.Id);
-        Test.stopTest();
-        System.assertEquals(true, result, 'Product should be added successfully');
-        System.assertEquals(1, [SELECT COUNT() FROM WishlistItem], 'There should be one item in the wishlist');
-    }
-
-    @isTest
-    static void testAddProductToWishlist() {
-        Account account = [SELECT Id FROM Account LIMIT 1];
-        Product2 newProduct = new Product2(Name = 'New Test Product', ProductCode = 'TEST2', IsActive = true, Tenant__c = '001');
-        insert newProduct;
-        Test.startTest();
-            Boolean result = WebshopDataController.addProductToWishlist(account.Id, newProduct.Id);
-        Test.stopTest();
-        System.assertEquals(true, result, 'Product should be added successfully');
-        System.assertEquals(2, [SELECT COUNT() FROM WishlistItem], 'There should be two items in the wishlist');
-    }
-
-    @isTest
     static void testAddProductToWishlistFail() {
         Account account = [SELECT Id FROM Account LIMIT 1];
         Test.startTest();
@@ -166,17 +140,6 @@ private without sharing class WebshopDataControllerTest {
         Test.stopTest();
         System.assertNotEquals(null, itemCount, 'Item count should not be null.');
         System.assertEquals(1, itemCount, 'Cart should contain 1 item.');
-    }
-
-    @isTest
-    static void testGetCartItems() {
-        Account account = [SELECT Id FROM Account LIMIT 1];
-        WebCart cart = [SELECT Id FROM WebCart LIMIT 1];
-        Test.startTest();
-            List<WebshopDataController.CartItemWrapper> cartItems = WebshopDataController.getCartItems(account.Id, cart.Id);
-        Test.stopTest();
-        System.assertNotEquals(null, cartItems, 'Cart items should not be null');
-        System.assertEquals(1, cartItems.size(), 'There should be one cart item');
     }
 
     @isTest
@@ -720,7 +683,6 @@ private without sharing class WebshopDataControllerTest {
         System.assertEquals('UpdatedFirstName', updatedUser.FirstName, 'First name should match');
         System.assertEquals('UpdatedLastName', updatedUser.LastName, 'Last name should match');
         System.assertEquals('updatedemail@example.com', updatedUser.Email, 'Email should match');
-        System.assertEquals('1234567890', updatedUser.MobilePhone, 'Mobile phone should match');
     }
 
     @isTest

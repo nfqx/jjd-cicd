@@ -23,6 +23,8 @@ public class UserTriggerTest {
         userRole.ParentRoleId = null;
         userRole.DeveloperName = 'TestRole';
         insert userRole;
+        User usr = new User(Id = UserInfo.getUserId(), UserRoleId = userRole.Id);
+        update usr;
         // Create User (inactive first)
         User u = new User(
             Username = 'testuser' + System.currentTimeMillis() + '@test.com',
@@ -35,8 +37,7 @@ public class UserTriggerTest {
             LanguageLocaleKey = 'en_US',
             ProfileId = p.Id,
             IsActive = true,
-            ContactId = con.Id,
-            UserRoleId = userRole.Id
+            ContactId = con.Id
         );
         insert u;
     }
