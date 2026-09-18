@@ -67,10 +67,6 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>hideChatterActions</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
                     <name>hideSlackAction</name>
                     <value>false</value>
                 </componentInstanceProperties>

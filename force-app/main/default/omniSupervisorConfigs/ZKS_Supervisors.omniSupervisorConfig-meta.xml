@@ -69,10 +69,10 @@
         <tabType>Alerts</tabType>
     </omniSupervisorConfigTab>
     <omniSupervisorConfigUser>
-        <user>darboven@nfq-x.com.jjd.dev</user>
+        <user>darboven@nfq-x.com.jjd</user>
     </omniSupervisorConfigUser>
-    <omniSupervisorConfigUser>
+    <!--omniSupervisorConfigUser>
         <user>gellert.pasztor@darboven.dev</user>
-    </omniSupervisorConfigUser>
+    </omniSupervisorConfigUser-->
     <skillVisibility>AllSkills</skillVisibility>
 </OmniSupervisorConfig>

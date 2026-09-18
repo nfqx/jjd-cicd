@@ -115,10 +115,6 @@
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>hideChatterActions</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
                     <name>numVisibleActions</name>
                     <value>3</value>
                 </componentInstanceProperties>
