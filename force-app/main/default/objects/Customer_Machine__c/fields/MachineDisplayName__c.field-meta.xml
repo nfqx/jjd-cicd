@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MachineDisplayName__c</fullName>
+    <externalId>false</externalId>
+    <formula>MachineNameModel__c &amp;
+IF(
+    NOT(ISBLANK(Installation_Location__c)),
+    &quot; | &quot; &amp; Installation_Location__c,
+    &quot;&quot;
+) &amp;
+IF(
+    NOT(ISBLANK(SerialNumber__c)),
+    &quot; | SN: &quot; &amp; SerialNumber__c,
+    &quot;&quot;
+)</formula>
+    <label>Machine Display Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -5,5 +5,4 @@
     <enableOmniSecondaryRoutingPriority>true</enableOmniSecondaryRoutingPriority>
     <enableOmniSkillsRouting>true</enableOmniSkillsRouting>
     <enableOmniStatusCapModel>true</enableOmniStatusCapModel>
-    <omniAutoLoginOption>RemainLoggedIn</omniAutoLoginOption>
 </OmniChannelSettings>
