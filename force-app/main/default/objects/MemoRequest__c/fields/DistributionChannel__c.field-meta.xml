@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DistributionChannel__c</fullName>
+    <inlineHelpText>Distribution channel of the request (20 = AHS, 10 = trade, 30 = export).</inlineHelpText>
+    <label>Distribution Channel</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>DistributionChannel</valueSetName>
+    </valueSet>
+</CustomField>

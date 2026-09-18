@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsMyTerritory__c</fullName>
+    <description>True when the current user is the sales leader of this postal code. Enables a personal list view, because list view filters cannot reference the running user directly.</description>
+    <formula>SalesLeader__c = $User.Id</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>My Territory</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

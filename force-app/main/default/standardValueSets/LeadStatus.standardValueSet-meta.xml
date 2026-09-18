@@ -25,4 +25,10 @@
         <label>Qualified</label>
         <converted>true</converted>
     </standardValue>
+    <standardValue>
+        <fullName>Disqualified</fullName>
+        <default>false</default>
+        <label>Disqualified</label>
+        <converted>true</converted>
+    </standardValue>
 </StandardValueSet>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MemoRequestReferenceExclusive</fullName>
+    <active>true</active>
+    <description>Reference must be exactly one of invoice, order or none, matching the reference type.</description>
+    <errorConditionFormula>OR(
+  AND(ISPICKVAL(ReferenceType__c, &quot;INVOICE&quot;), ISBLANK(ReferenceInvoice__c)),
+  AND(ISPICKVAL(ReferenceType__c, &quot;ORDER&quot;), ISBLANK(ReferenceOrder__c)),
+  AND(ISPICKVAL(ReferenceType__c, &quot;NONE&quot;), OR(NOT(ISBLANK(ReferenceInvoice__c)), NOT(ISBLANK(ReferenceOrder__c)))),
+  AND(NOT(ISBLANK(ReferenceInvoice__c)), NOT(ISBLANK(ReferenceOrder__c)))
+)</errorConditionFormula>
+    <errorMessage>Choose exactly one reference that matches the reference type.</errorMessage>
+</ValidationRule>

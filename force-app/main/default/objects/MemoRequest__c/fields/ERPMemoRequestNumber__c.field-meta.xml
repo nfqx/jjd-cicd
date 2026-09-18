@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ERPMemoRequestNumber__c</fullName>
+    <externalId>true</externalId>
+    <inlineHelpText>Number of the credit or debit memo request in the ERP system. Filled by the response.</inlineHelpText>
+    <label>ERP Memo Request Number</label>
+    <length>35</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

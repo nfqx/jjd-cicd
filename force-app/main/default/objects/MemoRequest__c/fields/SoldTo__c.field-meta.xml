@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SoldTo__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>Customer who requests the credit memo or receives the debit memo. Its ERP customer number is sent as sold-to party.</inlineHelpText>
+    <label>Sold To</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Memo Requests</relationshipLabel>
+    <relationshipName>Memo_Requests</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

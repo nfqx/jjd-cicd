@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MemoCategory__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(TEXT(MemoRequestType__c), &quot;ZGA1&quot;,&quot;CREDIT&quot;, &quot;ZGA2&quot;,&quot;CREDIT&quot;, &quot;ZAG1&quot;,&quot;CREDIT&quot;, &quot;ZG1&quot;,&quot;CREDIT&quot;, &quot;ZG2&quot;,&quot;CREDIT&quot;, &quot;ZG2E&quot;,&quot;CREDIT&quot;, &quot;ZG2I&quot;,&quot;CREDIT&quot;, &quot;ZSGS&quot;,&quot;CREDIT&quot;, &quot;ZLA1&quot;,&quot;DEBIT&quot;, &quot;ZLA2&quot;,&quot;DEBIT&quot;, &quot;ZL1&quot;,&quot;DEBIT&quot;, &quot;ZL2&quot;,&quot;DEBIT&quot;, &quot;ZL2I&quot;,&quot;DEBIT&quot;, &quot;ZL2M&quot;,&quot;DEBIT&quot;, &quot;ZSRE&quot;,&quot;DEBIT&quot;, &quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Derived from the document type: CREDIT or DEBIT. Decides which ERP service receives the request.</inlineHelpText>
+    <label>Memo Category</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

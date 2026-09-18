@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LongText__c</fullName>
+    <inlineHelpText>Customer reference for this request. If empty, the memo request number is sent.</inlineHelpText>
+    <label>Long Text</label>
+    <length>32000</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

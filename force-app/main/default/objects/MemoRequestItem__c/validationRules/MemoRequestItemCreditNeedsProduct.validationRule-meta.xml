@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MemoRequestItemCreditNeedsProduct</fullName>
+    <active>true</active>
+    <description>Credit memo items require a product.</description>
+    <errorConditionFormula>AND(
+  MemoRequest__r.MemoCategory__c = &quot;CREDIT&quot;,
+  ISBLANK(Product2__c)
+)</errorConditionFormula>
+    <errorDisplayField>Product2__c</errorDisplayField>
+    <errorMessage>A product is required for credit memo items.</errorMessage>
+</ValidationRule>

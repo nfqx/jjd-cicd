@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ReturnOrderLineItem__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>Return order line this item was created from.</inlineHelpText>
+    <label>Return Order Line Item</label>
+    <referenceTo>ReturnOrderLineItem</referenceTo>
+    <relationshipLabel>Memo Request Items</relationshipLabel>
+    <relationshipName>MemoRequestItems</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

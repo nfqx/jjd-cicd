@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unassigned_Postal_Codes</fullName>
+    <columns>NAME</columns>
+    <columns>PostalCode__c</columns>
+    <columns>Region__c</columns>
+    <columns>SalesLeader__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SalesGroupKey__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Unassigned Postal Codes</label>
+</ListView>

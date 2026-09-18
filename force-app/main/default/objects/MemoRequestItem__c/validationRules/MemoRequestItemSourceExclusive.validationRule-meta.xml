@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MemoRequestItemSourceExclusive</fullName>
+    <active>true</active>
+    <description>At most one source line (invoice line, order product or return order line) may be linked.</description>
+    <errorConditionFormula>(
+  IF(ISBLANK(InvoiceLine__c), 0, 1)
+  + IF(ISBLANK(OrderItem__c), 0, 1)
+  + IF(ISBLANK(ReturnOrderLineItem__c), 0, 1)
+) &gt; 1</errorConditionFormula>
+    <errorMessage>Link at most one source line.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InvoiceLine__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>Invoice line this item refers to. Preferred source line.</inlineHelpText>
+    <label>Invoice Line</label>
+    <referenceTo>InvoiceLine</referenceTo>
+    <relationshipLabel>Memo Request Items</relationshipLabel>
+    <relationshipName>Memo_Request_Items</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

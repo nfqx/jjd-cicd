@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MemoRequest__c</fullName>
+    <inlineHelpText>The request this item belongs to.</inlineHelpText>
+    <label>Memo Request</label>
+    <referenceTo>MemoRequest__c</referenceTo>
+    <relationshipLabel>Memo Request Items</relationshipLabel>
+    <relationshipName>MemoRequestItems</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

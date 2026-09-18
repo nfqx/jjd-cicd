@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ReferenceType__c</fullName>
+    <inlineHelpText>What the request refers to: invoice, order or no reference. Without a reference the ERP applies current pricing.</inlineHelpText>
+    <label>Reference Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>INVOICE</fullName>
+                <default>false</default>
+                <label>Invoice</label>
+            </value>
+            <value>
+                <fullName>ORDER</fullName>
+                <default>false</default>
+                <label>Order</label>
+            </value>
+            <value>
+                <fullName>NONE</fullName>
+                <default>false</default>
+                <label>No reference</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MemoRequestType__c</fullName>
+    <inlineHelpText>Credit or debit memo document type as used in the ERP system. The category (credit/debit) is derived from it automatically.</inlineHelpText>
+    <label>Memo Request Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Wert Gutschrift AHS (ZGA1)</fullName>
+                <default>false</default>
+                <label>ZGA1</label>
+            </value>
+            <value>
+                <fullName>Gutschriftsanf. AHS (ZGA2)</fullName>
+                <default>false</default>
+                <label>ZGA2</label>
+            </value>
+            <value>
+                <fullName>Wert Gutschrift AHS (ZAG1)</fullName>
+                <default>false</default>
+                <label>ZAG1</label>
+            </value>
+            <value>
+                <fullName>Wert-Gutschriftsanf. (ZG1)</fullName>
+                <default>false</default>
+                <label>ZG1</label>
+            </value>
+            <value>
+                <fullName>Gutschriftsanford. (ZG2)</fullName>
+                <default>false</default>
+                <label>ZG2</label>
+            </value>
+            <value>
+                <fullName>Erw. Gutschriftsanf. (ZG2E)</fullName>
+                <default>false</default>
+                <label>ZG2E</label>
+            </value>
+            <value>
+                <fullName>Gutschriftsan.intern (ZG2I)</fullName>
+                <default>false</default>
+                <label>ZG2I</label>
+            </value>
+            <value>
+                <fullName>Schadensgutschrift (ZSGS)</fullName>
+                <default>false</default>
+                <label>ZSGS</label>
+            </value>
+            <value>
+                <fullName>Wert-Lastschrift AHS (ZLA1)</fullName>
+                <default>false</default>
+                <label>ZLA1</label>
+            </value>
+            <value>
+                <fullName>Lastschriftsanf. AHS (ZLA2)</fullName>
+                <default>false</default>
+                <label>ZLA2</label>
+            </value>
+            <value>
+                <fullName>Wert-Lastschriftsan (ZL1)</fullName>
+                <default>false</default>
+                <label>ZL1</label>
+            </value>
+            <value>
+                <fullName>Lastschriftsanford. (ZL2)</fullName>
+                <default>false</default>
+                <label>ZL2</label>
+            </value>
+            <value>
+                <fullName>Lastschriftsan.int. (ZL2I)</fullName>
+                <default>false</default>
+                <label>ZL2I</label>
+            </value>
+            <value>
+                <fullName>Lastschr. Leihgebühr (ZL2M)</fullName>
+                <default>false</default>
+                <label>ZL2M</label>
+            </value>
+            <value>
+                <fullName>Schadensrechnung (ZSRE)</fullName>
+                <default>false</default>
+                <label>ZSRE</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
