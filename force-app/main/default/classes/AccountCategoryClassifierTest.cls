@@ -200,13 +200,11 @@ private class AccountCategoryClassifierTest {
     static void testCentralRegulator() {
         Account regulator = new Account(
             Name = 'Central Regulator',
-            IsChainMember__c = true, 
-            LegalForm__c = 'AG'
+            IsChainMember__c = true
         );
         Account member = new Account(
             Name = 'Member',
-            IsChainMember__c = true, 
-            LegalForm__c = 'AG'
+            IsChainMember__c = true
         );
 
         insertWithoutClassification(new List<Account>{regulator, member});

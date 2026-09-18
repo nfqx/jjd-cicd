@@ -420,6 +420,16 @@
             <field>PaymenTermText__c</field>
             <table>Invoice</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ShippingCosts__c</field>
+            <table>Invoice</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Taxnumber__c</field>
+            <table>Invoice</table>
+        </columns>
         <masterLabel>Invoices</masterLabel>
     </sections>
     <sections>
@@ -716,6 +726,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>OrderDate__c</field>
+            <table>Invoice.InvoiceLines</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>TaxDeterminationDate__c</field>
             <table>Invoice.InvoiceLines</table>
         </columns>
         <masterLabel>Invoice Lines</masterLabel>

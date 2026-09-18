@@ -116,6 +116,8 @@ const ORDER_SOURCE_BY_CONTEXT = {
     Account: 'Telefon'
 };
 const round2 = (value) => Math.round(value * 100) / 100;
+const PRODUCT_PAGE_SIZE = 50;
+const MAX_PRODUCT_OFFSET = 2000;
 
 export default class CustomOrderMask extends LightningElement {
 
@@ -197,9 +199,9 @@ export default class CustomOrderMask extends LightningElement {
         orderMaskQuoteIsWithSalesManagementForApproval,
         orderMaskReasonFreeDelivery,
         orderMaskRecalculating,
-        orderMaskRecommendationBasedOnOrderWeight,
+        orderMaskRecommendationBasedOnOrderWeight, 
         orderMaskRemarkFreeDelivery,
-        orderMaskRemoveDiscount,
+        orderMaskRemoveDiscount, 
         orderMaskRequestedDeliveryDate,
         orderMaskSaveDraft,
         orderMaskSaving,
@@ -221,6 +223,11 @@ export default class CustomOrderMask extends LightningElement {
         expressCosts
     };
 
+    productsHasMore = false;
+    isLoadingProducts = false;
+    _productOffset = 0;
+    productsTotalCount = null;
+
     currentStep = 1;
     hasRendered = false;
     customNotification = null;
@@ -237,6 +244,7 @@ export default class CustomOrderMask extends LightningElement {
     @track orderData = {
         //step 1
         orderNumber: '',
+        customerReference: '',
         source: this.defaultOrderSource,
         type: '',
         requestedDeliveryDate: '',
@@ -351,6 +359,7 @@ export default class CustomOrderMask extends LightningElement {
     }
 
     renderedCallback() {
+        this.observeProductSentinel();
         if (!this._contextLoaded && this.recordId) {
             this._contextLoaded = true;
             this.loadAccountContext(this.recordId, this.objectApiName);
@@ -632,6 +641,10 @@ export default class CustomOrderMask extends LightningElement {
     handleRecipientAccountChange(event) {
         this.loadRecipientContext(event.detail.recordId);
     }
+
+    handleCustomerReferenceChange(event) {
+        this.orderData = { ...this.orderData, customerReference: event.detail.value };
+    }
     
     fetchOrderSimulation() {
         if (!this.currentAccountId) {
@@ -778,31 +791,77 @@ export default class CustomOrderMask extends LightningElement {
             };
         });
         return payload;
-    }
+    } 
 
-    executeProductSearch() {
+    executeProductSearch(loadMore = false) {
         const term = (this.searchTerm || '').trim();
-        const searchText = term.length >= 2 ? term : '';   
+        const searchText = term.length >= 2 ? term : '';
 
-        if (!this.currentAccountId || (!searchText && this.searchType === 'regular')) {
+        if (!loadMore) {
+            this._searchRequestId++;
+            this.productsTotalCount = null;
+            this._productOffset = 0;
             this.foundProducts = [];
-            return;
+            this.isLoadingProducts = false;
+            this.productsHasMore = !!this.currentAccountId;
         }
+        if (!this.currentAccountId || !this.productsHasMore || this.isLoadingProducts) return;
 
-        const requestId = ++this._searchRequestId;
-        searchProducts({ searchText, accountId: this.currentAccountId, searchType: this.searchType })
-            .then(result => {
+        const requestId = this._searchRequestId;
+        this.isLoadingProducts = true;
+        searchProducts({ searchText, accountId: this.currentAccountId, searchType: this.searchType, offsetRows: this._productOffset })
+            .then(page => {
                 if (requestId !== this._searchRequestId) return;
-                this.foundProducts = (result || [])
-                    .map(wrapper => this.buildProductRow(wrapper))
-                    .sort((a, b) => (b.available || 0) - (a.available || 0));
+                const rows = (page?.products || []).map(wrapper => this.buildProductRow(wrapper));
+                if (page?.totalCount != null) this.productsTotalCount = page.totalCount;
+                this.foundProducts = this.mergeProductRows(rows);
+                this._productOffset += PRODUCT_PAGE_SIZE;
+                this.productsHasMore = rows.length > 0
+                    && this.foundProducts.length < (this.productsTotalCount ?? Infinity)
+                    && this._productOffset <= MAX_PRODUCT_OFFSET;
             })
             .catch(error => {
                 if (requestId !== this._searchRequestId) return;
-                this.foundProducts = [];
+                this.productsHasMore = false;
                 console.error('Product search failed:', error);
                 this.showNotification('error', error?.body?.message || 'Produktsuche fehlgeschlagen.');
+            })
+            .finally(() => {
+                if (requestId !== this._searchRequestId) return;
+                this.isLoadingProducts = false;
+                // re-observing fires a fresh check, so a page that doesn't fill the screen loads the next one
+                if (this._sentinel) {
+                    this._productObserver.unobserve(this._sentinel);
+                    this._productObserver.observe(this._sentinel);
+                }
             });
+    }
+
+    mergeProductRows(newRows) {
+        const merged = [...this.foundProducts];
+        newRows.forEach(row => {
+            const idx = merged.findIndex(r => r.key === row.key);
+            if (idx === -1) { merged.push(row); return; }
+            const known = new Set(merged[idx].variations.map(v => v.Id));
+            const extra = row.variations.filter(v => !known.has(v.Id));
+            if (extra.length) {
+                merged[idx] = this.decorateRow({ ...merged[idx], variations: [...merged[idx].variations, ...extra] });
+            }
+        });
+        return merged;
+    }
+
+    observeProductSentinel() {
+        const sentinel = this.template.querySelector('.product-list-sentinel');
+        if (sentinel === this._sentinel) return;
+        this._productObserver?.disconnect();
+        this._sentinel = sentinel;
+        if (!sentinel) return;
+        this._productObserver = new IntersectionObserver(
+            entries => { if (entries[0].isIntersecting) this.executeProductSearch(true); },
+            { rootMargin: '200px' }
+        );
+        this._productObserver.observe(sentinel);
     }
 
     buildProductRow(wrapper) {
@@ -1125,6 +1184,7 @@ export default class CustomOrderMask extends LightningElement {
     }
 
     disconnectedCallback() {
+        this._productObserver?.disconnect();
         this.removeInjectedHeaderStyle();
         clearTimeout(this._activeTimerId);
         clearTimeout(this.delayTimeout);
@@ -1243,6 +1303,7 @@ export default class CustomOrderMask extends LightningElement {
             orderStartDate: this.todayIsoDate(),
             reason: '',
             description: '',
+            customerReference: '',
             poNumber: '',
             billingAddress: '',
             shippingName: '',
@@ -1316,10 +1377,6 @@ export default class CustomOrderMask extends LightningElement {
         return ['Name', 'AccountNumber'];
     }
 
-    get orderNumber() {
-        return this.orderData.orderNumber ? this.orderData.orderNumber : "Wird generiert"
-    }
-
     get accountMatchingFields() {
         return ['Name', 'AccountNumber'];
     }
@@ -1364,15 +1421,13 @@ export default class CustomOrderMask extends LightningElement {
     }
 
     get isStepOneValid() {
-        const base = this.currentAccountId 
-            && this.orderData.type 
-            && this.orderData.source 
-            && this.orderData.orderStartDate;
+        const base = !!(this.currentAccountId
+            && this.orderData.type
+            && this.orderData.source
+            && this.orderData.orderStartDate
+            && (this.orderData.customerReference || '').trim());
 
-        if (this.isFreeDeliveryOrder) {
-            return base && this.orderData.reason;
-        }
-        return base;
+        return this.isFreeDeliveryOrder ? base && !!this.orderData.reason : base;
     }
 
     get isStepTwoValid() {
@@ -1636,9 +1691,7 @@ export default class CustomOrderMask extends LightningElement {
         return this.productTabs.find(t => t.type === this.searchType)?.label || '';
     }
 
-    get foundProductsCount() {
-        return this.foundProducts.length;
-    }
+    get foundProductsCount() { return this.productsTotalCount ?? this.foundProducts.length; }
 
     get isExpressShipping() {
         const opt = this.preferredShippingConditionOptions.find(o => o.value === this.orderData.shippingCondition);
@@ -1650,18 +1703,17 @@ export default class CustomOrderMask extends LightningElement {
     }
 
     get approvalNetTotal() {
-        return this.isStepFour ? this.discountedNetTotal : this.cartTotal;
+        if (this.isStepFour) return this.discountedNetTotal;
+        return this.isFreeDeliveryOrder ? 0 : this.cartTotal;
     }
 
     get requiresApproval() {
-        if (this.isFreeDeliveryOrder) return true;
         if (this.isShippingFree) return true;
-        //if (this.isExpressSaturdayShipping) return true;
-
         const net = this.approvalNetTotal;
         if (net > 10000) return true;
         return this.isFirstOrder && net > 5000;
     }
+
     get originalNetTotal() {
         return this.displayCartItems.reduce(
             (sum, i) => sum + ((i.originalUnitPrice || 0) * (i.quantity || 0)), 0
@@ -1680,12 +1732,8 @@ export default class CustomOrderMask extends LightningElement {
     get originalGrandTotal() {
         return this.originalNetTotal + this.originalTaxTotal + this.originalShippingCosts;
     }
-    get hasFoundProducts() { return this.foundProducts.length > 0; }
-    get emptyProductsText() {
-        return this.searchType === 'regular'
-            ? 'Bitte Suchbegriff eingeben (min. 2 Zeichen).'
-            : 'Keine Artikel gefunden.';
-    }
+    get hasFoundProducts() { return this.foundProducts.length > 0 || this.isLoadingProducts; }
+    get emptyProductsText() { return 'Keine Artikel gefunden.'; }
 
     handleUnitPriceChange(event) {
         const prodId = event.target.dataset.id;

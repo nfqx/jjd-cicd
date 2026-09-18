@@ -376,6 +376,16 @@
             <field>Subject__c</field>
             <table>Opportunity</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MasterDataValidationCase__c</field>
+            <table>Opportunity</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MasterDataCheckStatus__c</field>
+            <table>Opportunity</table>
+        </columns>
         <masterLabel>Opportunities</masterLabel>
     </sections>
     <sections>

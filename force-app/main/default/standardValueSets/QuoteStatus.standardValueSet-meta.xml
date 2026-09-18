@@ -8,12 +8,6 @@
         <allowEmail>true</allowEmail>
     </standardValue>
     <standardValue>
-        <fullName>Needs Review</fullName>
-        <default>false</default>
-        <label>Needs Review</label>
-        <allowEmail>true</allowEmail>
-    </standardValue>
-    <standardValue>
         <fullName>In Review</fullName>
         <default>false</default>
         <label>In Review</label>
@@ -32,21 +26,21 @@
         <allowEmail>true</allowEmail>
     </standardValue>
     <standardValue>
-        <fullName>Presented</fullName>
+        <fullName>Sent to Customer</fullName>
         <default>false</default>
-        <label>Presented</label>
+        <label>Sent to Customer</label>
         <allowEmail>true</allowEmail>
     </standardValue>
     <standardValue>
-        <fullName>Accepted</fullName>
+        <fullName>Quote Accepted</fullName>
         <default>false</default>
-        <label>Accepted</label>
+        <label>Quote Accepted</label>
         <allowEmail>true</allowEmail>
     </standardValue>
     <standardValue>
-        <fullName>Denied</fullName>
+        <fullName>Quote Rejected</fullName>
         <default>false</default>
-        <label>Denied</label>
-        <allowEmail>true</allowEmail>
+        <label>Quote Rejected</label>
+        <allowEmail>false</allowEmail>
     </standardValue>
 </StandardValueSet>

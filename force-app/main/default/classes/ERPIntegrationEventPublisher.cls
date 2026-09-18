@@ -1,10 +1,5 @@
 public without sharing class ERPIntegrationEventPublisher {
 
-    public static final String NOT_SANCTIONED_STATUS = 'Not Sanctioned';
-    public static final String CREDIT_RATING_STATUS = 'Credit Rating';
-    public static final Set<String> QUALIFIED_OPPORTUNITY_STAGE_NAMES = new Set<String>{
-        'Quotation Phase', 'Angebotsphase', 'Angebot verschickt', 'Nachverhandlung', 'Angebot unterzeichnet', 'Closed Won'
-    };
     public static final List<String> BANK_ACCOUNT_FIELD_APIS = new List<String>{
         'ERPCustomerNumber__c', 'ERPInternalBankId__c', 'BankCountry__c',
         'BankName__c', 'BankNumber__c', 'SwiftCode__c', 'BankControlKey__c',
@@ -40,12 +35,9 @@ public without sharing class ERPIntegrationEventPublisher {
             new ERPSyncRecursionPrevention.ERPFieldConfig('ShippingCondition__c', Schema.DisplayType.PICKLIST),
             // A_CustomerSalesArea + A_CustomerCompany
             new ERPSyncRecursionPrevention.ERPFieldConfig('ERPPaymentTerms__c', Schema.DisplayType.PICKLIST),
-            // KNVH hierarchy. Both pairs are watched on purpose: JJD-39 moved the reads to
-            // ConditionChainParent__r / StatisticChainParent__r, and the superseded pair is kept
-            // here until the old fields are confirmed dead.
+            // KNVH hierarchy
             new ERPSyncRecursionPrevention.ERPFieldConfig('ConditionChainParent__c', Schema.DisplayType.REFERENCE),
             new ERPSyncRecursionPrevention.ERPFieldConfig('StatisticChainParent__c', Schema.DisplayType.REFERENCE),
-            new ERPSyncRecursionPrevention.ERPFieldConfig('ChainParentConditionID__c', Schema.DisplayType.REFERENCE),
             new ERPSyncRecursionPrevention.ERPFieldConfig('ParentId', Schema.DisplayType.REFERENCE),
             // Denormalised copies carried in the event itself
             new ERPSyncRecursionPrevention.ERPFieldConfig('ParentERPCustomerNumber__c', Schema.DisplayType.STRING),
@@ -57,29 +49,35 @@ public without sharing class ERPIntegrationEventPublisher {
 
     public static Set<Id> erpUpdatedAccounts = new Set<Id>();
 
-    public static void sendNewAccountToERPOnOpportunityQualified(Map<Id, Opportunity> newOpportunities, Map<Id, Opportunity> oldOpportunities) {
-        if (newOpportunities == null || newOpportunities.isEmpty()) return;
+    // Accounts the Account insert trigger sent to SAP in this transaction. Only the Lead conversion
+    // path reads it: converting a Lead into a new Account fires the Account insert and then the Lead
+    // update, and without this check both would ask SAP to create the same customer.
+    // The insert path deliberately never reads it. A partial-success save retries the insert with
+    // static variables kept, the events of the rolled-back attempt are discarded, and the retry has
+    // to publish again.
+    @TestVisible
+    private static Set<Id> accountsSentToERPOnInsert = new Set<Id>();
 
-        Set<Id> qualifiedOpportunityAccountIds = new Set<Id>();
-        for (Id opportunityId : newOpportunities.keySet()) {
-            Opportunity newOpportunity = newOpportunities.get(opportunityId);
+    public static void sendNewAccountsToERP(Set<Id> accountIds) {
+        accountsSentToERPOnInsert.addAll(publishNewAccounts(accountIds));
+    }
 
-            Boolean isQualifiedOpportunityNew = oldOpportunities == null &&
-                QUALIFIED_OPPORTUNITY_STAGE_NAMES.contains(newOpportunity.StageName);
+    public static void sendConvertedAccountsToERP(Set<Id> convertedAccountIds) {
+        if (convertedAccountIds == null || convertedAccountIds.isEmpty()) return;
 
-            Boolean isStageChanged = oldOpportunities != null &&
-                !QUALIFIED_OPPORTUNITY_STAGE_NAMES.contains(oldOpportunities.get(opportunityId).StageName) &&
-                QUALIFIED_OPPORTUNITY_STAGE_NAMES.contains(newOpportunity.StageName);
+        Set<Id> accountIdsToSend = new Set<Id>(convertedAccountIds);
+        accountIdsToSend.removeAll(accountsSentToERPOnInsert);
+        publishNewAccounts(accountIdsToSend);
+    }
 
-            if (isQualifiedOpportunityNew || isStageChanged) {
-                qualifiedOpportunityAccountIds.add(newOpportunity.AccountId);
-            }
-        }
+    private static Set<Id> publishNewAccounts(Set<Id> accountIds) {
+        Set<Id> publishedIds = new Set<Id>();
+        if (accountIds == null || accountIds.isEmpty()) return publishedIds;
 
-        if (qualifiedOpportunityAccountIds.isEmpty()) return;
         List<NewAccount__e> accounts = new List<NewAccount__e>();
 
-        for (Account account : getNewAccountsForERP(qualifiedOpportunityAccountIds)) {
+        for (Account account : getNewAccountsForERP(accountIds)) {
+            publishedIds.add(account.Id);
             accounts.add(
                 new NewAccount__e(
                     Id__c = account.Id,
@@ -135,6 +133,7 @@ public without sharing class ERPIntegrationEventPublisher {
         }
 
         publishEvents(accounts);
+        return publishedIds;
     }
 
     // Kept for callers that have no previous state to compare against; every record is then
@@ -494,7 +493,7 @@ public without sharing class ERPIntegrationEventPublisher {
     }
 
     @TestVisible
-    private static List<Account> getNewAccountsForERP(Set<Id> qualifiedOpportunityAccountIds) {
+    private static List<Account> getNewAccountsForERP(Set<Id> accountIds) {
         return [
             SELECT Id, Name, OwnerId, LegalForm__c, ILNNo__c, Salutation__c,
                    BillingStreet, BillingCity, BillingState, BillingPostalCode, BillingCountry,
@@ -504,10 +503,8 @@ public without sharing class ERPIntegrationEventPublisher {
             	   StatisticChainParent__r.ERPCustomerNumber__c, ConditionChainParent__r.ERPCustomerNumber__c, ConditionChainParent__r.DistributionChannel__c,
             	   ConditionChainParent__r.SalesOrganization__c, StatisticChainParent__r.DistributionChannel__c, StatisticChainParent__r.SalesOrganization__c
             FROM Account
-            WHERE Id IN :qualifiedOpportunityAccountIds
+            WHERE Id IN :accountIds
             AND ERPCustomerNumber__c = NULL
-            AND ERPLockStatus__c != :NOT_SANCTIONED_STATUS
-            AND ERPLockStatus__c != :CREDIT_RATING_STATUS
         ];
     }
 

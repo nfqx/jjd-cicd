@@ -6,6 +6,13 @@ public with sharing class OrderMaskController {
         '30' => 'ReleasedForExport__c'
     };
 
+    private static final Set<String> BLOCKED_LISTINGS = new Set<String>{ 'Inherited Listing Block', 'Own Listing Block' };
+
+    private static final Map<String, Set<String>> LISTINGS_BY_TAB = new Map<String, Set<String>>{
+        'bought'   => new Set<String>{ 'Core Product Line' },
+        'entitled' => new Set<String>{ 'Own Listing', 'Inherited Listing', 'Core Product Line' }
+    };
+
     @AuraEnabled(cacheable=true)
     public static AccountContextWrapper getAccountContext(Id recordId, String objectApiName) {
         if (String.isBlank(recordId) || String.isBlank(objectApiName)) {
@@ -68,25 +75,31 @@ public with sharing class OrderMaskController {
     } 
 
     @AuraEnabled(cacheable=false)
-    public static List<ParentProductWrapper> searchProducts(String searchText, String accountId, String searchType) {
+    public static ProductSearchResult searchProducts(String searchText, String accountId, String searchType, Integer offsetRows) {
         List<ParentProductWrapper> products = new List<ParentProductWrapper>();
         Set<String> allowedProductIds = new Set<String>();
-        if (String.isBlank(searchText) || String.isBlank(accountId) || String.isBlank(searchType)) {
-            return products;
+        Set<String> blockedProductIds = new Set<String>();
+        if (String.isBlank(accountId) || String.isBlank(searchType)) {
+            return new ProductSearchResult();
         }
 
-        if(searchType == 'entitled'){
-            allowedProductIds = WebshopDataController.retrieveAllowedProductIds(accountId, new Set<String>(), null);
-            if (allowedProductIds.isEmpty()) {
-                return products;
+        Set<String> includedListings = LISTINGS_BY_TAB.get(searchType);
+        for (ProductCondition__c pc : [
+            SELECT Product__c, ProductListing__c
+            FROM ProductCondition__c
+            WHERE AccountCondition__r.Active__c = true
+            AND AccountCondition__r.ApplicableAccount__c = :accountId
+            AND Product__c != null
+        ]) {
+            if (BLOCKED_LISTINGS.contains(pc.ProductListing__c)) {
+                blockedProductIds.add(pc.Product__c);
+            } else if (includedListings != null && includedListings.contains(pc.ProductListing__c)) {
+                allowedProductIds.add(pc.Product__c);
             }
-        } else if(searchType == 'bought'){
-            for(AggregateResult ar : [SELECT Product2Id FROM OrderItem WHERE Order.AccountId = : accountId GROUP BY Product2Id]){
-                allowedProductIds.add((String)ar.get('Product2Id'));
-            }
-            if (allowedProductIds.isEmpty()) {
-                return products;
-            }
+        }
+        System.debug('LISTINGS tab=' + searchType + ' allowed=' + allowedProductIds.size() + ' blocked=' + blockedProductIds.size());
+        if (includedListings != null && allowedProductIds.isEmpty()) {
+            return new ProductSearchResult();
         }
 
         Account acc = [
@@ -101,10 +114,8 @@ public with sharing class OrderMaskController {
             ? ' AND ' + releaseField + ' = true'
             : '';
 
-        String idFilter = (searchType == 'regular') ? '' : ' AND Id IN :allowedProductIds';
-
-        String escapedSearch = String.escapeSingleQuotes(searchText.trim());
-        String soslSearch = escapedSearch + '*';
+        String idFilter = (searchType == 'regular' ? '' : ' AND Id IN :allowedProductIds')
+            + (blockedProductIds.isEmpty() ? '' : ' AND Id NOT IN :blockedProductIds');
 
         String fieldList = 'Id, Name, ProductCode, ProductClass, StockKeepingUnit, BaseProductCode__c, QuantityUnitOfMeasure, AvailableQuantity__c, CurrencyIsoCode';
 
@@ -114,18 +125,20 @@ public with sharing class OrderMaskController {
             + releaseFilter
             + idFilter;
 
-        String soslQuery = 'FIND :soslSearch IN ALL FIELDS RETURNING Product2('
-            + fieldList
-            + ' WHERE ' + whereClause
-            + ' LIMIT 50)';
+        String pagination = ' ORDER BY Name, Id LIMIT 50 OFFSET ' + Math.max(0, offsetRows ?? 0);
 
-        List<List<SObject>> searchResults = Search.query(soslQuery);
+        Boolean isSearch = String.isNotBlank(searchText) && searchText.trim().length() >= 2;
+        String soslSearch = isSearch ? String.escapeSingleQuotes(searchText.trim()) + '*' : null;
 
-        if (!searchResults.isEmpty()) {
+        List<SObject> rows = isSearch
+            ? Search.query('FIND :soslSearch IN ALL FIELDS RETURNING Product2(' + fieldList + ' WHERE ' + whereClause + pagination + ')')[0]
+            : Database.query('SELECT ' + fieldList + ' FROM Product2 WHERE ' + whereClause + pagination);
+        System.debug('ROWS ' + rows.size() + ' | ' + whereClause);
+        if (!rows.isEmpty()) {
             Map<Id, List<Product2>> parentToChildrenMap = new Map<Id, List<Product2>>();
             Map<Id, Product2> childIdMap = new Map<Id, Product2>();
             Map<Id, Decimal> priceMap = new Map<Id, Decimal>();
-            for (SObject sob : searchResults[0]) {
+            for (SObject sob : rows) {
                 Product2 prod2 = (Product2)sob;
                 priceMap.put((Id)sob.get('Id'), null);
             }
@@ -135,7 +148,7 @@ public with sharing class OrderMaskController {
             for(PricebookEntry pbe : [SELECT Id, Product2Id, UnitPrice FROM PricebookEntry WHERE Pricebook2.Account__c = : accountId AND Product2Id IN : priceMap.keySet()]){
                 priceMap.put(pbe.Product2Id, pbe.UnitPrice);
             }
-            for (SObject sob : searchResults[0]) {
+            for (SObject sob : rows) {
                 Product2 prod2 = (Product2)sob;
                 if(prod2.ProductClass == 'Simple'){
                     if(priceMap.containsKey(prod2.Id)){
@@ -165,7 +178,10 @@ public with sharing class OrderMaskController {
                 products.add(new ParentProductWrapper(prod2.Name, prod2.ProductCode, parentToChildrenMap.get(prod2.Id), priceMapInner));
             }
         }
-        return products;
+        ProductSearchResult result = new ProductSearchResult();
+        result.products = products;
+        result.totalCount = (offsetRows ?? 0) == 0 ? countProducts(whereClause, soslSearch, allowedProductIds, blockedProductIds) : null;
+        return result;
     }
 
     public class ParentProductWrapper{
@@ -196,6 +212,31 @@ public with sharing class OrderMaskController {
             this.oneVariation = this.variations.size() == 1;
             this.oneVariationProduct = this.oneVariation ? this.variations[0] : null;
         }
+    }
+
+    public class ProductSearchResult {
+        @AuraEnabled public List<ParentProductWrapper> products = new List<ParentProductWrapper>();
+        @AuraEnabled public Integer totalCount;
+    }
+
+    private static Integer countProducts(String whereClause, String soslSearch, Set<String> allowedProductIds, Set<String> blockedProductIds) {
+        Set<Id> hitIds;
+        if (soslSearch != null) {
+            hitIds = new Map<Id, SObject>(Search.query(
+                'FIND :soslSearch IN ALL FIELDS RETURNING Product2(Id WHERE ' + whereClause + ' LIMIT 2000)'
+            )[0]).keySet();
+            whereClause = 'Id IN :hitIds';
+        }
+        Integer simpleCount = Database.countQuery(
+            'SELECT COUNT() FROM Product2 WHERE ProductClass = \'Simple\' AND ' + whereClause
+        );
+        Set<Id> variationIds = new Map<Id, SObject>(Database.query(
+            'SELECT Id FROM Product2 WHERE ProductClass = \'Variation\' AND ' + whereClause
+            )).keySet();
+            List<AggregateResult> parents = [
+                SELECT COUNT_DISTINCT(VariantParentId) c FROM ProductAttribute WHERE ProductId IN :variationIds
+            ];
+        return simpleCount + (Integer) parents[0].get('c');
     }
 
     public static Map<String,Object> buildPayload(
@@ -293,30 +334,11 @@ public with sharing class OrderMaskController {
             // 2. Build payload
             Map<String,Object> payload = buildPayload(orderItems, ac.ERPCustomerNumber__c, cfg, orderDataMap);
             String body = JSON.serialize(payload);
-            // 3. Callout
-            HttpRequest req = new HttpRequest();
-            req.setEndpoint('callout:ERP_API_NEW' + (cfg.EndpointPath__c ?? ''));
-            req.setMethod('POST');
-            req.setHeader('Content-Type', 'application/json');
-            req.setBody(body);
-            System.debug('ERP REQUEST: ' + body);
-
-            Http http = new Http();
-            HttpResponse res = http.send(req);
-            
-
-            if(res.getStatusCode() >= 300){
-                Map<String, Object> data = (Map<String, Object>) JSON.deserializeUntyped(res.getBody());
-                String errorMessage = data.containsKey('error') ? (String)data.get('error') : 'Unknown Error';
-                ErrorLogging__c el = new ErrorLogging__c(
-                    ProcessName__c = 'Order Mask',
-                    Error__c = errorMessage
-                );
-                insert el;
-                return new WebshopDataController.ERPResponseWrapper(errorMessage, el.Id);
+            OrderSimulationController.ReturnWrapper simulationResponse = OrderSimulationController.sendToOrderSimulation(body, cfg);
+            if(simulationResponse.isSuccess == false){
+                return new WebshopDataController.ERPResponseWrapper(simulationResponse.errorMessage, simulationResponse.errorLogId);
             }
-            System.debug(res.getBody());
-            Map<String, Object> data = (Map<String, Object>) JSON.deserializeUntyped(res.getBody());
+            Map<String, Object> data = simulationResponse.data;
             Map<String, WebshopDataController.ERPResponseInnerWrapper> successOrderItemsMap = new Map<String, WebshopDataController.ERPResponseInnerWrapper>();
             Set<String> failedOrderItemsSet = new Set<String>();
             if(data != null && data.containsKey('OrderItems')){
@@ -408,6 +430,7 @@ public with sharing class OrderMaskController {
                 PreferredShippingCondition__c = (String) orderDataMap.get('shippingCondition'), 
                 PlantLocation__c = (String) orderDataMap.get('pickupLocation'),
                 FreeDeliveryReason__c = (String) orderDataMap.get('reason'),  
+                CustomerReference__c = (String) orderDataMap.get('customerReference'),
                 Comment__c = (String) orderDataMap.get('description'),  
                 EffectiveDate = effectiveDate,
                 OrderedDate = Date.today(),
@@ -560,6 +583,7 @@ public with sharing class OrderMaskController {
                 ShippingCountryCode = shippingCountry,
                 PreferredShippingCondition__c = (String) orderDataMap.get('shippingCondition'),
                 PlantLocation__c = (String) orderDataMap.get('pickupLocation'),
+                CustomerReference__c = (String) orderDataMap.get('customerReference'),
                 FreeDeliveryReason__c = (String) orderDataMap.get('reason'),
                 Comment__c = (String) orderDataMap.get('description'),
                 EffectiveDate = effectiveDate,

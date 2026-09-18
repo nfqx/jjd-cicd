@@ -171,4 +171,14 @@
         <default>false</default>
         <label>Wert Gutschrift AHS (ZGA1)</label>
     </standardValue>
+    <standardValue>
+        <fullName>ZKLA_FW</fullName>
+        <default>false</default>
+        <label>Free Goods (ZKLA)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ZMUA</fullName>
+        <default>false</default>
+        <label>Musterauftrag (ZMUA)</label>
+    </standardValue>
 </StandardValueSet>

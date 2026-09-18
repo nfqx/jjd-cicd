@@ -1,5 +1,5 @@
 <template>
-    <div class={getFormElementClass}>
+    <div class={getFormElementClass} onfocusout={handleComponentFocusOut}>
         <label if:true={label} class={getLabelClass} for="combobox">
             <abbr if:true={required} title="required" class="slds-required">*</abbr>
             {label}
@@ -52,23 +52,26 @@
                         />
 
                         <!-- Clear selection button icon for single entry lookups -->
-                        <template if:false={isMultiEntry}>
-                            <template if:false={disabled}>
-                                <button
-                                    title="Remove selected option"
-                                    type="button"
-                                    onclick={handleClearSelection}
-                                    if:false={hideRemove}
-                                    class={getClearSelectionButtonClass}
-                                    disabled={disabled}
-                                >
-                                    <lightning-icon
-                                        icon-name="utility:close"
-                                        size="x-small"
-                                        alternative-text="Remove selected option"
-                                        class="slds-button__icon"
-                                    ></lightning-icon>
-                                </button>
+                        <template if:false={disallowRemove}>
+                            <template if:false={isMultiEntry}>
+                                <template if:false={disabled}>
+                                    <button
+                                        title="Remove selected option"
+                                        type="button"
+                                        onmousedown={handleClearMouseDown}
+                                        onclick={handleClearSelection}
+                                        if:false={hideRemove}
+                                        class={getClearSelectionButtonClass}
+                                        disabled={disabled}
+                                    >
+                                        <lightning-icon
+                                            icon-name="utility:close"
+                                            size="x-small"
+                                            alternative-text="Remove selected option"
+                                            class="slds-button__icon"
+                                        ></lightning-icon>
+                                    </button>
+                                </template>
                             </template>
                         </template>
                     </div>

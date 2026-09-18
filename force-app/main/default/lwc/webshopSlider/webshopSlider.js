@@ -366,6 +366,8 @@ export default class WebshopSlider extends NavigationMixin(LightningElement) {
                     } else {
                         sliderItem.quantityOptions = JSON.parse(JSON.stringify(this.oneToHundredOptions));
                     }
+                } else {
+                    sliderItem.quantityOptions = JSON.parse(JSON.stringify(this.oneToHundredOptions));
                 }
             });
             this.sliderData = result.data;

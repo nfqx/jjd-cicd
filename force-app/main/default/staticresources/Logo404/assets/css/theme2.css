@@ -565,14 +565,21 @@ commerce-scoped-notification .slds-scoped-notification {
  lightning-textarea.slds-form-element
      .slds-form-element__label:has(+ .slds-form-element__control > textarea:not(:placeholder-shown)) {
      font-size: var(--dxp-s-body-small-font-size);
-     top: 6px;
+     padding: 0.375rem 0.75rem 0.375rem 0.75rem;
      cursor: default;
  }
- 
+
  lightning-textarea.slds-form-element label.slds-form-element__label {
-     top: 12px;
-     left: 12px;
+     position: absolute;
+     top: var(--dxp-s-form-element-width-border, 1px);
+     left: var(--dxp-s-form-element-width-border, 1px);
+     right: var(--dxp-s-form-element-width-border, 1px);
      z-index: 1;
+     pointer-events: none;
+     background-color: var(--dxp-g-root, #ffffff);
+     border-radius: calc(var(--dxp-s-form-element-radius-border, 4px) - var(--dxp-s-form-element-width-border, 1px))
+                    calc(var(--dxp-s-form-element-radius-border, 4px) - var(--dxp-s-form-element-width-border, 1px))
+                    0 0;
  }
  
  lightning-textarea.slds-form-element .slds-textarea {
@@ -833,17 +840,10 @@ lightning-picklist lightning-select .slds-form-element__control .slds-select_con
     }
 }
 
-/* Move textarea label inside the textarea box at top left */
-lightning-textarea:has(textarea) .slds-form-element__label {
-    position: absolute;
-    top: 0.5em; 
-    left: 0.75em; 
-    pointer-events: none;
-}
 
 lightning-datepicker:has(lightning-helptext) .slds-input__icon button {
  	position: absolute;
-	right: 25px;
+	right: 22px;
 }
 lightning-datepicker lightning-helptext {
     top: 10px;
@@ -1279,9 +1279,6 @@ runtime_industries_cfg-pricing-summary-option .optionName .slds-truncate {
   
 runtime_industries_cfg-transaction-header,
 runtime_industries_cfg-favorite-container,
-runtime_industries_cfg-product-header .psm-option-value,
-runtime_industries_cfg-pricing-summary .totalsSection .slds-grid:has(.monthlyTotal),
-runtime_industries_cfg-pricing-summary .totalsSection .slds-grid:has(.annualTotal),
 runtime_industries_cfg-pricing-summary .totalsSection .slds-grid:has(.quarterlyTotal),
 runtime_industries_cfg-pricing-summary .totalsSection .slds-grid:has(.semiAnnualTotal),
 runtime_industries_cfg-pricing-summary .totalsSection .slds-grid:has(.defaultNetAmount) {

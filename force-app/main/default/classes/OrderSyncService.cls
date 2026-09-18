@@ -52,7 +52,7 @@ public with sharing class OrderSyncService {
             SELECT Id, OrderNumber, OrderReferenceNumber, Type, CreatedDate, Account.ERPCustomerNumber__c,
             SalesOrganization__c, DistributionChannel__c, OrganizationDivision__c,
             CurrencyIsoCode, RequestedDeliveryDate__c, PreferredShippingCondition__c,
-            PaymentTerms__c,
+            PaymentTerms__c, FreeDeliveryReason__c,
             SoldTo__r.ERPCustomerNumber__c,
             ShipTo__r.ERPCustomerNumber__c, BillTo__r.ERPCustomerNumber__c, Payer__r.ERPCustomerNumber__c,
                 (
@@ -82,11 +82,12 @@ public with sharing class OrderSyncService {
         payload.put('orderReferenceNumber', order.OrderReferenceNumber);
         payload.put('preferredShippingCondition', order.PreferredShippingCondition__c);
         payload.put('paymentTerms', order.PaymentTerms__c);
+        payload.put('freeDeliveryReason', order.FreeDeliveryReason__c);
         payload.put('id', order.Id);
-        payload.put('soldToPartner', order.SoldTo__r.ERPCustomerNumber__c);
-        payload.put('shipToPartner', order.ShipTo__r.ERPCustomerNumber__c);
-        payload.put('billToPartner', order.BillTo__r.ERPCustomerNumber__c);
-        payload.put('payerPartner', order.Payer__r.ERPCustomerNumber__c);
+        payload.put('soldToPartner', order.SoldTo__r != null ? order.SoldTo__r.ERPCustomerNumber__c : null);
+        payload.put('shipToPartner', order.ShipTo__r != null ? order.ShipTo__r.ERPCustomerNumber__c : null);
+        payload.put('billToPartner', order.BillTo__r != null ? order.BillTo__r.ERPCustomerNumber__c : null);
+        payload.put('payerPartner', order.Payer__r != null ? order.Payer__r.ERPCustomerNumber__c : null);
 
         List<Map<String, Object>> orderItems = new List<Map<String, Object>>();
         for (OrderItem item : order.OrderItems) {

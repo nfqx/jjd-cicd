@@ -31,4 +31,19 @@
         <default>false</default>
         <label>Mx.</label>
     </standardValue>
+    <standardValue>
+        <fullName>Company</fullName>
+        <default>false</default>
+        <label>Company</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Mr. &amp; Mrs.</fullName>
+        <default>false</default>
+        <label>Mr. &amp; Mrs.</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Familie</fullName>
+        <default>false</default>
+        <label>Familie</label>
+    </standardValue>
 </StandardValueSet>

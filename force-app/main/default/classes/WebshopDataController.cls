@@ -97,7 +97,7 @@ public without sharing class WebshopDataController {
                 wishlist = wishlistList[0];
             }
             WishlistItem item = new WishlistItem(WishlistId = wishlist.Id, Product2Id = productId, Name = [SELECT Id, Name FROM Product2 WHERE id = : productId LIMIT 1].Name);
-            System.debug(Database.insert(item, false));
+            Database.insert(item, false);
             return true;
         } catch(Exception e){
             System.debug(e);
@@ -151,7 +151,6 @@ public without sharing class WebshopDataController {
                     dataList.add(new CartItemWrapper(ci, wishlistItems.contains(ci.Product2Id)));
                 }
             }
-            System.debug(dataList);
             return dataList;
         } catch(Exception e){
             System.debug(e);
@@ -227,9 +226,17 @@ public without sharing class WebshopDataController {
       * 
       ********/
 
-     private static Set<String> retrieveAllowedProductIds(Id accountId){
+     public static Set<String> retrieveAllowedProductIds(Id accountId){
         return retrieveAllowedProductIds(accountId, null, null);
      }
+
+     public static Set<String> retrieveOwnProductIds(Id accountId){
+        Set<String> allowedProductIds = new Set<String>();
+        for(CommerceEntitlementProduct entitlement : [SELECT Id, ProductId FROM CommerceEntitlementProduct  WHERE (Product.ProductClass = 'Variation' OR Product.ProductClass = 'Simple') AND Policy.Account__c = : accountId]){
+            allowedProductIds.add(entitlement.ProductId);
+        }
+        return allowedProductIds;
+    }
 
      public static Set<String> retrieveAllowedProductIds(Id accountId, Set<String> productCodes, String excludeId){
         Set<String> allowedProductIds = new Set<String>();
@@ -525,7 +532,6 @@ public without sharing class WebshopDataController {
                     + (' (Product.Description__c LIKE \'' + String.join(stringVals, '\' OR Product.Description__c LIKE \'') + '\') OR ')
                     + (' (Product.Description2__c LIKE \'' + String.join(stringVals, '\' OR Product.Description2__c LIKE \'') + '\') OR ')
                     + (' (ProductCategory.Name LIKE \'' + String.join(stringVals, '\' OR ProductCategory.Name LIKE \'') + '\') ');
-                System.debug(fuzzyQuery);
                 for(ProductCategoryProduct pcp : Database.Query(fuzzyQuery)){
                     productCodes.add(pcp.Product.ProductCode);
                 }
@@ -592,7 +598,6 @@ public without sharing class WebshopDataController {
             }
             if(!Test.isRunningTest()){
                 ConnectApi.PricingResult pricingResult = ConnectApi.CommerceStorePricing.getProductPrices(CURRENT_STORE_ID, accountId, input);
-                System.debug(pricingResult);
                 for(ConnectApi.PricingResultLineItem result : pricingResult.pricingLineItemResults){
                     if(String.isNotBlank(result.unitPrice) && result.unitPrice != 'null'){
                         productIdsPreWithPrices.put(result.productId, result.unitPrice);
@@ -2313,33 +2318,13 @@ public without sharing class WebshopDataController {
             // 2. Build payload
             Map<String,Object> payload = buildPayload(cart, cart.CartItems, ac.ERPCustomerNumber__c, cfg);
             String body = JSON.serialize(payload);
-            System.debug('REQUEST: ' + body);
 
             // 3. Callout
-            HttpRequest req = new HttpRequest();
-            req.setEndpoint((System.Label.OrderSimulationTestMode == '1' ? 'callout:ERP_API' : 'callout:ERP_API_NEW') + (cfg.EndpointPath__c ?? ''));
-            req.setMethod('POST');
-            req.setHeader('Content-Type', 'application/json');
-            req.setBody(body);
-
-            Http http = new Http();
-            HttpResponse res = http.send(req);
-
-            System.debug('STATUS: ' + res.getStatusCode());
-            System.debug('RESPONSE: ' + res.getBody());
-
-            if(res.getStatusCode() >= 300){
-                Map<String, Object> data = (Map<String, Object>) JSON.deserializeUntyped(res.getBody());
-                String errorMessage = data.containsKey('error') ? (String)data.get('error') : 'Unknown Error';
-                ErrorLogging__c el = new ErrorLogging__c(
-                    ProcessName__c = 'Order Simulation',
-                    Error__c = errorMessage
-                );
-                insert el;
-                return new ERPResponseWrapper(errorMessage, el.Id);
+            OrderSimulationController.ReturnWrapper simulationResponse = OrderSimulationController.sendToOrderSimulation(body, cfg);
+            if(simulationResponse.isSuccess == false){
+                return new ERPResponseWrapper(simulationResponse.errorMessage, simulationResponse.errorLogId);
             }
-            System.debug(res.getBody());
-            Map<String, Object> data = (Map<String, Object>) JSON.deserializeUntyped(res.getBody());
+            Map<String, Object> data = simulationResponse.data;
             Map<String, ERPResponseInnerWrapper> successOrderItemsMap = new Map<String, ERPResponseInnerWrapper>();
             Set<String> failedOrderItemsSet = new Set<String>();
             Map<String, CartItem> ciMap = new Map<String, CartItem>();
@@ -2354,43 +2339,24 @@ public without sharing class WebshopDataController {
                         totalCartAmount += ci.TotalLineAmount;
                     }
                 }
-                if(System.Label.OrderSimulationTestMode != '1'){
-                    for(Object oiObj : (List<Object>) data.get('OrderItems')){
-                        Map<String, Object> oi = (Map<String, Object>) oiObj;
-                        if(oi.containsKey('Product2')){
-                            Map<String, Object> product2 = (Map<String, Object>) oi.get('Product2');
-                            if(product2.containsKey('Id')){
-                                String productId = (String) product2.get('Id');
-                                if(String.isNotBlank(productId)){
-                                    if(ciMap.containsKey(productId)){
-                                        CartItem ci = ciMap.get(productId);
-                                        successOrderItemsMap.put(productId, new ERPResponseInnerWrapper(ci, oi));
-                                    }
+                Integer i = 0;
+                List<CartItem> ciList = (List<CartItem>) ciMap.values();
+                for(Object oiObj : (List<Object>) data.get('OrderItems')){
+                    Map<String, Object> oi = (Map<String, Object>) oiObj;
+                    if(oi.containsKey('Product2')){
+                        Map<String, Object> product2 = (Map<String, Object>) oi.get('Product2');
+                        if(product2.containsKey('Id')){
+                            String productId = (String) product2.get('Id');
+                            if(String.isNotBlank(productId)){
+                                if(ciList.size() > i){
+                                    CartItem ci = ciList[i];
+                                    successOrderItemsMap.put(productId, new ERPResponseInnerWrapper(ci, oi));
                                 }
                             }
-                        } 
-                    }
-                } else {
-                    Integer i = 0;
-                    List<CartItem> ciList = (List<CartItem>) ciMap.values();
-                    for(Object oiObj : (List<Object>) data.get('OrderItems')){
-                        Map<String, Object> oi = (Map<String, Object>) oiObj;
-                        if(oi.containsKey('Product2')){
-                            Map<String, Object> product2 = (Map<String, Object>) oi.get('Product2');
-                            if(product2.containsKey('Id')){
-                                String productId = (String) product2.get('Id');
-                                if(String.isNotBlank(productId)){
-                                    if(ciList.size() > i){
-                                        CartItem ci = ciList[i];
-                                        successOrderItemsMap.put(productId, new ERPResponseInnerWrapper(ci, oi));
-                                    }
-                                }
-                            }
-                        } 
-                        i++;
-                    }
+                        }
+                    } 
+                    i++;
                 }
-
             }
             return new ERPResponseWrapper(ac, data, totalCartAmount, successOrderItemsMap.values());
         } catch(Exception e){
@@ -2932,7 +2898,6 @@ public without sharing class WebshopDataController {
                 PaymentTermsMapping__mdt mapping = PaymentTermsMapping__mdt.getAll().get(ac.ERPPaymentTerms__c);
                 if(mapping != null){
                     this.hasPaymentTerms = true;
-                    System.debug(mapping);
                     this.paymentTermsDays = mapping.Days__c != null ? Integer.valueOf(mapping.Days__c) : null;
                     this.paymentTermsPercent = mapping.SkontoPercent__c;
                     this.hasActualPaymentTerms = this.paymentTermsDays != null && this.paymentTermsDays > 0 && this.paymentTermsPercent != null && this.paymentTermsPercent > 0;

@@ -2,7 +2,7 @@
 <Territory2Settings xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <defaultAccountAccessLevel>Read</defaultAccountAccessLevel>
     <defaultCaseAccessLevel>None</defaultCaseAccessLevel>
-    <defaultContactAccessLevel>None</defaultContactAccessLevel>
+    <defaultContactAccessLevel>Edit</defaultContactAccessLevel>
     <defaultOpportunityAccessLevel>None</defaultOpportunityAccessLevel>
     <enableTerritoryManagement2>true</enableTerritoryManagement2>
     <opportunityFilterSettings>

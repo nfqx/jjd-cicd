@@ -571,7 +571,7 @@
         <template if:true={showSpecialMachineModal}>
             <div class="overlay"></div>
             <div class="pop-up-modal">
-                <lightning-modal-body>
+                <div class="slds-modal__content slds-p-around_medium">
                     <h2>{label.addSpecialMachine}</h2>
                     <p>
                         <lightning-input type="text" label={label.productName} value={specialMachineName} onchange={handleChangeSpecialMachineName} required></lightning-input>
@@ -582,26 +582,27 @@
                     <p>
                         <lightning-input type="number" step="0.01" label={label.priceInEuro} value={specialMachinePrice} onchange={handleChangeSpecialMachinePrice} required></lightning-input>
                     </p>
-                </lightning-modal-body>
-                <lightning-modal-footer>
+                </div>
+                <footer class="slds-modal__footer">
                     <lightning-button
                         label={label.cancel}
                         variant="neutral"
                         onclick={handleCloseSpecialMachineModal}>
                     </lightning-button>
                     <lightning-button
+                        class="slds-var-m-left_x-small"
                         label={label.save}
                         variant="brand"
                         onclick={handleSaveSpecialMachineModal}
                         disabled={specialMachineModalDisabled}>
                     </lightning-button>
-                </lightning-modal-footer>
+                </footer>
             </div>
         </template>
         <template if:true={showReasonOrSpecialMachinesTwoOrExtraDiscountModal}>
             <div class="overlay"></div>
             <div class="pop-up-modal">
-                <lightning-modal-body>
+                <div class="slds-modal__content slds-p-around_medium">
                     <p>
                         <lightning-input readonly type="percent" step="0.01" label={label.minDownPaymentText} value={minDownPayment}></lightning-input>
                         <lightning-input readonly type="percent" step="0.01" label={label.maxDiscount} value={machineMaxDiscount}></lightning-input>
@@ -676,20 +677,21 @@
                         <h1>{label.additionalDiscount}</h1>
                         <lightning-input type="currency" step="0.01" label={label.purchasePrice} onchange={handleChangeSpecialMachinesPurchasePrice} value={specialMachinesPurchasePrice}></lightning-input>
                     </template>
-                </lightning-modal-body>
-                <lightning-modal-footer>
+                </div>
+                <footer class="slds-modal__footer">
                     <lightning-button
                         label={label.cancel}
                         variant="neutral"
                         onclick={handleCloseReasonModal}>
                     </lightning-button>
                     <lightning-button
+                        class="slds-var-m-left_x-small"
                         label={label.save}
                         variant="brand"
                         onclick={handleSaveReasonModal}
                         disabled={reasonModalDisabled}>
                     </lightning-button>
-                </lightning-modal-footer>
+                </footer>
             </div>
         </template>
     </template>

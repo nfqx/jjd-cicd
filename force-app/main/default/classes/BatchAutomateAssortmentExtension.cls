@@ -23,13 +23,14 @@ public class BatchAutomateAssortmentExtension implements Schedulable, Database.B
                 //ac.WebshopFrontpageWarning__c = System.Label.WebshopDoNotTranslateAssortmentExtensionBG;
                 buyerGroupMembersToInsert.add(new BuyerGroupMember(
                     BuyerGroupId = ASSORTMENT_EXTENSION_BUYER_GROUP,
-                    BuyerId = ac.Id
+                    BuyerId = ac.Id,
+                    Dynamic__c = TRUE
                 ));
             }
         }
 
         update scope;
-        delete [SELECT Id FROM BuyerGroupMember WHERE BuyerGroupId = : ASSORTMENT_EXTENSION_BUYER_GROUP AND BuyerId IN : chainAccountsMap.keySet()];
+        delete [SELECT Id FROM BuyerGroupMember WHERE BuyerGroupId = : ASSORTMENT_EXTENSION_BUYER_GROUP AND BuyerId IN : chainAccountsMap.keySet() AND Dynamic__c = TRUE];
         if(!buyerGroupMembersToInsert.isEmpty()){
             Database.insert(buyerGroupMembersToInsert, false);
         }

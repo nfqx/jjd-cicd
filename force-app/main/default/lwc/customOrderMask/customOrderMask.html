@@ -32,7 +32,7 @@
             </div>
         </div>
     </template>
-    <div class="slds-p-around_medium" style="background-color: #f3f3f3; min-height: 100vh;">
+    <div class="slds-p-around_medium" style="background-color: #f3f3f3;">
         <template if:false={orderSent}>
             <lightning-layout multiple-rows="true" gutter="medium" horizontal-align={layoutHorizontalAlign} vertical-align="start">
                 
@@ -97,11 +97,12 @@
                                             </lightning-combobox>
                                         </lightning-layout-item>
                                         <lightning-layout-item size="12" large-device-size="6" class="slds-m-bottom_medium slds-p-horizontal_small">
-                                            <lightning-input 
-                                                type="text" 
-                                                label="Kunden-Bestellnummer" 
-                                                value={orderNumber}
-                                                read-only>
+                                            <lightning-input
+                                                type="text"
+                                                label="Kunden-Bestellnummer"
+                                                value={orderData.customerReference}
+                                                onchange={handleCustomerReferenceChange}
+                                                required>
                                             </lightning-input>
                                         </lightning-layout-item>
                                         <lightning-layout-item size="12" large-device-size="6" class="slds-m-bottom_medium slds-p-horizontal_small">
@@ -234,14 +235,22 @@
 
                                                                 <td data-label="Einheit">
                                                                     <template if:true={prod.hasUnitChoice}>
-                                                                        <lightning-combobox 
+                                                                        <!--lightning-combobox 
                                                                             variant="label-hidden"
                                                                             options={prod.unitOptions}
                                                                             value={prod.selectedId}
                                                                             data-key={prod.key}
                                                                             dropdown-alignment="auto"
                                                                             onchange={handleUnitChange}>
-                                                                        </lightning-combobox>
+                                                                        </lightning-combobox-->
+                                                                        <lightning-select
+                                                                            label="Einheit"
+                                                                            variant="label-hidden"
+                                                                            options={prod.unitOptions}
+                                                                            value={prod.selectedId}
+                                                                            data-key={prod.key}
+                                                                            onchange={handleUnitChange}>
+                                                                        </lightning-select>
                                                                     </template>
                                                                     <template if:false={prod.hasUnitChoice}>
                                                                         <div class="slds-p-top_x-small slds-p-left_xx-small">{prod.unitLabel}</div>
@@ -267,6 +276,12 @@
                                                         </template>
                                                     </tbody>
                                                 </table>
+                                                <template if:true={isLoadingProducts}>
+                                                    <div class="slds-is-relative" style="min-height: 3rem;">
+                                                        <lightning-spinner alternative-text="Artikel werden geladen..." size="small"></lightning-spinner>
+                                                    </div>
+                                                </template>
+                                                <div class="product-list-sentinel"></div>
                                             </div>
                                         </lightning-layout-item>
 
@@ -441,7 +456,7 @@
                                                         </div>
                                                         <div>
                                                             <p class="slds-text-color_weak slds-text-body_small slds-m-bottom_xxx-small">Kunden-Bestellnr.</p>
-                                                            <p class="slds-font-weight_medium" style="color: #032d60;">{summaryData.orderReference}</p>
+                                                            <p class="slds-font-weight_medium" style="color: #032d60;">{orderData.customerReference}</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1074,10 +1089,10 @@
         <div class="slds-backdrop slds-backdrop_open discount-modal-backdrop"></div>
     </template>
     <template if:false={orderSent}>
-        <div slot="footer" class="slds-grid slds-grid_align-spread">
+        <div slot="footer" class="slds-grid slds-grid_align-spread slds-p-around_small" style="background-color:#ffffff; position:sticky; bottom:0">
             <lightning-button 
                 if:true={isStepOne}
-                label="Abbrechen" 
+                label="Abbrechen"  
                 variant="base" 
                 icon-name="utility:close" 
                 onclick={handleCancel}>

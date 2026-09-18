@@ -45,10 +45,12 @@ export default class Lookup extends NavigationMixin(LightningElement) {
     @api alwaysShowCreate = false;
     @api handleCreateNewRecordInParentComponent = false;
     @api doSearchOnInputFocus = false;
+    @api disallowRemove = false;
     @api hideLastViewed = false;
     @api objectApiName = null;
     @api lookupFilter = '';
     @api helptext = '';
+    @api prefill = null;
 
     // Template properties
     searchResultsLocalState = [];
@@ -69,12 +71,14 @@ export default class Lookup extends NavigationMixin(LightningElement) {
     
     // PUBLIC FUNCTIONS AND GETTERS/SETTERS
     @api
-    set selection(initialSelection) {
-        if(initialSelection) {
-            this._curSelection = Array.isArray(initialSelection) ? initialSelection : [initialSelection];
-            this.processSelectionUpdate(false);
-        }
-    }    
+    set selection(value) {
+        this._curSelection = value
+            ? (Array.isArray(value) ? [...value] : [value])
+            : [];
+
+        this.processSelectionUpdate(false);
+    }
+
     get selection() {
         return this._curSelection;
     }
@@ -213,6 +217,9 @@ export default class Lookup extends NavigationMixin(LightningElement) {
         // Blur input after single select lookup selection
         if (!this.isMultiEntry && this.hasSelection()) {
             this._hasFocus = false;
+        } else if (!this.hasSelection()) {
+            const inputEl = this.template.querySelector('input');
+            this._hasFocus = !!inputEl && inputEl === this.template.activeElement;
         }
         // If selection was changed by user, notify parent components
         if (isUserInteraction) {
@@ -222,6 +229,24 @@ export default class Lookup extends NavigationMixin(LightningElement) {
         }
     }
     // EVENT HANDLING
+    handleComponentFocusOut(event) {
+        // An internal result-list interaction is currently happening.
+        if (this._cancelBlur) {
+            return;
+        }
+
+        const nextFocusedElement = event.relatedTarget;
+
+        // Focus moved to another element inside the lookup.
+        if (
+            nextFocusedElement &&
+            event.currentTarget.contains(nextFocusedElement)
+        ) {
+            return;
+        }
+
+        this.dispatchEvent(new CustomEvent('lookupblur'));
+    }
     handleInput(event) {
         // Prevent action if selection is not allowed
         if (!this.isSelectionAllowed()) {
@@ -286,12 +311,13 @@ export default class Lookup extends NavigationMixin(LightningElement) {
         const mainButton = 0;
         if (event.button === mainButton) {
             this._cancelBlur = true;
+            event.preventDefault();
         }
     }
     handleComboboxMouseUp() {
         this._cancelBlur = false;
         // Re-focus to text input for the next blur event
-        this.template.querySelector('input').focus();
+        this.template.querySelector('input')?.focus();
     }
     handleFocus() {
         // Prevent action if selection is not allowed
@@ -325,12 +351,21 @@ export default class Lookup extends NavigationMixin(LightningElement) {
         // Process selection update
         this.processSelectionUpdate(true);
     }
+    handleClearMouseDown(event) {
+        this._cancelBlur = true;
+        // Keep focus on the lookup input when the X is clicked.
+        event.preventDefault();
+    }
+
     @api
     handleClearSelection() {
         this._curSelection = [];
-        // Process selection update
         this.processSelectionUpdate(true);
         this._hasFocus = true;
+
+        // Ensure the input remains focused after the selection rerender.
+        this.template.querySelector('input')?.focus();
+        this._cancelBlur = false;
     }
     handleNewRecordClick(event) {
         //We could handel the creation of new record here or let the Parent component handle that

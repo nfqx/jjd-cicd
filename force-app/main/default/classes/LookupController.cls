@@ -2,6 +2,8 @@ public without sharing class LookupController {
     private final static Integer MAX_RESULTS = 100;
     private final static String LAST_VIEWED_DATE_FIELD = 'LastViewedDate';
     private final static String NAME_FIELD = 'Name';
+    private static final String ORDER_PREFIX = Schema.getGlobalDescribe().get('Order').getDescribe().getKeyPrefix();
+    private static final String INVOICE_PREFIX = Schema.getGlobalDescribe().get('Invoice').getDescribe().getKeyPrefix();
 
     /**
      * Search related records
@@ -28,7 +30,7 @@ public without sharing class LookupController {
                 }
             }
         }
-        return searchWithReferenceObjectTypes(referenceObjectTypes, searchTerm, limitToObjectTypes, selectedIds, lookupFilters, additionalFields, new List<String>(), new List<String>(), displayField);
+        return searchWithReferenceObjectTypes(referenceObjectTypes, searchTerm, limitToObjectTypes, selectedIds, lookupFilters, additionalFields, new List<String>(), new List<String>(), displayField, new Map<String, Decimal>());
     }
     /**
      * Search related records
@@ -55,12 +57,51 @@ public without sharing class LookupController {
                 }
             }
         }
-        return searchWithReferenceObjectTypes(referenceObjectTypes, searchTerm, limitToObjectTypes, selectedIds, lookupFilters, additionalFields, listIds, listIdsExclude, displayField);
+        return searchWithReferenceObjectTypes(referenceObjectTypes, searchTerm, limitToObjectTypes, selectedIds, lookupFilters, additionalFields, listIds, listIdsExclude, displayField, new Map<String, Decimal>());
+    }
+    @AuraEnabled(Cacheable=false)
+    public static List<LookupSearchResult> searchWithIdsAndReference(String parentObjectApiName, String lookupApiName, String searchTerm, List<String> limitToObjectTypes,  List<String> selectedIds, List<LookupFilter> lookupFilters, List<String> additionalFields, List<String> listIds, List<String> listIdsExclude, String displayField, String reference) {
+        // get lookup field meta data
+        List<String> referenceObjectTypes = MetadataUtil.getLookupReferenceObjectTypes(parentObjectApiName, lookupApiName, true);
+        Map<String, Decimal> priceMap = new Map<String, Decimal>();
+        Boolean withReference = false;
+        if(String.isNotBlank(reference)){
+            withReference = true;
+            if(reference.startsWith(INVOICE_PREFIX)){
+                for(InvoiceLine ii : [SELECT Id, Product2Id, UnitPrice FROM InvoiceLine WHERE InvoiceId = : reference AND Product2Id != NULL]){
+                    if(!listIds.contains(ii.Product2Id)){
+                        listIds.add(ii.Product2Id);
+                        priceMap.put(ii.Product2Id, ii.UnitPrice);
+                    }
+                }
+            } else if(reference.startsWith(ORDER_PREFIX)){
+                for(OrderItem oi : [SELECT Id, Product2Id, UnitPrice FROM OrderItem WHERE OrderId = : reference AND Product2Id != NULL]){
+                    if(!listIds.contains(oi.Product2Id)){
+                        listIds.add(oi.Product2Id);
+                        priceMap.put(oi.Product2Id, oi.UnitPrice);
+                    }
+                }
+            }
+            if(listIds.isEmpty()){
+                return new List<LookupSearchResult>();
+            }
+        }
+        // remove unnecessary object types
+        if(limitToObjectTypes != null && limitToObjectTypes.size() > 0) {
+            for(Integer i = (referenceObjectTypes.size() -1); i >= 0; i--) {
+                String objectType = referenceObjectTypes.get(i);
+
+                if(limitToObjectTypes.contains(objectType) == false) {
+                    referenceObjectTypes.remove(i);
+                }
+            }
+        }
+        return searchWithReferenceObjectTypes(referenceObjectTypes, searchTerm, limitToObjectTypes, selectedIds, lookupFilters, additionalFields, listIds, listIdsExclude, displayField, withReference ? priceMap : null);
     }
 
 
     @AuraEnabled(Cacheable=false)
-    public static List<LookupSearchResult> searchWithReferenceObjectTypes(List<String> referenceObjectTypes, String searchTerm, List<String> limitToObjectTypes,  List<String> selectedIds, List<LookupFilter> lookupFilters, List<String> additionalFields, List<String> listIds, List<String> listIdsExclude, String displayField)
+    public static List<LookupSearchResult> searchWithReferenceObjectTypes(List<String> referenceObjectTypes, String searchTerm, List<String> limitToObjectTypes,  List<String> selectedIds, List<LookupFilter> lookupFilters, List<String> additionalFields, List<String> listIds, List<String> listIdsExclude, String displayField, Map<String, Decimal> priceMap)
     {
         List<LookupSearchResult> results = new List<LookupSearchResult>();
 
@@ -91,18 +132,24 @@ public without sharing class LookupController {
                     objectSosl += ', ' +  additionalField;
                 }
             }
-            if(String.isNotBlank(displayField)){
+            if(String.isNotBlank(displayField) && displayField != nameField && !additionalFields.contains(displayField)){
                 objectSosl += ', ' +  displayField;
             }
 
+            if(
+                (selectedIds != null && selectedIds.size() > 0) ||
+                (lookupFilters != null && lookupFilters.size() > 0) ||
+                !listIdsExclude.isEmpty() ||
+                !listIds.isEmpty()
+            ){
+                objectSosl += ' WHERE ';
+            }
+
             if(selectedIds != null && selectedIds.size() > 0) {
-                objectSosl += ' WHERE Id NOT IN :selectedIds AND ';
+                objectSosl += '  Id NOT IN :selectedIds AND ';
             }
 
             if(lookupFilters != null && lookupFilters.size() > 0) {
-                if(selectedIds == null || selectedIds.size() == 0) {
-                    objectSosl += ' WHERE ';
-                }
                 for(LookupFilter lookupFilter : lookupFilters) {
                     if(lookupFilter.objectType == reference) {
                         objectSosl += lookupFilter.filter + ' AND ';
@@ -117,6 +164,7 @@ public without sharing class LookupController {
             if(!listIds.isEmpty()){
                 objectSosl += ' Id IN :listIds AND ';
             }
+            objectSosl = objectSosl.removeEnd('WHERE ');
             objectSosl = objectSosl.removeEnd('AND ');
             objectSosl += ')';
             objectSosls.add(objectSosl);
@@ -158,6 +206,10 @@ public without sharing class LookupController {
                     subtitle = subtitle.removeEnd(' - ');
                 } else {
                     subtitle = sobj.getSObjectType().getDescribe().getLabel();
+                }
+                if(priceMap != null){
+                    Id sobjId = String.valueOf(sobj.get('Id'));
+                    additionalFieldMap.put('price', priceMap.get(sobjId));
                 }
                 
 

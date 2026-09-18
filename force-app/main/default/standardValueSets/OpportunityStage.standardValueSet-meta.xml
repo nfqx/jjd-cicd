@@ -57,6 +57,15 @@
         <won>false</won>
     </standardValue>
     <standardValue>
+        <fullName>Master Data Validation</fullName>
+        <default>false</default>
+        <label>Master Data Validation</label>
+        <closed>false</closed>
+        <forecastCategory>Pipeline</forecastCategory>
+        <probability>95</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
         <fullName>Closed Won</fullName>
         <default>false</default>
         <description>Sold!</description>

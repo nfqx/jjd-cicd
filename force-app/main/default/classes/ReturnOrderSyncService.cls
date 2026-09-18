@@ -35,7 +35,7 @@ public with sharing class ReturnOrderSyncService {
         sendToMuleSoft('{"data":[' + String.join(payloads, ', ') + ']}', getMulesoftEndpoint(), 'POST');
     }
 
-    // JJD-26 — Credit Memo / Billing Release. Triggered when BillingBlockReason__c is cleared.
+    // Credit Memo / Billing Release. Triggered when BillingBlockReason__c is cleared.
     // Pushes the release to MuleSoft, which removes the billing block on the SAP CustomerReturn
     // (PATCH A_CustomerReturn, identified by ERPReturnOrderNumber__c). Mirrors OrderSyncService.
     public static void pushBillingReleases(Set<Id> returnOrderIds) {
@@ -92,11 +92,7 @@ public with sharing class ReturnOrderSyncService {
                    SalesOrganization__c, DistributionChannel__c, OrganizationDivision__c,
                    ReturnReason__c, ReturnOrderType__c, PurchaseOrderbyCustomer__c,
                    CurrencyIsoCode, RequestedPickupDate__c,
-                   // Fallback anchor for partner roles (JJD-28 "always populated") — the
-                   // ReturnOrder's own Account ERP number, mirrors OrderSyncService.
                    Account.ERPCustomerNumber__c,
-                   // ReferenceSDDocument is filled from the linked Order or Invoice (mapping JJD-28),
-                   // not from a dedicated field. Only one of the two lookups is populated in SF.
                    Order.ERP_Order_Number__c,
                    LegacyInvoice__r.ERPInvoiceNumber__c,
                    SoldTo__r.ERPCustomerNumber__c,
@@ -105,7 +101,8 @@ public with sharing class ReturnOrderSyncService {
                    Payer__r.ERPCustomerNumber__c,
                    (SELECT Product2.ProductCode, Product2.BaseProductCode__c,
                            Product2.QuantityUnitOfMeasure,
-                           QuantityExpected, QuantityUnitOfMeasure, CurrencyIsoCode
+                           QuantityExpected, QuantityUnitOfMeasure, CurrencyIsoCode,
+                           CreditIssuance__c
                     FROM ReturnOrderLineItems)
             FROM ReturnOrder
             WHERE Id IN :returnOrderIds
@@ -128,7 +125,8 @@ public with sharing class ReturnOrderSyncService {
                     'material'             => item.Product2 == null ? null : (String.isNotBlank(item.Product2.BaseProductCode__c) ? item.Product2.BaseProductCode__c : item.Product2.ProductCode),
                     'requestedQuantity'    => item.QuantityExpected,
                     'requestedQuantityUnit'=> item.Product2 != null && String.isNotBlank(item.Product2.QuantityUnitOfMeasure) ? item.Product2.QuantityUnitOfMeasure : item.QuantityUnitOfMeasure,
-                    'transactionCurrency'  => item.CurrencyIsoCode
+                    'transactionCurrency'  => item.CurrencyIsoCode,
+                    'creditIssuance'       => item.CreditIssuance__c
                 });
             }
         }

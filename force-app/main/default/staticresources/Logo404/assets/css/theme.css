@@ -124,9 +124,6 @@ runtime_industries_cfg-action-footer .spacer-element .slds-docked-form-footer {
 
 runtime_industries_cfg-transaction-header,
 runtime_industries_cfg-favorite-container,
-runtime_industries_cfg-product-header .psm-option-value,
-runtime_industries_cfg-pricing-summary .totalsSection .slds-grid:has(.monthlyTotal),
-runtime_industries_cfg-pricing-summary .totalsSection .slds-grid:has(.annualTotal),
 runtime_industries_cfg-pricing-summary .totalsSection .slds-grid:has(.quarterlyTotal),
 runtime_industries_cfg-pricing-summary .totalsSection .slds-grid:has(.semiAnnualTotal),
 runtime_industries_cfg-pricing-summary .totalsSection .slds-grid:has(.defaultNetAmount) {

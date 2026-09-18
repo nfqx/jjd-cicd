@@ -320,6 +320,8 @@ export default class WebshopCartProductSummary extends  NavigationMixin(Lightnin
                     } else {
                         cartItem.quantityOptions = JSON.parse(JSON.stringify(this.oneToHundredOptions));
                     }
+                } else {
+                    cartItem.quantityOptions = JSON.parse(JSON.stringify(this.oneToHundredOptions));
                 }
                 this.cartId = cartItem.cartItem.CartId;
                 if(cartItem.cartItem.Type != 'Charge'){

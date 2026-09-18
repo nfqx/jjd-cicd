@@ -9,5 +9,6 @@
     <commerceProcedurePlan>false</commerceProcedurePlan>
     <enableCheckoutHSOIPref>false</enableCheckoutHSOIPref>
     <extendCommerceContext>false</extendCommerceContext>
+    <externalProductMediaEnabled>false</externalProductMediaEnabled>
     <lowestUnitPriceTracking>false</lowestUnitPriceTracking>
 </CommerceSettings>

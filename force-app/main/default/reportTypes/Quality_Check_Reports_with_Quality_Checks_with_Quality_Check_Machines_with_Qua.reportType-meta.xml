@@ -176,6 +176,71 @@
             <field>Planned_Check_Date__c</field>
             <table>Quality_Check_Report__c.Quality_Checks__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Contact__c</field>
+            <table>Quality_Check_Report__c.Quality_Checks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ContactPersonOnSite__c</field>
+            <table>Quality_Check_Report__c.Quality_Checks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Quality_Check_Planned__c</field>
+            <table>Quality_Check_Report__c.Quality_Checks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Weeknumber_Planned_Date__c</field>
+            <table>Quality_Check_Report__c.Quality_Checks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>QualityCheckDelegate__c</field>
+            <table>Quality_Check_Report__c.Quality_Checks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>City__c</field>
+            <table>Quality_Check_Report__c.Quality_Checks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>AccountNumber__c</field>
+            <table>Quality_Check_Report__c.Quality_Checks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ParentAccountNumberName__c</field>
+            <table>Quality_Check_Report__c.Quality_Checks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ParentAccountAddress__c</field>
+            <table>Quality_Check_Report__c.Quality_Checks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Street__c</field>
+            <table>Quality_Check_Report__c.Quality_Checks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ZipCode__c</field>
+            <table>Quality_Check_Report__c.Quality_Checks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>PlanningStatus__c</field>
+            <table>Quality_Check_Report__c.Quality_Checks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>DaysUntilDue__c</field>
+            <table>Quality_Check_Report__c.Quality_Checks__r</table>
+        </columns>
         <masterLabel>Quality Checks</masterLabel>
     </sections>
     <sections>
@@ -216,7 +281,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Machine_Placeholder__c</field>
+            <field>MachineNameModel__c</field>
             <table>Quality_Check_Report__c.Quality_Checks__r.Quality_Check_Machines__r</table>
         </columns>
         <columns>
@@ -237,6 +302,26 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Additional_Comments__c</field>
+            <table>Quality_Check_Report__c.Quality_Checks__r.Quality_Check_Machines__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CustomerMachine__c</field>
+            <table>Quality_Check_Report__c.Quality_Checks__r.Quality_Check_Machines__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>PresentationOkay__c</field>
+            <table>Quality_Check_Report__c.Quality_Checks__r.Quality_Check_Machines__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>EILLESTeaPresent__c</field>
+            <table>Quality_Check_Report__c.Quality_Checks__r.Quality_Check_Machines__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>WhichCompetitor__c</field>
             <table>Quality_Check_Report__c.Quality_Checks__r.Quality_Check_Machines__r</table>
         </columns>
         <masterLabel>Quality Check Machines</masterLabel>
@@ -303,5 +388,33 @@
             <table>Quality_Check_Report__c.Quality_Checks__r.Quality_Check_Machines__r.Quality_Check_Entrie__r</table>
         </columns>
         <masterLabel>Quality Check Entrie</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>QualityCheckID__c</field>
+            <table>Quality_Check_Report__c.Quality_Checks__r.Quality_Check_Machines__r.Quality_Check_Entrie__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Machine__c</field>
+            <table>Quality_Check_Report__c.Quality_Checks__r.Quality_Check_Machines__r.Quality_Check_Entrie__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>OtherProduct__c</field>
+            <table>Quality_Check_Report__c.Quality_Checks__r.Quality_Check_Machines__r.Quality_Check_Entrie__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ProductName__c</field>
+            <table>Quality_Check_Report__c.Quality_Checks__r.Quality_Check_Machines__r.Quality_Check_Entrie__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RecommendationImprovement__c</field>
+            <table>Quality_Check_Report__c.Quality_Checks__r.Quality_Check_Machines__r.Quality_Check_Entrie__r</table>
+        </columns>
+        <masterLabel>Quality Check Entries</masterLabel>
     </sections>
 </ReportType>

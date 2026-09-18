@@ -37,23 +37,13 @@ public with sharing class FTPOrderProcessingBatch implements Database.Batchable<
                 Map<String,Object> payload = buildPayload(lines, productsBySku, acc.ERPCustomerNumber__c, cfg);
                 String body = JSON.serialize(payload);
 
-                // 3. Callout
-                HttpRequest req = new HttpRequest();
-                req.setEndpoint('callout:ERP_API_NEW' + (cfg.EndpointPath__c ?? ''));
-                req.setMethod('POST');
-                req.setHeader('Content-Type', 'application/json');
-                req.setBody(body);
-
-                Http http = new Http();
-                HttpResponse res = http.send(req);
-                
-
-                if(res.getStatusCode() >= 300){
+                OrderSimulationController.ReturnWrapper simulationResponse = OrderSimulationController.sendToOrderSimulation(body, cfg);
+                if(simulationResponse.isSuccess == false){
                     throw new CalloutException(
-                        'ERP Order failed: ' + res.getBody()
+                        'ERP Order failed: ' + simulationResponse.errorMessage
                     );
                 }
-                Map<String, Object> data = (Map<String, Object>) JSON.deserializeUntyped(res.getBody());
+                Map<String, Object> data = simulationResponse.data;
                 Map<String, WebshopDataController.ERPResponseInnerWrapper> successOrderItemsMap = new Map<String, WebshopDataController.ERPResponseInnerWrapper>();
                 Set<String> failedOrderItemsSet = new Set<String>();
                 if(data != null && data.containsKey('OrderItems')){

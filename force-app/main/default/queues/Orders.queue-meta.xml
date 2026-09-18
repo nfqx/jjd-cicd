@@ -3,6 +3,11 @@
     <doesIncludeBosses>false</doesIncludeBosses>
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <name>Bestellungen</name>
+    <queueMembers>
+        <users>
+            <user>lapeters@darboven.com.jjd</user>
+        </users>
+    </queueMembers>
     <queueRoutingConfig>Order</queueRoutingConfig>
     <queueSobject>
         <sobjectType>Case</sobjectType>

@@ -1,3 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata"/>
-
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>JJD_Allgemeine_Anfragen_with_J_J_Darboven_GmbH</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>JJD - Allgemeine Anfragen with &quot;J.J. Darboven GmbH&quot;</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>J_J_Darboven_GmbH</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <queue>General_Inquiries</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>JJD_Case_Sharing_mit_J_J_Darboven_GmbH</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>JJD - Case Sharing mit J.J. Darboven GmbH</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>J_J_Darboven_GmbH</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>J_J_Darboven_GmbH</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>JJD_E_Commerce_with_J_J_Darboven_GmbH</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>JJD - E-Commerce with J.J. Darboven GmbH</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>J_J_Darboven_GmbH</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <queue>E_Commerce</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>JJD_Endkundenanfragen_with_J_J_Darboven_GmbH</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>JJD - Endkundenanfragen with J.J. Darboven GmbH</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>J_J_Darboven_GmbH</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <queue>End_Customer_Inquiry</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>JJD_JJD_Support_with_J_J_Darboven_GmbH</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>JJD - JJD Support with J.J. Darboven GmbH</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>J_J_Darboven_GmbH</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <queue>JJD_Support</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>JJD_JJD_VIP_Support_with_J_J_Darboven_GmbH</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>JJD - JJD VIP Support with J.J. Darboven GmbH</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>J_J_Darboven_GmbH</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <queue>JJD_VIP_Support</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>JJD_JJD_non_Routable_with_J_J_Darboven_GmbH</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>JJD - JJD non Routable with J.J. Darboven GmbH</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>J_J_Darboven_GmbH</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <queue>JJD_Non_Routable</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>JJD_Logistik_with_J_J_Darboven_GmbH</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>JJD - Logistik with J.J. Darboven GmbH</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>J_J_Darboven_GmbH</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <queue>Logistics</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>JJD_Queue_Angebote_mit_J_J_Darboven_GmbH</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>JJD - Queue Angebote mit J.J. Darboven GmbH</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>J_J_Darboven_GmbH</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <queue>Offers</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>JJD_Queue_Bestellungen_in_J_J_Darboven_GmbH</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>JJD - Queue Bestellungen in J.J. Darboven GmbH</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>J_J_Darboven_GmbH</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <queue>Orders</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>JJD_Reklamationen_with_J_J_Darboven_GmbH</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>JJD - Reklamationen with J.J. Darboven GmbH</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>J_J_Darboven_GmbH</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <queue>Complaints</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>JJD_Stammdaten_with_J_J_Darboven_GmbH</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>JJD - Stammdaten with J.J. Darboven GmbH</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>J_J_Darboven_GmbH</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <queue>MasterData</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>JJD_Webshop_with_J_J_Darboven_GmbH</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>JJD - Webshop with J.J. Darboven GmbH</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>J_J_Darboven_GmbH</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <queue>Webshop</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

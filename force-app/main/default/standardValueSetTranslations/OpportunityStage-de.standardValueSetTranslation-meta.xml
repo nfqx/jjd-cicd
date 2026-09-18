@@ -13,6 +13,10 @@
         <translation>Entdeckung</translation>
     </valueTranslation>
     <valueTranslation>
+        <masterLabel>Master Data Validation</masterLabel>
+        <translation><!-- Master Data Validation --></translation>
+    </valueTranslation>
+    <valueTranslation>
         <masterLabel>Qualification</masterLabel>
         <translation>Qualifizierung</translation>
     </valueTranslation>

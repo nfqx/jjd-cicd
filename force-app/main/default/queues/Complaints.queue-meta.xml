@@ -3,6 +3,12 @@
     <doesIncludeBosses>false</doesIncludeBosses>
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <name>Reklamationen</name>
+    <queueMembers>
+        <users>
+            <user>lapeters@darboven.com.jjd</user>
+            <user>tmohr@darboven.com.jjd</user>
+        </users>
+    </queueMembers>
     <queueRoutingConfig>Complaints</queueRoutingConfig>
     <queueSobject>
         <sobjectType>Case</sobjectType>

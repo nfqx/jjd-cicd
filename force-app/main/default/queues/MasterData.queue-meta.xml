@@ -3,6 +3,7 @@
     <doesIncludeBosses>false</doesIncludeBosses>
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <name>Stammdaten</name>
+    <queueRoutingConfig>MasterData</queueRoutingConfig>
     <queueSobject>
         <sobjectType>Case</sobjectType>
     </queueSobject>

@@ -13,18 +13,15 @@ public class ERPIntegrationEventPublisherTest {
     static void setup() {
         Account testAccount1 = new Account(
             Name = 'Test Account 1',
-            ERPCustomerNumber__c = null,
-            ERPLockStatus__c = 'Sanction List'
+            ERPCustomerNumber__c = null
         );
         Account testAccount2 = new Account(
             Name = 'Test Account 2',
-            ERPCustomerNumber__c = 'CUST123',
-            ERPLockStatus__c = null
+            ERPCustomerNumber__c = 'CUST123'
         );
         Account testAccount3 = new Account(
             Name = 'Test Account 3',
-            ERPCustomerNumber__c = 'CUST1233',
-            ERPLockStatus__c = 'Credit Rating'
+            ERPCustomerNumber__c = 'CUST1233'
         );
         insert new List<Account>{testAccount1, testAccount2, testAccount3};
 
@@ -78,10 +75,10 @@ public class ERPIntegrationEventPublisherTest {
     }
 
     @IsTest
-    static void publishNewAccountEvent_WhenOpportunityStageChangesToQualified() {
+    static void opportunityUpdate_shouldNotPublishNewAccountEvent_whenStageMovesToAngebotsphase() {
         //Having
-        Account testAccount = [SELECT Id FROM Account WHERE ERPCustomerNumber__c = null AND ERPLockStatus__c != 'Not Sanctioned' LIMIT 1];
-        Opportunity testOpp = [SELECT Id, StageName, Name FROM Opportunity WHERE AccountId = :testAccount.Id LIMIT 1];
+        Account testAccount = [SELECT Id FROM Account WHERE ERPCustomerNumber__c = null LIMIT 1];
+        Opportunity testOpp = [SELECT Id, StageName FROM Opportunity WHERE AccountId = :testAccount.Id LIMIT 1];
 
         //When
         Test.startTest();
@@ -90,19 +87,123 @@ public class ERPIntegrationEventPublisherTest {
         Test.stopTest();
 
         //Then
-        System.assertEquals(1, newAccountEventsCount, 'Should publish one NewAccount__e event');
-        System.assertEquals(0, contactChangedEventsCount, 'Should not publish contact changed events');
-        System.assertEquals(0, accountChangedEventsCount, 'Should not publish account changed events');
-        System.assertEquals(0, bankAccountsCreated, 'Should not publish bank account created events');
-        System.assertEquals(0, bankAccountsUpdated, 'Should not publish bank account updated events');
+        System.assertEquals(0, newAccountEventsCount,
+            'The Opportunity stage no longer decides when an Account is created in SAP');
     }
 
     @IsTest
-    static void returnValidAccounts_WhenGettingNewAccountsForERP() {
+    static void sendNewAccountsToERP_shouldPublishOneEvent_whenAccountHasNoERPNumber() {
         //Having
-        Account testAccount1 = [SELECT Id FROM Account WHERE ERPCustomerNumber__c = null AND ERPLockStatus__c != 'Credit Rating' LIMIT 1];
-        Account testAccount3 = [SELECT Id FROM Account WHERE ERPLockStatus__c = 'Credit Rating' LIMIT 1];
-        Set<Id> accountIds = new Set<Id>{testAccount1.Id, testAccount3.Id};
+        Account testAccount = [SELECT Id FROM Account WHERE ERPCustomerNumber__c = null LIMIT 1];
+
+        //When
+        Test.startTest();
+        ERPIntegrationEventPublisher.sendNewAccountsToERP(new Set<Id>{testAccount.Id});
+        Test.stopTest();
+
+        //Then
+        System.assertEquals(1, newAccountEventsCount, 'Should publish one NewAccount__e event');
+        System.assertEquals(0, accountChangedEventsCount, 'Should not publish account changed events');
+    }
+
+    @IsTest
+    static void sendNewAccountsToERP_shouldNotPublish_whenAccountAlreadyHasERPNumber() {
+        //Having
+        Account testAccount = [SELECT Id FROM Account WHERE ERPCustomerNumber__c = 'CUST123' LIMIT 1];
+
+        //When
+        Test.startTest();
+        ERPIntegrationEventPublisher.sendNewAccountsToERP(new Set<Id>{testAccount.Id});
+        Test.stopTest();
+
+        //Then
+        System.assertEquals(0, newAccountEventsCount, 'An Account already in SAP must not be created again');
+    }
+
+    @IsTest
+    static void sendNewAccountsToERP_shouldPublishOnEveryCall_whenInsertIsRetried() {
+        //Having - a partial-success save runs the insert trigger again with static variables kept,
+        // and the retry has to publish because the first attempt's events were rolled back
+        Account testAccount = [SELECT Id FROM Account WHERE ERPCustomerNumber__c = null LIMIT 1];
+
+        //When
+        Test.startTest();
+        ERPIntegrationEventPublisher.sendNewAccountsToERP(new Set<Id>{testAccount.Id});
+        ERPIntegrationEventPublisher.sendNewAccountsToERP(new Set<Id>{testAccount.Id});
+        Test.stopTest();
+
+        //Then
+        System.assertEquals(2, newAccountEventsCount, 'The insert path must never skip an Account it sent before');
+    }
+
+    @IsTest
+    static void sendConvertedAccountsToERP_shouldNotPublish_whenAccountAlreadySentOnInsert() {
+        //Having
+        Account testAccount = [SELECT Id FROM Account WHERE ERPCustomerNumber__c = null LIMIT 1];
+
+        //When
+        Test.startTest();
+        ERPIntegrationEventPublisher.sendNewAccountsToERP(new Set<Id>{testAccount.Id});
+        ERPIntegrationEventPublisher.sendConvertedAccountsToERP(new Set<Id>{testAccount.Id});
+        Test.stopTest();
+
+        //Then
+        System.assertEquals(1, newAccountEventsCount,
+            'Converting a Lead into a new Account must not create the customer in SAP a second time');
+    }
+
+    @IsTest
+    static void sendConvertedAccountsToERP_shouldPublish_whenAccountNotSentOnInsert() {
+        //Having
+        Account testAccount = [SELECT Id FROM Account WHERE ERPCustomerNumber__c = null LIMIT 1];
+
+        //When
+        Test.startTest();
+        ERPIntegrationEventPublisher.sendConvertedAccountsToERP(new Set<Id>{testAccount.Id});
+        Test.stopTest();
+
+        //Then
+        System.assertEquals(1, newAccountEventsCount,
+            'An existing Account without an ERP number must be sent to SAP when a Lead is converted into it');
+    }
+
+    @IsTest
+    static void sendConvertedAccountsToERP_shouldPublishOnEveryCall_whenConversionIsRetried() {
+        //Having - the conversion path remembers nothing, so a retried conversion still reaches SAP
+        Account testAccount = [SELECT Id FROM Account WHERE ERPCustomerNumber__c = null LIMIT 1];
+
+        //When
+        Test.startTest();
+        ERPIntegrationEventPublisher.sendConvertedAccountsToERP(new Set<Id>{testAccount.Id});
+        ERPIntegrationEventPublisher.sendConvertedAccountsToERP(new Set<Id>{testAccount.Id});
+        Test.stopTest();
+
+        //Then
+        System.assertEquals(2, newAccountEventsCount, 'The conversion path must not suppress a later conversion call');
+    }
+
+    @IsTest
+    static void sendNewAccountsToERP_shouldNotPublish_whenIdsAreNullOrEmpty() {
+        //When
+        Test.startTest();
+        ERPIntegrationEventPublisher.sendNewAccountsToERP(null);
+        ERPIntegrationEventPublisher.sendNewAccountsToERP(new Set<Id>());
+        ERPIntegrationEventPublisher.sendConvertedAccountsToERP(null);
+        ERPIntegrationEventPublisher.sendConvertedAccountsToERP(new Set<Id>());
+        Test.stopTest();
+
+        //Then
+        System.assertEquals(0, newAccountEventsCount, 'Should not publish events for null or empty input');
+    }
+
+    @IsTest
+    static void getNewAccountsForERP_shouldReturnOnlyAccountsWithoutERPNumber_regardlessOfLockStatus() {
+        //Having
+        Account accountWithoutERPNumber = [SELECT Id FROM Account WHERE ERPCustomerNumber__c = null LIMIT 1];
+        accountWithoutERPNumber.ERPLockStatus__c = 'Credit Rating';
+        update accountWithoutERPNumber;
+        Account accountWithERPNumber = [SELECT Id FROM Account WHERE ERPCustomerNumber__c = 'CUST123' LIMIT 1];
+        Set<Id> accountIds = new Set<Id>{accountWithoutERPNumber.Id, accountWithERPNumber.Id};
 
         //When
         Test.startTest();
@@ -111,7 +212,7 @@ public class ERPIntegrationEventPublisherTest {
 
         //Then
         System.assertEquals(1, result.size(), 'Should return exactly one account');
-        System.assertEquals(testAccount1.Id, result[0].Id, 'Returned incorrect account');
+        System.assertEquals(accountWithoutERPNumber.Id, result[0].Id, 'Lock status must not keep an Account out of SAP');
     }
 
     @IsTest
@@ -147,49 +248,6 @@ public class ERPIntegrationEventPublisherTest {
         System.assertEquals(1, ERPIntegrationEventPublisherTest.bankAccountsCreated,
             'Should publish one BankAccountCreated__e event'
         );
-    }
-
-    @IsTest
-    static void testSendNewAccountToERPOnOpportunityQualified_WithNullParameters() {
-        // When
-        Test.startTest();
-        ERPIntegrationEventPublisher.sendNewAccountToERPOnOpportunityQualified(null, null);
-        ERPIntegrationEventPublisher.sendNewAccountToERPOnOpportunityQualified(new Map<Id, Opportunity>(), null);
-        Test.stopTest();
-
-        // Then - should not throw exception
-        System.assert(true, 'Should handle null parameters gracefully');
-    }
-
-    @IsTest
-    static void testSendNewAccountToERPOnOpportunityQualified_WithEmptyMap() {
-        // When
-        Test.startTest();
-        ERPIntegrationEventPublisher.sendNewAccountToERPOnOpportunityQualified(new Map<Id, Opportunity>(), null);
-        Test.stopTest();
-
-        // Then - should not throw exception
-        System.assert(true, 'Should handle empty map gracefully');
-    }
-
-    @IsTest
-    static void testSendNewAccountToERPOnOpportunityQualified_WithNonQualifiedStage() {
-        // Having
-        Opportunity testOpp = [SELECT Id, StageName, AccountId FROM Opportunity LIMIT 1];
-        testOpp.StageName = 'Qualifizierung';
-        update testOpp;
-
-        Map<Id, Opportunity> newOpps = new Map<Id, Opportunity>{testOpp.Id => testOpp};
-        Map<Id, Opportunity> oldOpps = new Map<Id, Opportunity>{testOpp.Id => testOpp.clone(true, true, false, false)};
-        oldOpps.get(testOpp.Id).StageName = 'Prospecting';
-
-        // When
-        Test.startTest();
-        ERPIntegrationEventPublisher.sendNewAccountToERPOnOpportunityQualified(newOpps, oldOpps);
-        Test.stopTest();
-
-        // Then - should not throw exception
-        System.assert(true, 'Should handle stage change to qualified gracefully');
     }
 
     @IsTest
@@ -413,86 +471,6 @@ public class ERPIntegrationEventPublisherTest {
 
         // Then
         System.assertEquals(null, result, 'Should return null for all null fields');
-    }
-
-    @IsTest
-    static void testSendNewAccountToERPOnOpportunityQualified_DirectCall() {
-        // Given
-        Account testAccount = [SELECT Id, ERPCustomerNumber__c FROM Account WHERE ERPCustomerNumber__c = null LIMIT 1];
-
-        Opportunity testOpportunity = new Opportunity(
-            Name = 'Test Opportunity',
-            StageName = 'Angebotsphase',
-            CloseDate = Date.today().addDays(30),
-            AccountId = testAccount.Id
-        );
-        insert testOpportunity;
-
-        Map<Id, Opportunity> newOpportunities = new Map<Id, Opportunity>{testOpportunity.Id => testOpportunity};
-        Map<Id, Opportunity> oldOpportunities = new Map<Id, Opportunity>{testOpportunity.Id => new Opportunity(Id = testOpportunity.Id, StageName = 'Prospecting')};
-
-        // When
-        Test.startTest();
-        ERPIntegrationEventPublisher.sendNewAccountToERPOnOpportunityQualified(newOpportunities, oldOpportunities);
-        Test.stopTest();
-
-        // Then - should not throw exception
-        System.assert(true, 'Should handle direct method call without exception');
-    }
-
-    @IsTest
-    static void testSendNewAccountToERPOnOpportunityQualified_NewQualifiedOpportunity() {
-        // Given
-        Account testAccount = [SELECT Id, ERPCustomerNumber__c FROM Account WHERE ERPCustomerNumber__c = null LIMIT 1];
-
-        Opportunity testOpportunity = new Opportunity(
-            Name = 'Test Opportunity',
-            StageName = 'Closed Won',
-            CloseDate = Date.today().addDays(30),
-            AccountId = testAccount.Id
-        );
-        insert testOpportunity;
-
-        Map<Id, Opportunity> newOpportunities = new Map<Id, Opportunity>{testOpportunity.Id => testOpportunity};
-        Map<Id, Opportunity> oldOpportunities = null; // New opportunity
-
-        // When
-        Test.startTest();
-        ERPIntegrationEventPublisher.sendNewAccountToERPOnOpportunityQualified(newOpportunities, oldOpportunities);
-        Test.stopTest();
-
-        // Then - should not throw exception
-        System.assert(true, 'Should handle new qualified opportunity without exception');
-    }
-
-    @IsTest
-    static void testSendNewAccountToERPOnOpportunityQualified_EmptyMap() {
-        // Given
-        Map<Id, Opportunity> newOpportunities = new Map<Id, Opportunity>();
-        Map<Id, Opportunity> oldOpportunities = new Map<Id, Opportunity>();
-
-        // When
-        Test.startTest();
-        ERPIntegrationEventPublisher.sendNewAccountToERPOnOpportunityQualified(newOpportunities, oldOpportunities);
-        Test.stopTest();
-
-        // Then - should not throw exception
-        System.assert(true, 'Should handle empty map without exception');
-    }
-
-    @IsTest
-    static void testSendNewAccountToERPOnOpportunityQualified_NullMap() {
-        // Given
-        Map<Id, Opportunity> newOpportunities = null;
-        Map<Id, Opportunity> oldOpportunities = null;
-
-        // When
-        Test.startTest();
-        ERPIntegrationEventPublisher.sendNewAccountToERPOnOpportunityQualified(newOpportunities, oldOpportunities);
-        Test.stopTest();
-
-        // Then - should not throw exception
-        System.assert(true, 'Should handle null map without exception');
     }
 
     @IsTest

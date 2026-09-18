@@ -11,4 +11,9 @@
         <default>true</default>
         <label>New Business</label>
     </standardValue>
+    <standardValue>
+        <fullName>Maschine</fullName>
+        <default>false</default>
+        <label>Maschine</label>
+    </standardValue>
 </StandardValueSet>

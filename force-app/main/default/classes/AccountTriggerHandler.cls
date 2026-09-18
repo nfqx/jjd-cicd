@@ -3,6 +3,38 @@ public without sharing class AccountTriggerHandler {
     // Related Accounts - Parents and, in case of deletion, children to reprocess in AccountCategoryReclassifyBatch
     private static Set<Id> relatedAccountIds = new Set<Id>();
     public static Boolean suppressClassification = false;
+    public static Boolean suppressRecalcHead = false;
+    
+    private static Quiddity currentType = Request.getCurrent().getQuiddity();
+    private static List<Quiddity> automatedQuiddities = new List<Quiddity>{
+        Quiddity.BATCH_CHUNK_SERIAL,
+        Quiddity.FUTURE,
+        Quiddity.BATCH_APEX,
+        Quiddity.BATCH_CHUNK_PARALLEL,
+        Quiddity.BATCH_ACS
+    };
+
+    public static void calculateChainHead(List<Account> newRecords, Map<Id, Account> oldRecordsMap) {
+        if(!suppressRecalcHead && !automatedQuiddities.contains(currentType)){ // no batch-in-batch
+            List<Account> relevantAccounts = new List<Account>();
+            for(Account ac : newRecords){
+                if(
+                    (oldRecordsMap == null && ac.ConditionChainParent__c != null) ||
+                    (
+                        oldRecordsMap != null && (
+                            ac.ConditionChainParent__c != oldRecordsMap.get(ac.Id).ConditionChainParent__c ||
+                            ac.ConditionChainHead__c != oldRecordsMap.get(ac.Id).ConditionChainHead__c
+                        )
+                    )
+                ){
+                    relevantAccounts.add(ac);
+                }
+            }
+            if(!relevantAccounts.isEmpty()){
+                Database.executeBatch(new ChainHeadCalculationBatch(relevantAccounts), 1);
+            }
+        }
+    }
 
     public static void classify(List<Account> newRecords, Map<Id, Account> oldRecordsMap) {
         if(!suppressClassification){
@@ -99,6 +131,7 @@ public without sharing class AccountTriggerHandler {
 
 
     public static void handleAfterInsert(Map<Id, Account> newRecordsMap) {
+        ERPIntegrationEventPublisher.sendNewAccountsToERP(newRecordsMap.keySet());
         handleAddressChange(newRecordsMap, null, new Set<Id>());
     }
 

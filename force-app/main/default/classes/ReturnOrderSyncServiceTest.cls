@@ -167,6 +167,40 @@ private class ReturnOrderSyncServiceTest {
     }
 
     @IsTest
+    static void createReturnOrderCreatePayload_shouldContainCreditIssuance_perLineItem() {
+        //Having
+        Account account = [SELECT Id FROM Account LIMIT 1];
+        ReturnOrder ro = new ReturnOrder(
+            AccountId = account.Id,
+            Status    = 'Entwurf',
+            SoldTo__c = account.Id
+        );
+        insert ro;
+        insert new List<ReturnOrderLineItem>{
+            new ReturnOrderLineItem(ReturnOrderId = ro.Id, QuantityReturned = 1, QuantityExpected = 1, CreditIssuance__c = 'WITH'),
+            new ReturnOrderLineItem(ReturnOrderId = ro.Id, QuantityReturned = 1, QuantityExpected = 1, CreditIssuance__c = 'Z0RL'),
+            new ReturnOrderLineItem(ReturnOrderId = ro.Id, QuantityReturned = 1, QuantityExpected = 1, CreditIssuance__c = 'WITHOUT')
+        };
+
+        //When
+        Test.startTest();
+        ReturnOrder fetched = ReturnOrderSyncService.getReturnOrdersForCreate(new Set<Id>{ ro.Id })[0];
+        String payload = ReturnOrderSyncService.createReturnOrderCreatePayload(fetched);
+        Test.stopTest();
+
+        //Then
+        Map<String, Object> payloadMap = (Map<String, Object>) JSON.deserializeUntyped(payload);
+        List<Object> lineItems = (List<Object>) payloadMap.get('returnOrderLineItems');
+        Assert.areEqual(3, lineItems.size(), 'Every line item should be in the payload');
+
+        Set<Object> creditIssuances = new Set<Object>();
+        for (Object lineItem : lineItems) {
+            creditIssuances.add(((Map<String, Object>) lineItem).get('creditIssuance'));
+        }
+        Assert.areEqual(new Set<Object>{ 'WITH', 'WITHOUT', 'Z0RL' }, creditIssuances, 'Each line item should carry its own credit issuance value');
+    }
+
+    @IsTest
     static void testReturnOrderInsert_DraftStatus_DoesNotTrigger() {
         // HAVING
         Account account = [SELECT Id FROM Account LIMIT 1];

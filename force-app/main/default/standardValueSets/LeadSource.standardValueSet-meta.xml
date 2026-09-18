@@ -57,8 +57,8 @@
         <label>Website</label>
     </standardValue>
     <standardValue>
-        <fullName>Trade Fair</fullName>
+        <fullName>Email</fullName>
         <default>false</default>
-        <label>Trade fair</label>
+        <label>Email</label>
     </standardValue>
 </StandardValueSet>

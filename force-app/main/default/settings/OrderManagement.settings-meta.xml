@@ -8,6 +8,7 @@
     <enableDuplicateManagement>false</enableDuplicateManagement>
     <enableHighScaleOrders>true</enableHighScaleOrders>
     <enableMRURecordCaching>false</enableMRURecordCaching>
+    <enableNoAdjustmentConsideredForFeeTaxCalc>false</enableNoAdjustmentConsideredForFeeTaxCalc>
     <enableOMAutomation>false</enableOMAutomation>
     <enableOrderManagement>true</enableOrderManagement>
     <enablePersonAccountsForShoppers>false</enablePersonAccountsForShoppers>

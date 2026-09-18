@@ -21,4 +21,14 @@
         <default>false</default>
         <label>Call</label>
     </standardValue>
+    <standardValue>
+        <fullName>Quality Check</fullName>
+        <default>false</default>
+        <label>Quality Check</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Visit</fullName>
+        <default>false</default>
+        <label>Visit</label>
+    </standardValue>
 </StandardValueSet>

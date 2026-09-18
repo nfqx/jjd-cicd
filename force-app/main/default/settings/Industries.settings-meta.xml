@@ -3,6 +3,7 @@
     <enableAccountScoreEnabled>false</enableAccountScoreEnabled>
     <enableAutoIdentifyDocAITemplates>false</enableAutoIdentifyDocAITemplates>
     <enableDontSharePartyprofWPortalOrgPref>false</enableDontSharePartyprofWPortalOrgPref>
+    <enableEventMgmtBudgetEvntTypeFilter>false</enableEventMgmtBudgetEvntTypeFilter>
     <enableNewTimelineSetupFlow>false</enableNewTimelineSetupFlow>
     <enablePartyProfileParentSharingOrgPref>false</enablePartyProfileParentSharingOrgPref>
     <enablePartyprofParentMultiSharingOrgPref>false</enablePartyprofParentMultiSharingOrgPref>

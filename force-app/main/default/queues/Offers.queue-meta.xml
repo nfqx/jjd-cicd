@@ -3,6 +3,11 @@
     <doesIncludeBosses>false</doesIncludeBosses>
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <name>Angebote</name>
+    <queueMembers>
+        <users>
+            <user>martin.maschine@nfq-x.com.dev2</user>
+        </users>
+    </queueMembers>
     <queueRoutingConfig>Offers</queueRoutingConfig>
     <queueSobject>
         <sobjectType>Case</sobjectType>

@@ -21,12 +21,17 @@
                                 <lightning-input-field field-name="MachineSalesExpectationCoffee__c" value={quoteData.MachineSalesExpectationCoffee__c} data-column="MachineSalesExpectationCoffee__c" onchange={handleChangeQuoteDataUpper}></lightning-input-field>
                             </lightning-layout-item>
                             <lightning-layout-item size="6">
-                                <lightning-input value={annualMachineExpectation} label={label.annualMachineExpectation} style="margin-left: 0.25rem;" readonly></lightning-input>
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label">{label.annualMachineExpectation}</label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input variant="label-hidden" value={annualMachineExpectation} readonly></lightning-input>
+                                    </div>
+                                </div>
                             </lightning-layout-item>
                         </lightning-layout>
                         <lightning-layout >
-                            <lightning-layout-item size="12">
-                                <lightning-input-field field-name="MachineLocation__c" value={quoteData.MachineLocation__c} data-column="MachineLocation__c" onchange={handleChangeQuoteDataUpper}></lightning-input-field>
+                            <lightning-layout-item size="6">
+                                <lightning-input-field  field-name="MachineLocation__c" value={quoteData.MachineLocation__c} data-column="MachineLocation__c" onchange={handleChangeQuoteDataUpper}></lightning-input-field>
                             </lightning-layout-item>
                         </lightning-layout>
                     </lightning-record-edit-form>
@@ -95,7 +100,7 @@
                         </lightning-layout>
                         <!--Anmerkung GL-->
                         <lightning-layout >
-                            <lightning-layout-item size="12">
+                            <lightning-layout-item size="6">
                                 <lightning-input-field field-name="MachineNotesOnTheContract__c" value={quoteData.MachineNotesOnTheContract__c} data-column="MachineNotesOnTheContract__c" onchange={handleChangeQuoteDataUpper}></lightning-input-field>
                             </lightning-layout-item>
                         </lightning-layout>
@@ -286,14 +291,14 @@
                         </lightning-layout>
                         <lightning-layout >
                             <lightning-layout-item size="6">
-                                <lightning-input-field field-name="MachineMachineAccountBalance__c" readonly={isGLOnly} value={quoteData.MachineMachineAccountBalance__c} data-column="MachineMachineAccountBalance__c" onchange={handleChangeQuoteDataLower}></lightning-input-field>
+                                <lightning-input-field field-name="MachineMachineAccountBalance__c" disabled={isGLOnly} value={quoteData.MachineMachineAccountBalance__c} data-column="MachineMachineAccountBalance__c" onchange={handleChangeQuoteDataLower}></lightning-input-field>
                             </lightning-layout-item>
                             <lightning-layout-item size="6">
                                 &nbsp;
                             </lightning-layout-item>
                         </lightning-layout>
                         <lightning-layout >
-                            <lightning-layout-item size="12">
+                            <lightning-layout-item size="6">
                                 <lightning-input-field field-name="MachineMerchandiseAccountBalance__c" readonly={isGLOnly} value={quoteData.MachineMerchandiseAccountBalance__c} data-column="MachineMerchandiseAccountBalance__c" onchange={handleChangeQuoteDataLower}></lightning-input-field>
                             </lightning-layout-item>
                         </lightning-layout>
@@ -303,7 +308,7 @@
                             </lightning-layout-item>
                             <lightning-layout-item size="6">
                                 <lightning-input-field field-name="MachineRecommendationMachineTeam__c" if:false={isGLOnly} value={quoteData.MachineRecommendationMachineTeam__c} data-column="MachineRecommendationMachineTeam__c" onchange={handleChangeQuoteDataLower}></lightning-input-field>
-                                <lightning-output-field field-name="MachineRecommendationMachineTeam__c" if:true={isGLOnly} value={quoteData.MachineRecommendationMachineTeam__c}></lightning-output-field>
+                                <lightning-output-field field-name="MachineRecommendationMachineTeam__c" if:true={isGLOnly} value={quoteData.MachineRecommendationMachineTeam__c} ></lightning-output-field>
                             </lightning-layout-item>
                         </lightning-layout>
                     </lightning-record-edit-form>
@@ -316,12 +321,12 @@
     </template>
         <h2 style="margin:8px 0;">{label.quoteInstallmentProductCalculation}</h2>
         <lightning-record-edit-form object-api-name="Quote" record-id={recordId} if:false={quoteReloading}>
-            <lightning-layout >
-                <lightning-layout-item size="11">
+            <lightning-layout vertical-align="end">
+                <lightning-layout-item size="10">
                     <lightning-input-field field-name="PriceConfiguratorQuote__c" value={quoteData.PriceConfiguratorQuote__c} disabled></lightning-input-field>
                 </lightning-layout-item>
-                <lightning-layout-item size="1">
-                    <lightning-button style="margin-top: 1rem; float: right;" label={label.reloadQuote} onclick={handleReloadQuote}></lightning-button>
+                <lightning-layout-item size="2">
+                    <lightning-button class="slds-m-bottom_small slds-float_right" label={label.reloadQuote} onclick={handleReloadQuote}></lightning-button>
                 </lightning-layout-item>
             </lightning-layout>
         </lightning-record-edit-form>

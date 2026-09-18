@@ -9,9 +9,15 @@
         <groupingString>Draft</groupingString>
     </standardValue>
     <standardValue>
-        <fullName>Activated</fullName>
+        <fullName>In Approval</fullName>
         <default>false</default>
-        <label>Activated</label>
+        <label>In Approval</label>
+        <groupingString>Activated</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Rejected</fullName>
+        <default>false</default>
+        <label>Rejected</label>
         <groupingString>Activated</groupingString>
     </standardValue>
     <standardValue>
@@ -27,33 +33,27 @@
         <groupingString>Activated</groupingString>
     </standardValue>
     <standardValue>
+        <fullName>In Processing</fullName>
+        <default>false</default>
+        <label>In Processing</label>
+        <groupingString>Activated</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Partially Rejected</fullName>
+        <default>false</default>
+        <label>Partially Rejected</label>
+        <groupingString>Activated</groupingString>
+    </standardValue>
+    <standardValue>
         <fullName>Rejected by ERP</fullName>
         <default>false</default>
         <label>Rejected by ERP</label>
         <groupingString>Activated</groupingString>
     </standardValue>
     <standardValue>
-        <fullName>Order not picked up</fullName>
-        <default>false</default>
-        <label>Order not picked up</label>
-        <groupingString>Activated</groupingString>
-    </standardValue>
-    <standardValue>
         <fullName>Completed</fullName>
         <default>false</default>
         <label>Completed</label>
-        <groupingString>Activated</groupingString>
-    </standardValue>
-    <standardValue>
-        <fullName>In Approval</fullName>
-        <default>false</default>
-        <label>In Approval</label>
-        <groupingString>Activated</groupingString>
-    </standardValue>
-    <standardValue>
-        <fullName>Rejected</fullName>
-        <default>false</default>
-        <label>Rejected</label>
         <groupingString>Activated</groupingString>
     </standardValue>
 </StandardValueSet>

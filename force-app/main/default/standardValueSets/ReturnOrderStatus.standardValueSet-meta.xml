@@ -3,13 +3,23 @@
     <sorted>false</sorted>
     <standardValue>
         <fullName>Entwurf</fullName>
-        <default>true</default>
+        <default>false</default>
         <label>Entwurf</label>
     </standardValue>
     <standardValue>
         <fullName>Gesendet</fullName>
         <default>false</default>
         <label>Gesendet</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Übertragung erfolgreich</fullName>
+        <default>false</default>
+        <label>Übertragung erfolgreich</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Von SAP abgelehnt</fullName>
+        <default>false</default>
+        <label>Von SAP abgelehnt</label>
     </standardValue>
     <standardValue>
         <fullName>Genehmigt</fullName>
