@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Wählen Sie die Person aus, die diesen Auftrag genehmigen soll. Wenn das Feld leer ist, wird der Account-Inhaber als Standard übernommen.</help>
+    <label>Auftragsgenehmiger</label>
+    <name>OrderApprover__c</name>
+    <relationshipLabel>Aufträge (Auftragsgenehmiger)</relationshipLabel>
+</CustomFieldTranslation>

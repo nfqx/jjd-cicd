@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Positionstypengruppe</label>
+    <name>ItemCategoryGroup__c</name>
+    <picklistValues>
+        <masterLabel>ALE Standard Position</masterLabel>
+        <translation><!-- ALE Standard Position --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ALE Third-Party Position</masterLabel>
+        <translation><!-- ALE Third-Party Position --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bill of Quantities / Service Spec</masterLabel>
+        <translation><!-- Bill of Quantities / Service Spec --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Collective Material</masterLabel>
+        <translation><!-- Collective Material --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Configurable Package</masterLabel>
+        <translation><!-- Configurable Package --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Configurable Software Product</masterLabel>
+        <translation><!-- Configurable Software Product --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Configuration</masterLabel>
+        <translation><!-- Configuration --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Configuration Service</masterLabel>
+        <translation><!-- Configuration Service --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Empties</masterLabel>
+        <translation><!-- Empties --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Full Goods</masterLabel>
+        <translation><!-- Full Goods --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Individual Purchase Order</masterLabel>
+        <translation><!-- Individual Purchase Order --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Leasing</masterLabel>
+        <translation><!-- Leasing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Leasing Billing Option</masterLabel>
+        <translation><!-- Leasing Billing Option --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Leasing Billing Option w/o B</masterLabel>
+        <translation><!-- Leasing Billing Option w/o B --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Leasing Early Extension Option</masterLabel>
+        <translation><!-- Leasing Early Extension Option --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Leasing Early Extension Option w/o B</masterLabel>
+        <translation><!-- Leasing Early Extension Option w/o B --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Leasing Early Purchase Option</masterLabel>
+        <translation><!-- Leasing Early Purchase Option --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Leasing Early Purchase Option w/o B</masterLabel>
+        <translation><!-- Leasing Early Purchase Option w/o B --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Leasing Extension Option</masterLabel>
+        <translation><!-- Leasing Extension Option --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Leasing Extension Option w/o B</masterLabel>
+        <translation><!-- Leasing Extension Option w/o B --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Leasing Purchase Option</masterLabel>
+        <translation><!-- Leasing Purchase Option --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Leasing Purchase Option w/o B</masterLabel>
+        <translation><!-- Leasing Purchase Option w/o B --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Leasing Return Option</masterLabel>
+        <translation><!-- Leasing Return Option --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Leasing Return Option w/o B</masterLabel>
+        <translation><!-- Leasing Return Option w/o B --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Leasing Subsequent Option</masterLabel>
+        <translation><!-- Leasing Subsequent Option --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Leasing Subsequent Option w/o B</masterLabel>
+        <translation><!-- Leasing Subsequent Option w/o B --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Machine Loan Goods</masterLabel>
+        <translation><!-- Machine Loan Goods --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Make-to-order / Assembly</masterLabel>
+        <translation><!-- Make-to-order / Assembly --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Make-to-order Production</masterLabel>
+        <translation><!-- Make-to-order Production --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Milestone Billing</masterLabel>
+        <translation><!-- Milestone Billing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Non-Stock Material</masterLabel>
+        <translation><!-- Non-Stock Material --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Packaging</masterLabel>
+        <translation><!-- Packaging --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product List</masterLabel>
+        <translation><!-- Product List --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Raw Material WM-PP</masterLabel>
+        <translation><!-- Raw Material WM-PP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Returnable Packaging / Empties</masterLabel>
+        <translation><!-- Returnable Packaging / Empties --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service Contract Product</masterLabel>
+        <translation><!-- Service Contract Product --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service Material</masterLabel>
+        <translation><!-- Service Material --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service Product</masterLabel>
+        <translation><!-- Service Product --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service w/o Delivery</masterLabel>
+        <translation><!-- Service w/o Delivery --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service w/o Delivery Config.</masterLabel>
+        <translation><!-- Service w/o Delivery Config. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service with Delivery Alt.</masterLabel>
+        <translation><!-- Service with Delivery Alt. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Standard Position</masterLabel>
+        <translation><!-- Standard Position --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Structure / Bottom Material (LUMB)</masterLabel>
+        <translation><!-- Structure / Bottom Material (LUMB) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Structure / Bottom Material (LUMF)</masterLabel>
+        <translation><!-- Structure / Bottom Material (LUMF) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Structure / Top Material (ERLA)</masterLabel>
+        <translation><!-- Structure / Top Material (ERLA) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Structure / Top Material (ERLB)</masterLabel>
+        <translation><!-- Structure / Top Material (ERLB) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Subcontracting (DS)</masterLabel>
+        <translation><!-- Subcontracting (DS) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Subscription Fee</masterLabel>
+        <translation><!-- Subscription Fee --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Subscription, Multi AVC</masterLabel>
+        <translation><!-- Subscription, Multi AVC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Subscription, Recurring</masterLabel>
+        <translation><!-- Subscription, Recurring --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Subscription, Usage Only</masterLabel>
+        <translation><!-- Subscription, Usage Only --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Third-Party Position</masterLabel>
+        <translation><!-- Third-Party Position --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VMS Vehicle</masterLabel>
+        <translation><!-- VMS Vehicle --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Value Contract Position</masterLabel>
+        <translation><!-- Value Contract Position --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Value Position Delivery Note</masterLabel>
+        <translation><!-- Value Position Delivery Note --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

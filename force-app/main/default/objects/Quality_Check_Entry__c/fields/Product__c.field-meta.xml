@@ -11,6 +11,11 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
+                <fullName>Alberto Caffè Crema</fullName>
+                <default>false</default>
+                <label>Alberto Caffè Crema</label>
+            </value>
+            <value>
                 <fullName>Alfredo Caffè</fullName>
                 <default>false</default>
                 <label>Alfredo Caffè</label>
@@ -19,6 +24,16 @@
                 <fullName>Alfredo Espresso Cremazzurro</fullName>
                 <default>false</default>
                 <label>Alfredo Espresso Cremazzurro</label>
+            </value>
+            <value>
+                <fullName>Alfredo Espresso Decaffeinato</fullName>
+                <default>false</default>
+                <label>Alfredo Espresso Decaffeinato</label>
+            </value>
+            <value>
+                <fullName>Alfredo Espresso FT Futuro</fullName>
+                <default>false</default>
+                <label>Alfredo Espresso FT Futuro</label>
             </value>
             <value>
                 <fullName>Alfredo Espresso Primus Omnium</fullName>
@@ -36,24 +51,84 @@
                 <label>Alfredo Espresso Tipo Bar</label>
             </value>
             <value>
-                <fullName>Balance Extra</fullName>
+                <fullName>Burkhof Bio FT Café Crema</fullName>
                 <default>false</default>
-                <label>Balance Extra</label>
+                <label>Burkhof Bio FT Café Crema</label>
             </value>
             <value>
-                <fullName>Bistro Montana</fullName>
+                <fullName>Burkhof Bio FT Espresso</fullName>
                 <default>false</default>
-                <label>Bistro Montana</label>
+                <label>Burkhof Bio FT Espresso</label>
             </value>
             <value>
-                <fullName>Bistro Montana Café Crème</fullName>
+                <fullName>Burkhof Café Crème Original</fullName>
                 <default>false</default>
-                <label>Bistro Montana Café Crème</label>
+                <label>Burkhof Café Crème Original</label>
             </value>
             <value>
-                <fullName>Café Créme Original</fullName>
+                <fullName>Burkhof Casino Royal</fullName>
                 <default>false</default>
-                <label>Café Créme Original</label>
+                <label>Burkhof Casino Royal</label>
+            </value>
+            <value>
+                <fullName>Burkhof Espresso Classico</fullName>
+                <default>false</default>
+                <label>Burkhof Espresso Classico</label>
+            </value>
+            <value>
+                <fullName>Burkhof Espresso Speciale</fullName>
+                <default>false</default>
+                <label>Burkhof Espresso Speciale</label>
+            </value>
+            <value>
+                <fullName>Burkhof Grand Gourmet Spezial</fullName>
+                <default>false</default>
+                <label>Burkhof Grand Gourmet Spezial</label>
+            </value>
+            <value>
+                <fullName>Burkhof Herzfreund Entcoff.</fullName>
+                <default>false</default>
+                <label>Burkhof Herzfreund Entcoff.</label>
+            </value>
+            <value>
+                <fullName>Burkhof Hochland</fullName>
+                <default>false</default>
+                <label>Burkhof Hochland</label>
+            </value>
+            <value>
+                <fullName>Burkhof Luxus</fullName>
+                <default>false</default>
+                <label>Burkhof Luxus</label>
+            </value>
+            <value>
+                <fullName>Burkhof Melange Bavaria</fullName>
+                <default>false</default>
+                <label>Burkhof Melange Bavaria</label>
+            </value>
+            <value>
+                <fullName>Burkhof Savoy Café Créme</fullName>
+                <default>false</default>
+                <label>Burkhof Savoy Café Créme</label>
+            </value>
+            <value>
+                <fullName>Burkhof Wiener Mokka</fullName>
+                <default>false</default>
+                <label>Burkhof Wiener Mokka</label>
+            </value>
+            <value>
+                <fullName>Café Bistro Vending</fullName>
+                <default>false</default>
+                <label>Café Bistro Vending</label>
+            </value>
+            <value>
+                <fullName>Café Int. Bio Fino Espresso</fullName>
+                <default>false</default>
+                <label>Café Int. Bio Fino Espresso</label>
+            </value>
+            <value>
+                <fullName>Café Int. Bio FT Gustoso Café Crème</fullName>
+                <default>false</default>
+                <label>Café Int. Bio FT Gustoso Café Crème</label>
             </value>
             <value>
                 <fullName>Café Int. especiál Bio FT Espresso</fullName>
@@ -61,14 +136,39 @@
                 <label>Café Int. especiál Bio FT Espresso</label>
             </value>
             <value>
-                <fullName>Café Intención</fullName>
+                <fullName>Café Int. FT Crema Bio Fino</fullName>
                 <default>false</default>
-                <label>Café Intención</label>
+                <label>Café Int. FT Crema Bio Fino</label>
+            </value>
+            <value>
+                <fullName>Café Int. FT Espr. Bio Gustoso</fullName>
+                <default>false</default>
+                <label>Café Int. FT Espr. Bio Gustoso</label>
+            </value>
+            <value>
+                <fullName>Café Intención Bio Crema Aromatico FT</fullName>
+                <default>false</default>
+                <label>Café Intención Bio Crema Aromatico FT</label>
+            </value>
+            <value>
+                <fullName>Café Intención Bio Espr. Intensivo FT</fullName>
+                <default>false</default>
+                <label>Café Intención Bio Espr. Intensivo FT</label>
             </value>
             <value>
                 <fullName>Café Intención Café Crème</fullName>
                 <default>false</default>
                 <label>Café Intención Café Crème</label>
+            </value>
+            <value>
+                <fullName>Café Intención Café Crème Delicioso</fullName>
+                <default>false</default>
+                <label>Café Intención Café Crème Delicioso</label>
+            </value>
+            <value>
+                <fullName>Café Intención Espr. Delicioso</fullName>
+                <default>false</default>
+                <label>Café Intención Espr. Delicioso</label>
             </value>
             <value>
                 <fullName>Café Intención Espresso</fullName>
@@ -81,9 +181,14 @@
                 <label>Café Intención Filterkaffee</label>
             </value>
             <value>
-                <fullName>Café Verde</fullName>
+                <fullName>Café Verde Creme Bio</fullName>
                 <default>false</default>
-                <label>Café Verde</label>
+                <label>Café Verde Creme Bio</label>
+            </value>
+            <value>
+                <fullName>Café Verde Espresso Barista Bio</fullName>
+                <default>false</default>
+                <label>Café Verde Espresso Barista Bio</label>
             </value>
             <value>
                 <fullName>Café Verde Espresso Bio</fullName>
@@ -91,59 +196,279 @@
                 <label>Café Verde Espresso Bio</label>
             </value>
             <value>
-                <fullName>Cantate</fullName>
+                <fullName>Cocaya Classic Brown</fullName>
                 <default>false</default>
-                <label>Cantate</label>
+                <label>Cocaya Classic Brown</label>
             </value>
             <value>
-                <fullName>Casino</fullName>
+                <fullName>Cocaya Classic Organic</fullName>
                 <default>false</default>
-                <label>Casino</label>
+                <label>Cocaya Classic Organic</label>
             </value>
             <value>
-                <fullName>Casino Royal</fullName>
+                <fullName>Cocaya Classic White</fullName>
                 <default>false</default>
-                <label>Casino Royal</label>
+                <label>Cocaya Classic White</label>
             </value>
             <value>
-                <fullName>Espresso Classico</fullName>
+                <fullName>Cocaya Premium Brown</fullName>
                 <default>false</default>
-                <label>Espresso Classico</label>
+                <label>Cocaya Premium Brown</label>
             </value>
             <value>
-                <fullName>Espresso Speciale</fullName>
+                <fullName>Cocaya Premium Dark</fullName>
                 <default>false</default>
-                <label>Espresso Speciale</label>
+                <label>Cocaya Premium Dark</label>
             </value>
             <value>
-                <fullName>Excelsior</fullName>
+                <fullName>Cocaya Premium Melange</fullName>
                 <default>false</default>
-                <label>Excelsior</label>
+                <label>Cocaya Premium Melange</label>
             </value>
             <value>
-                <fullName>Favorit Extra</fullName>
+                <fullName>Darbomat Balance Extra</fullName>
                 <default>false</default>
-                <label>Favorit Extra</label>
+                <label>Darbomat Balance Extra</label>
             </value>
             <value>
-                <fullName>Grand Gourmet</fullName>
+                <fullName>Der Beck Café Creme</fullName>
                 <default>false</default>
-                <label>Grand Gourmet</label>
+                <label>Der Beck Café Creme</label>
             </value>
             <value>
-                <fullName>Grand Gourmet Spezial</fullName>
+                <fullName>Der Beck Fairtrade Espresso</fullName>
                 <default>false</default>
-                <label>Grand Gourmet Spezial</label>
+                <label>Der Beck Fairtrade Espresso</label>
             </value>
             <value>
-                <fullName>Hochland</fullName>
+                <fullName>Der Beck Kaffee</fullName>
                 <default>false</default>
-                <label>Hochland</label>
+                <label>Der Beck Kaffee</label>
+            </value>
+            <value>
+                <fullName>EILLES C.Cr. AROMAWUNDER</fullName>
+                <default>false</default>
+                <label>EILLES C.Cr. AROMAWUNDER</label>
+            </value>
+            <value>
+                <fullName>EILLES C. Crema Lieblingsbohne</fullName>
+                <default>false</default>
+                <label>EILLES C. Crema Lieblingsbohne</label>
+            </value>
+            <value>
+                <fullName>EILLES ENTHUSIAST</fullName>
+                <default>false</default>
+                <label>EILLES ENTHUSIAST</label>
+            </value>
+            <value>
+                <fullName>EILLES Espresso Launemacher</fullName>
+                <default>false</default>
+                <label>EILLES Espresso Launemacher</label>
+            </value>
+            <value>
+                <fullName>EILLES Espresso Tagesretter</fullName>
+                <default>false</default>
+                <label>EILLES Espresso Tagesretter</label>
+            </value>
+            <value>
+                <fullName>EILLES Espresso Versio</fullName>
+                <default>false</default>
+                <label>EILLES Espresso Versio</label>
+            </value>
+            <value>
+                <fullName>EILLES KAFFEE Gourmet Café</fullName>
+                <default>false</default>
+                <label>EILLES KAFFEE Gourmet Café</label>
+            </value>
+            <value>
+                <fullName>EILLES MOTIVATOR</fullName>
+                <default>false</default>
+                <label>EILLES MOTIVATOR</label>
+            </value>
+            <value>
+                <fullName>EILLES Röstmeister Caffè Crema</fullName>
+                <default>false</default>
+                <label>EILLES Röstmeister Caffè Crema</label>
+            </value>
+            <value>
+                <fullName>Espresso Classico Vending</fullName>
+                <default>false</default>
+                <label>Espresso Classico Vending</label>
+            </value>
+            <value>
+                <fullName>Espresso Gold</fullName>
+                <default>false</default>
+                <label>Espresso Gold</label>
+            </value>
+            <value>
+                <fullName>Hausröstung Café Crème</fullName>
+                <default>false</default>
+                <label>Hausröstung Café Crème</label>
+            </value>
+            <value>
+                <fullName>Hausröstung Espresso</fullName>
+                <default>false</default>
+                <label>Hausröstung Espresso</label>
+            </value>
+            <value>
+                <fullName>IDEE KAFFEE Caffé Crema Aromatic</fullName>
+                <default>false</default>
+                <label>IDEE KAFFEE Caffé Crema Aromatic</label>
             </value>
             <value>
                 <fullName>Idee Kaffee Classic</fullName>
                 <default>false</default>
                 <label>Idee Kaffee Classic</label>
+            </value>
+            <value>
+                <fullName>IDEE KAFFEE Decaffeinated Elegant</fullName>
+                <default>false</default>
+                <label>IDEE KAFFEE Decaffeinated Elegant</label>
+            </value>
+            <value>
+                <fullName>Idee Kaffee entcoffeiniert</fullName>
+                <default>false</default>
+                <label>Idee Kaffee entcoffeiniert</label>
+            </value>
+            <value>
+                <fullName>IDEE KAFFEE Espresso Intense</fullName>
+                <default>false</default>
+                <label>IDEE KAFFEE Espresso Intense</label>
+            </value>
+            <value>
+                <fullName>Il Caffe Espresso</fullName>
+                <default>false</default>
+                <label>Il Caffe Espresso</label>
+            </value>
+            <value>
+                <fullName>Impuls</fullName>
+                <default>false</default>
+                <label>Impuls</label>
+            </value>
+            <value>
+                <fullName>J. Hornig Meistertasse 21</fullName>
+                <default>false</default>
+                <label>J. Hornig Meistertasse 21</label>
+            </value>
+            <value>
+                <fullName>J. Hornig Röstmeister 1912</fullName>
+                <default>false</default>
+                <label>J. Hornig Röstmeister 1912</label>
+            </value>
+            <value>
+                <fullName>J. Hornig Röstmeister Edelmokka</fullName>
+                <default>false</default>
+                <label>J. Hornig Röstmeister Edelmokka</label>
+            </value>
+            <value>
+                <fullName>J. Hornig Röstmeister Espresso</fullName>
+                <default>false</default>
+                <label>J. Hornig Röstmeister Espresso</label>
+            </value>
+            <value>
+                <fullName>J. Hornig Röstmeister Graz</fullName>
+                <default>false</default>
+                <label>J. Hornig Röstmeister Graz</label>
+            </value>
+            <value>
+                <fullName>J. Hornig Röstmeister Triest</fullName>
+                <default>false</default>
+                <label>J. Hornig Röstmeister Triest</label>
+            </value>
+            <value>
+                <fullName>J. Hornig Röstmeister Triest Bio FT</fullName>
+                <default>false</default>
+                <label>J. Hornig Röstmeister Triest Bio FT</label>
+            </value>
+            <value>
+                <fullName>J.J. Darboven Origins Brasil</fullName>
+                <default>false</default>
+                <label>J.J. Darboven Origins Brasil</label>
+            </value>
+            <value>
+                <fullName>J.J. Darboven Origins Colombia</fullName>
+                <default>false</default>
+                <label>J.J. Darboven Origins Colombia</label>
+            </value>
+            <value>
+                <fullName>J.J. Darboven Origins India</fullName>
+                <default>false</default>
+                <label>J.J. Darboven Origins India</label>
+            </value>
+            <value>
+                <fullName>JJD Classics Bistro Montana</fullName>
+                <default>false</default>
+                <label>JJD Classics Bistro Montana</label>
+            </value>
+            <value>
+                <fullName>JJD Classics Bistro Montana Café Crème</fullName>
+                <default>false</default>
+                <label>JJD Classics Bistro Montana Café Crème</label>
+            </value>
+            <value>
+                <fullName>JJD Classics Cantate</fullName>
+                <default>false</default>
+                <label>JJD Classics Cantate</label>
+            </value>
+            <value>
+                <fullName>JJD Classics Casino</fullName>
+                <default>false</default>
+                <label>JJD Classics Casino</label>
+            </value>
+            <value>
+                <fullName>JJD Classics Espresso Finesse</fullName>
+                <default>false</default>
+                <label>JJD Classics Espresso Finesse</label>
+            </value>
+            <value>
+                <fullName>JJD Classics Espresso Montana</fullName>
+                <default>false</default>
+                <label>JJD Classics Espresso Montana</label>
+            </value>
+            <value>
+                <fullName>JJD Classics Excelsior</fullName>
+                <default>false</default>
+                <label>JJD Classics Excelsior</label>
+            </value>
+            <value>
+                <fullName>JJD Classics Favorit Extra</fullName>
+                <default>false</default>
+                <label>JJD Classics Favorit Extra</label>
+            </value>
+            <value>
+                <fullName>JJD Classics Grand Gourmet</fullName>
+                <default>false</default>
+                <label>JJD Classics Grand Gourmet</label>
+            </value>
+            <value>
+                <fullName>JJD Classics GV Mild</fullName>
+                <default>false</default>
+                <label>JJD Classics GV Mild</label>
+            </value>
+            <value>
+                <fullName>JJD Classics Melange Finesse Café Crème</fullName>
+                <default>false</default>
+                <label>JJD Classics Melange Finesse Café Crème</label>
+            </value>
+            <value>
+                <fullName>JJD Classics Ratio</fullName>
+                <default>false</default>
+                <label>JJD Classics Ratio</label>
+            </value>
+            <value>
+                <fullName>JJD Classics Top Extra</fullName>
+                <default>false</default>
+                <label>JJD Classics Top Extra</label>
+            </value>
+            <value>
+                <fullName>JJD Classics Wiener Mocca</fullName>
+                <default>false</default>
+                <label>JJD Classics Wiener Mocca</label>
+            </value>
+            <value>
+                <fullName>Massimo Espresso</fullName>
+                <default>false</default>
+                <label>Massimo Espresso</label>
             </value>
             <value>
                 <fullName>Massimo Forte</fullName>
@@ -156,79 +481,124 @@
                 <label>Massimo Forte Espresso</label>
             </value>
             <value>
-                <fullName>Melange Bavaria</fullName>
+                <fullName>Mövenpick Caffè Crema</fullName>
                 <default>false</default>
-                <label>Melange Bavaria</label>
+                <label>Mövenpick Caffè Crema</label>
             </value>
             <value>
-                <fullName>Melange Finesse</fullName>
+                <fullName>Mövenpick Corazòn Bio FT</fullName>
                 <default>false</default>
-                <label>Melange Finesse</label>
+                <label>Mövenpick Corazòn Bio FT</label>
             </value>
             <value>
-                <fullName>Melange Finesse Café Crème</fullName>
+                <fullName>Mövenpick Der Himmlische</fullName>
                 <default>false</default>
-                <label>Melange Finesse Café Crème</label>
+                <label>Mövenpick Der Himmlische</label>
+            </value>
+            <value>
+                <fullName>Mövenpick des Jahres</fullName>
+                <default>false</default>
+                <label>Mövenpick des Jahres</label>
+            </value>
+            <value>
+                <fullName>Mövenpick El Autentico Caffè Crema RFA SG</fullName>
+                <default>false</default>
+                <label>Mövenpick El Autentico Caffè Crema RFA SG</label>
+            </value>
+            <value>
+                <fullName>Mövenpick Espresso</fullName>
+                <default>false</default>
+                <label>Mövenpick Espresso</label>
+            </value>
+            <value>
+                <fullName>Mövenpick Gusto Italiano</fullName>
+                <default>false</default>
+                <label>Mövenpick Gusto Italiano</label>
+            </value>
+            <value>
+                <fullName>Mövenpick Schümli</fullName>
+                <default>false</default>
+                <label>Mövenpick Schümli</label>
+            </value>
+            <value>
+                <fullName>Mövenpick Vending Xpress</fullName>
+                <default>false</default>
+                <label>Mövenpick Vending Xpress</label>
+            </value>
+            <value>
+                <fullName>Rischart´s Café Crème FT Bio</fullName>
+                <default>false</default>
+                <label>Rischart´s Café Crème FT Bio</label>
+            </value>
+            <value>
+                <fullName>Rischart´s Espresso FT Bio</fullName>
+                <default>false</default>
+                <label>Rischart´s Espresso FT Bio</label>
+            </value>
+            <value>
+                <fullName>Sansibar Caffè Crema</fullName>
+                <default>false</default>
+                <label>Sansibar Caffè Crema</label>
+            </value>
+            <value>
+                <fullName>Sansibar Caffè Espresso</fullName>
+                <default>false</default>
+                <label>Sansibar Caffè Espresso</label>
+            </value>
+            <value>
+                <fullName>Soulspot Bio Fairtrade Café Crème</fullName>
+                <default>false</default>
+                <label>Soulspot Bio Fairtrade Café Crème</label>
+            </value>
+            <value>
+                <fullName>Soulspot Bio Fairtrade Espresso</fullName>
+                <default>false</default>
+                <label>Soulspot Bio Fairtrade Espresso</label>
+            </value>
+            <value>
+                <fullName>Steinecke Fairtrade Café Crème</fullName>
+                <default>false</default>
+                <label>Steinecke Fairtrade Café Crème</label>
+            </value>
+            <value>
+                <fullName>Steinecke Fairtrade Espresso</fullName>
+                <default>false</default>
+                <label>Steinecke Fairtrade Espresso</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Café Intención</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Café Intención</label>
+            </value>
+            <value>
+                <fullName>Café Verde</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Café Verde</label>
+            </value>
+            <value>
+                <fullName>Espresso Classico</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Espresso Classico</label>
+            </value>
+            <value>
+                <fullName>JJD Classics Melange Finesse</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>JJD Classics Melange Finesse</label>
             </value>
             <value>
                 <fullName>Mövenpick</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Mövenpick</label>
-            </value>
-            <value>
-                <fullName>Premium Brown</fullName>
-                <default>false</default>
-                <label>Premium Brown</label>
-            </value>
-            <value>
-                <fullName>Premium Dark</fullName>
-                <default>false</default>
-                <label>Premium Dark</label>
-            </value>
-            <value>
-                <fullName>Premium Melange</fullName>
-                <default>false</default>
-                <label>Premium Melange</label>
-            </value>
-            <value>
-                <fullName>Ratio</fullName>
-                <default>false</default>
-                <label>Ratio</label>
-            </value>
-            <value>
-                <fullName>Savoy Café Créme</fullName>
-                <default>false</default>
-                <label>Savoy Café Créme</label>
-            </value>
-            <value>
-                <fullName>Top Extra</fullName>
-                <default>false</default>
-                <label>Top Extra</label>
-            </value>
-            <value>
-                <fullName>Wiener Mocca</fullName>
-                <default>false</default>
-                <label>Wiener Mocca</label>
-            </value>
-            <value>
-                <fullName>Wiener Mokka</fullName>
-                <default>false</default>
-                <label>Wiener Mokka</label>
-            </value>
-            <value>
-                <fullName>Classic Brown</fullName>
-                <default>false</default>
-                <label>Classic Brown</label>
-            </value>
-            <value>
-                <fullName>Classic Organic</fullName>
-                <default>false</default>
-                <label>Classic Organic</label>
-            </value>
-            <value>
-                <fullName>Classic White</fullName>
-                <default>false</default>
-                <label>Classic White</label>
             </value>
         </valueSetDefinition>
     </valueSet>

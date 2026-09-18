@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Sales District Key (SAP BZIRK) --></label>
+    <name>SalesDistrictKey__c</name>
+    <picklistValues>
+        <masterLabel>Z00001</masterLabel>
+        <translation><!-- Z00001 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z10100</masterLabel>
+        <translation><!-- Z10100 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z10200</masterLabel>
+        <translation><!-- Z10200 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z10300</masterLabel>
+        <translation><!-- Z10300 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z10400</masterLabel>
+        <translation><!-- Z10400 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z10500</masterLabel>
+        <translation><!-- Z10500 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z20100</masterLabel>
+        <translation><!-- Z20100 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z20150</masterLabel>
+        <translation><!-- Z20150 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z20200</masterLabel>
+        <translation><!-- Z20200 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z20250</masterLabel>
+        <translation><!-- Z20250 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z20300</masterLabel>
+        <translation><!-- Z20300 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z20350</masterLabel>
+        <translation><!-- Z20350 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z20400</masterLabel>
+        <translation><!-- Z20400 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z20450</masterLabel>
+        <translation><!-- Z20450 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z20500</masterLabel>
+        <translation><!-- Z20500 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z20550</masterLabel>
+        <translation><!-- Z20550 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z30100</masterLabel>
+        <translation><!-- Z30100 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z30200</masterLabel>
+        <translation><!-- Z30200 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z30300</masterLabel>
+        <translation><!-- Z30300 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z30400</masterLabel>
+        <translation><!-- Z30400 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z40100</masterLabel>
+        <translation><!-- Z40100 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z40200</masterLabel>
+        <translation><!-- Z40200 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z40300</masterLabel>
+        <translation><!-- Z40300 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z40400</masterLabel>
+        <translation><!-- Z40400 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z40500</masterLabel>
+        <translation><!-- Z40500 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z40600</masterLabel>
+        <translation><!-- Z40600 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z40700</masterLabel>
+        <translation><!-- Z40700 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z40800</masterLabel>
+        <translation><!-- Z40800 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z40900</masterLabel>
+        <translation><!-- Z40900 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z70100</masterLabel>
+        <translation><!-- Z70100 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z70200</masterLabel>
+        <translation><!-- Z70200 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z80100</masterLabel>
+        <translation><!-- Z80100 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

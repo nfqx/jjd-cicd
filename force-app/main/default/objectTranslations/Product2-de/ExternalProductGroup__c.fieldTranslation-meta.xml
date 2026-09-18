@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Externe Warengruppe</label>
+    <name>ExternalProductGroup__c</name>
+    <picklistValues>
+        <masterLabel>Bag</masterLabel>
+        <translation>Lose im Container</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bags in Container</masterLabel>
+        <translation>Säcke im Container</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Big Bag</masterLabel>
+        <translation><!-- Big Bag --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bulk in container</masterLabel>
+        <translation>Lose im Container</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Can</masterLabel>
+        <translation>Dose</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Capsule</masterLabel>
+        <translation>Kapsel</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chep Half Pallet</masterLabel>
+        <translation>Chep-Halb</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chep Pallet</masterLabel>
+        <translation>Chep-Paletten</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chep Quarter Pallet</masterLabel>
+        <translation>Chep-Viertel</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Filter Bag</masterLabel>
+        <translation>Filterbeutel</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Flat Bag</masterLabel>
+        <translation>Flachsack</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Folding Box (FS)</masterLabel>
+        <translation>Faltschachtel</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Folding Box (FST)</masterLabel>
+        <translation>Faltschachtel</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Glass</masterLabel>
+        <translation>Glas</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Green Coffee Blend</masterLabel>
+        <translation>Rohkaffee-Mischung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Green Coffee Quality</masterLabel>
+        <translation>Rohkaffee-Qualität</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ground Coffee</masterLabel>
+        <translation>Mahlkaffee</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mix Box</masterLabel>
+        <translation>Mix-Karton</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mixed Tray</masterLabel>
+        <translation>Mischtray</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Picked</masterLabel>
+        <translation>NICHT kommission.</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation>Sonstige</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pads</masterLabel>
+        <translation>Pads</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pods</masterLabel>
+        <translation>Pods</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Poly Bag</masterLabel>
+        <translation>Polybeutel</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Poly Bag (Bean)</masterLabel>
+        <translation>Polybeutel (Bohne)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Poly Bag (Ground Coffee)</masterLabel>
+        <translation><!-- Poly Bag (Ground Coffee) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Portion Can Coffee</masterLabel>
+        <translation><!-- Portion Can Coffee --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Portion Can Condensed Milk</masterLabel>
+        <translation><!-- Portion Can Condensed Milk --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pouches</masterLabel>
+        <translation><!-- Pouches --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Roasted Coffee</masterLabel>
+        <translation><!-- Roasted Coffee --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shrink Unit</masterLabel>
+        <translation><!-- Shrink Unit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stand-up Pouch</masterLabel>
+        <translation><!-- Stand-up Pouch --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Steamed Green Coffee</masterLabel>
+        <translation><!-- Steamed Green Coffee --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tea String</masterLabel>
+        <translation><!-- Tea String --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tubular Bag</masterLabel>
+        <translation><!-- Tubular Bag --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vacuum Pack</masterLabel>
+        <translation><!-- Vacuum Pack --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vacuum Pack Multipack</masterLabel>
+        <translation><!-- Vacuum Pack Multipack --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Valve Bag</masterLabel>
+        <translation><!-- Valve Bag --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Valve Bag (Carton) - VBK</masterLabel>
+        <translation><!-- Valve Bag (Carton) - VBK --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Valve Bag (Carton) - VBKG</masterLabel>
+        <translation><!-- Valve Bag (Carton) - VBKG --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Valve Bag (Manual)</masterLabel>
+        <translation><!-- Valve Bag (Manual) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Valve Bag (Wrapped)</masterLabel>
+        <translation><!-- Valve Bag (Wrapped) --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,2 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"></CustomObjectTranslation>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <errorMessage>Für die Übergabe fehlt die Kundennummer aus dem Vorgang. Bitte den Vorgang öffnen und die Kundennummer ergänzen.</errorMessage>
+        <name>ReturnOrderDebitorNumberRequired</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Ohne Auftrags- oder Rechnungsbezug ist eine Begründung Pflicht. Bitte in einem Satz festhalten, warum kein Beleg vorliegt.</errorMessage>
+        <name>ReturnOrderNoDocumentReasonRequired</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte die Bezugsart wählen: Auftrag, Rechnung oder ohne Beleg. Ohne Bezugsart wird der Retourenauftrag abgewiesen.</errorMessage>
+        <name>ReturnOrderReferenceTypeRequired</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte die Abhol- und Versandart wählen. Die Logistik beauftragt Paketdienst oder Spedition anhand dieser Angabe.</errorMessage>
+        <name>ReturnOrderShippingConditionRequired</name>
+    </validationRules>
+</CustomObjectTranslation>

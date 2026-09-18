@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ChainRole_RequiredForConversion</fullName>
+    <active>false</active>
+    <description>Requires a Chain Role before the lead is converted (status “Qualified”).</description>
+    <errorConditionFormula>AND(
+  NOT(SkipValidation__c),
+  ISCHANGED(Status),
+  ISPICKVAL(Status, &quot;Qualified&quot;),
+  ISPICKVAL(ChainRole__c, &quot;&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>ChainRole__c</errorDisplayField>
+    <errorMessage>Please select a Chain Role before converting the lead.</errorMessage>
+</ValidationRule>

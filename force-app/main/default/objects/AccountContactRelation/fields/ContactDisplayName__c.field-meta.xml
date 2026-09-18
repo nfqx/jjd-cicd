@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ContactDisplayName__c</fullName>
+    <externalId>false</externalId>
+    <formula>ContactFullName__c &amp;
+
+IF(
+    NOT(ISBLANK(ContactFunction__c)),
+    &quot; | &quot; &amp; ContactFunction__c,
+    &quot;&quot;
+) &amp;
+
+IF(
+    NOT(ISBLANK(Roles)),
+    &quot; | &quot; &amp;
+    IF(INCLUDES(Roles, &quot;Decision Maker&quot;), &quot;Decision Maker; &quot;, &quot;&quot;) &amp;
+    IF(INCLUDES(Roles, &quot;Buyer&quot;), &quot;Buyer; &quot;, &quot;&quot;) &amp;
+    IF(INCLUDES(Roles, &quot;Technical Contact&quot;), &quot;Technical Contact; &quot;, &quot;&quot;) &amp;
+    IF(INCLUDES(Roles, &quot;Influencer&quot;), &quot;Influencer; &quot;, &quot;&quot;),
+    &quot;&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Contact Display Name</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

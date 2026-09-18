@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Summe der Freiwarebestellungen, die in diesem Kalenderjahr gegen das Budget gerechnet wurden. Wird vom System beim Anlegen des ERP-Auftrags gesetzt und durch Retouren gemindert. Nicht bearbeiten.</help>
+    <label>Verbrauchtes Budget</label>
+    <name>FreeGoodsBudgetUsed__c</name>
+</CustomFieldTranslation>

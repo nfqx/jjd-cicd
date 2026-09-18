@@ -90,4 +90,8 @@
         <masterLabel>RE Verladefehler Paketdienst</masterLabel>
         <translation><!-- RE Verladefehler Paketdienst --></translation>
     </picklistValues>
+    <picklistValues>
+        <masterLabel>Sicherstellung</masterLabel>
+        <translation><!-- Sicherstellung --></translation>
+    </picklistValues>
 </CustomFieldTranslation>

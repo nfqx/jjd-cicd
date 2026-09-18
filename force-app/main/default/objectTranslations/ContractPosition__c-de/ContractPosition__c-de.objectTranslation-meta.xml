@@ -11,12 +11,5 @@
         <value>Contract Positions</value>
     </caseValues>
     <gender>Neuter</gender>
-    <layouts>
-        <layout>Contract Position Layout</layout>
-        <sections>
-            <label><!-- Information --></label>
-            <section>Information</section>
-        </sections>
-    </layouts>
     <nameFieldLabel>Position Number</nameFieldLabel>
 </CustomObjectTranslation>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RootAccount__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Top-level organizational account of the chain structure, independent of ConditionChainParent__c and ConditionChainHead__c. No automatic population or account-category restriction.</description>
+    <inlineHelpText>Select the top-level organizational account of the chain structure. This reference is independent of the condition chain parent and condition chain head.</inlineHelpText>
+    <label>Root Account</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Accounts by Organizational Root</relationshipLabel>
+    <relationshipName>OrganizationalRootAccounts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

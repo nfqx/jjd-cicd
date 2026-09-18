@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Dieser Auftrag wird gegen ein persönliches Freiwarebudget gerechnet. Wird vom Order Wizard gesetzt, nie manuell.</help>
+    <label>Budgetauftrag</label>
+    <name>BudgetOrder__c</name>
+</CustomFieldTranslation>

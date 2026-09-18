@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Key Account Key (SAP KVGR3) --></label>
+    <name>KamKey__c</name>
+    <picklistValues>
+        <masterLabel>KA1</masterLabel>
+        <translation><!-- KA1 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KA2</masterLabel>
+        <translation><!-- KA2 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KA3</masterLabel>
+        <translation><!-- KA3 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KA4</masterLabel>
+        <translation><!-- KA4 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KA5</masterLabel>
+        <translation><!-- KA5 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KA6</masterLabel>
+        <translation><!-- KA6 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KA7</masterLabel>
+        <translation><!-- KA7 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KA8</masterLabel>
+        <translation><!-- KA8 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KA9</masterLabel>
+        <translation><!-- KA9 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

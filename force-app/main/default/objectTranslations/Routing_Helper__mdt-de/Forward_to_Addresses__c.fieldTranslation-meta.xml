@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- enter email addresses here separated by commas --></help>
+    <label><!-- Forward to Addresses --></label>
+    <name>Forward_to_Addresses__c</name>
+</CustomFieldTranslation>

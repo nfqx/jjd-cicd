@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Worauf sich die Retoure bezieht. Ohne Beleg ist eine Begründung Pflicht.</help>
+    <label>Bezugsart</label>
+    <name>ReferenceType__c</name>
+    <picklistValues>
+        <masterLabel>Invoice</masterLabel>
+        <translation>Rechnung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No document</masterLabel>
+        <translation>Ohne Beleg</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Order</masterLabel>
+        <translation>Auftrag</translation>
+    </picklistValues>
+</CustomFieldTranslation>

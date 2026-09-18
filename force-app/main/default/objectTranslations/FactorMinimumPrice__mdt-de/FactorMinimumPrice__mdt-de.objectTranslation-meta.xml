@@ -11,11 +11,4 @@
         <value>Factor Minimum Price</value>
     </caseValues>
     <gender>Neuter</gender>
-    <layouts>
-        <layout>Factor Perview Price Layout</layout>
-        <sections>
-            <label><!-- Custom Links --></label>
-            <section>Custom Links</section>
-        </sections>
-    </layouts>
 </CustomObjectTranslation>

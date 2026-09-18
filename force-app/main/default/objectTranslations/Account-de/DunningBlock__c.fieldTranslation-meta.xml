@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Mahnsperre</label>
+    <name>DunningBlock__c</name>
+    <picklistValues>
+        <masterLabel>Block reason H</masterLabel>
+        <translation>Sperrgrund H</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Blocked by invoice verification</masterLabel>
+        <translation>Gesperrt durch Rechnungsprüfung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dunning interface</masterLabel>
+        <translation>Mahninterface</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dunning reason for capitalization of arrears</masterLabel>
+        <translation>Mahngrund für Rückstandskapitalisierung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dunning reason for deferral</masterLabel>
+        <translation>Mahngrund für Stundung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Manual block reason A</masterLabel>
+        <translation>Manuelle Sperre Grund A</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Manual block reason B</masterLabel>
+        <translation>Manuelle Sperre Grund B</translation>
+    </picklistValues>
+</CustomFieldTranslation>

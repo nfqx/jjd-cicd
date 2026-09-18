@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Warum kein Auftrag und keine Rechnung als Bezug vorliegt. Ein Satz genügt.</help>
+    <label>Begründung ohne Beleg</label>
+    <name>NoDocumentReason__c</name>
+</CustomFieldTranslation>

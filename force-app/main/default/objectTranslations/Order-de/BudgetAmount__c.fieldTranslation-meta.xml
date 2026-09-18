@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Gegen das Budget gerechneter Betrag: Produktsumme ohne Versandkosten zu Preisen der Order Simulation. Eingefroren beim Anlegen des ERP-Auftrags.</help>
+    <label>Budgetbetrag</label>
+    <name>BudgetAmount__c</name>
+</CustomFieldTranslation>

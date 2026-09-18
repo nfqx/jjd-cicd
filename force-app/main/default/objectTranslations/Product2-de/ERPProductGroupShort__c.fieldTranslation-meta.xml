@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>ERP-Warengruppe (Kurz)</label>
+    <name>ERPProductGroupShort__c</name>
+    <picklistValues>
+        <masterLabel>Adhesive (Glue)</masterLabel>
+        <translation>Klebstoff (Krt.)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Adhesive Tape (Self)</masterLabel>
+        <translation>Klebestr. (selbstkl)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Adhesive Tape (Wet)</masterLabel>
+        <translation>Klebestr. (naßkl)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Alcoholic Beverages</masterLabel>
+        <translation>alkohol. Getränke</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Aluminum Foil</masterLabel>
+        <translation>VPE ALUMINIUM-FOLIE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Base Cabinets &amp; Carts</masterLabel>
+        <translation>Unterschränke und Wagen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Biscuits &amp; Naps</masterLabel>
+        <translation>Kekse und Naps</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cappuccino</masterLabel>
+        <translation>Cappuccino</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Capsule</masterLabel>
+        <translation>VPE Kapsel</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chocolate Dispenser</masterLabel>
+        <translation>Schokodispenser</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cocaya</masterLabel>
+        <translation>Cocaya</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coffee &amp; Espresso Grinders</masterLabel>
+        <translation>Kaf-und Espr.mühlen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coffee Bags etc.</masterLabel>
+        <translation>Kaffeetüten etc.</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coffee Chutes</masterLabel>
+        <translation>Kaffeeschütten</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coffee Creamer / Milk</masterLabel>
+        <translation>KS, KDM, Milch</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coffee Extract</masterLabel>
+        <translation>Extraktkaffee</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coffee Machine</masterLabel>
+        <translation>Kaffeemaschine</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coffee Machine / Other</masterLabel>
+        <translation>Kaffeemaschine / sonstige Geräte</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coffee Machine Cleaners</masterLabel>
+        <translation>Reinigungsm f.KMasch</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coffee Machine Spare Part</masterLabel>
+        <translation>Kaffeemaschine-Ersatzteil</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coffee Tableware</masterLabel>
+        <translation>Geschirr Kaffee</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coffee-to-Go Cups</masterLabel>
+        <translation>Coffee-to-Go Becher</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coffee/Tea Accessories</masterLabel>
+        <translation>Zubehör Kaffee/Tee</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Composite Foil Alu-Free</masterLabel>
+        <translation>Vb-Folie alufrei</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Composite Foil w/ Alu</masterLabel>
+        <translation>Verbund-Folie m. Alu</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Composite Foil w/o Alu</masterLabel>
+        <translation><!-- Composite Foil w/o Alu --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Consumables</masterLabel>
+        <translation><!-- Consumables --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Corrugated Board Cut</masterLabel>
+        <translation><!-- Corrugated Board Cut --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cover Cap Cardboard</masterLabel>
+        <translation><!-- Cover Cap Cardboard --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cover Film</masterLabel>
+        <translation><!-- Cover Film --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cup Stackers &amp; Warmers</masterLabel>
+        <translation><!-- Cup Stackers &amp; Warmers --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Drinking Chocolate</masterLabel>
+        <translation><!-- Drinking Chocolate --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Edge Protection Strips</masterLabel>
+        <translation><!-- Edge Protection Strips --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Embossing / TTR Foils</masterLabel>
+        <translation><!-- Embossing / TTR Foils --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Filter Bags</masterLabel>
+        <translation><!-- Filter Bags --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Filter Paper Packaging</masterLabel>
+        <translation><!-- Filter Paper Packaging --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Folding Box</masterLabel>
+        <translation><!-- Folding Box --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Folding Cartons</masterLabel>
+        <translation><!-- Folding Cartons --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Freight</masterLabel>
+        <translation><!-- Freight --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Glass</masterLabel>
+        <translation><!-- Glass --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Glasses</masterLabel>
+        <translation><!-- Glasses --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Green Coffee Blend Decaf</masterLabel>
+        <translation><!-- Green Coffee Blend Decaf --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Green Coffee Blend FT</masterLabel>
+        <translation><!-- Green Coffee Blend FT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Green Coffee Blend Gen.</masterLabel>
+        <translation><!-- Green Coffee Blend Gen. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Green Coffee Blend Mild</masterLabel>
+        <translation><!-- Green Coffee Blend Mild --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Green Coffee Blend RFA</masterLabel>
+        <translation><!-- Green Coffee Blend RFA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Green Coffee Type</masterLabel>
+        <translation><!-- Green Coffee Type --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Green Coffee Type FT</masterLabel>
+        <translation><!-- Green Coffee Type FT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Green Coffee Type RFA</masterLabel>
+        <translation><!-- Green Coffee Type RFA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ground Coffee Decaf</masterLabel>
+        <translation><!-- Ground Coffee Decaf --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ground Coffee FT</masterLabel>
+        <translation><!-- Ground Coffee FT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ground Coffee Gen.</masterLabel>
+        <translation><!-- Ground Coffee Gen. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ground Coffee Mild</masterLabel>
+        <translation><!-- Ground Coffee Mild --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ground Coffee RFA</masterLabel>
+        <translation><!-- Ground Coffee RFA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Header Label PAP</masterLabel>
+        <translation><!-- Header Label PAP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Header Label PE/PAP</masterLabel>
+        <translation><!-- Header Label PE/PAP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hinged Lid Tin</masterLabel>
+        <translation><!-- Hinged Lid Tin --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hot Water &amp; Steam Units</masterLabel>
+        <translation><!-- Hot Water &amp; Steam Units --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Intermediate Cardboard</masterLabel>
+        <translation><!-- Intermediate Cardboard --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Label</masterLabel>
+        <translation><!-- Label --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Maintenance / Spare Parts</masterLabel>
+        <translation><!-- Maintenance / Spare Parts --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Milk &amp; Cream Dispensers</masterLabel>
+        <translation><!-- Milk &amp; Cream Dispensers --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Miscellaneous</masterLabel>
+        <translation><!-- Miscellaneous --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Office Supplies</masterLabel>
+        <translation><!-- Office Supplies --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other Goods 19% VAT</masterLabel>
+        <translation><!-- Other Goods 19% VAT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other Goods 7% VAT</masterLabel>
+        <translation><!-- Other Goods 7% VAT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Outer Cartons</masterLabel>
+        <translation><!-- Outer Cartons --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Outer Wrap w/ OPP</masterLabel>
+        <translation><!-- Outer Wrap w/ OPP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PE Bags</masterLabel>
+        <translation><!-- PE Bags --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PP Foil</masterLabel>
+        <translation><!-- PP Foil --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PP Strapping Band</masterLabel>
+        <translation><!-- PP Strapping Band --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pallet</masterLabel>
+        <translation><!-- Pallet --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Paper Cut</masterLabel>
+        <translation><!-- Paper Cut --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Paper-Foil Composite w/o Alu</masterLabel>
+        <translation><!-- Paper-Foil Composite w/o Alu --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Plastic Lid</masterLabel>
+        <translation><!-- Plastic Lid --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Plastic/Paper Composite</masterLabel>
+        <translation><!-- Plastic/Paper Composite --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pots / Glass / Vacuum</masterLabel>
+        <translation><!-- Pots / Glass / Vacuum --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Promotional Material</masterLabel>
+        <translation><!-- Promotional Material --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Roasted Coffee Decaf</masterLabel>
+        <translation><!-- Roasted Coffee Decaf --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Roasted Coffee FT</masterLabel>
+        <translation><!-- Roasted Coffee FT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Roasted Coffee Gen.</masterLabel>
+        <translation><!-- Roasted Coffee Gen. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Roasted Coffee Mild</masterLabel>
+        <translation><!-- Roasted Coffee Mild --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Roasted Coffee Mixed</masterLabel>
+        <translation><!-- Roasted Coffee Mixed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Roasted Coffee RFA</masterLabel>
+        <translation><!-- Roasted Coffee RFA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Roll Cuts</masterLabel>
+        <translation><!-- Roll Cuts --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Samovars</masterLabel>
+        <translation><!-- Samovars --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Services</masterLabel>
+        <translation><!-- Services --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shrink Film</masterLabel>
+        <translation><!-- Shrink Film --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stretch Film</masterLabel>
+        <translation><!-- Stretch Film --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sugar &amp; Sweeteners</masterLabel>
+        <translation><!-- Sugar &amp; Sweeteners --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tea Bag</masterLabel>
+        <translation><!-- Tea Bag --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tea Displays</masterLabel>
+        <translation><!-- Tea Displays --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tea Packed</masterLabel>
+        <translation><!-- Tea Packed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tea Raw Material</masterLabel>
+        <translation><!-- Tea Raw Material --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tea Tableware</masterLabel>
+        <translation><!-- Tea Tableware --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tea Tea Diamonds</masterLabel>
+        <translation><!-- Tea Tea Diamonds --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Telescopic Box</masterLabel>
+        <translation><!-- Telescopic Box --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Toner Cartridge</masterLabel>
+        <translation><!-- Toner Cartridge --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Trays</masterLabel>
+        <translation><!-- Trays --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vacuum Inner Foil</masterLabel>
+        <translation><!-- Vacuum Inner Foil --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Valve</masterLabel>
+        <translation><!-- Valve --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Valve / Stand-up Bag</masterLabel>
+        <translation><!-- Valve / Stand-up Bag --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Warmers + Filters</masterLabel>
+        <translation><!-- Warmers + Filters --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Water Filter</masterLabel>
+        <translation><!-- Water Filter --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

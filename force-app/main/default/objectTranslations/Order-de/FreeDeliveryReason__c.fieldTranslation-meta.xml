@@ -219,6 +219,10 @@
         <translation>Vertreterbesuch</translation>
     </picklistValues>
     <picklistValues>
+        <masterLabel>Sample Delivery</masterLabel>
+        <translation><!-- Sample Delivery --></translation>
+    </picklistValues>
+    <picklistValues>
         <masterLabel>Securing of Goods</masterLabel>
         <translation>Sicherstellung</translation>
     </picklistValues>

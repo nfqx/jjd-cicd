@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Assignment Source --></label>
+    <name>AssignmentSource__c</name>
+    <picklistValues>
+        <masterLabel>Business Type KAM</masterLabel>
+        <translation><!-- Business Type KAM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chain</masterLabel>
+        <translation><!-- Chain --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Creating User</masterLabel>
+        <translation><!-- Creating User --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Manual</masterLabel>
+        <translation><!-- Manual --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Postal Code</masterLabel>
+        <translation><!-- Postal Code --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Telesales Queue</masterLabel>
+        <translation><!-- Telesales Queue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unassigned</masterLabel>
+        <translation><!-- Unassigned --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

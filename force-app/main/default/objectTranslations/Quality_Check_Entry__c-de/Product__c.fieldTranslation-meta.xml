@@ -3,12 +3,24 @@
     <label><!-- Product --></label>
     <name>Product__c</name>
     <picklistValues>
+        <masterLabel>Alberto Caffè Crema</masterLabel>
+        <translation><!-- Alberto Caffè Crema --></translation>
+    </picklistValues>
+    <picklistValues>
         <masterLabel>Alfredo Caffè</masterLabel>
         <translation><!-- Alfredo Caffè --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Alfredo Espresso Cremazzurro</masterLabel>
         <translation><!-- Alfredo Espresso Cremazzurro --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Alfredo Espresso Decaffeinato</masterLabel>
+        <translation><!-- Alfredo Espresso Decaffeinato --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Alfredo Espresso FT Futuro</masterLabel>
+        <translation><!-- Alfredo Espresso FT Futuro --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Alfredo Espresso Primus Omnium</masterLabel>
@@ -23,32 +35,100 @@
         <translation><!-- Alfredo Espresso Tipo Bar --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Balance Extra</masterLabel>
-        <translation><!-- Balance Extra --></translation>
+        <masterLabel>Burkhof Bio FT Café Crema</masterLabel>
+        <translation><!-- Burkhof Bio FT Café Crema --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Bistro Montana</masterLabel>
-        <translation><!-- Bistro Montana --></translation>
+        <masterLabel>Burkhof Bio FT Espresso</masterLabel>
+        <translation><!-- Burkhof Bio FT Espresso --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Bistro Montana Café Crème</masterLabel>
-        <translation><!-- Bistro Montana Café Crème --></translation>
+        <masterLabel>Burkhof Café Crème Original</masterLabel>
+        <translation><!-- Burkhof Café Crème Original --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Café Créme Original</masterLabel>
-        <translation><!-- Café Créme Original --></translation>
+        <masterLabel>Burkhof Casino Royal</masterLabel>
+        <translation><!-- Burkhof Casino Royal --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Burkhof Espresso Classico</masterLabel>
+        <translation><!-- Burkhof Espresso Classico --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Burkhof Espresso Speciale</masterLabel>
+        <translation><!-- Burkhof Espresso Speciale --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Burkhof Grand Gourmet Spezial</masterLabel>
+        <translation><!-- Burkhof Grand Gourmet Spezial --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Burkhof Herzfreund Entcoff.</masterLabel>
+        <translation><!-- Burkhof Herzfreund Entcoff. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Burkhof Hochland</masterLabel>
+        <translation><!-- Burkhof Hochland --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Burkhof Luxus</masterLabel>
+        <translation><!-- Burkhof Luxus --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Burkhof Melange Bavaria</masterLabel>
+        <translation><!-- Burkhof Melange Bavaria --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Burkhof Savoy Café Créme</masterLabel>
+        <translation><!-- Burkhof Savoy Café Créme --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Burkhof Wiener Mokka</masterLabel>
+        <translation><!-- Burkhof Wiener Mokka --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Café Bistro Vending</masterLabel>
+        <translation><!-- Café Bistro Vending --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Café Int. Bio FT Gustoso Café Crème</masterLabel>
+        <translation><!-- Café Int. Bio FT Gustoso Café Crème --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Café Int. Bio Fino Espresso</masterLabel>
+        <translation><!-- Café Int. Bio Fino Espresso --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Café Int. FT Crema Bio Fino</masterLabel>
+        <translation><!-- Café Int. FT Crema Bio Fino --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Café Int. FT Espr. Bio Gustoso</masterLabel>
+        <translation><!-- Café Int. FT Espr. Bio Gustoso --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Café Int. especiál Bio FT Espresso</masterLabel>
         <translation><!-- Café Int. especiál Bio FT Espresso --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Café Intención</masterLabel>
-        <translation><!-- Café Intención --></translation>
+        <masterLabel>Café Intención Bio Crema Aromatico FT</masterLabel>
+        <translation><!-- Café Intención Bio Crema Aromatico FT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Café Intención Bio Espr. Intensivo FT</masterLabel>
+        <translation><!-- Café Intención Bio Espr. Intensivo FT --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Café Intención Café Crème</masterLabel>
         <translation><!-- Café Intención Café Crème --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Café Intención Café Crème Delicioso</masterLabel>
+        <translation><!-- Café Intención Café Crème Delicioso --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Café Intención Espr. Delicioso</masterLabel>
+        <translation><!-- Café Intención Espr. Delicioso --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Café Intención Espresso</masterLabel>
@@ -59,68 +139,236 @@
         <translation><!-- Café Intención Filterkaffee --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Café Verde</masterLabel>
-        <translation><!-- Café Verde --></translation>
+        <masterLabel>Café Verde Creme Bio</masterLabel>
+        <translation><!-- Café Verde Creme Bio --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Café Verde Espresso Barista Bio</masterLabel>
+        <translation><!-- Café Verde Espresso Barista Bio --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Café Verde Espresso Bio</masterLabel>
         <translation><!-- Café Verde Espresso Bio --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Cantate</masterLabel>
-        <translation><!-- Cantate --></translation>
+        <masterLabel>Cocaya Classic Brown</masterLabel>
+        <translation><!-- Cocaya Classic Brown --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Casino</masterLabel>
-        <translation><!-- Casino --></translation>
+        <masterLabel>Cocaya Classic Organic</masterLabel>
+        <translation><!-- Cocaya Classic Organic --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Casino Royal</masterLabel>
-        <translation><!-- Casino Royal --></translation>
+        <masterLabel>Cocaya Classic White</masterLabel>
+        <translation><!-- Cocaya Classic White --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Classic Brown</masterLabel>
-        <translation><!-- Classic Brown --></translation>
+        <masterLabel>Cocaya Premium Brown</masterLabel>
+        <translation><!-- Cocaya Premium Brown --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Classic Organic</masterLabel>
-        <translation><!-- Classic Organic --></translation>
+        <masterLabel>Cocaya Premium Dark</masterLabel>
+        <translation><!-- Cocaya Premium Dark --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Classic White</masterLabel>
-        <translation><!-- Classic White --></translation>
+        <masterLabel>Cocaya Premium Melange</masterLabel>
+        <translation><!-- Cocaya Premium Melange --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Espresso Classico</masterLabel>
-        <translation><!-- Espresso Classico --></translation>
+        <masterLabel>Darbomat Balance Extra</masterLabel>
+        <translation><!-- Darbomat Balance Extra --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Espresso Speciale</masterLabel>
-        <translation><!-- Espresso Speciale --></translation>
+        <masterLabel>Der Beck Café Creme</masterLabel>
+        <translation><!-- Der Beck Café Creme --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Excelsior</masterLabel>
-        <translation><!-- Excelsior --></translation>
+        <masterLabel>Der Beck Fairtrade Espresso</masterLabel>
+        <translation><!-- Der Beck Fairtrade Espresso --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Favorit Extra</masterLabel>
-        <translation><!-- Favorit Extra --></translation>
+        <masterLabel>Der Beck Kaffee</masterLabel>
+        <translation><!-- Der Beck Kaffee --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Grand Gourmet</masterLabel>
-        <translation><!-- Grand Gourmet --></translation>
+        <masterLabel>EILLES C. Crema Lieblingsbohne</masterLabel>
+        <translation><!-- EILLES C. Crema Lieblingsbohne --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Grand Gourmet Spezial</masterLabel>
-        <translation><!-- Grand Gourmet Spezial --></translation>
+        <masterLabel>EILLES C.Cr. AROMAWUNDER</masterLabel>
+        <translation><!-- EILLES C.Cr. AROMAWUNDER --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Hochland</masterLabel>
-        <translation><!-- Hochland --></translation>
+        <masterLabel>EILLES ENTHUSIAST</masterLabel>
+        <translation><!-- EILLES ENTHUSIAST --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EILLES Espresso Launemacher</masterLabel>
+        <translation><!-- EILLES Espresso Launemacher --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EILLES Espresso Tagesretter</masterLabel>
+        <translation><!-- EILLES Espresso Tagesretter --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EILLES Espresso Versio</masterLabel>
+        <translation><!-- EILLES Espresso Versio --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EILLES KAFFEE Gourmet Café</masterLabel>
+        <translation><!-- EILLES KAFFEE Gourmet Café --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EILLES MOTIVATOR</masterLabel>
+        <translation><!-- EILLES MOTIVATOR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EILLES Röstmeister Caffè Crema</masterLabel>
+        <translation><!-- EILLES Röstmeister Caffè Crema --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Espresso Classico Vending</masterLabel>
+        <translation><!-- Espresso Classico Vending --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Espresso Gold</masterLabel>
+        <translation><!-- Espresso Gold --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hausröstung Café Crème</masterLabel>
+        <translation><!-- Hausröstung Café Crème --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hausröstung Espresso</masterLabel>
+        <translation><!-- Hausröstung Espresso --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IDEE KAFFEE Caffé Crema Aromatic</masterLabel>
+        <translation><!-- IDEE KAFFEE Caffé Crema Aromatic --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IDEE KAFFEE Decaffeinated Elegant</masterLabel>
+        <translation><!-- IDEE KAFFEE Decaffeinated Elegant --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IDEE KAFFEE Espresso Intense</masterLabel>
+        <translation><!-- IDEE KAFFEE Espresso Intense --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Idee Kaffee Classic</masterLabel>
         <translation><!-- Idee Kaffee Classic --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Idee Kaffee entcoffeiniert</masterLabel>
+        <translation><!-- Idee Kaffee entcoffeiniert --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Il Caffe Espresso</masterLabel>
+        <translation><!-- Il Caffe Espresso --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Impuls</masterLabel>
+        <translation><!-- Impuls --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>J. Hornig Meistertasse 21</masterLabel>
+        <translation><!-- J. Hornig Meistertasse 21 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>J. Hornig Röstmeister 1912</masterLabel>
+        <translation><!-- J. Hornig Röstmeister 1912 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>J. Hornig Röstmeister Edelmokka</masterLabel>
+        <translation><!-- J. Hornig Röstmeister Edelmokka --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>J. Hornig Röstmeister Espresso</masterLabel>
+        <translation><!-- J. Hornig Röstmeister Espresso --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>J. Hornig Röstmeister Graz</masterLabel>
+        <translation><!-- J. Hornig Röstmeister Graz --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>J. Hornig Röstmeister Triest</masterLabel>
+        <translation><!-- J. Hornig Röstmeister Triest --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>J. Hornig Röstmeister Triest Bio FT</masterLabel>
+        <translation><!-- J. Hornig Röstmeister Triest Bio FT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>J.J. Darboven Origins Brasil</masterLabel>
+        <translation><!-- J.J. Darboven Origins Brasil --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>J.J. Darboven Origins Colombia</masterLabel>
+        <translation><!-- J.J. Darboven Origins Colombia --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>J.J. Darboven Origins India</masterLabel>
+        <translation><!-- J.J. Darboven Origins India --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>JJD Classics Bistro Montana</masterLabel>
+        <translation><!-- JJD Classics Bistro Montana --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>JJD Classics Bistro Montana Café Crème</masterLabel>
+        <translation><!-- JJD Classics Bistro Montana Café Crème --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>JJD Classics Cantate</masterLabel>
+        <translation><!-- JJD Classics Cantate --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>JJD Classics Casino</masterLabel>
+        <translation><!-- JJD Classics Casino --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>JJD Classics Espresso Finesse</masterLabel>
+        <translation><!-- JJD Classics Espresso Finesse --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>JJD Classics Espresso Montana</masterLabel>
+        <translation><!-- JJD Classics Espresso Montana --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>JJD Classics Excelsior</masterLabel>
+        <translation><!-- JJD Classics Excelsior --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>JJD Classics Favorit Extra</masterLabel>
+        <translation><!-- JJD Classics Favorit Extra --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>JJD Classics GV Mild</masterLabel>
+        <translation><!-- JJD Classics GV Mild --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>JJD Classics Grand Gourmet</masterLabel>
+        <translation><!-- JJD Classics Grand Gourmet --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>JJD Classics Melange Finesse Café Crème</masterLabel>
+        <translation><!-- JJD Classics Melange Finesse Café Crème --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>JJD Classics Ratio</masterLabel>
+        <translation><!-- JJD Classics Ratio --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>JJD Classics Top Extra</masterLabel>
+        <translation><!-- JJD Classics Top Extra --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>JJD Classics Wiener Mocca</masterLabel>
+        <translation><!-- JJD Classics Wiener Mocca --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Massimo Espresso</masterLabel>
+        <translation><!-- Massimo Espresso --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Massimo Forte</masterLabel>
@@ -131,51 +379,75 @@
         <translation><!-- Massimo Forte Espresso --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Melange Bavaria</masterLabel>
-        <translation><!-- Melange Bavaria --></translation>
+        <masterLabel>Mövenpick Caffè Crema</masterLabel>
+        <translation><!-- Mövenpick Caffè Crema --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Melange Finesse</masterLabel>
-        <translation><!-- Melange Finesse --></translation>
+        <masterLabel>Mövenpick Corazòn Bio FT</masterLabel>
+        <translation><!-- Mövenpick Corazòn Bio FT --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Melange Finesse Café Crème</masterLabel>
-        <translation><!-- Melange Finesse Café Crème --></translation>
+        <masterLabel>Mövenpick Der Himmlische</masterLabel>
+        <translation><!-- Mövenpick Der Himmlische --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Mövenpick</masterLabel>
-        <translation><!-- Mövenpick --></translation>
+        <masterLabel>Mövenpick El Autentico Caffè Crema RFA SG</masterLabel>
+        <translation><!-- Mövenpick El Autentico Caffè Crema RFA SG --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Premium Brown</masterLabel>
-        <translation><!-- Premium Brown --></translation>
+        <masterLabel>Mövenpick Espresso</masterLabel>
+        <translation><!-- Mövenpick Espresso --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Premium Dark</masterLabel>
-        <translation><!-- Premium Dark --></translation>
+        <masterLabel>Mövenpick Gusto Italiano</masterLabel>
+        <translation><!-- Mövenpick Gusto Italiano --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Premium Melange</masterLabel>
-        <translation><!-- Premium Melange --></translation>
+        <masterLabel>Mövenpick Schümli</masterLabel>
+        <translation><!-- Mövenpick Schümli --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Ratio</masterLabel>
-        <translation><!-- Ratio --></translation>
+        <masterLabel>Mövenpick Vending Xpress</masterLabel>
+        <translation><!-- Mövenpick Vending Xpress --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Savoy Café Créme</masterLabel>
-        <translation><!-- Savoy Café Créme --></translation>
+        <masterLabel>Mövenpick des Jahres</masterLabel>
+        <translation><!-- Mövenpick des Jahres --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Top Extra</masterLabel>
-        <translation><!-- Top Extra --></translation>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Wiener Mocca</masterLabel>
-        <translation><!-- Wiener Mocca --></translation>
+        <masterLabel>Rischart´s Café Crème FT Bio</masterLabel>
+        <translation><!-- Rischart´s Café Crème FT Bio --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Wiener Mokka</masterLabel>
-        <translation><!-- Wiener Mokka --></translation>
+        <masterLabel>Rischart´s Espresso FT Bio</masterLabel>
+        <translation><!-- Rischart´s Espresso FT Bio --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sansibar Caffè Crema</masterLabel>
+        <translation><!-- Sansibar Caffè Crema --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sansibar Caffè Espresso</masterLabel>
+        <translation><!-- Sansibar Caffè Espresso --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Soulspot Bio Fairtrade Café Crème</masterLabel>
+        <translation><!-- Soulspot Bio Fairtrade Café Crème --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Soulspot Bio Fairtrade Espresso</masterLabel>
+        <translation><!-- Soulspot Bio Fairtrade Espresso --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Steinecke Fairtrade Café Crème</masterLabel>
+        <translation><!-- Steinecke Fairtrade Café Crème --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Steinecke Fairtrade Espresso</masterLabel>
+        <translation><!-- Steinecke Fairtrade Espresso --></translation>
     </picklistValues>
 </CustomFieldTranslation>

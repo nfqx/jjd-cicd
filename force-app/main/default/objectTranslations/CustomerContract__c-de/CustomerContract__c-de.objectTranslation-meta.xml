@@ -11,12 +11,5 @@
         <value>Customer Contracts</value>
     </caseValues>
     <gender>Neuter</gender>
-    <layouts>
-        <layout>Customer Contract Layout</layout>
-        <sections>
-            <label><!-- Information --></label>
-            <section>Information</section>
-        </sections>
-    </layouts>
     <nameFieldLabel>Contract Number</nameFieldLabel>
 </CustomObjectTranslation>

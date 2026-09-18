@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Indicates the extent to which this specific item has already been transferred to subsequent documents (e.g., delivery slips or follow-up orders). --></help>
+    <label>Referenzstatus Position</label>
+    <name>Reference_Status__c</name>
+    <picklistValues>
+        <masterLabel>Completely Referenced</masterLabel>
+        <translation>Vollständig referenziert</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Referenced</masterLabel>
+        <translation>Nicht referenziert</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Partially Referenced</masterLabel>
+        <translation>Teilweise referenziert</translation>
+    </picklistValues>
+</CustomFieldTranslation>

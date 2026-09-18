@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Mahnverfahren</label>
+    <name>DunningProcedure__c</name>
+    <picklistValues>
+        <masterLabel>Four-step dunning, every 14 days (0001)</masterLabel>
+        <translation>Vierstufige Mahnung, 14-tägig (0001)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Four-step dunning, every 14 days (Z014)</masterLabel>
+        <translation>Vierstufige Mahnung, 14-tägig (Z014)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Four-step dunning, every 14 days, IS-RE forms</masterLabel>
+        <translation>Vierstufige Mahnung, 14-tägig, IS-RE-Formulare</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Four-step dunning, every 7 days</masterLabel>
+        <translation>Vierstufige Mahnung, 7-tägig</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Installment payment dunning procedure</masterLabel>
+        <translation>Mahnverfahren Ratenzahlung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Payment reminder, every 14 days</masterLabel>
+        <translation>Zahlungserinnerung, 14-tägig</translation>
+    </picklistValues>
+</CustomFieldTranslation>

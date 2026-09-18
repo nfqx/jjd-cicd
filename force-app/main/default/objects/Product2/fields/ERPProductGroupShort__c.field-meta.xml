@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ERPProductGroupShort__c</fullName>
+    <label>ERP Product Group (Short)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>10100101</fullName>
+                <default>false</default>
+                <label>Green Coffee Type</label>
+            </value>
+            <value>
+                <fullName>10100102</fullName>
+                <default>false</default>
+                <label>Green Coffee Type FT</label>
+            </value>
+            <value>
+                <fullName>10100103</fullName>
+                <default>false</default>
+                <label>Green Coffee Type RFA</label>
+            </value>
+            <value>
+                <fullName>10200110</fullName>
+                <default>false</default>
+                <label>Green Coffee Blend Gen.</label>
+            </value>
+            <value>
+                <fullName>10200111</fullName>
+                <default>false</default>
+                <label>Green Coffee Blend Mild</label>
+            </value>
+            <value>
+                <fullName>10200112</fullName>
+                <default>false</default>
+                <label>Green Coffee Blend Decaf</label>
+            </value>
+            <value>
+                <fullName>10200113</fullName>
+                <default>false</default>
+                <label>Green Coffee Blend FT</label>
+            </value>
+            <value>
+                <fullName>10200114</fullName>
+                <default>false</default>
+                <label>Green Coffee Blend RFA</label>
+            </value>
+            <value>
+                <fullName>20100120</fullName>
+                <default>false</default>
+                <label>Roasted Coffee Gen.</label>
+            </value>
+            <value>
+                <fullName>20100121</fullName>
+                <default>false</default>
+                <label>Roasted Coffee Mild</label>
+            </value>
+            <value>
+                <fullName>20100122</fullName>
+                <default>false</default>
+                <label>Roasted Coffee Decaf</label>
+            </value>
+            <value>
+                <fullName>20100123</fullName>
+                <default>false</default>
+                <label>Roasted Coffee FT</label>
+            </value>
+            <value>
+                <fullName>20100124</fullName>
+                <default>false</default>
+                <label>Roasted Coffee RFA</label>
+            </value>
+            <value>
+                <fullName>20100125</fullName>
+                <default>false</default>
+                <label>Roasted Coffee Mixed</label>
+            </value>
+            <value>
+                <fullName>20200130</fullName>
+                <default>false</default>
+                <label>Ground Coffee Gen.</label>
+            </value>
+            <value>
+                <fullName>20200131</fullName>
+                <default>false</default>
+                <label>Ground Coffee Mild</label>
+            </value>
+            <value>
+                <fullName>20200132</fullName>
+                <default>false</default>
+                <label>Ground Coffee Decaf</label>
+            </value>
+            <value>
+                <fullName>20200133</fullName>
+                <default>false</default>
+                <label>Ground Coffee FT</label>
+            </value>
+            <value>
+                <fullName>20200134</fullName>
+                <default>false</default>
+                <label>Ground Coffee RFA</label>
+            </value>
+            <value>
+                <fullName>20300180</fullName>
+                <default>false</default>
+                <label>Coffee Extract</label>
+            </value>
+            <value>
+                <fullName>30100201</fullName>
+                <default>false</default>
+                <label>Outer Cartons</label>
+            </value>
+            <value>
+                <fullName>30100202</fullName>
+                <default>false</default>
+                <label>Trays</label>
+            </value>
+            <value>
+                <fullName>30100203</fullName>
+                <default>false</default>
+                <label>Corrugated Board Cut</label>
+            </value>
+            <value>
+                <fullName>30100204</fullName>
+                <default>false</default>
+                <label>Folding Box</label>
+            </value>
+            <value>
+                <fullName>30100205</fullName>
+                <default>false</default>
+                <label>Telescopic Box</label>
+            </value>
+            <value>
+                <fullName>30100206</fullName>
+                <default>false</default>
+                <label>Folding Cartons</label>
+            </value>
+            <value>
+                <fullName>30100207</fullName>
+                <default>false</default>
+                <label>Paper Cut</label>
+            </value>
+            <value>
+                <fullName>30100208</fullName>
+                <default>false</default>
+                <label>Intermediate Cardboard</label>
+            </value>
+            <value>
+                <fullName>30100209</fullName>
+                <default>false</default>
+                <label>Cover Cap Cardboard</label>
+            </value>
+            <value>
+                <fullName>30100220</fullName>
+                <default>false</default>
+                <label>Composite Foil w/ Alu</label>
+            </value>
+            <value>
+                <fullName>30100221</fullName>
+                <default>false</default>
+                <label>Composite Foil w/o Alu</label>
+            </value>
+            <value>
+                <fullName>30100222</fullName>
+                <default>false</default>
+                <label>Paper-Foil Composite w/o Alu</label>
+            </value>
+            <value>
+                <fullName>30100223</fullName>
+                <default>false</default>
+                <label>Vacuum Inner Foil</label>
+            </value>
+            <value>
+                <fullName>30100224</fullName>
+                <default>false</default>
+                <label>Plastic/Paper Composite</label>
+            </value>
+            <value>
+                <fullName>30100225</fullName>
+                <default>false</default>
+                <label>Composite Foil Alu-Free</label>
+            </value>
+            <value>
+                <fullName>30100230</fullName>
+                <default>false</default>
+                <label>Roll Cuts</label>
+            </value>
+            <value>
+                <fullName>30100231</fullName>
+                <default>false</default>
+                <label>Outer Wrap w/ OPP</label>
+            </value>
+            <value>
+                <fullName>30100232</fullName>
+                <default>false</default>
+                <label>Header Label PAP</label>
+            </value>
+            <value>
+                <fullName>30100233</fullName>
+                <default>false</default>
+                <label>Header Label PE/PAP</label>
+            </value>
+            <value>
+                <fullName>30100240</fullName>
+                <default>false</default>
+                <label>Valve / Stand-up Bag</label>
+            </value>
+            <value>
+                <fullName>30100241</fullName>
+                <default>false</default>
+                <label>Coffee Bags etc.</label>
+            </value>
+            <value>
+                <fullName>30100250</fullName>
+                <default>false</default>
+                <label>Label</label>
+            </value>
+            <value>
+                <fullName>30100255</fullName>
+                <default>false</default>
+                <label>Valve</label>
+            </value>
+            <value>
+                <fullName>30100260</fullName>
+                <default>false</default>
+                <label>Filter Paper Packaging</label>
+            </value>
+            <value>
+                <fullName>30100265</fullName>
+                <default>false</default>
+                <label>Embossing / TTR Foils</label>
+            </value>
+            <value>
+                <fullName>30100266</fullName>
+                <default>false</default>
+                <label>Toner Cartridge</label>
+            </value>
+            <value>
+                <fullName>30100270</fullName>
+                <default>false</default>
+                <label>Shrink Film</label>
+            </value>
+            <value>
+                <fullName>30100271</fullName>
+                <default>false</default>
+                <label>Stretch Film</label>
+            </value>
+            <value>
+                <fullName>30100272</fullName>
+                <default>false</default>
+                <label>Cover Film</label>
+            </value>
+            <value>
+                <fullName>30100273</fullName>
+                <default>false</default>
+                <label>PE Bags</label>
+            </value>
+            <value>
+                <fullName>30100280</fullName>
+                <default>false</default>
+                <label>Adhesive Tape (Wet)</label>
+            </value>
+            <value>
+                <fullName>30100281</fullName>
+                <default>false</default>
+                <label>Adhesive Tape (Self)</label>
+            </value>
+            <value>
+                <fullName>30100283</fullName>
+                <default>false</default>
+                <label>Adhesive (Glue)</label>
+            </value>
+            <value>
+                <fullName>30100284</fullName>
+                <default>false</default>
+                <label>PP Strapping Band</label>
+            </value>
+            <value>
+                <fullName>30100285</fullName>
+                <default>false</default>
+                <label>Edge Protection Strips</label>
+            </value>
+            <value>
+                <fullName>30100290</fullName>
+                <default>false</default>
+                <label>Tea Bag</label>
+            </value>
+            <value>
+                <fullName>30100298</fullName>
+                <default>false</default>
+                <label>Miscellaneous</label>
+            </value>
+            <value>
+                <fullName>30100299</fullName>
+                <default>false</default>
+                <label>Pallet</label>
+            </value>
+            <value>
+                <fullName>30999100</fullName>
+                <default>false</default>
+                <label>Glass</label>
+            </value>
+            <value>
+                <fullName>30999101</fullName>
+                <default>false</default>
+                <label>Plastic Lid</label>
+            </value>
+            <value>
+                <fullName>30999102</fullName>
+                <default>false</default>
+                <label>PP Foil</label>
+            </value>
+            <value>
+                <fullName>30999103</fullName>
+                <default>false</default>
+                <label>Aluminum Foil</label>
+            </value>
+            <value>
+                <fullName>30999104</fullName>
+                <default>false</default>
+                <label>Capsule</label>
+            </value>
+            <value>
+                <fullName>30999105</fullName>
+                <default>false</default>
+                <label>Hinged Lid Tin</label>
+            </value>
+            <value>
+                <fullName>40100300</fullName>
+                <default>false</default>
+                <label>Tea Raw Material</label>
+            </value>
+            <value>
+                <fullName>40100301</fullName>
+                <default>false</default>
+                <label>Tea Tea Diamonds</label>
+            </value>
+            <value>
+                <fullName>40100302</fullName>
+                <default>false</default>
+                <label>Tea Packed</label>
+            </value>
+            <value>
+                <fullName>50100400</fullName>
+                <default>false</default>
+                <label>Cappuccino</label>
+            </value>
+            <value>
+                <fullName>50100410</fullName>
+                <default>false</default>
+                <label>Cocaya</label>
+            </value>
+            <value>
+                <fullName>50100411</fullName>
+                <default>false</default>
+                <label>Drinking Chocolate</label>
+            </value>
+            <value>
+                <fullName>50100420</fullName>
+                <default>false</default>
+                <label>Biscuits &amp; Naps</label>
+            </value>
+            <value>
+                <fullName>50100421</fullName>
+                <default>false</default>
+                <label>Coffee Creamer / Milk</label>
+            </value>
+            <value>
+                <fullName>50100423</fullName>
+                <default>false</default>
+                <label>Sugar &amp; Sweeteners</label>
+            </value>
+            <value>
+                <fullName>50100424</fullName>
+                <default>false</default>
+                <label>Alcoholic Beverages</label>
+            </value>
+            <value>
+                <fullName>50100430</fullName>
+                <default>false</default>
+                <label>Coffee Tableware</label>
+            </value>
+            <value>
+                <fullName>50100431</fullName>
+                <default>false</default>
+                <label>Tea Tableware</label>
+            </value>
+            <value>
+                <fullName>50100432</fullName>
+                <default>false</default>
+                <label>Glasses</label>
+            </value>
+            <value>
+                <fullName>50100433</fullName>
+                <default>false</default>
+                <label>Filter Bags</label>
+            </value>
+            <value>
+                <fullName>50100434</fullName>
+                <default>false</default>
+                <label>Pots / Glass / Vacuum</label>
+            </value>
+            <value>
+                <fullName>50100435</fullName>
+                <default>false</default>
+                <label>Coffee Machine Cleaners</label>
+            </value>
+            <value>
+                <fullName>50100436</fullName>
+                <default>false</default>
+                <label>Coffee-to-Go Cups</label>
+            </value>
+            <value>
+                <fullName>50100437</fullName>
+                <default>false</default>
+                <label>Coffee/Tea Accessories</label>
+            </value>
+            <value>
+                <fullName>50100440</fullName>
+                <default>false</default>
+                <label>Tea Displays</label>
+            </value>
+            <value>
+                <fullName>50100450</fullName>
+                <default>false</default>
+                <label>Promotional Material</label>
+            </value>
+            <value>
+                <fullName>50100490</fullName>
+                <default>false</default>
+                <label>Other Goods 7% VAT</label>
+            </value>
+            <value>
+                <fullName>50100491</fullName>
+                <default>false</default>
+                <label>Other Goods 19% VAT</label>
+            </value>
+            <value>
+                <fullName>60100500</fullName>
+                <default>false</default>
+                <label>Coffee Machine</label>
+            </value>
+            <value>
+                <fullName>60100501</fullName>
+                <default>false</default>
+                <label>Coffee Machine Spare Part</label>
+            </value>
+            <value>
+                <fullName>60100510</fullName>
+                <default>false</default>
+                <label>Coffee &amp; Espresso Grinders</label>
+            </value>
+            <value>
+                <fullName>60100511</fullName>
+                <default>false</default>
+                <label>Milk &amp; Cream Dispensers</label>
+            </value>
+            <value>
+                <fullName>60100512</fullName>
+                <default>false</default>
+                <label>Chocolate Dispenser</label>
+            </value>
+            <value>
+                <fullName>60100513</fullName>
+                <default>false</default>
+                <label>Water Filter</label>
+            </value>
+            <value>
+                <fullName>60100514</fullName>
+                <default>false</default>
+                <label>Samovars</label>
+            </value>
+            <value>
+                <fullName>60100515</fullName>
+                <default>false</default>
+                <label>Cup Stackers &amp; Warmers</label>
+            </value>
+            <value>
+                <fullName>60100516</fullName>
+                <default>false</default>
+                <label>Coffee Chutes</label>
+            </value>
+            <value>
+                <fullName>60100517</fullName>
+                <default>false</default>
+                <label>Base Cabinets &amp; Carts</label>
+            </value>
+            <value>
+                <fullName>60100518</fullName>
+                <default>false</default>
+                <label>Hot Water &amp; Steam Units</label>
+            </value>
+            <value>
+                <fullName>60100519</fullName>
+                <default>false</default>
+                <label>Warmers + Filters</label>
+            </value>
+            <value>
+                <fullName>60100520</fullName>
+                <default>false</default>
+                <label>Coffee Machine / Other</label>
+            </value>
+            <value>
+                <fullName>70100700</fullName>
+                <default>false</default>
+                <label>Consumables</label>
+            </value>
+            <value>
+                <fullName>80100800</fullName>
+                <default>false</default>
+                <label>Office Supplies</label>
+            </value>
+            <value>
+                <fullName>90100900</fullName>
+                <default>false</default>
+                <label>Maintenance / Spare Parts</label>
+            </value>
+            <value>
+                <fullName>90900910</fullName>
+                <default>false</default>
+                <label>Freight</label>
+            </value>
+            <value>
+                <fullName>90900999</fullName>
+                <default>false</default>
+                <label>Services</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

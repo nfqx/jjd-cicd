@@ -9,26 +9,6 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>New Customer Acquisition / First Visit</fullName>
-                <default>false</default>
-                <label>New Customer Acquisition / First Visit</label>
-            </value>
-            <value>
-                <fullName>Existing Customer Relationship Management</fullName>
-                <default>false</default>
-                <label>Existing Customer Relationship Management</label>
-            </value>
-            <value>
-                <fullName>Contract or Commercial Terms Negotiation</fullName>
-                <default>false</default>
-                <label>Contract or Commercial Terms Negotiation</label>
-            </value>
-            <value>
-                <fullName>Complaint Handling / Foreign Object Issue</fullName>
-                <default>false</default>
-                <label>Complaint Handling / Foreign Object Issue</label>
-            </value>
-            <value>
                 <fullName>Product Introduction / Assortment Expansion</fullName>
                 <default>false</default>
                 <label>Product Introduction / Assortment Expansion</label>

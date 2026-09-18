@@ -1,25 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <quickActions>
-        <label><!-- CloseCaseLightning --></label>
-        <name>CloseCaseLightning</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- NewChildCase --></label>
-        <name>NewChildCase</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- Order --></label>
-        <name>Order</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- SendEmail --></label>
-        <name>SendEmail</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- Update Type --></label>
-        <name>Update_Type</name>
-    </quickActions>
+    <recordTypes>
+        <label><!-- Complaint Case --></label>
+        <name>Complaint_Case</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- MasterData Case --></label>
+        <name>MasterData_Case</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Order Cases --></label>
+        <name>Order_Cases</name>
+    </recordTypes>
     <recordTypes>
         <label><!-- ZKS Cases --></label>
         <name>ZKS_Cases</name>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Product Listing --></label>
+    <name>ProductListing__c</name>
+    <picklistValues>
+        <masterLabel>Core Product Line</masterLabel>
+        <translation><!-- Core Product Line --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Inherited Listing</masterLabel>
+        <translation><!-- Inherited Listing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Inherited Listing Block</masterLabel>
+        <translation><!-- Inherited Listing Block --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Own Listing</masterLabel>
+        <translation><!-- Own Listing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Own Listing Block</masterLabel>
+        <translation><!-- Own Listing Block --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

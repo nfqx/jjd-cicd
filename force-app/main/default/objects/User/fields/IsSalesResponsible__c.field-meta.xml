@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsSalesResponsible__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Marks users that hold a SAP responsibility key. Used as a filter in list views and flows.</description>
+    <label>Sales Responsibility Holder</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

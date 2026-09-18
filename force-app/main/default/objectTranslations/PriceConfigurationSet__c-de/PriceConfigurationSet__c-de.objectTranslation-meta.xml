@@ -11,11 +11,4 @@
         <value>Price Configuration Sets</value>
     </caseValues>
     <gender>Neuter</gender>
-    <layouts>
-        <layout>Price Configuration Set Layout</layout>
-        <sections>
-            <label><!-- Custom Links --></label>
-            <section>Custom Links</section>
-        </sections>
-    </layouts>
 </CustomObjectTranslation>

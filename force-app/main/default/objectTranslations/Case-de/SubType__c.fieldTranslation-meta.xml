@@ -8,7 +8,7 @@
     </picklistValues>
     <picklistValues>
         <masterLabel>Answering Machine</masterLabel>
-        <translation><!-- Answering Machine --></translation>
+        <translation>Anrufbeantworter</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Create access</masterLabel>
@@ -24,7 +24,7 @@
     </picklistValues>
     <picklistValues>
         <masterLabel>Fax</masterLabel>
-        <translation><!-- Fax --></translation>
+        <translation>Fax</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Foreign object</masterLabel>
@@ -36,7 +36,7 @@
     </picklistValues>
     <picklistValues>
         <masterLabel>Image database</masterLabel>
-        <translation><!-- Image database --></translation>
+        <translation>Bilddatenbank</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>JJD error</masterLabel>
@@ -48,7 +48,7 @@
     </picklistValues>
     <picklistValues>
         <masterLabel>Machine</masterLabel>
-        <translation><!-- Machine --></translation>
+        <translation>Maschinen</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Machine RG/foreign object</masterLabel>
@@ -76,7 +76,7 @@
     </picklistValues>
     <picklistValues>
         <masterLabel>Master data changes</masterLabel>
-        <translation><!-- Master data changes --></translation>
+        <translation>Stammdatenänderungen</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Master data transfer</masterLabel>
@@ -84,7 +84,7 @@
     </picklistValues>
     <picklistValues>
         <masterLabel>New Customer Setup</masterLabel>
-        <translation><!-- New Customer Setup --></translation>
+        <translation>Neukundenanlage</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>No message/message under 8 seconds</masterLabel>
@@ -135,6 +135,10 @@
         <translation>Retoure</translation>
     </picklistValues>
     <picklistValues>
+        <masterLabel>Return - goods return</masterLabel>
+        <translation><!-- Return - goods return --></translation>
+    </picklistValues>
+    <picklistValues>
         <masterLabel>Return - packing error</masterLabel>
         <translation>Retoure - Transport Fehler</translation>
     </picklistValues>
@@ -147,7 +151,15 @@
         <translation><!-- Trade --></translation>
     </picklistValues>
     <picklistValues>
+        <masterLabel>Unannounced Parcel</masterLabel>
+        <translation><!-- Unannounced Parcel --></translation>
+    </picklistValues>
+    <picklistValues>
         <masterLabel>Weld seam</masterLabel>
         <translation><!-- Weld seam --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZKS</masterLabel>
+        <translation><!-- ZKS --></translation>
     </picklistValues>
 </CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Freiwarebestellungen dieses Users werden gegen das persönliche Budget gerechnet. Ohne Haken ist die Auftragsart Freiware nicht wählbar.</help>
+    <label>Budget aktiv</label>
+    <name>FreeGoodsBudgetActive__c</name>
+</CustomFieldTranslation>

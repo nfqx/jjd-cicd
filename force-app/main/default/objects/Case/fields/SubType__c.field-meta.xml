@@ -4,7 +4,7 @@
     <label>Sub Type</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
-    <trackHistory>false</trackHistory>
+    <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
@@ -206,6 +206,11 @@
                 <default>false</default>
                 <label>Weld seam</label>
             </value>
+            <value>
+                <fullName>ZKS</fullName>
+                <default>false</default>
+                <label>ZKS</label>
+            </value>
         </valueSetDefinition>
         <valueSettings>
             <controllingFieldValue>Logistics</controllingFieldValue>
@@ -264,6 +269,11 @@
             <valueName>Machine</valueName>
         </valueSettings>
         <valueSettings>
+            <controllingFieldValue>Order</controllingFieldValue>
+            <controllingFieldValue>Complaint General</controllingFieldValue>
+            <valueName>ZKS</valueName>
+        </valueSettings>
+        <valueSettings>
             <controllingFieldValue>QS complaint</controllingFieldValue>
             <controllingFieldValue>Complaint General</controllingFieldValue>
             <valueName>QS - Foreign Body</valueName>
@@ -297,6 +307,10 @@
         <valueSettings>
             <controllingFieldValue>Master data</controllingFieldValue>
             <valueName>Master data - Company name change</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Master data</controllingFieldValue>
+            <valueName>New Customer Setup</valueName>
         </valueSettings>
     </valueSet>
 </CustomField>

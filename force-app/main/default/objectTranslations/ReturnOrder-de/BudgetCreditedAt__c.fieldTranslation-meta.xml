@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Wird einmalig gesetzt, wenn die Gutschrift gebucht wurde.</help>
+    <label>Budget gutgeschrieben am</label>
+    <name>BudgetCreditedAt__c</name>
+</CustomFieldTranslation>

@@ -4,10 +4,10 @@
     <name>Account_Type__c</name>
     <picklistValues>
         <masterLabel>Standard Customer</masterLabel>
-        <translation><!-- Standard Customer --></translation>
+        <translation>Standardkunde</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>VIP Customer</masterLabel>
-        <translation><!-- VIP Customer --></translation>
+        <translation>VIP-Kunde</translation>
     </picklistValues>
 </CustomFieldTranslation>

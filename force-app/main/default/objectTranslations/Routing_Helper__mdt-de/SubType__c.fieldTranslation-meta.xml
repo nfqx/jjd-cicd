@@ -163,7 +163,15 @@
         <translation><!-- Trade --></translation>
     </picklistValues>
     <picklistValues>
+        <masterLabel>Unannounced Parcel</masterLabel>
+        <translation><!-- Unannounced Parcel --></translation>
+    </picklistValues>
+    <picklistValues>
         <masterLabel>Weld seam</masterLabel>
         <translation><!-- Weld seam --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZKS</masterLabel>
+        <translation><!-- ZKS --></translation>
     </picklistValues>
 </CustomFieldTranslation>

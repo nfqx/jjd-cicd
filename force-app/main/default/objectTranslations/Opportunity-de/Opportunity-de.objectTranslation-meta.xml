@@ -1,35 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <quickActions>
-        <aspect>Master</aspect>
-        <label>Verloren</label>
-        <name>ClosedLost</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- Create Order --></label>
-        <name>Create_Order</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- Machine Configurator --></label>
-        <name>MachineConfigurator</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- Price Configurator --></label>
-        <name>PriceConfiguratorNew</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- Retoure erstellen --></label>
-        <name>Retoure_erstellen</name>
-    </quickActions>
-    <quickActions>
-        <aspect>Master</aspect>
-        <label>Primärkontakt auswählen</label>
-        <name>SelectPrimaryContact</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- Transfer to Sales Area Manager --></label>
-        <name>TransferToSalesAreaManager</name>
-    </quickActions>
     <validationRules>
         <errorMessage>
             <!-- Missing Info:
@@ -77,16 +47,4 @@
         </errorMessage>
         <name>ValidateClosedWon</name>
     </validationRules>
-    <webLinks>
-        <label><!-- Generate_Contract --></label>
-        <name>Generate_Contract</name>
-    </webLinks>
-    <webLinks>
-        <label><!-- Generate_Order --></label>
-        <name>Generate_Order</name>
-    </webLinks>
-    <webLinks>
-        <label><!-- Generate_Order_Contract --></label>
-        <name>Generate_Order_Contract</name>
-    </webLinks>
 </CustomObjectTranslation>

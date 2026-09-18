@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Der User, dessen Budget belastet wird — der Besteller oder bei Vertretung der Vertretene.</help>
+    <label>Budgetinhaber</label>
+    <name>BudgetUser__c</name>
+    <relationshipLabel><!-- Orders (Budget User) --></relationshipLabel>
+</CustomFieldTranslation>

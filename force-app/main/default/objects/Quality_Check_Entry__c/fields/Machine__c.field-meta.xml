@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Machine__c</fullName>
     <externalId>false</externalId>
-    <formula>Quality_Check_Machine__r.Machine_Placeholder__c</formula>
+    <formula>Quality_Check_Machine__r.MachineNameModel__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Machine</label>
     <required>false</required>

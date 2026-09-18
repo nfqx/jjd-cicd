@@ -11,12 +11,5 @@
         <value>Refund Scales</value>
     </caseValues>
     <gender>Neuter</gender>
-    <layouts>
-        <layout>Refund Scale Layout</layout>
-        <sections>
-            <label><!-- Information --></label>
-            <section>Information</section>
-        </sections>
-    </layouts>
     <nameFieldLabel>Scale Number</nameFieldLabel>
 </CustomObjectTranslation>

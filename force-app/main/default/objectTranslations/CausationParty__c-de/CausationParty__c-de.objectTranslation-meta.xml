@@ -11,11 +11,4 @@
         <value>Causation Parties</value>
     </caseValues>
     <gender>Neuter</gender>
-    <layouts>
-        <layout>Causation Party Layout</layout>
-        <sections>
-            <label><!-- Information --></label>
-            <section>Information</section>
-        </sections>
-    </layouts>
 </CustomObjectTranslation>

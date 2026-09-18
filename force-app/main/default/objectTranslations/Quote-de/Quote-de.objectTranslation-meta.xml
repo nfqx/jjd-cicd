@@ -1,33 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <quickActions>
-        <label><!-- Continue Configuration --></label>
-        <name>ContinueConfiguration</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- Generate Quote Document --></label>
-        <name>GenerateQuoteDocument</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- Quote accepted overwrite --></label>
-        <name>Quote_accepted_overwrite</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- Quote rejected overwrite --></label>
-        <name>Quote_rejected_overwrite</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- Ratenkaufvertrag Erstellen --></label>
-        <name>Ratenkaufvertrag_Erstellen</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- SendEmail --></label>
-        <name>SendEmail</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- Submit for Approval --></label>
-        <name>SubmitForApproval</name>
-    </quickActions>
     <validationRules>
         <errorMessage><!-- An accepted quote cannot be reverted! --></errorMessage>
         <name>StatusAccepted_ChangeBack</name>

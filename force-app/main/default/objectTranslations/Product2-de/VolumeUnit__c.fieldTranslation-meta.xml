@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Volumeneinheit</label>
+    <name>VolumeUnit__c</name>
+    <picklistValues>
+        <masterLabel>Barrel oil equivalent</masterLabel>
+        <translation>Barrel-Öl-Äquivalent</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Centiliter</masterLabel>
+        <translation>Zentiliter</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cubic centimeter</masterLabel>
+        <translation>Kubikzentimeter</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cubic decimeter</masterLabel>
+        <translation>Kubikdezimeter</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cubic foot</masterLabel>
+        <translation>Kubikfuß</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cubic inch</masterLabel>
+        <translation>Kubikzoll</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cubic meter</masterLabel>
+        <translation>Kubikmeter</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cubic millimeter</masterLabel>
+        <translation>Kubikmillimeter</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cubic yard</masterLabel>
+        <translation>Kubik Yard</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fluid Ounce US</masterLabel>
+        <translation>Fluid Ounce US</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hectoliter</masterLabel>
+        <translation>Hektoliter</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Liter</masterLabel>
+        <translation>Liter</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Microliter</masterLabel>
+        <translation>Mikroliter</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Milliliter</masterLabel>
+        <translation>Milliliter</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pint, U.S. liquid</masterLabel>
+        <translation>Pint, U.S. liquid</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Quart, U.S. liquid</masterLabel>
+        <translation>Quart, U.S. liquid</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Standard cubic foot</masterLabel>
+        <translation>Standardkubikfuß</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>US gallon</masterLabel>
+        <translation>US-Gallone</translation>
+    </picklistValues>
+</CustomFieldTranslation>

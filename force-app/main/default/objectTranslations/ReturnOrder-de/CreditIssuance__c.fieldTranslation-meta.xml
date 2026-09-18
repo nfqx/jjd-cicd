@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Gibt an, ob der Kunde für diese Rückgabe Geld zurückbekommt. Leer heißt: noch nicht entschieden.</help>
+    <label>Gutschrift-Kennzeichen</label>
+    <name>CreditIssuance__c</name>
+    <picklistValues>
+        <masterLabel>With credit</masterLabel>
+        <translation>Mit Gutschrift</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Without credit</masterLabel>
+        <translation>Ohne Gutschrift</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z0RL</masterLabel>
+        <translation><!-- Z0RL --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Preisermittlungsschema</label>
+    <name>CustomerPricingProcedure__c</name>
+    <picklistValues>
+        <masterLabel>AECMA Customer</masterLabel>
+        <translation>AECMA-Kunde</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Brülle &amp; Schmelzer</masterLabel>
+        <translation>Brülle &amp; Schmelzer</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Condition/Contract Settlement</masterLabel>
+        <translation>KondKontraktabrechn.</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer Standard (ISHTSW)</masterLabel>
+        <translation>Kd-Standard (ISHTSW)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DRM Customer</masterLabel>
+        <translation>DRM Kunde</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EDEKA Central Warehouse</masterLabel>
+        <translation>EDEKA Zentrallager</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EDEKA Direct Delivery</masterLabel>
+        <translation>EDEKA Strecke</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EDEKA Warehouse</masterLabel>
+        <translation>EDEKA Lager</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kaufland Central Warehouse</masterLabel>
+        <translation>Kaufland ZL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LIDL Norma ALDI</masterLabel>
+        <translation>LIDL Norma ALDI</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Metro Central Warehouse</masterLabel>
+        <translation>Metro ZL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Müller Central Warehouse</masterLabel>
+        <translation>Müller ZL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NE Standard</masterLabel>
+        <translation>NE Standard</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NE Weight-Dependent</masterLabel>
+        <translation>NE gewichtsabhängig</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REWE_Penny</masterLabel>
+        <translation>REWE_Penny</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RTG Group Central Warehouse</masterLabel>
+        <translation>RTG Group ZL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Standard</masterLabel>
+        <translation>Standard</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Standard PUK</masterLabel>
+        <translation>Standard-Puk</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Standard PUK incl. VAT</masterLabel>
+        <translation>Standard-Puk inkl.MW</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Standard incl. VAT</masterLabel>
+        <translation>Standard inkl. MWST</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wasgau C+C</masterLabel>
+        <translation>Wasgau C+C</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -19,10 +19,6 @@
         <translation><!-- In Progress --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Incomplete</masterLabel>
-        <translation><!-- Incomplete --></translation>
-    </picklistValues>
-    <picklistValues>
         <masterLabel>Open</masterLabel>
         <translation><!-- Open --></translation>
     </picklistValues>

@@ -220,6 +220,11 @@
                 <label>Unannounced Parcel</label>
             </value>
             <value>
+                <fullName>ZKS</fullName>
+                <default>false</default>
+                <label>ZKS</label>
+            </value>
+            <value>
                 <fullName>Außerhaus-Service</fullName>
                 <default>false</default>
                 <isActive>false</isActive>

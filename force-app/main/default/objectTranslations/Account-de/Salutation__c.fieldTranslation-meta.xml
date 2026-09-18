@@ -3,6 +3,10 @@
     <label><!-- Salutation --></label>
     <name>Salutation__c</name>
     <picklistValues>
+        <masterLabel>Familie</masterLabel>
+        <translation><!-- Familie --></translation>
+    </picklistValues>
+    <picklistValues>
         <masterLabel>Firma</masterLabel>
         <translation><!-- Firma --></translation>
     </picklistValues>

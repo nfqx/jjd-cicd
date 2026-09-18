@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Status</label>
+    <name>Status__c</name>
+    <picklistValues>
+        <masterLabel>Active</masterLabel>
+        <translation>Aktiv</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Blocked for Use</masterLabel>
+        <translation>Verwendung gesperrt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New Creation</masterLabel>
+        <translation>Neuanlage</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pending Approval</masterLabel>
+        <translation>In Prüfung zur Freigabe</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Phase-out Item</masterLabel>
+        <translation>Auslaufender Artikel</translation>
+    </picklistValues>
+</CustomFieldTranslation>

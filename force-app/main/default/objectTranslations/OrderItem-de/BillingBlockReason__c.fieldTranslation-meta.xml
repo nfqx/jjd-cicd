@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Specifies the reason why this individual line item is blocked for invoicing in SAP. --></help>
+    <label>Fakturasperrgrund Position</label>
+    <name>BillingBlockReason__c</name>
+</CustomFieldTranslation>

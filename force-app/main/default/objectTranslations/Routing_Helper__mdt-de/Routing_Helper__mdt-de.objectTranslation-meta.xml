@@ -11,19 +11,4 @@
         <value>Routing Helpers</value>
     </caseValues>
     <gender>Neuter</gender>
-    <layouts>
-        <layout>Routing Helper Layout</layout>
-        <sections>
-            <label><!-- Custom Links --></label>
-            <section>Custom Links</section>
-        </sections>
-        <sections>
-            <label><!-- Forwarding --></label>
-            <section>Forwarding</section>
-        </sections>
-        <sections>
-            <label><!-- Routing --></label>
-            <section>Routing</section>
-        </sections>
-    </layouts>
 </CustomObjectTranslation>

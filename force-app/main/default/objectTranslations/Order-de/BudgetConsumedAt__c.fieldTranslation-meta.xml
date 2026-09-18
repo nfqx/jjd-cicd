@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Wird einmalig gesetzt, wenn die ERP-Auftragsnummer eintrifft. Das Jahr ist das Budgetjahr für Retourengutschriften.</help>
+    <label>Budget verbraucht am</label>
+    <name>BudgetConsumedAt__c</name>
+</CustomFieldTranslation>

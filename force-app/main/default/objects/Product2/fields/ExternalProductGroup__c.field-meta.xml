@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ExternalProductGroup__c</fullName>
+    <label>External Product Group</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BB</fullName>
+                <default>false</default>
+                <label>Big Bag</label>
+            </value>
+            <value>
+                <fullName>BTL</fullName>
+                <default>false</default>
+                <label>Bag</label>
+            </value>
+            <value>
+                <fullName>BULK</fullName>
+                <default>false</default>
+                <label>Bulk in container</label>
+            </value>
+            <value>
+                <fullName>CH</fullName>
+                <default>false</default>
+                <label>Chep Pallet</label>
+            </value>
+            <value>
+                <fullName>CH12</fullName>
+                <default>false</default>
+                <label>Chep Half Pallet</label>
+            </value>
+            <value>
+                <fullName>CH14</fullName>
+                <default>false</default>
+                <label>Chep Quarter Pallet</label>
+            </value>
+            <value>
+                <fullName>DS</fullName>
+                <default>false</default>
+                <label>Can</label>
+            </value>
+            <value>
+                <fullName>FIB</fullName>
+                <default>false</default>
+                <label>Filter Bag</label>
+            </value>
+            <value>
+                <fullName>FLS</fullName>
+                <default>false</default>
+                <label>Flat Bag</label>
+            </value>
+            <value>
+                <fullName>FS</fullName>
+                <default>false</default>
+                <label>Folding Box (FS)</label>
+            </value>
+            <value>
+                <fullName>FST</fullName>
+                <default>false</default>
+                <label>Folding Box (FST)</label>
+            </value>
+            <value>
+                <fullName>GED</fullName>
+                <default>false</default>
+                <label>Steamed Green Coffee</label>
+            </value>
+            <value>
+                <fullName>GL</fullName>
+                <default>false</default>
+                <label>Glass</label>
+            </value>
+            <value>
+                <fullName>KAP</fullName>
+                <default>false</default>
+                <label>Capsule</label>
+            </value>
+            <value>
+                <fullName>KP</fullName>
+                <default>false</default>
+                <label>Portion Can Condensed Milk</label>
+            </value>
+            <value>
+                <fullName>KPS</fullName>
+                <default>false</default>
+                <label>Portion Can Coffee</label>
+            </value>
+            <value>
+                <fullName>KT</fullName>
+                <default>false</default>
+                <label>Tea String</label>
+            </value>
+            <value>
+                <fullName>MAH</fullName>
+                <default>false</default>
+                <label>Ground Coffee</label>
+            </value>
+            <value>
+                <fullName>MIX</fullName>
+                <default>false</default>
+                <label>Mix Box</label>
+            </value>
+            <value>
+                <fullName>NKOMM</fullName>
+                <default>false</default>
+                <label>Not Picked</label>
+            </value>
+            <value>
+                <fullName>PB</fullName>
+                <default>false</default>
+                <label>Poly Bag</label>
+            </value>
+            <value>
+                <fullName>PBB</fullName>
+                <default>false</default>
+                <label>Poly Bag (Bean)</label>
+            </value>
+            <value>
+                <fullName>PBM</fullName>
+                <default>false</default>
+                <label>Poly Bag (Ground Coffee)</label>
+            </value>
+            <value>
+                <fullName>PCH</fullName>
+                <default>false</default>
+                <label>Pouches</label>
+            </value>
+            <value>
+                <fullName>PDS</fullName>
+                <default>false</default>
+                <label>Pads</label>
+            </value>
+            <value>
+                <fullName>POD</fullName>
+                <default>false</default>
+                <label>Pods</label>
+            </value>
+            <value>
+                <fullName>ROE</fullName>
+                <default>false</default>
+                <label>Roasted Coffee</label>
+            </value>
+            <value>
+                <fullName>ROH</fullName>
+                <default>false</default>
+                <label>Green Coffee Quality</label>
+            </value>
+            <value>
+                <fullName>ROM</fullName>
+                <default>false</default>
+                <label>Green Coffee Blend</label>
+            </value>
+            <value>
+                <fullName>SACK</fullName>
+                <default>false</default>
+                <label>Bags in Container</label>
+            </value>
+            <value>
+                <fullName>SB</fullName>
+                <default>false</default>
+                <label>Tubular Bag</label>
+            </value>
+            <value>
+                <fullName>SE</fullName>
+                <default>false</default>
+                <label>Shrink Unit</label>
+            </value>
+            <value>
+                <fullName>SO</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>STBB</fullName>
+                <default>false</default>
+                <label>Stand-up Pouch</label>
+            </value>
+            <value>
+                <fullName>TR</fullName>
+                <default>false</default>
+                <label>Mixed Tray</label>
+            </value>
+            <value>
+                <fullName>VB</fullName>
+                <default>false</default>
+                <label>Valve Bag</label>
+            </value>
+            <value>
+                <fullName>VBGW</fullName>
+                <default>false</default>
+                <label>Valve Bag (Wrapped)</label>
+            </value>
+            <value>
+                <fullName>VBH</fullName>
+                <default>false</default>
+                <label>Valve Bag (Manual)</label>
+            </value>
+            <value>
+                <fullName>VBK</fullName>
+                <default>false</default>
+                <label>Valve Bag (Carton) - VBK</label>
+            </value>
+            <value>
+                <fullName>VBKG</fullName>
+                <default>false</default>
+                <label>Valve Bag (Carton) - VBKG</label>
+            </value>
+            <value>
+                <fullName>VP</fullName>
+                <default>false</default>
+                <label>Vacuum Pack</label>
+            </value>
+            <value>
+                <fullName>VPM</fullName>
+                <default>false</default>
+                <label>Vacuum Pack Multipack</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

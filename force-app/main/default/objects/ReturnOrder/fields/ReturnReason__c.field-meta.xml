@@ -119,6 +119,11 @@
                 <default>false</default>
                 <label>RE Veranstaltung</label>
             </value>
+            <value>
+                <fullName>SIC</fullName>
+                <default>false</default>
+                <label>Sicherstellung</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

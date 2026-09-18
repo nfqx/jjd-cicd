@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Status for direct order invoices (e.g., services/credit memos). For standard physical goods, this field is usually left blank, as these are billed on a per-delivery basis. --></help>
+    <label>Gesamtstatus auftragsbezogene Faktura</label>
+    <name>OverallOrdReltdBillgStatus__c</name>
+    <picklistValues>
+        <masterLabel>Completely Invoiced</masterLabel>
+        <translation>Vollständig fakturiert</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Invoiced</masterLabel>
+        <translation>Nicht fakturiert</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Partially Invoiced</masterLabel>
+        <translation>Teilweise fakturiert</translation>
+    </picklistValues>
+</CustomFieldTranslation>

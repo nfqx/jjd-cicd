@@ -11,15 +11,4 @@
         <value>Visit Report Lines</value>
     </caseValues>
     <gender>Feminine</gender>
-    <layouts>
-        <layout>Visit Report Line Layout</layout>
-        <sections>
-            <label><!-- Custom Links --></label>
-            <section>Custom Links</section>
-        </sections>
-        <sections>
-            <label><!-- Topic / Comment --></label>
-            <section>Topic / Comment</section>
-        </sections>
-    </layouts>
 </CustomObjectTranslation>

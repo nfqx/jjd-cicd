@@ -3,6 +3,10 @@
     <label><!-- Billing Block Reason --></label>
     <name>BillingBlockReason__c</name>
     <picklistValues>
+        <masterLabel>06</masterLabel>
+        <translation><!-- 06 --></translation>
+    </picklistValues>
+    <picklistValues>
         <masterLabel>Check Credit Note</masterLabel>
         <translation>Gutschrift prüfen</translation>
     </picklistValues>

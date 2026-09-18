@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AssignmentSource__c</fullName>
+    <description>Records which rule of the cascade applied. Basis for reporting and for deciding whether an assignment may be overwritten automatically.</description>
+    <label>Assignment Source</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Creating User</fullName>
+                <default>false</default>
+                <label>Creating User</label>
+            </value>
+            <value>
+                <fullName>Postal Code</fullName>
+                <default>false</default>
+                <label>Postal Code</label>
+            </value>
+            <value>
+                <fullName>Chain</fullName>
+                <default>false</default>
+                <label>Chain</label>
+            </value>
+            <value>
+                <fullName>Business Type KAM</fullName>
+                <default>false</default>
+                <label>Business Type KAM</label>
+            </value>
+            <value>
+                <fullName>Manual</fullName>
+                <default>false</default>
+                <label>Manual</label>
+            </value>
+            <value>
+                <fullName>Telesales Queue</fullName>
+                <default>false</default>
+                <label>Telesales Queue</label>
+            </value>
+            <value>
+                <fullName>Unassigned</fullName>
+                <default>false</default>
+                <label>Unassigned</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

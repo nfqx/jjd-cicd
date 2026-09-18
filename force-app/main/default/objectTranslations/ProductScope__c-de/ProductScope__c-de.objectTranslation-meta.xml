@@ -11,12 +11,5 @@
         <value>Product Scopes</value>
     </caseValues>
     <gender>Neuter</gender>
-    <layouts>
-        <layout>Product Scope Layout</layout>
-        <sections>
-            <label><!-- Information --></label>
-            <section>Information</section>
-        </sections>
-    </layouts>
     <nameFieldLabel>Scope Number</nameFieldLabel>
 </CustomObjectTranslation>

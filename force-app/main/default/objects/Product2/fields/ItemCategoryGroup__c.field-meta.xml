@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ItemCategoryGroup__c</fullName>
+    <label>Item Category Group</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0001</fullName>
+                <default>false</default>
+                <label>Make-to-order Production</label>
+            </value>
+            <value>
+                <fullName>0002</fullName>
+                <default>false</default>
+                <label>Configuration</label>
+            </value>
+            <value>
+                <fullName>0004</fullName>
+                <default>false</default>
+                <label>Make-to-order / Assembly</label>
+            </value>
+            <value>
+                <fullName>0005</fullName>
+                <default>false</default>
+                <label>Milestone Billing</label>
+            </value>
+            <value>
+                <fullName>ALEN</fullName>
+                <default>false</default>
+                <label>ALE Standard Position</label>
+            </value>
+            <value>
+                <fullName>ALES</fullName>
+                <default>false</default>
+                <label>ALE Third-Party Position</label>
+            </value>
+            <value>
+                <fullName>BADS</fullName>
+                <default>false</default>
+                <label>Subcontracting (DS)</label>
+            </value>
+            <value>
+                <fullName>BANC</fullName>
+                <default>false</default>
+                <label>Individual Purchase Order</label>
+            </value>
+            <value>
+                <fullName>BANS</fullName>
+                <default>false</default>
+                <label>Third-Party Position</label>
+            </value>
+            <value>
+                <fullName>DIEN</fullName>
+                <default>false</default>
+                <label>Service with Delivery Alt.</label>
+            </value>
+            <value>
+                <fullName>ERLA</fullName>
+                <default>false</default>
+                <label>Structure / Top Material (ERLA)</label>
+            </value>
+            <value>
+                <fullName>ERLB</fullName>
+                <default>false</default>
+                <label>Structure / Top Material (ERLB)</label>
+            </value>
+            <value>
+                <fullName>GG01</fullName>
+                <default>false</default>
+                <label>Configurable Software Product</label>
+            </value>
+            <value>
+                <fullName>GG02</fullName>
+                <default>false</default>
+                <label>Configuration Service</label>
+            </value>
+            <value>
+                <fullName>GG04</fullName>
+                <default>false</default>
+                <label>Configurable Package</label>
+            </value>
+            <value>
+                <fullName>GG05</fullName>
+                <default>false</default>
+                <label>Product List</label>
+            </value>
+            <value>
+                <fullName>LEAS</fullName>
+                <default>false</default>
+                <label>Leasing</label>
+            </value>
+            <value>
+                <fullName>LEER</fullName>
+                <default>false</default>
+                <label>Empties</label>
+            </value>
+            <value>
+                <fullName>LEIC</fullName>
+                <default>false</default>
+                <label>Service w/o Delivery Config.</label>
+            </value>
+            <value>
+                <fullName>LEIH</fullName>
+                <default>false</default>
+                <label>Returnable Packaging / Empties</label>
+            </value>
+            <value>
+                <fullName>LEIS</fullName>
+                <default>false</default>
+                <label>Service w/o Delivery</label>
+            </value>
+            <value>
+                <fullName>LO01</fullName>
+                <default>false</default>
+                <label>Leasing Early Extension Option</label>
+            </value>
+            <value>
+                <fullName>LO02</fullName>
+                <default>false</default>
+                <label>Leasing Return Option</label>
+            </value>
+            <value>
+                <fullName>LO03</fullName>
+                <default>false</default>
+                <label>Leasing Early Purchase Option</label>
+            </value>
+            <value>
+                <fullName>LO04</fullName>
+                <default>false</default>
+                <label>Leasing Purchase Option</label>
+            </value>
+            <value>
+                <fullName>LO06</fullName>
+                <default>false</default>
+                <label>Leasing Extension Option</label>
+            </value>
+            <value>
+                <fullName>LO08</fullName>
+                <default>false</default>
+                <label>Leasing Subsequent Option</label>
+            </value>
+            <value>
+                <fullName>LO09</fullName>
+                <default>false</default>
+                <label>Leasing Billing Option</label>
+            </value>
+            <value>
+                <fullName>LO11</fullName>
+                <default>false</default>
+                <label>Leasing Early Extension Option w/o B</label>
+            </value>
+            <value>
+                <fullName>LO12</fullName>
+                <default>false</default>
+                <label>Leasing Return Option w/o B</label>
+            </value>
+            <value>
+                <fullName>LO13</fullName>
+                <default>false</default>
+                <label>Leasing Early Purchase Option w/o B</label>
+            </value>
+            <value>
+                <fullName>LO14</fullName>
+                <default>false</default>
+                <label>Leasing Purchase Option w/o B</label>
+            </value>
+            <value>
+                <fullName>LO16</fullName>
+                <default>false</default>
+                <label>Leasing Extension Option w/o B</label>
+            </value>
+            <value>
+                <fullName>LO18</fullName>
+                <default>false</default>
+                <label>Leasing Subsequent Option w/o B</label>
+            </value>
+            <value>
+                <fullName>LO19</fullName>
+                <default>false</default>
+                <label>Leasing Billing Option w/o B</label>
+            </value>
+            <value>
+                <fullName>LUMB</fullName>
+                <default>false</default>
+                <label>Structure / Bottom Material (LUMB)</label>
+            </value>
+            <value>
+                <fullName>LUMF</fullName>
+                <default>false</default>
+                <label>Structure / Bottom Material (LUMF)</label>
+            </value>
+            <value>
+                <fullName>NLAG</fullName>
+                <default>false</default>
+                <label>Non-Stock Material</label>
+            </value>
+            <value>
+                <fullName>NORM</fullName>
+                <default>false</default>
+                <label>Standard Position</label>
+            </value>
+            <value>
+                <fullName>PBOS</fullName>
+                <default>false</default>
+                <label>Bill of Quantities / Service Spec</label>
+            </value>
+            <value>
+                <fullName>PRRP</fullName>
+                <default>false</default>
+                <label>Subscription, Usage Only</label>
+            </value>
+            <value>
+                <fullName>PRSM</fullName>
+                <default>false</default>
+                <label>Subscription, Multi AVC</label>
+            </value>
+            <value>
+                <fullName>PRSR</fullName>
+                <default>false</default>
+                <label>Subscription, Recurring</label>
+            </value>
+            <value>
+                <fullName>PRSV</fullName>
+                <default>false</default>
+                <label>Subscription Fee</label>
+            </value>
+            <value>
+                <fullName>SAMM</fullName>
+                <default>false</default>
+                <label>Collective Material</label>
+            </value>
+            <value>
+                <fullName>SCNP</fullName>
+                <default>false</default>
+                <label>Service Contract Product</label>
+            </value>
+            <value>
+                <fullName>SRVM</fullName>
+                <default>false</default>
+                <label>Service Material</label>
+            </value>
+            <value>
+                <fullName>SRVP</fullName>
+                <default>false</default>
+                <label>Service Product</label>
+            </value>
+            <value>
+                <fullName>VCIT</fullName>
+                <default>false</default>
+                <label>Value Contract Position</label>
+            </value>
+            <value>
+                <fullName>VERP</fullName>
+                <default>false</default>
+                <label>Packaging</label>
+            </value>
+            <value>
+                <fullName>VMS0</fullName>
+                <default>false</default>
+                <label>VMS Vehicle</label>
+            </value>
+            <value>
+                <fullName>VOLL</fullName>
+                <default>false</default>
+                <label>Full Goods</label>
+            </value>
+            <value>
+                <fullName>WERT</fullName>
+                <default>false</default>
+                <label>Value Position Delivery Note</label>
+            </value>
+            <value>
+                <fullName>WMPP</fullName>
+                <default>false</default>
+                <label>Raw Material WM-PP</label>
+            </value>
+            <value>
+                <fullName>ZLMA</fullName>
+                <default>false</default>
+                <label>Machine Loan Goods</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

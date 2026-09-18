@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Main Goal --></label>
+    <name>Main_Goal__c</name>
+    <picklistValues>
+        <masterLabel>Complaint Handling / Foreign Object Issue</masterLabel>
+        <translation><!-- Complaint Handling / Foreign Object Issue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Contract or Commercial Terms Negotiation</masterLabel>
+        <translation><!-- Contract or Commercial Terms Negotiation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Existing Customer Relationship Management</masterLabel>
+        <translation><!-- Existing Customer Relationship Management --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New Customer Acquisition / First Visit</masterLabel>
+        <translation><!-- New Customer Acquisition / First Visit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-Site Competitor Observation</masterLabel>
+        <translation><!-- On-Site Competitor Observation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>POS Visibility / Brand Presentation</masterLabel>
+        <translation><!-- POS Visibility / Brand Presentation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product Introduction / Assortment Expansion</masterLabel>
+        <translation><!-- Product Introduction / Assortment Expansion --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sales Decline / Variance Analysis</masterLabel>
+        <translation><!-- Sales Decline / Variance Analysis --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

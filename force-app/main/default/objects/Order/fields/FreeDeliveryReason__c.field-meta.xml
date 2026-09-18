@@ -313,6 +313,11 @@
                 <default>false</default>
                 <label>Cross-charge to Subsidiaries</label>
             </value>
+            <value>
+                <fullName>MUS</fullName>
+                <default>false</default>
+                <label>Sample Delivery</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

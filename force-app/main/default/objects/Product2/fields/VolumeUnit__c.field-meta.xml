@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VolumeUnit__c</fullName>
+    <label>Volume Unit</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>3</fullName>
+                <default>false</default>
+                <label>Cubic inch</label>
+            </value>
+            <value>
+                <fullName>BOE</fullName>
+                <default>false</default>
+                <label>Barrel oil equivalent</label>
+            </value>
+            <value>
+                <fullName>CD3</fullName>
+                <default>false</default>
+                <label>Cubic decimeter</label>
+            </value>
+            <value>
+                <fullName>CL</fullName>
+                <default>false</default>
+                <label>Centiliter</label>
+            </value>
+            <value>
+                <fullName>CM3</fullName>
+                <default>false</default>
+                <label>Cubic centimeter</label>
+            </value>
+            <value>
+                <fullName>FOZ</fullName>
+                <default>false</default>
+                <label>Fluid Ounce US</label>
+            </value>
+            <value>
+                <fullName>FT3</fullName>
+                <default>false</default>
+                <label>Cubic foot</label>
+            </value>
+            <value>
+                <fullName>GAL</fullName>
+                <default>false</default>
+                <label>US gallon</label>
+            </value>
+            <value>
+                <fullName>HL</fullName>
+                <default>false</default>
+                <label>Hectoliter</label>
+            </value>
+            <value>
+                <fullName>L</fullName>
+                <default>false</default>
+                <label>Liter</label>
+            </value>
+            <value>
+                <fullName>M3</fullName>
+                <default>false</default>
+                <label>Cubic meter</label>
+            </value>
+            <value>
+                <fullName>MM</fullName>
+                <default>false</default>
+                <label>Milliliter</label>
+            </value>
+            <value>
+                <fullName>MM3</fullName>
+                <default>false</default>
+                <label>Cubic millimeter</label>
+            </value>
+            <value>
+                <fullName>PT</fullName>
+                <default>false</default>
+                <label>Pint, U.S. liquid</label>
+            </value>
+            <value>
+                <fullName>QT</fullName>
+                <default>false</default>
+                <label>Quart, U.S. liquid</label>
+            </value>
+            <value>
+                <fullName>YD3</fullName>
+                <default>false</default>
+                <label>Cubic yard</label>
+            </value>
+            <value>
+                <fullName>scf</fullName>
+                <default>false</default>
+                <label>Standard cubic foot</label>
+            </value>
+            <value>
+                <fullName>Microliter</fullName>
+                <default>false</default>
+                <label>Microliter</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -7,24 +7,36 @@
         <translation><!-- Coffee --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Existing Customer Visit</masterLabel>
-        <translation><!-- Existing Customer Visit --></translation>
+        <masterLabel>Complaint Handling / Foreign Object Issue</masterLabel>
+        <translation><!-- Complaint Handling / Foreign Object Issue --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Matcha</masterLabel>
         <translation><!-- Matcha --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>New Customer Visit</masterLabel>
-        <translation><!-- New Customer Visit --></translation>
+        <masterLabel>On-Site Competitor Observation</masterLabel>
+        <translation><!-- On-Site Competitor Observation --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Other</masterLabel>
         <translation><!-- Other --></translation>
     </picklistValues>
     <picklistValues>
+        <masterLabel>POS Visibility / Brand Presentation</masterLabel>
+        <translation><!-- POS Visibility / Brand Presentation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product Introduction / Assortment Expansion</masterLabel>
+        <translation><!-- Product Introduction / Assortment Expansion --></translation>
+    </picklistValues>
+    <picklistValues>
         <masterLabel>Proposal Meeting</masterLabel>
         <translation><!-- Proposal Meeting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sales Decline / Variance Analysis</masterLabel>
+        <translation><!-- Sales Decline / Variance Analysis --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Tasting / Machine Demonstration</masterLabel>

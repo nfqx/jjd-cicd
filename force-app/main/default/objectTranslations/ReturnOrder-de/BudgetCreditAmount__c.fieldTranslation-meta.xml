@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Betrag, der dem Budgetinhaber des referenzierten Auftrags gutgeschrieben wurde. Leer, wenn keine Gutschrift gilt (kein Budgetauftrag, Vorjahr, kein Auftragsbezug).</help>
+    <label>Budgetgutschrift</label>
+    <name>BudgetCreditAmount__c</name>
+</CustomFieldTranslation>

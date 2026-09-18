@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>EAN-Kategorie</label>
+    <name>EANCategory__c</name>
+    <picklistValues>
+        <masterLabel>Freshness EAN, Var. Price, Ind. Item No. 4-digit</masterLabel>
+        <translation>Frische-EAN, var. Pr., ind. ArtNr 4stlg.</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Freshness EAN, Var. Price, SAN</masterLabel>
+        <translation>Frische-EAN, var. Preis, SAN</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Freshness EAN, Var. Price, SAN + Package No.</masterLabel>
+        <translation>Frische-EAN, var. Preis, SAN + Gebindez.</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Freshness EAN, Var. Weight, Ind. Item No. 5-digit</masterLabel>
+        <translation>Frische-EAN, var. Gew., ind. ArtNr 5st.</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ITF Code</masterLabel>
+        <translation>ITF-Code</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ITF Code - 16-digit</masterLabel>
+        <translation>ITF-Code - 16stellig</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Instore EAN (Internal Assignment Possible)</masterLabel>
+        <translation>Instore-EAN (int. Vergabe mögl.)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Manufacturer EAN</masterLabel>
+        <translation>Hersteller-EAN</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Short Instore EAN (Internal Assignment Possible)</masterLabel>
+        <translation>Instore-Kurz-EAN (int. Vergabe mögl.)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Short Manufacturer EAN</masterLabel>
+        <translation>Hersteller-Kurz-EAN</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>UPC Code</masterLabel>
+        <translation>UPC-Code</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Velocity Code</masterLabel>
+        <translation>Velocity-Code</translation>
+    </picklistValues>
+</CustomFieldTranslation>

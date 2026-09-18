@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Status of direct billing for this specific item (e.g., for services). For physical goods that are billed only after delivery, this field remains blank. --></help>
+    <label>Auftragsbezogener Fakturastatus Position</label>
+    <name>OrderRelatedBillingStatus__c</name>
+    <picklistValues>
+        <masterLabel>Completely Invoiced</masterLabel>
+        <translation>Vollständig fakturiert</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Invoiced</masterLabel>
+        <translation>Nicht fakturiert</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Partially Invoiced</masterLabel>
+        <translation>Teilweise fakturiert</translation>
+    </picklistValues>
+</CustomFieldTranslation>

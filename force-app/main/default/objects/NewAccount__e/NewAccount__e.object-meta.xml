@@ -4,5 +4,5 @@
     <eventType>HighVolume</eventType>
     <label>NewAccount</label>
     <pluralLabel>NewAccounts</pluralLabel>
-    <publishBehavior>PublishImmediately</publishBehavior>
+    <publishBehavior>PublishAfterCommit</publishBehavior>
 </CustomObject>

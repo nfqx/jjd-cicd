@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Sales Office Key (SAP VKBUR) --></label>
+    <name>SalesOfficeKey__c</name>
+    <picklistValues>
+        <masterLabel>1010</masterLabel>
+        <translation><!-- 1010 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>1020</masterLabel>
+        <translation><!-- 1020 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>1030</masterLabel>
+        <translation><!-- 1030 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>1040</masterLabel>
+        <translation><!-- 1040 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>1050</masterLabel>
+        <translation><!-- 1050 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>2010</masterLabel>
+        <translation><!-- 2010 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>2015</masterLabel>
+        <translation><!-- 2015 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>2020</masterLabel>
+        <translation><!-- 2020 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>2025</masterLabel>
+        <translation><!-- 2025 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>2030</masterLabel>
+        <translation><!-- 2030 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>2035</masterLabel>
+        <translation><!-- 2035 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>2040</masterLabel>
+        <translation><!-- 2040 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>2045</masterLabel>
+        <translation><!-- 2045 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>2050</masterLabel>
+        <translation><!-- 2050 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>2055</masterLabel>
+        <translation><!-- 2055 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>3010</masterLabel>
+        <translation><!-- 3010 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>3020</masterLabel>
+        <translation><!-- 3020 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>3030</masterLabel>
+        <translation><!-- 3030 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>3040</masterLabel>
+        <translation><!-- 3040 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>3050</masterLabel>
+        <translation><!-- 3050 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>4010</masterLabel>
+        <translation><!-- 4010 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>4020</masterLabel>
+        <translation><!-- 4020 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>4030</masterLabel>
+        <translation><!-- 4030 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>4040</masterLabel>
+        <translation><!-- 4040 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>4050</masterLabel>
+        <translation><!-- 4050 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>4060</masterLabel>
+        <translation><!-- 4060 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>4070</masterLabel>
+        <translation><!-- 4070 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>4080</masterLabel>
+        <translation><!-- 4080 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>4090</masterLabel>
+        <translation><!-- 4090 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>7010</masterLabel>
+        <translation><!-- 7010 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>7020</masterLabel>
+        <translation><!-- 7020 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>8010</masterLabel>
+        <translation><!-- 8010 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

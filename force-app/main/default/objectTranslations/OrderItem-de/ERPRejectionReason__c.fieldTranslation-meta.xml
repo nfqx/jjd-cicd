@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>ERP Ablehnungsgrund</label>
+    <name>ERPRejectionReason__c</name>
+    <picklistValues>
+        <masterLabel>Competitor Offers Better Service</masterLabel>
+        <translation>Mitbewerber hat besseren Service</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Copied and Rejected</masterLabel>
+        <translation>Kopiert und abgesagt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Copy Error: New List Price Rejected</masterLabel>
+        <translation>Kopierfehler: neuer LP abgelehnt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer Receives Replacement Delivery</masterLabel>
+        <translation>Kunde erhält Ersatzlieferung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DRM Withdrawal / Claim Rejection</masterLabel>
+        <translation>DRM Rücknahme / Ablehnung Anspruch</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Delivery Date Too Late</masterLabel>
+        <translation>Zu später Liefertermin</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Order Requires Rechecking</masterLabel>
+        <translation>Auftrag bitte erneut prüfen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Out of Stock</masterLabel>
+        <translation>Kein Bestand</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Poor Quality</masterLabel>
+        <translation>Schlechte Qualität</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Process Under Clarification</masterLabel>
+        <translation>Vorgang in Klärung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rejected by Selling Company</masterLabel>
+        <translation>Vom verkaufenden Unternehmen abgelehnt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Return Rejected</masterLabel>
+        <translation>Absage Retoure</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SWP Marked (during approval deleted)</masterLabel>
+        <translation>SWP gekennz. (während Freigabe gelöscht)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SWP Notification</masterLabel>
+        <translation>SWP-Mitteilung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SWP Rejected</masterLabel>
+        <translation>SWP abgelehnt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SWP Suspended</masterLabel>
+        <translation>SWP ausgesetzt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service Specification Completed</masterLabel>
+        <translation>Leistungsverzeichnis erledigt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>System Assigned</masterLabel>
+        <translation>Vom System vergeben (intern)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Too Expensive</masterLabel>
+        <translation>Zu teuer</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unauthorized Customer Request</masterLabel>
+        <translation>Unberechtigte Kundenforderung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Warranty</masterLabel>
+        <translation>Garantie</translation>
+    </picklistValues>
+</CustomFieldTranslation>
