@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>New Customer Acquisition / First Visit</fullName>
+        <default>false</default>
+        <label>New Customer Acquisition / First Visit</label>
+    </customValue>
+    <customValue>
+        <fullName>Existing Customer Relationship Management</fullName>
+        <default>false</default>
+        <label>Existing Customer Relationship Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Contract or Commercial Terms Negotiation</fullName>
+        <default>false</default>
+        <label>Contract or Commercial Terms Negotiation</label>
+    </customValue>
+    <customValue>
+        <fullName>Complaint Handling / Service &amp; Quality</fullName>
+        <default>false</default>
+        <label>Complaint Handling / Service &amp; Quality</label>
+    </customValue>
+    <customValue>
+        <fullName>Quality-Check</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Quality-Check</label>
+    </customValue>
+    <description>Defines the overarching purpose of a customer visit. The Main Goal is used during visit planning and visit completion to ensure consistent goal classification and enable structured reporting across all visits.</description>
+    <masterLabel>Main Goal</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -36,15 +36,15 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>ItemGrossWeightKG__c</field>
+                <field>ItemGrossWeight__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Item_Net_Weight_KG__c</field>
+                <field>ItemNetWeight__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>ItemVolumeL__c</field>
+                <field>ItemVolume__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -65,6 +65,34 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>DiscountAbsolute__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ERPProcessingStatus__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ERPRejectionReason__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ItemVolumeUnit__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Reference_Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>OrderRelatedBillingStatus__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ProductionPlant__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>BillingBlockReason__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -132,6 +160,10 @@
         <fields>Product2</fields>
         <fields>ReturnOrderLineItem</fields>
         <relatedList>ShipmentItem.OrderItemId__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>MemoRequestItem__c.OrderItem__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>

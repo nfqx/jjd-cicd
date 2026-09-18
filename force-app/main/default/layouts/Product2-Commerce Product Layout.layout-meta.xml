@@ -92,6 +92,66 @@
                 <behavior>Edit</behavior>
                 <field>Class__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CoffeeTaxRelevant__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>LVSRelevant__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>RainforestAllianceProduct__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>StockMarketRelevant__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>LicenseProduct__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Volume__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>MarkedforDeletion__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>EANCategory__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ERPProductGroupLong__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ERPProductGroupShort__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ItemCategoryGroup__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ExternalProductGroup__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>VolumeUnit__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>MoevenpickClassification__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -175,6 +235,12 @@
         <relatedList>RelatedChildProduct</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>FeaturedProduct</fields>
+        <fields>FeatrProdtRelaType</fields>
+        <fields>Sequence</fields>
+        <relatedList>FeaturedProducts</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>ProductCategory</fields>
         <fields>IsPrimaryCategory</fields>
         <relatedList>RelatedProductCategories</relatedList>
@@ -230,6 +296,10 @@
         <fields>Product2</fields>
         <fields>ReturnOrderLineItem</fields>
         <relatedList>ShipmentItem.Product2Id__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>MemoRequestItem__c.Product2__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

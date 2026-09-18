@@ -90,10 +90,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Description</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>SuppliedEmail</field>
             </layoutItems>
             <layoutItems>
@@ -136,6 +132,34 @@
                 <behavior>Edit</behavior>
                 <field>NotificationOnCreator__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Has_Attachment__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>isMP3__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>isPDF__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Order__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Invoice__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ReturnOrder__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>AccountShippingAddress__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns/>
         <style>TwoColumnsTopToBottom</style>
@@ -157,7 +181,6 @@
         <fields>ContactEmail</fields>
         <fields>Origin</fields>
         <fields>Subject</fields>
-        <fields>Description</fields>
         <fields>SuppliedEmail</fields>
     </miniLayout>
     <relatedObjects>ContactId</relatedObjects>

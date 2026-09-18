@@ -12,39 +12,47 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Quality_Check__c</field>
+                <field>MemoRequest__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>MachineNameModel__c</field>
+                <field>ItemNumber__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Machine_Location__c</field>
+                <field>Product2__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Actions_to_improve_quality__c</field>
+                <field>RequestedQuantity__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Additional_Comments__c</field>
+                <field>WeightUnit__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>CustomerMachine__c</field>
+                <field>Amount__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>PresentationOkay__c</field>
+                <field>ReturnOrderLineItem__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>EILLESTeaPresent__c</field>
+                <field>OrderItem__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>WhichCompetitor__c</field>
+                <field>InvoiceLine__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ERPItemBillingBlockReason__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ItemVolumeUnit__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -83,14 +91,6 @@
         <layoutColumns/>
         <style>CustomLinks</style>
     </layoutSections>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>Quality_Check_Entry__c.Quality_Check_Machine__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>Customer_Machine__c.LastQualityCheckMachine__c</relatedList>
-    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>

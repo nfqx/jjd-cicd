@@ -30,6 +30,10 @@
                 <behavior>Readonly</behavior>
                 <field>ProductDescription__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>QuoteLineItem__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

@@ -62,6 +62,10 @@ declare module "@salesforce/label/c.AccountNumber" {
     var AccountNumber: string;
     export default AccountNumber;
 }
+declare module "@salesforce/label/c.AccountTreeAccountsChanged" {
+    var AccountTreeAccountsChanged: string;
+    export default AccountTreeAccountsChanged;
+}
 declare module "@salesforce/label/c.AccountTreeActiveInactiveAccs" {
     var AccountTreeActiveInactiveAccs: string;
     export default AccountTreeActiveInactiveAccs;
@@ -102,6 +106,14 @@ declare module "@salesforce/label/c.AccountTreeUnexpandAll" {
     var AccountTreeUnexpandAll: string;
     export default AccountTreeUnexpandAll;
 }
+declare module "@salesforce/label/c.AccountTreeViewCondition" {
+    var AccountTreeViewCondition: string;
+    export default AccountTreeViewCondition;
+}
+declare module "@salesforce/label/c.AccountTreeViewStatistics" {
+    var AccountTreeViewStatistics: string;
+    export default AccountTreeViewStatistics;
+}
 declare module "@salesforce/label/c.B2BEntitlementSyncBatchSize" {
     var B2BEntitlementSyncBatchSize: string;
     export default B2BEntitlementSyncBatchSize;
@@ -137,6 +149,10 @@ declare module "@salesforce/label/c.ChainRightsGranted" {
 declare module "@salesforce/label/c.ChainRightsInheritedByParent" {
     var ChainRightsInheritedByParent: string;
     export default ChainRightsInheritedByParent;
+}
+declare module "@salesforce/label/c.ChainRightsInternalDepartments" {
+    var ChainRightsInternalDepartments: string;
+    export default ChainRightsInternalDepartments;
 }
 declare module "@salesforce/label/c.ChainRightsLockedByChain" {
     var ChainRightsLockedByChain: string;
@@ -374,6 +390,10 @@ declare module "@salesforce/label/c.Flow_AccountCreateCaseWelcomeText" {
     var Flow_AccountCreateCaseWelcomeText: string;
     export default Flow_AccountCreateCaseWelcomeText;
 }
+declare module "@salesforce/label/c.Flow_CaseCreateLeadCaseInformationMissing" {
+    var Flow_CaseCreateLeadCaseInformationMissing: string;
+    export default Flow_CaseCreateLeadCaseInformationMissing;
+}
 declare module "@salesforce/label/c.Flow_CaseCreateLeadErrorInstruction" {
     var Flow_CaseCreateLeadErrorInstruction: string;
     export default Flow_CaseCreateLeadErrorInstruction;
@@ -389,6 +409,10 @@ declare module "@salesforce/label/c.Flow_CaseCreateLeadInfoExisting" {
 declare module "@salesforce/label/c.Flow_CaseCreateLeadInfoNew" {
     var Flow_CaseCreateLeadInfoNew: string;
     export default Flow_CaseCreateLeadInfoNew;
+}
+declare module "@salesforce/label/c.Flow_CaseCreateLeadLeadsFound" {
+    var Flow_CaseCreateLeadLeadsFound: string;
+    export default Flow_CaseCreateLeadLeadsFound;
 }
 declare module "@salesforce/label/c.Flow_CaseCreateLeadNoCreationError" {
     var Flow_CaseCreateLeadNoCreationError: string;
@@ -482,6 +506,86 @@ declare module "@salesforce/label/c.Flow_Text_SEPADirectDebitMandate" {
     var Flow_Text_SEPADirectDebitMandate: string;
     export default Flow_Text_SEPADirectDebitMandate;
 }
+declare module "@salesforce/label/c.Flow_TradeFairReportContactAddedToCampaign1" {
+    var Flow_TradeFairReportContactAddedToCampaign1: string;
+    export default Flow_TradeFairReportContactAddedToCampaign1;
+}
+declare module "@salesforce/label/c.Flow_TradeFairReportContactAddedToCampaign2" {
+    var Flow_TradeFairReportContactAddedToCampaign2: string;
+    export default Flow_TradeFairReportContactAddedToCampaign2;
+}
+declare module "@salesforce/label/c.Flow_TradeFairReportContactVisitor" {
+    var Flow_TradeFairReportContactVisitor: string;
+    export default Flow_TradeFairReportContactVisitor;
+}
+declare module "@salesforce/label/c.Flow_TradeFairReportErrorContactOrLeadOnly" {
+    var Flow_TradeFairReportErrorContactOrLeadOnly: string;
+    export default Flow_TradeFairReportErrorContactOrLeadOnly;
+}
+declare module "@salesforce/label/c.Flow_TradeFairReportErrorMsgTryAgain" {
+    var Flow_TradeFairReportErrorMsgTryAgain: string;
+    export default Flow_TradeFairReportErrorMsgTryAgain;
+}
+declare module "@salesforce/label/c.Flow_TradeFairReportFollowUpAction" {
+    var Flow_TradeFairReportFollowUpAction: string;
+    export default Flow_TradeFairReportFollowUpAction;
+}
+declare module "@salesforce/label/c.Flow_TradeFairReportInterestedIn" {
+    var Flow_TradeFairReportInterestedIn: string;
+    export default Flow_TradeFairReportInterestedIn;
+}
+declare module "@salesforce/label/c.Flow_TradeFairReportLastNameRequired" {
+    var Flow_TradeFairReportLastNameRequired: string;
+    export default Flow_TradeFairReportLastNameRequired;
+}
+declare module "@salesforce/label/c.Flow_TradeFairReportNoRecordFound" {
+    var Flow_TradeFairReportNoRecordFound: string;
+    export default Flow_TradeFairReportNoRecordFound;
+}
+declare module "@salesforce/label/c.Flow_TradeFairReportNote" {
+    var Flow_TradeFairReportNote: string;
+    export default Flow_TradeFairReportNote;
+}
+declare module "@salesforce/label/c.Flow_TradeFairReportOther" {
+    var Flow_TradeFairReportOther: string;
+    export default Flow_TradeFairReportOther;
+}
+declare module "@salesforce/label/c.Flow_TradeFairReportPostalCodeRequired" {
+    var Flow_TradeFairReportPostalCodeRequired: string;
+    export default Flow_TradeFairReportPostalCodeRequired;
+}
+declare module "@salesforce/label/c.Flow_TradeFairReportPrevioussupplier" {
+    var Flow_TradeFairReportPrevioussupplier: string;
+    export default Flow_TradeFairReportPrevioussupplier;
+}
+declare module "@salesforce/label/c.Flow_TradeFairReportScreenErrorMessage" {
+    var Flow_TradeFairReportScreenErrorMessage: string;
+    export default Flow_TradeFairReportScreenErrorMessage;
+}
+declare module "@salesforce/label/c.Flow_TradeFairReportScriptType" {
+    var Flow_TradeFairReportScriptType: string;
+    export default Flow_TradeFairReportScriptType;
+}
+declare module "@salesforce/label/c.Flow_TradeFairReportSearchMsgOnlyContact" {
+    var Flow_TradeFairReportSearchMsgOnlyContact: string;
+    export default Flow_TradeFairReportSearchMsgOnlyContact;
+}
+declare module "@salesforce/label/c.Flow_TradeFairReportSelectSalesRep" {
+    var Flow_TradeFairReportSelectSalesRep: string;
+    export default Flow_TradeFairReportSelectSalesRep;
+}
+declare module "@salesforce/label/c.Flow_TradeFairReportSuccessMsg" {
+    var Flow_TradeFairReportSuccessMsg: string;
+    export default Flow_TradeFairReportSuccessMsg;
+}
+declare module "@salesforce/label/c.Flow_TradeFairReportValNoEmailFound" {
+    var Flow_TradeFairReportValNoEmailFound: string;
+    export default Flow_TradeFairReportValNoEmailFound;
+}
+declare module "@salesforce/label/c.Flow_TradeFairReportWarningContactOrLead" {
+    var Flow_TradeFairReportWarningContactOrLead: string;
+    export default Flow_TradeFairReportWarningContactOrLead;
+}
 declare module "@salesforce/label/c.Flow_TransferOpportunityToSalesAreaManagerErrorMsg" {
     var Flow_TransferOpportunityToSalesAreaManagerErrorMsg: string;
     export default Flow_TransferOpportunityToSalesAreaManagerErrorMsg;
@@ -569,6 +673,10 @@ declare module "@salesforce/label/c.GeneralBrand" {
 declare module "@salesforce/label/c.GeneralCallUsAt" {
     var GeneralCallUsAt: string;
     export default GeneralCallUsAt;
+}
+declare module "@salesforce/label/c.GeneralCampaign" {
+    var GeneralCampaign: string;
+    export default GeneralCampaign;
 }
 declare module "@salesforce/label/c.GeneralCancel" {
     var GeneralCancel: string;
@@ -1362,6 +1470,46 @@ declare module "@salesforce/label/c.LetterCampaignUsernameSuffix" {
     var LetterCampaignUsernameSuffix: string;
     export default LetterCampaignUsernameSuffix;
 }
+declare module "@salesforce/label/c.LookupExtendedAllProducts" {
+    var LookupExtendedAllProducts: string;
+    export default LookupExtendedAllProducts;
+}
+declare module "@salesforce/label/c.LookupExtendedAlreadyAdded" {
+    var LookupExtendedAlreadyAdded: string;
+    export default LookupExtendedAlreadyAdded;
+}
+declare module "@salesforce/label/c.LookupExtendedCoreAssortment" {
+    var LookupExtendedCoreAssortment: string;
+    export default LookupExtendedCoreAssortment;
+}
+declare module "@salesforce/label/c.LookupExtendedHeading" {
+    var LookupExtendedHeading: string;
+    export default LookupExtendedHeading;
+}
+declare module "@salesforce/label/c.LookupExtendedItemGroupUnit" {
+    var LookupExtendedItemGroupUnit: string;
+    export default LookupExtendedItemGroupUnit;
+}
+declare module "@salesforce/label/c.LookupExtendedListedProducts" {
+    var LookupExtendedListedProducts: string;
+    export default LookupExtendedListedProducts;
+}
+declare module "@salesforce/label/c.LookupExtendedMinCharMsg" {
+    var LookupExtendedMinCharMsg: string;
+    export default LookupExtendedMinCharMsg;
+}
+declare module "@salesforce/label/c.LookupExtendedNoMatchingProductsFound" {
+    var LookupExtendedNoMatchingProductsFound: string;
+    export default LookupExtendedNoMatchingProductsFound;
+}
+declare module "@salesforce/label/c.LookupExtendedPlaceholder" {
+    var LookupExtendedPlaceholder: string;
+    export default LookupExtendedPlaceholder;
+}
+declare module "@salesforce/label/c.LookupExtendedProductsAvailable" {
+    var LookupExtendedProductsAvailable: string;
+    export default LookupExtendedProductsAvailable;
+}
 declare module "@salesforce/label/c.LookupFilterError" {
     var LookupFilterError: string;
     export default LookupFilterError;
@@ -1614,6 +1762,10 @@ declare module "@salesforce/label/c.MachineConfiguratorVat19percent" {
     var MachineConfiguratorVat19percent: string;
     export default MachineConfiguratorVat19percent;
 }
+declare module "@salesforce/label/c.MachineTaMachineTabInstallmentPlanbInstallmentPlan" {
+    var MachineTaMachineTabInstallmentPlanbInstallmentPlan: string;
+    export default MachineTaMachineTabInstallmentPlanbInstallmentPlan;
+}
 declare module "@salesforce/label/c.Naturalrabatt15" {
     var Naturalrabatt15: string;
     export default Naturalrabatt15;
@@ -1637,6 +1789,394 @@ declare module "@salesforce/label/c.NextLabel" {
 declare module "@salesforce/label/c.NoReplyAddress" {
     var NoReplyAddress: string;
     export default NoReplyAddress;
+}
+declare module "@salesforce/label/c.OrderApprovalSubmissionError" {
+    var OrderApprovalSubmissionError: string;
+    export default OrderApprovalSubmissionError;
+}
+declare module "@salesforce/label/c.OrderMaskAction" {
+    var OrderMaskAction: string;
+    export default OrderMaskAction;
+}
+declare module "@salesforce/label/c.OrderMaskActions" {
+    var OrderMaskActions: string;
+    export default OrderMaskActions;
+}
+declare module "@salesforce/label/c.OrderMaskAdd" {
+    var OrderMaskAdd: string;
+    export default OrderMaskAdd;
+}
+declare module "@salesforce/label/c.OrderMaskAfterApprovalAutomaticTransmissionToSAP" {
+    var OrderMaskAfterApprovalAutomaticTransmissionToSAP: string;
+    export default OrderMaskAfterApprovalAutomaticTransmissionToSAP;
+}
+declare module "@salesforce/label/c.OrderMaskAmount" {
+    var OrderMaskAmount: string;
+    export default OrderMaskAmount;
+}
+declare module "@salesforce/label/c.OrderMaskApplyDiscount" {
+    var OrderMaskApplyDiscount: string;
+    export default OrderMaskApplyDiscount;
+}
+declare module "@salesforce/label/c.OrderMaskApprovalBySalesManagerRequired" {
+    var OrderMaskApprovalBySalesManagerRequired: string;
+    export default OrderMaskApprovalBySalesManagerRequired;
+}
+declare module "@salesforce/label/c.OrderMaskApprovalRequired" {
+    var OrderMaskApprovalRequired: string;
+    export default OrderMaskApprovalRequired;
+}
+declare module "@salesforce/label/c.OrderMaskArticleItem" {
+    var OrderMaskArticleItem: string;
+    export default OrderMaskArticleItem;
+}
+declare module "@salesforce/label/c.OrderMaskAwaitingApproval" {
+    var OrderMaskAwaitingApproval: string;
+    export default OrderMaskAwaitingApproval;
+}
+declare module "@salesforce/label/c.OrderMaskBack" {
+    var OrderMaskBack: string;
+    export default OrderMaskBack;
+}
+declare module "@salesforce/label/c.OrderMaskBackToCustomer" {
+    var OrderMaskBackToCustomer: string;
+    export default OrderMaskBackToCustomer;
+}
+declare module "@salesforce/label/c.OrderMaskCancel" {
+    var OrderMaskCancel: string;
+    export default OrderMaskCancel;
+}
+declare module "@salesforce/label/c.OrderMaskChargeShippingCosts" {
+    var OrderMaskChargeShippingCosts: string;
+    export default OrderMaskChargeShippingCosts;
+}
+declare module "@salesforce/label/c.OrderMaskClickOrTypeToSearchEnterInTheQuantityFieldAddsTheArticle" {
+    var OrderMaskClickOrTypeToSearchEnterInTheQuantityFieldAddsTheArticle: string;
+    export default OrderMaskClickOrTypeToSearchEnterInTheQuantityFieldAddsTheArticle;
+}
+declare module "@salesforce/label/c.OrderMaskClose" {
+    var OrderMaskClose: string;
+    export default OrderMaskClose;
+}
+declare module "@salesforce/label/c.OrderMaskCondition" {
+    var OrderMaskCondition: string;
+    export default OrderMaskCondition;
+}
+declare module "@salesforce/label/c.OrderMaskConfirmedDate" {
+    var OrderMaskConfirmedDate: string;
+    export default OrderMaskConfirmedDate;
+}
+declare module "@salesforce/label/c.OrderMaskCustNo" {
+    var OrderMaskCustNo: string;
+    export default OrderMaskCustNo;
+}
+declare module "@salesforce/label/c.OrderMaskCustomer" {
+    var OrderMaskCustomer: string;
+    export default OrderMaskCustomer;
+}
+declare module "@salesforce/label/c.OrderMaskCustomerInfo" {
+    var OrderMaskCustomerInfo: string;
+    export default OrderMaskCustomerInfo;
+}
+declare module "@salesforce/label/c.OrderMaskCustomerMasterLookupTipNameOrCustomerNo" {
+    var OrderMaskCustomerMasterLookupTipNameOrCustomerNo: string;
+    export default OrderMaskCustomerMasterLookupTipNameOrCustomerNo;
+}
+declare module "@salesforce/label/c.OrderMaskCustomerOrder" {
+    var OrderMaskCustomerOrder: string;
+    export default OrderMaskCustomerOrder;
+}
+declare module "@salesforce/label/c.OrderMaskCustomerPONo" {
+    var OrderMaskCustomerPONo: string;
+    export default OrderMaskCustomerPONo;
+}
+declare module "@salesforce/label/c.OrderMaskCustomerPurchaseOrderNumber" {
+    var OrderMaskCustomerPurchaseOrderNumber: string;
+    export default OrderMaskCustomerPurchaseOrderNumber;
+}
+declare module "@salesforce/label/c.OrderMaskCustomerSStoredAddresses" {
+    var OrderMaskCustomerSStoredAddresses: string;
+    export default OrderMaskCustomerSStoredAddresses;
+}
+declare module "@salesforce/label/c.OrderMaskDate" {
+    var OrderMaskDate: string;
+    export default OrderMaskDate;
+}
+declare module "@salesforce/label/c.OrderMaskDateOfOrderEntry" {
+    var OrderMaskDateOfOrderEntry: string;
+    export default OrderMaskDateOfOrderEntry;
+}
+declare module "@salesforce/label/c.OrderMaskDelivery" {
+    var OrderMaskDelivery: string;
+    export default OrderMaskDelivery;
+}
+declare module "@salesforce/label/c.OrderMaskDeliveryNotesOptional" {
+    var OrderMaskDeliveryNotesOptional: string;
+    export default OrderMaskDeliveryNotesOptional;
+}
+declare module "@salesforce/label/c.OrderMaskDeliveryText" {
+    var OrderMaskDeliveryText: string;
+    export default OrderMaskDeliveryText;
+}
+declare module "@salesforce/label/c.OrderMaskDifferentDeliveryAddress" {
+    var OrderMaskDifferentDeliveryAddress: string;
+    export default OrderMaskDifferentDeliveryAddress;
+}
+declare module "@salesforce/label/c.OrderMaskDiscountType" {
+    var OrderMaskDiscountType: string;
+    export default OrderMaskDiscountType;
+}
+declare module "@salesforce/label/c.OrderMaskDraft" {
+    var OrderMaskDraft: string;
+    export default OrderMaskDraft;
+}
+declare module "@salesforce/label/c.OrderMaskEarliestPossible" {
+    var OrderMaskEarliestPossible: string;
+    export default OrderMaskEarliestPossible;
+}
+declare module "@salesforce/label/c.OrderMaskEnterArticleNoOrDescription" {
+    var OrderMaskEnterArticleNoOrDescription: string;
+    export default OrderMaskEnterArticleNoOrDescription;
+}
+declare module "@salesforce/label/c.OrderMaskExpressCharge" {
+    var OrderMaskExpressCharge: string;
+    export default OrderMaskExpressCharge;
+}
+declare module "@salesforce/label/c.OrderMaskFreeDeliverySampleOrderMandatoryFields" {
+    var OrderMaskFreeDeliverySampleOrderMandatoryFields: string;
+    export default OrderMaskFreeDeliverySampleOrderMandatoryFields;
+}
+declare module "@salesforce/label/c.OrderMaskFreeNoCharge" {
+    var OrderMaskFreeNoCharge: string;
+    export default OrderMaskFreeNoCharge;
+}
+declare module "@salesforce/label/c.OrderMaskFreeOfCharge" {
+    var OrderMaskFreeOfCharge: string;
+    export default OrderMaskFreeOfCharge;
+}
+declare module "@salesforce/label/c.OrderMaskGoodsRecipient" {
+    var OrderMaskGoodsRecipient: string;
+    export default OrderMaskGoodsRecipient;
+}
+declare module "@salesforce/label/c.OrderMaskGoodsValueNet" {
+    var OrderMaskGoodsValueNet: string;
+    export default OrderMaskGoodsValueNet;
+}
+declare module "@salesforce/label/c.OrderMaskGrantDiscount" {
+    var OrderMaskGrantDiscount: string;
+    export default OrderMaskGrantDiscount;
+}
+declare module "@salesforce/label/c.OrderMaskInternalRemark" {
+    var OrderMaskInternalRemark: string;
+    export default OrderMaskInternalRemark;
+}
+declare module "@salesforce/label/c.OrderMaskLineItems" {
+    var OrderMaskLineItems: string;
+    export default OrderMaskLineItems;
+}
+declare module "@salesforce/label/c.OrderMaskListPrice" {
+    var OrderMaskListPrice: string;
+    export default OrderMaskListPrice;
+}
+declare module "@salesforce/label/c.OrderMaskMandatoryFieldSalesManagerMustKnowTheReason" {
+    var OrderMaskMandatoryFieldSalesManagerMustKnowTheReason: string;
+    export default OrderMaskMandatoryFieldSalesManagerMustKnowTheReason;
+}
+declare module "@salesforce/label/c.OrderMaskNewAmount" {
+    var OrderMaskNewAmount: string;
+    export default OrderMaskNewAmount;
+}
+declare module "@salesforce/label/c.OrderMaskNewOrder" {
+    var OrderMaskNewOrder: string;
+    export default OrderMaskNewOrder;
+}
+declare module "@salesforce/label/c.OrderMaskNewPriceUnit" {
+    var OrderMaskNewPriceUnit: string;
+    export default OrderMaskNewPriceUnit;
+}
+declare module "@salesforce/label/c.OrderMaskNext" {
+    var OrderMaskNext: string;
+    export default OrderMaskNext;
+}
+declare module "@salesforce/label/c.OrderMaskNoLineItemsYet" {
+    var OrderMaskNoLineItemsYet: string;
+    export default OrderMaskNoLineItemsYet;
+}
+declare module "@salesforce/label/c.OrderMaskNotTransmittedToTheCustomer" {
+    var OrderMaskNotTransmittedToTheCustomer: string;
+    export default OrderMaskNotTransmittedToTheCustomer;
+}
+declare module "@salesforce/label/c.OrderMaskNoteForCarrier" {
+    var OrderMaskNoteForCarrier: string;
+    export default OrderMaskNoteForCarrier;
+}
+declare module "@salesforce/label/c.OrderMaskNoteForCarrierPlaceholder" {
+    var OrderMaskNoteForCarrierPlaceholder: string;
+    export default OrderMaskNoteForCarrierPlaceholder;
+}
+declare module "@salesforce/label/c.OrderMaskNotesForSalesManagerOrColleagues" {
+    var OrderMaskNotesForSalesManagerOrColleagues: string;
+    export default OrderMaskNotesForSalesManagerOrColleagues;
+}
+declare module "@salesforce/label/c.OrderMaskOnlyRelevantForFreightShipping" {
+    var OrderMaskOnlyRelevantForFreightShipping: string;
+    export default OrderMaskOnlyRelevantForFreightShipping;
+}
+declare module "@salesforce/label/c.OrderMaskOnlyRelevantForSelfPickup" {
+    var OrderMaskOnlyRelevantForSelfPickup: string;
+    export default OrderMaskOnlyRelevantForSelfPickup;
+}
+declare module "@salesforce/label/c.OrderMaskOrderDate" {
+    var OrderMaskOrderDate: string;
+    export default OrderMaskOrderDate;
+}
+declare module "@salesforce/label/c.OrderMaskOrderSentAwaitingApprovalBySalesManager" {
+    var OrderMaskOrderSentAwaitingApprovalBySalesManager: string;
+    export default OrderMaskOrderSentAwaitingApprovalBySalesManager;
+}
+declare module "@salesforce/label/c.OrderMaskOrderSource" {
+    var OrderMaskOrderSource: string;
+    export default OrderMaskOrderSource;
+}
+declare module "@salesforce/label/c.OrderMaskOrderSuccessfullyTransmitted" {
+    var OrderMaskOrderSuccessfullyTransmitted: string;
+    export default OrderMaskOrderSuccessfullyTransmitted;
+}
+declare module "@salesforce/label/c.OrderMaskOrderType" {
+    var OrderMaskOrderType: string;
+    export default OrderMaskOrderType;
+}
+declare module "@salesforce/label/c.OrderMaskPickupLocation" {
+    var OrderMaskPickupLocation: string;
+    export default OrderMaskPickupLocation;
+}
+declare module "@salesforce/label/c.OrderMaskPleaseSelect" {
+    var OrderMaskPleaseSelect: string;
+    export default OrderMaskPleaseSelect;
+}
+declare module "@salesforce/label/c.OrderMaskPrice" {
+    var OrderMaskPrice: string;
+    export default OrderMaskPrice;
+}
+declare module "@salesforce/label/c.OrderMaskPriceUnit" {
+    var OrderMaskPriceUnit: string;
+    export default OrderMaskPriceUnit;
+}
+declare module "@salesforce/label/c.OrderMaskPrintOrderConfirmation" {
+    var OrderMaskPrintOrderConfirmation: string;
+    export default OrderMaskPrintOrderConfirmation;
+}
+declare module "@salesforce/label/c.OrderMaskPrintedOnTheDeliveryNote" {
+    var OrderMaskPrintedOnTheDeliveryNote: string;
+    export default OrderMaskPrintedOnTheDeliveryNote;
+}
+declare module "@salesforce/label/c.OrderMaskProducts" {
+    var OrderMaskProducts: string;
+    export default OrderMaskProducts;
+}
+declare module "@salesforce/label/c.OrderMaskQuantity" {
+    var OrderMaskQuantity: string;
+    export default OrderMaskQuantity;
+}
+declare module "@salesforce/label/c.OrderMaskQuantity2" {
+    var OrderMaskQuantity2: string;
+    export default OrderMaskQuantity2;
+}
+declare module "@salesforce/label/c.OrderMaskQuoteIsWithSalesManagementForApproval" {
+    var OrderMaskQuoteIsWithSalesManagementForApproval: string;
+    export default OrderMaskQuoteIsWithSalesManagementForApproval;
+}
+declare module "@salesforce/label/c.OrderMaskReasonFreeDelivery" {
+    var OrderMaskReasonFreeDelivery: string;
+    export default OrderMaskReasonFreeDelivery;
+}
+declare module "@salesforce/label/c.OrderMaskRecalculating" {
+    var OrderMaskRecalculating: string;
+    export default OrderMaskRecalculating;
+}
+declare module "@salesforce/label/c.OrderMaskRecommendationBasedOnOrderWeight" {
+    var OrderMaskRecommendationBasedOnOrderWeight: string;
+    export default OrderMaskRecommendationBasedOnOrderWeight;
+}
+declare module "@salesforce/label/c.OrderMaskRemarkFreeDelivery" {
+    var OrderMaskRemarkFreeDelivery: string;
+    export default OrderMaskRemarkFreeDelivery;
+}
+declare module "@salesforce/label/c.OrderMaskRemoveDiscount" {
+    var OrderMaskRemoveDiscount: string;
+    export default OrderMaskRemoveDiscount;
+}
+declare module "@salesforce/label/c.OrderMaskRequestedDeliveryDate" {
+    var OrderMaskRequestedDeliveryDate: string;
+    export default OrderMaskRequestedDeliveryDate;
+}
+declare module "@salesforce/label/c.OrderMaskSaveDraft" {
+    var OrderMaskSaveDraft: string;
+    export default OrderMaskSaveDraft;
+}
+declare module "@salesforce/label/c.OrderMaskSaving" {
+    var OrderMaskSaving: string;
+    export default OrderMaskSaving;
+}
+declare module "@salesforce/label/c.OrderMaskSelectAddress" {
+    var OrderMaskSelectAddress: string;
+    export default OrderMaskSelectAddress;
+}
+declare module "@salesforce/label/c.OrderMaskSelectDeliveryAddress" {
+    var OrderMaskSelectDeliveryAddress: string;
+    export default OrderMaskSelectDeliveryAddress;
+}
+declare module "@salesforce/label/c.OrderMaskSendOrder" {
+    var OrderMaskSendOrder: string;
+    export default OrderMaskSendOrder;
+}
+declare module "@salesforce/label/c.OrderMaskSendOrderConfirmation" {
+    var OrderMaskSendOrderConfirmation: string;
+    export default OrderMaskSendOrderConfirmation;
+}
+declare module "@salesforce/label/c.OrderMaskShipping" {
+    var OrderMaskShipping: string;
+    export default OrderMaskShipping;
+}
+declare module "@salesforce/label/c.OrderMaskShippingMethod" {
+    var OrderMaskShippingMethod: string;
+    export default OrderMaskShippingMethod;
+}
+declare module "@salesforce/label/c.OrderMaskSource" {
+    var OrderMaskSource: string;
+    export default OrderMaskSource;
+}
+declare module "@salesforce/label/c.OrderMaskStateReason" {
+    var OrderMaskStateReason: string;
+    export default OrderMaskStateReason;
+}
+declare module "@salesforce/label/c.OrderMaskSummary" {
+    var OrderMaskSummary: string;
+    export default OrderMaskSummary;
+}
+declare module "@salesforce/label/c.OrderMaskTextForDeliveryNote" {
+    var OrderMaskTextForDeliveryNote: string;
+    export default OrderMaskTextForDeliveryNote;
+}
+declare module "@salesforce/label/c.OrderMaskTotalGross" {
+    var OrderMaskTotalGross: string;
+    export default OrderMaskTotalGross;
+}
+declare module "@salesforce/label/c.OrderMaskTotalNet" {
+    var OrderMaskTotalNet: string;
+    export default OrderMaskTotalNet;
+}
+declare module "@salesforce/label/c.OrderMaskTransmittedToSAP" {
+    var OrderMaskTransmittedToSAP: string;
+    export default OrderMaskTransmittedToSAP;
+}
+declare module "@salesforce/label/c.OrderMaskUnit" {
+    var OrderMaskUnit: string;
+    export default OrderMaskUnit;
+}
+declare module "@salesforce/label/c.OrderMaskVAT" {
+    var OrderMaskVAT: string;
+    export default OrderMaskVAT;
 }
 declare module "@salesforce/label/c.OrderSimulationTestMappingField" {
     var OrderSimulationTestMappingField: string;
@@ -2342,6 +2882,778 @@ declare module "@salesforce/label/c.QuoteInstallmentTableHeaderThird" {
     var QuoteInstallmentTableHeaderThird: string;
     export default QuoteInstallmentTableHeaderThird;
 }
+declare module "@salesforce/label/c.ReturnOrderMaskAccountDetails" {
+    var ReturnOrderMaskAccountDetails: string;
+    export default ReturnOrderMaskAccountDetails;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskAdd" {
+    var ReturnOrderMaskAdd: string;
+    export default ReturnOrderMaskAdd;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskAddress" {
+    var ReturnOrderMaskAddress: string;
+    export default ReturnOrderMaskAddress;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskAllActiveDarbovenProducts" {
+    var ReturnOrderMaskAllActiveDarbovenProducts: string;
+    export default ReturnOrderMaskAllActiveDarbovenProducts;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskAllActiveProducts" {
+    var ReturnOrderMaskAllActiveProducts: string;
+    export default ReturnOrderMaskAllActiveProducts;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskAllMatchingProductsAdded" {
+    var ReturnOrderMaskAllMatchingProductsAdded: string;
+    export default ReturnOrderMaskAllMatchingProductsAdded;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskAmount" {
+    var ReturnOrderMaskAmount: string;
+    export default ReturnOrderMaskAmount;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskAmountLargerThanReference" {
+    var ReturnOrderMaskAmountLargerThanReference: string;
+    export default ReturnOrderMaskAmountLargerThanReference;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskAndXMore" {
+    var ReturnOrderMaskAndXMore: string;
+    export default ReturnOrderMaskAndXMore;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskAnswerGoodsOrCredit" {
+    var ReturnOrderMaskAnswerGoodsOrCredit: string;
+    export default ReturnOrderMaskAnswerGoodsOrCredit;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskAnswerPreliminaryQuestion" {
+    var ReturnOrderMaskAnswerPreliminaryQuestion: string;
+    export default ReturnOrderMaskAnswerPreliminaryQuestion;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskAnswerRefundQuestion" {
+    var ReturnOrderMaskAnswerRefundQuestion: string;
+    export default ReturnOrderMaskAnswerRefundQuestion;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskAppliesToEntireCase" {
+    var ReturnOrderMaskAppliesToEntireCase: string;
+    export default ReturnOrderMaskAppliesToEntireCase;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskArrivalDate" {
+    var ReturnOrderMaskArrivalDate: string;
+    export default ReturnOrderMaskArrivalDate;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskBackToEditing" {
+    var ReturnOrderMaskBackToEditing: string;
+    export default ReturnOrderMaskBackToEditing;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskBackToReference" {
+    var ReturnOrderMaskBackToReference: string;
+    export default ReturnOrderMaskBackToReference;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskCancel" {
+    var ReturnOrderMaskCancel: string;
+    export default ReturnOrderMaskCancel;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskCase" {
+    var ReturnOrderMaskCase: string;
+    export default ReturnOrderMaskCase;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskCaseCategory" {
+    var ReturnOrderMaskCaseCategory: string;
+    export default ReturnOrderMaskCaseCategory;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskCaseCategoryType" {
+    var ReturnOrderMaskCaseCategoryType: string;
+    export default ReturnOrderMaskCaseCategoryType;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskCaseInformation" {
+    var ReturnOrderMaskCaseInformation: string;
+    export default ReturnOrderMaskCaseInformation;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskCaseInvoice" {
+    var ReturnOrderMaskCaseInvoice: string;
+    export default ReturnOrderMaskCaseInvoice;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskCaseOrder" {
+    var ReturnOrderMaskCaseOrder: string;
+    export default ReturnOrderMaskCaseOrder;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskCaseReason" {
+    var ReturnOrderMaskCaseReason: string;
+    export default ReturnOrderMaskCaseReason;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskCaseSelections" {
+    var ReturnOrderMaskCaseSelections: string;
+    export default ReturnOrderMaskCaseSelections;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskCaseType" {
+    var ReturnOrderMaskCaseType: string;
+    export default ReturnOrderMaskCaseType;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskChangeAccount" {
+    var ReturnOrderMaskChangeAccount: string;
+    export default ReturnOrderMaskChangeAccount;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskChanged" {
+    var ReturnOrderMaskChanged: string;
+    export default ReturnOrderMaskChanged;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskChangedAccountBody" {
+    var ReturnOrderMaskChangedAccountBody: string;
+    export default ReturnOrderMaskChangedAccountBody;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskChangedAccountHeader" {
+    var ReturnOrderMaskChangedAccountHeader: string;
+    export default ReturnOrderMaskChangedAccountHeader;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskChangedAccountModalBody" {
+    var ReturnOrderMaskChangedAccountModalBody: string;
+    export default ReturnOrderMaskChangedAccountModalBody;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskChangedAccountModalHeader" {
+    var ReturnOrderMaskChangedAccountModalHeader: string;
+    export default ReturnOrderMaskChangedAccountModalHeader;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskCheck" {
+    var ReturnOrderMaskCheck: string;
+    export default ReturnOrderMaskCheck;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskChooseSelectionsFirst" {
+    var ReturnOrderMaskChooseSelectionsFirst: string;
+    export default ReturnOrderMaskChooseSelectionsFirst;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskCollectiveInvoiceFor" {
+    var ReturnOrderMaskCollectiveInvoiceFor: string;
+    export default ReturnOrderMaskCollectiveInvoiceFor;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskContinueToEditing" {
+    var ReturnOrderMaskContinueToEditing: string;
+    export default ReturnOrderMaskContinueToEditing;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskCoreProductRange" {
+    var ReturnOrderMaskCoreProductRange: string;
+    export default ReturnOrderMaskCoreProductRange;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskCredit" {
+    var ReturnOrderMaskCredit: string;
+    export default ReturnOrderMaskCredit;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskCreditPosition" {
+    var ReturnOrderMaskCreditPosition: string;
+    export default ReturnOrderMaskCreditPosition;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskCreditValue" {
+    var ReturnOrderMaskCreditValue: string;
+    export default ReturnOrderMaskCreditValue;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskCustomer" {
+    var ReturnOrderMaskCustomer: string;
+    export default ReturnOrderMaskCustomer;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskCustomerNumber" {
+    var ReturnOrderMaskCustomerNumber: string;
+    export default ReturnOrderMaskCustomerNumber;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskCustomerReceivesRefund" {
+    var ReturnOrderMaskCustomerReceivesRefund: string;
+    export default ReturnOrderMaskCustomerReceivesRefund;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskCustomerShips" {
+    var ReturnOrderMaskCustomerShips: string;
+    export default ReturnOrderMaskCustomerShips;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskCustomerShipsGoodsText" {
+    var ReturnOrderMaskCustomerShipsGoodsText: string;
+    export default ReturnOrderMaskCustomerShipsGoodsText;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskDarbovenArrangesTransport" {
+    var ReturnOrderMaskDarbovenArrangesTransport: string;
+    export default ReturnOrderMaskDarbovenArrangesTransport;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskDate" {
+    var ReturnOrderMaskDate: string;
+    export default ReturnOrderMaskDate;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskDatePlaceholder" {
+    var ReturnOrderMaskDatePlaceholder: string;
+    export default ReturnOrderMaskDatePlaceholder;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskDeliveryAddress" {
+    var ReturnOrderMaskDeliveryAddress: string;
+    export default ReturnOrderMaskDeliveryAddress;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskDerived" {
+    var ReturnOrderMaskDerived: string;
+    export default ReturnOrderMaskDerived;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskDerivedFromSelections" {
+    var ReturnOrderMaskDerivedFromSelections: string;
+    export default ReturnOrderMaskDerivedFromSelections;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskDestroyedAtCustomers" {
+    var ReturnOrderMaskDestroyedAtCustomers: string;
+    export default ReturnOrderMaskDestroyedAtCustomers;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskDetails" {
+    var ReturnOrderMaskDetails: string;
+    export default ReturnOrderMaskDetails;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskDocumentLinesBehavior" {
+    var ReturnOrderMaskDocumentLinesBehavior: string;
+    export default ReturnOrderMaskDocumentLinesBehavior;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskEdit" {
+    var ReturnOrderMaskEdit: string;
+    export default ReturnOrderMaskEdit;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskEditLineItems" {
+    var ReturnOrderMaskEditLineItems: string;
+    export default ReturnOrderMaskEditLineItems;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskEditable" {
+    var ReturnOrderMaskEditable: string;
+    export default ReturnOrderMaskEditable;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskEmails" {
+    var ReturnOrderMaskEmails: string;
+    export default ReturnOrderMaskEmails;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskError" {
+    var ReturnOrderMaskError: string;
+    export default ReturnOrderMaskError;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskExpectedArrivalDateHelp" {
+    var ReturnOrderMaskExpectedArrivalDateHelp: string;
+    export default ReturnOrderMaskExpectedArrivalDateHelp;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskFinalReviewInstructions" {
+    var ReturnOrderMaskFinalReviewInstructions: string;
+    export default ReturnOrderMaskFinalReviewInstructions;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskFromInvoice" {
+    var ReturnOrderMaskFromInvoice: string;
+    export default ReturnOrderMaskFromInvoice;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskFromOrder" {
+    var ReturnOrderMaskFromOrder: string;
+    export default ReturnOrderMaskFromOrder;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskGoodsAlreadyReceived" {
+    var ReturnOrderMaskGoodsAlreadyReceived: string;
+    export default ReturnOrderMaskGoodsAlreadyReceived;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskGoodsAlreadyThereInfo" {
+    var ReturnOrderMaskGoodsAlreadyThereInfo: string;
+    export default ReturnOrderMaskGoodsAlreadyThereInfo;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskGoodsBeingReturned" {
+    var ReturnOrderMaskGoodsBeingReturned: string;
+    export default ReturnOrderMaskGoodsBeingReturned;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskGoodsMovement" {
+    var ReturnOrderMaskGoodsMovement: string;
+    export default ReturnOrderMaskGoodsMovement;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskGoodsReceivedWhen" {
+    var ReturnOrderMaskGoodsReceivedWhen: string;
+    export default ReturnOrderMaskGoodsReceivedWhen;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskGoodsWillBePickedUp" {
+    var ReturnOrderMaskGoodsWillBePickedUp: string;
+    export default ReturnOrderMaskGoodsWillBePickedUp;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskIdentified" {
+    var ReturnOrderMaskIdentified: string;
+    export default ReturnOrderMaskIdentified;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskIdentifiedFromCase" {
+    var ReturnOrderMaskIdentifiedFromCase: string;
+    export default ReturnOrderMaskIdentifiedFromCase;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskInDocument" {
+    var ReturnOrderMaskInDocument: string;
+    export default ReturnOrderMaskInDocument;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskInSAP" {
+    var ReturnOrderMaskInSAP: string;
+    export default ReturnOrderMaskInSAP;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskIncludedOrders" {
+    var ReturnOrderMaskIncludedOrders: string;
+    export default ReturnOrderMaskIncludedOrders;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskIndustry" {
+    var ReturnOrderMaskIndustry: string;
+    export default ReturnOrderMaskIndustry;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskInternalNote" {
+    var ReturnOrderMaskInternalNote: string;
+    export default ReturnOrderMaskInternalNote;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskInternalNotePlaceholder" {
+    var ReturnOrderMaskInternalNotePlaceholder: string;
+    export default ReturnOrderMaskInternalNotePlaceholder;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskInvoice" {
+    var ReturnOrderMaskInvoice: string;
+    export default ReturnOrderMaskInvoice;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskInvoiceFor" {
+    var ReturnOrderMaskInvoiceFor: string;
+    export default ReturnOrderMaskInvoiceFor;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskInvoiceReset" {
+    var ReturnOrderMaskInvoiceReset: string;
+    export default ReturnOrderMaskInvoiceReset;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskInvoices" {
+    var ReturnOrderMaskInvoices: string;
+    export default ReturnOrderMaskInvoices;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskItemsFromProductSearch" {
+    var ReturnOrderMaskItemsFromProductSearch: string;
+    export default ReturnOrderMaskItemsFromProductSearch;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskItemsInTableBelow" {
+    var ReturnOrderMaskItemsInTableBelow: string;
+    export default ReturnOrderMaskItemsInTableBelow;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskLineItem" {
+    var ReturnOrderMaskLineItem: string;
+    export default ReturnOrderMaskLineItem;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskLineItemType" {
+    var ReturnOrderMaskLineItemType: string;
+    export default ReturnOrderMaskLineItemType;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskLineItems" {
+    var ReturnOrderMaskLineItems: string;
+    export default ReturnOrderMaskLineItems;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskManual" {
+    var ReturnOrderMaskManual: string;
+    export default ReturnOrderMaskManual;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskManually" {
+    var ReturnOrderMaskManually: string;
+    export default ReturnOrderMaskManually;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskMode" {
+    var ReturnOrderMaskMode: string;
+    export default ReturnOrderMaskMode;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskMultipleTypesPossibleInfo" {
+    var ReturnOrderMaskMultipleTypesPossibleInfo: string;
+    export default ReturnOrderMaskMultipleTypesPossibleInfo;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskNewAccount" {
+    var ReturnOrderMaskNewAccount: string;
+    export default ReturnOrderMaskNewAccount;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskNoDocumentReason" {
+    var ReturnOrderMaskNoDocumentReason: string;
+    export default ReturnOrderMaskNoDocumentReason;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskNoDocumentReasonExample" {
+    var ReturnOrderMaskNoDocumentReasonExample: string;
+    export default ReturnOrderMaskNoDocumentReasonExample;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskNoDocumentReasonHelp" {
+    var ReturnOrderMaskNoDocumentReasonHelp: string;
+    export default ReturnOrderMaskNoDocumentReasonHelp;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskNoGoodsReturned" {
+    var ReturnOrderMaskNoGoodsReturned: string;
+    export default ReturnOrderMaskNoGoodsReturned;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskNoGoodsValueCreditInfo" {
+    var ReturnOrderMaskNoGoodsValueCreditInfo: string;
+    export default ReturnOrderMaskNoGoodsValueCreditInfo;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskNoLineItemsYet" {
+    var ReturnOrderMaskNoLineItemsYet: string;
+    export default ReturnOrderMaskNoLineItemsYet;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskNoNotices" {
+    var ReturnOrderMaskNoNotices: string;
+    export default ReturnOrderMaskNoNotices;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskNoOrdersInInvoice" {
+    var ReturnOrderMaskNoOrdersInInvoice: string;
+    export default ReturnOrderMaskNoOrdersInInvoice;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskNoPriceFoundProductNotAdded" {
+    var ReturnOrderMaskNoPriceFoundProductNotAdded: string;
+    export default ReturnOrderMaskNoPriceFoundProductNotAdded;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskNoReturnOrderWithoutGoods" {
+    var ReturnOrderMaskNoReturnOrderWithoutGoods: string;
+    export default ReturnOrderMaskNoReturnOrderWithoutGoods;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskNoValueCreditOnly" {
+    var ReturnOrderMaskNoValueCreditOnly: string;
+    export default ReturnOrderMaskNoValueCreditOnly;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskNoWithoutCredit" {
+    var ReturnOrderMaskNoWithoutCredit: string;
+    export default ReturnOrderMaskNoWithoutCredit;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskNone" {
+    var ReturnOrderMaskNone: string;
+    export default ReturnOrderMaskNone;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskNotChosenYet" {
+    var ReturnOrderMaskNotChosenYet: string;
+    export default ReturnOrderMaskNotChosenYet;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskNotInCustomerListing" {
+    var ReturnOrderMaskNotInCustomerListing: string;
+    export default ReturnOrderMaskNotInCustomerListing;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskOpen" {
+    var ReturnOrderMaskOpen: string;
+    export default ReturnOrderMaskOpen;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskOptional" {
+    var ReturnOrderMaskOptional: string;
+    export default ReturnOrderMaskOptional;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskOrder" {
+    var ReturnOrderMaskOrder: string;
+    export default ReturnOrderMaskOrder;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskOrderDocument" {
+    var ReturnOrderMaskOrderDocument: string;
+    export default ReturnOrderMaskOrderDocument;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskOrderReset" {
+    var ReturnOrderMaskOrderReset: string;
+    export default ReturnOrderMaskOrderReset;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskOrders" {
+    var ReturnOrderMaskOrders: string;
+    export default ReturnOrderMaskOrders;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskOtherClearance" {
+    var ReturnOrderMaskOtherClearance: string;
+    export default ReturnOrderMaskOtherClearance;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskOutsideDocumentProducts" {
+    var ReturnOrderMaskOutsideDocumentProducts: string;
+    export default ReturnOrderMaskOutsideDocumentProducts;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskPicklistChangedReason" {
+    var ReturnOrderMaskPicklistChangedReason: string;
+    export default ReturnOrderMaskPicklistChangedReason;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskPicklistValuesNote" {
+    var ReturnOrderMaskPicklistValuesNote: string;
+    export default ReturnOrderMaskPicklistValuesNote;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskPickupAddressHelp" {
+    var ReturnOrderMaskPickupAddressHelp: string;
+    export default ReturnOrderMaskPickupAddressHelp;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskPickupLocation" {
+    var ReturnOrderMaskPickupLocation: string;
+    export default ReturnOrderMaskPickupLocation;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskPleaseSelect" {
+    var ReturnOrderMaskPleaseSelect: string;
+    export default ReturnOrderMaskPleaseSelect;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskPrice" {
+    var ReturnOrderMaskPrice: string;
+    export default ReturnOrderMaskPrice;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskProduct" {
+    var ReturnOrderMaskProduct: string;
+    export default ReturnOrderMaskProduct;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskProductCode" {
+    var ReturnOrderMaskProductCode: string;
+    export default ReturnOrderMaskProductCode;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskProductListing" {
+    var ReturnOrderMaskProductListing: string;
+    export default ReturnOrderMaskProductListing;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskProductNotInCustomerListing" {
+    var ReturnOrderMaskProductNotInCustomerListing: string;
+    export default ReturnOrderMaskProductNotInCustomerListing;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskProductNotInReference" {
+    var ReturnOrderMaskProductNotInReference: string;
+    export default ReturnOrderMaskProductNotInReference;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskProductSearchHelp" {
+    var ReturnOrderMaskProductSearchHelp: string;
+    export default ReturnOrderMaskProductSearchHelp;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskProductSearchPlaceholder" {
+    var ReturnOrderMaskProductSearchPlaceholder: string;
+    export default ReturnOrderMaskProductSearchPlaceholder;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskProductsAvailable" {
+    var ReturnOrderMaskProductsAvailable: string;
+    export default ReturnOrderMaskProductsAvailable;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskQuantity" {
+    var ReturnOrderMaskQuantity: string;
+    export default ReturnOrderMaskQuantity;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskReadyForRetrieval" {
+    var ReturnOrderMaskReadyForRetrieval: string;
+    export default ReturnOrderMaskReadyForRetrieval;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskReason" {
+    var ReturnOrderMaskReason: string;
+    export default ReturnOrderMaskReason;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskReference" {
+    var ReturnOrderMaskReference: string;
+    export default ReturnOrderMaskReference;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskReferenceRelation" {
+    var ReturnOrderMaskReferenceRelation: string;
+    export default ReturnOrderMaskReferenceRelation;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskRefundAbove100Notice" {
+    var ReturnOrderMaskRefundAbove100Notice: string;
+    export default ReturnOrderMaskRefundAbove100Notice;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskRefundNo" {
+    var ReturnOrderMaskRefundNo: string;
+    export default ReturnOrderMaskRefundNo;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskRefundYes" {
+    var ReturnOrderMaskRefundYes: string;
+    export default ReturnOrderMaskRefundYes;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskRegisterArrivalDate" {
+    var ReturnOrderMaskRegisterArrivalDate: string;
+    export default ReturnOrderMaskRegisterArrivalDate;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskRemainWithCustomer" {
+    var ReturnOrderMaskRemainWithCustomer: string;
+    export default ReturnOrderMaskRemainWithCustomer;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskRequestedPickupDate" {
+    var ReturnOrderMaskRequestedPickupDate: string;
+    export default ReturnOrderMaskRequestedPickupDate;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskRequestedPickupDateHelp" {
+    var ReturnOrderMaskRequestedPickupDateHelp: string;
+    export default ReturnOrderMaskRequestedPickupDateHelp;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskReturn" {
+    var ReturnOrderMaskReturn: string;
+    export default ReturnOrderMaskReturn;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskReturnShippingMethodHelp" {
+    var ReturnOrderMaskReturnShippingMethodHelp: string;
+    export default ReturnOrderMaskReturnShippingMethodHelp;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskReviewAndComplete" {
+    var ReturnOrderMaskReviewAndComplete: string;
+    export default ReturnOrderMaskReviewAndComplete;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskSearchAccount" {
+    var ReturnOrderMaskSearchAccount: string;
+    export default ReturnOrderMaskSearchAccount;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskSearchAddress" {
+    var ReturnOrderMaskSearchAddress: string;
+    export default ReturnOrderMaskSearchAddress;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskSearchInvoice" {
+    var ReturnOrderMaskSearchInvoice: string;
+    export default ReturnOrderMaskSearchInvoice;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskSearchOrder" {
+    var ReturnOrderMaskSearchOrder: string;
+    export default ReturnOrderMaskSearchOrder;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskSearchProduct" {
+    var ReturnOrderMaskSearchProduct: string;
+    export default ReturnOrderMaskSearchProduct;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskSelectCaseReason" {
+    var ReturnOrderMaskSelectCaseReason: string;
+    export default ReturnOrderMaskSelectCaseReason;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskSelectGoodsMovement" {
+    var ReturnOrderMaskSelectGoodsMovement: string;
+    export default ReturnOrderMaskSelectGoodsMovement;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskSelectReference" {
+    var ReturnOrderMaskSelectReference: string;
+    export default ReturnOrderMaskSelectReference;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskSelectReferenceDocument" {
+    var ReturnOrderMaskSelectReferenceDocument: string;
+    export default ReturnOrderMaskSelectReferenceDocument;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskSelectShippingMethod" {
+    var ReturnOrderMaskSelectShippingMethod: string;
+    export default ReturnOrderMaskSelectShippingMethod;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskShipToAddressDifferent" {
+    var ReturnOrderMaskShipToAddressDifferent: string;
+    export default ReturnOrderMaskShipToAddressDifferent;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskShippingMethod" {
+    var ReturnOrderMaskShippingMethod: string;
+    export default ReturnOrderMaskShippingMethod;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskSource" {
+    var ReturnOrderMaskSource: string;
+    export default ReturnOrderMaskSource;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskStandardDeliveryAddress" {
+    var ReturnOrderMaskStandardDeliveryAddress: string;
+    export default ReturnOrderMaskStandardDeliveryAddress;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskStatus" {
+    var ReturnOrderMaskStatus: string;
+    export default ReturnOrderMaskStatus;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskStillOpen" {
+    var ReturnOrderMaskStillOpen: string;
+    export default ReturnOrderMaskStillOpen;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskSubject" {
+    var ReturnOrderMaskSubject: string;
+    export default ReturnOrderMaskSubject;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskSubmitSAPGoodsReceiptInfo" {
+    var ReturnOrderMaskSubmitSAPGoodsReceiptInfo: string;
+    export default ReturnOrderMaskSubmitSAPGoodsReceiptInfo;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskSubmitSAPStartsPickupInfo" {
+    var ReturnOrderMaskSubmitSAPStartsPickupInfo: string;
+    export default ReturnOrderMaskSubmitSAPStartsPickupInfo;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskSubmitToSAP" {
+    var ReturnOrderMaskSubmitToSAP: string;
+    export default ReturnOrderMaskSubmitToSAP;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskSubtype" {
+    var ReturnOrderMaskSubtype: string;
+    export default ReturnOrderMaskSubtype;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskSuccess" {
+    var ReturnOrderMaskSuccess: string;
+    export default ReturnOrderMaskSuccess;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskSuccessMessage" {
+    var ReturnOrderMaskSuccessMessage: string;
+    export default ReturnOrderMaskSuccessMessage;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskTableNotices" {
+    var ReturnOrderMaskTableNotices: string;
+    export default ReturnOrderMaskTableNotices;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskTotalGoodsValue" {
+    var ReturnOrderMaskTotalGoodsValue: string;
+    export default ReturnOrderMaskTotalGoodsValue;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskType" {
+    var ReturnOrderMaskType: string;
+    export default ReturnOrderMaskType;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskUnannouncedReturnReceived" {
+    var ReturnOrderMaskUnannouncedReturnReceived: string;
+    export default ReturnOrderMaskUnannouncedReturnReceived;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskUnit" {
+    var ReturnOrderMaskUnit: string;
+    export default ReturnOrderMaskUnit;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskValue" {
+    var ReturnOrderMaskValue: string;
+    export default ReturnOrderMaskValue;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskValueCredit" {
+    var ReturnOrderMaskValueCredit: string;
+    export default ReturnOrderMaskValueCredit;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskValueGoodwill" {
+    var ReturnOrderMaskValueGoodwill: string;
+    export default ReturnOrderMaskValueGoodwill;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskValuePriceError" {
+    var ReturnOrderMaskValuePriceError: string;
+    export default ReturnOrderMaskValuePriceError;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskValueQualityClaim" {
+    var ReturnOrderMaskValueQualityClaim: string;
+    export default ReturnOrderMaskValueQualityClaim;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskValueQuantityCorrection" {
+    var ReturnOrderMaskValueQuantityCorrection: string;
+    export default ReturnOrderMaskValueQuantityCorrection;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskValueWrongGoodsDestroyed" {
+    var ReturnOrderMaskValueWrongGoodsDestroyed: string;
+    export default ReturnOrderMaskValueWrongGoodsDestroyed;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskValues" {
+    var ReturnOrderMaskValues: string;
+    export default ReturnOrderMaskValues;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskWarningOnePosition" {
+    var ReturnOrderMaskWarningOnePosition: string;
+    export default ReturnOrderMaskWarningOnePosition;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskWarningSelectReference" {
+    var ReturnOrderMaskWarningSelectReference: string;
+    export default ReturnOrderMaskWarningSelectReference;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskWarnings" {
+    var ReturnOrderMaskWarnings: string;
+    export default ReturnOrderMaskWarnings;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskWhereAreGoods" {
+    var ReturnOrderMaskWhereAreGoods: string;
+    export default ReturnOrderMaskWhereAreGoods;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskWhoMovesGoodsHelp" {
+    var ReturnOrderMaskWhoMovesGoodsHelp: string;
+    export default ReturnOrderMaskWhoMovesGoodsHelp;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskWith" {
+    var ReturnOrderMaskWith: string;
+    export default ReturnOrderMaskWith;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskWithCredit" {
+    var ReturnOrderMaskWithCredit: string;
+    export default ReturnOrderMaskWithCredit;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskWithout" {
+    var ReturnOrderMaskWithout: string;
+    export default ReturnOrderMaskWithout;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskWithoutCredit" {
+    var ReturnOrderMaskWithoutCredit: string;
+    export default ReturnOrderMaskWithoutCredit;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskWithoutDocument" {
+    var ReturnOrderMaskWithoutDocument: string;
+    export default ReturnOrderMaskWithoutDocument;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskWithoutDocumentLower" {
+    var ReturnOrderMaskWithoutDocumentLower: string;
+    export default ReturnOrderMaskWithoutDocumentLower;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskYesCreditOnlyCase" {
+    var ReturnOrderMaskYesCreditOnlyCase: string;
+    export default ReturnOrderMaskYesCreditOnlyCase;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskYesGoodsReturned" {
+    var ReturnOrderMaskYesGoodsReturned: string;
+    export default ReturnOrderMaskYesGoodsReturned;
+}
+declare module "@salesforce/label/c.ReturnOrderMaskYesWithCredit" {
+    var ReturnOrderMaskYesWithCredit: string;
+    export default ReturnOrderMaskYesWithCredit;
+}
 declare module "@salesforce/label/c.ShippingProductCodes" {
     var ShippingProductCodes: string;
     export default ShippingProductCodes;
@@ -2357,6 +3669,10 @@ declare module "@salesforce/label/c.SourceOrgClientSecret" {
 declare module "@salesforce/label/c.SourceOrgTokenURL" {
     var SourceOrgTokenURL: string;
     export default SourceOrgTokenURL;
+}
+declare module "@salesforce/label/c.Test1" {
+    var Test1: string;
+    export default Test1;
 }
 declare module "@salesforce/label/c.Test_Label_Date" {
     var Test_Label_Date: string;
@@ -2786,6 +4102,10 @@ declare module "@salesforce/label/c.WebshopDoNotTranslateRefreshCartInMs" {
     var WebshopDoNotTranslateRefreshCartInMs: string;
     export default WebshopDoNotTranslateRefreshCartInMs;
 }
+declare module "@salesforce/label/c.WebshopDoNotTranslateRefreshCartInMsTwo" {
+    var WebshopDoNotTranslateRefreshCartInMsTwo: string;
+    export default WebshopDoNotTranslateRefreshCartInMsTwo;
+}
 declare module "@salesforce/label/c.WebshopDoNotTranslateShippingCost" {
     var WebshopDoNotTranslateShippingCost: string;
     export default WebshopDoNotTranslateShippingCost;
@@ -3193,6 +4513,10 @@ declare module "@salesforce/label/c.WebshopNewProducts" {
 declare module "@salesforce/label/c.WebshopNewToDarbovenQuestion" {
     var WebshopNewToDarbovenQuestion: string;
     export default WebshopNewToDarbovenQuestion;
+}
+declare module "@salesforce/label/c.WebshopNoAddress" {
+    var WebshopNoAddress: string;
+    export default WebshopNoAddress;
 }
 declare module "@salesforce/label/c.WebshopNoAvailability" {
     var WebshopNoAvailability: string;
@@ -3853,1032 +5177,4 @@ declare module "@salesforce/label/c.url_nekundenmeldung" {
 declare module "@salesforce/label/c.webshopFavourites" {
     var webshopFavourites: string;
     export default webshopFavourites;
-}
-declare module "@salesforce/label/c.AccountTreeAccountsChanged" {
-    var AccountTreeAccountsChanged: string;
-    export default AccountTreeAccountsChanged;
-}
-declare module "@salesforce/label/c.AccountTreeViewCondition" {
-    var AccountTreeViewCondition: string;
-    export default AccountTreeViewCondition;
-}
-declare module "@salesforce/label/c.AccountTreeViewStatistics" {
-    var AccountTreeViewStatistics: string;
-    export default AccountTreeViewStatistics;
-}
-declare module "@salesforce/label/c.ChainRightsInternalDepartments" {
-    var ChainRightsInternalDepartments: string;
-    export default ChainRightsInternalDepartments;
-}
-declare module "@salesforce/label/c.Flow_CaseCreateLeadCaseInformationMissing" {
-    var Flow_CaseCreateLeadCaseInformationMissing: string;
-    export default Flow_CaseCreateLeadCaseInformationMissing;
-}
-declare module "@salesforce/label/c.Flow_CaseCreateLeadLeadsFound" {
-    var Flow_CaseCreateLeadLeadsFound: string;
-    export default Flow_CaseCreateLeadLeadsFound;
-}
-declare module "@salesforce/label/c.Flow_TradeFairReportContactAddedToCampaign1" {
-    var Flow_TradeFairReportContactAddedToCampaign1: string;
-    export default Flow_TradeFairReportContactAddedToCampaign1;
-}
-declare module "@salesforce/label/c.Flow_TradeFairReportContactAddedToCampaign2" {
-    var Flow_TradeFairReportContactAddedToCampaign2: string;
-    export default Flow_TradeFairReportContactAddedToCampaign2;
-}
-declare module "@salesforce/label/c.Flow_TradeFairReportContactVisitor" {
-    var Flow_TradeFairReportContactVisitor: string;
-    export default Flow_TradeFairReportContactVisitor;
-}
-declare module "@salesforce/label/c.Flow_TradeFairReportErrorContactOrLeadOnly" {
-    var Flow_TradeFairReportErrorContactOrLeadOnly: string;
-    export default Flow_TradeFairReportErrorContactOrLeadOnly;
-}
-declare module "@salesforce/label/c.Flow_TradeFairReportErrorMsgTryAgain" {
-    var Flow_TradeFairReportErrorMsgTryAgain: string;
-    export default Flow_TradeFairReportErrorMsgTryAgain;
-}
-declare module "@salesforce/label/c.Flow_TradeFairReportFollowUpAction" {
-    var Flow_TradeFairReportFollowUpAction: string;
-    export default Flow_TradeFairReportFollowUpAction;
-}
-declare module "@salesforce/label/c.Flow_TradeFairReportInterestedIn" {
-    var Flow_TradeFairReportInterestedIn: string;
-    export default Flow_TradeFairReportInterestedIn;
-}
-declare module "@salesforce/label/c.Flow_TradeFairReportLastNameRequired" {
-    var Flow_TradeFairReportLastNameRequired: string;
-    export default Flow_TradeFairReportLastNameRequired;
-}
-declare module "@salesforce/label/c.Flow_TradeFairReportNoRecordFound" {
-    var Flow_TradeFairReportNoRecordFound: string;
-    export default Flow_TradeFairReportNoRecordFound;
-}
-declare module "@salesforce/label/c.Flow_TradeFairReportNote" {
-    var Flow_TradeFairReportNote: string;
-    export default Flow_TradeFairReportNote;
-}
-declare module "@salesforce/label/c.Flow_TradeFairReportOther" {
-    var Flow_TradeFairReportOther: string;
-    export default Flow_TradeFairReportOther;
-}
-declare module "@salesforce/label/c.Flow_TradeFairReportPostalCodeRequired" {
-    var Flow_TradeFairReportPostalCodeRequired: string;
-    export default Flow_TradeFairReportPostalCodeRequired;
-}
-declare module "@salesforce/label/c.Flow_TradeFairReportPrevioussupplier" {
-    var Flow_TradeFairReportPrevioussupplier: string;
-    export default Flow_TradeFairReportPrevioussupplier;
-}
-declare module "@salesforce/label/c.Flow_TradeFairReportScreenErrorMessage" {
-    var Flow_TradeFairReportScreenErrorMessage: string;
-    export default Flow_TradeFairReportScreenErrorMessage;
-}
-declare module "@salesforce/label/c.Flow_TradeFairReportScriptType" {
-    var Flow_TradeFairReportScriptType: string;
-    export default Flow_TradeFairReportScriptType;
-}
-declare module "@salesforce/label/c.Flow_TradeFairReportSearchMsgOnlyContact" {
-    var Flow_TradeFairReportSearchMsgOnlyContact: string;
-    export default Flow_TradeFairReportSearchMsgOnlyContact;
-}
-declare module "@salesforce/label/c.Flow_TradeFairReportSelectSalesRep" {
-    var Flow_TradeFairReportSelectSalesRep: string;
-    export default Flow_TradeFairReportSelectSalesRep;
-}
-declare module "@salesforce/label/c.Flow_TradeFairReportSuccessMsg" {
-    var Flow_TradeFairReportSuccessMsg: string;
-    export default Flow_TradeFairReportSuccessMsg;
-}
-declare module "@salesforce/label/c.Flow_TradeFairReportValNoEmailFound" {
-    var Flow_TradeFairReportValNoEmailFound: string;
-    export default Flow_TradeFairReportValNoEmailFound;
-}
-declare module "@salesforce/label/c.Flow_TradeFairReportWarningContactOrLead" {
-    var Flow_TradeFairReportWarningContactOrLead: string;
-    export default Flow_TradeFairReportWarningContactOrLead;
-}
-declare module "@salesforce/label/c.GeneralCampaign" {
-    var GeneralCampaign: string;
-    export default GeneralCampaign;
-}
-declare module "@salesforce/label/c.OrderMaskAction" {
-    var OrderMaskAction: string;
-    export default OrderMaskAction;
-}
-declare module "@salesforce/label/c.OrderMaskActions" {
-    var OrderMaskActions: string;
-    export default OrderMaskActions;
-}
-declare module "@salesforce/label/c.OrderMaskAdd" {
-    var OrderMaskAdd: string;
-    export default OrderMaskAdd;
-}
-declare module "@salesforce/label/c.OrderMaskAfterApprovalAutomaticTransmissionToSAP" {
-    var OrderMaskAfterApprovalAutomaticTransmissionToSAP: string;
-    export default OrderMaskAfterApprovalAutomaticTransmissionToSAP;
-}
-declare module "@salesforce/label/c.OrderMaskAmount" {
-    var OrderMaskAmount: string;
-    export default OrderMaskAmount;
-}
-declare module "@salesforce/label/c.OrderMaskApplyDiscount" {
-    var OrderMaskApplyDiscount: string;
-    export default OrderMaskApplyDiscount;
-}
-declare module "@salesforce/label/c.OrderMaskApprovalBySalesManagerRequired" {
-    var OrderMaskApprovalBySalesManagerRequired: string;
-    export default OrderMaskApprovalBySalesManagerRequired;
-}
-declare module "@salesforce/label/c.OrderMaskApprovalRequired" {
-    var OrderMaskApprovalRequired: string;
-    export default OrderMaskApprovalRequired;
-}
-declare module "@salesforce/label/c.OrderMaskArticleItem" {
-    var OrderMaskArticleItem: string;
-    export default OrderMaskArticleItem;
-}
-declare module "@salesforce/label/c.OrderMaskAwaitingApproval" {
-    var OrderMaskAwaitingApproval: string;
-    export default OrderMaskAwaitingApproval;
-}
-declare module "@salesforce/label/c.OrderMaskBack" {
-    var OrderMaskBack: string;
-    export default OrderMaskBack;
-}
-declare module "@salesforce/label/c.OrderMaskBackToCustomer" {
-    var OrderMaskBackToCustomer: string;
-    export default OrderMaskBackToCustomer;
-}
-declare module "@salesforce/label/c.OrderMaskCancel" {
-    var OrderMaskCancel: string;
-    export default OrderMaskCancel;
-}
-declare module "@salesforce/label/c.OrderMaskChargeShippingCosts" {
-    var OrderMaskChargeShippingCosts: string;
-    export default OrderMaskChargeShippingCosts;
-}
-declare module "@salesforce/label/c.OrderMaskClickOrTypeToSearchEnterInTheQuantityFieldAddsTheArticle" {
-    var OrderMaskClickOrTypeToSearchEnterInTheQuantityFieldAddsTheArticle: string;
-    export default OrderMaskClickOrTypeToSearchEnterInTheQuantityFieldAddsTheArticle;
-}
-declare module "@salesforce/label/c.OrderMaskClose" {
-    var OrderMaskClose: string;
-    export default OrderMaskClose;
-}
-declare module "@salesforce/label/c.OrderMaskCondition" {
-    var OrderMaskCondition: string;
-    export default OrderMaskCondition;
-}
-declare module "@salesforce/label/c.OrderMaskConfirmedDate" {
-    var OrderMaskConfirmedDate: string;
-    export default OrderMaskConfirmedDate;
-}
-declare module "@salesforce/label/c.OrderMaskCustNo" {
-    var OrderMaskCustNo: string;
-    export default OrderMaskCustNo;
-}
-declare module "@salesforce/label/c.OrderMaskCustomer" {
-    var OrderMaskCustomer: string;
-    export default OrderMaskCustomer;
-}
-declare module "@salesforce/label/c.OrderMaskCustomerInfo" {
-    var OrderMaskCustomerInfo: string;
-    export default OrderMaskCustomerInfo;
-}
-declare module "@salesforce/label/c.OrderMaskCustomerMasterLookupTipNameOrCustomerNo" {
-    var OrderMaskCustomerMasterLookupTipNameOrCustomerNo: string;
-    export default OrderMaskCustomerMasterLookupTipNameOrCustomerNo;
-}
-declare module "@salesforce/label/c.OrderMaskCustomerOrder" {
-    var OrderMaskCustomerOrder: string;
-    export default OrderMaskCustomerOrder;
-}
-declare module "@salesforce/label/c.OrderMaskCustomerPONo" {
-    var OrderMaskCustomerPONo: string;
-    export default OrderMaskCustomerPONo;
-}
-declare module "@salesforce/label/c.OrderMaskCustomerPurchaseOrderNumber" {
-    var OrderMaskCustomerPurchaseOrderNumber: string;
-    export default OrderMaskCustomerPurchaseOrderNumber;
-}
-declare module "@salesforce/label/c.OrderMaskCustomerSStoredAddresses" {
-    var OrderMaskCustomerSStoredAddresses: string;
-    export default OrderMaskCustomerSStoredAddresses;
-}
-declare module "@salesforce/label/c.OrderMaskDate" {
-    var OrderMaskDate: string;
-    export default OrderMaskDate;
-}
-declare module "@salesforce/label/c.OrderMaskDateOfOrderEntry" {
-    var OrderMaskDateOfOrderEntry: string;
-    export default OrderMaskDateOfOrderEntry;
-}
-declare module "@salesforce/label/c.OrderMaskDelivery" {
-    var OrderMaskDelivery: string;
-    export default OrderMaskDelivery;
-}
-declare module "@salesforce/label/c.OrderMaskDeliveryNotesOptional" {
-    var OrderMaskDeliveryNotesOptional: string;
-    export default OrderMaskDeliveryNotesOptional;
-}
-declare module "@salesforce/label/c.OrderMaskDeliveryText" {
-    var OrderMaskDeliveryText: string;
-    export default OrderMaskDeliveryText;
-}
-declare module "@salesforce/label/c.OrderMaskDifferentDeliveryAddress" {
-    var OrderMaskDifferentDeliveryAddress: string;
-    export default OrderMaskDifferentDeliveryAddress;
-}
-declare module "@salesforce/label/c.OrderMaskDiscountType" {
-    var OrderMaskDiscountType: string;
-    export default OrderMaskDiscountType;
-}
-declare module "@salesforce/label/c.OrderMaskDraft" {
-    var OrderMaskDraft: string;
-    export default OrderMaskDraft;
-}
-declare module "@salesforce/label/c.OrderMaskEarliestPossible" {
-    var OrderMaskEarliestPossible: string;
-    export default OrderMaskEarliestPossible;
-}
-declare module "@salesforce/label/c.OrderMaskEnterArticleNoOrDescription" {
-    var OrderMaskEnterArticleNoOrDescription: string;
-    export default OrderMaskEnterArticleNoOrDescription;
-}
-declare module "@salesforce/label/c.OrderMaskExpressCharge" {
-    var OrderMaskExpressCharge: string;
-    export default OrderMaskExpressCharge;
-}
-declare module "@salesforce/label/c.OrderMaskFreeDeliverySampleOrderMandatoryFields" {
-    var OrderMaskFreeDeliverySampleOrderMandatoryFields: string;
-    export default OrderMaskFreeDeliverySampleOrderMandatoryFields;
-}
-declare module "@salesforce/label/c.OrderMaskFreeNoCharge" {
-    var OrderMaskFreeNoCharge: string;
-    export default OrderMaskFreeNoCharge;
-}
-declare module "@salesforce/label/c.OrderMaskFreeOfCharge" {
-    var OrderMaskFreeOfCharge: string;
-    export default OrderMaskFreeOfCharge;
-}
-declare module "@salesforce/label/c.OrderMaskGoodsRecipient" {
-    var OrderMaskGoodsRecipient: string;
-    export default OrderMaskGoodsRecipient;
-}
-declare module "@salesforce/label/c.OrderMaskGoodsValueNet" {
-    var OrderMaskGoodsValueNet: string;
-    export default OrderMaskGoodsValueNet;
-}
-declare module "@salesforce/label/c.OrderMaskGrantDiscount" {
-    var OrderMaskGrantDiscount: string;
-    export default OrderMaskGrantDiscount;
-}
-declare module "@salesforce/label/c.OrderMaskInternalRemark" {
-    var OrderMaskInternalRemark: string;
-    export default OrderMaskInternalRemark;
-}
-declare module "@salesforce/label/c.OrderMaskLineItems" {
-    var OrderMaskLineItems: string;
-    export default OrderMaskLineItems;
-}
-declare module "@salesforce/label/c.OrderMaskListPrice" {
-    var OrderMaskListPrice: string;
-    export default OrderMaskListPrice;
-}
-declare module "@salesforce/label/c.OrderMaskMandatoryFieldSalesManagerMustKnowTheReason" {
-    var OrderMaskMandatoryFieldSalesManagerMustKnowTheReason: string;
-    export default OrderMaskMandatoryFieldSalesManagerMustKnowTheReason;
-}
-declare module "@salesforce/label/c.OrderMaskNewAmount" {
-    var OrderMaskNewAmount: string;
-    export default OrderMaskNewAmount;
-}
-declare module "@salesforce/label/c.OrderMaskNewOrder" {
-    var OrderMaskNewOrder: string;
-    export default OrderMaskNewOrder;
-}
-declare module "@salesforce/label/c.OrderMaskNewPriceUnit" {
-    var OrderMaskNewPriceUnit: string;
-    export default OrderMaskNewPriceUnit;
-}
-declare module "@salesforce/label/c.OrderMaskNext" {
-    var OrderMaskNext: string;
-    export default OrderMaskNext;
-}
-declare module "@salesforce/label/c.OrderMaskNoLineItemsYet" {
-    var OrderMaskNoLineItemsYet: string;
-    export default OrderMaskNoLineItemsYet;
-}
-declare module "@salesforce/label/c.OrderMaskNotTransmittedToTheCustomer" {
-    var OrderMaskNotTransmittedToTheCustomer: string;
-    export default OrderMaskNotTransmittedToTheCustomer;
-}
-declare module "@salesforce/label/c.OrderMaskNoteForCarrier" {
-    var OrderMaskNoteForCarrier: string;
-    export default OrderMaskNoteForCarrier;
-}
-declare module "@salesforce/label/c.OrderMaskNoteForCarrierPlaceholder" {
-    var OrderMaskNoteForCarrierPlaceholder: string;
-    export default OrderMaskNoteForCarrierPlaceholder;
-}
-declare module "@salesforce/label/c.OrderMaskNotesForSalesManagerOrColleagues" {
-    var OrderMaskNotesForSalesManagerOrColleagues: string;
-    export default OrderMaskNotesForSalesManagerOrColleagues;
-}
-declare module "@salesforce/label/c.OrderMaskOnlyRelevantForFreightShipping" {
-    var OrderMaskOnlyRelevantForFreightShipping: string;
-    export default OrderMaskOnlyRelevantForFreightShipping;
-}
-declare module "@salesforce/label/c.OrderMaskOnlyRelevantForSelfPickup" {
-    var OrderMaskOnlyRelevantForSelfPickup: string;
-    export default OrderMaskOnlyRelevantForSelfPickup;
-}
-declare module "@salesforce/label/c.OrderMaskOrderDate" {
-    var OrderMaskOrderDate: string;
-    export default OrderMaskOrderDate;
-}
-declare module "@salesforce/label/c.OrderMaskOrderSentAwaitingApprovalBySalesManager" {
-    var OrderMaskOrderSentAwaitingApprovalBySalesManager: string;
-    export default OrderMaskOrderSentAwaitingApprovalBySalesManager;
-}
-declare module "@salesforce/label/c.OrderMaskOrderSource" {
-    var OrderMaskOrderSource: string;
-    export default OrderMaskOrderSource;
-}
-declare module "@salesforce/label/c.OrderMaskOrderSuccessfullyTransmitted" {
-    var OrderMaskOrderSuccessfullyTransmitted: string;
-    export default OrderMaskOrderSuccessfullyTransmitted;
-}
-declare module "@salesforce/label/c.OrderMaskOrderType" {
-    var OrderMaskOrderType: string;
-    export default OrderMaskOrderType;
-}
-declare module "@salesforce/label/c.OrderMaskPickupLocation" {
-    var OrderMaskPickupLocation: string;
-    export default OrderMaskPickupLocation;
-}
-declare module "@salesforce/label/c.OrderMaskPleaseSelect" {
-    var OrderMaskPleaseSelect: string;
-    export default OrderMaskPleaseSelect;
-}
-declare module "@salesforce/label/c.OrderMaskPrice" {
-    var OrderMaskPrice: string;
-    export default OrderMaskPrice;
-}
-declare module "@salesforce/label/c.OrderMaskPriceUnit" {
-    var OrderMaskPriceUnit: string;
-    export default OrderMaskPriceUnit;
-}
-declare module "@salesforce/label/c.OrderMaskPrintOrderConfirmation" {
-    var OrderMaskPrintOrderConfirmation: string;
-    export default OrderMaskPrintOrderConfirmation;
-}
-declare module "@salesforce/label/c.OrderMaskPrintedOnTheDeliveryNote" {
-    var OrderMaskPrintedOnTheDeliveryNote: string;
-    export default OrderMaskPrintedOnTheDeliveryNote;
-}
-declare module "@salesforce/label/c.OrderMaskProducts" {
-    var OrderMaskProducts: string;
-    export default OrderMaskProducts;
-}
-declare module "@salesforce/label/c.OrderMaskQuantity" {
-    var OrderMaskQuantity: string;
-    export default OrderMaskQuantity;
-}
-declare module "@salesforce/label/c.OrderMaskQuantity2" {
-    var OrderMaskQuantity2: string;
-    export default OrderMaskQuantity2;
-}
-declare module "@salesforce/label/c.OrderMaskQuoteIsWithSalesManagementForApproval" {
-    var OrderMaskQuoteIsWithSalesManagementForApproval: string;
-    export default OrderMaskQuoteIsWithSalesManagementForApproval;
-}
-declare module "@salesforce/label/c.OrderMaskReasonFreeDelivery" {
-    var OrderMaskReasonFreeDelivery: string;
-    export default OrderMaskReasonFreeDelivery;
-}
-declare module "@salesforce/label/c.OrderMaskRecalculating" {
-    var OrderMaskRecalculating: string;
-    export default OrderMaskRecalculating;
-}
-declare module "@salesforce/label/c.OrderMaskRecommendationBasedOnOrderWeight" {
-    var OrderMaskRecommendationBasedOnOrderWeight: string;
-    export default OrderMaskRecommendationBasedOnOrderWeight;
-}
-declare module "@salesforce/label/c.OrderMaskRemarkFreeDelivery" {
-    var OrderMaskRemarkFreeDelivery: string;
-    export default OrderMaskRemarkFreeDelivery;
-}
-declare module "@salesforce/label/c.OrderMaskRemoveDiscount" {
-    var OrderMaskRemoveDiscount: string;
-    export default OrderMaskRemoveDiscount;
-}
-declare module "@salesforce/label/c.OrderMaskRequestedDeliveryDate" {
-    var OrderMaskRequestedDeliveryDate: string;
-    export default OrderMaskRequestedDeliveryDate;
-}
-declare module "@salesforce/label/c.OrderMaskSaveDraft" {
-    var OrderMaskSaveDraft: string;
-    export default OrderMaskSaveDraft;
-}
-declare module "@salesforce/label/c.OrderMaskSaving" {
-    var OrderMaskSaving: string;
-    export default OrderMaskSaving;
-}
-declare module "@salesforce/label/c.OrderMaskSelectAddress" {
-    var OrderMaskSelectAddress: string;
-    export default OrderMaskSelectAddress;
-}
-declare module "@salesforce/label/c.OrderMaskSelectDeliveryAddress" {
-    var OrderMaskSelectDeliveryAddress: string;
-    export default OrderMaskSelectDeliveryAddress;
-}
-declare module "@salesforce/label/c.OrderMaskSendOrder" {
-    var OrderMaskSendOrder: string;
-    export default OrderMaskSendOrder;
-}
-declare module "@salesforce/label/c.OrderMaskSendOrderConfirmation" {
-    var OrderMaskSendOrderConfirmation: string;
-    export default OrderMaskSendOrderConfirmation;
-}
-declare module "@salesforce/label/c.OrderMaskShipping" {
-    var OrderMaskShipping: string;
-    export default OrderMaskShipping;
-}
-declare module "@salesforce/label/c.OrderMaskShippingMethod" {
-    var OrderMaskShippingMethod: string;
-    export default OrderMaskShippingMethod;
-}
-declare module "@salesforce/label/c.OrderMaskSource" {
-    var OrderMaskSource: string;
-    export default OrderMaskSource;
-}
-declare module "@salesforce/label/c.OrderMaskStateReason" {
-    var OrderMaskStateReason: string;
-    export default OrderMaskStateReason;
-}
-declare module "@salesforce/label/c.OrderMaskSummary" {
-    var OrderMaskSummary: string;
-    export default OrderMaskSummary;
-}
-declare module "@salesforce/label/c.OrderMaskTextForDeliveryNote" {
-    var OrderMaskTextForDeliveryNote: string;
-    export default OrderMaskTextForDeliveryNote;
-}
-declare module "@salesforce/label/c.OrderMaskTotalGross" {
-    var OrderMaskTotalGross: string;
-    export default OrderMaskTotalGross;
-}
-declare module "@salesforce/label/c.OrderMaskTotalNet" {
-    var OrderMaskTotalNet: string;
-    export default OrderMaskTotalNet;
-}
-declare module "@salesforce/label/c.OrderMaskTransmittedToSAP" {
-    var OrderMaskTransmittedToSAP: string;
-    export default OrderMaskTransmittedToSAP;
-}
-declare module "@salesforce/label/c.OrderMaskUnit" {
-    var OrderMaskUnit: string;
-    export default OrderMaskUnit;
-}
-declare module "@salesforce/label/c.OrderMaskVAT" {
-    var OrderMaskVAT: string;
-    export default OrderMaskVAT;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskAccountDetails" {
-    var ReturnOrderMaskAccountDetails: string;
-    export default ReturnOrderMaskAccountDetails;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskAdd" {
-    var ReturnOrderMaskAdd: string;
-    export default ReturnOrderMaskAdd;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskAddress" {
-    var ReturnOrderMaskAddress: string;
-    export default ReturnOrderMaskAddress;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskAllActiveDarbovenProducts" {
-    var ReturnOrderMaskAllActiveDarbovenProducts: string;
-    export default ReturnOrderMaskAllActiveDarbovenProducts;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskAllActiveProducts" {
-    var ReturnOrderMaskAllActiveProducts: string;
-    export default ReturnOrderMaskAllActiveProducts;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskAllMatchingProductsAdded" {
-    var ReturnOrderMaskAllMatchingProductsAdded: string;
-    export default ReturnOrderMaskAllMatchingProductsAdded;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskAmount" {
-    var ReturnOrderMaskAmount: string;
-    export default ReturnOrderMaskAmount;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskAnswerGoodsOrCredit" {
-    var ReturnOrderMaskAnswerGoodsOrCredit: string;
-    export default ReturnOrderMaskAnswerGoodsOrCredit;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskAnswerPreliminaryQuestion" {
-    var ReturnOrderMaskAnswerPreliminaryQuestion: string;
-    export default ReturnOrderMaskAnswerPreliminaryQuestion;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskAnswerRefundQuestion" {
-    var ReturnOrderMaskAnswerRefundQuestion: string;
-    export default ReturnOrderMaskAnswerRefundQuestion;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskAppliesToEntireCase" {
-    var ReturnOrderMaskAppliesToEntireCase: string;
-    export default ReturnOrderMaskAppliesToEntireCase;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskBackToEditing" {
-    var ReturnOrderMaskBackToEditing: string;
-    export default ReturnOrderMaskBackToEditing;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskBackToReference" {
-    var ReturnOrderMaskBackToReference: string;
-    export default ReturnOrderMaskBackToReference;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskCase" {
-    var ReturnOrderMaskCase: string;
-    export default ReturnOrderMaskCase;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskCaseCategory" {
-    var ReturnOrderMaskCaseCategory: string;
-    export default ReturnOrderMaskCaseCategory;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskCaseInvoice" {
-    var ReturnOrderMaskCaseInvoice: string;
-    export default ReturnOrderMaskCaseInvoice;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskCaseOrder" {
-    var ReturnOrderMaskCaseOrder: string;
-    export default ReturnOrderMaskCaseOrder;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskCaseReason" {
-    var ReturnOrderMaskCaseReason: string;
-    export default ReturnOrderMaskCaseReason;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskCaseSelections" {
-    var ReturnOrderMaskCaseSelections: string;
-    export default ReturnOrderMaskCaseSelections;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskCaseType" {
-    var ReturnOrderMaskCaseType: string;
-    export default ReturnOrderMaskCaseType;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskChooseSelectionsFirst" {
-    var ReturnOrderMaskChooseSelectionsFirst: string;
-    export default ReturnOrderMaskChooseSelectionsFirst;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskCollectiveInvoiceFor" {
-    var ReturnOrderMaskCollectiveInvoiceFor: string;
-    export default ReturnOrderMaskCollectiveInvoiceFor;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskContinueToEditing" {
-    var ReturnOrderMaskContinueToEditing: string;
-    export default ReturnOrderMaskContinueToEditing;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskCoreProductRange" {
-    var ReturnOrderMaskCoreProductRange: string;
-    export default ReturnOrderMaskCoreProductRange;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskCredit" {
-    var ReturnOrderMaskCredit: string;
-    export default ReturnOrderMaskCredit;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskCreditValue" {
-    var ReturnOrderMaskCreditValue: string;
-    export default ReturnOrderMaskCreditValue;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskCustomer" {
-    var ReturnOrderMaskCustomer: string;
-    export default ReturnOrderMaskCustomer;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskCustomerNumber" {
-    var ReturnOrderMaskCustomerNumber: string;
-    export default ReturnOrderMaskCustomerNumber;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskCustomerReceivesRefund" {
-    var ReturnOrderMaskCustomerReceivesRefund: string;
-    export default ReturnOrderMaskCustomerReceivesRefund;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskCustomerShips" {
-    var ReturnOrderMaskCustomerShips: string;
-    export default ReturnOrderMaskCustomerShips;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskCustomerShipsGoodsText" {
-    var ReturnOrderMaskCustomerShipsGoodsText: string;
-    export default ReturnOrderMaskCustomerShipsGoodsText;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskDarbovenArrangesTransport" {
-    var ReturnOrderMaskDarbovenArrangesTransport: string;
-    export default ReturnOrderMaskDarbovenArrangesTransport;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskDate" {
-    var ReturnOrderMaskDate: string;
-    export default ReturnOrderMaskDate;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskDeliveryAddress" {
-    var ReturnOrderMaskDeliveryAddress: string;
-    export default ReturnOrderMaskDeliveryAddress;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskDerived" {
-    var ReturnOrderMaskDerived: string;
-    export default ReturnOrderMaskDerived;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskDerivedFromSelections" {
-    var ReturnOrderMaskDerivedFromSelections: string;
-    export default ReturnOrderMaskDerivedFromSelections;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskDetails" {
-    var ReturnOrderMaskDetails: string;
-    export default ReturnOrderMaskDetails;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskDocumentLinesBehavior" {
-    var ReturnOrderMaskDocumentLinesBehavior: string;
-    export default ReturnOrderMaskDocumentLinesBehavior;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskEdit" {
-    var ReturnOrderMaskEdit: string;
-    export default ReturnOrderMaskEdit;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskEditable" {
-    var ReturnOrderMaskEditable: string;
-    export default ReturnOrderMaskEditable;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskEmails" {
-    var ReturnOrderMaskEmails: string;
-    export default ReturnOrderMaskEmails;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskExpectedArrivalDateHelp" {
-    var ReturnOrderMaskExpectedArrivalDateHelp: string;
-    export default ReturnOrderMaskExpectedArrivalDateHelp;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskFinalReviewInstructions" {
-    var ReturnOrderMaskFinalReviewInstructions: string;
-    export default ReturnOrderMaskFinalReviewInstructions;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskFromInvoice" {
-    var ReturnOrderMaskFromInvoice: string;
-    export default ReturnOrderMaskFromInvoice;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskFromOrder" {
-    var ReturnOrderMaskFromOrder: string;
-    export default ReturnOrderMaskFromOrder;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskGoodsAlreadyReceived" {
-    var ReturnOrderMaskGoodsAlreadyReceived: string;
-    export default ReturnOrderMaskGoodsAlreadyReceived;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskGoodsAlreadyThereInfo" {
-    var ReturnOrderMaskGoodsAlreadyThereInfo: string;
-    export default ReturnOrderMaskGoodsAlreadyThereInfo;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskGoodsBeingReturned" {
-    var ReturnOrderMaskGoodsBeingReturned: string;
-    export default ReturnOrderMaskGoodsBeingReturned;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskGoodsMovement" {
-    var ReturnOrderMaskGoodsMovement: string;
-    export default ReturnOrderMaskGoodsMovement;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskGoodsReceivedWhen" {
-    var ReturnOrderMaskGoodsReceivedWhen: string;
-    export default ReturnOrderMaskGoodsReceivedWhen;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskGoodsWillBePickedUp" {
-    var ReturnOrderMaskGoodsWillBePickedUp: string;
-    export default ReturnOrderMaskGoodsWillBePickedUp;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskIdentifiedFromCase" {
-    var ReturnOrderMaskIdentifiedFromCase: string;
-    export default ReturnOrderMaskIdentifiedFromCase;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskInDocument" {
-    var ReturnOrderMaskInDocument: string;
-    export default ReturnOrderMaskInDocument;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskInSAP" {
-    var ReturnOrderMaskInSAP: string;
-    export default ReturnOrderMaskInSAP;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskIncludedOrders" {
-    var ReturnOrderMaskIncludedOrders: string;
-    export default ReturnOrderMaskIncludedOrders;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskIndustry" {
-    var ReturnOrderMaskIndustry: string;
-    export default ReturnOrderMaskIndustry;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskInternalNote" {
-    var ReturnOrderMaskInternalNote: string;
-    export default ReturnOrderMaskInternalNote;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskInternalNotePlaceholder" {
-    var ReturnOrderMaskInternalNotePlaceholder: string;
-    export default ReturnOrderMaskInternalNotePlaceholder;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskInvoice" {
-    var ReturnOrderMaskInvoice: string;
-    export default ReturnOrderMaskInvoice;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskItemsFromProductSearch" {
-    var ReturnOrderMaskItemsFromProductSearch: string;
-    export default ReturnOrderMaskItemsFromProductSearch;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskItemsInTableBelow" {
-    var ReturnOrderMaskItemsInTableBelow: string;
-    export default ReturnOrderMaskItemsInTableBelow;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskLineItemType" {
-    var ReturnOrderMaskLineItemType: string;
-    export default ReturnOrderMaskLineItemType;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskLineItems" {
-    var ReturnOrderMaskLineItems: string;
-    export default ReturnOrderMaskLineItems;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskManually" {
-    var ReturnOrderMaskManually: string;
-    export default ReturnOrderMaskManually;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskMultipleTypesPossibleInfo" {
-    var ReturnOrderMaskMultipleTypesPossibleInfo: string;
-    export default ReturnOrderMaskMultipleTypesPossibleInfo;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskNoDocumentReason" {
-    var ReturnOrderMaskNoDocumentReason: string;
-    export default ReturnOrderMaskNoDocumentReason;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskNoDocumentReasonExample" {
-    var ReturnOrderMaskNoDocumentReasonExample: string;
-    export default ReturnOrderMaskNoDocumentReasonExample;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskNoDocumentReasonHelp" {
-    var ReturnOrderMaskNoDocumentReasonHelp: string;
-    export default ReturnOrderMaskNoDocumentReasonHelp;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskNoGoodsReturned" {
-    var ReturnOrderMaskNoGoodsReturned: string;
-    export default ReturnOrderMaskNoGoodsReturned;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskNoGoodsValueCreditInfo" {
-    var ReturnOrderMaskNoGoodsValueCreditInfo: string;
-    export default ReturnOrderMaskNoGoodsValueCreditInfo;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskNoLineItemsYet" {
-    var ReturnOrderMaskNoLineItemsYet: string;
-    export default ReturnOrderMaskNoLineItemsYet;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskNoNotices" {
-    var ReturnOrderMaskNoNotices: string;
-    export default ReturnOrderMaskNoNotices;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskNoReturnOrderWithoutGoods" {
-    var ReturnOrderMaskNoReturnOrderWithoutGoods: string;
-    export default ReturnOrderMaskNoReturnOrderWithoutGoods;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskNoValueCreditOnly" {
-    var ReturnOrderMaskNoValueCreditOnly: string;
-    export default ReturnOrderMaskNoValueCreditOnly;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskNoWithoutCredit" {
-    var ReturnOrderMaskNoWithoutCredit: string;
-    export default ReturnOrderMaskNoWithoutCredit;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskNone" {
-    var ReturnOrderMaskNone: string;
-    export default ReturnOrderMaskNone;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskNotInCustomerListing" {
-    var ReturnOrderMaskNotInCustomerListing: string;
-    export default ReturnOrderMaskNotInCustomerListing;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskOptional" {
-    var ReturnOrderMaskOptional: string;
-    export default ReturnOrderMaskOptional;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskOrder" {
-    var ReturnOrderMaskOrder: string;
-    export default ReturnOrderMaskOrder;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskOrderDocument" {
-    var ReturnOrderMaskOrderDocument: string;
-    export default ReturnOrderMaskOrderDocument;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskOrders" {
-    var ReturnOrderMaskOrders: string;
-    export default ReturnOrderMaskOrders;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskOutsideDocumentProducts" {
-    var ReturnOrderMaskOutsideDocumentProducts: string;
-    export default ReturnOrderMaskOutsideDocumentProducts;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskPicklistChangedReason" {
-    var ReturnOrderMaskPicklistChangedReason: string;
-    export default ReturnOrderMaskPicklistChangedReason;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskPicklistValuesNote" {
-    var ReturnOrderMaskPicklistValuesNote: string;
-    export default ReturnOrderMaskPicklistValuesNote;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskPickupAddressHelp" {
-    var ReturnOrderMaskPickupAddressHelp: string;
-    export default ReturnOrderMaskPickupAddressHelp;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskPickupLocation" {
-    var ReturnOrderMaskPickupLocation: string;
-    export default ReturnOrderMaskPickupLocation;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskPleaseSelect" {
-    var ReturnOrderMaskPleaseSelect: string;
-    export default ReturnOrderMaskPleaseSelect;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskPrice" {
-    var ReturnOrderMaskPrice: string;
-    export default ReturnOrderMaskPrice;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskProduct" {
-    var ReturnOrderMaskProduct: string;
-    export default ReturnOrderMaskProduct;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskProductListing" {
-    var ReturnOrderMaskProductListing: string;
-    export default ReturnOrderMaskProductListing;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskProductSearchHelp" {
-    var ReturnOrderMaskProductSearchHelp: string;
-    export default ReturnOrderMaskProductSearchHelp;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskProductSearchPlaceholder" {
-    var ReturnOrderMaskProductSearchPlaceholder: string;
-    export default ReturnOrderMaskProductSearchPlaceholder;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskProductsAvailable" {
-    var ReturnOrderMaskProductsAvailable: string;
-    export default ReturnOrderMaskProductsAvailable;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskQuantity" {
-    var ReturnOrderMaskQuantity: string;
-    export default ReturnOrderMaskQuantity;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskReadyForRetrieval" {
-    var ReturnOrderMaskReadyForRetrieval: string;
-    export default ReturnOrderMaskReadyForRetrieval;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskReason" {
-    var ReturnOrderMaskReason: string;
-    export default ReturnOrderMaskReason;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskReference" {
-    var ReturnOrderMaskReference: string;
-    export default ReturnOrderMaskReference;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskReferenceRelation" {
-    var ReturnOrderMaskReferenceRelation: string;
-    export default ReturnOrderMaskReferenceRelation;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskRequestedPickupDate" {
-    var ReturnOrderMaskRequestedPickupDate: string;
-    export default ReturnOrderMaskRequestedPickupDate;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskRequestedPickupDateHelp" {
-    var ReturnOrderMaskRequestedPickupDateHelp: string;
-    export default ReturnOrderMaskRequestedPickupDateHelp;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskReturnShippingMethodHelp" {
-    var ReturnOrderMaskReturnShippingMethodHelp: string;
-    export default ReturnOrderMaskReturnShippingMethodHelp;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskReviewAndComplete" {
-    var ReturnOrderMaskReviewAndComplete: string;
-    export default ReturnOrderMaskReviewAndComplete;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskSearchProduct" {
-    var ReturnOrderMaskSearchProduct: string;
-    export default ReturnOrderMaskSearchProduct;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskSelectCaseReason" {
-    var ReturnOrderMaskSelectCaseReason: string;
-    export default ReturnOrderMaskSelectCaseReason;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskSelectGoodsMovement" {
-    var ReturnOrderMaskSelectGoodsMovement: string;
-    export default ReturnOrderMaskSelectGoodsMovement;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskSelectReferenceDocument" {
-    var ReturnOrderMaskSelectReferenceDocument: string;
-    export default ReturnOrderMaskSelectReferenceDocument;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskSelectShippingMethod" {
-    var ReturnOrderMaskSelectShippingMethod: string;
-    export default ReturnOrderMaskSelectShippingMethod;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskShippingMethod" {
-    var ReturnOrderMaskShippingMethod: string;
-    export default ReturnOrderMaskShippingMethod;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskSource" {
-    var ReturnOrderMaskSource: string;
-    export default ReturnOrderMaskSource;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskStatus" {
-    var ReturnOrderMaskStatus: string;
-    export default ReturnOrderMaskStatus;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskSubject" {
-    var ReturnOrderMaskSubject: string;
-    export default ReturnOrderMaskSubject;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskSubmitSAPGoodsReceiptInfo" {
-    var ReturnOrderMaskSubmitSAPGoodsReceiptInfo: string;
-    export default ReturnOrderMaskSubmitSAPGoodsReceiptInfo;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskSubmitSAPStartsPickupInfo" {
-    var ReturnOrderMaskSubmitSAPStartsPickupInfo: string;
-    export default ReturnOrderMaskSubmitSAPStartsPickupInfo;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskSubmitToSAP" {
-    var ReturnOrderMaskSubmitToSAP: string;
-    export default ReturnOrderMaskSubmitToSAP;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskSubtype" {
-    var ReturnOrderMaskSubtype: string;
-    export default ReturnOrderMaskSubtype;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskTableNotices" {
-    var ReturnOrderMaskTableNotices: string;
-    export default ReturnOrderMaskTableNotices;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskTotalGoodsValue" {
-    var ReturnOrderMaskTotalGoodsValue: string;
-    export default ReturnOrderMaskTotalGoodsValue;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskType" {
-    var ReturnOrderMaskType: string;
-    export default ReturnOrderMaskType;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskUnannouncedReturnReceived" {
-    var ReturnOrderMaskUnannouncedReturnReceived: string;
-    export default ReturnOrderMaskUnannouncedReturnReceived;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskUnit" {
-    var ReturnOrderMaskUnit: string;
-    export default ReturnOrderMaskUnit;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskValue" {
-    var ReturnOrderMaskValue: string;
-    export default ReturnOrderMaskValue;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskValues" {
-    var ReturnOrderMaskValues: string;
-    export default ReturnOrderMaskValues;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskWarnings" {
-    var ReturnOrderMaskWarnings: string;
-    export default ReturnOrderMaskWarnings;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskWhoMovesGoodsHelp" {
-    var ReturnOrderMaskWhoMovesGoodsHelp: string;
-    export default ReturnOrderMaskWhoMovesGoodsHelp;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskWith" {
-    var ReturnOrderMaskWith: string;
-    export default ReturnOrderMaskWith;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskWithout" {
-    var ReturnOrderMaskWithout: string;
-    export default ReturnOrderMaskWithout;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskWithoutDocument" {
-    var ReturnOrderMaskWithoutDocument: string;
-    export default ReturnOrderMaskWithoutDocument;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskWithoutDocumentLower" {
-    var ReturnOrderMaskWithoutDocumentLower: string;
-    export default ReturnOrderMaskWithoutDocumentLower;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskYesCreditOnlyCase" {
-    var ReturnOrderMaskYesCreditOnlyCase: string;
-    export default ReturnOrderMaskYesCreditOnlyCase;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskYesGoodsReturned" {
-    var ReturnOrderMaskYesGoodsReturned: string;
-    export default ReturnOrderMaskYesGoodsReturned;
-}
-declare module "@salesforce/label/c.ReturnOrderMaskYesWithCredit" {
-    var ReturnOrderMaskYesWithCredit: string;
-    export default ReturnOrderMaskYesWithCredit;
-}
-declare module "@salesforce/label/c.Test1" {
-    var Test1: string;
-    export default Test1;
-}
-declare module "@salesforce/label/c.WebshopDoNotTranslateRefreshCartInMsTwo" {
-    var WebshopDoNotTranslateRefreshCartInMsTwo: string;
-    export default WebshopDoNotTranslateRefreshCartInMsTwo;
-}
-declare module "@salesforce/label/c.WebshopNoAddress" {
-    var WebshopNoAddress: string;
-    export default WebshopNoAddress;
 }

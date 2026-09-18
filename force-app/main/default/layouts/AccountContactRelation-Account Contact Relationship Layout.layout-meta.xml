@@ -32,7 +32,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Account_Phone__c</field>
+                <field>AccountSpecificPhoneNumber__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>AccountSpecificEmail__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

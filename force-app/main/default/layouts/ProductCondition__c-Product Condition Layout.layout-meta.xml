@@ -67,6 +67,10 @@
                 <behavior>Edit</behavior>
                 <field>RefundDiscountInPercent__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ProductListing__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

@@ -31,6 +31,10 @@
                 <behavior>Edit</behavior>
                 <field>WeightUnit__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ShipmentItem__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -169,6 +173,10 @@
         <fields>ExpectedDeliveryDate</fields>
         <fields>Quantity</fields>
         <relatedList>ShipmentItems</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>MemoRequestItem__c.ReturnOrderLineItem__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>

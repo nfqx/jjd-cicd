@@ -74,6 +74,15 @@
         <fields>TASK.LAST_UPDATE</fields>
         <relatedList>RelatedHistoryList</relatedList>
     </relatedLists>
+    <relatedLists>
+        <fields>Name</fields>
+        <fields>Account</fields>
+        <fields>Contact</fields>
+        <fields>Case</fields>
+        <fields>SourceLocation</fields>
+        <fields>ReturnedBy</fields>
+        <relatedList>ReturnOrder.Address__c</relatedList>
+    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>
