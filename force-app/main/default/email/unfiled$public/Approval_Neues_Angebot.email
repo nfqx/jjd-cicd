@@ -1,0 +1,11 @@
+Hallo {!Receiving_User.FirstName} {!Receiving_User.LastName},
+
+ein neues Angebot wartet auf Genehmigung.
+Link zum Angebot:
+https://business-connect-2067--dev.sandbox.lightning.force.com/{!Quote.Id}
+
+-Informationen-
+
+Einreicher: {!Approval_Requesting_User.FirstName} {!Approval_Requesting_User.LastName}
+Gesamtwert: {!Quote.TotalValueOfQuote__c}
+Kommentar: {!ApprovalRequest.Comments}

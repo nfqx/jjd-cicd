@@ -47,11 +47,6 @@
         <relatedList>CommerceEntitlementPolicies</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>WebStore</fields>
-        <fields>BuyerGroup</fields>
-        <relatedList>WebStoreBuyerGroups</relatedList>
-    </relatedLists>
-    <relatedLists>
         <fields>PromotionSegment</fields>
         <relatedList>PromotionSegmentBuyerGroups</relatedList>
     </relatedLists>
