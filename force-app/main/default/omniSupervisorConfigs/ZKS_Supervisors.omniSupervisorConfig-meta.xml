@@ -69,7 +69,7 @@
         <tabType>Alerts</tabType>
     </omniSupervisorConfigTab>
     <omniSupervisorConfigUser>
-        <user>darboven@nfq-x.com.jjd</user>
+        <user>darboven@nfq-x.com.jjd.uat</user>
     </omniSupervisorConfigUser>
     <!--omniSupervisorConfigUser>
         <user>gellert.pasztor@darboven.dev</user>

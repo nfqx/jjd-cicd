@@ -163,11 +163,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>IsExternallyOrganized</field>
-            <table>Activity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>IsAllDayEvent</field>
             <table>Activity</table>
         </columns>

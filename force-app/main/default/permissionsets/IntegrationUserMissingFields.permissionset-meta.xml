@@ -1312,11 +1312,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>OrderItem.InventoryCriteria</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>OrderItem.ItemGrossWeight__c</field>
         <readable>true</readable>
     </fieldPermissions>

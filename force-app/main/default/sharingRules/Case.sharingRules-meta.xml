@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
-    <sharingOwnerRules>
+    <!--sharingOwnerRules>
         <fullName>JJD_Allgemeine_Anfragen_with_J_J_Darboven_GmbH</fullName>
         <accessLevel>Edit</accessLevel>
         <label>JJD - Allgemeine Anfragen with &quot;J.J. Darboven GmbH&quot;</label>
@@ -142,5 +142,5 @@
         <sharedFrom>
             <queue>Webshop</queue>
         </sharedFrom>
-    </sharingOwnerRules>
+    </sharingOwnerRules-->
 </SharingRules>

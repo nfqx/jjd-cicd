@@ -3,7 +3,7 @@
     <available>true</available>
     <description>Email users receive with their one-time password.</description>
     <encodingKey>UTF-8</encodingKey>
-    <name>Experience Cloud: One-Time Password Email for Headless Forgot Password Verification</name>
+    <name>Experience Cloud: One-Time Password Email</name>
     <style>none</style>
     <subject>Finish resetting your {!Community_Name} password</subject>
     <type>text</type>
