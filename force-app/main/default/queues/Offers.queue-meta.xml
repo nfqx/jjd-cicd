@@ -5,7 +5,8 @@
     <name>Angebote</name>
     <queueMembers>
         <users>
-            <user>martin.maschine@nfq-x.com.dev2</user>
+            <user>darboven@nfq-x.com.jjd</user>
+            <!--user>martin.maschine@nfq-x.com.dev2</user-->
         </users>
     </queueMembers>
     <queueRoutingConfig>Offers</queueRoutingConfig>

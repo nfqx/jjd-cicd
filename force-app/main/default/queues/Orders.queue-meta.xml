@@ -5,7 +5,8 @@
     <name>Bestellungen</name>
     <queueMembers>
         <users>
-            <user>lapeters@darboven.com.jjd</user>
+            <user>darboven@nfq-x.com.jjd</user>
+            <!--user>lapeters@darboven.com.jjd</user-->
         </users>
     </queueMembers>
     <queueRoutingConfig>Order</queueRoutingConfig>

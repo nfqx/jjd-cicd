@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Territory2Model xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Sales territories derived from the SAP sales structure (MappingRegeln O2C, 2026-07-29). Scope: AHS only (customer groups 22, 29, 30). Levels: country, business unit, sales district, sales group.</description>
+    <name>JJD Sales Territories 2026</name>
+</Territory2Model>

@@ -1,0 +1,8 @@
+Hallo {!Receiving_User.FirstName} {!Receiving_User.LastName},
+
+ein Angebot wurde durch den Genehmiger genehmigt!
+
+Link zum Angebot:
+https://business-connect-2067--dev.sandbox.lightning.force.com/{!Quote.Id}
+
+{!Quote.Name}

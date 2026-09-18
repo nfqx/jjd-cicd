@@ -3,9 +3,9 @@
     <assignments>
         <users>
             <user>darboven@nfq-x.com.jjd</user>
-            <user>lapeters@darboven.com.jjd</user>
+            <!--user>lapeters@darboven.com.jjd</user>
             <user>martin.maschine@nfq-x.com.dev2</user>
-            <user>tmohr@darboven.com.jjd</user>
+            <user>tmohr@darboven.com.jjd</user-->
         </users>
     </assignments>
     <capacity>50</capacity>
