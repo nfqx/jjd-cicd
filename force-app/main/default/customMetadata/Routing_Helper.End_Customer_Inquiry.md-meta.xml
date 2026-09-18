@@ -15,12 +15,20 @@
         <value xsi:nil="true"/>
     </values>
     <values>
+        <field>Forward_to_Addresses__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
         <field>Main_Skill__c</field>
         <value xsi:type="xsd:boolean">true</value>
     </values>
     <values>
         <field>Queue_API_Name__c</field>
         <value xsi:type="xsd:string">End_Customer_Inquiry</value>
+    </values>
+    <values>
+        <field>RecordType_API_Name__c</field>
+        <value xsi:nil="true"/>
     </values>
     <values>
         <field>Skill_API_Name__c</field>
@@ -32,7 +40,11 @@
     </values>
     <values>
         <field>Supervisor__c</field>
-        <value xsi:type="xsd:string">ZKS_Supervisors</value>
+        <value xsi:type="xsd:string">JJD_GmbH_Service_AHS_ZKS_SV</value>
+    </values>
+    <values>
+        <field>ZKS_only__c</field>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>isCaseForward__c</field>

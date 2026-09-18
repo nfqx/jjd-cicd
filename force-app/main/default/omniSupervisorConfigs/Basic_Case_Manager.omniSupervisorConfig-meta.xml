@@ -18,9 +18,6 @@
         <customActionFlow>Return_Item</customActionFlow>
         <displayOrder>2</displayOrder>
     </omniSupervisorConfigAction>
-    <omniSupervisorConfigProfile>
-        <profile>admin</profile>
-    </omniSupervisorConfigProfile>
     <omniSupervisorConfigQueue>
         <queue>Complaints</queue>
     </omniSupervisorConfigQueue>
@@ -147,8 +144,5 @@
         <displayOrder>8</displayOrder>
         <tabType>AgentforceSDR</tabType>
     </omniSupervisorConfigTab>
-    <omniSupervisorConfigUser>
-        <user>darboven@nfq-x.com.jjd.uat</user>
-    </omniSupervisorConfigUser>
     <skillVisibility>AllSkills</skillVisibility>
 </OmniSupervisorConfig>

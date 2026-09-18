@@ -15,11 +15,19 @@
         <value xsi:type="xsd:string">presse@darboven.com</value>
     </values>
     <values>
+        <field>Forward_to_Addresses__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
         <field>Main_Skill__c</field>
         <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>Queue_API_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>RecordType_API_Name__c</field>
         <value xsi:nil="true"/>
     </values>
     <values>
@@ -32,7 +40,11 @@
     </values>
     <values>
         <field>Supervisor__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">JJD_GmbH_Service_AHS_ZKS_SV</value>
+    </values>
+    <values>
+        <field>ZKS_only__c</field>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>isCaseForward__c</field>

@@ -19,6 +19,8 @@
     <tabs>standard-GlobalFlowResources</tabs>
     <tabs>VisitReport__c</tabs>
     <tabs>TradeFairReport__c</tabs>
+    <tabs>standard-Tags</tabs>
+    <tabs>MemoRequest__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>FlowsApp_UtilityBar</utilityBar>
 </CustomApplication>

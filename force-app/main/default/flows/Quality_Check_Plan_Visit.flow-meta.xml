@@ -29,6 +29,13 @@
             </value>
         </assignmentItems>
         <assignmentItems>
+            <assignToReference>objectEvent.WhoId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Quality_Check.Contact__r.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
             <assignToReference>objectEvent.Location</assignToReference>
             <operator>Assign</operator>
             <value>
@@ -70,6 +77,13 @@
                 <elementReference>Get_Quality_Check.Id</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectEvent.Type_custom__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Quality-Check</stringValue>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Create_Event</targetReference>
         </connector>
@@ -83,7 +97,7 @@
     <dynamicChoiceSets>
         <name>colContacts</name>
         <dataType>String</dataType>
-        <displayField>ContactFullName__c</displayField>
+        <displayField>ContactDisplayName__c</displayField>
         <filterLogic>and</filterLogic>
         <filters>
             <field>AccountId</field>
@@ -161,7 +175,7 @@
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Screen_Input_Plan_Quality_Check</targetReference>
+            <targetReference>Screen_Input_Follow_Up</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -211,9 +225,10 @@
         </inputAssignments>
         <object>Quality_Check__c</object>
     </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
     <screens>
-        <name>Screen_Input_Plan_Quality_Check</name>
-        <label>Screen Input Plan Quality Check</label>
+        <name>Screen_Input_Follow_Up</name>
+        <label>Screen Input Follow Up</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <allowBack>true</allowBack>
@@ -257,9 +272,6 @@
         <fields>
             <name>Responsible_Contact</name>
             <choiceReferences>colContacts</choiceReferences>
-            <defaultValue>
-                <elementReference>Get_Quality_Check.Contact__r.Id</elementReference>
-            </defaultValue>
             <extensionName>flowruntime:choiceLookup</extensionName>
             <fieldText>Responsible Contact</fieldText>
             <fieldType>ComponentChoice</fieldType>
@@ -290,10 +302,10 @@
             </styleProperties>
         </fields>
         <fields>
-            <name>Screen_Input_Plan_Quality_Check_Section1</name>
+            <name>Screen_Input_Follow_Up_Section1</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>Screen_Input_Plan_Quality_Check_Section1_Column1</name>
+                <name>Screen_Input_Follow_Up_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Start_Date_Time</name>
@@ -323,7 +335,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Screen_Input_Plan_Quality_Check_Section1_Column2</name>
+                <name>Screen_Input_Follow_Up_Section1_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>End_Date_Time</name>
@@ -392,7 +404,7 @@
             <targetReference>Get_Quality_Check</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>objectEvent</name>
         <dataType>SObject</dataType>

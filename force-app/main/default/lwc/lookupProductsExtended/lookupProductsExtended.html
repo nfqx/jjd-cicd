@@ -1,0 +1,77 @@
+<template>
+    <div class="product-lookup" onmousedown={handleInternalMouseDown}>
+        <p class="heading">{heading}</p>
+        <p class="context">{statusText}</p>
+        <div class="search-shell">
+            <lightning-icon icon-name="utility:search" size="xx-small" alternative-text="Search"></lightning-icon>
+            <input
+                class="search-input"
+                type="search"
+                value={query}
+                placeholder={placeholder}
+                aria-expanded={ariaExpanded}
+                aria-controls="product-results"
+                autocomplete="off"
+                onfocus={handleInputFocus}
+                onclick={handleInputFocus}
+                oninput={handleInput}
+                onkeydown={handleInputKeyDown}>
+        </div>
+        <template if:true={isOpen}>
+            <section id="product-results" class="overlay" aria-label={heading}>
+                <div class="tabs" role="tablist">
+                    <button class={coreTabClass} data-tab="core" role="tab" aria-selected={isCoreTab} onmousedown={handleTabMouseDown} onclick={handleTabClick}>{coreLabel}</button>
+                    <button class={listedTabClass} data-tab="listed" role="tab" aria-selected={isListedTab} onmousedown={handleTabMouseDown} onclick={handleTabClick}>{listedLabel}</button>
+                    <button class={allTabClass} data-tab="all" role="tab" aria-selected={isAllTab} onmousedown={handleTabMouseDown} onclick={handleTabClick}>{allLabel}</button>
+                </div>
+                <p class="help-text">{helpTextDisplay}</p>
+                <p class="result-status">{statusText}</p>
+                <div class={resultGridClass} role="row">
+                    <span>{productLabel}</span>
+                    <span>{itemLabel}</span>
+                    <template if:true={showPriceColumn}>
+                        <span class="price">{priceLabel}</span>
+                    </template>
+                </div>
+                <div class="results">
+                    <template if:true={isLoading}>
+                        <div class="loading">
+                            <lightning-spinner alternative-text="Loading products" size="small"></lightning-spinner>
+                        </div>
+                    </template>
+                    <template if:true={showMinimumCharactersMessage}>
+                        <p class="empty-message">{minimumCharactersMessage}</p>
+                    </template>
+                    <template if:true={showNoResultsMessage}>
+                        <p class="empty-message">{noResultsMessage}</p>
+                    </template>
+                    <template for:each={displayRows} for:item="product">
+                        <button key={product.id} class={product.rowClass} data-id={product.id} type="button" aria-disabled={product.isSelected} tabindex={product.tabIndex} onmousedown={handleResultMouseDown} onclick={handleResultClick}>
+                            <span class="product-cell">
+                                <lightning-icon icon-name="standard:product_item" size="small" alternative-text="Product"></lightning-icon>
+                                <span class="product-name">{product.name}</span>
+                                <template if:true={product.isSelected}>
+                                    <span class="selected-badge">✓ {alreadyAddedLabel}</span>
+                                </template>
+                            </span>
+                            <span class="item-cell">
+                                <span class="product-code">{product.productCode}</span>
+                                <span class="item-details">{product.itemDetails}</span>
+                            </span>
+                            <template if:true={showPriceColumn}>
+                                <span class="price product-price">{product.displayPrice}</span>
+                            </template>
+                        </button>
+                    </template>
+                </div>
+                <template if:true={showListedPagination}>
+                    <div class="pagination">
+                        <lightning-button-icon icon-name="utility:chevronleft" alternative-text="Previous page" title="Previous page" disabled={isPreviousPageDisabled} onmousedown={handleTabMouseDown} onclick={handlePreviousPage}></lightning-button-icon>
+                        <span class="pagination-text">{paginationText}</span>
+                        <lightning-button-icon icon-name="utility:chevronright" alternative-text="Next page" title="Next page" disabled={isNextPageDisabled} onmousedown={handleTabMouseDown} onclick={handleNextPage}></lightning-button-icon>
+                    </div>
+                </template>
+            </section>
+        </template>
+    </div>
+</template>

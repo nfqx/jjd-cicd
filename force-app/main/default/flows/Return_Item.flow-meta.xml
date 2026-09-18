@@ -2594,7 +2594,7 @@
             <targetReference>Get_Order_Summary</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <textTemplates>
         <name>Error_Output_Invocable_Message</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>

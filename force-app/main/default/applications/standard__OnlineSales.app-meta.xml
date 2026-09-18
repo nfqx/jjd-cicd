@@ -21,5 +21,6 @@
     <tabs>ProductCondition__c</tabs>
     <tabs>VisitReport__c</tabs>
     <tabs>TradeFairReport__c</tabs>
+    <tabs>MemoRequest__c</tabs>
     <uiType>Lightning</uiType>
 </CustomApplication>

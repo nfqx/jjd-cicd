@@ -17,6 +17,7 @@
     <tabs>standard-Forecasting3</tabs>
     <tabs>standard-Quote</tabs>
     <tabs>CustomAddress__c</tabs>
+    <tabs>standard-OmnichannelInventory</tabs>
     <tabs>AccountConditions__c</tabs>
     <tabs>ProductCondition__c</tabs>
     <tabs>VisitReport__c</tabs>
@@ -24,4 +25,5 @@
     <tabs>PLACEHOLDER_Machine__c</tabs>
     <tabs>ERPProductListing__c</tabs>
     <tabs>TradeFairReport__c</tabs>
+    <tabs>MemoRequest__c</tabs>
 </CustomApplication>

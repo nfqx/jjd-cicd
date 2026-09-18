@@ -542,7 +542,7 @@
         <styleSettings>
             <propertyName>--flowruntime-c-flow-background-color</propertyName>
             <propertyValue>
-                <stringValue>#EFEFEF</stringValue>
+                <stringValue>#FFFFFF</stringValue>
             </propertyValue>
             <scope>Container</scope>
         </styleSettings>
@@ -609,7 +609,7 @@
         <styleSettings>
             <propertyName>--flowruntime-c-flow-background-color</propertyName>
             <propertyValue>
-                <stringValue>#EFEFEF</stringValue>
+                <stringValue>#FFFFFF</stringValue>
             </propertyValue>
             <scope>Container</scope>
         </styleSettings>

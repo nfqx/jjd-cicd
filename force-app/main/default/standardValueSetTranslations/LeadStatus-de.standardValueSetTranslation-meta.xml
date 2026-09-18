@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>In Prequalification</masterLabel>
+        <translation>In Vorqualifizierung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>In Sales Qualification</masterLabel>
+        <translation>In Vertriebsqualifizierung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>New</masterLabel>
+        <translation>Neu</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Qualified</masterLabel>
+        <translation>Qualifiziert</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

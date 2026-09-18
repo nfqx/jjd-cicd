@@ -1,0 +1,578 @@
+/* LWC bundle stylesheet: use the same base name as the component HTML and JS.
+   Includes the state classes returned by ReturnOrderMaskInner getters. */
+
+:host {
+    --return-border: #d9d9d9;
+    --return-surface: #f3f3f3;
+    --return-muted: #656565;
+    --return-blue: #0075d5;
+}
+
+.return-order {
+    box-sizing: border-box;
+    padding: 0.5rem;
+    background: #f8f6f3;
+    color: #242424;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+}
+
+.return-order .header-box-holder {
+    display: flex;
+    gap: 0.375rem;
+    padding: 0.5rem;
+    border: 1px solid var(--return-border);
+    border-radius: 0.5rem;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.return-order .header-box {
+    box-sizing: border-box;
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+    min-height: 4.25rem;
+    margin: 0;
+    padding: 0.45rem 0.5rem;
+    border: 1px solid #e2e2e2;
+    border-radius: 0.35rem;
+    background: var(--return-surface);
+    overflow-wrap: anywhere;
+}
+
+.return-order .header-box p {
+    margin: 0;
+    line-height: 1.35;
+}
+
+.return-order .header-box p + p {
+    margin-top: 0.2rem;
+}
+
+.return-order .header-header {
+    color: #0066bd;
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+}
+
+.return-order .progress-layout {
+    display: flex;
+    border: 1px solid var(--return-border);
+    border-radius: 0.25rem;
+    background: var(--return-surface);
+}
+
+.return-order .progress-layout .progress-bar-item {
+    min-width: 0;
+    padding: 0;
+}
+
+.return-order .progress-layout .progress-bar-item + .progress-bar-item {
+    border-left: 1px solid var(--return-border);
+}
+
+.return-order .progress-layout [data-role="progress-action"] {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100%;
+    min-height: 2.125rem;
+    margin: 0;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+    line-height: 1.3;
+}
+
+.return-order .round-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex: 0 0 1.125rem;
+    width: 1.125rem;
+    height: 1.125rem;
+    margin-right: 0.3rem;
+    padding: 0;
+    border: 1px solid #d9d9d9;
+    border-radius: 50%;
+    background: #fff;
+    color: #626262;
+    font-size: 0.625rem;
+    line-height: 1;
+}
+
+/* Progress states are supplied by progressBarClassesOne/Two/Three. */
+.return-order .progress-layout .progress-bar-item {
+    background: var(--return-surface);
+    color: #747474;
+}
+
+.return-order .progress-layout .progress-bar-item [data-role="progress-action"] {
+    background: inherit;
+    color: inherit;
+    cursor: default;
+}
+
+.return-order .progress-layout .progress-bar-item-finished {
+    background: #fff;
+    color: #2e844a;
+}
+
+.return-order .progress-layout .progress-bar-item-finished .round-number {
+    border-color: #2e844a;
+    background: #2e844a;
+    color: #fff;
+}
+
+.return-order .progress-layout .progress-bar-item-in-progress {
+    background: var(--return-blue);
+    color: #fff;
+    font-weight: 600;
+}
+
+.return-order .progress-layout .progress-bar-item-in-progress .round-number {
+    border-color: #fff;
+    background: #fff;
+    color: var(--return-blue);
+}
+
+.return-order .progress-layout .progress-bar-item .clickable {
+    cursor: pointer;
+}
+
+.return-order .progress-layout .progress-bar-item .clickable:hover {
+    box-shadow: inset 0 -2px 0 currentColor;
+}
+
+.return-order .step-one-layout,
+.return-order .step-two-heading,
+.return-order .step-two-body,
+.return-order .step-two-products,
+.return-order .step-three-review {
+    box-sizing: border-box;
+    border: 1px solid var(--return-border);
+    border-radius: 0.5rem;
+    background: #fff;
+}
+
+.return-order .step-one-layout {
+    display: flex;
+    padding: 1rem 0;
+}
+
+.return-order .form-holder {
+    box-sizing: border-box;
+    min-width: 0;
+    margin: 0;
+    padding: 0 1.25rem;
+}
+
+.return-order .step-one-layout .form-holder:first-child {
+    border-right: 1px solid var(--return-border);
+}
+
+.return-order .section-title {
+    margin: 0 0 0.9rem;
+    padding: 0 0 0.5rem;
+    border-bottom: 1px solid var(--return-border);
+    color: #727272;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+}
+
+.return-order .field-label {
+    margin: 0.95rem 0 0.3rem;
+    padding: 0;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.return-order .section-title + .field-label {
+    margin-top: 0;
+}
+
+.return-order .help-text {
+    margin: 0 0 0.4rem;
+    padding: 0;
+    color: var(--return-muted);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    line-height: 1.45;
+}
+
+.return-order .form-holder c-lookup,
+.return-order .form-holder lightning-input,
+.return-order .form-holder lightning-combobox,
+.return-order .form-holder lightning-textarea {
+    display: block;
+    min-width: 0;
+}
+
+.return-order .account-details-toggle {
+    margin: 0.8rem 0 0.2rem;
+    padding-top: 0.65rem;
+    border-top: 1px dashed var(--return-border);
+    font-size: 0.75rem;
+}
+
+.return-order .account-details-toggle a {
+    color: #005fb2;
+}
+
+.return-order .choice-layout {
+    display: flex;
+    box-sizing: border-box;
+    border: 1px solid #c9c9c9;
+    border-radius: 0.25rem;
+}
+
+.return-order .choice-layout .select-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-width: 0;
+    min-height: 1.9rem;
+    margin: 0;
+    padding: 0.35rem 0.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+    line-height: 1.3;
+}
+
+.return-order .choice-layout .select-box:first-child {
+    border-radius: 0.2rem 0 0 0.2rem;
+}
+
+.return-order .choice-layout .select-box:last-child {
+    border-radius: 0 0.2rem 0.2rem 0;
+}
+
+/* Selection states are supplied by goodsReturnClass*, refundClass* and referenceClass*. */
+.return-order .choice-layout .select-box {
+    border: 0;
+    background: #fff;
+    color: #005fb2;
+    cursor: pointer;
+}
+
+.return-order .choice-layout .select-box + .select-box {
+    border-left: 1px solid #c9c9c9;
+}
+
+.return-order .choice-layout .select-box:hover {
+    background: #eef4ff;
+}
+
+.return-order .choice-layout .select-box.select-box-selected,
+.return-order .choice-layout .select-box.select-box-selected:hover {
+    background: var(--return-blue);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* The reference selector uses the neutral tab appearance from the mockup. */
+.return-order .step-two-body .choice-layout {
+    background: var(--return-surface);
+}
+
+.return-order .step-two-body .choice-layout .select-box {
+    background: transparent;
+    color: #242424;
+}
+
+.return-order .step-two-body .choice-layout .select-box:hover {
+    background: #eef4ff;
+}
+
+.return-order .step-two-body .choice-layout .select-box.select-box-selected,
+.return-order .step-two-body .choice-layout .select-box.select-box-selected:hover {
+    background: #fff;
+    color: #005fb2;
+    box-shadow: inset 0 0 0 1px #e5e5e5;
+    font-weight: 600;
+}
+
+.return-order .step-one-layout lightning-radio-group {
+    display: block;
+    margin-top: 0.4rem;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid #d3d3d3;
+    border-radius: 0.25rem;
+    background: #fafbfc;
+}
+
+.return-order .badge {
+    display: inline-block;
+    padding: 0.08rem 0.35rem;
+    border: 1px solid #d9d9d9;
+    border-radius: 1rem;
+    background: #f3f3f3;
+    color: #686868;
+    font-size: 0.625rem;
+    font-weight: 600;
+    line-height: 1.25;
+    vertical-align: middle;
+    text-transform: uppercase;
+}
+
+.return-order .descriptive {
+    color: var(--return-muted);
+    font-size: 0.6875rem;
+    font-weight: 400;
+}
+
+.return-order .required,
+.return-order .error {
+    color: #ba0517;
+}
+
+.return-order .info-text {
+    margin: 0.5rem 0 0.75rem;
+    padding: 0.5rem 0.65rem;
+    border-radius: 0.25rem;
+    background: #eef4ff;
+    color: #075499;
+    font-size: 0.6875rem;
+    line-height: 1.45;
+}
+
+.return-order .step-two-heading {
+    display: flex;
+    align-items: baseline;
+    padding: 0.9rem 0 0.55rem;
+    border-bottom: 0;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.return-order .step-two-heading .form-holder:first-child {
+    font-weight: 600;
+}
+
+.return-order .step-two-heading .form-holder:last-child {
+    color: var(--return-muted);
+    font-size: 0.6875rem;
+    text-align: right;
+}
+
+.return-order .step-two-body {
+    display: flex;
+    margin-top: 0;
+    padding: 0 0 1.1rem;
+    border-top: 0;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.return-order .document-heading {
+    margin: 0.75rem 0 0;
+    padding: 0.65rem 0.7rem 0.4rem;
+    border: 1px solid #dfdfdf;
+    border-bottom: 0;
+    border-radius: 0.3rem 0.3rem 0 0;
+    background: var(--return-surface);
+    color: #727272;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.return-order .document-lookup {
+    box-sizing: border-box;
+    padding: 0 0.7rem 0.7rem;
+    border: 1px solid #dfdfdf;
+    border-top: 0;
+    border-radius: 0 0 0.3rem 0.3rem;
+    background: var(--return-surface);
+}
+
+.return-order .document-meta {
+    margin-top: 0.5rem;
+    padding: 0.6rem 0.7rem;
+    border: 1px solid #dfdfdf;
+    border-radius: 0.3rem;
+    background: var(--return-surface);
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
+.return-order .document-meta p {
+    margin: 0;
+}
+
+.return-order .document-meta p + p {
+    margin-top: 0.3rem;
+    color: var(--return-muted);
+    font-size: 0.6875rem;
+}
+
+.return-order .included-orders {
+    border: 1px solid var(--return-border);
+    border-radius: 0.3rem;
+    background: #fff;
+}
+
+.return-order .orders-heading {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.25rem 0.75rem;
+    margin: 0;
+    padding: 0.6rem 0.7rem;
+    border-bottom: 1px solid var(--return-border);
+    font-size: 0.75rem;
+}
+
+.return-order .orders-heading span {
+    color: var(--return-muted);
+    font-size: 0.625rem;
+}
+
+.return-order .order-summary {
+    margin: 0;
+    padding: 0.6rem 0.7rem;
+    background: #fafafa;
+    color: #555;
+    font-size: 0.6875rem;
+}
+
+.return-order .included-orders lightning-datatable {
+    display: block;
+    min-width: 0;
+}
+
+.return-order .step-two-body lightning-textarea + .help-text {
+    margin-top: 0.4rem;
+}
+
+.return-order .step-two-products {
+    margin-top: 0.75rem;
+    padding: 0.85rem;
+}
+
+.return-order .product-search {
+    display: block;
+    box-sizing: border-box;
+    padding: 0.85rem;
+    border: 1px solid var(--return-border);
+    border-radius: 0.4rem;
+    background: var(--return-surface);
+}
+
+.return-order .step-two-products .empty-positions {
+    padding: 1rem 0;
+}
+
+.return-order lightning-radio-group {
+    white-space: pre-line;
+}
+
+.return-order .step-two-products c-datatable-navigation,
+.return-order .step-three-review c-datatable-navigation {
+    display: block;
+    margin: 0.85rem 0 0;
+    border: 1px solid var(--return-border);
+    border-radius: 0.3rem;
+    background: #fff;
+}
+
+.return-order .step-three-review {
+    padding: 1rem 1.25rem;
+}
+
+.return-order .step-three-review .review-title {
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.return-order .step-three-review .review-layout {
+    margin-top: 0.75rem;
+}
+
+.return-order .body-footer {
+    margin-top: 0.75rem;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--return-border);
+    border-radius: 0.4rem;
+    background: #fff;
+}
+
+.return-order .body-footer .footer-warning {
+    margin-top: 0.5rem;
+    color: var(--return-muted);
+    font-size: 0.6875rem;
+}
+
+.return-order .warning-box {
+    margin: 0.6rem 0 0;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #e3c78b;
+    border-radius: 0.3rem;
+    background: #fff8e8;
+    color: #6b4f16;
+    font-size: 0.75rem;
+}
+
+.return-order .warning-box p + p {
+    margin-top: 0.2rem;
+}
+
+@media (max-width: 42rem) {
+    .return-order .header-box-holder {
+        flex-wrap: wrap;
+    }
+
+    .return-order .header-box {
+        flex: 1 1 calc((100% - 0.75rem) / 3);
+    }
+
+    .return-order .form-holder {
+        padding-right: 0.85rem;
+        padding-left: 0.85rem;
+    }
+
+    .return-order .progress-layout [data-role="progress-action"] {
+        padding-right: 0.4rem;
+        padding-left: 0.4rem;
+        font-size: 0.6875rem;
+    }
+}
+
+@media (max-width: 32rem) {
+    .return-order .step-one-layout,
+    .return-order .step-two-heading,
+    .return-order .step-two-body {
+        flex-wrap: wrap;
+    }
+
+    .return-order .step-one-layout .form-holder,
+    .return-order .step-two-heading .form-holder,
+    .return-order .step-two-body .form-holder {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    .return-order .step-one-layout .form-holder:first-child {
+        border-right: 0;
+    }
+
+    .return-order .step-one-layout .form-holder + .form-holder {
+        margin-top: 1.25rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--return-border);
+    }
+
+    .return-order .step-two-heading .form-holder:last-child {
+        margin-top: 0.35rem;
+        text-align: left;
+    }
+
+    .return-order .step-two-body .form-holder + .form-holder {
+        margin-top: 1rem;
+    }
+}

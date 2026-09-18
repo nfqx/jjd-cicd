@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>MSInt Kunde-Personenaccount</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>MSInt Kunde-Personenaccount</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>Darboven</parentRole>
+</Role>

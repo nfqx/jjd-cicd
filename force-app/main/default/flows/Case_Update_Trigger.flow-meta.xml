@@ -1,122 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionCalls>
-        <name>Custom_Routing</name>
-        <label>Custom Routing</label>
-        <locationX>797</locationX>
-        <locationY>1664</locationY>
-        <actionName>routeWork</actionName>
-        <actionType>routeWork</actionType>
-        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
-        <inputParameters>
-            <name>recordId</name>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>serviceChannelLabel</name>
-            <value>
-                <stringValue>Case</stringValue>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>serviceChannelDevName</name>
-            <value>
-                <stringValue>Case</stringValue>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>routingType</name>
-            <value>
-                <stringValue>SkillsBased</stringValue>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>routingConfigLabel</name>
-            <value>
-                <stringValue>Reklamationen Skill</stringValue>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>agentLabel</name>
-        </inputParameters>
-        <inputParameters>
-            <name>queueLabel</name>
-        </inputParameters>
-        <inputParameters>
-            <name>skillOption</name>
-            <value>
-                <stringValue>RunSBRRules</stringValue>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>botLabel</name>
-        </inputParameters>
-        <inputParameters>
-            <name>externalConversationBotLabel</name>
-        </inputParameters>
-        <inputParameters>
-            <name>copilotLabel</name>
-        </inputParameters>
-        <inputParameters>
-            <name>agentforceEmployeeAgentLabel</name>
-        </inputParameters>
-        <inputParameters>
-            <name>digitalWorkerLabel</name>
-        </inputParameters>
-        <inputParameters>
-            <name>isRoutingConfigVariable</name>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>serviceChannelId</name>
-            <value>
-                <setupReference>Case</setupReference>
-                <setupReferenceType>ServiceChannel</setupReferenceType>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>routingConfigId</name>
-            <value>
-                <setupReference>Reklamationen_Skill</setupReference>
-                <setupReferenceType>QueueRoutingConfig</setupReferenceType>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>botId</name>
-        </inputParameters>
-        <inputParameters>
-            <name>copilotId</name>
-        </inputParameters>
-        <inputParameters>
-            <name>agentforceEmployeeAgentId</name>
-        </inputParameters>
-        <inputParameters>
-            <name>externalConversationBotId</name>
-        </inputParameters>
-        <inputParameters>
-            <name>digitalWorkerId</name>
-        </inputParameters>
-        <inputParameters>
-            <name>queueId</name>
-        </inputParameters>
-        <inputParameters>
-            <name>agentId</name>
-        </inputParameters>
-        <nameSegment>routeWork</nameSegment>
-        <offset>0</offset>
-        <versionString>2.0.0</versionString>
-    </actionCalls>
     <apiVersion>67.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Owner_Id_To_Case_Record</name>
+        <label>Assign Owner Id To Case Record</label>
+        <locationX>470</locationX>
+        <locationY>1150</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>queueId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>ZKS_Only_Checking</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Record_Type_Id</name>
+        <label>Assign Record Type Id</label>
+        <locationX>233</locationX>
+        <locationY>1988</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordTypeId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Triggered_Case</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_ZKS_Subtype</name>
+        <label>Assign ZKS Subtype</label>
+        <locationX>749</locationX>
+        <locationY>1745</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.SubType__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>ZKS</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>RecordType_Change_is_Needed_or_Not</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <name>Queue_Field_Check</name>
         <label>Queue Field Check</label>
-        <locationX>739</locationX>
-        <locationY>600</locationY>
+        <locationX>741</locationX>
+        <locationY>800</locationY>
         <defaultConnector>
             <targetReference>Fallback_Routing_Configuration_Query</targetReference>
         </defaultConnector>
@@ -125,7 +63,7 @@
             <name>Has_Queue</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Custom_Metadata.Queue_API_Name__c</leftValueReference>
+                <leftValueReference>queueAPIname</leftValueReference>
                 <operator>IsBlank</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -135,6 +73,103 @@
                 <targetReference>Get_Queue_Id</targetReference>
             </connector>
             <label>Has Queue</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Queue_Update_Needed_or_Not</name>
+        <label>Queue Update Needed or Not</label>
+        <locationX>739</locationX>
+        <locationY>1160</locationY>
+        <defaultConnector>
+            <targetReference>ZKS_Only_Checking</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Queue Update Needed</defaultConnectorLabel>
+        <rules>
+            <name>Update_Queue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>queueId</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Owner_Id_To_Case_Record</targetReference>
+            </connector>
+            <label>Update Queue</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>RecordType_Change_is_Needed_or_Not</name>
+        <label>RecordType Change is Needed or Not</label>
+        <locationX>452</locationX>
+        <locationY>1741</locationY>
+        <defaultConnector>
+            <targetReference>Update_Triggered_Case</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No RecordType Check is needed</defaultConnectorLabel>
+        <rules>
+            <name>Change_RecordType</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordTypeApiName</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_RecordType_Id</targetReference>
+            </connector>
+            <label>Change RecordType</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Routing_Helper_has_Found_or_Not</name>
+        <label>Routing Helper has Found or Not</label>
+        <locationX>744</locationX>
+        <locationY>550</locationY>
+        <defaultConnectorLabel>No Routing Helper</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Routing_Helper_has_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>routingHelperId</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Queue_Field_Check</targetReference>
+            </connector>
+            <label>Yes, Routing Helper has Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>ZKS_Only_Checking</name>
+        <label>ZKS Only Checking</label>
+        <locationX>740</locationX>
+        <locationY>1456</locationY>
+        <defaultConnector>
+            <targetReference>RecordType_Change_is_Needed_or_Not</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>for Every Queue Member</defaultConnectorLabel>
+        <rules>
+            <name>is_ZKS_Only_Queue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>zksOnly</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_ZKS_Subtype</targetReference>
+            </connector>
+            <label>is ZKS Only Queue</label>
         </rules>
     </decisions>
     <environments>Default</environments>
@@ -160,10 +195,40 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
+        <name>Check_RecordType_Id</name>
+        <label>Check RecordType Id</label>
+        <locationX>234</locationX>
+        <locationY>1742</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Record_Type_Id</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Case</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordTypeApiName</elementReference>
+            </value>
+        </filters>
+        <object>RecordType</object>
+        <outputAssignments>
+            <assignToReference>recordTypeId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
         <name>Fallback_Routing_Configuration_Query</name>
         <label>Fallback Routing Configuration Query</label>
-        <locationX>1011</locationX>
-        <locationY>595</locationY>
+        <locationX>1100</locationX>
+        <locationY>801</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <filterLogic>and</filterLogic>
         <filters>
@@ -182,11 +247,11 @@
     <recordLookups>
         <name>Get_Custom_Metadata</name>
         <label>Get Custom Metadata</label>
-        <locationX>746</locationX>
-        <locationY>400</locationY>
+        <locationX>753</locationX>
+        <locationY>379</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Queue_Field_Check</targetReference>
+            <targetReference>Routing_Helper_has_Found_or_Not</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -203,18 +268,40 @@
                 <elementReference>$Record.SubType__c</elementReference>
             </value>
         </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Routing_Helper__mdt</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <outputAssignments>
+            <assignToReference>caseType</assignToReference>
+            <field>Case_Type__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>routingHelperId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>queueAPIname</assignToReference>
+            <field>Queue_API_Name__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>recordTypeApiName</assignToReference>
+            <field>RecordType_API_Name__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>subType</assignToReference>
+            <field>SubType__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>zksOnly</assignToReference>
+            <field>ZKS_only__c</field>
+        </outputAssignments>
     </recordLookups>
     <recordLookups>
         <name>Get_Queue_Id</name>
         <label>Get Queue Id</label>
-        <locationX>747</locationX>
-        <locationY>782</locationY>
+        <locationX>748</locationX>
+        <locationY>991</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Update_Triggered_Case</targetReference>
+            <targetReference>Queue_Update_Needed_or_Not</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -228,28 +315,24 @@
             <field>DeveloperName</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Get_Custom_Metadata.Queue_API_Name__c</elementReference>
+                <elementReference>queueAPIname</elementReference>
             </value>
         </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Group</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <outputAssignments>
+            <assignToReference>queueId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
     </recordLookups>
     <recordUpdates>
         <name>Update_Triggered_Case</name>
         <label>Update Triggered Case</label>
-        <locationX>748</locationX>
-        <locationY>959</locationY>
-        <inputAssignments>
-            <field>OwnerId</field>
-            <value>
-                <elementReference>Get_Queue_Id.Id</elementReference>
-            </value>
-        </inputAssignments>
+        <locationX>485</locationX>
+        <locationY>1987</locationY>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>620</locationX>
+        <locationX>627</locationX>
         <locationY>50</locationY>
         <connector>
             <targetReference>Get_Custom_Metadata</targetReference>
@@ -273,10 +356,66 @@
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Obsolete</status>
+    <status>Active</status>
+    <variables>
+        <name>caseType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>queueAPIname</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>queueId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recordTypeApiName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recordTypeId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
     <variables>
         <name>routingConfId</name>
         <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>routingHelperId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>subType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>zksOnly</name>
+        <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>

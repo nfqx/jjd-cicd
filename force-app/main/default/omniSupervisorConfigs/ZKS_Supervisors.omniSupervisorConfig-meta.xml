@@ -8,35 +8,38 @@
         <displayOrder>0</displayOrder>
     </omniSupervisorConfigAction>
     <omniSupervisorConfigGroup>
-        <group>ZKS_Team</group>
+        <group>JJD_GmbH_Service_AHS_ZKS_SV</group>
     </omniSupervisorConfigGroup>
-    <omniSupervisorConfigQueue>
-        <queue>Complaints</queue>
-    </omniSupervisorConfigQueue>
-    <omniSupervisorConfigQueue>
-        <queue>End_Customer_Inquiry</queue>
-    </omniSupervisorConfigQueue>
-    <omniSupervisorConfigQueue>
-        <queue>General_Inquiries</queue>
-    </omniSupervisorConfigQueue>
-    <omniSupervisorConfigQueue>
-        <queue>JJD_Support</queue>
-    </omniSupervisorConfigQueue>
-    <omniSupervisorConfigQueue>
-        <queue>JJD_VIP_Support</queue>
-    </omniSupervisorConfigQueue>
-    <omniSupervisorConfigQueue>
-        <queue>Logistics</queue>
-    </omniSupervisorConfigQueue>
-    <omniSupervisorConfigQueue>
-        <queue>MasterData</queue>
-    </omniSupervisorConfigQueue>
-    <omniSupervisorConfigQueue>
-        <queue>Offers</queue>
-    </omniSupervisorConfigQueue>
-    <omniSupervisorConfigQueue>
-        <queue>Orders</queue>
-    </omniSupervisorConfigQueue>
+    <omniSupervisorConfigGroup>
+        <group>JJD_GmbH_Service_AHS_ZKS_TM</group>
+    </omniSupervisorConfigGroup>
+    <omniSupervisorConfigSkill>
+        <skill>Complaints</skill>
+    </omniSupervisorConfigSkill>
+    <omniSupervisorConfigSkill>
+        <skill>End_Customer_Inquiry</skill>
+    </omniSupervisorConfigSkill>
+    <omniSupervisorConfigSkill>
+        <skill>General_Inquiries</skill>
+    </omniSupervisorConfigSkill>
+    <omniSupervisorConfigSkill>
+        <skill>JJD_Support</skill>
+    </omniSupervisorConfigSkill>
+    <omniSupervisorConfigSkill>
+        <skill>Logistics</skill>
+    </omniSupervisorConfigSkill>
+    <omniSupervisorConfigSkill>
+        <skill>MasterData</skill>
+    </omniSupervisorConfigSkill>
+    <omniSupervisorConfigSkill>
+        <skill>Offers</skill>
+    </omniSupervisorConfigSkill>
+    <omniSupervisorConfigSkill>
+        <skill>Order</skill>
+    </omniSupervisorConfigSkill>
+    <omniSupervisorConfigSkill>
+        <skill>Webshop</skill>
+    </omniSupervisorConfigSkill>
     <omniSupervisorConfigTab>
         <displayOrder>0</displayOrder>
         <tabType>Wallboard</tabType>
@@ -59,19 +62,17 @@
     </omniSupervisorConfigTab>
     <omniSupervisorConfigTab>
         <displayOrder>5</displayOrder>
-        <tabType>AIAgents</tabType>
-    </omniSupervisorConfigTab>
-    <omniSupervisorConfigTab>
-        <displayOrder>6</displayOrder>
-        <tabType>AgentforceSDR</tabType>
-    </omniSupervisorConfigTab>
-    <omniSupervisorConfigTab>
-        <displayOrder>7</displayOrder>
         <tabType>Reports</tabType>
     </omniSupervisorConfigTab>
     <omniSupervisorConfigTab>
-        <displayOrder>8</displayOrder>
+        <displayOrder>6</displayOrder>
         <tabType>Alerts</tabType>
     </omniSupervisorConfigTab>
+    <omniSupervisorConfigUser>
+        <user>darboven@nfq-x.com.jjd.dev</user>
+    </omniSupervisorConfigUser>
+    <omniSupervisorConfigUser>
+        <user>gellert.pasztor@darboven.dev</user>
+    </omniSupervisorConfigUser>
     <skillVisibility>AllSkills</skillVisibility>
 </OmniSupervisorConfig>

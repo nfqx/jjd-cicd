@@ -14,11 +14,15 @@
     <tabs>ProductCondition__c</tabs>
     <tabs>VisitReport__c</tabs>
     <tabs>TradeFairReport__c</tabs>
+    <tabs>MemoRequest__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>InventoryConsole_UtilityBar</utilityBar>
     <workspaceConfig>
         <mappings>
             <tab>AccountConditions__c</tab>
+        </mappings>
+        <mappings>
+            <tab>MemoRequest__c</tab>
         </mappings>
         <mappings>
             <tab>ProductCondition__c</tab>

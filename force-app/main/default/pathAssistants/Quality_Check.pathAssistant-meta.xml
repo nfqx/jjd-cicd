@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Quality_Check__c</entityName>
+    <fieldName>Status__c</fieldName>
+    <masterLabel>Quality-Check</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;h2&gt;&lt;br&gt;&lt;/h2&gt;</info>
+        <picklistValueName>Completed</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;h2&gt;&lt;br&gt;&lt;/h2&gt;</info>
+        <picklistValueName>Follow-up Required</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;h2&gt;&lt;br&gt;&lt;/h2&gt;</info>
+        <picklistValueName>Follow-up Scheduled</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;h2&gt;&lt;br&gt;&lt;/h2&gt;</info>
+        <picklistValueName>In Progress</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;h2&gt;&lt;br&gt;&lt;/h2&gt;</info>
+        <picklistValueName>Open</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;h2&gt;&lt;br&gt;&lt;/h2&gt;</info>
+        <picklistValueName>Planned</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

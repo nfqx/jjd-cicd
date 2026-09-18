@@ -187,19 +187,19 @@
         <minutesToComplete>480</minutesToComplete>
         <timeTriggers>
             <actions>
-                <name>Entitlement_Action_Custom_Notification_Warten_Auf_Internal_Violation</name>
-                <type>FlowAutomation</type>
-            </actions>
-            <timeLength>1</timeLength>
-            <workflowTimeTriggerUnit>Minutes</workflowTimeTriggerUnit>
-        </timeTriggers>
-        <timeTriggers>
-            <actions>
                 <name>Entitlement_Action_Custom_Notification_Warten_Auf_Internal_Warning</name>
                 <type>FlowAutomation</type>
             </actions>
             <timeLength>-4</timeLength>
             <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </timeTriggers>
+        <timeTriggers>
+            <actions>
+                <name>Entitlement_Action_Custom_Notification_Warten_Auf_Internal_Violation</name>
+                <type>FlowAutomation</type>
+            </actions>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Minutes</workflowTimeTriggerUnit>
         </timeTriggers>
         <useCriteriaStartTime>true</useCriteriaStartTime>
     </milestones>

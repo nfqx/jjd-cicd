@@ -563,8 +563,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.MemberOfChain__c</fieldItem>
-                <identifier>RecordMemberOfChain_cField</identifier>
+                <fieldItem>Record.ChainRole__c</fieldItem>
+                <identifier>RecordChainRole_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -576,10 +576,16 @@
                 <fieldItem>Record.ConditionChainParent__c</fieldItem>
                 <identifier>RecordParentCondition__cField</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
                     <criteria>
-                        <leftValue>{!Record.MemberOfChain__c}</leftValue>
+                        <leftValue>{!Record.ChainRole__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>true</rightValue>
+                        <rightValue>Chain Member</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.ChainRole__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Procurement Association</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -593,10 +599,16 @@
                 <fieldItem>Record.ConditionChainHead__c</fieldItem>
                 <identifier>RecordConditionChainHead__cField</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
                     <criteria>
-                        <leftValue>{!Record.MemberOfChain__c}</leftValue>
+                        <leftValue>{!Record.ChainRole__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>true</rightValue>
+                        <rightValue>Chain Member</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.ChainRole__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Procurement Association</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -610,10 +622,16 @@
                 <fieldItem>Record.MemberNumber__c</fieldItem>
                 <identifier>RecordMemberNumber_cField</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
                     <criteria>
-                        <leftValue>{!Record.MemberOfChain__c}</leftValue>
+                        <leftValue>{!Record.ChainRole__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>true</rightValue>
+                        <rightValue>Chain Member</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.ChainRole__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Procurement Association</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -637,10 +655,16 @@
                 <fieldItem>Record.StatisticChainParent__c</fieldItem>
                 <identifier>RecordParentStatistic__cField</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
                     <criteria>
-                        <leftValue>{!Record.MemberOfChain__c}</leftValue>
+                        <leftValue>{!Record.ChainRole__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>true</rightValue>
+                        <rightValue>Chain Member</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.ChainRole__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Procurement Association</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -654,10 +678,16 @@
                 <fieldItem>Record.StatisticChainHead__c</fieldItem>
                 <identifier>RecordStatisticChainHead__cField</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
                     <criteria>
-                        <leftValue>{!Record.MemberOfChain__c}</leftValue>
+                        <leftValue>{!Record.ChainRole__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>true</rightValue>
+                        <rightValue>Chain Member</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.ChainRole__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Procurement Association</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -671,10 +701,16 @@
                 <fieldItem>Record.TypeOfChain__c</fieldItem>
                 <identifier>RecordTypeOfChain_cField</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
                     <criteria>
-                        <leftValue>{!Record.MemberOfChain__c}</leftValue>
+                        <leftValue>{!Record.ChainRole__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>true</rightValue>
+                        <rightValue>Chain Member</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.ChainRole__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Procurement Association</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -2229,7 +2265,7 @@
         <name>Facet-1048f47c-ddce-443e-be11-49c90180eb09</name>
         <type>Facet</type>
     </flexiPageRegions>
-    <!--flexiPageRegions>
+    <flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
@@ -2274,7 +2310,7 @@
         </itemInstances>
         <name>Facet-sef7jlgzsgr</name>
         <type>Facet</type>
-    </flexiPageRegions-->
+    </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
@@ -2378,7 +2414,7 @@
                 <identifier>flexipage_tab8</identifier>
             </componentInstance>
         </itemInstances>
-        <!--itemInstances>
+        <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
@@ -2391,7 +2427,7 @@
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab11</identifier>
             </componentInstance>
-        </itemInstances-->
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
@@ -2492,6 +2528,32 @@
             <componentInstance>
                 <componentName>leadDuplicateCheck</componentName>
                 <identifier>c_leadDuplicateCheck</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Lead.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>ObjectTerritory2Associations</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer4</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

@@ -37,6 +37,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.ChainRole__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Comments__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -687,6 +692,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Lead.ChainRole__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Lead.CompetitorContractExpiryDate__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1331,6 +1341,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Quote.LowestPriceCoffeeProducts__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Quote.LowestPriceHotChocProducts__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Quote.QualityCheck__c</field>
         <readable>true</readable>
@@ -1343,6 +1363,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Quote.TotalAmountMaschine__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Quote.TotalValueOfQuote__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

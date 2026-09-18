@@ -1,0 +1,17 @@
+<template>
+    <p><strong>{typeAttributes.title}</strong></p>
+    <p>
+        <template if:true={typeAttributes.manual}>
+            <span class="badge">{typeAttributes.origin}</span>
+        </template>
+        <template if:false={typeAttributes.manual}>
+            <span>{typeAttributes.origin}</span>
+        </template>
+        <template if:true={typeAttributes.recognized}>
+            <span class="slds-text-color_success">&nbsp;✓</span>
+        </template>
+    </p>
+    <template if:true={typeAttributes.notice}>
+        <p class="slds-text-color_warning">{typeAttributes.notice}</p>
+    </template>
+</template>

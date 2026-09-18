@@ -14,7 +14,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -27,8 +27,8 @@
     <recordLookups>
         <name>Annahme_Milestone</name>
         <label>Annahme Milestone</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>974</locationX>
+        <locationY>371</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Complete_Annahme_Milestone</targetReference>
@@ -48,11 +48,14 @@
     <recordUpdates>
         <name>Complete_Annahme_Milestone</name>
         <label>Complete Annahme Milestone</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>961</locationX>
+        <locationY>565</locationY>
         <connector>
             <targetReference>Update_Case_Record</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Update_Case_Record</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>CaseId</field>
@@ -86,8 +89,8 @@
     <recordUpdates>
         <name>Update_Case_Record</name>
         <label>Update Case Record</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>959</locationX>
+        <locationY>797</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -105,8 +108,8 @@
         <object>Case</object>
     </recordUpdates>
     <start>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
+        <locationX>848</locationX>
+        <locationY>48</locationY>
         <connector>
             <targetReference>Annahme_Milestone</targetReference>
         </connector>
@@ -122,5 +125,5 @@
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
 </Flow>

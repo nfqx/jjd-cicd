@@ -63,6 +63,13 @@
                 <elementReference>Get_Quality_Check.Id</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectEvent.Type_custom__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Quality-Check</stringValue>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Create_Event</targetReference>
         </connector>

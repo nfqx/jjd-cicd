@@ -4,6 +4,18 @@
         <application>Darboven_ZKS</application>
         <visible>true</visible>
     </applicationVisibilities>
+    <classAccesses>
+        <apexClass>CaseEmailPDFController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CasePDFComponentController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Mp3PlayerController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <fieldPermissions>
         <editable>true</editable>
         <field>EmailMessage.Waiting_Status__c</field>
@@ -61,7 +73,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Quote.LowestPriceCoffeeProducts__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Quote.LowestPriceHotChocProducts__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Quote.TodayPlus42Days__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Quote.TotalValueOfQuote__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -76,6 +103,10 @@
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>JJD Service Agent</label>
+    <pageAccesses>
+        <apexPage>casePDFviewer</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <servicePresenceStatusAccesses>
         <enabled>true</enabled>
         <servicePresenceStatus>Available_Case</servicePresenceStatus>

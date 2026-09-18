@@ -1,0 +1,534 @@
+<template>    
+    <!-- TOP BAR -->
+    <div class="holder slds-scrollable_y return-order">
+        <lightning-spinner alternative-text="Loading" size="x-small" if:true={isLoading}></lightning-spinner>
+        <template if:true={loaded}>
+            <lightning-layout class="header-box-holder">
+                <lightning-layout-item size="2" class="header-box">
+                    <p class="header-header">{label.goodsMovement}</p>
+                    <p>{goodsMovementDisplay}</p>
+                </lightning-layout-item>
+                <lightning-layout-item size="2" class="header-box">
+                    <p class="header-header">{label.referenceRelation}</p>
+                    <p>{referenceDisplay}</p>
+                </lightning-layout-item>
+                <lightning-layout-item size="2" class="header-box">
+                    <p class="header-header">{label.caseCategoryType}</p>
+                    <p><lightning-formatted-rich-text value={caseCategoryTypeDisplay}></lightning-formatted-rich-text></p>
+                </lightning-layout-item>
+                <lightning-layout-item size="2" class="header-box">
+                    <p class="header-header">{label.lineItems}</p>
+                    <p>{positionsCountDisplay}</p>
+                </lightning-layout-item>
+                <lightning-layout-item size="2" class="header-box">
+                    <p class="header-header">{label.valuesLabel}</p>
+                    <p><lightning-formatted-rich-text value={actualRefundDisplay}></lightning-formatted-rich-text></p>
+                </lightning-layout-item>
+                <lightning-layout-item size="2" class="header-box">
+                    <p class="header-header">{label.warnings}</p>
+                    <p><lightning-formatted-rich-text value={headerWarningDisplay}></lightning-formatted-rich-text></p>
+                </lightning-layout-item>
+            </lightning-layout>
+            <!-- END TOP BAR -->
+            <div if:true={shipToNotEqualsBillTo} class="warning-box">
+                {label.shipToAddressDifferent}
+            </div>
+            <div if:true={isNotPreselectedAccount} class="warning-box">
+                <p>{label.changedAccountHeader}</p>
+                <p>{label.changedAccountBody}</p>
+            </div>
+            <!-- STATUS BAR -->
+            <lightning-layout class="progress-layout" style="margin: 1rem 0;">
+                <lightning-layout-item size="4" class={progressBarClassesOne}>
+                    <div onclick={handleClickProgressBarOne} class={progressBarOneClass} data-role="progress-action">
+                        <span class="round-number">{oneOrChecked}</span>&nbsp;{label.referenceLabel}
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="4" class={progressBarClassesTwo}>
+                    <div onclick={handleClickProgressBarTwo} class={progressBarTwoClass} data-role="progress-action">
+                        <span class="round-number">{twoOrChecked}</span>&nbsp;{label.editLabel}
+                    </div>                    
+                </lightning-layout-item>
+                <lightning-layout-item size="4" class={progressBarClassesThree}>
+                    <div onclick={handleClickProgressBarThree} class={progressBarThreeClass} data-role="progress-action">
+                        <span class="round-number">{threeOrChecked}</span>&nbsp;{label.reviewAndComplete}
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+            <!-- END STATUS BAR -->
+            <!-- MAIN BODY STEP ONE -->
+            <lightning-layout if:true={isStepOne} class="step-one-layout">
+                <!-- MAIN BODY STEP ONE LEFT -->
+                <lightning-layout-item size="6" class="form-holder">
+                    <p class="section-title">{label.caseSelections}</p>
+                    <p class="field-label">
+                        {label.customer}&nbsp;
+                        <span if:true={isNotPreselectedAccount} class="badge">{label.changed}</span>
+                        <span if:false={isNotPreselectedAccount} class="badge">{label.identified}</span>
+                    </p>
+                    <c-lookup
+                        data-field="Account"
+                        object-api-name="Account"
+                        value={selectedAccountId}
+                        onsearch={handleAccountLookupSearch}
+                        onselectionchange={handleAccountLookupChange}
+                        style="width:100%"
+                        hide-last-viewed
+                        placeholder={label.searchAccount}
+                        selection={accountPrefill}
+                        onlookupblur={handleAccountLookupFocusOut}
+                        height-restricted>
+                    </c-lookup>
+                    <p class="account-details-toggle">
+                        <a onclick={toggleAccountDetails}>{label.accountDetails}</a>
+                    </p>
+                    <lightning-record-view-form object-api-name="Account" record-id={selectedAccountId} if:true={showAccountDetails}>
+                        <lightning-layout>
+                            <lightning-layout-item size="6">
+                                <lightning-output-field field-name="ERPCustomerNumber__c"></lightning-output-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-output-field field-name="Industry"></lightning-output-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout>
+                            <lightning-layout-item size="6">
+                                <lightning-output-field field-name="ShippingStreet"></lightning-output-field>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <lightning-output-field field-name="ShippingPostalCode"></lightning-output-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout>
+                            <lightning-layout-item size="12">
+                                <lightning-output-field field-name="ShippingCity"></lightning-output-field>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </lightning-record-view-form>
+                    <p class="field-label">
+                        {label.goodsBeingReturned}
+                    </p>
+                    <p class="help-text">
+                        {label.noGoodsValueCreditInfo}
+                    </p>
+                    <lightning-layout class="choice-layout">
+                        <lightning-layout-item size="6" onclick={handleSetGoodsReturn} class={goodsReturnClassLeft}>
+                            {label.yesGoodsReturned}
+                        </lightning-layout-item>
+                        <lightning-layout-item size="6" onclick={handleSetNoGoodsReturn}  class={goodsReturnClassRight}>
+                            {label.noValueCreditOnly}
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <template if:false={goodsReturnNotSelected}>
+                        <p class="field-label">
+                            {label.goodsMovement}
+                        </p>
+                        <template if:false={params.goodsReturn}>
+                            <p class="help-text">
+                                {label.noGoodsReturned}
+                            </p>
+                        </template>
+                        <template if:true={params.goodsReturn}>
+                            <p class="help-text">
+                                {label.whoMovesGoodsHelp}
+                            </p>
+                            <lightning-radio-group 
+                                name="goodsMovement"
+                                options={goodsMovementOptions}
+                                value={params.goodsMovement}
+                                onchange={handleChangeGoodsMovement}
+                                type="radio">
+                            </lightning-radio-group>
+                        </template>
+                    </template>
+                </lightning-layout-item>
+                <!-- END MAIN BODY STEP ONE LEFT -->
+                <!-- MAIN BODY STEP ONE RIGHT -->
+                <lightning-layout-item size="6" class="form-holder">
+                    <p class="section-title">{label.caseInformation}</p>
+                    <template if:true={goodsReturnOrMovementNotSelected}>
+                        <p if:true={goodsReturnNotSelected} class="info-text">
+                            {label.answerPreliminaryQuestion}
+                        </p>
+                        <p class="field-label">
+                            {label.caseReason}
+                        </p>
+                        <lightning-input placeholder={label.chooseSelectionsFirst} disabled></lightning-input>
+                        <p class="field-label">
+                            {label.caseType}
+                        </p>
+                        <lightning-input placeholder={label.derivedFromSelections} disabled></lightning-input>
+                    </template>
+                    <template if:false={goodsReturnOrMovementNotSelected}>
+                        <template if:false={params.goodsReturn}>
+                            <p class="field-label">{label.customerReceivesRefund}</p>
+                            <p class="help-text">{label.yesCreditOnlyCase}</p>
+                            <p class="field-label">{label.caseReason}</p>
+                            <p class="help-text">{label.appliesToEntireCase}</p>
+                            <lightning-combobox 
+                                value={params.caseReason} 
+                                options={caseReasonOptionsLite} 
+                                onchange={handleChangeCaseReason}>
+                            </lightning-combobox>
+                            <p class="field-label">{label.caseType}</p>
+                            <p class="help-text">{label.noReturnOrderWithoutGoods}</p>
+                        </template>
+                        <template if:true={params.goodsReturn}>
+                            <p class="field-label">{label.customerReceivesRefund} <span class="required">*</span></p>
+                            <lightning-layout class="choice-layout">
+                                <lightning-layout-item size="6" onclick={handleSetRefund} class={refundClassLeft}>
+                                    {label.yesWithCredit}
+                                </lightning-layout-item>
+                                <lightning-layout-item size="6" onclick={handleSetNoRefund}  class={refundClassRight}>
+                                    {label.noWithoutCredit}
+                                </lightning-layout-item>
+                            </lightning-layout>
+                            <template if:true={isGoodsMovementShippingOrReceived}>
+                                <p class="field-label">
+                                    {label.arrivalDate}&nbsp;
+                                    <template if:true={isGoodsMovementShipping}><span class="descriptive">optional</span></template>
+                                    <template if:true={isGoodsMovementReceived}><span class="required">*</span></template>
+                                </p>
+                                <p class="help-text">
+                                    <template if:true={isGoodsMovementShipping}>{label.expectedArrivalDateHelp}</template>
+                                    <template if:true={isGoodsMovementReceived}>{label.goodsReceivedWhen}</template>
+                                </p>
+                                <lightning-input type="date" placeholder={label.datePlaceholder} value={params.arrivalDate} onchange={handleChangeArrivalDate}></lightning-input>
+                                <p class="field-label">{label.caseReason} <span class="required">*</span></p>
+                                <p class="help-text">{label.appliesToEntireCase}</p>
+                                <lightning-combobox 
+                                    value={params.caseReason} 
+                                    options={returnReasonOptions} 
+                                    onchange={handleChangeCaseReason}>
+                                </lightning-combobox>
+                                <p class="field-label">{label.caseType} <span class="badge">{label.derived} - {label.editable}</span></p>
+                                <p class="help-text">{label.multipleTypesPossibleInfo}</p>
+                                <lightning-combobox 
+                                    value={params.caseType} 
+                                    options={returnOrderTypeOptions} 
+                                    onchange={handleChangeCaseType}>
+                                </lightning-combobox>
+                            </template>
+                            <template if:true={isGoodsMovementPickup}>
+                                <p class="field-label">{label.shippingMethod} <span class="required">*</span></p>
+                                <p class="help-text">{label.returnShippingMethodHelp}</p>
+                                <lightning-combobox 
+                                    value={params.shippingMethod} 
+                                    options={returnShippingConditionOptions} 
+                                    onchange={handleChangeShippingMethod}>
+                                </lightning-combobox>
+                                <p class="field-label">{label.requestedPickupDate} <span class="descriptive">optional</span></p>
+                                <p class="help-text">{label.requestedPickupDateHelp}</p>
+                                <lightning-input type="date" value={params.arrivalDate} onchange={handleChangeArrivalDate}></lightning-input>
+                                <p class="field-label">
+                                    {label.pickupLocation}&nbsp;<span class="required">*</span>&nbsp;
+                                    <template if:true={isStandardDeliveryAddress}>
+                                        <span class="badge">{label.standardDeliveryAddress}</span>
+                                    </template>
+                                    <template if:false={isStandardDeliveryAddress}>
+                                        <span class="badge">{label.changed}</span>
+                                    </template>
+                                </p>
+                                <c-lookup
+                                    data-field="Address"
+                                    object-api-name="CustomAddress__c"
+                                    value={selectedAddressId}
+                                    onsearch={handleAddressLookupSearch}
+                                    onselectionchange={handleAddressLookupChange}
+                                    style="width:100%"
+                                    selection={addressPrefill}
+                                    placeholder={label.searchAddress}
+                                    hide-last-viewed
+                                    onlookupblur={handleAddressLookupFocusOut}
+                                    height-restricted>
+                                </c-lookup>
+                                <p class="help-text">{label.pickupAddressHelp}</p>
+                                <p class="field-label">{label.caseReason} <span class="required">*</span></p>
+                                <p class="help-text">{label.appliesToEntireCase}</p>
+                                <lightning-combobox 
+                                    value={params.caseReason} 
+                                    options={returnReasonOptions} 
+                                    onchange={handleChangeCaseReason}>
+                                </lightning-combobox>
+                                <p class="field-label">{label.caseType} <span class="badge">{label.derived} - {label.editable}</span></p>
+                                <p class="help-text">{label.multipleTypesPossibleInfo}</p>
+                                <lightning-combobox 
+                                    value={params.caseType} 
+                                    options={returnOrderTypeOptions} 
+                                    onchange={handleChangeCaseType}>
+                                </lightning-combobox>
+                            </template>
+                        </template>
+                    </template>
+                </lightning-layout-item>
+                <!-- END MAIN BODY STEP ONE RIGHT -->
+            </lightning-layout>
+            <!-- END MAIN BODY STEP ONE -->
+            <!-- MAIN BODY STEP TWO -->
+            <lightning-layout if:true={isStepTwo} class="step-two-heading">
+                <lightning-layout-item size="6" class="form-holder">
+                    {label.referenceRelation}
+                </lightning-layout-item>
+                <lightning-layout-item size="6" class="form-holder">
+                    {label.documentLinesBehavior}
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout if:true={isStepTwo} class="step-two-body">
+                <lightning-layout-item size="6" class="form-holder">
+                    <lightning-layout class="choice-layout">
+                        <lightning-layout-item size="4" onclick={handleSetReferenceOrder} class={referenceClassLeft}>
+                            {label.orderLabel}
+                        </lightning-layout-item>
+                        <lightning-layout-item size="4" onclick={handleSetReferenceInvoice}  class={referenceClassCenter}>
+                            {label.invoice}
+                        </lightning-layout-item>
+                        <lightning-layout-item size="4" onclick={handleSetReferenceNoDocument}  class={referenceClassRight}>
+                            {label.withoutDocumentLower}
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <template if:true={isNoReference}>
+                        <p>{label.selectReference}</p>
+                    </template>
+                    <template if:true={isOrderReference}>
+                        <p class="document-heading">{label.orderDocument}</p>
+                        <c-lookup 
+                            class="document-lookup"
+                            data-field="Order"
+                            object-api-name="Order"
+                            value={selectedOrderId}
+                            onsearch={handleOrderLookupSearch}
+                            onselectionchange={handleOrderLookupChange}
+                            style="width:100%"
+                            hide-last-viewed
+                            selection={orderPrefill}
+                            placeholder={label.searchOrder}
+                            onlookupblur={handleOrderLookupFocusOut}
+                            height-restricted>
+                        </c-lookup>
+                        <template if:true={notOriginalAccountAndNoOrder}>
+                            {label.orderReset}
+                        </template>
+                        <div if:true={hasOrderId} class="document-meta">
+                            <p>{label.dateLabel} <lightning-formatted-date-time value={orderCreatedDate} day="2-digit" month="2-digit" year="numeric"></lightning-formatted-date-time> · {label.amount} {orderTotal} · <span class="badge">{orderStatus}</span></p>
+                            <p>{orderSubtext}</p>
+                        </div>
+                    </template>
+                    <template if:true={isInvoiceReference}>
+                        <p class="document-heading">{label.invoice}</p>
+                        <c-lookup 
+                            class="document-lookup"
+                            data-field="Invoice"
+                            object-api-name="Invoice"
+                            value={selectedInvoiceId}
+                            onsearch={handleInvoiceLookupSearch}
+                            onselectionchange={handleInvoiceLookupChange}
+                            style="width:100%"
+                            hide-last-viewed
+                            selection={invoicePrefill}
+                            placeholder={label.searchInvoice}
+                            onlookupblur={handleInvoiceLookupFocusOut}
+                            height-restricted>
+                        </c-lookup>
+                        <template if:true={notOriginalAccountAndNoInvoice}>
+                            {label.invoiceReset}
+                        </template>
+                        <div if:true={hasInvoiceId} class="document-meta">
+                            <p>{label.dateLabel} <lightning-formatted-date-time value={invoiceCreatedDate} day="2-digit" month="2-digit" year="numeric"></lightning-formatted-date-time> · {label.amount} {invoiceTotal} · <span class="badge">{invoiceStatus}<template if:true={hasInvoiceStatusAndType}> · </template>{invoiceType}</span></p>
+                            <p>{invoiceSubtext}</p>
+                        </div>
+                    </template>
+                    <template if:true={isNoneReference}>
+                        <p class="field-label">{label.noDocumentReason}: <span class="required">*</span></p>
+                        <lightning-textarea onchange={handleChangeReasonNoReference} value={params.reasonNoReference} placeholder={label.noDocumentReasonExample}></lightning-textarea>
+                        <p class="error" if:true={isNoneReferenceAndNoReason}>{label.noDocumentReasonHelp}</p>
+                    </template>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" class="form-holder">
+                    <div if:true={hasInvoiceOrdersAndIsInvoiceTab} class="included-orders">
+                        <p class="orders-heading">{label.includedOrders}<span style="text-align: right;">{label.itemsInTableBelow}</span></p>
+                        <template for:each={invoiceOrders} for:item="invoiceOrder">
+                            <p key={invoiceOrder.Id} class="order-summary">{invoiceOrder.OrderNumber} · <lightning-formatted-date-time value={invoiceOrder.CreatedDate} day="2-digit" month="2-digit" year="numeric"></lightning-formatted-date-time> · {invoiceOrder.TotalAmount} {invoiceOrder.CurrencyIsoCode} · {invoiceOrder.numberOfItems} {invoiceOrder.numberLabel}</p>
+                            <lightning-datatable
+                                key={invoiceOrder.Id}
+                                data={invoiceOrder.OrderItems}
+                                hide-checkbox-column
+                                key-field="Id"
+                                columns={orderProductColumns}
+                                >
+                            </lightning-datatable>
+                        </template>
+                    </div>
+                    <template if:false={params.goodsReturn}>
+                        <p class="field-label">{label.whereAreGoods}</p>
+                        <lightning-combobox 
+                            value={params.whereAreGoods} 
+                            options={whereAreGoodsOptions} 
+                            onchange={handleChangeWhereAreGoods}>
+                        </lightning-combobox>
+                    </template>
+                    <p class="field-label">{label.internalNote}&nbsp;{label.optional}</p>
+                    <lightning-textarea onchange={handleChangeInternalNote} value={params.internalNote} placeholder={label.internalNotePlaceholder}></lightning-textarea>
+                    <p class="help-text">{label.itemsFromProductSearch}</p>
+                </lightning-layout-item>
+            </lightning-layout>
+            <div if:true={isStepTwo} class="full-body step-two-products">                
+                <div if:true={hasPriceError} class="warning-box">
+                    {priceError}
+                </div>
+                <c-lookup 
+                    if:false={showExtendedProductLookup}
+                    class="product-search"
+                    data-field="Product"
+                    object-api-name="Product2"
+                    onsearch={handleProductLookupSearch}
+                    onselectionchange={handleProductLookupChange}
+                    style="width:100%"
+                    hide-last-viewed
+                    placeholder={label.productSearchPlaceholder}
+                    height-restricted>
+                </c-lookup>
+                <c-lookup-products-extended
+                    if:true={showExtendedProductLookup}
+                    class="product-search"
+                    data-field="ProductExtended"
+                    help-text={label.productSearchHelp}
+                    context-label={referenceDisplay}
+                    core-products={coreAssortmentProducts}
+                    listed-products={listedProducts}
+                    price-by-product-id={customerPricebook}
+                    excluded-product-ids={positionProductIds}
+                    onsearch={handleProductLookupSearch}
+                    onselectionchange={handleProductLookupChange}>
+                </c-lookup-products-extended>
+                <template if:true={hasNoPositions}>
+                    <div class="empty-positions" style="text-align: center;">
+                        <p>{label.noLineItemsYet}</p>
+                        <p class="help-text">{label.selectReferenceDocument}</p>
+                    </div>
+                </template>
+                <template if:false={hasNoPositions}>
+                    <c-datatable-navigation 
+                        data={positions}
+                        columns={_editColumns}
+                        hide-checkbox-column
+                        key-field="productId"
+                        ondeleterow={handleDeletePosition}
+                        onchangerow={handleChangePosition}
+                        >
+                    </c-datatable-navigation>
+                </template>
+            </div>
+            <!-- END MAIN BODY STEP TWO -->
+            <!-- MAIN BODY STEP THREE -->
+            <div if:true={isStepThree} class="full-body step-three-review">
+                <p class="review-title">{label.reviewAndComplete}</p>
+                <p class="help-text">{label.finalReviewInstructions}</p>
+                <lightning-layout class="review-layout">
+                    <lightning-layout-item size="6">
+                        <p>{label.lineItems}</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" style="text-align: right;">
+                        <p><a onclick={handleGoToStepTwo}>{label.editLineItems}</a></p>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <c-datatable-navigation 
+                    data={positions}
+                    columns={viewColumns}
+                    hide-checkbox-column
+                    key-field="productId"
+                    >
+                </c-datatable-navigation>
+                <lightning-layout class="review-layout">
+                    <lightning-layout-item size="10" style="text-align: right;">
+                        <p>{label.totalGoodsValue}</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="2" style="text-align: right;">
+                        <p>{goodsValuePureDisplay}</p>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-layout class="review-layout">
+                    <lightning-layout-item size="10" style="text-align: right;">
+                        <p>{label.creditValue}</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="2" style="text-align: right;">
+                        <p>{actualRefundPureDisplay}</p>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <p class="help-text">{label.submitSAPGoodsReceiptInfo}</p>
+            </div>            
+            <div if:true={isStepTwoOrThreeAndValueAboveHundred} class="warning-box">
+                {label.refundAbove100Notice}
+            </div>
+            <!-- END MAIN BODY STEP THREE -->
+            <!-- SUCCESS -->
+            <div if:true={isStepFour} class="full-body">
+                <template if:true={page4success}>
+                    <p align="center">{label.successLabel}</p>
+                    <p align="center"><a href={returnOrderCreatedId} target="_blank">{label.successMessage}</a></p>
+                </template>
+                <template if:false={page4success}>
+                    <p align="center">{label.errorLabel}</p>
+                    <p align="center">{page4error}</p>
+                </template>
+            </div>
+            <!-- FOOTER -->
+            <div class="body-footer">
+                <div style="width: 100%; text-align: right;" if:true={isStepOne}>
+                    <template if:true={isStepOne}>
+                        <lightning-button label={label.continueToEditing} variant="brand" onclick={handleGoToStepTwo} disabled={stepOneDisabled}></lightning-button>
+                    </template>
+                </div>
+                <template if:true={isStepOne}>
+                    <p if:true={hasWarningText} class="footer-warning">
+                        {warningText}
+                    </p>
+                </template>
+                <lightning-layout if:true={isStepTwo}>
+                    <lightning-layout-item size="6">
+                        <lightning-button label={label.backToReference} onclick={handleGoToStepOne}></lightning-button>&nbsp;
+                        <template if:true={hasProductWarnings}>
+                            {productWarningCount} {label.tableNotices}
+                        </template>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" style="text-align: right;">                            
+                        <lightning-button label={label.checkLabel} variant="brand" onclick={handleGoToStepThree} disabled={stepTwoDisabled}></lightning-button>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-layout if:true={isStepThree}>
+                    <lightning-layout-item size="6">
+                        <lightning-button label={label.backToEditing} onclick={handleGoToStepTwo} disabled={isLoading}></lightning-button>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" style="text-align: right;">                            
+                        <lightning-button label={label.submitToSAP} variant="brand" onclick={handleSubmitToSAP} disabled={isLoading}></lightning-button>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+            <!-- END FOOTER -->
+        </template>
+    </div>
+    <c-modal
+        show={showAccountChangeModal}
+        onclose={handleCloseAccountChangeModal}
+    >
+        <span slot="header">
+            {label.changedAccountModalHeader}
+        </span>
+        <div class="body-regular" slot="body">
+            <p>{label.changedAccountModalBody}</p>
+            <p>{label.newAccount}: <strong>{temporaryAccountName}</strong></p>
+        </div>
+
+        <div class="d-flex justify-content-start align-items-end" slot="footer">
+            <lightning-button 
+                label={label.cancel} 
+                onclick={handleCloseAccountChangeModal}
+                >
+            </lightning-button>
+            <lightning-button 
+                label={label.changeAccount} 
+                onclick={handleConfirmAccountChangeModal}
+                >
+            </lightning-button>
+        </div>
+    </c-modal>
+</template>

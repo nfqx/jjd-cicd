@@ -71,12 +71,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.ChainParentConditionID__c</field>
+        <field>Account.ChainParentReimbursementID__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.ChainParentReimbursementID__c</field>
+        <editable>false</editable>
+        <field>Account.ChainType__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -656,7 +656,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Quote.LowestPriceCoffeeProducts__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Quote.LowestPriceHotChocProducts__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Quote.TodayPlus42Days__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Quote.TotalValueOfQuote__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

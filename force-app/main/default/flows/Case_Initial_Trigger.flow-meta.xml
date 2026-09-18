@@ -5,8 +5,8 @@
     <assignments>
         <name>Assign_Owner_Id_to_Case_Record</name>
         <label>Assign Owner Id to Case Record</label>
-        <locationX>1475</locationX>
-        <locationY>1429</locationY>
+        <locationX>1535</locationX>
+        <locationY>2148</locationY>
         <assignmentItems>
             <assignToReference>$Record.OwnerId</assignToReference>
             <operator>Assign</operator>
@@ -15,14 +15,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>RecordType_Change_is_Needed_or_Not</targetReference>
+            <targetReference>ZKS_Only_Checking</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Assign_Record_Type_Id</name>
         <label>Assign Record Type Id</label>
-        <locationX>2057</locationX>
-        <locationY>1899</locationY>
+        <locationX>1209</locationX>
+        <locationY>2662</locationY>
         <assignmentItems>
             <assignToReference>$Record.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -37,8 +37,8 @@
     <assignments>
         <name>Assign_Types_and_Entitlements</name>
         <label>Assign Types and Entitlements</label>
-        <locationX>1803</locationX>
-        <locationY>2012</locationY>
+        <locationX>1483</locationX>
+        <locationY>2688</locationY>
         <assignmentItems>
             <assignToReference>$Record.EntitlementId</assignToReference>
             <operator>Assign</operator>
@@ -57,7 +57,7 @@
             <assignToReference>$Record.Type</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Case_Type_Metadata_Query.Case_Type__c</elementReference>
+                <elementReference>caseType</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -65,10 +65,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Assign_ZKS_Subtype</name>
+        <label>Assign ZKS Subtype</label>
+        <locationX>1840</locationX>
+        <locationY>2480</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.SubType__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>ZKS</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>RecordType_Change_is_Needed_or_Not</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Update_Unrated_Parameters</name>
         <label>Update Unrated Parameters</label>
-        <locationX>1099</locationX>
-        <locationY>1650</locationY>
+        <locationX>2622</locationX>
+        <locationY>2106</locationY>
         <assignmentItems>
             <assignToReference>$Record.EntitlementId</assignToReference>
             <operator>Assign</operator>
@@ -104,10 +120,10 @@
     <decisions>
         <name>Case_Pre_Clustering</name>
         <label>Case Pre Clustering</label>
-        <locationX>757</locationX>
-        <locationY>1126</locationY>
+        <locationX>806</locationX>
+        <locationY>1049</locationY>
         <defaultConnector>
-            <targetReference>Case_Type_Metadata_Query</targetReference>
+            <targetReference>Owner_Check</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No Type and Subtype</defaultConnectorLabel>
         <rules>
@@ -185,14 +201,39 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Case_Type_Check</name>
+        <label>Case Type Check</label>
+        <locationX>1359</locationX>
+        <locationY>1521</locationY>
+        <defaultConnector>
+            <targetReference>Queue_Default</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Case Type on User Creation</defaultConnectorLabel>
+        <rules>
+            <name>Case_Type_on_User_Creation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Type_on_User_Metadata_Query</targetReference>
+            </connector>
+            <label>Case Type on User Creation</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Case_Type_Validation</name>
         <label>Case Type Validation</label>
-        <locationX>758</locationX>
-        <locationY>704</locationY>
+        <locationX>1230</locationX>
+        <locationY>1043</locationY>
         <defaultConnector>
-            <targetReference>Update_Entitlement_Only_Case</targetReference>
+            <targetReference>Custom_Metadata_Check_For_Type</targetReference>
         </defaultConnector>
-        <defaultConnectorLabel>No Type Check Needed</defaultConnectorLabel>
+        <defaultConnectorLabel>Type exists</defaultConnectorLabel>
         <rules>
             <name>Yes_Type_is_blank</name>
             <conditionLogic>or</conditionLogic>
@@ -210,12 +251,49 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Owner_Check</name>
+        <label>Owner Check</label>
+        <locationX>806</locationX>
+        <locationY>1338</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Owner_is_User</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Owner:User.Id</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Type_Check</targetReference>
+            </connector>
+            <label>Owner is User</label>
+        </rules>
+        <rules>
+            <name>Owner_is_Queue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Owner:Group.Id</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Type_Metadata_Query</targetReference>
+            </connector>
+            <label>Owner is Queue</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Queue_Update_Needed_or_Not</name>
         <label>Queue Update Needed or Not</label>
-        <locationX>1699</locationX>
-        <locationY>1289</locationY>
+        <locationX>1821</locationX>
+        <locationY>2090</locationY>
         <defaultConnector>
-            <targetReference>RecordType_Change_is_Needed_or_Not</targetReference>
+            <targetReference>ZKS_Only_Checking</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No Queue Update Needed</defaultConnectorLabel>
         <rules>
@@ -237,8 +315,8 @@
     <decisions>
         <name>RecordType_Change_is_Needed_or_Not</name>
         <label>RecordType Change is Needed or Not</label>
-        <locationX>1712</locationX>
-        <locationY>1750</locationY>
+        <locationX>1472</locationX>
+        <locationY>2377</locationY>
         <defaultConnector>
             <targetReference>Assign_Types_and_Entitlements</targetReference>
         </defaultConnector>
@@ -247,7 +325,7 @@
             <name>Change_RecordType</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Case_Type_Metadata_Query.RecordType_API_Name__c</leftValueReference>
+                <leftValueReference>recordTypeApiName</leftValueReference>
                 <operator>IsBlank</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -262,8 +340,8 @@
     <decisions>
         <name>Routing_Helper_has_Found_or_Not</name>
         <label>Routing Helper has Found or Not</label>
-        <locationX>1087</locationX>
-        <locationY>1286</locationY>
+        <locationX>1622</locationX>
+        <locationY>1590</locationY>
         <defaultConnector>
             <targetReference>Get_Queue_Id</targetReference>
         </defaultConnector>
@@ -272,7 +350,7 @@
             <name>Routing_Helper_not_Found</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Case_Type_Metadata_Query.Id</leftValueReference>
+                <leftValueReference>routingHelperId</leftValueReference>
                 <operator>IsBlank</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -282,6 +360,56 @@
                 <targetReference>Queue_Default</targetReference>
             </connector>
             <label>Routing Helper not Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Routing_Helper_Has_Found_Or_Not_on_Type</name>
+        <label>Routing Helper Has Found Or Not on Type</label>
+        <locationX>1995</locationX>
+        <locationY>1320</locationY>
+        <defaultConnector>
+            <targetReference>Queue_Default</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Type Helper Not Found</defaultConnectorLabel>
+        <rules>
+            <name>Type_Helper_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>routingHelperId</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Queue_Id</targetReference>
+            </connector>
+            <label>Type Helper Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>ZKS_Only_Checking</name>
+        <label>ZKS Only Checking</label>
+        <locationX>1823</locationX>
+        <locationY>2280</locationY>
+        <defaultConnector>
+            <targetReference>RecordType_Change_is_Needed_or_Not</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>for Every Queue Member</defaultConnectorLabel>
+        <rules>
+            <name>is_ZKS_Only_Queue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>isZksOnly</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_ZKS_Subtype</targetReference>
+            </connector>
+            <label>is ZKS Only Queue</label>
         </rules>
     </decisions>
     <environments>Default</environments>
@@ -317,8 +445,8 @@ AND(
     <recordLookups>
         <name>Case_Type_Metadata_Query</name>
         <label>Case Type Metadata Query</label>
-        <locationX>1094</locationX>
-        <locationY>1123</locationY>
+        <locationX>1712</locationX>
+        <locationY>1274</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Routing_Helper_has_Found_or_Not</targetReference>
@@ -345,15 +473,72 @@ AND(
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Routing_Helper__mdt</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <outputAssignments>
+            <assignToReference>caseType</assignToReference>
+            <field>Case_Type__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>routingHelperId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>queueAPIname</assignToReference>
+            <field>Queue_API_Name__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>recordTypeApiName</assignToReference>
+            <field>RecordType_API_Name__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>subType</assignToReference>
+            <field>SubType__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>isZksOnly</assignToReference>
+            <field>ZKS_only__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <name>Case_Type_on_User_Metadata_Query</name>
+        <label>Case Type on User Metadata Query</label>
+        <locationX>1360</locationX>
+        <locationY>1813</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Queue_Id</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Case_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Type</elementReference>
+            </value>
+        </filters>
+        <object>Routing_Helper__mdt</object>
+        <outputAssignments>
+            <assignToReference>routingHelperId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>queueAPIname</assignToReference>
+            <field>Queue_API_Name__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>recordTypeApiName</assignToReference>
+            <field>RecordType_API_Name__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>isZksOnly</assignToReference>
+            <field>ZKS_only__c</field>
+        </outputAssignments>
     </recordLookups>
     <recordLookups>
         <name>Check_Fax_RecordType_Id</name>
         <label>Check Fax RecordType Id</label>
-        <locationX>585</locationX>
-        <locationY>1245</locationY>
+        <locationX>278</locationX>
+        <locationY>1324</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Fax_Case</targetReference>
@@ -380,8 +565,8 @@ AND(
     <recordLookups>
         <name>Check_RecordType_Id</name>
         <label>Check RecordType Id</label>
-        <locationX>2049</locationX>
-        <locationY>1622</locationY>
+        <locationX>1211</locationX>
+        <locationY>2388</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Assign_Record_Type_Id</targetReference>
@@ -398,7 +583,7 @@ AND(
             <field>DeveloperName</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Case_Type_Metadata_Query.RecordType_API_Name__c</elementReference>
+                <elementReference>recordTypeApiName</elementReference>
             </value>
         </filters>
         <object>RecordType</object>
@@ -410,8 +595,8 @@ AND(
     <recordLookups>
         <name>Check_Voicemail_RecordType_Id</name>
         <label>Check Voicemail RecordType Id</label>
-        <locationX>474</locationX>
-        <locationY>1135</locationY>
+        <locationX>294</locationX>
+        <locationY>1144</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Voicemail_Case</targetReference>
@@ -436,10 +621,60 @@ AND(
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Custom_Metadata_Check_For_Type</name>
+        <label>Custom Metadata Check For Type</label>
+        <locationX>1729</locationX>
+        <locationY>1107</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Routing_Helper_Has_Found_Or_Not_on_Type</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Case_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Type</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>SubType__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.SubType__c</elementReference>
+            </value>
+        </filters>
+        <object>Routing_Helper__mdt</object>
+        <outputAssignments>
+            <assignToReference>caseType</assignToReference>
+            <field>Case_Type__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>routingHelperId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>queueAPIname</assignToReference>
+            <field>Queue_API_Name__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>recordTypeApiName</assignToReference>
+            <field>RecordType_API_Name__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>subType</assignToReference>
+            <field>SubType__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>isZksOnly</assignToReference>
+            <field>ZKS_only__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Queue_Id</name>
         <label>Get Queue Id</label>
-        <locationX>1393</locationX>
-        <locationY>1287</locationY>
+        <locationX>1819</locationX>
+        <locationY>1965</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Queue_Update_Needed_or_Not</targetReference>
@@ -456,7 +691,7 @@ AND(
             <field>DeveloperName</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Case_Type_Metadata_Query.Queue_API_Name__c</elementReference>
+                <elementReference>queueAPIname</elementReference>
             </value>
         </filters>
         <object>Group</object>
@@ -468,8 +703,8 @@ AND(
     <recordLookups>
         <name>JJD_Non_Routable_Queue</name>
         <label>JJD Non Routable Queue</label>
-        <locationX>538</locationX>
-        <locationY>970</locationY>
+        <locationX>296</locationX>
+        <locationY>982</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Voicemail_Cases</targetReference>
@@ -496,8 +731,8 @@ AND(
     <recordLookups>
         <name>Queue_Default</name>
         <label>Queue Default</label>
-        <locationX>1199</locationX>
-        <locationY>1514</locationY>
+        <locationX>2636</locationX>
+        <locationY>1529</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Unrated_Parameters</targetReference>
@@ -526,8 +761,8 @@ AND(
     <recordLookups>
         <name>Standard_Entitlement</name>
         <label>Standard Entitlement</label>
-        <locationX>766</locationX>
-        <locationY>359</locationY>
+        <locationX>1241</locationX>
+        <locationY>378</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Entitlement_Assignment</targetReference>
@@ -554,15 +789,15 @@ AND(
     <recordUpdates>
         <name>Update_Case</name>
         <label>Update Case</label>
-        <locationX>743</locationX>
-        <locationY>1955</locationY>
+        <locationX>2200</locationX>
+        <locationY>2677</locationY>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Entitlement_Only_Case</name>
         <label>Update Entitlement Only Case</label>
-        <locationX>1275</locationX>
-        <locationY>699</locationY>
+        <locationX>2917</locationX>
+        <locationY>1467</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Type</field>
@@ -588,8 +823,8 @@ AND(
     <recordUpdates>
         <name>Update_Fax_Case</name>
         <label>Update Fax Case</label>
-        <locationX>289</locationX>
-        <locationY>1303</locationY>
+        <locationX>50</locationX>
+        <locationY>1325</locationY>
         <inputAssignments>
             <field>EntitlementId</field>
             <value>
@@ -625,8 +860,8 @@ AND(
     <recordUpdates>
         <name>Update_Voicemail_Case</name>
         <label>Update Voicemail Case</label>
-        <locationX>268</locationX>
-        <locationY>1142</locationY>
+        <locationX>57</locationX>
+        <locationY>1140</locationY>
         <inputAssignments>
             <field>EntitlementId</field>
             <value>
@@ -662,8 +897,8 @@ AND(
     <recordUpdates>
         <name>Update_Voicemail_Cases</name>
         <label>Update Voicemail Cases</label>
-        <locationX>267</locationX>
-        <locationY>968</locationY>
+        <locationX>74</locationX>
+        <locationY>981</locationY>
         <inputAssignments>
             <field>OwnerId</field>
             <value>
@@ -691,7 +926,7 @@ AND(
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>641</locationX>
+        <locationX>1117</locationX>
         <locationY>50</locationY>
         <connector>
             <targetReference>Standard_Entitlement</targetReference>
@@ -700,12 +935,12 @@ AND(
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <subflows>
         <name>Entitlement_Assignment</name>
         <label>Entitlement Assignment</label>
-        <locationX>766</locationX>
-        <locationY>525</locationY>
+        <locationX>1239</locationX>
+        <locationY>584</locationY>
         <connector>
             <targetReference>Case_Type_Validation</targetReference>
         </connector>
@@ -738,7 +973,35 @@ AND(
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>caseType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>isZksOnly</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>queueAPIname</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>queueId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recordTypeApiName</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -750,5 +1013,27 @@ AND(
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>routingHelperId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>subType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>zksOnly</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
     </variables>
 </Flow>

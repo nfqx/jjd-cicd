@@ -248,6 +248,12 @@
                 <identifier>RecordPrimaryContactFunctionSet__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.MasterDataCheckStatus__c</fieldItem>
+                <identifier>RecordMasterDataCheckStatus__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-bda0868e-f60d-43d1-bc15-da4b2cf8d682</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -382,6 +388,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.CampaignId</fieldItem>
                 <identifier>RecordCampaignIdField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.MasterDataValidationCase__c</fieldItem>
+                <identifier>RecordMaster_Data_Validation_Case__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-47986c8a-b34b-4c9b-be5e-d1fd2883fa4b</name>
@@ -1282,7 +1298,7 @@
         <name>Facet-zyd5j1njuk9</name>
         <type>Facet</type>
     </flexiPageRegions>
-    <!--flexiPageRegions>
+    <flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
@@ -1327,7 +1343,7 @@
         </itemInstances>
         <name>Facet-10c28dc0-3599-4394-8109-be4631cd25fc</name>
         <type>Facet</type>
-    </flexiPageRegions-->
+    </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
@@ -1433,7 +1449,7 @@
                 <identifier>flexipage_tab7</identifier>
             </componentInstance>
         </itemInstances>
-        <!--itemInstances>
+        <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
@@ -1446,7 +1462,7 @@
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab9</identifier>
             </componentInstance>
-        </itemInstances-->
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>

@@ -108,11 +108,10 @@
                         <valueListItems>
                             <value>Account.OrderMask</value>
                         </valueListItems>
+                        <valueListItems>
+                            <value>Account.ReturnOrder</value>
+                        </valueListItems>
                     </valueList>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>hideChatterActions</name>
-                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>numVisibleActions</name>
@@ -237,7 +236,7 @@
                 <fieldItem>Record.LegalForm__c</fieldItem>
                 <identifier>RecordLegalForm_cField</identifier>
                 <visibilityRule>
-                    <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+                    <booleanFilter>1 OR 2 OR 3 OR 4 OR 5</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.ConditionChainParent__r.Name}</leftValue>
                         <operator>NE</operator>
@@ -251,9 +250,14 @@
                         <operator>NE</operator>
                     </criteria>
                     <criteria>
-                        <leftValue>{!Record.IsChainMember__c}</leftValue>
+                        <leftValue>{!Record.ChainRole__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>true</rightValue>
+                        <rightValue>Chain Member</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.ChainRole__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Procurement Association</rightValue>
                     </criteria>
                 </visibilityRule>
             </fieldInstance>
@@ -1397,8 +1401,8 @@
                     <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.IsChainMember__c</fieldItem>
-                <identifier>RecordIsChainMember_cField</identifier>
+                <fieldItem>Record.ChainRole__c</fieldItem>
+                <identifier>RecordChainRole_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -2716,10 +2720,6 @@
                     <value>Facet-86cd060e-d33d-436e-b195-4bc779a58eaa</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>allowMultipleSectionsOpen</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
                     <name>defaultSectionName</name>
                     <value>accordionSection1</value>
                 </componentInstanceProperties>
@@ -2806,6 +2806,81 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>actionNames</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>New</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>adminFilters</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Account.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>Customer_Machines__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListDisplayType</name>
+                    <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>MachineNameModel__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>SerialNumber__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Installation_Location__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Status__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Machine_Source__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>LastQualityCheck__c</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>Customer Machines</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>__DEFAULT__</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Default</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList17</identifier>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
@@ -3529,10 +3604,6 @@
                     <value>Facet-be09cfa4-19eb-475a-b5b7-71080a039250</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>allowMultipleSectionsOpen</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
                     <name>defaultSectionName</name>
                     <value>accordionSection--gw9lia82125</value>
                 </componentInstanceProperties>
@@ -3758,7 +3829,7 @@
         <name>Facet-scv0uhalsq</name>
         <type>Facet</type>
     </flexiPageRegions>
-    <!--flexiPageRegions>
+    <flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
@@ -3803,7 +3874,7 @@
         </itemInstances>
         <name>Facet-c0f35469-a4ab-40fd-9876-ea858c78e1d5</name>
         <type>Facet</type>
-    </flexiPageRegions-->
+    </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
@@ -4063,7 +4134,7 @@
                 <identifier>flexipage_tab14</identifier>
             </componentInstance>
         </itemInstances>
-        <!--itemInstances>
+        <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
@@ -4076,7 +4147,7 @@
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab17</identifier>
             </componentInstance>
-        </itemInstances-->
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>

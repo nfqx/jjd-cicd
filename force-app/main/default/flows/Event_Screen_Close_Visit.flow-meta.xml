@@ -15,7 +15,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Get_Visit_Report_Lines_for_Repeater</targetReference>
+            <targetReference>Get_Visit_Report</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -32,6 +32,36 @@
         </assignmentItems>
         <connector>
             <targetReference>POS_Check</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Visit_Report</name>
+        <label>Assign Visit Report</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>objectVisitReport.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varVisitReportId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectVisitReport.Goal_Achieved__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Goal_Archieved</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectVisitReport.Comment__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Comment_MainGoal</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Visit_Report</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -209,7 +239,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>Get_Visit_Report_Lines_for_Repeater</targetReference>
+            <targetReference>Get_Visit_Report</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -331,7 +361,7 @@
     <dynamicChoiceSets>
         <name>colRelatedContacts</name>
         <dataType>String</dataType>
-        <displayField>ContactFullName__c</displayField>
+        <displayField>ContactDisplayName__c</displayField>
         <filterLogic>and</filterLogic>
         <filters>
             <field>AccountId</field>
@@ -440,7 +470,7 @@
             <targetReference>Assignment_Repeater_Values</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Create_Visit_Report_Lines</targetReference>
+            <targetReference>Assign_Visit_Report</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -497,6 +527,12 @@
             <field>Lead__c</field>
             <value>
                 <elementReference>varLeadIdfromEvent</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Main_Goal__c</field>
+            <value>
+                <elementReference>Get_Event.Main_Goal__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -569,8 +605,36 @@
                 <stringValue>POS Visibility / Brand Presentation</stringValue>
             </value>
         </filters>
+        <filters>
+            <field>Goal_Achieved__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Not Achieved</stringValue>
+            </value>
+        </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>VisitReportLine__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Visit_Report</name>
+        <label>Get Visit Report</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Visit_Report_Lines_for_Repeater</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varVisitReportId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>VisitReport__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -580,7 +644,7 @@
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Input_Screen_Visit_Report_Line</targetReference>
+            <targetReference>Input_Screen_Visit_Report_and_Report_Line</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -678,7 +742,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get_Visit_Report_Lines_for_Repeater</targetReference>
+            <targetReference>Get_Visit_Report</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -730,9 +794,19 @@
         </connector>
         <inputReference>recReportVisitLinePOS</inputReference>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_Visit_Report</name>
+        <label>Update Visit Report</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Create_Visit_Report_Lines</targetReference>
+        </connector>
+        <inputReference>objectVisitReport</inputReference>
+    </recordUpdates>
     <screens>
-        <name>Input_Screen_Visit_Report_Line</name>
-        <label>Input Screen Visit Report Line</label>
+        <name>Input_Screen_Visit_Report_and_Report_Line</name>
+        <label>Input Screen Visit Report and Report Line</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <allowBack>true</allowBack>
@@ -743,7 +817,116 @@
         </connector>
         <fields>
             <name>Text_Repeater_Screen</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 20px;&quot;&gt;📝 &lt;/span&gt;&lt;strong style=&quot;font-size: 20px;&quot;&gt;Document the visit details&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Use this section to document the &lt;strong&gt;topics and key points discussed during the visit&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;🎯 &lt;strong&gt;Evaluate goal achievement&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;For each planned visit goal, indicate whether the &lt;strong&gt;goal was achieved&lt;/strong&gt; and add a comment if additional context is required.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;➕ To capture additional discussion points, click &lt;strong&gt;Add&lt;/strong&gt; and complete another entry.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;✅ Once all visit details and the &lt;strong&gt;goal achievement&lt;/strong&gt; have been documented, click &lt;strong&gt;Finish&lt;/strong&gt; to complete the visit report.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 20px;&quot;&gt;📝 &lt;/span&gt;&lt;strong style=&quot;font-size: 20px;&quot;&gt;Document the visit details&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Use this section to document the &lt;strong&gt;Main Goal&lt;/strong&gt; of the visit and the key points discussed.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;🎯 &lt;strong&gt;Evaluate Main Goal achievement&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Indicate whether the &lt;strong&gt;Main Goal was achieved&lt;/strong&gt; and add a comment if additional context is required.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Input_Screen_Visit_Report_and_Report_Line_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Input_Screen_Visit_Report_and_Report_Line_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Main_Goal</name>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>Get_Visit_Report.Main_Goal__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Main Goal</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isDisabled>
+                        <booleanValue>true</booleanValue>
+                    </isDisabled>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>8</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Input_Screen_Visit_Report_and_Report_Line_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Goal_Archieved</name>
+                    <choiceReferences>picklistGoalAchieved</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>Get_Visit_Report.Goal_Achieved__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Goal Archieved</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Comment_MainGoal</name>
+            <defaultValue>
+                <stringValue>{!Get_Visit_Report.Comment__c}</stringValue>
+            </defaultValue>
+            <fieldText>Comment</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Text_additional_topics</name>
+            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;➕ To capture additional topics or discussion points, click &lt;strong&gt;Add&lt;/strong&gt; and complete another entry.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;✅ Once the &lt;strong&gt;Main Goal&lt;/strong&gt;, its achievement, and all additional topics have been documented, click &lt;strong&gt;Finish&lt;/strong&gt; to complete the visit report.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -767,7 +950,7 @@
                 <fieldText>Topic</fieldText>
                 <fieldType>DropdownBox</fieldType>
                 <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>true</isRequired>
+                <isRequired>false</isRequired>
                 <styleProperties>
                     <verticalAlignment>
                         <stringValue>top</stringValue>
@@ -787,7 +970,7 @@
                 <fieldText>Goal Achieved</fieldText>
                 <fieldType>DropdownBox</fieldType>
                 <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>true</isRequired>
+                <isRequired>false</isRequired>
                 <styleProperties>
                     <verticalAlignment>
                         <stringValue>top</stringValue>
@@ -1160,6 +1343,14 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Contact</objectType>
+    </variables>
+    <variables>
+        <name>objectVisitReport</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>VisitReport__c</objectType>
     </variables>
     <variables>
         <name>ObjectVisitReportLines</name>

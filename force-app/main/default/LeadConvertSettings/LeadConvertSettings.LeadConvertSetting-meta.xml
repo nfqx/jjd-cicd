@@ -61,7 +61,7 @@
         </mappingFields>
         <mappingFields>
             <inputField>ConditionChainParent__c</inputField>
-            <outputField>ChainParentConditionID__c</outputField>
+            <outputField>ConditionChainParent__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>CreatedViaCaseScreenflow__c</inputField>
@@ -100,8 +100,8 @@
             <outputField>MemberNumber__c</outputField>
         </mappingFields>
         <mappingFields>
-            <inputField>MemberOfChain__c</inputField>
-            <outputField>IsChainMember__c</outputField>
+            <inputField>ChainRole__c</inputField>
+            <outputField>ChainRole__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>Rooms__c</inputField>

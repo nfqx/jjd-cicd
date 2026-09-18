@@ -36,6 +36,9 @@
                         <valueListItems>
                             <value>Account.OrderMask</value>
                         </valueListItems>
+                        <valueListItems>
+                            <value>Account.ReturnOrder</value>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>67.0</apiVersion>
+    <apiVersion>68.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <customProperties>
         <name>ScreenProgressIndicator</name>
@@ -160,7 +160,7 @@
         <object>Quote</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
-    <runInMode>SystemModeWithoutSharing</runInMode>
+    <runInMode>UserMode</runInMode>
     <screens>
         <name>ErrorScreenNoContact</name>
         <label>ErrorScreenNoContact</label>
@@ -199,7 +199,7 @@
         </connector>
         <fields>
             <name>Info1</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(255, 0, 0);&quot;&gt;*&lt;/strong&gt;&lt;strong&gt;Info:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;An dieser Stelle kann das Email-Anschreiben angepasst und erweitert werden.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Die Schlussformel wird automatisch eingefügt und muss nicht geschrieben werden.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(255, 0, 0);&quot;&gt;*&lt;/strong&gt;&lt;strong&gt;Info:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;An dieser Stelle kann das Email-Anschreiben angepasst und erweitert werden.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Die Gruß- und Schlussformeln werden automatisch eingefügt und müssen nicht geschrieben werden.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -212,6 +212,9 @@
         </fields>
         <fields>
             <name>Ihr_Anschreiben</name>
+            <defaultValue>
+                <stringValue>{!txt_DefaultAnschreiben}</stringValue>
+            </defaultValue>
             <fieldText>Ihr Anschreiben</fieldText>
             <fieldType>LargeTextArea</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -348,6 +351,12 @@
         </inputAssignments>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </subflows>
+    <textTemplates>
+        <name>txt_DefaultAnschreiben</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>anbei erhalten Sie den Ratenkaufvertrag zum Angebot &quot;{!Get_Quote.QuoteNumber}&quot; zur Unterschrift.
+Bitte überprüfen und signieren Sie das Dokument mit dem unteren Button.</text>
+    </textTemplates>
     <variables>
         <name>recordId</name>
         <dataType>String</dataType>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Lead</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>Lead Management</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>EstimatedSalesCoffee__c</fieldNames>
+        <fieldNames>EstimatedSalesTea__c</fieldNames>
+        <fieldNames>EstimatedSalesHotChocolate__c</fieldNames>
+        <fieldNames>Address</fieldNames>
+        <fieldNames>Timeframe__c</fieldNames>
+        <info>&lt;p&gt;&lt;strong&gt;Objective:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Assess the lead&amp;#39;s initial sales potential&lt;/li&gt;&lt;li&gt;Ensure sufficient information is available for further qualification&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Exit Criteria:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Estimated annual sales for &lt;strong&gt;Coffee&lt;/strong&gt; completed ✅&lt;/li&gt;&lt;li&gt;Estimated annual sales for &lt;strong&gt;Tea&lt;/strong&gt; completed ✅&lt;/li&gt;&lt;li&gt;Estimated annual sales for &lt;strong&gt;Drinking Chocolate&lt;/strong&gt; completed ✅&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Postal Code&lt;/strong&gt; completed ✅&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;System Action Required:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;➡️&lt;/strong&gt; Click &lt;strong&gt;&amp;quot;Mark Status as Complete&amp;quot;&lt;/strong&gt; to proceed&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>In Prequalification</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>ChainRole__c</fieldNames>
+        <info>&lt;p&gt;&lt;strong&gt;Objective:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Clarify the customer&amp;#39;s chain and purchasing structure&lt;/li&gt;&lt;li&gt;Ensure existing chain-related conditions and discounts can be considered during quotation and price negotiation&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Exit Criteria:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Chain affiliation&lt;/strong&gt; clarified with the prospect ✅&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Purchasing company / purchasing group&lt;/strong&gt; affiliation clarified, if applicable ✅&lt;/li&gt;&lt;li&gt;Relevant &lt;strong&gt;chain-related conditions or discounts&lt;/strong&gt; identified for the upcoming quotation process ✅&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;System Action Required:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;➡️&lt;/strong&gt; Convert the &lt;strong&gt;Lead&lt;/strong&gt; to create the corresponding &lt;strong&gt;Account, Contact and Opportunity&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>In Sales Qualification</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Company</fieldNames>
+        <fieldNames>Name</fieldNames>
+        <fieldNames>Email</fieldNames>
+        <fieldNames>Phone</fieldNames>
+        <fieldNames>MobilePhone</fieldNames>
+        <info>&lt;p&gt;&lt;strong&gt;Objective:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Capture the initial lead and contact information&lt;/li&gt;&lt;li&gt;Ensure the lead can be contacted for further qualification&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Exit Criteria:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Salutation&lt;/strong&gt; completed ✅&lt;/li&gt;&lt;li&gt;&lt;strong&gt;First Name&lt;/strong&gt; completed ✅&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Last Name&lt;/strong&gt; completed ✅&lt;/li&gt;&lt;li&gt;&lt;strong style=&quot;font-size: 13px;&quot;&gt;Email&lt;/strong&gt; completed ✅&lt;/li&gt;&lt;li&gt;At least one &lt;strong&gt;Phone / Mobile&lt;/strong&gt; number completed ✅&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;System Action Required:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;➡️&lt;/strong&gt; Click &lt;strong&gt;&amp;quot;Mark Status as Complete&amp;quot;&lt;/strong&gt; to proceed&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>New</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;✅ &lt;strong&gt;Lead successfully converted&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;The Lead has been successfully qualified and converted.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;The corresponding &lt;strong&gt;Account, Contact and Opportunity&lt;/strong&gt; records are now available.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;➡️ Continue with the &lt;strong&gt;Opportunity&lt;/strong&gt; to manage the next steps in the sales process.&lt;/p&gt;</info>
+        <picklistValueName>Qualified</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

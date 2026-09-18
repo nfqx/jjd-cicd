@@ -3,6 +3,110 @@
     <apiVersion>67.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
+        <name>Assign_Customer_Machine</name>
+        <label>Assign Customer Machine</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>objectNewCustomerMachine.Account__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Quality_Check.Account__r.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectNewCustomerMachine.MachineNameModel__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Machine_Name_Model</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectNewCustomerMachine.Installation_Location__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Installation_Location</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectNewCustomerMachine.SerialNumber__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Serial_Number</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectNewCustomerMachine.Machine_Source__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Customer-Owned</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectNewCustomerMachine.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Active</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_New_Customer_Machine</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Selected_Customer_Machine</name>
+        <label>Assign Selected Customer Machine</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>objectSelectedCustomerMachine</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Selected_Customer_Machine</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Quality_Check_Machine</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Selected_Customer_Machine_After_Input_Screen</name>
+        <label>Assign Selected Customer Machine After Input Screen</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>objectSelectedCustomerMachine.Installation_Location__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Installation_Location_Selected_Machine</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectSelectedCustomerMachine.SerialNumber__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Serial_Number_Selected_Machine</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectSelectedCustomerMachine.MachineNameModel__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Machine_Name_Model_Selected_Machine</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectSelectedCustomerMachine.Machine_Source__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Selected_Customer_Machine</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Assignment_Reapter_Values</name>
         <label>Assignment Reapter Values</label>
         <locationX>0</locationX>
@@ -50,6 +154,27 @@
             </value>
         </assignmentItems>
         <assignmentItems>
+            <assignToReference>ObjectQualityCheckEntry.Machine__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Machine_Name_Model_Selected_Machine</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ObjectQualityCheckEntry.OtherProduct__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_Repeater.Specify_Other_Product</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ObjectQualityCheckEntry.RecommendationImprovement__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_Repeater.Recommendation_Improvement</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
             <assignToReference>colQualityCheckEntries</assignToReference>
             <operator>Add</operator>
             <value>
@@ -60,102 +185,6 @@
             <targetReference>Loop_Repeater</targetReference>
         </connector>
     </assignments>
-    <choices>
-        <name>Add_new_machine</name>
-        <choiceText>Add new machine</choiceText>
-        <dataType>String</dataType>
-        <value>
-            <stringValue>Add new machine</stringValue>
-        </value>
-    </choices>
-    <choices>
-        <name>Continue_with_selected_machine</name>
-        <choiceText>Continue with selected machine</choiceText>
-        <dataType>String</dataType>
-        <value>
-            <stringValue>Continue with selected machine</stringValue>
-        </value>
-    </choices>
-    <choices>
-        <name>Finish_Quality_Check_Continue_to_completion</name>
-        <choiceText>Finish Quality Check / Continue to completion</choiceText>
-        <dataType>String</dataType>
-        <value>
-            <stringValue>Finish Quality Check / Continue to completion</stringValue>
-        </value>
-    </choices>
-    <choices>
-        <name>Franke_A100</name>
-        <choiceText>Franke A100</choiceText>
-        <dataType>String</dataType>
-        <value>
-            <stringValue>Franke A100</stringValue>
-        </value>
-    </choices>
-    <choices>
-        <name>No_another_check_is_required</name>
-        <choiceText>No, another check is required</choiceText>
-        <dataType>String</dataType>
-        <value>
-            <stringValue>No, another check is required</stringValue>
-        </value>
-    </choices>
-    <choices>
-        <name>No_continue_to_completion</name>
-        <choiceText>No, continue to completion</choiceText>
-        <dataType>String</dataType>
-        <value>
-            <stringValue> No, continue to completion</stringValue>
-        </value>
-    </choices>
-    <choices>
-        <name>No_schedule_later</name>
-        <choiceText>No, schedule later</choiceText>
-        <dataType>String</dataType>
-        <value>
-            <stringValue>No, schedule later</stringValue>
-        </value>
-    </choices>
-    <choices>
-        <name>WMF_3000</name>
-        <choiceText>WMF 3000</choiceText>
-        <dataType>String</dataType>
-        <value>
-            <stringValue>WMF 3000</stringValue>
-        </value>
-    </choices>
-    <choices>
-        <name>WMF_5000</name>
-        <choiceText>WMF 5000</choiceText>
-        <dataType>String</dataType>
-        <value>
-            <stringValue>WMF 5000</stringValue>
-        </value>
-    </choices>
-    <choices>
-        <name>Yes_check_another_machine</name>
-        <choiceText>Yes, check another machine</choiceText>
-        <dataType>String</dataType>
-        <value>
-            <stringValue>Yes, check another machine</stringValue>
-        </value>
-    </choices>
-    <choices>
-        <name>Yes_enter_next_planned_check_date</name>
-        <choiceText>Yes, enter next planned check date</choiceText>
-        <dataType>String</dataType>
-        <value>
-            <stringValue> Yes, enter next planned check date</stringValue>
-        </value>
-    </choices>
-    <choices>
-        <name>Yes_the_Quality_Check_is_complete</name>
-        <choiceText>Yes, the Quality Check is complete</choiceText>
-        <dataType>String</dataType>
-        <value>
-            <stringValue>Yes, the Quality Check is complete</stringValue>
-        </value>
-    </choices>
     <customProperties>
         <name>ScreenProgressIndicator</name>
         <value>
@@ -172,7 +201,7 @@
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Yes</name>
+            <name>Yes_Contact_is_empty</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>Get_Quality_Check.Contact__c</leftValueReference>
@@ -184,7 +213,7 @@
             <connector>
                 <targetReference>Screen_Select_Contact</targetReference>
             </connector>
-            <label>Yes</label>
+            <label>Yes, Contact is empty</label>
         </rules>
     </decisions>
     <decisions>
@@ -215,18 +244,15 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>Get_Last_Quality_Check</targetReference>
+            <targetReference>Get_Selected_Customer_Machine</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Decision_Add_New_Machine</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>What_would_you_like_to_do</leftValueReference>
+                <leftValueReference>Machine</leftValueReference>
                 <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>Add_new_machine</elementReference>
-                </rightValue>
             </conditions>
             <connector>
                 <targetReference>Screen_Add_New_Machine</targetReference>
@@ -235,9 +261,42 @@
         </rules>
     </decisions>
     <dynamicChoiceSets>
+        <name>choiceSetCustomerMachines</name>
+        <dataType>String</dataType>
+        <displayField>MachineDisplayName__c</displayField>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Quality_Check.Account__r.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>LastQualityCheck__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>Get_Quality_Check.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Active</stringValue>
+            </value>
+        </filters>
+        <object>Customer_Machine__c</object>
+        <outputAssignments>
+            <assignToReference>varLastQualityCheckMachine</assignToReference>
+            <field>LastQualityCheckMachine__c</field>
+        </outputAssignments>
+        <valueField>Id</valueField>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
         <name>colRelatedContacts</name>
         <dataType>String</dataType>
-        <displayField>ContactFullName__c</displayField>
+        <displayField>ContactDisplayName__c</displayField>
         <filterLogic>and</filterLogic>
         <filters>
             <field>AccountId</field>
@@ -265,12 +324,36 @@
         <picklistField>Product__c</picklistField>
         <picklistObject>Quality_Check_Entry__c</picklistObject>
     </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>picklistMachineSource</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Machine_Source__c</picklistField>
+        <picklistObject>Customer_Machine__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>picklistRecommendedActions</name>
+        <dataType>Multipicklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Recommended_Actions__c</picklistField>
+        <picklistObject>Quality_Check_Machine__c</picklistObject>
+    </dynamicChoiceSets>
     <ends>
         <name>END_ELEMENT_2</name>
         <locationX>0</locationX>
         <locationY>0</locationY>
     </ends>
     <environments>Default</environments>
+    <formulas>
+        <name>formulaIsDarbovenContractMachine</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL(
+    {!Get_Selected_Customer_Machine.Machine_Source__c},
+    &quot;Darboven Contract&quot;
+)</expression>
+    </formulas>
     <formulas>
         <name>fx_Qualitiy_Check_Started_At</name>
         <dataType>DateTime</dataType>
@@ -321,12 +404,23 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
+        <name>Create_New_Customer_Machine</name>
+        <label>Create New Customer Machine</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Screen_Machine_Selection</targetReference>
+        </connector>
+        <inputReference>objectNewCustomerMachine</inputReference>
+    </recordCreates>
+    <recordCreates>
         <name>Create_Quality_Check_Entries</name>
         <label>Create Quality Check Entries</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Update_Quality_Check</targetReference>
+            <targetReference>Update_Customers_Machine</targetReference>
         </connector>
         <inputReference>colQualityCheckEntries</inputReference>
     </recordCreates>
@@ -339,15 +433,45 @@
             <targetReference>Loop_Repeater</targetReference>
         </connector>
         <inputAssignments>
-            <field>Additional_Comments__c</field>
+            <field>Actions_to_improve_quality__c</field>
             <value>
-                <elementReference>Machine_Comments</elementReference>
+                <elementReference>Actions_to_Improve_Quality</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Machine_Placeholder__c</field>
+            <field>Additional_Comments__c</field>
+            <value>
+                <elementReference>Additional_Comments</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CustomerMachine__c</field>
             <value>
                 <elementReference>Machine</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>EILLESTeaPresent__c</field>
+            <value>
+                <elementReference>EILLESTeaPresent.value</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>MachineNameModel__c</field>
+            <value>
+                <elementReference>Machine_Name_Model_Selected_Machine</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Machine_Location__c</field>
+            <value>
+                <elementReference>Installation_Location_Selected_Machine</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>PresentationOkay__c</field>
+            <value>
+                <elementReference>Presentation_Okay.value</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -356,39 +480,21 @@
                 <elementReference>recordId</elementReference>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>Recommended_Actions__c</field>
+            <value>
+                <elementReference>Recommended_Actions</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhichCompetitor__c</field>
+            <value>
+                <elementReference>Which_Competitor</elementReference>
+            </value>
+        </inputAssignments>
         <object>Quality_Check_Machine__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
-    <recordLookups>
-        <name>Get_Last_Quality_Check</name>
-        <label>Get Last Quality Check</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Get_Quality_Check_Machine</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Account__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_Quality_Check.Account__r.Id</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>Status__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Completed</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Quality_Check__c</object>
-        <sortField>Check_Completed_At__c</sortField>
-        <sortOrder>Desc</sortOrder>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
     <recordLookups>
         <name>Get_Last_Quality_Check_Entries_of_Machine</name>
         <label>Get Last Quality Check Entries of Machine</label>
@@ -442,21 +548,35 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Quality_Check__c</field>
+            <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Get_Last_Quality_Check.Id</elementReference>
+                <elementReference>objectSelectedCustomerMachine.LastQualityCheckMachine__c</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Quality_Check_Machine__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Selected_Customer_Machine</name>
+        <label>Get Selected Customer Machine</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Selected_Customer_Machine</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
         <filters>
-            <field>Machine_Placeholder__c</field>
+            <field>Id</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>Machine</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Quality_Check_Machine__c</object>
+        <object>Customer_Machine__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
@@ -482,6 +602,36 @@
             </value>
         </inputAssignments>
         <object>Quality_Check__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Customers_Machine</name>
+        <label>Update Customer Machine</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Quality_Check</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Machine</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>LastQualityCheckMachine__c</field>
+            <value>
+                <elementReference>Create_Quality_Check_Machine.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LastQualityCheck__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Customer_Machine__c</object>
     </recordUpdates>
     <recordUpdates>
         <name>Update_new_Contact_on_Quality_Check</name>
@@ -530,12 +680,6 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>ContactPersonOnSite__c</field>
-            <value>
-                <elementReference>Conact_on_site</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>Status__c</field>
             <value>
                 <stringValue>In Progress</stringValue>
@@ -549,6 +693,16 @@
         </inputAssignments>
         <object>Quality_Check__c</object>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_Selected_Customer_Machine</name>
+        <label>Update Selected Customer Machine</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Screen_Machine_Check_Summary</targetReference>
+        </connector>
+        <inputReference>objectSelectedCustomerMachine</inputReference>
+    </recordUpdates>
     <screens>
         <name>Screen_Add_New_Machine</name>
         <label>Screen Add New Machine</label>
@@ -558,12 +712,11 @@
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <isGoTo>true</isGoTo>
-            <targetReference>Screen_Machine_Selection</targetReference>
+            <targetReference>Assign_Customer_Machine</targetReference>
         </connector>
         <fields>
-            <name>Text_Screen_New_Machine</name>
-            <fieldText>&lt;h2&gt;➕ Add Missing Machine&lt;/h2&gt;&lt;p&gt;Use this screen only if the machine you need to check is &lt;strong&gt;not available in the existing machine selection&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;🏷️ &lt;strong&gt;Add Customer-Managed Machine&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Enter the required machine information to add it to the Quality Check.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;ℹ️ This is typically used for machines that are &lt;strong&gt;owned or managed directly by the customer&lt;/strong&gt; and are therefore not already available in Salesforce.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;✅ Once the machine has been added, you can continue with the Quality Check.&lt;/p&gt;</fieldText>
+            <name>Text_Add_Customer_Machine</name>
+            <fieldText>&lt;h2&gt;➕ Add Customer Machine&lt;/h2&gt;&lt;p&gt;Use this screen to add a machine that is &lt;strong&gt;not yet available in the customer’s machine list&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;🏷️ &lt;strong&gt;Machine Information&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Enter the machine model and, if known, the serial number.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;📍 &lt;strong&gt;Installation Location&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Specify where the machine is installed at the customer site, for example &lt;strong&gt;“1st Floor – Kitchen”&lt;/strong&gt; or &lt;strong&gt;“Bar Area”&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;✅ Once the machine has been created, it can be selected and included in the current Quality Check.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -575,9 +728,9 @@
             </styleProperties>
         </fields>
         <fields>
-            <name>Name_New_Machine</name>
+            <name>Machine_Name_Model</name>
             <dataType>String</dataType>
-            <fieldText>Name</fieldText>
+            <fieldText>Machine Name / Model</fieldText>
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -586,14 +739,37 @@
                     <stringValue>top</stringValue>
                 </verticalAlignment>
                 <width>
-                    <stringValue>12</stringValue>
+                    <stringValue>6</stringValue>
                 </width>
             </styleProperties>
         </fields>
         <fields>
-            <name>Location_New_Machine</name>
+            <name>Machine_Source</name>
+            <choiceReferences>picklistMachineSource</choiceReferences>
             <dataType>String</dataType>
-            <fieldText>Location</fieldText>
+            <defaultValue>
+                <stringValue>Customer-Owned</stringValue>
+            </defaultValue>
+            <fieldText>Machine Source</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isDisabled>
+                <booleanValue>true</booleanValue>
+            </isDisabled>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>6</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Installation_Location</name>
+            <dataType>String</dataType>
+            <fieldText>Installation Location</fieldText>
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -602,7 +778,23 @@
                     <stringValue>top</stringValue>
                 </verticalAlignment>
                 <width>
-                    <stringValue>12</stringValue>
+                    <stringValue>6</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Serial_Number</name>
+            <dataType>String</dataType>
+            <fieldText>Serial Number</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>6</stringValue>
                 </width>
             </styleProperties>
         </fields>
@@ -621,11 +813,11 @@
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Screen_Machine_Check_Summary</targetReference>
+            <targetReference>Assign_Selected_Customer_Machine_After_Input_Screen</targetReference>
         </connector>
         <fields>
-            <name>Text_Capture_Beverage_Results</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Capture Beverage Results for the selected machine &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;☕ Please select the beverage and product that should be tested for this machine.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;For each beverage, enter a taste rating, an visual rating, and any relevant comments or recommendations.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;You can use &lt;strong&gt;Add &lt;/strong&gt;to capture multiple beverages for the selected machine.&lt;/p&gt;</fieldText>
+            <name>Text_Customer_Machine_Info</name>
+            <fieldText>&lt;h2&gt;🔧 Machine Information&lt;/h2&gt;&lt;p&gt;Review the machine information before continuing with the beverage assessment.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;✏️ You can update machine details where required. Some fields, such as the &lt;strong&gt;Machine Name / Model&lt;/strong&gt;, can only be edited if the machine does &lt;strong&gt;not originate from Darboven contract data&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;ℹ️ Information provided through Darboven contract data is read-only and cannot be changed within the Quality Check.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -637,17 +829,81 @@
             </styleProperties>
         </fields>
         <fields>
-            <name>Selected_Machine</name>
+            <name>Machine_Name_Model_Selected_Machine</name>
             <dataType>String</dataType>
             <defaultValue>
-                <elementReference>Machine</elementReference>
+                <elementReference>objectSelectedCustomerMachine.MachineNameModel__c</elementReference>
             </defaultValue>
-            <fieldText>Selected Machine</fieldText>
+            <fieldText>Machine Name / Model</fieldText>
             <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isReadOnly>
+                <elementReference>formulaIsDarbovenContractMachine</elementReference>
+            </isReadOnly>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>6</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Source</name>
+            <choiceReferences>picklistMachineSource</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>objectSelectedCustomerMachine.Machine_Source__c</elementReference>
+            </defaultValue>
+            <fieldText>Source</fieldText>
+            <fieldType>DropdownBox</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isDisabled>
                 <booleanValue>true</booleanValue>
             </isDisabled>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>6</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Installation_Location_Selected_Machine</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>objectSelectedCustomerMachine.Installation_Location__c</elementReference>
+            </defaultValue>
+            <fieldText>Installation Location</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>6</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Serial_Number_Selected_Machine</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>objectSelectedCustomerMachine.SerialNumber__c</elementReference>
+            </defaultValue>
+            <fieldText>Serial Number</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isReadOnly>
+                <elementReference>formulaIsDarbovenContractMachine</elementReference>
+            </isReadOnly>
             <isRequired>false</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -659,24 +915,15 @@
             </styleProperties>
         </fields>
         <fields>
-            <name>Selected_Machine_Location</name>
-            <dataType>String</dataType>
-            <defaultValue>
-                <elementReference>Machine_Location</elementReference>
-            </defaultValue>
-            <fieldText>Selected Machine Location</fieldText>
-            <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isDisabled>
-                <booleanValue>true</booleanValue>
-            </isDisabled>
-            <isRequired>false</isRequired>
+            <name>Text_Capture_Beverage_Results</name>
+            <fieldText>&lt;h2&gt;☕ Capture Beverage Results&lt;/h2&gt;&lt;p&gt;🥤 &lt;strong&gt;Select Beverage &amp;amp; Product&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Select the beverage and product that should be tested for the selected machine.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;⭐ Evaluate the Beverage&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;For each beverage, enter a taste rating, a visual rating, and any relevant comments or recommendations.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;➕ &lt;strong&gt;Add Additional Beverages&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Use Add&lt;/strong&gt; to capture additional beverages for the same machine.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
                     <stringValue>top</stringValue>
                 </verticalAlignment>
                 <width>
-                    <stringValue>6</stringValue>
+                    <stringValue>12</stringValue>
                 </width>
             </styleProperties>
         </fields>
@@ -692,14 +939,14 @@
                 </defaultValue>
                 <fieldText>Beverage</fieldText>
                 <fieldType>DropdownBox</fieldType>
-                <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
+                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                 <isRequired>true</isRequired>
                 <styleProperties>
                     <verticalAlignment>
                         <stringValue>top</stringValue>
                     </verticalAlignment>
                     <width>
-                        <stringValue>6</stringValue>
+                        <stringValue>12</stringValue>
                     </width>
                 </styleProperties>
             </fields>
@@ -712,16 +959,45 @@
                 </defaultValue>
                 <fieldText>Product</fieldText>
                 <fieldType>DropdownBox</fieldType>
-                <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
+                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                 <isRequired>true</isRequired>
                 <styleProperties>
                     <verticalAlignment>
                         <stringValue>top</stringValue>
                     </verticalAlignment>
                     <width>
-                        <stringValue>6</stringValue>
+                        <stringValue>12</stringValue>
                     </width>
                 </styleProperties>
+            </fields>
+            <fields>
+                <name>Specify_Other_Product</name>
+                <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>Get_Last_Quality_Check_Entries_of_Machine[$EachItem].OtherProduct__c</elementReference>
+                </defaultValue>
+                <fieldText>Specify Other Product</fieldText>
+                <fieldType>InputField</fieldType>
+                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                <isRequired>true</isRequired>
+                <styleProperties>
+                    <verticalAlignment>
+                        <stringValue>top</stringValue>
+                    </verticalAlignment>
+                    <width>
+                        <stringValue>12</stringValue>
+                    </width>
+                </styleProperties>
+                <visibilityRule>
+                    <conditionLogic>and</conditionLogic>
+                    <conditions>
+                        <leftValueReference>Repeater_Capture_Beverage.AllItems[$EachItem].Product</leftValueReference>
+                        <operator>EqualTo</operator>
+                        <rightValue>
+                            <stringValue>Other</stringValue>
+                        </rightValue>
+                    </conditions>
+                </visibilityRule>
             </fields>
             <fields>
                 <name>Taste_Rating</name>
@@ -751,7 +1027,7 @@
                         <elementReference>Get_Last_Quality_Check_Entries_of_Machine[$EachItem].Flavor_Rating__c</elementReference>
                     </value>
                 </inputParameters>
-                <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
+                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                 <isRequired>true</isRequired>
                 <storeOutputAutomatically>true</storeOutputAutomatically>
                 <styleProperties>
@@ -791,7 +1067,7 @@
                         <elementReference>Get_Last_Quality_Check_Entries_of_Machine[$EachItem].Visual_Rating__c</elementReference>
                     </value>
                 </inputParameters>
-                <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
+                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                 <isRequired>true</isRequired>
                 <storeOutputAutomatically>true</storeOutputAutomatically>
                 <styleProperties>
@@ -831,7 +1107,7 @@
                         <elementReference>Get_Last_Quality_Check_Entries_of_Machine[$EachItem].Total_Rating__c</elementReference>
                     </value>
                 </inputParameters>
-                <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
+                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                 <isRequired>true</isRequired>
                 <storeOutputAutomatically>true</storeOutputAutomatically>
                 <styleProperties>
@@ -846,9 +1122,12 @@
             <fields>
                 <name>Recommendation_Improvement</name>
                 <dataType>String</dataType>
+                <defaultValue>
+                    <elementReference>Get_Last_Quality_Check_Entries_of_Machine[$EachItem].RecommendationImprovement__c</elementReference>
+                </defaultValue>
                 <fieldText>Recommendation / Improvement</fieldText>
                 <fieldType>InputField</fieldType>
-                <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
+                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                 <isRequired>false</isRequired>
                 <styleProperties>
                     <verticalAlignment>
@@ -894,7 +1173,7 @@
         </connector>
         <fields>
             <name>Text_Machine_Check_Summary</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Machine Check Summary&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;🛠️ Please complete the machine-related information before finishing this machine check.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Indicate whether a technician is required, whether machine settings need to be adjusted, and add any final machine-related comments.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;h2&gt;🛠️ Machine Check Summary&lt;/h2&gt;&lt;p&gt;✅ &lt;strong&gt;Recommended Actions&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Select or define the recommended follow-up actions resulting from the machine check.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;📈 &lt;strong&gt;Actions to Improve Quality&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Document any actions that should be taken to improve the beverage or machine quality.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;🖼️ &lt;strong&gt;Product Presentation&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Evaluate how the products are presented at the machine.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;🍵 &lt;strong&gt;Tea Presentation&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Indicate whether &lt;strong&gt;EILLES Tea&lt;/strong&gt; is visibly presented at the machine. If not, specify which &lt;strong&gt;competitor &lt;/strong&gt;is currently displayed or promoted.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;💬 &lt;strong&gt;Additional Comments&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Add any further observations, notes, or recommendations related to the machine check.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;ℹ️ Please complete the relevant information before finishing the machine check.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -906,13 +1185,70 @@
             </styleProperties>
         </fields>
         <fields>
-            <name>Toggle_Technician_Required</name>
+            <name>Screen_Machine_Check_Summary_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Screen_Machine_Check_Summary_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Recommended_Actions</name>
+                    <choiceReferences>picklistRecommendedActions</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Recommended Actions</fieldText>
+                    <fieldType>MultiSelectCheckboxes</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>Actions_to_Improve_Quality</name>
+                    <fieldText>Actions to Improve Quality</fieldText>
+                    <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Presentation_Okay</name>
             <extensionName>flowruntime:toggle</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>label</name>
                 <value>
-                    <stringValue>Technician Required:</stringValue>
+                    <stringValue>Presentation Okay?</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -940,30 +1276,87 @@
             </styleProperties>
         </fields>
         <fields>
-            <name>Toggle_Machine_Settings_Required</name>
-            <extensionName>flowruntime:toggle</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>label</name>
-                <value>
-                    <stringValue>Machine Settings Required:</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>messageToggleActive</name>
-                <value>
-                    <stringValue>Yes</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>messageToggleInactive</name>
-                <value>
-                    <stringValue>No</stringValue>
-                </value>
-            </inputParameters>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <name>Screen_Machine_Check_Summary_Section2</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Screen_Machine_Check_Summary_Section2_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>EILLESTeaPresent</name>
+                    <extensionName>flowruntime:toggle</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>EILLES Tea Present?</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>messageToggleActive</name>
+                        <value>
+                            <stringValue>Yes</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>messageToggleInactive</name>
+                        <value>
+                            <stringValue>No</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>value</name>
+                        <value>
+                            <booleanValue>false</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>middle</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>4</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>Which_Competitor</name>
+                    <dataType>String</dataType>
+                    <fieldText>Which Competitor</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>middle</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>8</stringValue>
+                        </width>
+                    </styleProperties>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>EILLESTeaPresent.value</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <booleanValue>false</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
             <styleProperties>
                 <verticalAlignment>
                     <stringValue>top</stringValue>
@@ -974,8 +1367,8 @@
             </styleProperties>
         </fields>
         <fields>
-            <name>Machine_Comments</name>
-            <fieldText>Machine Comments:</fieldText>
+            <name>Additional_Comments</name>
+            <fieldText>Additional Comments</fieldText>
             <fieldType>LargeTextArea</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
@@ -1006,40 +1399,8 @@
             <targetReference>Decision_What_would_you_like_to_do</targetReference>
         </connector>
         <fields>
-            <name>Text_Contact_on_site</name>
-            <fieldText>&lt;p&gt;Optionally enter the &lt;strong&gt;contact person met on site&lt;/strong&gt;, for example a bartender, service employee, or other local contact.&lt;/p&gt;&lt;p&gt;💡 &lt;strong&gt;Note:&lt;/strong&gt; This person is only documented for the Quality Check and is &lt;strong&gt;not the responsible Contact of the Account&lt;/strong&gt;.&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
-        <fields>
-            <name>Conact_on_site</name>
-            <dataType>String</dataType>
-            <defaultValue>
-                <elementReference>Get_Quality_Check.ContactPersonOnSite__c</elementReference>
-            </defaultValue>
-            <fieldText>Conact Person On Site</fieldText>
-            <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
-        <fields>
             <name>Text_Select_Machine</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Select Machine for Quality Check&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;🛠️ Please select the machine you would like to check.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If the machine is not listed, choose “Add new machine” to create a new machine record before continuing with the check.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Selected Machine:&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;h2&gt;🔧 Select Machine&lt;/h2&gt;&lt;p&gt;Select the machine that should be included in the &lt;strong&gt;Quality Check&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;🔎 If the required machine is &lt;strong&gt;not available in the selection&lt;/strong&gt;, choose &lt;strong&gt;None&lt;/strong&gt; and click &lt;strong&gt;Next&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;➕ You will then be able to &lt;strong&gt;add a new machine&lt;/strong&gt; to the customer’s machine list and include it in the current Quality Check.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -1052,68 +1413,15 @@
         </fields>
         <fields>
             <name>Machine</name>
-            <choiceReferences>Franke_A100</choiceReferences>
-            <choiceReferences>WMF_3000</choiceReferences>
-            <choiceReferences>WMF_5000</choiceReferences>
+            <choiceReferences>choiceSetCustomerMachines</choiceReferences>
             <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>objectNewCustomerMachine.Id</elementReference>
+            </defaultValue>
             <fieldText>Machine</fieldText>
             <fieldType>DropdownBox</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
-        <fields>
-            <name>Machine_Location</name>
-            <dataType>String</dataType>
-            <fieldText>Machine Location</fieldText>
-            <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>Machine</leftValueReference>
-                    <operator>NotEqualTo</operator>
-                </conditions>
-            </visibilityRule>
-        </fields>
-        <fields>
-            <name>Text_What_would_you_like_to_do</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;What would you like to do?&lt;/strong&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
-        <fields>
-            <name>What_would_you_like_to_do</name>
-            <choiceReferences>Continue_with_selected_machine</choiceReferences>
-            <choiceReferences>Add_new_machine</choiceReferences>
-            <dataType>String</dataType>
-            <defaultSelectedChoiceReference>Continue_with_selected_machine</defaultSelectedChoiceReference>
-            <fieldType>RadioButtonGroup</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
+            <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
             <styleProperties>
                 <verticalAlignment>
                     <stringValue>top</stringValue>
@@ -1237,7 +1545,7 @@
             <targetReference>Get_Quality_Check</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <subflows>
         <name>Create_Contact_Sub</name>
         <label>Create Contact Sub</label>
@@ -1283,12 +1591,28 @@
         <objectType>Contact</objectType>
     </variables>
     <variables>
+        <name>objectNewCustomerMachine</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Customer_Machine__c</objectType>
+    </variables>
+    <variables>
         <name>ObjectQualityCheckEntry</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Quality_Check_Entry__c</objectType>
+    </variables>
+    <variables>
+        <name>objectSelectedCustomerMachine</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Customer_Machine__c</objectType>
     </variables>
     <variables>
         <description>Quality-Check-ID</description>
@@ -1299,7 +1623,42 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>selectedCustomerMachineLocation</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>selectedCustomerMachineName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>selectedCustomerMachineSerialNumber</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>varContactIdCreatedContact</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varLastQualityCheckMachine</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varMachineName_Model</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

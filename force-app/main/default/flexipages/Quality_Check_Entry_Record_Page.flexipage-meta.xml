@@ -27,7 +27,7 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
-                <fieldItem>Record.Quality_Check_Machine__r.Machine_Placeholder__c</fieldItem>
+                <fieldItem>Record.Quality_Check_Machine__r.MachineNameModel__c</fieldItem>
                 <identifier>RecordQuality_Check_Machine_rMachine_Placeholder_cField</identifier>
             </fieldInstance>
         </itemInstances>

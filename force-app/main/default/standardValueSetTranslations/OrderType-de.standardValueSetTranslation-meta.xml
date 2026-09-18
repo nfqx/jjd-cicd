@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Barverkauf (ZBV)</masterLabel>
+        <translation><!-- Barverkauf (ZBV) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Erw. Gutschriftsanf. (ZG2E)</masterLabel>
+        <translation><!-- Erw. Gutschriftsanf. (ZG2E) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Erw. Retoure (ZR2)</masterLabel>
+        <translation><!-- Erw. Retoure (ZR2) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Free Goods (ZKLA)</masterLabel>
+        <translation>Freiware (ZKLA)</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gutschriftsan.intern (ZG2I)</masterLabel>
+        <translation><!-- Gutschriftsan.intern (ZG2I) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gutschriftsanf. AHS (ZGA2)</masterLabel>
+        <translation><!-- Gutschriftsanf. AHS (ZGA2) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gutschriftsanford. (ZG2)</masterLabel>
+        <translation><!-- Gutschriftsanford. (ZG2) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kostenl. Lieferg.AHS (ZAKL)</masterLabel>
+        <translation><!-- Kostenl. Lieferg.AHS (ZAKL) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kostenlose Lieferung (ZKL)</masterLabel>
+        <translation><!-- Kostenlose Lieferung (ZKL) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kostenlose Lieferung (ZKLA)</masterLabel>
+        <translation><!-- Kostenlose Lieferung (ZKLA) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lastschr. Leihgebühr (ZL2M)</masterLabel>
+        <translation><!-- Lastschr. Leihgebühr (ZL2M) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lastschriftsan.int. (ZL2I)</masterLabel>
+        <translation><!-- Lastschriftsan.int. (ZL2I) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lastschriftsanf. AHS (ZLA2)</masterLabel>
+        <translation><!-- Lastschriftsanf. AHS (ZLA2) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lastschriftsanford. (ZL2)</masterLabel>
+        <translation><!-- Lastschriftsanford. (ZL2) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Leihgut Beschickung (ZLB)</masterLabel>
+        <translation><!-- Leihgut Beschickung (ZLB) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Leihgutabholung (ZLA)</masterLabel>
+        <translation><!-- Leihgutabholung (ZLA) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Leihgutnachbelastung (ZLN)</masterLabel>
+        <translation><!-- Leihgutnachbelastung (ZLN) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Musterauftrag (ZMUA)</masterLabel>
+        <translation><!-- Musterauftrag (ZMUA) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Retoure (ZRE)</masterLabel>
+        <translation><!-- Retoure (ZRE) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Retoure AHS (ZREA)</masterLabel>
+        <translation><!-- Retoure AHS (ZREA) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Retoure Maschine (ZREM)</masterLabel>
+        <translation><!-- Retoure Maschine (ZREM) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Retoure RKV (ZRES)</masterLabel>
+        <translation><!-- Retoure RKV (ZRES) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Retoure intern (AB) (ZREI)</masterLabel>
+        <translation><!-- Retoure intern (AB) (ZREI) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Retoure intern (LF) (ZREL)</masterLabel>
+        <translation><!-- Retoure intern (LF) (ZREL) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Schadensgutschrift (ZSGS)</masterLabel>
+        <translation><!-- Schadensgutschrift (ZSGS) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Schadensrechnung (ZSRE)</masterLabel>
+        <translation><!-- Schadensrechnung (ZSRE) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Streckenauftrag 3rd (ZTAS)</masterLabel>
+        <translation><!-- Streckenauftrag 3rd (ZTAS) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Streckenauftrag AHS (ZTST)</masterLabel>
+        <translation><!-- Streckenauftrag AHS (ZTST) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>TA Vorkasse (ZVOR)</masterLabel>
+        <translation><!-- TA Vorkasse (ZVOR) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Terminauftrag (ZTAA)</masterLabel>
+        <translation><!-- Terminauftrag (ZTAA) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Terminauftrag (nicht AHS)</masterLabel>
+        <translation><!-- Terminauftrag (nicht AHS) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Wert Gutschrift AHS (ZAG1)</masterLabel>
+        <translation><!-- Wert Gutschrift AHS (ZAG1) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Wert Gutschrift AHS (ZGA1)</masterLabel>
+        <translation><!-- Wert Gutschrift AHS (ZGA1) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Wert-Gutschriftsanf. (ZG1)</masterLabel>
+        <translation><!-- Wert-Gutschriftsanf. (ZG1) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Wert-Lastschrift AHS (ZLA1)</masterLabel>
+        <translation><!-- Wert-Lastschrift AHS (ZLA1) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Wert-Lastschriftsan (ZL1)</masterLabel>
+        <translation><!-- Wert-Lastschriftsan (ZL1) --></translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

@@ -66,6 +66,7 @@
         </inputAssignments>
         <object>Quote</object>
     </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
     <start>
         <locationX>970</locationX>
         <locationY>48</locationY>

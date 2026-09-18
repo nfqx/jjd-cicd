@@ -131,6 +131,10 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.ShipmentItem__c</fieldItem>
                 <identifier>RecordShipmentItem__cField</identifier>
             </fieldInstance>
@@ -187,6 +191,36 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.QuantityUnitOfMeasure</fieldItem>
                 <identifier>RecordQuantityUnitOfMeasureField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.CreditIssuance__c</fieldItem>
+                <identifier>RecordCreditIssuance_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.UnitPrice</fieldItem>
+                <identifier>RecordUnitPriceField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.GrossUnitPrice</fieldItem>
+                <identifier>RecordGrossUnitPriceField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-52e46809-a2ff-46d7-a1d7-8e0e244fa1a5</name>

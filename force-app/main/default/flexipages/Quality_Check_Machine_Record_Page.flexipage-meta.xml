@@ -7,7 +7,7 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Machine_Placeholder__c</fieldItem>
+                <fieldItem>Record.MachineNameModel__c</fieldItem>
                 <identifier>RecordMachine_Placeholder_cField</identifier>
             </fieldInstance>
         </itemInstances>
@@ -135,7 +135,7 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Machine_Placeholder__c</fieldItem>
+                <fieldItem>Record.MachineNameModel__c</fieldItem>
                 <identifier>RecordMachine_Placeholder_cField2</identifier>
             </fieldInstance>
         </itemInstances>
@@ -267,7 +267,7 @@
                             <value>Beverage__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Product__c</value>
+                            <value>ProductName__c</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Visual_Rating__c</value>
@@ -277,6 +277,9 @@
                         </valueListItems>
                         <valueListItems>
                             <value>Total_Rating__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>RecommendationImprovement__c</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>

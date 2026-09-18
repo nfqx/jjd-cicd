@@ -76,7 +76,7 @@
     </choices>
     <choices>
         <name>Unterschriftberetigte_Person_hinzuf_gen</name>
-        <choiceText>Unterschriftberetigte Person hinzufügen</choiceText>
+        <choiceText>Unterschriftberechtigte Person hinzufügen</choiceText>
         <dataType>String</dataType>
         <value>
             <stringValue>Unterschriftberetigte Person hinzufügen</stringValue>

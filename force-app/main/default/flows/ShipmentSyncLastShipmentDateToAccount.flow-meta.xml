@@ -7,6 +7,9 @@
         <label>Shipment Found?</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>END_ELEMENT_3</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -25,6 +28,16 @@
         </rules>
     </decisions>
     <description>Keeps the LastDeliveryDate__c field on the Account synchronized with the latest Delivery Date from related completed Shipments.</description>
+    <ends>
+        <name>END_ELEMENT_3</name>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_4</name>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+    </ends>
     <environments>Default</environments>
     <interviewLabel>Shipment - Sync Last Shipment Date to Account {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Shipment - Sync Last Shipment Date to Account</label>
@@ -65,10 +78,10 @@
             </value>
         </filters>
         <filters>
-            <field>Account__c</field>
+            <field>ShipToParty__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>$Record.Account__c</elementReference>
+                <elementReference>$Record.ShipToParty__c</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -82,13 +95,16 @@
         <label>Update Account Last Delivery Date</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
+        <connector>
+            <targetReference>END_ELEMENT_4</targetReference>
+        </connector>
         <inputAssignments>
             <field>LastDeliveryDate__c</field>
             <value>
                 <elementReference>GetLatestShipment.ActualDeliveryDate</elementReference>
             </value>
         </inputAssignments>
-        <inputReference>$Record.Account__r</inputReference>
+        <inputReference>$Record.00N9O00000lmtOx__NotFound</inputReference>
     </recordUpdates>
     <start>
         <locationX>0</locationX>
@@ -98,7 +114,7 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Account__c</field>
+            <field>ShipToParty__c</field>
             <operator>IsNull</operator>
             <value>
                 <booleanValue>false</booleanValue>

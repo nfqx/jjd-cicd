@@ -15,6 +15,9 @@
                         <valueListItems>
                             <value>Account.OrderMask</value>
                         </valueListItems>
+                        <valueListItems>
+                            <value>Account.ReturnOrder</value>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -1473,8 +1476,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.IsChainMember__c</fieldItem>
-                <identifier>RecordIsChainMember_cField</identifier>
+                <fieldItem>Record.ChainRole__c</fieldItem>
+                <identifier>RecordChainRole_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>

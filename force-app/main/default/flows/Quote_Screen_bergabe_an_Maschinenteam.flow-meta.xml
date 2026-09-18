@@ -264,7 +264,7 @@
             <targetReference>bergabe_an_Maschinenteam</targetReference>
         </connector>
     </start>
-    <status>Obsolete</status>
+    <status>Active</status>
     <textTemplates>
         <name>txt_ChatterText</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>

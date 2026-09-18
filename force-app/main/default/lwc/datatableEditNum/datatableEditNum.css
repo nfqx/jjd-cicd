@@ -1,0 +1,19 @@
+:host {
+    display: block;
+    width: 100%;
+
+    /* Borderless controls in SLDS 1 */
+    --slds-c-input-color-border: transparent;
+    --slds-c-input-color-background: transparent;
+    --slds-c-input-shadow: none;
+
+    /* Keep a visible cue when editing with the keyboard */
+    --slds-c-input-color-border-focus: #0176d3;
+    --slds-c-input-shadow-focus: 0 0 0 1px #0176d3;
+}
+
+lightning-input,
+lightning-combobox {
+    display: block;
+    width: 100%;
+}

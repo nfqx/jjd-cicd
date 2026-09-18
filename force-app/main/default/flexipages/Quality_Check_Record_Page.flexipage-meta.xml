@@ -617,7 +617,7 @@
                             <value>NAME</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Machine_Placeholder__c</value>
+                            <value>MachineNameModel__c</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Machine_Location__c</value>
@@ -630,6 +630,15 @@
                         </valueListItems>
                         <valueListItems>
                             <value>Additional_Comments__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>PresentationOkay__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>EILLESTeaPresent__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>WhichCompetitor__c</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -703,7 +712,7 @@
                             <value>NAME</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Machine_Placeholder__c</value>
+                            <value>MachineNameModel__c</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Machine_Location__c</value>

@@ -165,16 +165,6 @@
                 <identifier>RecordPackageCount_cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Account__c</fieldItem>
-                <identifier>RecordAccount__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-e82d486a-16ee-4e02-9449-9a7deca634c2</name>
         <type>Facet</type>
     </flexiPageRegions>

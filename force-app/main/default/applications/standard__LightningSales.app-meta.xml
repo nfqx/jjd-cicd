@@ -78,6 +78,7 @@
     <tabs>standard-Quote</tabs>
     <tabs>standard-ProcessInstanceWorkitem</tabs>
     <tabs>standard-Product2</tabs>
+    <tabs>Quality_Check_App</tabs>
     <tabs>Quality_Check__c</tabs>
     <tabs>VisitReport__c</tabs>
     <tabs>standard-Task</tabs>
@@ -85,6 +86,7 @@
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
     <tabs>maps__Maps</tabs>
+    <tabs>MemoRequest__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>LightningSales_UtilityBar</utilityBar>
 </CustomApplication>

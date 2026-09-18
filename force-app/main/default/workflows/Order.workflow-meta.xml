@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>OrderApprovalReject</fullName>
+        <description>Final rejection is terminal for ordinary users. Sets the existing Rejected status; the approval process keeps the record locked.</description>
+        <field>Status</field>
+        <literalValue>Rejected</literalValue>
+        <name>Order Approval - Reject</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OrderApprovalReleaseToERP</fullName>
+        <description>Final approval releases the Order to the existing ERP integration by setting its established transmission status.</description>
+        <field>Status</field>
+        <literalValue>Ready for Transmission to ERP</literalValue>
+        <name>Order Approval - Release to ERP</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_Approval_Reject</fullName>
+        <description>Final rejection is terminal for ordinary users. Sets the existing Rejected status; the approval process keeps the record locked.</description>
+        <field>Status</field>
+        <literalValue>Rejected</literalValue>
+        <name>Order Approval - Reject</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_Approval_Release_to_ERP</fullName>
+        <description>Final approval releases the Order to the existing ERP integration by setting its established transmission status.</description>
+        <field>Status</field>
+        <literalValue>Ready for Transmission to ERP</literalValue>
+        <name>Order Approval - Release to ERP</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

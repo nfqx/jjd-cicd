@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Completed</masterLabel>
+        <translation>Vollständig verarbeitet</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Draft</masterLabel>
+        <translation>Entwurf</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>In Approval</masterLabel>
+        <translation>In Freigabe</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>In Processing</masterLabel>
+        <translation>In Abwicklung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Partially Rejected</masterLabel>
+        <translation>Teilweise abgelehnt</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Ready for Transmission to ERP</masterLabel>
+        <translation>Bereit zur Übertragung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Rejected</masterLabel>
+        <translation>Abgelehnt</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Rejected by ERP</masterLabel>
+        <translation>Vom ERP abgelehnt)</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Transmission Successful</masterLabel>
+        <translation>Erfolgreich übertragen</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

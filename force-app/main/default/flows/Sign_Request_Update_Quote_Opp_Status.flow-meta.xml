@@ -312,7 +312,7 @@
             </value>
         </filters>
         <object>cadmus_sign2__Sign_request__c</object>
-        <recordTriggerType>Create</recordTriggerType>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>

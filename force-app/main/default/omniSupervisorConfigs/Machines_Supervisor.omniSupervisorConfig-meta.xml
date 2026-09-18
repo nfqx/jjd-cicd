@@ -12,16 +12,20 @@
         <actionTab>AllAgents</actionTab>
         <displayOrder>0</displayOrder>
     </omniSupervisorConfigAction>
-    <omniSupervisorConfigAction>
-        <actionName>ChangeQueues</actionName>
-        <actionTab>AllAgents</actionTab>
-        <displayOrder>1</displayOrder>
-    </omniSupervisorConfigAction>
     <omniSupervisorConfigGroup>
-        <group>Maschinen_Team</group>
+        <group>JJD_GmbH_Service_AHS_Maschine_SV</group>
     </omniSupervisorConfigGroup>
+    <omniSupervisorConfigGroup>
+        <group>JJD_GmbH_Service_AHS_Maschinen_TM</group>
+    </omniSupervisorConfigGroup>
+    <omniSupervisorConfigProfile>
+        <profile>admin</profile>
+    </omniSupervisorConfigProfile>
     <omniSupervisorConfigQueue>
         <queue>Complaints</queue>
+    </omniSupervisorConfigQueue>
+    <omniSupervisorConfigQueue>
+        <queue>Logistics</queue>
     </omniSupervisorConfigQueue>
     <omniSupervisorConfigQueue>
         <queue>Offers</queue>
@@ -33,19 +37,13 @@
         <skill>Complaints</skill>
     </omniSupervisorConfigSkill>
     <omniSupervisorConfigSkill>
-        <skill>ForeignBody</skill>
-    </omniSupervisorConfigSkill>
-    <omniSupervisorConfigSkill>
-        <skill>Machine_Replacement</skill>
-    </omniSupervisorConfigSkill>
-    <omniSupervisorConfigSkill>
-        <skill>Machines</skill>
-    </omniSupervisorConfigSkill>
-    <omniSupervisorConfigSkill>
         <skill>Offers</skill>
     </omniSupervisorConfigSkill>
     <omniSupervisorConfigSkill>
         <skill>Order</skill>
+    </omniSupervisorConfigSkill>
+    <omniSupervisorConfigSkill>
+        <skill>Webshop</skill>
     </omniSupervisorConfigSkill>
     <omniSupervisorConfigTab>
         <displayOrder>0</displayOrder>

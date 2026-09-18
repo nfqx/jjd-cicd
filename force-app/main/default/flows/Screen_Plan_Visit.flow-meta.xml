@@ -60,7 +60,7 @@
             <assignToReference>objectEvent.Goals__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Additional_Goals</elementReference>
+                <elementReference>AdditionalGoals</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -70,18 +70,31 @@
                 <elementReference>Additional_Details</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectEvent.Main_Goal__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Main_Goal</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectEvent.IsVisit__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>objectEvent.Type_custom__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Visit</stringValue>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Create_Event</targetReference>
         </connector>
     </assignments>
-    <choices>
-        <name>testChoice</name>
-        <choiceText>{!Main_Goal}</choiceText>
-        <dataType>String</dataType>
-        <value>
-            <elementReference>Main_Goal</elementReference>
-        </value>
-    </choices>
     <customProperties>
         <name>ScreenProgressIndicator</name>
         <value>
@@ -143,37 +156,10 @@
             <label>Lead</label>
         </rules>
     </decisions>
-    <decisions>
-        <name>Main_Goal_also_selected_as_Additional_Goal</name>
-        <label>Main Goal also selected as Additional Goal?</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>Assign_Event_Infos</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Yes</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Main_Goal</leftValueReference>
-                <operator>Contains</operator>
-                <rightValue>
-                    <elementReference>Additional_Details</elementReference>
-                </rightValue>
-            </conditions>
-            <connector>
-                <isGoTo>true</isGoTo>
-                <targetReference>Screen_Visit_Goals</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <description>with Main Goal</description>
     <dynamicChoiceSets>
         <name>colContacts</name>
         <dataType>String</dataType>
-        <displayField>ContactFullName__c</displayField>
+        <displayField>ContactDisplayName__c</displayField>
         <filterLogic>and</filterLogic>
         <filters>
             <field>AccountId</field>
@@ -207,6 +193,29 @@
         <locationY>0</locationY>
     </ends>
     <environments>Default</environments>
+    <formulas>
+        <name>defaultMainGoal</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+    {!varSourceType},
+
+    &quot;Lead&quot;,
+    &quot;New Customer Acquisition / First Visit&quot;,
+
+    &quot;Opportunity&quot;,
+    &quot;Contract or Commercial Terms Negotiation&quot;,
+
+    &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>defaultMainGoalLocked</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+    {!varSourceType} = &quot;Lead&quot;,
+    {!varSourceType} = &quot;Opportunity&quot;
+)</expression>
+    </formulas>
     <formulas>
         <name>formulaDefaultEndDateTime</name>
         <dataType>DateTime</dataType>
@@ -287,28 +296,6 @@
     &quot;Besuch: &quot; &amp; {!Get_Opportunity.Name} &amp; &quot; (Opportunity)&quot;,
 
     &quot;Besuch:&quot;
-)</expression>
-    </formulas>
-    <formulas>
-        <name>formulaDisplayText</name>
-        <dataType>String</dataType>
-        <expression>IF(
-    {!formulaGoalValidationError} = TRUE,
-    &quot;⚠️ Main Goal already selected&quot; &amp; BR() &amp;
-    &quot;The Main Goal should not also be selected as an Additional Goal.&quot;,
-    &quot;✅ All good&quot;
-)</expression>
-    </formulas>
-    <formulas>
-        <name>formulaGoalValidationError</name>
-        <dataType>Boolean</dataType>
-        <expression>AND(
-    NOT(ISBLANK({!Main_Goal})),
-    NOT(ISBLANK({!Additional_Goals})),
-    CONTAINS(
-        {!Additional_Goals},
-        {!Main_Goal}
-    )
 )</expression>
     </formulas>
     <formulas>
@@ -619,7 +606,7 @@
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Main_Goal_also_selected_as_Additional_Goal</targetReference>
+            <targetReference>Assign_Event_Infos</targetReference>
         </connector>
         <fields>
             <name>Text_Define_Goals</name>
@@ -639,11 +626,14 @@
             <choiceReferences>picklistMainGoal</choiceReferences>
             <dataType>String</dataType>
             <defaultValue>
-                <elementReference>formulaDefaultGoals</elementReference>
+                <elementReference>defaultMainGoal</elementReference>
             </defaultValue>
             <fieldText>Main Goal</fieldText>
             <fieldType>DropdownBox</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isDisabled>
+                <elementReference>defaultMainGoalLocked</elementReference>
+            </isDisabled>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -655,20 +645,7 @@
             </styleProperties>
         </fields>
         <fields>
-            <name>test</name>
-            <fieldText>&lt;p&gt;Main: &lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!varSelectedMainGoal}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Add: {!varSelectedAddGoals}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
-        <fields>
-            <name>Additional_Goals</name>
+            <name>AdditionalGoals</name>
             <choiceReferences>picklistEventGoals</choiceReferences>
             <dataType>String</dataType>
             <fieldText>Additional Goals</fieldText>
@@ -683,51 +660,6 @@
                     <stringValue>12</stringValue>
                 </width>
             </styleProperties>
-        </fields>
-        <fields>
-            <name>TestCheckbox</name>
-            <dataType>Boolean</dataType>
-            <defaultValue>
-                <elementReference>formulaGoalValidationError</elementReference>
-            </defaultValue>
-            <fieldText>⚠️ Main Goal already selected  The Main Goal cannot also be selected as an Additional Goal. Please remove it from the Additional Goals.</fieldText>
-            <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isDisabled>
-                <booleanValue>true</booleanValue>
-            </isDisabled>
-            <isRequired>true</isRequired>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
-        <fields>
-            <name>text_Error_Main_Goal</name>
-            <fieldText>&lt;p&gt;⚠️ &lt;strong&gt;Main Goal already selected&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;The Main Goal cannot also be selected as an Additional Goal. Please remove it from the Additional Goals.&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>formulaGoalValidationError</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <booleanValue>true</booleanValue>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
         </fields>
         <fields>
             <name>Additional_Details</name>
@@ -754,7 +686,7 @@
             <targetReference>Decision_Record_Type</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>objectEvent</name>
         <dataType>SObject</dataType>
@@ -769,25 +701,5 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-    </variables>
-    <variables>
-        <name>varSelectedAddGoals</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <value>
-            <elementReference>Additional_Goals</elementReference>
-        </value>
-    </variables>
-    <variables>
-        <name>varSelectedMainGoal</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <value>
-            <elementReference>Main_Goal</elementReference>
-        </value>
     </variables>
 </Flow>
