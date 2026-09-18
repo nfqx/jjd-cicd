@@ -134,7 +134,7 @@
         <nameSegment>routeWork</nameSegment>
         <offset>0</offset>
     </actionCalls>
-    <apiVersion>67.0</apiVersion>
+    <apiVersion>68.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <environments>Default</environments>
     <interviewLabel>Routing - Skill Assignment {!$Flow.CurrentDateTime}</interviewLabel>

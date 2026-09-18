@@ -389,11 +389,6 @@
         <picklistField>Topic__c</picklistField>
         <picklistObject>VisitReportLine__c</picklistObject>
     </dynamicChoiceSets>
-    <ends>
-        <name>END_ELEMENT_2</name>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-    </ends>
     <environments>Default</environments>
     <formulas>
         <name>frmCurrentGoal</name>
@@ -711,9 +706,6 @@
         <label>Update Event</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <connector>
-            <targetReference>END_ELEMENT_2</targetReference>
-        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>

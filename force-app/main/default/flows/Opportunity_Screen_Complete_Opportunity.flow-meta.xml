@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>67.0</apiVersion>
+    <apiVersion>68.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Account</name>
@@ -30,9 +30,6 @@
                 <stringValue>Closed Won</stringValue>
             </value>
         </assignmentItems>
-        <connector>
-            <targetReference>END_ELEMENT_1</targetReference>
-        </connector>
     </assignments>
     <assignments>
         <name>Assign_Opp_2</name>
@@ -46,9 +43,6 @@
                 <stringValue>Master Data Validation</stringValue>
             </value>
         </assignmentItems>
-        <connector>
-            <targetReference>END_ELEMENT_1</targetReference>
-        </connector>
     </assignments>
     <assignments>
         <name>Assign_Opp_3</name>
@@ -62,9 +56,6 @@
                 <stringValue>Closed Won</stringValue>
             </value>
         </assignmentItems>
-        <connector>
-            <targetReference>END_ELEMENT_1</targetReference>
-        </connector>
     </assignments>
     <assignments>
         <name>Assign_Opportunity</name>
@@ -100,9 +91,6 @@
         <label>Determine Opportunity Completion Path</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>END_ELEMENT_1</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>Default</defaultConnectorLabel>
         <rules>
             <name>Master_Data_Validation_Successful</name>
@@ -164,11 +152,6 @@
             <label>No Validation Required</label>
         </rules>
     </decisions>
-    <ends>
-        <name>END_ELEMENT_1</name>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-    </ends>
     <environments>Default</environments>
     <formulas>
         <name>formulaHasMasterDataValidationCase</name>

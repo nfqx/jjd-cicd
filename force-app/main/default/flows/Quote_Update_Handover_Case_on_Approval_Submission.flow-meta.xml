@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>67.0</apiVersion>
+    <apiVersion>68.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
-    <ends>
-        <name>END_ELEMENT_2</name>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-    </ends>
     <environments>Default</environments>
     <interviewLabel>Quote - Update Handover Case on Approval Submission {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Quote - Update Handover Case on Approval Submission</label>
@@ -34,9 +29,6 @@
         <label>Update &quot;Handover Case&quot; to CLOSED</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <connector>
-            <targetReference>END_ELEMENT_2</targetReference>
-        </connector>
         <inputAssignments>
             <field>Status</field>
             <value>

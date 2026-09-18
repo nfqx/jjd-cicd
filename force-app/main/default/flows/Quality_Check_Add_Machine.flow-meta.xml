@@ -340,11 +340,6 @@
         <picklistField>Recommended_Actions__c</picklistField>
         <picklistObject>Quality_Check_Machine__c</picklistObject>
     </dynamicChoiceSets>
-    <ends>
-        <name>END_ELEMENT_2</name>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-    </ends>
     <environments>Default</environments>
     <formulas>
         <name>formulaIsDarbovenContractMachine</name>
@@ -662,9 +657,6 @@
         <label>Update Quality Check</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <connector>
-            <targetReference>END_ELEMENT_2</targetReference>
-        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>

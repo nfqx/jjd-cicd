@@ -7,9 +7,6 @@
         <label>Association missing?</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>END_ELEMENT_4</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>Already assigned</defaultConnectorLabel>
         <rules>
             <name>Association_missing</name>
@@ -32,9 +29,6 @@
         <label>Territory found?</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>END_ELEMENT_5</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>No territory for this key</defaultConnectorLabel>
         <rules>
             <name>Territory_found</name>
@@ -53,21 +47,6 @@
         </rules>
     </decisions>
     <description>Creates the territory association for a lead once the sales group key is set. Runs after save because the association needs the lead id. Ownership is deliberately left untouched so the lead stays with the queue while the territory controls visibility.</description>
-    <ends>
-        <name>END_ELEMENT_4</name>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-    </ends>
-    <ends>
-        <name>END_ELEMENT_5</name>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-    </ends>
-    <ends>
-        <name>END_ELEMENT_6</name>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-    </ends>
     <environments>Default</environments>
     <formulas>
         <name>Territory_Name_Suffix</name>
@@ -93,9 +72,6 @@
         <label>Create territory association</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <connector>
-            <targetReference>END_ELEMENT_6</targetReference>
-        </connector>
         <inputAssignments>
             <field>AssociationCause</field>
             <value>

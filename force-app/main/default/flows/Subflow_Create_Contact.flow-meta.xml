@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <apiVersion>67.0</apiVersion>
+    <apiVersion>68.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assig_Contact_Infos</name>
@@ -32,11 +32,6 @@
         <picklistField>Roles</picklistField>
         <picklistObject>AccountContactRelation</picklistObject>
     </dynamicChoiceSets>
-    <ends>
-        <name>END_ELEMENT_1</name>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-    </ends>
     <environments>Default</environments>
     <interviewLabel>Subflow - Create Contact {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Subflow - Create Contact</label>
@@ -109,9 +104,6 @@
         <label>Update Account Contact Relation</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <connector>
-            <targetReference>END_ELEMENT_1</targetReference>
-        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>

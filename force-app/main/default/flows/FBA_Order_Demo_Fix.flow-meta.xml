@@ -3,11 +3,6 @@
     <apiVersion>66.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>TO BE DELETED BEFORE PROD!</description>
-    <ends>
-        <name>END_ELEMENT_2</name>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-    </ends>
     <environments>Default</environments>
     <interviewLabel>FBA Order Demo Fix {!$Flow.CurrentDateTime}</interviewLabel>
     <label>FBA Order Demo Fix</label>
@@ -98,9 +93,6 @@
         <label>Update Order Items</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <connector>
-            <targetReference>END_ELEMENT_2</targetReference>
-        </connector>
         <inputAssignments>
             <field>OrderDeliveryGroupId</field>
             <value>
