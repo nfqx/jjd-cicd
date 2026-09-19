@@ -83,12 +83,12 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <inputAssignments>
-            <field>LastDeliveryDate__c</field>
+            <field>null__NotFound</field>
             <value>
                 <elementReference>GetLatestShipment.ActualDeliveryDate</elementReference>
             </value>
         </inputAssignments>
-        <inputReference>$Record.00N9O00000lmtOx__NotFound</inputReference>
+        <inputReference>$Record.null__NotFound</inputReference>
     </recordUpdates>
     <start>
         <locationX>0</locationX>
@@ -122,5 +122,5 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>InvalidDraft</status>
 </Flow>
