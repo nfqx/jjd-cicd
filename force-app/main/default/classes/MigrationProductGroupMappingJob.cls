@@ -16,6 +16,7 @@ public class MigrationProductGroupMappingJob implements Database.Batchable<SObje
                 ProductSubGroup__c
             FROM Product2
             WHERE OldProductNumber__c != NULL
+            AND ProductClass IN ('Simple', 'Variation')
         ]);
     }
 

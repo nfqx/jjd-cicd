@@ -9,6 +9,7 @@ public class MigrationProductBrandMappingJob implements Database.Batchable<SObje
                 Allergens__c, NutritionalValue__c, ProductSubtitle__c
             FROM Product2
             WHERE OldProductNumber__c != NULL
+            AND ProductClass IN ('Simple', 'Variation')
         ]);
     }
 

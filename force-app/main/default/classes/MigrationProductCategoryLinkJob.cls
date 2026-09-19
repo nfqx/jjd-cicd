@@ -6,6 +6,7 @@ public class MigrationProductCategoryLinkJob implements Database.Batchable<SObje
                 OldProductNumber__c
             FROM Product2
             WHERE OldProductNumber__c != NULL
+            AND ProductClass IN ('Simple', 'Variation')
         ]);
     }
 
@@ -82,6 +83,6 @@ public class MigrationProductCategoryLinkJob implements Database.Batchable<SObje
     }
 
     public void finish(Database.BatchableContext bc){
-        System.enqueueJob(new MigrationWebshopProductLinkJob());
+        Database.executeBatch(new MigrationWebshopProductLinkJob(), 50);
     }
 }

@@ -15,6 +15,7 @@ public class MigrationProductImagesBatch implements Database.Batchable<SObject>,
                 OldProductNumber__c
             FROM Product2
             WHERE OldProductNumber__c != NULL
+            AND ProductClass IN ('VariationParent')
         ]);
     }
 

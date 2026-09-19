@@ -1,137 +1,284 @@
-public class MigrationWebshopProductLinkJob implements Queueable, Database.AllowsCallouts {
+public class MigrationWebshopProductLinkJob implements Database.Batchable<sObject>, Database.AllowsCallouts {
 
-    public void execute(QueueableContext context){
+    public Database.QueryLocator start(Database.BatchableContext bc) {
+        delete [SELECT Id FROM WebshopProductLink__c];
 
-        /*
-         * STEP 1: TARGET PRODUCTS (FLAT MAP)
-         */
-        Map<String, Id> targetByProductCode = new Map<String, Id>();
-
-        for(Product2 p : [
+        return Database.getQueryLocator([
             SELECT Id, OldProductNumber__c
             FROM Product2
             WHERE OldProductNumber__c != NULL
-        ]){
-            targetByProductCode.put(p.OldProductNumber__c, p.Id);
+            AND ProductClass IN ('Simple', 'Variation')
+        ]);
+    }
+
+    public void execute(
+        Database.BatchableContext bc,
+        List<Product2> scope
+    ) {
+        Map<String, Set<Id>> targetIdsByProductCode =
+            MigrationProductMappingUtil.getOwnedTargetIdsByCode(scope);
+
+        if (targetIdsByProductCode.isEmpty()) {
+            return;
         }
 
-        if(targetByProductCode.isEmpty()) return;
-
         /*
-         * STEP 2: SOURCE PARENTS (Product Code → ParentId)
+         * SOURCE PARENTS FOR THE OWNED PRODUCT CODES
          */
-        List<Object> parents = SourceOrgApi.query(
-            'SELECT Id, ProductCode FROM Product2'
-        );
+        List<Object> sourceParents =
+            MigrationProductMappingUtil.queryRemoteInChunks(
+                'SELECT Id, ProductCode FROM Product2',
+                'ProductCode',
+                targetIdsByProductCode.keySet()
+            );
 
-        Map<String, String> parentByProductCode = new Map<String, String>();
-        Map<String, String> parentIdToProductCode = new Map<String, String>();
+        Map<String, String> sourceParentCodeById =
+            new Map<String, String>();
 
-        for(Object row : parents){
-            Map<String,Object> m = (Map<String,Object>)row;
+        for (Object row : sourceParents) {
+            Map<String, Object> values = (Map<String, Object>) row;
 
-            String id = (String)m.get('Id');
-            String productCode = (String)m.get('ProductCode');
+            String parentId = (String) values.get('Id');
+            String productCode = (String) values.get('ProductCode');
 
-            if(productCode != null){
-                parentByProductCode.put(productCode, id);
-                parentIdToProductCode.put(id, productCode);
+            if (parentId != null && productCode != null) {
+                sourceParentCodeById.put(parentId, productCode);
             }
         }
 
-        Set<String> parentIds = new Set<String>(parentByProductCode.values());
+        if (sourceParentCodeById.isEmpty()) {
+            return;
+        }
 
         /*
-         * STEP 3: CHILD → PARENT mapping
+         * SOURCE CHILDREN FOR THOSE PARENTS
          */
-        List<Object> attrs = SourceOrgApi.query(
-            'SELECT ProductId, VariantParentId ' +
-            'FROM ProductAttribute'
-        );
+        List<Object> sourceAttributes =
+            MigrationProductMappingUtil.queryRemoteInChunks(
+                'SELECT ProductId, VariantParentId FROM ProductAttribute',
+                'VariantParentId',
+                sourceParentCodeById.keySet()
+            );
 
-        Map<String, String> childToParent = new Map<String, String>();
+        Map<String, String> sourceParentByChildId =
+            new Map<String, String>();
 
-        for(Object row : attrs){
-            Map<String,Object> m = (Map<String,Object>)row;
+        for (Object row : sourceAttributes) {
+            Map<String, Object> values = (Map<String, Object>) row;
 
-            String child = (String)m.get('ProductId');
-            String parent = (String)m.get('VariantParentId');
+            String childId = (String) values.get('ProductId');
+            String parentId = (String) values.get('VariantParentId');
 
-            if(child != null && parent != null){
-                childToParent.put(child, parent);
+            if (childId != null && parentId != null) {
+                sourceParentByChildId.put(childId, parentId);
             }
         }
 
-        Set<String> childIds = childToParent.keySet();
+        if (sourceParentByChildId.isEmpty()) {
+            return;
+        }
 
         /*
-         * STEP 4: CHILD → CHILD LINKS
+         * LINKS WHOSE FIRST PRODUCT BELONGS TO THE CURRENT CODE SET
          */
-        List<Object> rawLinks = SourceOrgApi.query(
-            'SELECT Product1__c, Product2__c ' +
-            'FROM WebshopProductLink__c'
+        List<Object> sourceLinks =
+            MigrationProductMappingUtil.queryRemoteInChunks(
+                'SELECT Product1__c, Product2__c ' +
+                'FROM WebshopProductLink__c',
+                'Product1__c',
+                sourceParentByChildId.keySet()
+            );
+
+        Set<String> counterpartChildIds = new Set<String>();
+
+        for (Object row : sourceLinks) {
+            Map<String, Object> values = (Map<String, Object>) row;
+            String counterpartChildId =
+                (String) values.get('Product2__c');
+
+            if (counterpartChildId != null) {
+                counterpartChildIds.add(counterpartChildId);
+            }
+        }
+
+        if (counterpartChildIds.isEmpty()) {
+            return;
+        }
+
+        /*
+         * COUNTERPART CHILD → PARENT
+         */
+        List<Object> counterpartAttributes =
+            MigrationProductMappingUtil.queryRemoteInChunks(
+                'SELECT ProductId, VariantParentId FROM ProductAttribute',
+                'ProductId',
+                counterpartChildIds
+            );
+
+        Map<String, String> counterpartParentByChildId =
+            new Map<String, String>();
+
+        Set<String> counterpartParentIds = new Set<String>();
+
+        for (Object row : counterpartAttributes) {
+            Map<String, Object> values = (Map<String, Object>) row;
+
+            String childId = (String) values.get('ProductId');
+            String parentId = (String) values.get('VariantParentId');
+
+            if (childId != null && parentId != null) {
+                counterpartParentByChildId.put(childId, parentId);
+                counterpartParentIds.add(parentId);
+            }
+        }
+
+        if (counterpartParentIds.isEmpty()) {
+            return;
+        }
+
+        /*
+         * COUNTERPART PARENT → PRODUCT CODE
+         */
+        List<Object> counterpartParents =
+            MigrationProductMappingUtil.queryRemoteInChunks(
+                'SELECT Id, ProductCode FROM Product2',
+                'Id',
+                counterpartParentIds
+            );
+
+        Map<String, String> counterpartCodeByParentId =
+            new Map<String, String>();
+
+        Set<String> counterpartProductCodes = new Set<String>();
+
+        for (Object row : counterpartParents) {
+            Map<String, Object> values = (Map<String, Object>) row;
+
+            String parentId = (String) values.get('Id');
+            String productCode = (String) values.get('ProductCode');
+
+            if (parentId != null && productCode != null) {
+                counterpartCodeByParentId.put(parentId, productCode);
+                counterpartProductCodes.add(productCode);
+            }
+        }
+
+        /*
+         * ADD EVERY TARGET PRODUCT MATCHING THE COUNTERPART CODES
+         */
+        MigrationProductMappingUtil.addTargetProducts(
+            targetIdsByProductCode,
+            counterpartProductCodes
         );
 
         /*
-         * STEP 5: COLLAPSE TO PARENT LINKS
+         * COLLAPSE VARIANT LINKS TO PRODUCT-CODE LINKS
          */
-        Set<String> parentLinks = new Set<String>();
+        Map<String, Set<String>> linkedCodesByFirstCode =
+            new Map<String, Set<String>>();
 
-        for(Object row : rawLinks){
+        for (Object row : sourceLinks) {
+            Map<String, Object> values = (Map<String, Object>) row;
 
-            Map<String,Object> m = (Map<String,Object>)row;
+            String child1Id = (String) values.get('Product1__c');
+            String child2Id = (String) values.get('Product2__c');
 
-            String c1 = (String)m.get('Product1__c');
-            String c2 = (String)m.get('Product2__c');
+            String parent1Id =
+                sourceParentByChildId.get(child1Id);
 
-            String p1 = childToParent.get(c1);
-            String p2 = childToParent.get(c2);
+            String parent2Id =
+                counterpartParentByChildId.get(child2Id);
 
-            if(p1 == null || p2 == null) continue;
-            if(p1 == p2) continue;
+            if (parent1Id == null || parent2Id == null) {
+                continue;
+            }
 
-            parentLinks.add(p1 + '-' + p2);
+            if (parent1Id == parent2Id) {
+                continue;
+            }
+
+            String productCode1 =
+                sourceParentCodeById.get(parent1Id);
+
+            String productCode2 =
+                counterpartCodeByParentId.get(parent2Id);
+
+            if (productCode1 == null || productCode2 == null) {
+                continue;
+            }
+
+            if (!linkedCodesByFirstCode.containsKey(productCode1)) {
+                linkedCodesByFirstCode.put(
+                    productCode1,
+                    new Set<String>()
+                );
+            }
+
+            linkedCodesByFirstCode.get(productCode1).add(productCode2);
         }
 
         /*
-         * STEP 6: TARGET INSERT (PRODUCT CODE MAPPED)
+         * EXPAND EACH CODE RELATIONSHIP TO ALL TARGET COMBINATIONS
          */
-        List<WebshopProductLink__c> inserts = new List<WebshopProductLink__c>();
-        Set<String> seen = new Set<String>();
+        List<WebshopProductLink__c> recordsToInsert =
+            new List<WebshopProductLink__c>();
 
-        for(String link : parentLinks){
+        Set<String> seenTargetLinks = new Set<String>();
 
-            List<String> parts = link.split('-');
-            String p1 = parts[0];
-            String p2 = parts[1];
+        for (String productCode1 : linkedCodesByFirstCode.keySet()) {
+            Set<Id> targetIds1 =
+                targetIdsByProductCode.get(productCode1);
 
-            String productCode1 = parentIdToProductCode.get(p1);
-            String productCode2 = parentIdToProductCode.get(p2);
+            if (targetIds1 == null || targetIds1.isEmpty()) {
+                continue;
+            }
 
-            if(productCode1 == null || productCode2 == null) continue;
+            for (
+                String productCode2 :
+                linkedCodesByFirstCode.get(productCode1)
+            ) {
+                Set<Id> targetIds2 =
+                    targetIdsByProductCode.get(productCode2);
 
-            if(!targetByProductCode.containsKey(productCode1) || !targetByProductCode.containsKey(productCode2)) continue;
+                if (targetIds2 == null || targetIds2.isEmpty()) {
+                    continue;
+                }
 
-            Id t1 = targetByProductCode.get(productCode1);
-            Id t2 = targetByProductCode.get(productCode2);
+                for (Id targetId1 : targetIds1) {
+                    for (Id targetId2 : targetIds2) {
+                        if (targetId1 == targetId2) {
+                            continue;
+                        }
 
-            String key = t1 + '-' + t2;
-            if(seen.contains(key)) continue;
-            seen.add(key);
+                        String linkKey =
+                            String.valueOf(targetId1) +
+                            '|' +
+                            String.valueOf(targetId2);
 
-            inserts.add(new WebshopProductLink__c(
-                Product1__c = t1,
-                Product2__c = t2
-            ));
+                        if (!seenTargetLinks.add(linkKey)) {
+                            continue;
+                        }
+
+                        recordsToInsert.add(
+                            new WebshopProductLink__c(
+                                Product1__c = targetId1,
+                                Product2__c = targetId2
+                            )
+                        );
+                    }
+                }
+            }
         }
 
-        if(!inserts.isEmpty()){
-            Database.insert(inserts, false);
+        if (!recordsToInsert.isEmpty()) {
+            Database.insert(recordsToInsert, false);
         }
+    }
 
-        /*
-         * STEP 7: CHAIN NEXT JOB
-         */
-        System.enqueueJob(new MigrationWebshopBrandLinkJob());
+    public void finish(Database.BatchableContext bc) {
+        Database.executeBatch(
+            new MigrationWebshopBrandLinkJob(),
+            100
+        );
     }
 }

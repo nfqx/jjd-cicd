@@ -1,151 +1,226 @@
-public class MigrationWebshopBrandLinkJob implements Queueable, Database.AllowsCallouts {
+public class MigrationWebshopBrandLinkJob  implements Database.Batchable<sObject>, Database.AllowsCallouts {
 
-    public void execute(QueueableContext context){
-
-        /*
-         * STEP 1: TARGET (OLD PRODUCT CODE → Product)
-         */
-        Map<String, Id> targetByProductCode = new Map<String, Id>();
-
-        for(Product2 p : [            
-            SELECT Id,
-                OldProductNumber__c
+    public Database.QueryLocator start(Database.BatchableContext bc) {
+        return Database.getQueryLocator([
+            SELECT Id, OldProductNumber__c
             FROM Product2
             WHERE OldProductNumber__c != NULL
-        ]){
-            targetByProductCode.put(p.OldProductNumber__c, p.Id);
-        }
+            AND ProductClass IN ('Simple', 'Variation')
+        ]);
+    }
 
-        if(targetByProductCode.isEmpty()) return;
+    public void execute(
+        Database.BatchableContext bc,
+        List<Product2> scope
+    ) {
+        Map<String, Set<Id>> targetIdsByProductCode =
+            MigrationProductMappingUtil.getOwnedTargetIdsByCode(scope);
 
-        /*
-         * STEP 2: SOURCE RAW BRAND LINKS
-         */
-        List<Object> raw = SourceOrgApi.query(
-            'SELECT Produkt__c, Brand__r.Name ' +
-            'FROM Webshop_Brand_Link__c'
-        );
-
-        Set<String> sourceProductIds = new Set<String>();
-
-        for(Object row : raw){
-            Map<String,Object> m = (Map<String,Object>)row;
-            sourceProductIds.add((String)m.get('Produkt__c'));
+        if (targetIdsByProductCode.isEmpty()) {
+            return;
         }
 
         /*
-         * STEP 3: CHILD → PARENT mapping
+         * SOURCE PRODUCTS REPRESENTED BY THIS BATCH
          */
-        List<Object> attrs = SourceOrgApi.query(
-            'SELECT ProductId, VariantParentId ' +
-            'FROM ProductAttribute '
-        );
+        List<Object> sourceParents =
+            MigrationProductMappingUtil.queryRemoteInChunks(
+                'SELECT Id, ProductCode FROM Product2',
+                'ProductCode',
+                targetIdsByProductCode.keySet()
+            );
 
-        Map<String, String> childToParent = new Map<String, String>();
+        Map<String, String> sourceParentCodeById =
+            new Map<String, String>();
 
-        for(Object row : attrs){
-            Map<String,Object> m = (Map<String,Object>)row;
+        for (Object row : sourceParents) {
+            Map<String, Object> values = (Map<String, Object>) row;
 
-            String child = (String)m.get('ProductId');
-            String parent = (String)m.get('VariantParentId');
+            String productId = (String) values.get('Id');
+            String productCode = (String) values.get('ProductCode');
 
-            if(child != null && parent != null){
-                childToParent.put(child, parent);
+            if (productId != null && productCode != null) {
+                sourceParentCodeById.put(productId, productCode);
             }
         }
 
-        Set<String> parentIds = new Set<String>(childToParent.values());
-
-        /*
-         * STEP 4: SOURCE PARENT PRODUCT CODEs
-         */
-        List<Object> parents = SourceOrgApi.query(
-            'SELECT Id, ProductCode ' +
-            'FROM Product2 WHERE ProductCode != NULL'
-        );
-
-        Map<String, String> parentProductCode = new Map<String, String>();
-
-        for(Object row : parents){
-            Map<String,Object> m = (Map<String,Object>)row;
-            parentProductCode.put((String)m.get('Id'), (String)m.get('ProductCode'));
+        if (sourceParentCodeById.isEmpty()) {
+            return;
         }
 
         /*
-         * STEP 5: BUILD Product Code → BRAND MAP (PARENT LEVEL ONLY)
+         * CHILDREN OF THOSE SOURCE PRODUCTS
          */
-        Map<String, Set<String>> brandsByProductCode = new Map<String, Set<String>>();
+        List<Object> sourceAttributes =
+            MigrationProductMappingUtil.queryRemoteInChunks(
+                'SELECT ProductId, VariantParentId FROM ProductAttribute',
+                'VariantParentId',
+                sourceParentCodeById.keySet()
+            );
 
-        for(Object row : raw){
+        Map<String, String> parentByChildId =
+            new Map<String, String>();
 
-            Map<String,Object> m = (Map<String,Object>)row;
+        for (Object row : sourceAttributes) {
+            Map<String, Object> values = (Map<String, Object>) row;
 
-            String productId = (String)m.get('Produkt__c');
-            Map<String,Object> brandObj = (Map<String,Object>)m.get('Brand__r');
+            String childId = (String) values.get('ProductId');
+            String parentId = (String) values.get('VariantParentId');
 
-            if(productId == null || brandObj == null) continue;
+            if (childId != null && parentId != null) {
+                parentByChildId.put(childId, parentId);
+            }
+        }
 
-            String brandName = (String)brandObj.get('Name');
+        Set<String> relevantSourceProductIds = new Set<String>();
+        relevantSourceProductIds.addAll(sourceParentCodeById.keySet());
+        relevantSourceProductIds.addAll(parentByChildId.keySet());
 
-            String parentId = childToParent.containsKey(productId)
-                ? childToParent.get(productId)
-                : productId;
+        /*
+         * ONLY RELEVANT SOURCE BRAND LINKS
+         */
+        List<Object> sourceBrandLinks =
+            MigrationProductMappingUtil.queryRemoteInChunks(
+                'SELECT Produkt__c, Brand__r.Name ' +
+                'FROM Webshop_Brand_Link__c',
+                'Produkt__c',
+                relevantSourceProductIds
+            );
 
-            String productCode = parentProductCode.get(parentId);
+        Map<String, Set<String>> brandsByProductCode =
+            new Map<String, Set<String>>();
 
-            if(productCode == null || brandName == null) continue;
+        Set<String> relevantBrandNames = new Set<String>();
 
-            if(!brandsByProductCode.containsKey(productCode)){
-                brandsByProductCode.put(productCode, new Set<String>());
+        for (Object row : sourceBrandLinks) {
+            Map<String, Object> values = (Map<String, Object>) row;
+
+            String linkedProductId =
+                (String) values.get('Produkt__c');
+
+            Map<String, Object> brandValues =
+                (Map<String, Object>) values.get('Brand__r');
+
+            if (linkedProductId == null || brandValues == null) {
+                continue;
+            }
+
+            String brandName = (String) brandValues.get('Name');
+
+            if (String.isBlank(brandName)) {
+                continue;
+            }
+
+            String parentId = parentByChildId.containsKey(linkedProductId)
+                ? parentByChildId.get(linkedProductId)
+                : linkedProductId;
+
+            String productCode =
+                sourceParentCodeById.get(parentId);
+
+            if (productCode == null) {
+                continue;
+            }
+
+            if (!brandsByProductCode.containsKey(productCode)) {
+                brandsByProductCode.put(
+                    productCode,
+                    new Set<String>()
+                );
             }
 
             brandsByProductCode.get(productCode).add(brandName);
+            relevantBrandNames.add(brandName);
         }
 
-        if(brandsByProductCode.isEmpty()) return;
-
-        /*
-         * STEP 6: TARGET BRAND LOOKUP
-         */
-        Map<String, Id> brandByName = new Map<String, Id>();
-
-        for(WebshopBrand__c b : [
-            SELECT Id, Name FROM WebshopBrand__c
-        ]){
-            brandByName.put(b.Name, b.Id);
+        if (brandsByProductCode.isEmpty()) {
+            return;
         }
 
         /*
-         * STEP 7: INSERT INTO TARGET
+         * RELEVANT TARGET BRANDS
          */
-        List<WebshopBrandLink__c> inserts = new List<WebshopBrandLink__c>();
-        Set<String> seen = new Set<String>();
+        Map<String, Id> targetBrandByName =
+            new Map<String, Id>();
 
-        for(String productCode : brandsByProductCode.keySet()){
+        for (WebshopBrand__c brand : [
+            SELECT Id, Name
+            FROM WebshopBrand__c
+            WHERE Name IN :relevantBrandNames
+        ]) {
+            targetBrandByName.put(brand.Name, brand.Id);
+        }
 
-            if(!targetByProductCode.containsKey(productCode)) continue;
+        /*
+         * EXISTING TARGET LINKS
+         */
+        Set<Id> relevantTargetProductIds =
+            MigrationProductMappingUtil.flattenIds(
+                targetIdsByProductCode
+            );
 
-            Id productId = targetByProductCode.get(productCode);
+        Set<String> seenTargetLinks = new Set<String>();
 
-            for(String brandName : brandsByProductCode.get(productCode)){
+        for (WebshopBrandLink__c existingLink : [
+            SELECT Product__c, Brand__c
+            FROM WebshopBrandLink__c
+            WHERE Product__c IN :relevantTargetProductIds
+        ]) {
+            seenTargetLinks.add(
+                String.valueOf(existingLink.Product__c) +
+                '|' +
+                String.valueOf(existingLink.Brand__c)
+            );
+        }
 
-                if(!brandByName.containsKey(brandName)) continue;
+        /*
+         * APPLY EACH BRAND TO EVERY MATCHING TARGET PRODUCT
+         */
+        List<WebshopBrandLink__c> recordsToInsert =
+            new List<WebshopBrandLink__c>();
 
-                Id brandId = brandByName.get(brandName);
+        for (String productCode : brandsByProductCode.keySet()) {
+            Set<Id> targetProductIds =
+                targetIdsByProductCode.get(productCode);
 
-                String key = productId + '-' + brandId;
-                if(seen.contains(key)) continue;
-                seen.add(key);
+            if (targetProductIds == null) {
+                continue;
+            }
 
-                inserts.add(new WebshopBrandLink__c(
-                    Product__c = productId,
-                    Brand__c = brandId
-                ));
+            for (String brandName : brandsByProductCode.get(productCode)) {
+                Id targetBrandId =
+                    targetBrandByName.get(brandName);
+
+                if (targetBrandId == null) {
+                    continue;
+                }
+
+                for (Id targetProductId : targetProductIds) {
+                    String linkKey =
+                        String.valueOf(targetProductId) +
+                        '|' +
+                        String.valueOf(targetBrandId);
+
+                    if (!seenTargetLinks.add(linkKey)) {
+                        continue;
+                    }
+
+                    recordsToInsert.add(
+                        new WebshopBrandLink__c(
+                            Product__c = targetProductId,
+                            Brand__c = targetBrandId
+                        )
+                    );
+                }
             }
         }
 
-        if(!inserts.isEmpty()){
-            Database.insert(inserts, false);
+        if (!recordsToInsert.isEmpty()) {
+            Database.insert(recordsToInsert, false);
         }
+    }
+
+    public void finish(Database.BatchableContext bc) {
+        // Do nothing
     }
 }
